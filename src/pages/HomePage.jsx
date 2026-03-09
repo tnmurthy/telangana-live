@@ -7,6 +7,7 @@ import PowerTariffCard from '../components/PowerTariffCard';
 import DailyShloka from '../components/DailyShloka';
 import MetroCard from '../components/MetroCard';
 import BasthiDawakhana from '../components/BasthiDawakhana';
+import CitizenPoll from '../components/CitizenPoll';
 import ServicesDirectory from '../components/ServicesDirectory';
 
 export default function HomePage() {
@@ -40,7 +41,12 @@ export default function HomePage() {
             {/* Section 5: Basthi Dawakhana */}
             <BasthiDawakhana />
 
-            {/* Section 6: Services */}
+            {/* Section 6: Citizen's Poll */}
+            <div id="poll">
+                <CitizenPoll />
+            </div>
+
+            {/* Section 7: Services */}
             <ServicesDirectory />
         </div>
     );

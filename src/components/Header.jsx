@@ -33,6 +33,14 @@ const megaMenuData = [
             { label: 'Cyberabad', href: '/cyberabad', icon: '💻' },
             { label: 'Malkajgiri', href: '/malkajgiri', icon: '🏘️' },
         ]
+    },
+    {
+        label: 'Civic',
+        links: [
+            { label: 'Report Issue', href: '/report', icon: '📌' },
+            { label: 'Know Your Ward', href: '/report', icon: '🔍' },
+            { label: "Citizen's Poll", href: '/#poll', icon: '🗳️' },
+        ]
     }
 ];
 

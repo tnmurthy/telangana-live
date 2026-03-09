@@ -13,6 +13,7 @@ import GoldLandingPage from './pages/GoldLandingPage';
 import FuelLandingPage from './pages/FuelLandingPage';
 import TransportLandingPage from './pages/TransportLandingPage';
 import HealthLandingPage from './pages/HealthLandingPage';
+import ReportingLandingPage from './pages/ReportingLandingPage';
 import { useEffect } from 'react';
 
 function EmergencyToggle() {
@@ -78,6 +79,7 @@ function AppContent() {
           <Route path="/rates/fuel" element={<FuelLandingPage />} />
           <Route path="/transport/metro" element={<TransportLandingPage />} />
           <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
+          <Route path="/report" element={<ReportingLandingPage />} />
         </Routes>
       </main>
 
