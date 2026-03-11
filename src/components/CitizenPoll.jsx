@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { currentPoll, pastPolls } from '../data/pollData';
 import ShareWhatsApp from './ShareWhatsApp';
 import { Icons } from './Icons';
+import { n8nService } from '../services/n8nService';
 
 export default function CitizenPoll() {
     const STORAGE_KEY = `poll-vote-${currentPoll.id}`;
@@ -30,6 +31,15 @@ export default function CitizenPoll() {
         setVoted(optionId);
         setVotes(prev => ({ ...prev, [optionId]: prev[optionId] + 1 }));
         localStorage.setItem(STORAGE_KEY, optionId);
+
+        // Async background send to n8n
+        n8nService.sendPollVote({
+            pollId: currentPoll.id,
+            question: currentPoll.question,
+            selectedOption: optionId,
+            label: currentPoll.options.find(o => o.id === optionId)?.label
+        });
+
         setTimeout(() => setAnimating(false), 600);
     };
 

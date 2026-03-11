@@ -4,6 +4,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { reportCategories, mockReports, statusSteps, detectCorporation } from '../data/reportingData';
 import ReportForm from './ReportForm';
+import { n8nService } from '../services/n8nService';
 
 // Fix default marker icons for leaflet + bundlers
 delete L.Icon.Default.prototype._getIconUrl;
@@ -70,6 +71,10 @@ export default function ReportingMap() {
             corporation: corp.shortName,
             date: new Date().toISOString().split('T')[0],
         };
+
+        // Async background send to n8n
+        n8nService.sendReport(newReport);
+
         setReports(prev => [newReport, ...prev]);
         setShowForm(false);
         setClickedPos(null);
