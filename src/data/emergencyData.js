@@ -3,16 +3,16 @@
 
 export const emergencyContacts = {
     general: [
-        { name: 'NDRF Telangana', number: '83330 68536', icon: '🆘', priority: 1 },
-        { name: 'GHMC (General/Flood)', number: '21111111', icon: '🏛️', priority: 2 },
-        { name: 'DRF (Disaster Rescue)', number: '90001 13667', icon: '🚒', priority: 3 },
-        { name: 'Power Outages', number: '1912', icon: '⚡', priority: 4 },
-        { name: 'Heatstroke Helpline', number: '108', icon: '🚑', priority: 5 },
+        { name: 'NDRF Telangana', number: '83330 68536', icon: 'Emergency', priority: 1 },
+        { name: 'GHMC (General/Flood)', number: '21111111', icon: 'Heritage', priority: 2 },
+        { name: 'DRF (Disaster Rescue)', number: '90001 13667', icon: 'Fire', priority: 3 },
+        { name: 'Power Outages', number: '1912', icon: 'Power', priority: 4 },
+        { name: 'Heatstroke Helpline', number: '108', icon: 'Ambulance', priority: 5 },
     ],
     regional: {
-        malkajgiri: { name: 'MMC (Malkajgiri Municipal Corp)', number: '87126 99165', icon: '🏢', desc: 'Residential/East focus' },
-        cyberabad: { name: 'CMC (Cyberabad Municipal Corp)', number: '040-2785 2000', icon: '🏢', desc: 'IT corridor focus' },
-        hyderabad: { name: 'GHMC Central Office', number: '040-2326 1555', icon: '🏛️', desc: 'Central Hyderabad' },
+        malkajgiri: { name: 'MMC (Malkajgiri Municipal Corp)', number: '87126 99165', icon: 'Govt', desc: 'Residential/East focus' },
+        cyberabad: { name: 'CMC (Cyberabad Municipal Corp)', number: '040-2785 2000', icon: 'Govt', desc: 'IT corridor focus' },
+        hyderabad: { name: 'GHMC Central Office', number: '040-2326 1555', icon: 'Govt', desc: 'Central Hyderabad' },
     },
 };
 

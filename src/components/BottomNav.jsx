@@ -1,34 +1,36 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useEmergency } from '../hooks/useEmergency';
 
 export default function BottomNav() {
-    const location = useLocation();
+
+    const { isEmergencyActive, activateEmergency } = useEmergency();
 
     const items = [
         {
             label: 'Home', href: '/', icon: (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>
             )
         },
         {
-            label: 'Rates', href: '/#rates', icon: (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            label: 'Cyberabad', href: '/cyberabad', icon: (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm1.5-12h7.5v7.5h-7.5V7.5Z" />
                 </svg>
             )
         },
         {
-            label: 'Directory', href: '/#services', icon: (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            label: 'Malkajgiri', href: '/malkajgiri', icon: (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>
             )
         },
         {
-            label: 'News', href: '/#ticker-section', hasBadge: true, icon: (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            label: 'Emergency', href: null, isEmergency: true, icon: (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
                 </svg>
             )
         },
@@ -37,24 +39,48 @@ export default function BottomNav() {
     return (
         <nav className="fixed bottom-0 left-0 right-0 bg-card-bg-solid/90 backdrop-blur-2xl border-t border-white/[0.06] z-50 md:hidden safe-bottom">
             <div className="grid grid-cols-4 max-w-lg mx-auto">
-                {items.map((item) => (
-                    <NavLink
-                        key={item.label}
-                        to={item.href}
-                        className={({ isActive }) =>
-                            `flex flex-col items-center py-2.5 transition-all duration-300 active:scale-90 relative ${isActive && location.hash === (item.href.split('#')[1] || '')
-                                ? 'text-heritage-gold'
-                                : 'text-text-muted hover:text-heritage-gold'
-                            }`
-                        }
-                    >
-                        <div className="mb-0.5">{item.icon}</div>
-                        <span className="text-[9px] font-semibold tracking-wide">{item.label}</span>
-                        {item.hasBadge && (
-                            <span className="absolute top-1.5 right-1/4 w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse-live"></span>
-                        )}
-                    </NavLink>
-                ))}
+                {items.map((item) => {
+                    // Emergency is a button, not a link
+                    if (item.isEmergency) {
+                        return (
+                            <button
+                                key={item.label}
+                                onClick={() => activateEmergency('heatwave')}
+                                aria-label={`Activate ${item.label} Mode`}
+                                aria-pressed={isEmergencyActive}
+                                className={`flex flex-col items-center py-2.5 transition-all duration-300 active:scale-90 relative ${isEmergencyActive
+                                    ? 'text-red-400'
+                                    : 'text-text-muted hover:text-red-400'
+                                    }`}
+                            >
+                                <div className={`mb-0.5 relative ${isEmergencyActive ? 'animate-pulse-live' : ''}`}>
+                                    {item.icon}
+                                    {isEmergencyActive && (
+                                        <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                                    )}
+                                </div>
+                                <span className={`text-[9px] font-semibold tracking-wide ${isEmergencyActive ? 'text-red-400' : ''}`}>{item.label}</span>
+                            </button>
+                        );
+                    }
+
+                    return (
+                        <NavLink
+                            key={item.label}
+                            to={item.href}
+                            aria-label={`Navigate to ${item.label}`}
+                            className={({ isActive }) =>
+                                `flex flex-col items-center py-2.5 transition-all duration-300 active:scale-90 relative ${isActive
+                                    ? 'text-heritage-gold'
+                                    : 'text-text-muted hover:text-heritage-gold'
+                                }`
+                            }
+                        >
+                            <div className="mb-0.5">{item.icon}</div>
+                            <span className="text-[9px] font-semibold tracking-wide">{item.label}</span>
+                        </NavLink>
+                    );
+                })}
             </div>
         </nav>
     );

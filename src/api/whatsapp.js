@@ -1,5 +1,5 @@
 import { goldRates } from '../data/goldRates';
-import { fuelPrices } from '../data/fuelPrices';
+
 import { metroData } from '../data/transportData';
 import { weatherData } from '../data/weatherData';
 

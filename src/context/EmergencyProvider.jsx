@@ -1,6 +1,5 @@
-import { createContext, useContext, useState, useCallback } from 'react';
-
-const EmergencyContext = createContext();
+import { useState, useCallback } from 'react';
+import { EmergencyContext } from './EmergencyContext';
 
 export function EmergencyProvider({ children }) {
     const [isEmergencyActive, setIsEmergencyActive] = useState(false);
@@ -21,10 +20,4 @@ export function EmergencyProvider({ children }) {
             {children}
         </EmergencyContext.Provider>
     );
-}
-
-export function useEmergency() {
-    const ctx = useContext(EmergencyContext);
-    if (!ctx) throw new Error('useEmergency must be inside EmergencyProvider');
-    return ctx;
 }

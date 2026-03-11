@@ -1,0 +1,28 @@
+{
+    "short_name": "TelanganaLive",
+    "name": "telangana.live — 2026 Civic Portal",
+    "icons": [
+        {
+            "src": "/vite.svg",
+            "type": "image/svg+xml",
+            "sizes": "any"
+        },
+        {
+            "src": "/vite.svg",
+            "type": "image/svg+xml",
+            "sizes": "192x192",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/vite.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512",
+            "purpose": "any"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#0F172A",
+    "display": "standalone",
+    "theme_color": "#0F172A",
+    "description": "The 2026-era civic portal for Hyderabad, Cyberabad, and Malkajgiri."
+}

@@ -102,7 +102,7 @@ export default function DateTimeBar() {
                 {/* Vikram Samvat + Telugu */}
                 <div className="flex items-center gap-2 text-[10px] sm:text-xs text-text-muted">
                     <span className="bg-heritage-gold/8 border border-heritage-gold/15 text-heritage-gold-light px-2 py-0.5 rounded-md font-medium">
-                        🙏 {vs.teluguDay}
+                        {vs.teluguDay}
                     </span>
                     <span className="hidden sm:inline">|</span>
                     <span>

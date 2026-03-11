@@ -5,11 +5,11 @@ export default function NewsTicker() {
     const tickerItems = [...alerts, ...alerts];
 
     return (
-        <div className="bg-black/40 backdrop-blur-sm border-b border-white/[0.04] overflow-hidden">
-            <div className="max-w-7xl mx-auto flex items-center">
+        <div className="bg-dark-bg/70 backdrop-blur-xl border-b border-card-border overflow-hidden">
+            <div className="max-w-7xl mx-auto flex items-center h-10">
                 {/* LIVE Badge */}
-                <div className="flex-shrink-0 flex items-center gap-2 px-4 py-2.5 bg-red-500/10 border-r border-white/[0.06]">
-                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse-live"></span>
+                <div className="flex-shrink-0 flex items-center gap-2 px-4 h-full bg-red-500/8 border-r border-card-border">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse-live"></span>
                     <span className="text-[10px] font-heading font-bold text-red-400 uppercase tracking-[0.15em]">Live</span>
                 </div>
                 {/* Ticker */}
@@ -33,4 +33,3 @@ export default function NewsTicker() {
         </div>
     );
 }
-

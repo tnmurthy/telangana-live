@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import { Icons } from '../components/Icons';
 import { partners } from '../data/partners';
 import PartnerCard from '../components/PartnerCard';
 import DailyRatesDashboard from '../components/DailyRatesDashboard';
@@ -10,19 +11,19 @@ const regionMetadata = {
     hyderabad: {
         title: 'Hyderabad Central',
         subtitle: 'Heritage, Old City & Residual GHMC Focus',
-        icon: '🏛️',
+        icon: 'Heritage',
         district: 'Hyderabad'
     },
     cyberabad: {
         title: 'Cyberabad IT Corridor',
         subtitle: 'CMC - Madhapur, Gachibowli & Hitech City Focus',
-        icon: '💻',
+        icon: 'IT',
         district: 'Rangareddy'
     },
     malkajgiri: {
         title: 'Malkajgiri Residential',
         subtitle: 'MMC - East Hyderabad & Residential Focus',
-        icon: '🏘️',
+        icon: 'Residential',
         district: 'Medchal-Malkajgiri'
     }
 };
@@ -36,8 +37,8 @@ export default function SubRegionPage() {
         <div className="space-y-8 sm:space-y-10 animate-fade-in">
             {/* Region Header */}
             <div className="glass-card section-block relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-8 text-8xl opacity-10 pointer-events-none">
-                    {meta.icon}
+                <div className="absolute top-0 right-0 p-8 text-white/5 pointer-events-none">
+                    {Icons[meta.icon] && Icons[meta.icon]({ className: "w-32 h-32" })}
                 </div>
                 <div className="relative z-10">
                     <h2 className="section-title text-3xl sm:text-4xl gold-text mb-2">
@@ -54,7 +55,9 @@ export default function SubRegionPage() {
                 <div className="section-header">
                     <div>
                         <h3 className="section-title flex items-center gap-2">
-                            <span className="gold-text">🌟</span> Partner Spotlight
+                            <span className="gold-text">
+                                <Icons.Star className="w-5 h-5" />
+                            </span> Partner Spotlight
                         </h3>
                         <p className="section-subtitle">Local businesses & services in {meta.title}</p>
                     </div>

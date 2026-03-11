@@ -1,6 +1,6 @@
 export const services = {
     hospitals: {
-        icon: '🏥',
+        icon: 'Hospital',
         label: 'Hospitals',
         description: 'Find top hospitals, clinics & emergency services across Telangana',
         count: 340,
@@ -16,7 +16,7 @@ export const services = {
         ],
     },
     schools: {
-        icon: '🏫',
+        icon: 'School',
         label: 'Schools',
         description: 'Top-rated schools including CBSE, ICSE, SSC & International boards',
         count: 1250,

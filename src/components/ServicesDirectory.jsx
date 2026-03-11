@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { services } from '../data/services';
+import { Icons } from './Icons';
 
 function ServiceCard({ service, onExpand, isExpanded }) {
     return (
         <div className={`glass-card overflow-hidden transition-all duration-500 ${isExpanded ? 'ring-1 ring-deep-pink/20' : ''}`}>
             <button onClick={onExpand} className="w-full p-5 sm:p-6 text-left group">
                 <div className="flex items-center gap-4 mb-3">
-                    <div className="w-14 h-14 rounded-2xl bg-deep-pink/10 flex items-center justify-center text-3xl group-hover:scale-110 group-hover:bg-deep-pink/15 transition-all duration-500">
-                        {service.icon}
+                    <div className="w-14 h-14 rounded-2xl bg-deep-pink/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-deep-pink/15 transition-all duration-500">
+                        {Icons[service.icon] && Icons[service.icon]({ className: "w-8 h-8 text-deep-pink" })}
                     </div>
                     <div className="flex-1">
                         <h3 className="font-heading font-bold text-white text-xl tracking-tight group-hover:text-deep-pink transition-colors duration-300">

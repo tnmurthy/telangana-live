@@ -1,14 +1,14 @@
 /**
  * Standard WhatsApp Caption Generator
  */
-export const generateWACaption = (type, data) => {
+const generateWACaption = (type, data) => {
     const base = "Get live updates on telangana.live";
 
     switch (type) {
         case 'gold':
             return `Current Gold Rate (${data.label}) in Hyderabad today: ₹${data.price.toLocaleString()}${data.unit}. ${base}`;
         case 'fuel':
-            return `${data.type} Price in Hyderabad: ₹${data.price}/L. Steady as of March 2026. ${base}`;
+            return `${data.type} Price in Hyderabad: ₹${data.price}${data.unit || '/L'}. Steady as of March 2026. ${base}`;
         case 'metro':
             return `Metro Status: ${data.line} is ${data.status} (${data.crowdLabel}). Next train in 3 mins. ${base}`;
         case 'weather':

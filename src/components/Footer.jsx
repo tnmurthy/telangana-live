@@ -1,3 +1,5 @@
+import { Icons } from './Icons';
+
 export default function Footer() {
     const quickLinks = [
         { label: 'Gold & Silver Rates', href: '#rates' },
@@ -46,14 +48,14 @@ export default function Footer() {
                         </p>
                         <div className="flex gap-2">
                             {[
-                                { label: 'Twitter/X', icon: '𝕏' },
-                                { label: 'WhatsApp', icon: '💬' },
-                                { label: 'Telegram', icon: '✈️' },
+                                { label: 'Twitter/X', icon: 'X' },
+                                { label: 'WhatsApp', icon: 'WhatsApp' },
+                                { label: 'Telegram', icon: 'Telegram' },
                             ].map((social) => (
                                 <a key={social.label} href="#"
                                     className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-sm hover:border-heritage-gold/30 hover:bg-heritage-gold/5 hover:text-heritage-gold transition-all duration-300 hover-lift"
                                     title={social.label}>
-                                    {social.icon}
+                                    {Icons[social.icon] ? Icons[social.icon]({ className: "w-5 h-5" }) : social.label[0]}
                                 </a>
                             ))}
                         </div>
@@ -61,7 +63,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-white/[0.04] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <p className="text-xs text-text-muted">© 2026 telangana.live — Made with ❤️ in Telangana</p>
+                    <p className="text-xs text-text-muted">© 2026 telangana.live — Made with passion in Telangana</p>
                     <p className="text-xs text-text-muted">All rates are indicative. Verify with official sources.</p>
                 </div>
             </div>

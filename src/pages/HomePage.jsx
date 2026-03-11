@@ -14,14 +14,14 @@ export default function HomePage() {
     const [selectedDistrict, setSelectedDistrict] = useState('Hyderabad');
 
     return (
-        <div className="space-y-8 sm:space-y-10">
-            {/* Section 1: Daily Rates */}
-            <DailyRatesDashboard />
+        <div className="space-y-5">
+            {/* Row 1: Daily Rates + Fuel Prices — side by side */}
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <DailyRatesDashboard />
+                <FuelPriceWidget />
+            </section>
 
-            {/* Section 2: Fuel Prices */}
-            <FuelPriceWidget />
-
-            {/* Section 3: District + Weather + Tariff */}
+            {/* Row 2: District + Weather + Tariff — 3 columns */}
             <section id="districts" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="space-y-4">
                     <DistrictSelector selectedDistrict={selectedDistrict} onSelect={setSelectedDistrict} />
@@ -35,19 +35,19 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* Section 4: Public Transport */}
+            {/* Row 3: Public Transport */}
             <MetroCard />
 
-            {/* Section 5: Basthi Dawakhana */}
+            {/* Row 4: Basthi Dawakhana */}
             <BasthiDawakhana />
 
-            {/* Section 6: Citizen's Poll */}
-            <div id="poll">
-                <CitizenPoll />
-            </div>
-
-            {/* Section 7: Services */}
-            <ServicesDirectory />
+            {/* Row 5: Citizen Poll + Services — side by side */}
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div id="poll">
+                    <CitizenPoll />
+                </div>
+                <ServicesDirectory />
+            </section>
         </div>
     );
 }

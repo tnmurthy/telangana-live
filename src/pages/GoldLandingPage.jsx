@@ -3,7 +3,7 @@ import ShareWhatsApp from '../components/ShareWhatsApp';
 import DateTimeBar from '../components/DateTimeBar';
 
 export default function GoldLandingPage() {
-    const { gold22k, gold24k, silver, date, history } = goldRates;
+    const { gold22k, gold24k, silver, history } = goldRates;
 
     return (
         <div className="space-y-8 animate-fade-in">

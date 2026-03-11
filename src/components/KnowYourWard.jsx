@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { searchWard, wardData } from '../data/wardData';
+import { searchWard } from '../data/wardData';
 
 const corpColors = { GHMC: '#F97316', CMC: '#6366F1', MMC: '#EC4899' };
 
@@ -105,20 +105,17 @@ export default function KnowYourWard() {
             )}
 
             {/* Quick Stats */}
-            {!selected && (
-                <div className="grid grid-cols-3 gap-3">
-                    {Object.entries(corpColors).map(([corp, color]) => {
-                        const count = wardData.filter(w => w.corporation === corp).length;
-                        return (
-                            <div key={corp} className="glass-card p-4 text-center">
-                                <div className="w-4 h-4 rounded-full mx-auto mb-2" style={{ backgroundColor: color }}></div>
-                                <p className="text-2xl font-black text-white">{corp === 'GHMC' ? 100 : corp === 'CMC' ? 100 : 100}</p>
-                                <p className="text-[10px] text-text-muted uppercase tracking-widest font-bold">{corp} Wards</p>
-                            </div>
-                        );
-                    })}
-                </div>
-            )}
+            <div className="grid grid-cols-3 gap-3">
+                {Object.entries(corpColors).map(([corp, color]) => {
+                    return (
+                        <div key={corp} className="glass-card p-4 text-center">
+                            <div className="w-4 h-4 rounded-full mx-auto mb-2" style={{ backgroundColor: color }}></div>
+                            <p className="text-2xl font-black text-white">{corp === 'GHMC' ? 100 : corp === 'CMC' ? 100 : 100}</p>
+                            <p className="text-[10px] text-text-muted uppercase tracking-widest font-bold">{corp} Wards</p>
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }

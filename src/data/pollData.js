@@ -4,8 +4,8 @@ export const currentPoll = {
     question: 'Should the new Metro Phase 2 extensions prioritize the Airport Link or the Old City Green Line?',
     context: 'The Telangana government has allocated ₹8,500 Cr for Metro Phase 2. Citizens must choose between connecting the Airport (Shamshabad) or the Old City (Falaknuma–Chandrayangutta).',
     options: [
-        { id: 'airport', label: 'Airport Link (Shamshabad)', icon: '✈️', color: '#6366F1' },
-        { id: 'oldcity', label: 'Old City Green Line', icon: '🏛️', color: '#10B981' },
+        { id: 'airport', label: 'Airport Link (Shamshabad)', icon: 'Airport', color: '#6366F1' },
+        { id: 'oldcity', label: 'Old City Green Line', icon: 'Heritage', color: '#10B981' },
     ],
     // Mock initial votes for demo
     initialVotes: { airport: 2847, oldcity: 3215 },

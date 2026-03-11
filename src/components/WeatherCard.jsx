@@ -13,10 +13,23 @@ export default function WeatherCard({ selectedDistrict }) {
 
     useEffect(() => {
         let cancelled = false;
-        setLoading(true);
-        fetchWeather(selectedDistrict).then(({ data, source }) => {
-            if (!cancelled) { setWeather(data); setSource(source); setLoading(false); }
-        });
+
+        async function loadWeather() {
+            setLoading(true);
+            try {
+                const { data, source } = await fetchWeather(selectedDistrict);
+                if (!cancelled) {
+                    setWeather(data);
+                    setSource(source);
+                    setLoading(false);
+                }
+            } catch (error) {
+                console.error('Failed to fetch weather:', error);
+                if (!cancelled) setLoading(false);
+            }
+        }
+
+        loadWeather();
         return () => { cancelled = true; };
     }, [selectedDistrict]);
 

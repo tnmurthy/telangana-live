@@ -2,13 +2,13 @@ import { fuelPrices } from '../data/fuelPrices';
 import ShareWhatsApp from '../components/ShareWhatsApp';
 
 export default function FuelLandingPage() {
-    const { petrol, diesel, lpgHousehold, lpgVehicle, date, city } = fuelPrices;
+    const { petrol, diesel, lpgHousehold, cngVehicle, city } = fuelPrices;
 
     const cards = [
         { label: 'Petrol', ...petrol, color: 'text-emerald-400', icon: '⛽' },
         { label: 'Diesel', ...diesel, color: 'text-amber-400', icon: '🛢️' },
         { label: lpgHousehold.label, ...lpgHousehold, color: 'text-blue-400', icon: '🔥' },
-        { label: lpgVehicle.label, ...lpgVehicle, color: 'text-purple-400', icon: '🚗' },
+        { label: cngVehicle.label, ...cngVehicle, color: 'text-purple-400', icon: '🚗' },
     ];
 
     return (
@@ -26,7 +26,7 @@ export default function FuelLandingPage() {
                     <div key={f.label} className="glass-card p-6 hover-lift border-white/5">
                         <div className="flex justify-between items-start mb-4">
                             <span className="text-2xl">{f.icon}</span>
-                            <ShareWhatsApp type="fuel" data={{ type: f.label, price: f.price }} />
+                            <ShareWhatsApp type="fuel" data={{ type: f.label, price: f.price, unit: f.unit }} />
                         </div>
                         <h4 className="label-xs mb-2">{f.label}</h4>
                         <div className={`text-3xl font-bold ${f.color}`}>₹{f.price.toFixed(2)}</div>

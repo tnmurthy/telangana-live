@@ -1,6 +1,8 @@
+import { useState } from 'react';
+
 export default function PartnerCard({ partner }) {
     // Mock DNA match percentage for the Pomelli aesthetic
-    const dnaMatch = Math.floor(Math.random() * 15) + 85;
+    const [dnaMatch] = useState(() => Math.floor(Math.random() * 15) + 85);
 
     return (
         <div className="glass-card overflow-hidden hover-lift flex flex-col h-full border border-white/[0.08] group relative">

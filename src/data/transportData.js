@@ -51,7 +51,8 @@ export const mmtsData = {
             stops: ['Secunderabad', 'Malkajgiri', 'Moula-Ali', 'Safilguda', 'Cherlapally Terminal'],
             frequency: 'Every 20 min (peak)',
             highlight: true,
-            highlightNote: '🏗️ Cherlapally Terminal — Major hub for East Hyderabad (2026)',
+            highlightNote: 'Cherlapally Terminal — Major hub for East Hyderabad (2026)',
+            highlightIcon: 'Construction',
         },
     ],
     ladiesSpecial: {
@@ -59,7 +60,7 @@ export const mmtsData = {
         route: 'Falaknuma → Secunderabad → Malkajgiri → Cherlapally',
         timings: ['6:30 AM', '8:15 AM', '5:45 PM', '7:30 PM'],
         note: 'Dedicated coaches for women commuters on Malkajgiri & Cyberabad routes',
-        icon: '👩',
+        icon: 'Ladies',
     },
 };
 
