@@ -14,6 +14,7 @@ import { Icons } from './components/Icons';
 
 // Lazy loading for production grade performance
 const HomePage = lazy(() => import('./pages/HomePage'));
+const SplashScreen = lazy(() => import('./pages/SplashScreen'));
 const SubRegionPage = lazy(() => import('./pages/SubRegionPage'));
 const GoldLandingPage = lazy(() => import('./pages/GoldLandingPage'));
 const FuelLandingPage = lazy(() => import('./pages/FuelLandingPage'));
@@ -90,7 +91,10 @@ function AppContent() {
         <ErrorBoundary>
           <Suspense fallback={<LoadingScreen />}>
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              {/* WIP Splash Screen as default */}
+              <Route path="/" element={<SplashScreen />} />
+              <Route path="/dashboard" element={<HomePage />} />
+              
               <Route path="/rates/gold" element={<GoldLandingPage />} />
               <Route path="/rates/fuel" element={<FuelLandingPage />} />
               <Route path="/transport/metro" element={<TransportLandingPage />} />
