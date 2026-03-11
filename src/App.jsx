@@ -75,18 +75,21 @@ function AppContent() {
     // but in a real scenario, this would be a scraper check.
   }, []);
 
+  const isSplash = location.pathname === '/';
+
   return (
     <div className={`min-h-screen transition-colors duration-500 ${isEmergencyActive ? 'bg-red-950/30' : 'bg-dark-bg'}`}>
-      <Header />
-      <DateTimeBar />
-      <CrisisDashboard currentRegion={currentRegion === 'general' ? 'hyderabad' : currentRegion} />
-      <div id="ticker-section">
-        <NewsTicker />
-      </div>
+      {!isSplash && <Header />}
+      {!isSplash && <DateTimeBar />}
+      {!isSplash && <CrisisDashboard currentRegion={currentRegion === 'general' ? 'hyderabad' : currentRegion} />}
+      {!isSplash && (
+        <div id="ticker-section">
+          <NewsTicker />
+        </div>
+      )}
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
-        {/* Heatwave Panel (only when emergency active) */}
-        <HeatwavePanel />
+      <main className={`${isSplash ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5'}`}>
+        {!isSplash && <HeatwavePanel />}
 
         <ErrorBoundary>
           <Suspense fallback={<LoadingScreen />}>
@@ -107,9 +110,9 @@ function AppContent() {
         </ErrorBoundary>
       </main>
 
-      <Footer />
-      <BottomNav />
-      <EmergencyToggle />
+      {!isSplash && <Footer />}
+      {!isSplash && <BottomNav />}
+      {!isSplash && <EmergencyToggle />}
     </div>
   );
 }
