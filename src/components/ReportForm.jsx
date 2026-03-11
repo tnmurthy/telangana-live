@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { reportCategories, detectCorporation } from '../data/reportingData';
+import Turnstile from './Turnstile';
 
 export default function ReportForm({ lat, lng, onSubmit, onClose }) {
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const [photo, setPhoto] = useState(null);
+
+    const [turnstileToken, setTurnstileToken] = useState(null);
 
     const detected = detectCorporation(lat, lng);
 
@@ -19,20 +22,21 @@ export default function ReportForm({ lat, lng, onSubmit, onClose }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!category || !description) return;
+        if (!category || !description || !turnstileToken) return;
         onSubmit({
             lat,
             lng,
             category,
             description,
             photo,
+            turnstileToken, // Pass token for backend verification
             ward: Math.floor(Math.random() * 50) + (detected.key === 'cmc' ? 101 : detected.key === 'mmc' ? 201 : 1),
         });
     };
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
-            <div className="glass-card w-full max-w-lg p-6 sm:p-8 border border-white/10 shadow-2xl">
+            <div className="glass-card w-full max-w-lg p-6 sm:p-8 border border-white/10 shadow-2xl overflow-y-auto max-h-[90vh]">
                 <div className="flex items-center justify-between mb-6">
                     <h3 className="section-title text-xl">📌 Report an Issue</h3>
                     <button onClick={onClose} className="p-2 rounded-xl hover:bg-white/10 transition-all text-text-muted">
@@ -102,10 +106,13 @@ export default function ReportForm({ lat, lng, onSubmit, onClose }) {
                         )}
                     </div>
 
+                    {/* Turnstile */}
+                    <Turnstile onVerify={setTurnstileToken} />
+
                     {/* Submit */}
                     <button
                         type="submit"
-                        disabled={!category || !description}
+                        disabled={!category || !description || !turnstileToken}
                         className="w-full py-4 rounded-2xl bg-white text-dark-bg text-xs font-black uppercase tracking-[0.2em] hover:bg-heritage-gold transition-all shadow-xl disabled:opacity-30 disabled:cursor-not-allowed active:scale-[0.98]"
                     >
                         Submit Report to {detected.shortName}
