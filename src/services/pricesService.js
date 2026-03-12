@@ -1,0 +1,108 @@
+// src/services/pricesService.js
+// Fetches live fuel prices & gold rates from Vercel API routes
+// Falls back to static data if API unavailable
+
+import { fuelPrices as staticFuel } from '../data/fuelPrices';
+import { goldRates as staticGold } from '../data/goldRates';
+
+const API_BASE = import.meta.env.VITE_API_BASE || '';
+const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
+
+const memCache = new Map();
+
+function getCached(key) {
+  const entry = memCache.get(key);
+  if (entry && Date.now() - entry.ts < CACHE_TTL) return entry.data;
+  return null;
+}
+
+function setCache(key, data) {
+  memCache.set(key, { data, ts: Date.now() });
+}
+
+/**
+ * Fetch live fuel prices for a city.
+ * @param {string} city - e.g. 'hyderabad'
+ * @returns {Promise<object>} fuel price data
+ */
+export async function fetchFuelPrices(city = 'hyderabad') {
+  const key = `fuel-${city}`;
+  const cached = getCached(key);
+  if (cached) return cached;
+
+  try {
+    const res = await fetch(`${API_BASE}/api/fuel-prices?city=${city}`, {
+      signal: AbortSignal.timeout(8000)
+    });
+    if (!res.ok) throw new Error(`API returned ${res.status}`);
+    const data = await res.json();
+    setCache(key, data);
+    return data;
+  } catch (err) {
+    console.warn('fetchFuelPrices fallback:', err.message);
+    // Return static data structure matching API format
+    return {
+      petrol: { price: staticFuel.hyderabad?.petrol || 102.68, unit: 'per litre', change: 0 },
+      diesel: { price: staticFuel.hyderabad?.diesel || 88.73,  unit: 'per litre', change: 0 },
+      lpg:    { price: staticFuel.hyderabad?.lpg    || 803.00, unit: 'per cylinder', change: 0 },
+      cng:    { price: staticFuel.hyderabad?.cng    || 72.80,  unit: 'per kg', change: 0 },
+      source: 'static-fallback',
+      lastUpdated: new Date().toISOString()
+    };
+  }
+}
+
+/**
+ * Fetch live gold & silver rates for Hyderabad.
+ * @returns {Promise<object>} gold rate data
+ */
+export async function fetchGoldRates() {
+  const key = 'gold-hyderabad';
+  const cached = getCached(key);
+  if (cached) return cached;
+
+  try {
+    const res = await fetch(`${API_BASE}/api/gold-rates`, {
+      signal: AbortSignal.timeout(8000)
+    });
+    if (!res.ok) throw new Error(`API returned ${res.status}`);
+    const data = await res.json();
+    setCache(key, data);
+    return data;
+  } catch (err) {
+    console.warn('fetchGoldRates fallback:', err.message);
+    return {
+      gold22k:    { price: staticGold.gold22k    || 7180,  unit: 'per gram', change: 0 },
+      gold24k:    { price: staticGold.gold24k    || 7830,  unit: 'per gram', change: 0 },
+      silver:     { price: staticGold.silver     || 93.50, unit: 'per gram', change: 0 },
+      gold10g22k: { price: (staticGold.gold22k || 7180) * 10,  unit: 'per 10 grams', change: 0 },
+      gold10g24k: { price: (staticGold.gold24k || 7830) * 10,  unit: 'per 10 grams', change: 0 },
+      source: 'static-fallback',
+      lastUpdated: new Date().toISOString()
+    };
+  }
+}
+
+/**
+ * Fetch power alerts (TSSPDCL outages) from API or Redis cache.
+ * @param {string} zone - 'hyderabad', 'all'
+ * @returns {Promise<Array>} list of alert objects
+ */
+export async function fetchPowerAlerts(zone = 'all') {
+  const key = `alerts-${zone}`;
+  const cached = getCached(key);
+  if (cached) return cached;
+
+  try {
+    const res = await fetch(`${API_BASE}/api/power-alerts?zone=${zone}`, {
+      signal: AbortSignal.timeout(10000)
+    });
+    if (!res.ok) throw new Error(`API returned ${res.status}`);
+    const data = await res.json();
+    setCache(key, data.alerts || []);
+    return data.alerts || [];
+  } catch (err) {
+    console.warn('fetchPowerAlerts fallback:', err.message);
+    return [];
+  }
+}
