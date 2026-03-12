@@ -1,0 +1,35 @@
+name: Automated News Scraper
+
+on:
+  schedule:
+    - cron: '0 */4 * * *' # Every 4 hours
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/uses/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install feedparser google-generativeai
+
+      - name: Run Scraper
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python scripts/news_scraper.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/news.json
+          git commit -m "chore: update civic news feed [automated]" || echo "No changes to commit"
+          git push

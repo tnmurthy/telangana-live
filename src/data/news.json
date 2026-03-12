@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Telangana Govt Announces New Infrastructure Project for Hyderabad",
+    "link": "https://example.com/news/1",
+    "source": "Initial Mock Data",
+    "published": "2026-03-12",
+    "description": "The state government has announced a massive high-speed metro corridor connecting Hitec City and the Airport.",
+    "category": "Transit",
+    "region": "Hyderabad",
+    "ai_summary": "Hyderabad to get new high-speed metro corridor. Project links Hitec City to Airport for seamless travel.",
+    "tags": ["Metro", "Infra"]
+  },
+  {
+    "title": "Heatwave Alert: IMD Issues Red Warning for Telangana Districts",
+    "link": "https://example.com/news/2",
+    "source": "Weather Portal",
+    "published": "2026-03-11",
+    "description": "Temperature expected to cross 45°C in several parts of the state. Citizens advised to stay indoors.",
+    "category": "Weather",
+    "region": "Telangana",
+    "ai_summary": "Red alert issued for heatwave in Telangana. Temperatures to exceed 45°C; avoid outdoor activities.",
+    "tags": ["Heatwave", "IMD"]
+  }
+]

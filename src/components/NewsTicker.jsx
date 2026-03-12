@@ -1,8 +1,18 @@
 import { alerts } from '../data/alerts';
+import newsData from '../data/news.json';
 import ShareWhatsApp from './ShareWhatsApp';
 
 export default function NewsTicker() {
-    const tickerItems = [...alerts, ...alerts];
+    // Combine core alerts with the 5 latest news items
+    const latestNews = newsData.slice(0, 5).map(item => ({
+        id: item.link,
+        message: `${item.region}: ${item.title}`,
+        time: 'Live',
+        type: 'news',
+        link: item.link
+    }));
+
+    const tickerItems = [...alerts, ...latestNews, ...alerts, ...latestNews];
 
     return (
         <div className="bg-dark-bg/70 backdrop-blur-xl border-b border-card-border overflow-hidden">
@@ -17,12 +27,17 @@ export default function NewsTicker() {
                     <div className="animate-ticker flex whitespace-nowrap py-2.5 gap-10 group-hover:pause">
                         {tickerItems.map((alert, idx) => (
                             <span key={`${alert.id}-${idx}`} className="text-sm text-text-secondary inline-flex items-center gap-3 font-medium group/item hover:text-white transition-colors">
-                                <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${alert.type === 'power' ? 'bg-amber-400' : 'bg-blue-400'}`}></span>
+                                <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                                    alert.type === 'power' ? 'bg-amber-400' : 
+                                    alert.type === 'news' ? 'bg-telangana-green' : 'bg-blue-400'
+                                }`}></span>
                                 {alert.message}
                                 <span className="text-text-muted text-xs">· {alert.time}</span>
                                 <ShareWhatsApp
-                                    type="weather"
-                                    data={{ district: 'Telangana', temp: 'N/A', condition: alert.message }}
+                                    type="custom"
+                                    customTitle="Live Update from Telangana.live"
+                                    customContent={alert.message}
+                                    customLink={alert.link || 'https://telangana.live'}
                                     className="p-1 opacity-0 group-hover/item:opacity-100 transition-opacity"
                                 />
                             </span>

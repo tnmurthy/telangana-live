@@ -20,7 +20,7 @@ const GoldLandingPage = lazy(() => import('./pages/GoldLandingPage'));
 const FuelLandingPage = lazy(() => import('./pages/FuelLandingPage'));
 const TransportLandingPage = lazy(() => import('./pages/TransportLandingPage'));
 const HealthLandingPage = lazy(() => import('./pages/HealthLandingPage'));
-const ReportingLandingPage = lazy(() => import('./pages/ReportingLandingPage'));
+const NewsListingPage = lazy(() => import('./pages/NewsListingPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading Fallback
@@ -102,7 +102,7 @@ function AppContent() {
               <Route path="/rates/fuel" element={<FuelLandingPage />} />
               <Route path="/transport/metro" element={<TransportLandingPage />} />
               <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
-              <Route path="/report" element={<ReportingLandingPage />} />
+              <Route path="/news" element={<NewsListingPage />} />
               <Route path="/:region" element={<SubRegionPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
