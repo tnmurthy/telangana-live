@@ -1,8 +1,27 @@
-import { alerts } from '../data/alerts';
+import { useState, useEffect } from 'react';
+import { alerts as staticAlerts } from '../data/alerts';
 import newsData from '../data/news.json';
 import ShareWhatsApp from './ShareWhatsApp';
+import { powerAlertsService } from '../services/powerAlertsService';
+import { useEmergency } from '../hooks/useEmergency';
 
 export default function NewsTicker() {
+    const [dynamicAlerts, setDynamicAlerts] = useState([]);
+    const { emergencyData } = useEmergency();
+
+    useEffect(() => {
+        const fetchAlerts = async () => {
+            const data = await powerAlertsService.getActiveAlerts();
+            if (data && data.length > 0) {
+                setDynamicAlerts(data);
+            }
+        };
+        fetchAlerts();
+        // Refresh every 5 minutes
+        const interval = setInterval(fetchAlerts, 5 * 60 * 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     // Combine core alerts with the 5 latest news items
     const latestNews = newsData.slice(0, 5).map(item => ({
         id: item.link,
@@ -12,7 +31,21 @@ export default function NewsTicker() {
         link: item.link
     }));
 
-    const tickerItems = [...alerts, ...latestNews, ...alerts, ...latestNews];
+    const tickerItems = [
+        ...(emergencyData?.active ? [{
+            id: 'emergency-global',
+            message: `⚠️ EMERGENCY: ${emergencyData.message}`,
+            time: 'NOW',
+            type: 'emergency',
+            link: '/dashboard'
+        }] : []),
+        ...dynamicAlerts, 
+        ...staticAlerts, 
+        ...latestNews
+    ];
+
+    // Double for continuous loop
+    const fullTickerItems = [...tickerItems, ...tickerItems];
 
     return (
         <div className="bg-dark-bg/70 backdrop-blur-xl border-b border-card-border overflow-hidden">
@@ -25,10 +58,11 @@ export default function NewsTicker() {
                 {/* Ticker */}
                 <div className="overflow-hidden flex-1 group">
                     <div className="animate-ticker flex whitespace-nowrap py-2.5 gap-10 group-hover:pause">
-                        {tickerItems.map((alert, idx) => (
+                        {fullTickerItems.map((alert, idx) => (
                             <span key={`${alert.id}-${idx}`} className="text-sm text-text-secondary inline-flex items-center gap-3 font-medium group/item hover:text-white transition-colors">
                                 <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
                                     alert.type === 'power' ? 'bg-amber-400' : 
+                                    alert.type === 'emergency' ? 'bg-red-500 animate-pulse' :
                                     alert.type === 'news' ? 'bg-telangana-green' : 'bg-blue-400'
                                 }`}></span>
                                 {alert.message}

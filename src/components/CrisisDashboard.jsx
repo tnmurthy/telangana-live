@@ -1,14 +1,32 @@
+import { useState, useEffect } from 'react';
 import { useEmergency } from '../hooks/useEmergency';
 import { emergencyContacts } from '../data/emergencyData';
 import { Icons } from './Icons';
+import { powerAlertsService } from '../services/powerAlertsService';
 
 export default function CrisisDashboard({ currentRegion = 'hyderabad' }) {
-    const { isEmergencyActive, emergencyType, deactivateEmergency } = useEmergency();
+    const { isEmergencyActive, emergencyType, emergencyData, deactivateEmergency } = useEmergency();
+    const [powerAlerts, setPowerAlerts] = useState([]);
+
+    useEffect(() => {
+        if (isEmergencyActive) {
+            const fetchPower = async () => {
+                const data = await powerAlertsService.getActiveAlerts();
+                setPowerAlerts(data);
+            };
+            fetchPower();
+        }
+    }, [isEmergencyActive]);
 
     if (!isEmergencyActive) return null;
 
     const regional = emergencyContacts.regional[currentRegion];
-    const bgClass = emergencyType === 'heatwave' ? 'from-red-900 via-orange-900 to-red-900' : 'from-red-900 via-red-800 to-red-900';
+    const isHighSeverity = emergencyData?.severity === 'critical' || emergencyData?.severity === 'high';
+    const bgClass = isHighSeverity 
+        ? 'from-red-950 via-red-900 to-red-950' 
+        : emergencyType === 'heatwave' 
+            ? 'from-red-900 via-orange-900 to-red-900' 
+            : 'from-red-900 via-red-800 to-red-900';
 
     return (
         <div className={`bg-gradient-to-r ${bgClass} border-b-2 border-red-500/40 animate-fade-in`}>
@@ -16,15 +34,57 @@ export default function CrisisDashboard({ currentRegion = 'hyderabad' }) {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
-                        <span className="w-3 h-3 rounded-full bg-red-500 animate-pulse-live"></span>
+                        <span className={`w-3 h-3 rounded-full animate-pulse-live ${isHighSeverity ? 'bg-red-400' : 'bg-red-500'}`}></span>
                         <h2 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight uppercase flex items-center gap-2">
                             {emergencyType === 'heatwave' ? <><Icons.Power className="w-5 h-5 text-orange-400" /> Heatwave Alert</> : <><Icons.Emergency className="w-5 h-5 text-red-400" /> Crisis Dashboard</>}
+                            {emergencyData?.severity && (
+                                <span className={`ml-2 text-[10px] px-2 py-0.5 rounded border ${
+                                    isHighSeverity ? 'bg-red-500/20 border-red-500 text-red-200' : 'bg-orange-500/20 border-orange-500 text-orange-200'
+                                }`}>
+                                    {emergencyData.severity.toUpperCase()}
+                                </span>
+                            )}
                         </h2>
                     </div>
                     <button onClick={deactivateEmergency} className="text-red-200/60 hover:text-white text-xs px-3 py-1.5 rounded-lg hover:bg-white/10 transition-all" title="Dismiss">
                         ✕ Dismiss
                     </button>
                 </div>
+
+                {/* Automated Watchdog Message */}
+                {emergencyData?.message && (
+                    <div className="bg-red-500/10 rounded-xl p-3 mb-3 border border-red-500/20">
+                        <p className="text-red-100 text-sm font-medium leading-relaxed">
+                            {emergencyData.message}
+                        </p>
+                        <p className="text-red-200/40 text-[10px] mt-1 italic">
+                            Updated: {new Date(emergencyData.last_updated).toLocaleString()} · Automated Watchdog
+                        </p>
+                    </div>
+                )}
+
+                {/* Power Grid Status (Supabase) */}
+                {powerAlerts.length > 0 && (
+                    <div className="bg-amber-400/10 rounded-xl p-3 mb-3 border border-amber-400/20">
+                        <div className="flex items-center gap-2 mb-2">
+                            <Icons.Power className="w-4 h-4 text-amber-400" />
+                            <span className="text-amber-400 font-bold text-xs uppercase tracking-wider">Power Grid Status</span>
+                        </div>
+                        <div className="space-y-2">
+                            {powerAlerts.map(alert => (
+                                <div key={alert.id} className="flex items-center justify-between text-xs">
+                                    <div className="text-white">
+                                        <span className="font-bold">{alert.area}</span>: {alert.message.split('due to')[1]}
+                                        <p className="text-amber-200/60 text-[10px]">{alert.time}</p>
+                                    </div>
+                                    {alert.link && (
+                                        <a href={alert.link} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">Source</a>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* Regional priority contact */}
                 {regional && (

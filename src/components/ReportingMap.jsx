@@ -1,10 +1,11 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { reportCategories, mockReports, statusSteps, detectCorporation } from '../data/reportingData';
 import ReportForm from './ReportForm';
 import { n8nService } from '../services/n8nService';
+import { citizenReportsService } from '../services/citizenReportsService';
 
 // Fix default marker icons for leaflet + bundlers
 delete L.Icon.Default.prototype._getIconUrl;
@@ -57,6 +58,42 @@ export default function ReportingMap() {
     const [showForm, setShowForm] = useState(false);
     const [filterCategory, setFilterCategory] = useState('all');
 
+    // Fetch live reports from Supabase on mount
+    useEffect(() => {
+        const fetchLiveReports = async () => {
+            const liveReports = await citizenReportsService.getApprovedReports();
+            if (liveReports.length > 0) {
+                // Merge with mock for demo, or replace? Let's merge for now
+                setReports(prev => {
+                    const existingIds = new Set(prev.map(r => r.id));
+                    const newReports = liveReports.filter(r => !existingIds.has(r.id));
+                    return [...newReports, ...prev];
+                });
+            }
+        };
+
+        fetchLiveReports();
+
+        // Subscribe to realtime updates
+        const subscription = citizenReportsService.subscribeToReports((newReport) => {
+            setReports(prev => {
+                // If it's an update, replace the existing one
+                const idx = prev.findIndex(r => r.id === newReport.id);
+                if (idx !== -1) {
+                    const next = [...prev];
+                    next[idx] = newReport;
+                    return next;
+                }
+                // If it's a new report, add to front
+                return [newReport, ...prev];
+            });
+        });
+
+        return () => {
+            subscription.unsubscribe();
+        };
+    }, []);
+
     const handleMapClick = useCallback((latlng) => {
         setClickedPos(latlng);
         setShowForm(true);
@@ -66,18 +103,20 @@ export default function ReportingMap() {
         const corp = detectCorporation(report.lat, report.lng);
         const newReport = {
             ...report,
-            id: Date.now(),
+            id: Date.now(), // Local temp ID
             status: 'reported',
             corporation: corp.shortName,
             date: new Date().toISOString().split('T')[0],
         };
 
-        // Async background send to n8n
+        // Async background send to n8n for moderation
         n8nService.sendReport(newReport);
 
-        setReports(prev => [newReport, ...prev]);
+        // We DON'T add to state immediately because it needs moderation
+        // But for UX, we can show a "Pending Moderation" toast or similar
         setShowForm(false);
         setClickedPos(null);
+        alert("Report submitted! It will appear on the map after AI moderation.");
     }, []);
 
     const filtered = filterCategory === 'all' ? reports : reports.filter(r => r.category === filterCategory);

@@ -70,3 +70,8 @@ Implement news aggregation functionality to fetch, parse, and display Telugu new
 
 ## 🏗️ File Structure
 
+---
+
+## 🔗 Documentation Link
+For the latest High-Level Design (HLD) and Algorithm updates, refer to the [Notion HLD Page](https://www.notion.so/HLD-High-Level-Design-Telangana-live-320ff6195a27803b8d93da6b8e2ce158).
+

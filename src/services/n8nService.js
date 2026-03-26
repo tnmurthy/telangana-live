@@ -54,5 +54,13 @@ export const n8nService = {
      */
     async sendPollVote(voteData) {
         return sendToN8N('poll-vote', voteData);
+    },
+
+    /**
+     * Send content publishing metadata to n8n for tracking and redistribution
+     */
+    async trackContent(contentData) {
+        // Payload: { title, content_id, publish_date, author, tags }
+        return sendToN8N('antigravity-webhook', contentData);
     }
 };

@@ -4,6 +4,7 @@
 
 import { fuelPrices as staticFuel } from '../data/fuelPrices';
 import { goldRates as staticGold } from '../data/goldRates';
+import { redisService } from './redisService';
 
 const API_BASE = import.meta.env.VITE_API_BASE || '';
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
@@ -26,21 +27,33 @@ function setCache(key, data) {
  * @returns {Promise<object>} fuel price data
  */
 export async function fetchFuelPrices(city = 'hyderabad') {
-  const key = `fuel-${city}`;
-  const cached = getCached(key);
+  const key = `tg:rates:fuel:${city}`;
+  
+  // 1. Try Redis (High Speed / n8n pushed)
+  try {
+    const redisData = await redisService.get(key);
+    if (redisData) return { ...redisData, source: 'redis' };
+  } catch (err) {
+    console.warn('Redis fetch error for fuel:', err.message);
+  }
+
+  // 2. Try MemCache
+  const memKey = `fuel-${city}`;
+  const cached = getCached(memKey);
   if (cached) return cached;
 
   try {
+    // 3. Try Vercel API (Legacy Scraper)
     const res = await fetch(`${API_BASE}/api/fuel-prices?city=${city}`, {
       signal: AbortSignal.timeout(8000)
     });
     if (!res.ok) throw new Error(`API returned ${res.status}`);
     const data = await res.json();
-    setCache(key, data);
+    setCache(memKey, data);
     return data;
   } catch (err) {
     console.warn('fetchFuelPrices fallback:', err.message);
-    // Return static data structure matching API format
+    // 4. Return static data
     return {
       petrol: { price: staticFuel.hyderabad?.petrol || 102.68, unit: 'per litre', change: 0 },
       diesel: { price: staticFuel.hyderabad?.diesel || 88.73,  unit: 'per litre', change: 0 },
@@ -57,17 +70,29 @@ export async function fetchFuelPrices(city = 'hyderabad') {
  * @returns {Promise<object>} gold rate data
  */
 export async function fetchGoldRates() {
-  const key = 'gold-hyderabad';
-  const cached = getCached(key);
+  const key = 'tg:rates:gold';
+
+  // 1. Try Redis
+  try {
+    const redisData = await redisService.get(key);
+    if (redisData) return { ...redisData, source: 'redis' };
+  } catch (err) {
+    console.warn('Redis fetch error for gold:', err.message);
+  }
+
+  // 2. Try MemCache
+  const memKey = 'gold-hyderabad';
+  const cached = getCached(memKey);
   if (cached) return cached;
 
   try {
+    // 3. Try Vercel API
     const res = await fetch(`${API_BASE}/api/gold-rates`, {
       signal: AbortSignal.timeout(8000)
     });
     if (!res.ok) throw new Error(`API returned ${res.status}`);
     const data = await res.json();
-    setCache(key, data);
+    setCache(memKey, data);
     return data;
   } catch (err) {
     console.warn('fetchGoldRates fallback:', err.message);
