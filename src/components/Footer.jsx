@@ -1,13 +1,16 @@
+import { Link } from 'react-router-dom';
 import { Icons } from './Icons';
 
 export default function Footer() {
     const quickLinks = [
-        { label: 'Gold & Silver Rates', href: '#rates' },
-        { label: 'Fuel Prices', href: '#rates' },
-        { label: 'District Weather', href: '#districts' },
-        { label: 'Power Tariff', href: '#districts' },
-        { label: 'Hospitals', href: '#services' },
-        { label: 'Schools', href: '#services' },
+        { label: 'Gold & Silver Rates', href: '/dashboard#rates', isRoute: true },
+        { label: 'Fuel Prices', href: '/dashboard#rates', isRoute: true },
+        { label: 'District Weather', href: '/dashboard#districts', isRoute: true },
+        { label: 'Power Tariff', href: '/dashboard#districts', isRoute: true },
+        { label: 'Hospitals', href: '/dashboard#services', isRoute: true },
+        { label: 'Schools', href: '/dashboard#services', isRoute: true },
+        { label: 'AI Pulse Briefing', href: '/ai-pulse', isRoute: true },
+        { label: 'Content Cockpit 🔐', href: '/admin/cockpit', isRoute: true },
     ];
 
     return (
@@ -32,10 +35,17 @@ export default function Footer() {
                         <h4 className="font-heading font-bold text-xs text-text-muted mb-4 uppercase tracking-[0.15em]">Quick Links</h4>
                         <div className="flex flex-col gap-2">
                             {quickLinks.map((link) => (
-                                <a key={link.label} href={link.href}
-                                    className="text-sm text-text-secondary hover:text-heritage-gold transition-all duration-300 hover:translate-x-1 inline-block">
-                                    {link.label}
-                                </a>
+                                link.isRoute ? (
+                                    <Link key={link.label} to={link.href}
+                                        className="text-sm text-text-secondary hover:text-heritage-gold transition-all duration-300 hover:translate-x-1 inline-block flex items-center gap-1">
+                                        {link.label}
+                                    </Link>
+                                ) : (
+                                    <a key={link.label} href={link.href}
+                                        className="text-sm text-text-secondary hover:text-heritage-gold transition-all duration-300 hover:translate-x-1 inline-block">
+                                        {link.label}
+                                    </a>
+                                )
                             ))}
                         </div>
                     </div>

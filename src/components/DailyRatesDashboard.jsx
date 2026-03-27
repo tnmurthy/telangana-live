@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { goldRates } from '../data/goldRates';
+import { fuelPrices } from '../data/fuelPrices';
+import { pulsesData } from '../data/pulses';
 import ShareWhatsApp from './ShareWhatsApp';
+import FuelTaxCard from './FuelTaxCard';
 
 function PriceChange({ change }) {
     const isPositive = change > 0;
@@ -121,6 +124,63 @@ export default function DailyRatesDashboard() {
                         })}
                     </tbody>
                 </table>
+            </div>
+
+            {/* Essential Commodities Section — NEW */}
+            <div className="mt-6 pt-4 border-t border-white/[0.08]">
+                <div className="flex items-center justify-between mb-3">
+                    <h4 className="label-xs flex items-center gap-1.5">
+                        <Icons.TrendingUp className="w-3 h-3 text-success" />
+                        Essential Commodities
+                    </h4>
+                    <span className="text-[10px] text-text-muted italic">Market Avg.</span>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                    {pulsesData.commodities.slice(0, 4).map((item) => (
+                        <div key={item.name} className="bg-white/[0.02] p-2 rounded-lg border border-white/[0.04]">
+                            <div className="flex justify-between items-start mb-0.5">
+                                <span className="text-[11px] font-medium text-text-secondary">{item.name}</span>
+                                <PriceChange change={item.change} />
+                            </div>
+                            <div className="flex items-baseline gap-1">
+                                <span className="text-sm font-bold text-white">₹{item.price}</span>
+                                <span className="text-[9px] text-text-muted">/{item.unit}</span>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Fuel Prices & Tax Breakup — NEW */}
+            <div className="mt-8 pt-6 border-t border-white/[0.08]">
+                <div className="flex items-center justify-between mb-4">
+                    <h4 className="label-xs flex items-center gap-1.5 uppercase tracking-wider">
+                        <Icons.TrendingUp className="w-3 h-3 text-heritage-gold" />
+                        Fuel Transparency (Hyderabad)
+                    </h4>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FuelTaxCard type="Petrol" data={fuelPrices.petrol} />
+                    <FuelTaxCard type="Diesel" data={fuelPrices.diesel} />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div className="glass-card p-3 bg-white/[0.02]">
+                        <div className="label-xs text-[9px] mb-1">{fuelPrices.lpgHousehold.label}</div>
+                        <div className="flex justify-between items-end">
+                            <span className="text-base font-bold text-white">₹{fuelPrices.lpgHousehold.price}</span>
+                            <span className="text-[10px] text-success font-bold">GST 5% Inc.</span>
+                        </div>
+                    </div>
+                    <div className="glass-card p-3 bg-white/[0.02]">
+                        <div className="label-xs text-[9px] mb-1">{fuelPrices.cngVehicle.label}</div>
+                        <div className="flex justify-between items-end">
+                            <span className="text-base font-bold text-white">₹{fuelPrices.cngVehicle.price}</span>
+                            <span className="text-[10px] text-blue-400 font-bold">GST 12% Inc.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -83,7 +83,7 @@ const megaMenuData = [
         links: [
             { label: 'Gold & Silver', href: '/rates/gold', icon: icons.sparkles },
             { label: 'Petrol & Diesel', href: '/rates/fuel', icon: icons.fuel },
-            { label: 'Daily Shloka', href: '/#districts', icon: icons.book },
+            { label: 'Daily Shloka', href: '/dashboard#districts', icon: icons.book },
         ]
     },
     {
@@ -98,8 +98,8 @@ const megaMenuData = [
         label: 'Healthcare',
         links: [
             { label: 'Basthi Dawakhana', href: '/health/basthi-dawakhana', icon: icons.hospital },
-            { label: 'Hospitals', href: '/#services', icon: icons.ambulance },
-            { label: 'Emergency', href: '/#ticker-section', icon: icons.sos },
+            { label: 'Hospitals', href: '/dashboard#services', icon: icons.ambulance },
+            { label: 'Emergency', href: '/dashboard#ticker-section', icon: icons.sos },
         ]
     },
     {
@@ -115,7 +115,7 @@ const megaMenuData = [
         links: [
             { label: 'Report Issue', href: '/report', icon: icons.pin },
             { label: 'Know Your Ward', href: '/report', icon: icons.search },
-            { label: "Citizen's Poll", href: '/#poll', icon: icons.ballot },
+            { label: "Citizen's Poll", href: '/dashboard#poll', icon: icons.ballot },
         ]
     }
 ];
@@ -205,7 +205,7 @@ export default function Header() {
                         {megaMenuData.map((item) => (
                             <NavDropdown key={item.label} item={item} />
                         ))}
-                        <Link to="/#rates" className="ml-3 px-4 py-2 rounded-full bg-heritage-gold text-dark-bg text-[11px] font-black uppercase tracking-widest hover:bg-white transition-all shadow-md shadow-heritage-gold/20">
+                        <Link to="/dashboard#rates" className="ml-3 px-4 py-2 rounded-full bg-heritage-gold text-dark-bg text-[11px] font-black uppercase tracking-widest hover:bg-white transition-all shadow-md shadow-heritage-gold/20">
                             Live Status
                         </Link>
                     </nav>
