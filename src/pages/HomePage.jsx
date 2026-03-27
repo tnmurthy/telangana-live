@@ -14,15 +14,15 @@ export default function HomePage() {
     const [selectedDistrict, setSelectedDistrict] = useState('Hyderabad');
 
     return (
-        <div className="space-y-5">
+        <div className="space-y-5 overflow-hidden">
             {/* Row 1: Daily Rates + Fuel Prices — side by side */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 animate-in">
                 <DailyRatesDashboard />
                 <FuelPriceWidget />
             </section>
 
             {/* Row 2: District + Weather + Tariff — 3 columns */}
-            <section id="districts" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <section id="districts" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-in delay-100">
                 <div className="space-y-4">
                     <DistrictSelector selectedDistrict={selectedDistrict} onSelect={setSelectedDistrict} />
                     <DailyShloka />
@@ -36,13 +36,17 @@ export default function HomePage() {
             </section>
 
             {/* Row 3: Public Transport */}
-            <MetroCard />
+            <div className="animate-in delay-150">
+                <MetroCard />
+            </div>
 
             {/* Row 4: Basthi Dawakhana */}
-            <BasthiDawakhana />
+            <div className="animate-in delay-200">
+                <BasthiDawakhana />
+            </div>
 
             {/* Row 5: Citizen Poll + Services — side by side */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 animate-in delay-300">
                 <div id="poll">
                     <CitizenPoll />
                 </div>

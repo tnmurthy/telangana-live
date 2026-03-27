@@ -52,7 +52,7 @@ export default function BasthiDawakhana() {
             {/* Results */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {filtered.map((d) => (
-                    <div key={d.name} className="glass-card p-4 hover-lift">
+                    <div key={d.name} className="glass-card p-4 hover-lift-green">
                         <div className="flex items-start justify-between mb-2">
                             <div>
                                 <h4 className="text-sm font-semibold text-white">{d.name}</h4>

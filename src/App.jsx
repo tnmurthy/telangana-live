@@ -22,6 +22,8 @@ const TransportLandingPage = lazy(() => import('./pages/TransportLandingPage'));
 const HealthLandingPage = lazy(() => import('./pages/HealthLandingPage'));
 const NewsListingPage = lazy(() => import('./pages/NewsListingPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const ContentAdminCockpit = lazy(() => import('./pages/ContentAdminCockpit'));
+const AIPulsePage = lazy(() => import('./pages/AIPulsePage'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -103,6 +105,8 @@ function AppContent() {
               <Route path="/transport/metro" element={<TransportLandingPage />} />
               <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
               <Route path="/news" element={<NewsListingPage />} />
+              <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
+              <Route path="/ai-pulse" element={<AIPulsePage />} />
               <Route path="/:region" element={<SubRegionPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -36,7 +36,7 @@ export default function DailyRatesDashboard() {
     ];
 
     return (
-        <div className="glass-card section-block animate-fade-in h-full">
+        <div className="glass-card section-block animate-fade-in h-full hover-lift-gold">
             <div className="flex items-start justify-between mb-3">
                 <div>
                     <h3 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight flex items-center gap-2">
