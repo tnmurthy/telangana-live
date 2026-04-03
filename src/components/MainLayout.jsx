@@ -13,7 +13,6 @@ const MainLayout = ({ children, isEmergencyActive }) => {
   const location = useLocation();
   const isSplash = location.pathname === '/';
 
-  // Extract region from path for context
   const pathParts = location.pathname.split('/');
   const currentRegion = pathParts[1] || 'hyderabad';
 
@@ -27,19 +26,21 @@ const MainLayout = ({ children, isEmergencyActive }) => {
         <NewsTicker />
       </div>
 
-      <main className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-[260px_1fr] xl:grid-cols-[260px_1fr_320px] gap-8">
-        {/* Left Sidebar - Hidden on mobile */}
-        <LeftSidebar />
+      <main className="max-w-[1440px] mx-auto px-3 sm:px-5 lg:px-6 py-5">
+        <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] xl:grid-cols-[240px_1fr_300px] gap-6 lg:gap-7">
+          {/* Left Sidebar - Hidden on mobile */}
+          <LeftSidebar />
 
-        {/* Central Feed - Scrollable Middle Column */}
-        <section className="flex-grow space-y-6 animate-fade-in custom-scrollbar">
-          <CrisisDashboard currentRegion={currentRegion === 'general' ? 'hyderabad' : currentRegion} />
-          <HeatwavePanel />
-          {children}
-        </section>
+          {/* Central Feed */}
+          <section className="min-w-0 space-y-6 animate-fade-in">
+            <CrisisDashboard currentRegion={currentRegion === 'general' ? 'hyderabad' : currentRegion} />
+            <HeatwavePanel />
+            {children}
+          </section>
 
-        {/* Right Sidebar - Hidden on Tab/Mobile */}
-        <RightSidebar />
+          {/* Right Sidebar - Hidden on Tab/Mobile */}
+          <RightSidebar />
+        </div>
       </main>
     </div>
   );

@@ -13,56 +13,59 @@ export default function Header() {
     }, []);
 
     return (
-        <header className={`sticky top-0 z-[60] transition-all duration-300 ${
-            scrolled 
-            ? 'bg-dark-bg/80 backdrop-blur-xl border-b border-white/5 py-2' 
-            : 'bg-dark-bg py-3'
+        <header className={`sticky top-0 z-[60] transition-all duration-500 ${
+            scrolled
+            ? 'bg-dark-bg/85 backdrop-blur-2xl shadow-lg shadow-black/20 border-b border-white/[0.04] py-1.5'
+            : 'bg-dark-bg/95 backdrop-blur-xl py-2.5'
         }`}>
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center gap-4 lg:gap-8 justify-between h-12 lg:h-14">
-                    
+            <div className="max-w-[1440px] mx-auto px-3 sm:px-5 lg:px-6">
+                <div className="flex items-center gap-4 lg:gap-6 justify-between h-12 lg:h-14">
+
                     {/* Left: Branding */}
-                    <div className="flex items-center gap-4 shrink-0">
-                        <button className="lg:hidden p-2 hover:bg-white/5 rounded-full text-text-secondary">
-                          <Icons.Info size="md" /> {/* Burger Menu Placeholder */}
+                    <div className="flex items-center gap-3 shrink-0">
+                        <button className="lg:hidden p-2 hover:bg-white/5 rounded-xl text-text-secondary transition-colors" aria-label="Menu">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
                         </button>
-                        <Link to="/dashboard" className="flex items-center gap-2 group">
-                            <div className="w-8 h-8 rounded-lg bg-telangana-green/20 flex items-center justify-center border border-telangana-green/30">
-                              <span className="text-telangana-green font-black text-lg">T</span>
+                        <Link to="/dashboard" className="flex items-center gap-2.5 group">
+                            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-telangana-green to-emerald-600 flex items-center justify-center shadow-lg shadow-telangana-green/20 group-hover:shadow-telangana-green/30 transition-all duration-300 group-hover:scale-105">
+                              <span className="text-white font-black text-base tracking-tighter">T</span>
                             </div>
-                            <span className="font-heading font-black text-lg text-white hidden sm:block tracking-tight uppercase italic">
-                                TG<span className="text-telangana-green">News</span>
-                            </span>
+                            <div className="hidden sm:flex flex-col -space-y-0.5">
+                              <span className="font-heading font-extrabold text-[1.05rem] text-white tracking-tight leading-none">
+                                  TG<span className="text-telangana-green">News</span>
+                              </span>
+                              <span className="text-[9px] text-text-muted font-medium tracking-[0.15em] uppercase">Civic Portal</span>
+                            </div>
                         </Link>
                     </div>
 
-                    {/* Center: Search Bar (Google News Style) */}
-                    <div className={`flex-grow max-w-2xl transition-all duration-300 ${searchFocused ? 'scale-[1.01]' : ''}`}>
-                        <div className={`relative group flex items-center rounded-2xl transition-all border ${
-                            searchFocused 
-                            ? 'bg-white/10 border-telangana-green/50 shadow-[0_0_20px_rgba(34,197,94,0.1)]' 
-                            : 'bg-white/5 border-transparent hover:bg-white/[0.08]'
+                    {/* Center: Search Bar */}
+                    <div className={`flex-grow max-w-xl transition-all duration-300 ${searchFocused ? 'scale-[1.01]' : ''}`}>
+                        <div className={`relative flex items-center rounded-xl transition-all duration-300 border ${
+                            searchFocused
+                            ? 'bg-white/[0.08] border-telangana-green/40 shadow-[0_0_24px_rgba(0,168,107,0.08)]'
+                            : 'bg-white/[0.04] border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.1]'
                         }`}>
-                            <div className="pl-4 text-text-muted">
+                            <div className="pl-3.5 text-text-muted">
                                 <Icons.Search className="w-4 h-4" />
                             </div>
-                            <input 
-                                type="text" 
-                                placeholder="Search for civic topics, locations, or news..."
+                            <input
+                                type="text"
+                                placeholder="Search topics, locations, or news..."
                                 onFocus={() => setSearchFocused(true)}
                                 onBlur={() => setSearchFocused(false)}
-                                className="w-full bg-transparent border-none py-2.5 lg:py-3 px-3 text-sm text-white placeholder:text-text-muted focus:ring-0 outline-none font-medium"
+                                className="w-full bg-transparent border-none py-2.5 px-3 text-sm text-white placeholder:text-text-muted/70 focus:ring-0 outline-none font-medium"
                             />
                         </div>
                     </div>
 
                     {/* Right: Actions */}
-                    <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-                        <button className="p-2.5 hover:bg-white/5 rounded-full text-text-muted hover:text-white transition-colors" title="Settings">
-                            <Icons.Info size="md" />
+                    <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+                        <button className="p-2 hover:bg-white/5 rounded-xl text-text-muted hover:text-white transition-all duration-200" title="Notifications">
+                            <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" /></svg>
                         </button>
-                        <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-gradient-to-tr from-telangana-green to-emerald-400 border-2 border-white/10 flex items-center justify-center text-dark-bg font-black text-xs cursor-pointer hover:shadow-lg hover:shadow-telangana-green/20 transition-all">
-                            JS
+                        <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-gradient-to-br from-telangana-green to-emerald-500 flex items-center justify-center text-white font-bold text-[11px] cursor-pointer hover:shadow-lg hover:shadow-telangana-green/20 transition-all duration-300 ring-2 ring-white/5 hover:ring-white/10">
+                            TG
                         </div>
                     </div>
                 </div>

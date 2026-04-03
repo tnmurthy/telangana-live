@@ -2,28 +2,27 @@ import { NavLink } from 'react-router-dom';
 import { useEmergency } from '../hooks/useEmergency';
 
 export default function BottomNav() {
-
     const { isEmergencyActive, activateEmergency } = useEmergency();
 
     const items = [
         {
-            label: 'Home', href: '/', icon: (
+            label: 'Home', href: '/dashboard', icon: (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>
             )
         },
         {
-            label: 'Cyberabad', href: '/cyberabad', icon: (
+            label: 'Rates', href: '/rates/gold', icon: (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm1.5-12h7.5v7.5h-7.5V7.5Z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
             )
         },
         {
-            label: 'Malkajgiri', href: '/malkajgiri', icon: (
+            label: 'News', href: '/news', icon: (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5" />
                 </svg>
             )
         },
@@ -37,10 +36,9 @@ export default function BottomNav() {
     ];
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 bg-card-bg-solid/90 backdrop-blur-2xl border-t border-white/[0.06] z-50 md:hidden safe-bottom">
+        <nav className="fixed bottom-0 left-0 right-0 bg-dark-bg/90 backdrop-blur-2xl border-t border-white/[0.06] z-50 md:hidden safe-bottom">
             <div className="grid grid-cols-4 max-w-lg mx-auto">
                 {items.map((item) => {
-                    // Emergency is a button, not a link
                     if (item.isEmergency) {
                         return (
                             <button
@@ -48,10 +46,9 @@ export default function BottomNav() {
                                 onClick={() => activateEmergency('heatwave')}
                                 aria-label={`Activate ${item.label} Mode`}
                                 aria-pressed={isEmergencyActive}
-                                className={`flex flex-col items-center py-2.5 transition-all duration-300 active:scale-90 relative ${isEmergencyActive
-                                    ? 'text-red-400'
-                                    : 'text-text-muted hover:text-red-400'
-                                    }`}
+                                className={`flex flex-col items-center py-2.5 transition-all duration-300 active:scale-90 relative ${
+                                    isEmergencyActive ? 'text-red-400' : 'text-text-muted hover:text-red-400'
+                                }`}
                             >
                                 <div className={`mb-0.5 relative ${isEmergencyActive ? 'animate-pulse-live' : ''}`}>
                                     {item.icon}
@@ -70,14 +67,20 @@ export default function BottomNav() {
                             to={item.href}
                             aria-label={`Navigate to ${item.label}`}
                             className={({ isActive }) =>
-                                `flex flex-col items-center py-2.5 transition-all duration-300 active:scale-90 relative ${isActive
-                                    ? 'text-heritage-gold'
-                                    : 'text-text-muted hover:text-heritage-gold'
+                                `flex flex-col items-center py-2.5 transition-all duration-300 active:scale-90 relative ${
+                                    isActive ? 'text-telangana-green' : 'text-text-muted hover:text-telangana-green/70'
                                 }`
                             }
                         >
-                            <div className="mb-0.5">{item.icon}</div>
-                            <span className="text-[9px] font-semibold tracking-wide">{item.label}</span>
+                            {({ isActive }) => (
+                                <>
+                                    {isActive && (
+                                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-telangana-green rounded-b-full"></div>
+                                    )}
+                                    <div className="mb-0.5">{item.icon}</div>
+                                    <span className="text-[9px] font-semibold tracking-wide">{item.label}</span>
+                                </>
+                            )}
                         </NavLink>
                     );
                 })}

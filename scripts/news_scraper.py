@@ -4,22 +4,36 @@ import os
 import re
 import time
 from datetime import datetime
-import google.generativeai as genai
+
+# RSS feeds for Telangana news
+FEEDS = {
+    "The Hindu - Hyderabad": "https://www.thehindu.com/news/cities/Hyderabad/feeder/default.rss",
+    "Deccan Chronicle": "https://www.deccanchronicle.com/rss_feed/rss/hyderabad",
+    "Times of India - HYD": "https://timesofindia.indiatimes.com/rssfeeds/3903997.cms",
+    "NDTV Telangana": "https://feeds.feedburner.com/ndtv/telangana",
+    "Telangana Today": "https://telanganatoday.com/feed",
+}
+
+OUTPUT_FILE = "src/data/news.json"
+
+try:
+    import google.generativeai as genai
+    HAS_GENAI = True
+except ImportError:
+    HAS_GENAI = False
 
 class NewsScraper:
     def __init__(self):
-        self.api_key = os.environ.get("GOOGLE_API_KEY")
-        if self.api_key:
-            genai.configure(api_key=self.api_key)
-            self.model = genai.GenerativeModel('gemini-1.5-flash')
-        else:
-            self.model = None
+        self.model = None
+        if HAS_GENAI:
+            self.api_key = os.environ.get("GOOGLE_API_KEY")
+            if self.api_key:
+                genai.configure(api_key=self.api_key)
+                self.model = genai.GenerativeModel('gemini-1.5-flash')
 
     def clean_html(self, raw_html):
         if not raw_html: return ""
-        cleanr = re.compile('<.*?>')
-        cleantext = re.sub(cleanr, '', raw_html)
-        return cleantext.strip()
+        return re.sub(r'<.*?>', '', raw_html).strip()
 
     def get_ai_summary(self, title, description):
         if not self.model: return ""
@@ -44,7 +58,7 @@ class NewsScraper:
                 for entry in feed.entries:
                     if entry.link in seen_links:
                         continue
-                    
+
                     item = {
                         "title": entry.title,
                         "link": entry.link,
@@ -56,7 +70,7 @@ class NewsScraper:
                         "ai_summary": "",
                         "tags": []
                     }
-                    
+
                     low_title = entry.title.lower()
                     if any(k in low_title for k in ["hyderabad", "ghmc", "banjara", "jubilee", "secunderabad"]):
                         item["region"] = "Hyderabad"
@@ -73,9 +87,13 @@ class NewsScraper:
                         item["category"] = "Safety"
                     elif any(k in low_title for k in ["school", "college", "exam", "result"]):
                         item["category"] = "Education"
+                    elif any(k in low_title for k in ["gold", "silver", "stock", "market", "rupee"]):
+                        item["category"] = "Finance"
+                    elif any(k in low_title for k in ["hospital", "health", "covid", "dengue", "doctor"]):
+                        item["category"] = "Health"
 
                     if len(all_news) < limit:
-                        print(f"Generating AI Summary for: {entry.title[:30]}...")
+                        print(f"Generating AI Summary for: {entry.title[:40]}...")
                         item["ai_summary"] = self.get_ai_summary(item["title"], item["description"])
                         time.sleep(0.5)
 

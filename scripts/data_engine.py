@@ -1,22 +1,41 @@
 import os
 import json
 import re
+import sys
 import time
 from datetime import datetime
-import requests
-from bs4 import BeautifulSoup
-import feedparser
-import google.generativeai as genai
+
+# Optional imports — gracefully degrade if missing
+try:
+    import requests
+    from bs4 import BeautifulSoup
+except ImportError:
+    print("WARNING: requests/beautifulsoup4 not installed. Install with: pip install requests beautifulsoup4")
+    requests = None
+
+try:
+    import feedparser
+except ImportError:
+    print("WARNING: feedparser not installed. Install with: pip install feedparser")
+    feedparser = None
+
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
+
+# Add scripts dir to path so news_scraper can be imported
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from news_scraper import NewsScraper
 
 # Configuration
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
-if GOOGLE_API_KEY:
+model = None
+if GOOGLE_API_KEY and genai:
     genai.configure(api_key=GOOGLE_API_KEY)
     model = genai.GenerativeModel('gemini-1.5-flash')
 else:
-    print("WARNING: GOOGLE_API_KEY not found. AI features will be disabled.")
-    model = None
+    print("WARNING: GOOGLE_API_KEY not found or google-generativeai not installed. AI features disabled.")
 
 PATHS = {
     "news": "src/data/news.json",
@@ -51,6 +70,9 @@ def get_ai_summary(title, description):
 # --- Scrapers ---
 
 def sync_finance():
+    if not requests:
+        print("SKIP: sync_finance requires requests/beautifulsoup4. Install with: pip install requests beautifulsoup4")
+        return
     print("Syncing Gold & Fuel Rates...")
     # Gold Rates Hyderabad
     gold_url = "https://www.goodreturns.in/gold-rates-in-hyderabad.html"
@@ -206,18 +228,19 @@ def sync_ai_pulse():
     if not model: return
     
     # In a real environment, we'd search first. Here we use Gemini to synthesize broad daily trends.
-    prompt = """
-    Act as a tech lead for a civic portal. Analyze the current date (March 27, 2026) and synthesize a daily briefing on AI model releases (OpenAI, Anthropic, Google, Nvidia, GitHub). 
-    Focus on Coding, Agentic capability, and Long-context. 
-    Output a JSON object that matches telangana.live schema:
-    {
-      "date": "2026-03-27",
-      "executiveBrief": [{id, title, description, gainedGround, trend}],
-      "comparisonStats": [{provider, model, codingScore, agenticScore, contextWindow, pricePer1M, priceChange, status, color, glow}],
-      "deprecations": [{model, provider, date, replacement}]
-    }
-    Make the content professional, high-impact, and futuristic.
-    """
+    today = datetime.now().strftime("%B %d, %Y")
+    today_iso = datetime.now().strftime("%Y-%m-%d")
+    prompt = (
+        "Act as a tech lead for a civic portal. Analyze the current date (" + today + ") "
+        "and synthesize a daily briefing on AI model releases (OpenAI, Anthropic, Google, Nvidia, GitHub). "
+        "Focus on Coding, Agentic capability, and Long-context. "
+        "Output a JSON object that matches telangana.live schema: "
+        '{"date": "' + today_iso + '", '
+        '"executiveBrief": [{id, title, description, gainedGround, trend}], '
+        '"comparisonStats": [{provider, model, codingScore, agenticScore, contextWindow, pricePer1M, priceChange, status, color, glow}], '
+        '"deprecations": [{model, provider, date, replacement}]} '
+        "Make the content professional, high-impact, and futuristic."
+    )
     try:
         response = model.generate_content(prompt)
         # Extract JSON from markdown response
@@ -228,8 +251,14 @@ def sync_ai_pulse():
         print(f"AI Pulse Error: {e}")
 
 if __name__ == "__main__":
-    sync_finance()
-    sync_pulses()
-    sync_news()
-    sync_ai_pulse()
-    print("Full Synchronization Complete.")
+    errors = []
+    for name, fn in [("Finance", sync_finance), ("Pulses", sync_pulses), ("News", sync_news), ("AI Pulse", sync_ai_pulse)]:
+        try:
+            fn()
+        except Exception as e:
+            print(f"ERROR in {name}: {e}")
+            errors.append(name)
+    if errors:
+        print(f"\nSync completed with errors in: {', '.join(errors)}")
+    else:
+        print("\nFull Synchronization Complete.")

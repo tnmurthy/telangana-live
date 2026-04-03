@@ -5,53 +5,54 @@ import { Icons } from '../components/Icons';
 const SplashScreen = () => {
   return (
     <div className="min-h-screen bg-dark-bg flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-telangana-green/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
+      {/* Multi-layer Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-telangana-green/8 rounded-full blur-[150px] pointer-events-none animate-pulse"></div>
+      <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-1/3 w-[250px] h-[250px] bg-heritage-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="z-10 max-w-2xl w-full space-y-12">
+      <div className="z-10 max-w-lg w-full space-y-10">
         {/* Brand Reveal */}
-        <div className="flex flex-col items-center space-y-6 animate-fade-in-up">
-          <div className="w-24 h-24 bg-gradient-to-br from-emerald-400 to-telangana-green rounded-3xl flex items-center justify-center shadow-2xl shadow-emerald-500/20 transform hover:scale-105 transition-transform duration-500">
-            <Icons.Govt className="w-12 h-12 text-white" />
+        <div className="flex flex-col items-center space-y-5 animate-fade-in">
+          <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-telangana-green rounded-2xl flex items-center justify-center shadow-2xl shadow-telangana-green/25 hover:scale-105 transition-transform duration-500 ring-1 ring-white/10">
+            <Icons.Govt className="w-10 h-10 text-white" />
           </div>
-          
+
           <div className="space-y-2">
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tighter text-white">
-              telangana<span className="text-telangana-green font-black">.live</span>
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white font-heading">
+              telangana<span className="green-text font-black">.live</span>
             </h1>
-            <p className="text-text-muted text-lg font-medium tracking-widest uppercase">
+            <p className="text-text-muted text-sm font-medium tracking-[0.2em] uppercase">
               2026 Civic Intelligence Portal
             </p>
           </div>
         </div>
 
         {/* Status Card */}
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-10 shadow-2xl animate-fade-in-up delay-200">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <div className="glass-card p-8 animate-in delay-200">
+          <div className="space-y-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-[0.18em]">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
               Under Development
             </div>
-            
-            <h2 className="text-3xl font-semibold text-white leading-tight">
-              Preparing for the <br /> 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400 font-bold">State-Wide Launch</span>
+
+            <h2 className="text-2xl font-semibold text-white leading-tight font-heading">
+              Preparing for the <br />
+              <span className="green-text font-bold">State-Wide Launch</span>
             </h2>
-            
-            <p className="text-text-muted leading-relaxed max-w-md mx-auto">
-              We are currently recalibrating data for the 2026 trifurcation. 
+
+            <p className="text-text-muted text-sm leading-relaxed max-w-sm mx-auto">
               Real-time governance for Hyderabad, Cyberabad, and Malkajgiri is arriving soon.
             </p>
 
-            <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/hyderabad" 
-                className="px-8 py-4 bg-white text-dark-bg rounded-2xl font-bold hover:bg-emerald-50 transform hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-white/5 active:scale-95"
+            <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                to="/dashboard"
+                className="px-7 py-3.5 bg-gradient-to-r from-telangana-green to-emerald-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-telangana-green/20 transform hover:-translate-y-0.5 transition-all duration-300 active:scale-95 text-sm"
               >
-                Explore Beta (Dev)
+                Explore Dashboard →
               </Link>
-              <button 
-                className="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-2xl font-bold hover:bg-white/10 transform hover:-translate-y-1 transition-all duration-300 active:scale-95"
+              <button
+                className="px-7 py-3.5 bg-white/[0.05] text-white border border-white/[0.08] rounded-xl font-bold hover:bg-white/[0.08] hover:border-white/[0.12] transform hover:-translate-y-0.5 transition-all duration-300 active:scale-95 text-sm"
               >
                 Get WhatsApp Alerts
               </button>
@@ -59,9 +60,9 @@ const SplashScreen = () => {
           </div>
         </div>
 
-        {/* Footer info */}
-        <div className="text-text-muted/40 text-xs font-medium uppercase tracking-[0.2em] animate-fade-in delay-500">
-          © 2026 Telangana Civic Infrastructure · Internal Build v0.9.4
+        {/* Footer */}
+        <div className="text-text-muted/30 text-[10px] font-medium uppercase tracking-[0.2em] animate-in delay-500">
+          © 2026 Telangana Civic Infrastructure · v0.9.4
         </div>
       </div>
     </div>
