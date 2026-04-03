@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import BottomNav from './components/BottomNav';
 import ErrorBoundary from './components/ErrorBoundary';
 import { Icons } from './components/Icons';
+import MainLayout from './components/MainLayout';
 
 // Lazy loading for production grade performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -54,10 +55,6 @@ function AppContent() {
   const { isEmergencyActive } = useEmergency();
   const location = useLocation();
 
-  // Extract region from path for context
-  const pathParts = location.pathname.split('/');
-  const currentRegion = pathParts[1] || 'general';
-
   // Scroll to hash or top on route change
   useEffect(() => {
     if (location.hash) {
@@ -71,48 +68,34 @@ function AppContent() {
     }
   }, [location.pathname, location.hash]);
 
-  // Mock IMD RSS Trigger for Emergency - Auto-trigger help for 5s on first load for demo
-  useEffect(() => {
-    // For demo purposes, we don't auto-activate every time, 
-    // but in a real scenario, this would be a scraper check.
-  }, []);
-
   const isSplash = location.pathname === '/';
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${isEmergencyActive ? 'bg-red-950/30' : 'bg-dark-bg'}`}>
-      {!isSplash && <Header />}
-      {!isSplash && <DateTimeBar />}
-      {!isSplash && <CrisisDashboard currentRegion={currentRegion === 'general' ? 'hyderabad' : currentRegion} />}
-      {!isSplash && (
-        <div id="ticker-section">
-          <NewsTicker />
-        </div>
-      )}
-
-      <main className={`${isSplash ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5'}`}>
-        {!isSplash && <HeatwavePanel />}
-
+    <div className="min-h-screen">
+      <MainLayout isEmergencyActive={isEmergencyActive}>
         <ErrorBoundary>
           <Suspense fallback={<LoadingScreen />}>
             <Routes>
-              {/* WIP Splash Screen as default */}
-              <Route path="/" element={<SplashScreen />} />
-              <Route path="/dashboard" element={<HomePage />} />
-              
-              <Route path="/rates/gold" element={<GoldLandingPage />} />
-              <Route path="/rates/fuel" element={<FuelLandingPage />} />
-              <Route path="/transport/metro" element={<TransportLandingPage />} />
-              <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
-              <Route path="/news" element={<NewsListingPage />} />
-              <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
-              <Route path="/ai-pulse" element={<AIPulsePage />} />
-              <Route path="/:region" element={<SubRegionPage />} />
-              <Route path="*" element={<NotFound />} />
+              {isSplash ? (
+                <Route path="/" element={<SplashScreen />} />
+              ) : (
+                <>
+                  <Route path="/dashboard" element={<HomePage />} />
+                  <Route path="/rates/gold" element={<GoldLandingPage />} />
+                  <Route path="/rates/fuel" element={<FuelLandingPage />} />
+                  <Route path="/transport/metro" element={<TransportLandingPage />} />
+                  <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
+                  <Route path="/news" element={<NewsListingPage />} />
+                  <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
+                  <Route path="/ai-pulse" element={<AIPulsePage />} />
+                  <Route path="/:region" element={<SubRegionPage />} />
+                  <Route path="*" element={<NotFound />} />
+                </>
+              )}
             </Routes>
           </Suspense>
         </ErrorBoundary>
-      </main>
+      </MainLayout>
 
       {!isSplash && <Footer />}
       {!isSplash && <BottomNav />}

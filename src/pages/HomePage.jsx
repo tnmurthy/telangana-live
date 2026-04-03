@@ -1,79 +1,98 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import DailyRatesDashboard from '../components/DailyRatesDashboard';
-import FuelPriceWidget from '../components/FuelPriceWidget';
-import DistrictSelector from '../components/DistrictSelector';
-import WeatherCard from '../components/WeatherCard';
-import PowerTariffCard from '../components/PowerTariffCard';
-import DailyShloka from '../components/DailyShloka';
-import MetroCard from '../components/MetroCard';
-import BasthiDawakhana from '../components/BasthiDawakhana';
+import newsData from '../data/news.json';
+import NewsCard from '../components/NewsCard';
 import CitizenPoll from '../components/CitizenPoll';
-import ServicesDirectory from '../components/ServicesDirectory';
+import { Icons } from '../components/Icons';
+
+const FeedSection = ({ title, items, icon }) => (
+  <section className="space-y-4">
+    <div className="flex items-center gap-2 px-2">
+      <div className="p-1.5 bg-telangana-green/10 rounded-lg text-telangana-green">
+        {icon}
+      </div>
+      <h2 className="text-xl font-black text-white tracking-tight uppercase italic">{title}</h2>
+    </div>
+    <div className="grid grid-cols-1 gap-4">
+      {items.map((news, idx) => (
+        <NewsCard key={idx} news={news} />
+      ))}
+    </div>
+  </section>
+);
 
 export default function HomePage() {
-    const [selectedDistrict, setSelectedDistrict] = useState('Hyderabad');
+    const topStories = useMemo(() => newsData.slice(0, 3), []);
+    const hyderabadNews = useMemo(() => newsData.filter(n => n.region === 'Hyderabad'), []);
+    const cyberabadNews = useMemo(() => newsData.filter(n => n.region === 'Cyberabad' || n.category === 'Transit'), []);
 
     return (
-        <div className="space-y-5 overflow-hidden">
-            {/* Row 1: Daily Rates + Fuel Prices — side by side */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 animate-in">
-                <DailyRatesDashboard />
-                <FuelPriceWidget />
-            </section>
-
-            {/* AI Pulse Banner */}
-            <section className="animate-in delay-75">
-                <Link to="/ai-pulse" className="block w-full bg-gradient-to-r from-purple-900/40 via-blue-900/40 to-emerald-900/40 border border-purple-500/30 rounded-2xl p-4 sm:p-6 shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] transition-all group overflow-hidden relative">
-                    <div className="absolute -right-10 -top-10 w-32 h-32 bg-purple-500/20 blur-3xl rounded-full group-hover:bg-purple-500/30 transition-colors"></div>
-                    <div className="flex items-center justify-between">
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                           <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/10 text-purple-400 group-hover:scale-110 transition-transform">
-                               ✨
-                           </div>
-                           <div>
-                               <h3 className="text-xl font-bold text-white mb-1 flex items-center gap-2">AI Pulse Briefing <span className="bg-green-500 text-white text-[9px] uppercase tracking-widest px-2 py-0.5 rounded-full font-bold animate-pulse">Live</span></h3>
-                               <p className="text-sm text-text-muted">Daily track of coding gains, context limits & spend across OpenAI, Anthropic, Google.</p>
-                           </div>
+        <div className="space-y-10 pb-20">
+            {/* AI Pulse Hero Banner */}
+            <section className="animate-in">
+                <Link to="/ai-pulse" className="block w-full bg-gradient-to-br from-indigo-950 via-dark-bg to-emerald-950/30 border border-white/5 rounded-3xl p-6 lg:p-8 shadow-2xl hover:shadow-telangana-green/10 transition-all group relative overflow-hidden">
+                    <div className="absolute right-0 top-0 w-64 h-64 bg-telangana-green/10 blur-[100px] rounded-full group-hover:bg-telangana-green/20 transition-colors"></div>
+                    <div className="relative flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div className="space-y-4 max-w-2xl">
+                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-telangana-green/20 border border-telangana-green/30 text-telangana-green text-[10px] font-black uppercase tracking-widest">
+                            <span className="w-1.5 h-1.5 rounded-full bg-telangana-green animate-pulse"></span>
+                            AI Pulse Live
+                          </div>
+                          <h1 className="text-3xl lg:text-4xl font-black text-white leading-tight tracking-tighter">
+                            Your Daily <span className="text-telangana-green italic">Civic Intelligence</span> Briefing.
+                          </h1>
+                          <p className="text-sm lg:text-base text-text-secondary leading-relaxed font-medium">
+                            Automated synthesis of coding gains, transit shifts, and market fluctuations across Telangana.
+                          </p>
                         </div>
-                        <div className="text-purple-400 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-xl font-bold">
-                            &rarr;
+                        <div className="shrink-0">
+                           <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                             <Icons.Search className="w-8 h-8 text-telangana-green" />
+                           </div>
                         </div>
                     </div>
                 </Link>
             </section>
 
-            {/* Row 2: District + Weather + Tariff — 3 columns */}
-            <section id="districts" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-in delay-100">
-                <div className="space-y-4">
-                    <DistrictSelector selectedDistrict={selectedDistrict} onSelect={setSelectedDistrict} />
-                    <DailyShloka />
+            {/* Top Stories Feed */}
+            <FeedSection 
+              title="Top Stories" 
+              items={topStories} 
+              icon={<Icons.Info size="sm" />} 
+            />
+
+            {/* Local Pulse: Hyderabad */}
+            <FeedSection 
+              title="Hyderabad Local" 
+              items={hyderabadNews.length > 0 ? hyderabadNews : topStories.slice(0,1)} 
+              icon={<Icons.Building size="sm" />} 
+            />
+
+            {/* In-feed Widget Case: Citizen Poll */}
+            <section className="glass-card p-6 border-l-4 border-heritage-gold animate-in">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-lg font-bold text-white tracking-tight uppercase">Citizen Voice</h2>
+                    <p className="text-xs text-text-muted">Direct participation in civic decisions</p>
+                  </div>
+                  <Icons.Info size="md" className="text-heritage-gold opacity-50" />
                 </div>
-                <div>
-                    <WeatherCard selectedDistrict={selectedDistrict} />
-                </div>
-                <div className="md:col-span-2 lg:col-span-1">
-                    <PowerTariffCard />
-                </div>
+                <CitizenPoll />
             </section>
 
-            {/* Row 3: Public Transport */}
-            <div className="animate-in delay-150">
-                <MetroCard />
-            </div>
+            {/* Local Pulse: Cyberabad */}
+            <FeedSection 
+              title="Cyberabad News" 
+              items={cyberabadNews.length > 0 ? cyberabadNews : topStories.slice(1,2)} 
+              icon={<Icons.Info size="sm" />} 
+            />
 
-            {/* Row 4: Basthi Dawakhana */}
-            <div className="animate-in delay-200">
-                <BasthiDawakhana />
+            {/* Footer Explore Link */}
+            <div className="text-center py-10">
+              <Link to="/news" className="inline-flex items-center gap-2 text-sm font-black text-telangana-green uppercase tracking-widest hover:gap-3 transition-all">
+                Explore Full Archive <Icons.ExternalLink className="w-4 h-4" />
+              </Link>
             </div>
-
-            {/* Row 5: Citizen Poll + Services — side by side */}
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 animate-in delay-300">
-                <div id="poll">
-                    <CitizenPoll />
-                </div>
-                <ServicesDirectory />
-            </section>
         </div>
     );
 }
