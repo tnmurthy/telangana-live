@@ -7,6 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 import feedparser
 import google.generativeai as genai
+from news_scraper import NewsScraper
 
 # Configuration
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
@@ -72,13 +73,38 @@ def sync_finance():
         g24 = p(gold24)
         sil = p(silver) / 1000 # convert to per gram if it's per kg match? actually GoodReturns shows per gram or kg depending on context.
 
+        # Try to maintain history
+        history = []
+        if os.path.exists(PATHS["gold"]):
+            try:
+                with open(PATHS["gold"], "r", encoding="utf-8") as f:
+                    old_content = f.read()
+                    # Basic extraction of history array from JS file
+                    history_match = re.search(r'"history":\s*(\[[\s\S]*?\])', old_content)
+                    if history_match:
+                        history = json.loads(history_match.group(1))
+            except Exception as history_err:
+                print(f"History retrieval error: {history_err}")
+
+        current_entry = {
+            "date": datetime.now().strftime("%Y-%m-%d"),
+            "gold22k": g22 if g22 > 1000 else 7180,
+            "gold24k": g24 if g24 > 1000 else 7830,
+            "silver": sil if sil > 50 else 96.50
+        }
+        
+        # Avoid duplicate dates in history
+        history = [h for h in history if h.get("date") != current_entry["date"]]
+        history.append(current_entry)
+        history = history[-7:] # Keep last 7 days
+
         gold_data = {
             "city": "Hyderabad",
             "date": datetime.now().strftime("%Y-%m-%d"),
-            "gold22k": {"price": g22 if g22 > 1000 else 7180, "change": 0, "unit": "₹/gram"},
-            "gold24k": {"price": g24 if g24 > 1000 else 7830, "change": 0, "unit": "₹/gram"},
-            "silver": {"price": sil if sil > 50 else 96.50, "change": 0, "unit": "₹/gram"},
-            "history": [] # Would require persistent DB logic
+            "gold22k": {"price": current_entry["gold22k"], "change": 0, "unit": "₹/gram"},
+            "gold24k": {"price": current_entry["gold24k"], "change": 0, "unit": "₹/gram"},
+            "silver": {"price": current_entry["silver"], "change": 0, "unit": "₹/gram"},
+            "history": history
         }
         write_js_module(PATHS["gold"], "goldRates", gold_data)
     except Exception as e:
@@ -90,9 +116,10 @@ def sync_finance():
         soup = BeautifulSoup(res.text, 'html.parser')
         text = soup.get_text()
         
-         diesel = re.search(r"Diesel[\s\S]*?Rs\.\s*([\d.]+)", text, re.I)
+        petrol = re.search(r"Petrol[\s\S]*?Rs\.\s*([\d.]+)", text, re.I)
+        diesel = re.search(r"Diesel[\s\S]*?Rs\.\s*([\d.]+)", text, re.I)
 
-        p_price = float(petrol.group(1)) if petrol else 107.46
+        p_price = float(petrol.group(1)) if petrol else 107.41
         d_price = float(diesel.group(1)) if diesel else 97.82
 
         fuel_data = {
@@ -166,30 +193,13 @@ def sync_pulses():
     write_js_module(PATHS["pulses"], "pulsesData", data)
 
 def sync_news():
-    print("Syncing News RSS...")
-    FEEDS = {
-        "The Hindu": "https://www.thehindu.com/news/cities/feeder/default.rss",
-        "TOI": "https://timesofindia.indiatimes.com/rssfeeds/7951253.cms"
-    }
-    all_news = []
-    for source, url in FEEDS.items():
-        feed = feedparser.parse(url)
-        for entry in feed.entries[:10]:
-            item = {
-                "title": entry.title,
-                "link": entry.link,
-                "source": source,
-                "published": datetime.now().strftime("%Y-%m-%d"),
-                "description": clean_html(entry.get("summary", "")),
-                "category": "General",
-                "region": "Telangana",
-                "ai_summary": get_ai_summary(entry.title, entry.get("summary", "")),
-                "tags": []
-            }
-            all_news.append(item)
+    print("Syncing News via NewsScraper...")
+    scraper = NewsScraper()
+    all_news = scraper.scrape(limit=10)
     
     with open(PATHS["news"], "w", encoding="utf-8") as f:
-        json.dump(all_news[:20], f, indent=2, ensure_ascii=False)
+        json.dump(all_news, f, indent=2, ensure_ascii=False)
+    print(f"News sync complete. {len(all_news)} items saved.")
 
 def sync_ai_pulse():
     print("Synthesizing AI Pulse Briefing...")

@@ -5,6 +5,9 @@ from agents.content_monitor import ContentMonitor
 from agents.content_generator import ContentGenerator
 from agents.quality_checker import QualityChecker
 from config import CONFIG
+import subprocess
+import sys
+import os
 
 # Setup logging
 logging.basicConfig(
@@ -21,11 +24,21 @@ logger = logging.getLogger(__name__)
 def morning_maintenance():
     """
     6 AM - Monitor and analyze content
-    Check what needs updating
+    Check what needs updating and sync real-time data
     """
     logger.info("="*70)
     logger.info("MORNING MAINTENANCE CYCLE (6:00 AM)")
     logger.info("="*70)
+    
+    # Sync Data
+    logger.info("Syncing real-time data (Gold, Fuel, News)...")
+    try:
+        script_path = os.path.join(os.getcwd(), "scripts", "data_engine.py")
+        subprocess.run([sys.executable, script_path], check=True)
+        logger.info("✓ Data sync complete")
+    except Exception as e:
+        logger.error(f"✗ Data sync failed: {e}")
+    
     
     monitor = ContentMonitor()
     result = monitor.run()
@@ -45,6 +58,16 @@ def evening_maintenance():
     logger.info("="*70)
     logger.info("EVENING MAINTENANCE CYCLE (6:00 PM)")
     logger.info("="*70)
+
+    # Sync Data
+    logger.info("Syncing real-time data (Gold, Fuel, News)...")
+    try:
+        script_path = os.path.join(os.getcwd(), "scripts", "data_engine.py")
+        subprocess.run([sys.executable, script_path], check=True)
+        logger.info("✓ Data sync complete")
+    except Exception as e:
+        logger.error(f"✗ Data sync failed: {e}")
+    
     
     # Generate new content
     logger.info("Generating new content...")

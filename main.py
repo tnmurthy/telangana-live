@@ -3,6 +3,9 @@ from agents.content_generator import ContentGenerator
 from agents.quality_checker import QualityChecker
 from database import db
 import logging
+import subprocess
+import sys
+import os
 
 # Setup logging
 logging.basicConfig(
@@ -19,9 +22,23 @@ def run_full_cycle():
     print("TELANGANA.LIVE CONTENT MAINTENANCE AGENT (Full Cycle)")
     print("="*70 + "\n")
     
-    # STEP 1: Monitor
-    print("📊 STEP 1: Monitoring content...")
+    # STEP 0: Sync Data (Gold, Fuel, News)
+    print("🔄 STEP 0: Syncing real-time data (Gold, Fuel, News)...")
     print("-" * 70)
+    try:
+        # Run scripts/data_engine.py as a subprocess to keep it isolated
+        script_path = os.path.join(os.getcwd(), "scripts", "data_engine.py")
+        result = subprocess.run([sys.executable, script_path], capture_output=True, text=True)
+        if result.returncode == 0:
+            print("✓ Data synchronization successful")
+            print(result.stdout.strip().split('\n')[-1]) # Print the last line of output
+        else:
+            print(f"✗ Data synchronization failed: {result.stderr}")
+    except Exception as e:
+        print(f"✗ Error running data engine: {e}")
+    print()
+
+    # STEP 1: Monitor
     monitor = ContentMonitor()
     analysis = monitor.run()
     if analysis:
