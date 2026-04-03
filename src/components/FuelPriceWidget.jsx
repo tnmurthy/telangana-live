@@ -34,11 +34,13 @@ const fuelColors = {
 };
 
 export default function FuelPriceWidget() {
+    const { city, date, petrol, diesel, lpgHousehold, cngVehicle } = fuelPrices;
+
     const fuels = [
-        { label: 'Petrol', ...petrol, iconKey: 'petrol', unit: petrol.unit },
-        { label: 'Diesel', ...diesel, iconKey: 'diesel', unit: diesel.unit },
-        { label: lpgHousehold.label, ...lpgHousehold, iconKey: 'lpgHome', unit: lpgHousehold.unit },
-        { label: cngVehicle.label, ...cngVehicle, iconKey: 'cngAuto', unit: cngVehicle.unit },
+        { label: 'Petrol', ...petrol, iconKey: 'petrol' },
+        { label: 'Diesel', ...diesel, iconKey: 'diesel' },
+        { label: lpgHousehold.label, ...lpgHousehold, iconKey: 'lpgHome' },
+        { label: cngVehicle.label, ...cngVehicle, iconKey: 'cngAuto' },
     ];
 
     return (

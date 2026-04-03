@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchWeather } from '../services/weatherService';
-import fuelPrices from '../data/fuelPrices.js';
+import { fuelPrices } from '../data/fuelPrices.js';
 import { Icons } from './Icons';
 
 const WeatherSnapshot = ({ selectedDistrict = 'Hyderabad' }) => {

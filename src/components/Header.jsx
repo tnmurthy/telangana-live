@@ -30,8 +30,8 @@ export default function Header() {
                             <div className="w-8 h-8 rounded-lg bg-telangana-green/20 flex items-center justify-center border border-telangana-green/30">
                               <span className="text-telangana-green font-black text-lg">T</span>
                             </div>
-                            <span className="font-heading font-black text-lg text-white hidden sm:block tracking-tight">
-                                Live<span className="text-telangana-green">TN</span>
+                            <span className="font-heading font-black text-lg text-white hidden sm:block tracking-tight uppercase italic">
+                                TG<span className="text-telangana-green">News</span>
                             </span>
                         </Link>
                     </div>

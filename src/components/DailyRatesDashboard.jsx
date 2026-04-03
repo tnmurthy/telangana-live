@@ -4,6 +4,7 @@ import { fuelPrices } from '../data/fuelPrices';
 import { pulsesData } from '../data/pulses';
 import ShareWhatsApp from './ShareWhatsApp';
 import FuelTaxCard from './FuelTaxCard';
+import { Icons } from './Icons';
 
 function PriceChange({ change }) {
     const isPositive = change > 0;
