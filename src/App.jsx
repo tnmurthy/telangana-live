@@ -27,6 +27,14 @@ const NewsListingPage = lazy(() => import('./pages/NewsListingPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const ContentAdminCockpit = lazy(() => import('./pages/ContentAdminCockpit'));
 const AIPulsePage = lazy(() => import('./pages/AIPulsePage'));
+const EmergencyContactsPage = lazy(() => import('./pages/EmergencyContactsPage'));
+const WaterSupplyPage = lazy(() => import('./pages/WaterSupplyPage'));
+const RationPDSPage = lazy(() => import('./pages/RationPDSPage'));
+const JobBoardPage = lazy(() => import('./pages/JobBoardPage'));
+const CalendarPage = lazy(() => import('./pages/CalendarPage'));
+const BudgetTrackerPage = lazy(() => import('./pages/BudgetTrackerPage'));
+const PoliticianTrackerPage = lazy(() => import('./pages/PoliticianTrackerPage'));
+const PropertyTaxPage = lazy(() => import('./pages/PropertyTaxPage'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -93,6 +101,14 @@ function AppContent() {
                   <Route path="/news" element={<NewsListingPage />} />
                   <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
                   <Route path="/ai-pulse" element={<AIPulsePage />} />
+                  <Route path="/emergency-contacts" element={<EmergencyContactsPage />} />
+                  <Route path="/water-supply" element={<WaterSupplyPage />} />
+                  <Route path="/ration-pds" element={<RationPDSPage />} />
+                  <Route path="/jobs" element={<JobBoardPage />} />
+                  <Route path="/events" element={<CalendarPage />} />
+                  <Route path="/budget" element={<BudgetTrackerPage />} />
+                  <Route path="/politicians" element={<PoliticianTrackerPage />} />
+                  <Route path="/property-tax" element={<PropertyTaxPage />} />
                   <Route path="/:region" element={<SubRegionPage />} />
                   <Route path="*" element={<NotFound />} />
                 </>
