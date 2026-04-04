@@ -14,7 +14,11 @@ FEEDS = {
     "Telangana Today": "https://telanganatoday.com/feed",
 }
 
-OUTPUT_FILE = "src/data/news.json"
+# Resolve output path relative to this file so the scraper works from any
+# working directory (e.g. when invoked via subprocess from main.py).
+_SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+_REPO_ROOT = os.path.dirname(_SCRIPTS_DIR)
+OUTPUT_FILE = os.path.join(_REPO_ROOT, "src", "data", "news.json")
 
 try:
     import google.generativeai as genai

@@ -12,6 +12,8 @@ import BottomNav from './components/BottomNav';
 import ErrorBoundary from './components/ErrorBoundary';
 import { Icons } from './components/Icons';
 import MainLayout from './components/MainLayout';
+import BreakingNewsBanner from './components/BreakingNewsBanner';
+import PulseCounter from './components/PulseCounter';
 
 // Lazy loading for production grade performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -25,6 +27,16 @@ const NewsListingPage = lazy(() => import('./pages/NewsListingPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const ContentAdminCockpit = lazy(() => import('./pages/ContentAdminCockpit'));
 const AIPulsePage = lazy(() => import('./pages/AIPulsePage'));
+const EmergencyContactsPage = lazy(() => import('./pages/EmergencyContactsPage'));
+const WaterSupplyPage = lazy(() => import('./pages/WaterSupplyPage'));
+const RationPDSPage = lazy(() => import('./pages/RationPDSPage'));
+const JobBoardPage = lazy(() => import('./pages/JobBoardPage'));
+const CalendarPage = lazy(() => import('./pages/CalendarPage'));
+const BudgetTrackerPage = lazy(() => import('./pages/BudgetTrackerPage'));
+const PoliticianTrackerPage = lazy(() => import('./pages/PoliticianTrackerPage'));
+const PropertyTaxPage = lazy(() => import('./pages/PropertyTaxPage'));
+const SchemesPage = lazy(() => import('./pages/SchemesPage'));
+const ReportingLandingPage = lazy(() => import('./pages/ReportingLandingPage'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -72,6 +84,9 @@ function AppContent() {
 
   return (
     <div className="min-h-screen">
+      {/* Breaking news banner — fixed at very top */}
+      {!isSplash && <BreakingNewsBanner />}
+
       <MainLayout isEmergencyActive={isEmergencyActive}>
         <ErrorBoundary>
           <Suspense fallback={<LoadingScreen />}>
@@ -88,6 +103,16 @@ function AppContent() {
                   <Route path="/news" element={<NewsListingPage />} />
                   <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
                   <Route path="/ai-pulse" element={<AIPulsePage />} />
+                  <Route path="/emergency-contacts" element={<EmergencyContactsPage />} />
+                  <Route path="/water-supply" element={<WaterSupplyPage />} />
+                  <Route path="/ration-pds" element={<RationPDSPage />} />
+                  <Route path="/jobs" element={<JobBoardPage />} />
+                  <Route path="/events" element={<CalendarPage />} />
+                  <Route path="/budget" element={<BudgetTrackerPage />} />
+                  <Route path="/politicians" element={<PoliticianTrackerPage />} />
+                  <Route path="/property-tax" element={<PropertyTaxPage />} />
+                  <Route path="/schemes" element={<SchemesPage />} />
+                  <Route path="/report" element={<ReportingLandingPage />} />
                   <Route path="/:region" element={<SubRegionPage />} />
                   <Route path="*" element={<NotFound />} />
                 </>
@@ -100,6 +125,7 @@ function AppContent() {
       {!isSplash && <Footer />}
       {!isSplash && <BottomNav />}
       {!isSplash && <EmergencyToggle />}
+      {!isSplash && <PulseCounter />}
     </div>
   );
 }
@@ -111,3 +137,4 @@ export default function App() {
     </EmergencyProvider>
   );
 }
+
