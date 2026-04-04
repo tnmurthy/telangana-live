@@ -78,6 +78,7 @@ const LeftSidebar = () => {
           <NavItem to="/events" icon={<span className="text-base">🎉</span>} label="Holidays" />
           <NavItem to="/budget" icon={<span className="text-base">📊</span>} label="Budget Tracker" />
           <NavItem to="/politicians" icon={<span className="text-base">🏛️</span>} label="Politicians" />
+          <NavItem to="/schemes" icon={<span className="text-base">📋</span>} label="Gov Schemes" />
           <NavItem to="/property-tax" icon={<span className="text-base">🏠</span>} label="Property Tax" />
         </SidebarSection>
       </nav>
