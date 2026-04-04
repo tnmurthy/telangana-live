@@ -12,6 +12,8 @@ import BottomNav from './components/BottomNav';
 import ErrorBoundary from './components/ErrorBoundary';
 import { Icons } from './components/Icons';
 import MainLayout from './components/MainLayout';
+import BreakingNewsBanner from './components/BreakingNewsBanner';
+import PulseCounter from './components/PulseCounter';
 
 // Lazy loading for production grade performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -72,6 +74,9 @@ function AppContent() {
 
   return (
     <div className="min-h-screen">
+      {/* Breaking news banner — fixed at very top */}
+      {!isSplash && <BreakingNewsBanner />}
+
       <MainLayout isEmergencyActive={isEmergencyActive}>
         <ErrorBoundary>
           <Suspense fallback={<LoadingScreen />}>
@@ -100,6 +105,7 @@ function AppContent() {
       {!isSplash && <Footer />}
       {!isSplash && <BottomNav />}
       {!isSplash && <EmergencyToggle />}
+      {!isSplash && <PulseCounter />}
     </div>
   );
 }
@@ -111,3 +117,4 @@ export default function App() {
     </EmergencyProvider>
   );
 }
+

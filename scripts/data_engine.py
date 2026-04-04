@@ -5,6 +5,10 @@ import sys
 import time
 from datetime import datetime
 
+# Resolve repo root so that PATHS are correct regardless of the working
+# directory when this script is invoked (e.g. via subprocess from main.py).
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # Optional imports — gracefully degrade if missing
 try:
     import requests
@@ -38,11 +42,11 @@ else:
     print("WARNING: GOOGLE_API_KEY not found or google-generativeai not installed. AI features disabled.")
 
 PATHS = {
-    "news": "src/data/news.json",
-    "gold": "src/data/goldRates.js",
-    "fuel": "src/data/fuelPrices.js",
-    "pulses": "src/data/pulses.js",
-    "ai_pulse": "src/data/aiBriefingData.js"
+    "news":     os.path.join(_REPO_ROOT, "src", "data", "news.json"),
+    "gold":     os.path.join(_REPO_ROOT, "src", "data", "goldRates.js"),
+    "fuel":     os.path.join(_REPO_ROOT, "src", "data", "fuelPrices.js"),
+    "pulses":   os.path.join(_REPO_ROOT, "src", "data", "pulses.js"),
+    "ai_pulse": os.path.join(_REPO_ROOT, "src", "data", "aiBriefingData.js"),
 }
 
 # --- Utils ---
