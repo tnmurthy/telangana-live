@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { fetchWeather } from '../services/weatherService';
 import { Icons } from './Icons';
+import { goldRates } from '../data/goldRates';
+import { fuelPrices } from '../data/fuelPrices';
 
 const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
   const [weather, setWeather] = useState(null);
@@ -51,6 +53,12 @@ const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
 };
 
 const MarketWidget = () => {
+  const gold24k = goldRates.gold24k;
+  const petrol = fuelPrices.petrol;
+  const goldPer10g = (gold24k.price * 10).toLocaleString('en-IN');
+  const goldChange = gold24k.change;
+  const petrolChange = petrol.change;
+
   return (
     <div className="widget-card hover-lift-gold">
       <div className="flex justify-between items-center pb-3 mb-3 border-b border-white/[0.06]">
@@ -65,11 +73,18 @@ const MarketWidget = () => {
       <div className="flex justify-between items-end mb-3.5">
         <div className="flex flex-col gap-0.5">
           <span className="text-[9px] text-text-muted font-semibold uppercase tracking-wider">Gold 24K / 10g</span>
-          <span className="text-xl font-black gold-text tracking-tight leading-none">₹72,450</span>
+          <span className="text-xl font-black gold-text tracking-tight leading-none">₹{goldPer10g}</span>
         </div>
-        <div className="flex items-center gap-1 bg-success/10 px-2 py-1 rounded-lg">
-          <svg className="w-3 h-3 text-success" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.577 4.878a.75.75 0 0 1 .919-.53l4.78 1.281a.75.75 0 0 1 .531.919l-1.281 4.78a.75.75 0 0 1-1.449-.387l.81-3.022a19.407 19.407 0 0 0-5.594 5.203.75.75 0 0 1-1.139.093L7 10.06l-4.72 4.72a.75.75 0 0 1-1.06-1.06l5.25-5.25a.75.75 0 0 1 1.06 0l3.074 3.073a20.923 20.923 0 0 1 5.545-4.931l-3.042.815a.75.75 0 0 1-.53-.919Z" clipRule="evenodd" /></svg>
-          <span className="text-[10px] text-success font-bold">0.8%</span>
+        <div className={`flex items-center gap-1 px-2 py-1 rounded-lg ${goldChange >= 0 ? 'bg-success/10' : 'bg-danger/10'}`}>
+          <svg className={`w-3 h-3 ${goldChange >= 0 ? 'text-success' : 'text-danger'}`} fill="currentColor" viewBox="0 0 20 20">
+            {goldChange >= 0
+              ? <path fillRule="evenodd" d="M12.577 4.878a.75.75 0 0 1 .919-.53l4.78 1.281a.75.75 0 0 1 .531.919l-1.281 4.78a.75.75 0 0 1-1.449-.387l.81-3.022a19.407 19.407 0 0 0-5.594 5.203.75.75 0 0 1-1.139.093L7 10.06l-4.72 4.72a.75.75 0 0 1-1.06-1.06l5.25-5.25a.75.75 0 0 1 1.06 0l3.074 3.073a20.923 20.923 0 0 1 5.545-4.931l-3.042.815a.75.75 0 0 1-.53-.919Z" clipRule="evenodd" />
+              : <path fillRule="evenodd" d="M1.22 5.222a.75.75 0 0 1 1.06 0L7 9.942l3.768-3.769a.75.75 0 0 1 1.113.058 20.908 20.908 0 0 1 3.813 7.254l1.574-2.727a.75.75 0 0 1 1.3.75l-2.475 4.286a.75.75 0 0 1-1.025.275l-4.287-2.475a.75.75 0 0 1 .75-1.3l2.71 1.565a19.422 19.422 0 0 0-3.013-6.024L7.53 11.533a.75.75 0 0 1-1.06 0l-5.25-5.25a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
+            }
+          </svg>
+          <span className={`text-[10px] font-bold ${goldChange >= 0 ? 'text-success' : 'text-danger'}`}>
+            {goldChange === 0 ? 'Steady' : `${goldChange > 0 ? '+' : ''}₹${(goldChange * 10).toFixed(0)}`}
+          </span>
         </div>
       </div>
 
@@ -79,9 +94,13 @@ const MarketWidget = () => {
       <div className="flex justify-between items-end">
         <div className="flex flex-col gap-0.5">
           <span className="text-[9px] text-text-muted font-semibold uppercase tracking-wider">Petrol (HYD)</span>
-          <span className="text-xl font-black text-white tracking-tight leading-none">₹107.41</span>
+          <span className="text-xl font-black text-white tracking-tight leading-none">₹{petrol.price.toFixed(2)}</span>
         </div>
-        <span className="text-[10px] text-text-muted font-bold bg-white/[0.04] px-2 py-1 rounded-lg uppercase tracking-wider">Stable</span>
+        <span className={`text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider ${
+          petrolChange === 0 ? 'text-text-muted bg-white/[0.04]' : petrolChange > 0 ? 'text-danger bg-danger/10' : 'text-success bg-success/10'
+        }`}>
+          {petrolChange === 0 ? 'Stable' : petrolChange > 0 ? `▲ +₹${petrolChange.toFixed(2)}` : `▼ ₹${petrolChange.toFixed(2)}`}
+        </span>
       </div>
     </div>
   );

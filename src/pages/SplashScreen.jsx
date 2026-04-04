@@ -32,17 +32,31 @@ const SplashScreen = () => {
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-[0.18em]">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              Under Development
+              Live · 2026
             </div>
 
             <h2 className="text-2xl font-semibold text-white leading-tight font-heading">
-              Preparing for the <br />
-              <span className="green-text font-bold">State-Wide Launch</span>
+              Real-time Governance for <br />
+              <span className="green-text font-bold">Hyderabad &amp; Telangana</span>
             </h2>
 
             <p className="text-text-muted text-sm leading-relaxed max-w-sm mx-auto">
-              Real-time governance for Hyderabad, Cyberabad, and Malkajgiri is arriving soon.
+              News, water schedules, emergency contacts, jobs, ration, government schemes — everything citizens need, in one place.
             </p>
+
+            {/* Quick stat pills */}
+            <div className="flex flex-wrap justify-center gap-2 pt-1">
+              {[
+                { icon: '📰', label: 'Live News' },
+                { icon: '💧', label: 'Water Updates' },
+                { icon: '🆘', label: 'SOS Contacts' },
+                { icon: '📋', label: '14 Gov Schemes' },
+              ].map(({ icon, label }) => (
+                <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-text-secondary font-medium">
+                  <span>{icon}</span>{label}
+                </span>
+              ))}
+            </div>
 
             <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
@@ -51,18 +65,19 @@ const SplashScreen = () => {
               >
                 Explore Dashboard →
               </Link>
-              <button
+              <Link
+                to="/schemes"
                 className="px-7 py-3.5 bg-white/[0.05] text-white border border-white/[0.08] rounded-xl font-bold hover:bg-white/[0.08] hover:border-white/[0.12] transform hover:-translate-y-0.5 transition-all duration-300 active:scale-95 text-sm"
               >
-                Get WhatsApp Alerts
-              </button>
+                Government Schemes
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Footer */}
         <div className="text-text-muted/30 text-[10px] font-medium uppercase tracking-[0.2em] animate-in delay-500">
-          © 2026 Telangana Civic Infrastructure · v0.9.4
+          © 2026 Telangana Civic Infrastructure · v1.0
         </div>
       </div>
     </div>

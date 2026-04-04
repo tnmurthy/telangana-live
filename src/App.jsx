@@ -36,6 +36,7 @@ const BudgetTrackerPage = lazy(() => import('./pages/BudgetTrackerPage'));
 const PoliticianTrackerPage = lazy(() => import('./pages/PoliticianTrackerPage'));
 const PropertyTaxPage = lazy(() => import('./pages/PropertyTaxPage'));
 const SchemesPage = lazy(() => import('./pages/SchemesPage'));
+const ReportingLandingPage = lazy(() => import('./pages/ReportingLandingPage'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -111,6 +112,7 @@ function AppContent() {
                   <Route path="/politicians" element={<PoliticianTrackerPage />} />
                   <Route path="/property-tax" element={<PropertyTaxPage />} />
                   <Route path="/schemes" element={<SchemesPage />} />
+                  <Route path="/report" element={<ReportingLandingPage />} />
                   <Route path="/:region" element={<SubRegionPage />} />
                   <Route path="*" element={<NotFound />} />
                 </>
