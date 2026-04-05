@@ -71,6 +71,10 @@ def evening_maintenance():
         status = "✓" if result['status'] == 'success' else "✗"
         logger.info(f"  {status} {result['topic']} ({result['tokens']} tokens)")
 
+    logger.info("Running quality checks on newly generated content...")
+    checker = QualityChecker()
+    checker.run()
+
     logger.info("✓ Evening maintenance complete")
     logger.info("=" * 70 + "\n")
 

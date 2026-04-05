@@ -221,7 +221,7 @@ def sync_pulses():
 def sync_news():
     print("Syncing News via NewsScraper...")
     scraper = NewsScraper()
-    all_news = scraper.scrape(limit=10)
+    all_news = scraper.scrape(limit=50)
     
     with open(PATHS["news"], "w", encoding="utf-8") as f:
         json.dump(all_news, f, indent=2, ensure_ascii=False)

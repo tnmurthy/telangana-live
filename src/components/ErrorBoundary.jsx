@@ -44,4 +44,45 @@ class ErrorBoundary extends React.Component {
     }
 }
 
+/**
+ * Lightweight error boundary for individual widgets / cards.
+ * Shows a small inline error box instead of taking over the whole screen.
+ */
+export class WidgetErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false, errorMessage: '' };
+    }
+
+    static getDerivedStateFromError(error) {
+        return { hasError: true, errorMessage: error?.message || 'Unknown error' };
+    }
+
+    componentDidCatch(error, errorInfo) {
+        console.error(`[WidgetErrorBoundary] ${this.props.name || 'widget'}:`, error, errorInfo);
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div className="glass-card p-5 flex items-center gap-3 border border-red-500/20 bg-red-500/5">
+                    <span className="text-2xl flex-shrink-0">⚠️</span>
+                    <div className="min-w-0">
+                        <p className="text-sm font-bold text-white">{this.props.name || 'Widget'} unavailable</p>
+                        <p className="text-[11px] text-text-muted mt-0.5 truncate">{this.state.errorMessage}</p>
+                    </div>
+                    <button
+                        onClick={() => this.setState({ hasError: false, errorMessage: '' })}
+                        className="ml-auto text-[11px] font-bold text-heritage-gold hover:text-heritage-gold-light whitespace-nowrap"
+                    >
+                        Retry
+                    </button>
+                </div>
+            );
+        }
+
+        return this.props.children;
+    }
+}
+
 export default ErrorBoundary;

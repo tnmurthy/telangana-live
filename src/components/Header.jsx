@@ -27,7 +27,7 @@ export default function Header() {
     const handleSearch = useCallback((e) => {
         const val = e.target.value;
         setSearchQuery(val);
-        if (val.trim()) navigate('/news');
+        if (val.trim()) navigate('/search');
     }, [setSearchQuery, navigate]);
 
     const clearSearch = useCallback(() => {

@@ -37,15 +37,26 @@ export function AppProvider({ children }) {
   const [streak, setStreak] = useState(() => {
     try {
       const data = JSON.parse(localStorage.getItem('tg-streak') || '{}');
-      const today = new Date().toDateString();
       return { count: data.count || 0, today: data.today || '', reads: data.reads || 0, ...data };
     } catch { return { count: 0, today: '', reads: 0 }; }
   });
 
+  // Returns today's date string in IST (UTC+5:30) regardless of the user's local timezone.
+  const getISTDateString = () => {
+    const now = new Date();
+    const istOffset = 5.5 * 60 * 60 * 1000; // IST is UTC+5:30
+    const istDate = new Date(now.getTime() + istOffset - now.getTimezoneOffset() * 60 * 1000);
+    return istDate.toDateString();
+  };
+
   const recordRead = useCallback(() => {
     setStreak(prev => {
-      const today = new Date().toDateString();
-      const yesterday = new Date(Date.now() - 86400000).toDateString();
+      const today = getISTDateString();
+      // Yesterday in IST
+      const nowIST = new Date(new Date().getTime() + (5.5 * 60 * 60 * 1000) - new Date().getTimezoneOffset() * 60 * 1000);
+      const yesterdayIST = new Date(nowIST.getTime() - 86400000);
+      const yesterday = yesterdayIST.toDateString();
+
       let newCount = prev.count;
       let newReads = (prev.today === today ? prev.reads : 0) + 1;
 

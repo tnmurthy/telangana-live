@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function BottomNav() {
     const items = [
@@ -33,7 +34,12 @@ export default function BottomNav() {
     ];
 
     return (
-        <nav className="fixed bottom-0 left-0 right-0 bg-dark-bg/90 backdrop-blur-2xl border-t border-white/[0.06] z-50 md:hidden safe-bottom">
+        <motion.nav
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 22, delay: 0.1 }}
+            className="fixed bottom-0 left-0 right-0 bg-dark-bg/90 backdrop-blur-2xl border-t border-white/[0.06] z-50 md:hidden safe-bottom"
+        >
             <div className="grid grid-cols-4 max-w-lg mx-auto">
                 {items.map((item) => (
                     <NavLink
@@ -48,16 +54,31 @@ export default function BottomNav() {
                     >
                         {({ isActive }) => (
                             <>
-                                {isActive && (
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-telangana-green rounded-b-full"></div>
-                                )}
-                                <div className="mb-0.5">{item.icon}</div>
+                                <AnimatePresence>
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="bottom-nav-indicator"
+                                            initial={{ scaleX: 0, opacity: 0 }}
+                                            animate={{ scaleX: 1, opacity: 1 }}
+                                            exit={{ scaleX: 0, opacity: 0 }}
+                                            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                                            className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-telangana-green rounded-b-full"
+                                        />
+                                    )}
+                                </AnimatePresence>
+                                <motion.div
+                                    className="mb-0.5"
+                                    animate={{ scale: isActive ? 1.15 : 1 }}
+                                    transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                                >
+                                    {item.icon}
+                                </motion.div>
                                 <span className="text-[9px] font-semibold tracking-wide">{item.label}</span>
                             </>
                         )}
                     </NavLink>
                 ))}
             </div>
-        </nav>
+        </motion.nav>
     );
 }

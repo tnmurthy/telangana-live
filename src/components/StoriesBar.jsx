@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import newsData from '../data/news.json';
+import { supabase } from '../services/supabaseClient';
 
 const STORY_DISTRICTS = [
   { name: 'Top', emoji: '🔥', color: 'from-red-500 to-orange-400' },
@@ -12,8 +13,36 @@ const STORY_DISTRICTS = [
   { name: 'Khammam', emoji: '⛏️', color: 'from-slate-500 to-zinc-400' },
 ];
 
-function getStoryForDistrict(districtName) {
-  if (districtName === 'Top') return newsData[0] || null;
+function getStoryForDistrict(districtName, publishedStories) {
+  // Try published Supabase stories first (category may match district)
+  if (publishedStories.length > 0 && districtName !== 'Top') {
+    const match = publishedStories.find(s =>
+      (s.title || '').toLowerCase().includes(districtName.toLowerCase()) ||
+      (s.content || '').toLowerCase().includes(districtName.toLowerCase())
+    );
+    if (match) {
+      return {
+        title: match.title,
+        description: match.content?.slice(0, 200) + '…',
+        ai_summary: null,
+        source: 'TG Stories',
+        link: match.source_url || '#',
+        category: match.category,
+      };
+    }
+  }
+
+  if (districtName === 'Top') return publishedStories[0]
+    ? {
+        title: publishedStories[0].title,
+        description: publishedStories[0].content?.slice(0, 200) + '…',
+        ai_summary: null,
+        source: 'TG Stories',
+        link: publishedStories[0].source_url || '#',
+        category: publishedStories[0].category,
+      }
+    : newsData[0] || null;
+
   return newsData.find(n =>
     n.region === districtName || n.title.toLowerCase().includes(districtName.toLowerCase())
   ) || newsData[0];
@@ -104,9 +133,24 @@ function StoryOverlay({ story, district, onClose }) {
 export default function StoriesBar() {
   const [activeStory, setActiveStory] = useState(null);
   const [seenDistricts, setSeenDistricts] = useState(new Set());
+  const [publishedStories, setPublishedStories] = useState([]);
+
+  // Fetch published AI-generated stories from Supabase
+  useEffect(() => {
+    if (!supabase) return;
+    supabase
+      .from('content')
+      .select('id, title, category, content, source_url, updated_at')
+      .eq('status', 'published')
+      .order('updated_at', { ascending: false })
+      .limit(10)
+      .then(({ data, error }) => {
+        if (!error && data?.length) setPublishedStories(data);
+      });
+  }, []);
 
   const openStory = (district) => {
-    const story = getStoryForDistrict(district.name);
+    const story = getStoryForDistrict(district.name, publishedStories);
     setActiveStory({ story, district });
     setSeenDistricts(prev => new Set([...prev, district.name]));
   };

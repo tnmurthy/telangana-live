@@ -49,7 +49,7 @@ class NewsScraper:
             print(f"AI Summary Error: {e}")
             return ""
 
-    def scrape(self, limit=10):
+    def scrape(self, limit=50):
         all_news = []
         seen_links = set()
 
@@ -96,7 +96,8 @@ class NewsScraper:
                     elif any(k in low_title for k in ["hospital", "health", "covid", "dengue", "doctor"]):
                         item["category"] = "Health"
 
-                    if len(all_news) < limit:
+                    # Generate AI summaries for all items (with a short delay to avoid rate limits)
+                    if self.model:
                         print(f"Generating AI Summary for: {entry.title[:40]}...")
                         item["ai_summary"] = self.get_ai_summary(item["title"], item["description"])
                         time.sleep(0.5)
