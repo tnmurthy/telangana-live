@@ -44,18 +44,15 @@ export function AppProvider({ children }) {
   // Returns today's date string in IST (UTC+5:30) regardless of the user's local timezone.
   const getISTDateString = () => {
     const now = new Date();
-    const istOffset = 5.5 * 60 * 60 * 1000; // IST is UTC+5:30
-    const istDate = new Date(now.getTime() + istOffset - now.getTimezoneOffset() * 60 * 1000);
-    return istDate.toDateString();
+    // Convert to IST by shifting UTC time by +5:30
+    const istMs = now.getTime() + (5.5 * 60 - now.getTimezoneOffset()) * 60 * 1000;
+    return new Date(istMs).toDateString();
   };
 
   const recordRead = useCallback(() => {
     setStreak(prev => {
       const today = getISTDateString();
-      // Yesterday in IST
-      const nowIST = new Date(new Date().getTime() + (5.5 * 60 * 60 * 1000) - new Date().getTimezoneOffset() * 60 * 1000);
-      const yesterdayIST = new Date(nowIST.getTime() - 86400000);
-      const yesterday = yesterdayIST.toDateString();
+      const yesterday = new Date(new Date(today).getTime() - 86400000).toDateString();
 
       let newCount = prev.count;
       let newReads = (prev.today === today ? prev.reads : 0) + 1;

@@ -7,9 +7,17 @@ import { services } from '../data/services';
 import NewsCard from '../components/NewsCard';
 
 // Flatten services into a searchable list
+const CATEGORY_ROUTES = {
+    Hospitals: '/health/basthi-dawakhana',
+    Schools: '/dashboard',
+    Markets: '/dashboard',
+    Parks: '/dashboard',
+};
+
 function flattenServices() {
     const flat = [];
     for (const [key, category] of Object.entries(services)) {
+        const route = CATEGORY_ROUTES[category.label] || '/dashboard';
         (category.items || []).forEach(item => {
             flat.push({
                 id: `svc-${key}-${item.name}`,
@@ -17,7 +25,7 @@ function flattenServices() {
                 area: item.area,
                 type: item.type,
                 category: category.label,
-                route: `/health/basthi-dawakhana`,
+                route,
             });
         });
     }

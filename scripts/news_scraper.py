@@ -39,15 +39,27 @@ class NewsScraper:
         if not raw_html: return ""
         return re.sub(r'<.*?>', '', raw_html).strip()
 
-    def get_ai_summary(self, title, description):
+    def get_ai_summary(self, title, description, retries=2, base_delay=1.0):
+        """Generate a 2-line AI summary with simple exponential back-off on failure."""
         if not self.model: return ""
         prompt = f"Summarize this news article in exactly 2 concise lines for a civic portal. Title: {title}. Description: {description}"
-        try:
-            response = self.model.generate_content(prompt)
-            return response.text.strip()
-        except Exception as e:
-            print(f"AI Summary Error: {e}")
-            return ""
+        delay = base_delay
+        for attempt in range(retries + 1):
+            try:
+                response = self.model.generate_content(prompt)
+                return response.text.strip()
+            except Exception as e:
+                if attempt < retries:
+                    print(f"AI Summary retry {attempt + 1}/{retries} after {delay}s: {e}")
+                    time.sleep(delay)
+                    delay *= 2
+                else:
+                    print(f"AI Summary Error (gave up after {retries} retries): {e}")
+        return ""
+
+    # Delay between API calls (seconds).  Can be overridden in the constructor
+    # or set via the GEMINI_DELAY env variable to avoid rate-limit errors.
+    _summary_delay: float = float(os.environ.get("GEMINI_DELAY", "0.5"))
 
     def scrape(self, limit=50):
         all_news = []
@@ -96,11 +108,11 @@ class NewsScraper:
                     elif any(k in low_title for k in ["hospital", "health", "covid", "dengue", "doctor"]):
                         item["category"] = "Health"
 
-                    # Generate AI summaries for all items (with a short delay to avoid rate limits)
+                    # Generate AI summaries for all items (with a configurable delay to avoid rate limits)
                     if self.model:
                         print(f"Generating AI Summary for: {entry.title[:40]}...")
                         item["ai_summary"] = self.get_ai_summary(item["title"], item["description"])
-                        time.sleep(0.5)
+                        time.sleep(self._summary_delay)
 
                     all_news.append(item)
                     seen_links.add(entry.link)
