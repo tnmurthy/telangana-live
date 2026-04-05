@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { weatherForecast, availableDistricts } from '../data/weatherForecastData';
 
 const conditionColors = {
@@ -61,6 +61,16 @@ export default function WeatherForecastPage() {
     for (let i = 0; i < 28; i += 7) weeks.push(forecast.slice(i, i + 7));
 
     const currentWeekIdx = Math.floor(selectedDayIdx / 7);
+
+    const monthYearLabel = useMemo(() => {
+        const d = new Date(forecast[0].date);
+        return d.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+    }, [forecast]);
+
+    const monthLabel = useMemo(() => {
+        const d = new Date(forecast[0].date);
+        return d.toLocaleDateString('en-IN', { month: 'long' });
+    }, [forecast]);
 
     return (
         <div className="space-y-6 animate-fade-in">
@@ -140,7 +150,7 @@ export default function WeatherForecastPage() {
             ) : (
                 /* Month view — compact list */
                 <div className="glass-card p-4">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted mb-4">April 2026 — {district}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted mb-4">{monthYearLabel} — {district}</p>
                     <div className="space-y-2">
                         {forecast.map((day, i) => {
                             const isToday = i === 0;
@@ -184,7 +194,7 @@ export default function WeatherForecastPage() {
 
             {/* Season summary */}
             <div className="glass-card p-5">
-                <h3 className="text-sm font-bold text-white mb-4">April Outlook for {district}</h3>
+                <h3 className="text-sm font-bold text-white mb-4">{monthLabel} Outlook for {district}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="detail-box text-center">
                         <p className="text-[10px] text-text-muted uppercase font-bold mb-1">Avg Max Temp</p>
@@ -206,7 +216,7 @@ export default function WeatherForecastPage() {
                     </div>
                 </div>
                 <p className="text-xs text-text-muted mt-4">
-                    ⚠️ Forecast data is indicative. April–May is typically the hottest period in Telangana (38–44°C). Pre-monsoon thunderstorms expected in last week of April. Stay hydrated and avoid outdoor activity between 11 AM–4 PM.
+                    ⚠️ Forecast data is indicative. {monthLabel} outlook shown above. Telangana summers (April–June) typically reach 38–44°C. Stay hydrated and avoid outdoor activity between 11 AM–4 PM.
                 </p>
             </div>
         </div>

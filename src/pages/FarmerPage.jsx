@@ -143,6 +143,9 @@ export default function FarmerPage() {
         return seasonOk && catOk;
     });
 
+    const currentMonthYear = new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+    const currentMonthName = new Date().toLocaleDateString('en-IN', { month: 'long' });
+
     return (
         <div className="space-y-6 animate-fade-in">
             {/* Header */}
@@ -195,7 +198,7 @@ export default function FarmerPage() {
             {activeTab === 'advisory' && (
                 <div className="space-y-3">
                     <p className="text-xs text-text-muted px-1">
-                        Advisory for <span className="text-telangana-green font-semibold">April 2026</span> — Kharif pre-sowing season
+                        Advisory for <span className="text-telangana-green font-semibold">{currentMonthYear}</span> — Kharif pre-sowing season
                     </p>
                     {cropAdvisories.map(a => (
                         <AdvisoryCard key={a.id} advisory={a} />
@@ -279,12 +282,12 @@ export default function FarmerPage() {
             {activeTab === 'calendar' && (
                 <div className="space-y-3">
                     {cropCalendar.map((month, i) => (
-                        <div key={month.month} className={`glass-card p-4 ${month.month === 'April' ? 'border border-telangana-green/30' : ''}`}>
+                        <div key={month.month} className={`glass-card p-4 ${month.month === currentMonthName ? 'border border-telangana-green/30' : ''}`}>
                             <div className="flex items-center gap-2 mb-2">
-                                <h3 className={`text-sm font-bold ${month.month === 'April' ? 'text-telangana-green' : 'text-white'}`}>
+                                <h3 className={`text-sm font-bold ${month.month === currentMonthName ? 'text-telangana-green' : 'text-white'}`}>
                                     {month.month}
                                 </h3>
-                                {month.month === 'April' && (
+                                {month.month === currentMonthName && (
                                     <span className="text-[9px] bg-telangana-green/10 text-telangana-green border border-telangana-green/20 px-2 py-0.5 rounded-full font-bold">Current Month</span>
                                 )}
                             </div>
