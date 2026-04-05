@@ -29,6 +29,7 @@ export const emergencyService = {
      * @param {function} onUpdate - Callback function when status changes
      */
     subscribe(onUpdate) {
+        if (!supabase) return null;
         return supabase
             .channel('emergency-changes')
             .on(
