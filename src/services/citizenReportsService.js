@@ -24,6 +24,7 @@ export const citizenReportsService = {
    * Subscribe to new approved reports (Realtime)
    */
   subscribeToReports(onNewReport) {
+    // Realtime updates are unavailable when Supabase credentials are not configured
     if (!supabase) return null;
     return supabase
       .channel('public:citizen_reports')
