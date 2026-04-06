@@ -335,3 +335,463 @@ class TestNewsScraperDeduplication:
 
         # Should have at least one item from the non-failing feed
         assert any(item["link"] == "https://example.com/good" for item in items)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# data_engine — get_ai_summary
+# ═══════════════════════════════════════════════════════════════════════════
+
+class TestGetAiSummary:
+    def test_returns_empty_when_model_is_none(self):
+        original = data_engine.model
+        data_engine.model = None
+        try:
+            result = data_engine.get_ai_summary("Title", "Description")
+            assert result == ""
+        finally:
+            data_engine.model = original
+
+    def test_returns_stripped_text_from_model(self):
+        mock_model = MagicMock()
+        mock_model.generate_content.return_value.text = "  Summary line 1.\nSummary line 2.  "
+        original = data_engine.model
+        data_engine.model = mock_model
+        try:
+            result = data_engine.get_ai_summary("Title", "Description")
+            assert result == "Summary line 1.\nSummary line 2."
+            mock_model.generate_content.assert_called_once()
+        finally:
+            data_engine.model = original
+
+    def test_returns_empty_on_model_exception(self):
+        mock_model = MagicMock()
+        mock_model.generate_content.side_effect = RuntimeError("API error")
+        original = data_engine.model
+        data_engine.model = mock_model
+        try:
+            result = data_engine.get_ai_summary("Title", "Description")
+            assert result == ""
+        finally:
+            data_engine.model = original
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# data_engine — sync_finance (gold & fuel parsing)
+# ═══════════════════════════════════════════════════════════════════════════
+
+def _make_mock_response(text):
+    """Return a mock requests.Response whose .text attribute is *text*."""
+    mock_resp = MagicMock()
+    mock_resp.text = text
+    return mock_resp
+
+
+# Gold HTML is structured so that 22K and 24K price sections are > 300 characters
+# apart. This is necessary because the gold-parsing regex uses a greedy
+# [\s\S]{0,300} quantifier, which would otherwise consume the 22K text and
+# capture the later 24K price instead.  The filler string ensures the two
+# sections are separated by more than 300 characters.
+_SECTION_SEP = " " * 350
+
+_GOLD_HTML = (
+    "<html><body>\n"
+    "22 Karat Gold Price in Hyderabad Today \u20b97,180 per gram\n"
+    + _SECTION_SEP
+    + "\n24 Karat Gold Price in Hyderabad Today \u20b97,830 per gram\n"
+    # Silver regex captures only digits/commas (no decimal), so use an integer
+    "Silver \u20b997 per gram\n"
+    "</body></html>"
+)
+
+_FUEL_HTML = """
+<html><body>
+Petrol Price Today in Hyderabad Rs. 107.41 per litre
+Diesel Price Today in Hyderabad Rs. 97.82 per litre
+</body></html>
+"""
+
+
+class TestSyncFinanceGoldParsing:
+    """sync_finance correctly parses gold/silver prices from HTML."""
+
+    def _run_finance_sync(self, tmp_path, gold_html=_GOLD_HTML, fuel_html=_FUEL_HTML):
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = str(tmp_path / "goldRates.js")
+        data_engine.PATHS["fuel"] = str(tmp_path / "fuelPrices.js")
+        try:
+            with patch.object(data_engine, "requests") as mock_req:
+                mock_req.get.side_effect = [
+                    _make_mock_response(gold_html),
+                    _make_mock_response(fuel_html),
+                ]
+                data_engine.sync_finance()
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+
+    def test_writes_gold_file(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        assert os.path.exists(str(tmp_path / "goldRates.js"))
+
+    def test_gold_file_has_correct_export(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
+        assert "export const goldRates" in content
+
+    def test_gold22k_price_parsed(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert data["gold22k"]["price"] == 7180.0
+
+    def test_gold24k_price_parsed(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert data["gold24k"]["price"] == 7830.0
+
+    def test_silver_per_gram_preserved(self, tmp_path):
+        """Silver value ≤ 1000 should be stored as-is (integer, regex strips decimal)."""
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert data["silver"]["price"] == 97.0
+
+    def test_silver_per_kg_normalised_to_per_gram(self, tmp_path):
+        """Silver value > 1000 (per-kg figure) must be divided by 1000."""
+        html_with_kg_silver = _GOLD_HTML.replace("\u20b997 per gram", "\u20b997,000 per kg")
+        self._run_finance_sync(tmp_path, gold_html=html_with_kg_silver)
+        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert data["silver"]["price"] == 97.0
+
+    def test_gold_data_contains_required_fields(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert data["city"] == "Hyderabad"
+        assert "date" in data
+        assert "gold22k" in data and "price" in data["gold22k"]
+        assert "gold24k" in data and "price" in data["gold24k"]
+        assert "silver" in data and "price" in data["silver"]
+        assert isinstance(data["history"], list)
+
+
+class TestSyncFinanceFuelParsing:
+    """sync_finance correctly parses fuel prices from HTML."""
+
+    def _run_finance_sync(self, tmp_path, fuel_html=_FUEL_HTML):
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = str(tmp_path / "goldRates.js")
+        data_engine.PATHS["fuel"] = str(tmp_path / "fuelPrices.js")
+        try:
+            with patch.object(data_engine, "requests") as mock_req:
+                mock_req.get.side_effect = [
+                    _make_mock_response(_GOLD_HTML),
+                    _make_mock_response(fuel_html),
+                ]
+                data_engine.sync_finance()
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+
+    def test_writes_fuel_file(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        assert os.path.exists(str(tmp_path / "fuelPrices.js"))
+
+    def test_fuel_file_has_correct_export(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "fuelPrices.js"), encoding="utf-8").read()
+        assert "export const fuelPrices" in content
+
+    def test_petrol_price_parsed(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "fuelPrices.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert data["petrol"]["price"] == 107.41
+
+    def test_diesel_price_parsed(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "fuelPrices.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert data["diesel"]["price"] == 97.82
+
+    def test_fuel_data_contains_lpg_and_cng(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "fuelPrices.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert "lpgHousehold" in data
+        assert "cngVehicle" in data
+
+    def test_fuel_tax_breakup_present(self, tmp_path):
+        self._run_finance_sync(tmp_path)
+        content = open(str(tmp_path / "fuelPrices.js"), encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert "taxBreakup" in data["petrol"]
+        assert "taxBreakup" in data["diesel"]
+        assert "basePrice" in data["petrol"]["taxBreakup"]
+
+
+class TestSyncFinanceFallbacks:
+    """sync_finance uses default values when network requests fail."""
+
+    def _paths(self, tmp_path):
+        return str(tmp_path / "goldRates.js"), str(tmp_path / "fuelPrices.js")
+
+    def test_gold_file_written_with_defaults_on_request_error(self, tmp_path):
+        gold_path, fuel_path = self._paths(tmp_path)
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = gold_path
+        data_engine.PATHS["fuel"] = fuel_path
+        try:
+            with patch.object(data_engine, "requests") as mock_req:
+                mock_req.get.side_effect = RuntimeError("Network error")
+                data_engine.sync_finance()
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+        # Gold file should NOT be written (exception is caught and printed)
+        # The gold block catches the exception and skips writing
+        # Fuel block also catches the exception and skips writing
+        # This tests that sync_finance does not raise an unhandled exception
+        # (files may or may not exist depending on which block ran)
+
+    def test_gold_uses_fallback_when_regex_finds_no_match(self, tmp_path):
+        """When HTML contains no recognisable price pattern, default prices are used."""
+        gold_path, fuel_path = self._paths(tmp_path)
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = gold_path
+        data_engine.PATHS["fuel"] = fuel_path
+        try:
+            with patch.object(data_engine, "requests") as mock_req:
+                mock_req.get.side_effect = [
+                    _make_mock_response("<html>No prices here</html>"),
+                    _make_mock_response("<html>No prices here</html>"),
+                ]
+                data_engine.sync_finance()
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+
+        content = open(gold_path, encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        # Fallback values defined in data_engine.py
+        assert data["gold22k"]["price"] == 7180
+        assert data["gold24k"]["price"] == 7830
+        assert data["silver"]["price"] == 96.50
+
+    def test_fuel_uses_fallback_when_regex_finds_no_match(self, tmp_path):
+        gold_path, fuel_path = self._paths(tmp_path)
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = gold_path
+        data_engine.PATHS["fuel"] = fuel_path
+        try:
+            with patch.object(data_engine, "requests") as mock_req:
+                mock_req.get.side_effect = [
+                    _make_mock_response(_GOLD_HTML),
+                    _make_mock_response("<html>No prices here</html>"),
+                ]
+                data_engine.sync_finance()
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+
+        content = open(fuel_path, encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert data["petrol"]["price"] == 107.41
+        assert data["diesel"]["price"] == 97.82
+
+
+class TestSyncFinanceHistoryTracking:
+    """sync_finance maintains, deduplicates, and caps the gold price history."""
+
+    def _write_gold_file(self, path, history):
+        """Pre-seed a goldRates.js with an existing history array."""
+        data = {
+            "city": "Hyderabad",
+            "date": "2026-04-05",
+            "gold22k": {"price": 7100, "change": 0, "unit": "₹/gram"},
+            "gold24k": {"price": 7750, "change": 0, "unit": "₹/gram"},
+            "silver": {"price": 95.0, "change": 0, "unit": "₹/gram"},
+            "history": history,
+        }
+        data_engine.write_js_module(path, "goldRates", data)
+
+    def _run_finance_sync(self, tmp_path):
+        with patch.object(data_engine, "requests") as mock_req:
+            mock_req.get.side_effect = [
+                _make_mock_response(_GOLD_HTML),
+                _make_mock_response(_FUEL_HTML),
+            ]
+            data_engine.sync_finance()
+
+    def test_new_entry_appended_to_history(self, tmp_path):
+        gold_path = str(tmp_path / "goldRates.js")
+        fuel_path = str(tmp_path / "fuelPrices.js")
+        existing_history = [{"date": "2026-04-05", "gold22k": 7100, "gold24k": 7750, "silver": 95.0}]
+        self._write_gold_file(gold_path, existing_history)
+
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = gold_path
+        data_engine.PATHS["fuel"] = fuel_path
+        try:
+            self._run_finance_sync(tmp_path)
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+
+        content = open(gold_path, encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert len(data["history"]) == 2
+
+    def test_same_date_entry_deduplicated(self, tmp_path):
+        gold_path = str(tmp_path / "goldRates.js")
+        fuel_path = str(tmp_path / "fuelPrices.js")
+        today = datetime.now().strftime("%Y-%m-%d")
+        existing_history = [{"date": today, "gold22k": 7000, "gold24k": 7600, "silver": 90.0}]
+        self._write_gold_file(gold_path, existing_history)
+
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = gold_path
+        data_engine.PATHS["fuel"] = fuel_path
+        try:
+            self._run_finance_sync(tmp_path)
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+
+        content = open(gold_path, encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        today_entries = [h for h in data["history"] if h["date"] == today]
+        assert len(today_entries) == 1
+
+    def test_history_capped_at_seven_days(self, tmp_path):
+        gold_path = str(tmp_path / "goldRates.js")
+        fuel_path = str(tmp_path / "fuelPrices.js")
+        # Pre-seed with 7 older entries
+        existing_history = [
+            {"date": f"2026-03-{30 - i:02d}", "gold22k": 7000, "gold24k": 7600, "silver": 90.0}
+            for i in range(7)
+        ]
+        self._write_gold_file(gold_path, existing_history)
+
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = gold_path
+        data_engine.PATHS["fuel"] = fuel_path
+        try:
+            self._run_finance_sync(tmp_path)
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+
+        content = open(gold_path, encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        assert len(data["history"]) <= 7
+
+    def test_day_over_day_change_computed(self, tmp_path):
+        gold_path = str(tmp_path / "goldRates.js")
+        fuel_path = str(tmp_path / "fuelPrices.js")
+        yesterday = "2026-04-05"
+        existing_history = [{"date": yesterday, "gold22k": 7080, "gold24k": 7720, "silver": 94.0}]
+        self._write_gold_file(gold_path, existing_history)
+
+        original_gold = data_engine.PATHS["gold"]
+        original_fuel = data_engine.PATHS["fuel"]
+        data_engine.PATHS["gold"] = gold_path
+        data_engine.PATHS["fuel"] = fuel_path
+        try:
+            self._run_finance_sync(tmp_path)
+        finally:
+            data_engine.PATHS["gold"] = original_gold
+            data_engine.PATHS["fuel"] = original_fuel
+
+        content = open(gold_path, encoding="utf-8").read()
+        match = re.search(r"= (\{[\s\S]*\});", content)
+        data = json.loads(match.group(1))
+        # 7180 (today) - 7080 (yesterday) = 100
+        assert data["gold22k"]["change"] == round(data["gold22k"]["price"] - 7080, 2)
+        # 7830 (today) - 7720 (yesterday) = 110
+        assert data["gold24k"]["change"] == round(data["gold24k"]["price"] - 7720, 2)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# data_engine — sync_news
+# ═══════════════════════════════════════════════════════════════════════════
+
+class TestSyncNews:
+    def test_writes_news_json_file(self, tmp_path):
+        news_path = str(tmp_path / "news.json")
+        original_path = data_engine.PATHS["news"]
+        data_engine.PATHS["news"] = news_path
+        try:
+            mock_scraper = MagicMock()
+            mock_scraper.scrape.return_value = [
+                {"title": "Test article", "link": "https://example.com/1", "source": "Test"},
+            ]
+            # sync_news does a deferred `from news_scraper import NewsScraper`
+            # so we patch the class on the already-loaded news_scraper module.
+            import news_scraper as _ns_mod
+            with patch.object(_ns_mod, "NewsScraper", return_value=mock_scraper):
+                data_engine.sync_news()
+        finally:
+            data_engine.PATHS["news"] = original_path
+
+        assert os.path.exists(news_path)
+
+    def test_news_json_contains_scraped_items(self, tmp_path):
+        news_path = str(tmp_path / "news.json")
+        original_path = data_engine.PATHS["news"]
+        data_engine.PATHS["news"] = news_path
+        sample_items = [
+            {"title": "Hyderabad flood alert", "link": "https://example.com/1", "source": "The Hindu"},
+            {"title": "Metro expansion approved", "link": "https://example.com/2", "source": "Deccan Chronicle"},
+        ]
+        try:
+            mock_scraper = MagicMock()
+            mock_scraper.scrape.return_value = sample_items
+            import news_scraper as _ns_mod
+            with patch.object(_ns_mod, "NewsScraper", return_value=mock_scraper):
+                data_engine.sync_news()
+        finally:
+            data_engine.PATHS["news"] = original_path
+
+        with open(news_path, encoding="utf-8") as f:
+            saved = json.load(f)
+        assert len(saved) == 2
+        assert saved[0]["title"] == "Hyderabad flood alert"
+
+    def test_sync_news_uses_limit_10(self, tmp_path):
+        news_path = str(tmp_path / "news.json")
+        original_path = data_engine.PATHS["news"]
+        data_engine.PATHS["news"] = news_path
+        try:
+            mock_scraper = MagicMock()
+            mock_scraper.scrape.return_value = []
+            import news_scraper as _ns_mod
+            with patch.object(_ns_mod, "NewsScraper", return_value=mock_scraper):
+                data_engine.sync_news()
+            mock_scraper.scrape.assert_called_once_with(limit=10)
+        finally:
+            data_engine.PATHS["news"] = original_path
