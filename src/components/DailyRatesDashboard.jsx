@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { goldRates } from '../data/goldRates';
-import { fuelPrices } from '../data/fuelPrices';
+import { useState, useEffect } from 'react';
+import { goldRates as staticGoldRates } from '../data/goldRates';
+import { fuelPrices as staticFuelPrices } from '../data/fuelPrices';
 import { pulsesData } from '../data/pulses';
+import { fetchGoldRates, fetchFuelPrices } from '../services/pricesService';
 import ShareWhatsApp from './ShareWhatsApp';
 import FuelTaxCard from './FuelTaxCard';
 import { Icons } from './Icons';
@@ -29,8 +30,38 @@ const historyTabs = [
 ];
 
 export default function DailyRatesDashboard() {
-    const { gold22k, gold24k, silver, date, history } = goldRates;
+    const [goldRates, setGoldRates] = useState(staticGoldRates);
+    const [fuelPrices, setFuelPrices] = useState(staticFuelPrices);
     const [activeTab, setActiveTab] = useState('gold22k');
+
+    useEffect(() => {
+        fetchGoldRates().then(data => {
+            if (data?.gold22k) {
+                setGoldRates(prev => ({
+                    ...prev,
+                    gold22k: { ...prev.gold22k, price: data.gold22k.price, change: data.gold22k.change ?? 0 },
+                    gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? 0 },
+                    silver:  { ...prev.silver,  price: data.silver.price,  change: data.silver.change  ?? 0 },
+                    date: data.lastUpdated ? new Date(data.lastUpdated).toISOString().slice(0, 10) : prev.date,
+                }));
+            }
+        }).catch(() => {});
+
+        fetchFuelPrices().then(data => {
+            if (data?.petrol) {
+                setFuelPrices(prev => ({
+                    ...prev,
+                    petrol: { ...prev.petrol, price: data.petrol.price, change: data.petrol.change ?? 0 },
+                    diesel: { ...prev.diesel, price: data.diesel.price, change: data.diesel.change ?? 0 },
+                    ...(data.lpg    ? { lpgHousehold: { ...prev.lpgHousehold, price: data.lpg.price,    change: data.lpg.change    ?? 0 } } : {}),
+                    ...(data.cng    ? { cngVehicle:   { ...prev.cngVehicle,   price: data.cng.price,    change: data.cng.change    ?? 0 } } : {}),
+                    date: data.lastUpdated ? new Date(data.lastUpdated).toISOString().slice(0, 10) : prev.date,
+                }));
+            }
+        }).catch(() => {});
+    }, []);
+
+    const { gold22k, gold24k, silver, date, history } = goldRates;
     const currentTab = historyTabs.find(t => t.key === activeTab);
 
     const rateItems = [

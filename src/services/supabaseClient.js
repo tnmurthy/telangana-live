@@ -25,9 +25,9 @@ const mockClient = {
 };
 
 if (!supabaseUrl || !supabaseAnonKey) {
-    console.warn('Supabase credentials missing. Live data features will be unavailable.');
+    console.warn('Supabase credentials missing. Emergency status and power alerts will use defaults.');
 }
 
-export const supabase = supabaseUrl && supabaseAnonKey
+export const supabase = (supabaseUrl && supabaseAnonKey)
     ? createClient(supabaseUrl, supabaseAnonKey)
-    : mockClient;
+    : null;
