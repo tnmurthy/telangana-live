@@ -8,6 +8,10 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # required to commit news.json back to the repo
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -19,7 +23,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install feedparser google-generativeai requests beautifulsoup4
+          pip install feedparser google-genai requests beautifulsoup4
 
       - name: Run Scraper
         env:
