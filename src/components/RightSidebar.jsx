@@ -62,7 +62,7 @@ const MarketWidget = () => {
       if (data?.gold24k) {
         setGoldRates(prev => ({
           ...prev,
-          gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? 0 },
+          gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? prev.gold24k.change },
         }));
       }
     }).catch(() => {});

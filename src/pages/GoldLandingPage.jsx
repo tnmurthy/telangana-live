@@ -6,15 +6,16 @@ import DateTimeBar from '../components/DateTimeBar';
 
 export default function GoldLandingPage() {
     const [goldRates, setGoldRates] = useState(staticGoldRates);
+    const currentMonthYear = new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
 
     useEffect(() => {
         fetchGoldRates().then(data => {
             if (data?.gold22k) {
                 setGoldRates(prev => ({
                     ...prev,
-                    gold22k: { ...prev.gold22k, price: data.gold22k.price, change: data.gold22k.change ?? 0 },
-                    gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? 0 },
-                    silver:  { ...prev.silver,  price: data.silver.price,  change: data.silver.change  ?? 0 },
+                    gold22k: { ...prev.gold22k, price: data.gold22k.price, change: data.gold22k.change ?? prev.gold22k.change },
+                    gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? prev.gold24k.change },
+                    silver:  { ...prev.silver,  price: data.silver.price,  change: data.silver.change  ?? prev.silver.change  },
                     date: data.lastUpdated ? new Date(data.lastUpdated).toISOString().slice(0, 10) : prev.date,
                 }));
             }
@@ -29,7 +30,7 @@ export default function GoldLandingPage() {
                 <div className="absolute top-0 right-0 p-8 text-8xl opacity-10 pointer-events-none">✨</div>
                 <div className="relative z-10">
                     <h2 className="section-title text-3xl sm:text-4xl gold-text mb-2">Hyderabad Gold Rates</h2>
-                    <p className="text-text-secondary font-medium italic">Standardized 22K & 24K Market Prices · March 2026</p>
+                    <p className="text-text-secondary font-medium italic">Standardized 22K & 24K Market Prices · {currentMonthYear}</p>
                 </div>
             </div>
 
@@ -101,7 +102,7 @@ export default function GoldLandingPage() {
             </div>
 
             <div className="glass-card section-block bg-heritage-gold/5">
-                <h3 className="label-xs mb-4">💡 Buyer's Guide March 2026</h3>
+                <h3 className="label-xs mb-4">💡 Buyer's Guide {currentMonthYear}</h3>
                 <p className="text-sm text-text-secondary leading-relaxed">
                     Market analysis suggests a stabilization phase after the recent 2% dip. Experts recommend monitoring the international indices before large purchases. GST of 3% is applicable on finished jewelry.
                 </p>

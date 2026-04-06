@@ -89,9 +89,9 @@ def sync_finance():
         soup = BeautifulSoup(res.text, 'html.parser')
         text = soup.get_text()
         
-        gold22 = re.search(r"22\s*K[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
-        gold24 = re.search(r"24\s*K[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
-        silver = re.search(r"Silver[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
+        gold22 = re.search(r"22\s*[Kk](?:arat)?\b[\s\S]{0,300}(?:₹|Rs\.?\s*)([\d,]{4,})", text, re.I)
+        gold24 = re.search(r"24\s*[Kk](?:arat)?\b[\s\S]{0,300}(?:₹|Rs\.?\s*)([\d,]{4,})", text, re.I)
+        silver = re.search(r"[Ss]ilver\b[\s\S]{0,300}(?:₹|Rs\.?\s*)([\d,]{2,})", text, re.I)
 
         def p(m): return float(m.group(1).replace(',', '')) if m else 0
 
@@ -121,7 +121,13 @@ def sync_finance():
             "gold24k": g24 if g24 > 1000 else 7830,
             "silver": sil if sil > 50 else 96.50
         }
-        
+
+        # Compute day-over-day change using the most recent previous entry
+        prev_entry = history[-1] if history else None
+        change22k = round(current_entry["gold22k"] - prev_entry["gold22k"], 2) if prev_entry else 0
+        change24k = round(current_entry["gold24k"] - prev_entry["gold24k"], 2) if prev_entry else 0
+        change_sil = round(current_entry["silver"] - prev_entry["silver"], 2) if prev_entry else 0
+
         # Avoid duplicate dates in history
         history = [h for h in history if h.get("date") != current_entry["date"]]
         history.append(current_entry)
@@ -130,9 +136,9 @@ def sync_finance():
         gold_data = {
             "city": "Hyderabad",
             "date": datetime.now().strftime("%Y-%m-%d"),
-            "gold22k": {"price": current_entry["gold22k"], "change": 0, "unit": "₹/gram"},
-            "gold24k": {"price": current_entry["gold24k"], "change": 0, "unit": "₹/gram"},
-            "silver": {"price": current_entry["silver"], "change": 0, "unit": "₹/gram"},
+            "gold22k": {"price": current_entry["gold22k"], "change": change22k, "unit": "₹/gram"},
+            "gold24k": {"price": current_entry["gold24k"], "change": change24k, "unit": "₹/gram"},
+            "silver": {"price": current_entry["silver"], "change": change_sil, "unit": "₹/gram"},
             "history": history
         }
         write_js_module(PATHS["gold"], "goldRates", gold_data)
