@@ -100,12 +100,12 @@ def fetch_weather(api_key: str) -> dict:
     """Fetch current weather for all districts and return the weatherData dict."""
     base_url = "https://api.openweathermap.org/data/2.5/weather"
     weather_data = {}
-    fetched_queries: dict[str, dict] = {}  # cache duplicate OWM queries
+    weather_cache_by_query: dict[str, dict] = {}  # avoids duplicate API calls for shared OWM cities
 
     for district, query in DISTRICT_OWM_MAP.items():
         # Use cached result if the same OWM city was already queried
-        if query in fetched_queries:
-            weather_data[district] = fetched_queries[query].copy()
+        if query in weather_cache_by_query:
+            weather_data[district] = weather_cache_by_query[query].copy()
             continue
 
         try:
@@ -124,8 +124,9 @@ def fetch_weather(api_key: str) -> dict:
                 owm_desc = d["weather"][0]["description"]
                 condition = _owm_condition(owm_main, owm_desc)
 
-                # AQI placeholder – OWM free tier needs a separate call;
-                # use a sensible urban default so the field is never empty.
+    # AQI placeholder – OWM free tier needs a separate call;
+                # use 80 (mid-range "Satisfactory" level, typical for Indian urban areas)
+                # so the field is never empty.
                 aqi = 80
                 aqi_label, aqi_color = _aqi_label_and_color(aqi)
 
@@ -140,7 +141,7 @@ def fetch_weather(api_key: str) -> dict:
                     "aqiColor": aqi_color,
                 }
                 weather_data[district] = entry
-                fetched_queries[query] = entry
+                weather_cache_by_query[query] = entry
                 print(f"  {district}: {temp}°C, {condition}")
             else:
                 print(f"  WARNING {district}: HTTP {resp.status_code} for query '{query}'")

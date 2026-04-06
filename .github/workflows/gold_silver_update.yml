@@ -5,6 +5,9 @@ on:
     - cron: '45 */12 * * *' # Every 12 hours at :45 (gold and silver prices)
   workflow_dispatch: # Manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   update-gold-silver:
     runs-on: ubuntu-latest

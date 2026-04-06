@@ -284,7 +284,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     TASK_MAP = {
-        'all':      [("Finance", sync_finance), ("Pulses", sync_pulses), ("News", sync_news), ("AI Pulse", sync_ai_pulse)],
+        'all':      [("Gold/Silver & Fuel", sync_finance), ("Pulses", sync_pulses), ("News", sync_news), ("AI Pulse", sync_ai_pulse)],
         'news':     [("News", sync_news)],
         'gold':     [("Gold/Silver", sync_gold_silver)],
         'fuel':     [("Fuel", sync_fuel)],

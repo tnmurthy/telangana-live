@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 
 
 def _run_script(script_path: str, *extra_args: str):
-    """Run a Python script in a subprocess, logging success/failure."""
+    """Run a Python script in a subprocess with optional extra arguments, logging success/failure."""
     try:
         subprocess.run([sys.executable, script_path, *extra_args], check=True)
         logger.info(f"✓ {os.path.basename(script_path)} {' '.join(extra_args)} complete")
