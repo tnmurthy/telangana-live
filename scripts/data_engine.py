@@ -88,10 +88,12 @@ def sync_finance():
         res = requests.get(gold_url, headers=headers, timeout=10)
         soup = BeautifulSoup(res.text, 'html.parser')
         text = soup.get_text()
-        
-        gold22 = re.search(r"22\s*[Kk](?:arat)?\b[\s\S]{0,300}(?:₹|Rs\.?\s*)([\d,]{4,})", text, re.I)
-        gold24 = re.search(r"24\s*[Kk](?:arat)?\b[\s\S]{0,300}(?:₹|Rs\.?\s*)([\d,]{4,})", text, re.I)
-        silver = re.search(r"[Ss]ilver\b[\s\S]{0,300}(?:₹|Rs\.?\s*)([\d,]{2,})", text, re.I)
+
+        # Matches both ₹ and Rs. price prefixes used by Indian financial sites
+        _CURR = r"(?:₹|Rs\.?\s*)"
+        gold22 = re.search(rf"22\s*[Kk](?:arat)?\b[\s\S]{{0,300}}{_CURR}([\d,]{{4,}})", text, re.I)
+        gold24 = re.search(rf"24\s*[Kk](?:arat)?\b[\s\S]{{0,300}}{_CURR}([\d,]{{4,}})", text, re.I)
+        silver = re.search(rf"[Ss]ilver\b[\s\S]{{0,300}}{_CURR}([\d,]{{2,}})", text, re.I)
 
         def p(m): return float(m.group(1).replace(',', '')) if m else 0
 
