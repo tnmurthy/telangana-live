@@ -1,8 +1,26 @@
-import { goldRates } from '../data/goldRates';
+import { useState, useEffect } from 'react';
+import { goldRates as staticGoldRates } from '../data/goldRates';
+import { fetchGoldRates } from '../services/pricesService';
 import ShareWhatsApp from '../components/ShareWhatsApp';
 import DateTimeBar from '../components/DateTimeBar';
 
 export default function GoldLandingPage() {
+    const [goldRates, setGoldRates] = useState(staticGoldRates);
+
+    useEffect(() => {
+        fetchGoldRates().then(data => {
+            if (data?.gold22k) {
+                setGoldRates(prev => ({
+                    ...prev,
+                    gold22k: { ...prev.gold22k, price: data.gold22k.price, change: data.gold22k.change ?? 0 },
+                    gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? 0 },
+                    silver:  { ...prev.silver,  price: data.silver.price,  change: data.silver.change  ?? 0 },
+                    date: data.lastUpdated ? new Date(data.lastUpdated).toISOString().slice(0, 10) : prev.date,
+                }));
+            }
+        }).catch(() => {});
+    }, []);
+
     const { gold22k, gold24k, silver, history } = goldRates;
 
     return (
@@ -38,8 +56,8 @@ export default function GoldLandingPage() {
                 </div>
                 <div className="glass-card p-6 border-white/10">
                     <div className="flex justify-between items-start mb-4">
-                        <span className="label-xs">Silver (Per Kg)</span>
-                        <ShareWhatsApp type="gold" data={{ label: 'Silver', price: silver.price, unit: 'kg' }} />
+                        <span className="label-xs">Silver (Per Gram)</span>
+                        <ShareWhatsApp type="gold" data={{ label: 'Silver', price: silver.price, unit: 'g' }} />
                     </div>
                     <div className="text-4xl font-bold text-gray-200">₹{silver.price.toLocaleString()}</div>
                     <p className={`text-sm mt-2 font-bold ${silver.change < 0 ? 'text-danger' : 'text-success'}`}>

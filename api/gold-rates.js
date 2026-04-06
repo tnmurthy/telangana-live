@@ -54,8 +54,10 @@ export default async function handler(req) {
       ? (raw24k > 5000 ? raw24k : raw24k * 10)
       : FALLBACK.gold24k.price;
 
-    const silver = rawSilver && rawSilver > 50 && rawSilver < 5000
-      ? rawSilver
+    // GoodReturns may return silver per kg (~90000) or per gram (~90); normalize to per gram
+    const silverPerGram = rawSilver && rawSilver > 1000 ? rawSilver / 1000 : rawSilver;
+    const silver = silverPerGram && silverPerGram > 50 && silverPerGram < 500
+      ? silverPerGram
       : FALLBACK.silver.price;
 
     const data = {

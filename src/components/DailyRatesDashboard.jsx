@@ -26,7 +26,7 @@ function PriceChange({ change }) {
 const historyTabs = [
     { key: 'gold22k', label: '22K', field: 'gold22k', unit: '₹/g' },
     { key: 'gold24k', label: '24K', field: 'gold24k', unit: '₹/g' },
-    { key: 'silver', label: 'Silver', field: 'silver', unit: '₹/kg' },
+    { key: 'silver', label: 'Silver', field: 'silver', unit: '₹/g' },
 ];
 
 export default function DailyRatesDashboard() {
