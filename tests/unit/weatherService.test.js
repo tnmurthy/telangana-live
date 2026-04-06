@@ -41,7 +41,8 @@ describe('weatherService', () => {
 
       const result = await fetchWeather('Hyderabad');
       expect(result.source).toBe('mock');
-      // Should have the mock structure (may be undefined if not in mockWeather, but source must be 'mock')
+      // Without an API key, the service immediately returns mock data.
+      // Source must always be 'mock'; data may be undefined for unknown districts.
     });
 
     it('does not call fetch when no API key is set', async () => {
