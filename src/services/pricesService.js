@@ -55,10 +55,10 @@ export async function fetchFuelPrices(city = 'hyderabad') {
     console.warn('fetchFuelPrices fallback:', err.message);
     // 4. Return static data
     return {
-      petrol: { price: staticFuel.hyderabad?.petrol || 102.68, unit: 'per litre', change: 0 },
-      diesel: { price: staticFuel.hyderabad?.diesel || 88.73,  unit: 'per litre', change: 0 },
-      lpg:    { price: staticFuel.hyderabad?.lpg    || 803.00, unit: 'per cylinder', change: 0 },
-      cng:    { price: staticFuel.hyderabad?.cng    || 72.80,  unit: 'per kg', change: 0 },
+      petrol: { price: staticFuel.petrol?.price || 102.68, unit: 'per litre', change: 0 },
+      diesel: { price: staticFuel.diesel?.price || 88.73,  unit: 'per litre', change: 0 },
+      lpg:    { price: staticFuel.lpgHousehold?.price || 803.00, unit: 'per cylinder', change: 0 },
+      cng:    { price: staticFuel.cngVehicle?.price   || 72.80,  unit: 'per kg', change: 0 },
       source: 'static-fallback',
       lastUpdated: new Date().toISOString()
     };
@@ -97,11 +97,11 @@ export async function fetchGoldRates() {
   } catch (err) {
     console.warn('fetchGoldRates fallback:', err.message);
     return {
-      gold22k:    { price: staticGold.gold22k    || 7180,  unit: 'per gram', change: 0 },
-      gold24k:    { price: staticGold.gold24k    || 7830,  unit: 'per gram', change: 0 },
-      silver:     { price: staticGold.silver     || 93.50, unit: 'per gram', change: 0 },
-      gold10g22k: { price: (staticGold.gold22k || 7180) * 10,  unit: 'per 10 grams', change: 0 },
-      gold10g24k: { price: (staticGold.gold24k || 7830) * 10,  unit: 'per 10 grams', change: 0 },
+      gold22k:    { price: staticGold.gold22k?.price    || 7180,  unit: 'per gram', change: 0 },
+      gold24k:    { price: staticGold.gold24k?.price    || 7830,  unit: 'per gram', change: 0 },
+      silver:     { price: staticGold.silver?.price     || 93.50, unit: 'per gram', change: 0 },
+      gold10g22k: { price: (staticGold.gold22k?.price || 7180) * 10,  unit: 'per 10 grams', change: 0 },
+      gold10g24k: { price: (staticGold.gold24k?.price || 7830) * 10,  unit: 'per 10 grams', change: 0 },
       source: 'static-fallback',
       lastUpdated: new Date().toISOString()
     };

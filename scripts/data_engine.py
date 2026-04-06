@@ -97,7 +97,10 @@ def sync_finance():
 
         g22 = p(gold22)
         g24 = p(gold24)
-        sil = p(silver) / 1000 # convert to per gram if it's per kg match? actually GoodReturns shows per gram or kg depending on context.
+        sil_raw = p(silver)
+        # GoodReturns may show silver per gram (~80-120) or per kg (~80000-120000).
+        # Divide by 1000 only when the raw value suggests a per-kg figure.
+        sil = sil_raw / 1000 if sil_raw > 1000 else sil_raw
 
         # Try to maintain history
         history = []
