@@ -73,22 +73,20 @@ def get_ai_summary(title, description):
 
 # --- Scrapers ---
 
-def sync_finance():
+def sync_gold_silver():
+    """Sync gold and silver rates from goodreturns.in (Hyderabad)."""
     if not requests:
-        print("SKIP: sync_finance requires requests/beautifulsoup4. Install with: pip install requests beautifulsoup4")
+        print("SKIP: sync_gold_silver requires requests/beautifulsoup4. Install with: pip install requests beautifulsoup4")
         return
-    print("Syncing Gold & Fuel Rates...")
-    # Gold Rates Hyderabad
+    print("Syncing Gold & Silver Rates...")
     gold_url = "https://www.goodreturns.in/gold-rates-in-hyderabad.html"
-    fuel_url = "https://www.goodreturns.in/fuel-price/hyderabad.html"
     headers = {'User-Agent': 'Mozilla/5.0'}
 
-    # Gold/Silver Scrape
     try:
         res = requests.get(gold_url, headers=headers, timeout=10)
         soup = BeautifulSoup(res.text, 'html.parser')
         text = soup.get_text()
-        
+
         gold22 = re.search(r"22\s*K[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
         gold24 = re.search(r"24\s*K[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
         silver = re.search(r"Silver[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
@@ -108,7 +106,6 @@ def sync_finance():
             try:
                 with open(PATHS["gold"], "r", encoding="utf-8") as f:
                     old_content = f.read()
-                    # Basic extraction of history array from JS file
                     history_match = re.search(r'"history":\s*(\[[\s\S]*?\])', old_content)
                     if history_match:
                         history = json.loads(history_match.group(1))
@@ -121,11 +118,11 @@ def sync_finance():
             "gold24k": g24 if g24 > 1000 else 7830,
             "silver": sil if sil > 50 else 96.50
         }
-        
+
         # Avoid duplicate dates in history
         history = [h for h in history if h.get("date") != current_entry["date"]]
         history.append(current_entry)
-        history = history[-7:] # Keep last 7 days
+        history = history[-7:]  # Keep last 7 days
 
         gold_data = {
             "city": "Hyderabad",
@@ -136,15 +133,25 @@ def sync_finance():
             "history": history
         }
         write_js_module(PATHS["gold"], "goldRates", gold_data)
+        print(f"Gold 22K: ₹{current_entry['gold22k']}/g, 24K: ₹{current_entry['gold24k']}/g, Silver: ₹{current_entry['silver']}/g")
     except Exception as e:
         print(f"Gold Scrape Error: {e}")
 
-    # Fuel Scrape
+
+def sync_fuel():
+    """Sync petrol/diesel/LPG/CNG prices from goodreturns.in (Hyderabad)."""
+    if not requests:
+        print("SKIP: sync_fuel requires requests/beautifulsoup4. Install with: pip install requests beautifulsoup4")
+        return
+    print("Syncing Fuel Prices...")
+    fuel_url = "https://www.goodreturns.in/fuel-price/hyderabad.html"
+    headers = {'User-Agent': 'Mozilla/5.0'}
+
     try:
         res = requests.get(fuel_url, headers=headers, timeout=10)
         soup = BeautifulSoup(res.text, 'html.parser')
         text = soup.get_text()
-        
+
         petrol = re.search(r"Petrol[\s\S]*?Rs\.\s*([\d.]+)", text, re.I)
         diesel = re.search(r"Diesel[\s\S]*?Rs\.\s*([\d.]+)", text, re.I)
 
@@ -155,8 +162,8 @@ def sync_finance():
             "city": "Hyderabad",
             "date": datetime.now().strftime("%Y-%m-%d"),
             "petrol": {
-                "price": p_price, 
-                "change": 0, 
+                "price": p_price,
+                "change": 0,
                 "unit": "₹/litre",
                 "taxBreakup": {
                     "basePrice": round(p_price * 0.53, 2),
@@ -166,8 +173,8 @@ def sync_finance():
                 }
             },
             "diesel": {
-                "price": d_price, 
-                "change": 0, 
+                "price": d_price,
+                "change": 0,
                 "unit": "₹/litre",
                 "taxBreakup": {
                     "basePrice": round(d_price * 0.58, 2),
@@ -177,31 +184,38 @@ def sync_finance():
                 }
             },
             "lpgHousehold": {
-                "label": "LPG (Household 14.2kg)", 
-                "price": 803.00, 
-                "change": 0, 
+                "label": "LPG (Household 14.2kg)",
+                "price": 803.00,
+                "change": 0,
                 "unit": "₹/cylinder",
                 "taxBreakup": {
                     "basePrice": 764.76,
-                    "gst": 38.24, # 5% GST on domestic LPG
+                    "gst": 38.24,  # 5% GST on domestic LPG
                     "distributorCommission": 64.00,
                 }
             },
             "cngVehicle": {
-                "label": "Auto CNG (Vehicle)", 
-                "price": 60.86, 
-                "change": 0, 
+                "label": "Auto CNG (Vehicle)",
+                "price": 60.86,
+                "change": 0,
                 "unit": "₹/kg",
                 "taxBreakup": {
                     "basePrice": 48.68,
-                    "gst": 7.30, # 12% GST on CNG typically
+                    "gst": 7.30,  # 12% GST on CNG typically
                     "excise": 4.88,
                 }
             }
         }
         write_js_module(PATHS["fuel"], "fuelPrices", fuel_data)
+        print(f"Petrol: ₹{p_price}/L, Diesel: ₹{d_price}/L")
     except Exception as e:
         print(f"Fuel Scrape Error: {e}")
+
+
+def sync_finance():
+    """Backward-compatible wrapper: sync both gold/silver and fuel prices."""
+    sync_gold_silver()
+    sync_fuel()
 
 def sync_pulses():
     print("Syncing pulses (Commodity) Rates...")
@@ -258,8 +272,29 @@ def sync_ai_pulse():
         print(f"AI Pulse Error: {e}")
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Sync data for telangana.live")
+    parser.add_argument(
+        '--task',
+        choices=['all', 'news', 'gold', 'fuel', 'pulses', 'ai_pulse'],
+        default='all',
+        help="Which data to sync (default: all)",
+    )
+    args = parser.parse_args()
+
+    TASK_MAP = {
+        'all':      [("Finance", sync_finance), ("Pulses", sync_pulses), ("News", sync_news), ("AI Pulse", sync_ai_pulse)],
+        'news':     [("News", sync_news)],
+        'gold':     [("Gold/Silver", sync_gold_silver)],
+        'fuel':     [("Fuel", sync_fuel)],
+        'pulses':   [("Pulses", sync_pulses)],
+        'ai_pulse': [("AI Pulse", sync_ai_pulse)],
+    }
+
+    tasks = TASK_MAP[args.task]
     errors = []
-    for name, fn in [("Finance", sync_finance), ("Pulses", sync_pulses), ("News", sync_news), ("AI Pulse", sync_ai_pulse)]:
+    for name, fn in tasks:
         try:
             fn()
         except Exception as e:
@@ -268,4 +303,4 @@ if __name__ == "__main__":
     if errors:
         print(f"\nSync completed with errors in: {', '.join(errors)}")
     else:
-        print("\nFull Synchronization Complete.")
+        print(f"\nSynchronization complete ({args.task}).")

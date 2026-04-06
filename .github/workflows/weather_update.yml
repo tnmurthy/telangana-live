@@ -1,12 +1,12 @@
-name: Automated News Scraper
+name: Hourly Weather Update
 
 on:
   schedule:
-    - cron: '0 * * * *' # Every hour
+    - cron: '30 * * * *' # Every hour at :30 (offset from news at :00)
   workflow_dispatch: # Manual trigger
 
 jobs:
-  scrape:
+  update-weather:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -18,18 +18,17 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: |
-          pip install feedparser google-generativeai requests beautifulsoup4
+        run: pip install requests
 
-      - name: Run Scraper
+      - name: Run Weather Scraper
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: python scripts/news_scraper.py
+          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
+        run: python scripts/weather_scraper.py
 
       - name: Commit and Push Updates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/news.json
-          git commit -m "chore: update civic news feed [automated]" || echo "No changes to commit"
+          git add src/data/weatherData.js
+          git commit -m "chore: update weather data [automated]" || echo "No changes to commit"
           git push

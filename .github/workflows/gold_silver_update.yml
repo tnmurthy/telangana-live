@@ -1,12 +1,12 @@
-name: Automated News Scraper
+name: Gold & Silver Update (12-hour)
 
 on:
   schedule:
-    - cron: '0 * * * *' # Every hour
+    - cron: '45 */12 * * *' # Every 12 hours at :45 (gold and silver prices)
   workflow_dispatch: # Manual trigger
 
 jobs:
-  scrape:
+  update-gold-silver:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -18,18 +18,15 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: |
-          pip install feedparser google-generativeai requests beautifulsoup4
+        run: pip install requests beautifulsoup4
 
-      - name: Run Scraper
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: python scripts/news_scraper.py
+      - name: Sync Gold & Silver Prices
+        run: python scripts/data_engine.py --task gold
 
       - name: Commit and Push Updates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/news.json
-          git commit -m "chore: update civic news feed [automated]" || echo "No changes to commit"
+          git add src/data/goldRates.js
+          git commit -m "chore: update gold and silver rates [automated]" || echo "No changes to commit"
           git push

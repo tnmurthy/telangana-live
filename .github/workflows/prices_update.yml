@@ -1,0 +1,40 @@
+name: Secondary Prices Update (6-hour)
+
+on:
+  schedule:
+    - cron: '15 */6 * * *' # Every 6 hours at :15 (fuel, commodities, AI pulse)
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  update-secondary-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4 google-generativeai
+
+      - name: Sync Fuel Prices
+        run: python scripts/data_engine.py --task fuel
+
+      - name: Sync Commodity (Pulses) Prices
+        run: python scripts/data_engine.py --task pulses
+
+      - name: Sync AI Pulse Briefing
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python scripts/data_engine.py --task ai_pulse
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/fuelPrices.js src/data/pulses.js src/data/aiBriefingData.js
+          git commit -m "chore: update fuel, commodity, and AI pulse data [automated]" || echo "No changes to commit"
+          git push
