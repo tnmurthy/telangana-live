@@ -28,7 +28,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4 feedparser
 
       - name: Sync gold & fuel rates
         run: python scripts/data_engine.py --finance-only
