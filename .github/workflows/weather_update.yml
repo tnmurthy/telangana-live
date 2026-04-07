@@ -1,0 +1,37 @@
+name: Hourly Weather Update
+
+on:
+  schedule:
+    - cron: '30 * * * *' # Every hour at :30 (offset from news at :00)
+  workflow_dispatch: # Manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Run Weather Scraper
+        env:
+          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
+        run: python scripts/weather_scraper.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/weatherData.js
+          git commit -m "chore: update weather data [automated]" || echo "No changes to commit"
+          git push

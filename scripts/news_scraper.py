@@ -21,19 +21,18 @@ _REPO_ROOT = os.path.dirname(_SCRIPTS_DIR)
 OUTPUT_FILE = os.path.join(_REPO_ROOT, "src", "data", "news.json")
 
 try:
-    import google.generativeai as genai
+    from google import genai
     HAS_GENAI = True
 except ImportError:
     HAS_GENAI = False
 
 class NewsScraper:
     def __init__(self):
-        self.model = None
+        self.client = None
         if HAS_GENAI:
             self.api_key = os.environ.get("GOOGLE_API_KEY")
             if self.api_key:
-                genai.configure(api_key=self.api_key)
-                self.model = genai.GenerativeModel('gemini-1.5-flash')
+                self.client = genai.Client(api_key=self.api_key)
 
     def clean_html(self, raw_html):
         if not raw_html: return ""
@@ -62,6 +61,20 @@ class NewsScraper:
     _summary_delay: float = float(os.environ.get("GEMINI_DELAY", "0.5"))
 
     def scrape(self, limit=50):
+    def get_ai_summary(self, title, description):
+        if not self.client: return ""
+        prompt = f"Summarize this news article in exactly 2 concise lines for a civic portal. Title: {title}. Description: {description}"
+        try:
+            response = self.client.models.generate_content(
+                model='gemini-1.5-flash',
+                contents=prompt,
+            )
+            return response.text.strip()
+        except Exception as e:
+            print(f"AI Summary Error: {e}")
+            return ""
+
+    def scrape(self, limit=10):
         all_news = []
         seen_links = set()
 
