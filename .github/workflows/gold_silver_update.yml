@@ -1,0 +1,35 @@
+name: Gold & Silver Update (12-hour)
+
+on:
+  schedule:
+    - cron: '45 */12 * * *' # Every 12 hours at :45 (gold and silver prices)
+  workflow_dispatch: # Manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-gold-silver:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Sync Gold & Silver Prices
+        run: python scripts/data_engine.py --task gold
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add src/data/goldRates.js
+          git commit -m "chore: update gold and silver rates [automated]" || echo "No changes to commit"
+          git push

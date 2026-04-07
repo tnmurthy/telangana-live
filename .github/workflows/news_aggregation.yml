@@ -2,8 +2,11 @@ name: Automated News Scraper
 
 on:
   schedule:
-    - cron: '0 */4 * * *' # Every 4 hours
+    - cron: '0 * * * *' # Every hour
   workflow_dispatch: # Manual trigger
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   scrape:
@@ -12,6 +15,8 @@ jobs:
     permissions:
       contents: write   # required to commit news.json back to the repo
 
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
