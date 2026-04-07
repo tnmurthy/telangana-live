@@ -88,16 +88,21 @@ def sync_finance():
         res = requests.get(gold_url, headers=headers, timeout=10)
         soup = BeautifulSoup(res.text, 'html.parser')
         text = soup.get_text()
-        
-        gold22 = re.search(r"22\s*K[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
-        gold24 = re.search(r"24\s*K[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
-        silver = re.search(r"Silver[\s\S]{0,100}Rs\.?\s*([\d,]+)", text, re.I)
+
+        # Matches both ₹ and Rs. price prefixes used by Indian financial sites
+        _CURR = r"(?:₹|Rs\.?\s*)"
+        gold22 = re.search(rf"22\s*[Kk](?:arat)?\b[\s\S]{{0,300}}{_CURR}([\d,]{{4,}})", text, re.I)
+        gold24 = re.search(rf"24\s*[Kk](?:arat)?\b[\s\S]{{0,300}}{_CURR}([\d,]{{4,}})", text, re.I)
+        silver = re.search(rf"[Ss]ilver\b[\s\S]{{0,300}}{_CURR}([\d,]{{2,}})", text, re.I)
 
         def p(m): return float(m.group(1).replace(',', '')) if m else 0
 
         g22 = p(gold22)
         g24 = p(gold24)
-        sil = p(silver) / 1000 # convert to per gram if it's per kg match? actually GoodReturns shows per gram or kg depending on context.
+        sil_raw = p(silver)
+        # GoodReturns may show silver per gram (~80-120) or per kg (~80000-120000).
+        # Divide by 1000 only when the raw value suggests a per-kg figure.
+        sil = sil_raw / 1000 if sil_raw > 1000 else sil_raw
 
         # Try to maintain history
         history = []
@@ -118,7 +123,13 @@ def sync_finance():
             "gold24k": g24 if g24 > 1000 else 7830,
             "silver": sil if sil > 50 else 96.50
         }
-        
+
+        # Compute day-over-day change using the most recent previous entry
+        prev_entry = history[-1] if history else None
+        change22k = round(current_entry["gold22k"] - prev_entry["gold22k"], 2) if prev_entry else 0
+        change24k = round(current_entry["gold24k"] - prev_entry["gold24k"], 2) if prev_entry else 0
+        change_sil = round(current_entry["silver"] - prev_entry["silver"], 2) if prev_entry else 0
+
         # Avoid duplicate dates in history
         history = [h for h in history if h.get("date") != current_entry["date"]]
         history.append(current_entry)
@@ -127,9 +138,9 @@ def sync_finance():
         gold_data = {
             "city": "Hyderabad",
             "date": datetime.now().strftime("%Y-%m-%d"),
-            "gold22k": {"price": current_entry["gold22k"], "change": 0, "unit": "₹/gram"},
-            "gold24k": {"price": current_entry["gold24k"], "change": 0, "unit": "₹/gram"},
-            "silver": {"price": current_entry["silver"], "change": 0, "unit": "₹/gram"},
+            "gold22k": {"price": current_entry["gold22k"], "change": change22k, "unit": "₹/gram"},
+            "gold24k": {"price": current_entry["gold24k"], "change": change24k, "unit": "₹/gram"},
+            "silver": {"price": current_entry["silver"], "change": change_sil, "unit": "₹/gram"},
             "history": history
         }
         write_js_module(PATHS["gold"], "goldRates", gold_data)
@@ -255,8 +266,22 @@ def sync_ai_pulse():
         print(f"AI Pulse Error: {e}")
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Telangana Live data sync engine")
+    parser.add_argument(
+        "--finance-only",
+        action="store_true",
+        help="Sync only gold and fuel rates (skip news and AI pulse)",
+    )
+    args = parser.parse_args()
+
+    if args.finance_only:
+        tasks = [("Finance", sync_finance), ("Pulses", sync_pulses)]
+    else:
+        tasks = [("Finance", sync_finance), ("Pulses", sync_pulses), ("News", sync_news), ("AI Pulse", sync_ai_pulse)]
+
     errors = []
-    for name, fn in [("Finance", sync_finance), ("Pulses", sync_pulses), ("News", sync_news), ("AI Pulse", sync_ai_pulse)]:
+    for name, fn in tasks:
         try:
             fn()
         except Exception as e:
@@ -265,4 +290,4 @@ if __name__ == "__main__":
     if errors:
         print(f"\nSync completed with errors in: {', '.join(errors)}")
     else:
-        print("\nFull Synchronization Complete.")
+        print("\nSync complete." if args.finance_only else "\nFull Synchronization Complete.")

@@ -37,6 +37,10 @@ const PoliticianTrackerPage = lazy(() => import('./pages/PoliticianTrackerPage')
 const PropertyTaxPage = lazy(() => import('./pages/PropertyTaxPage'));
 const SchemesPage = lazy(() => import('./pages/SchemesPage'));
 const ReportingLandingPage = lazy(() => import('./pages/ReportingLandingPage'));
+const WeatherForecastPage = lazy(() => import('./pages/WeatherForecastPage'));
+const ReservoirsPage = lazy(() => import('./pages/ReservoirsPage'));
+const ParksPage = lazy(() => import('./pages/ParksPage'));
+const FarmerPage = lazy(() => import('./pages/FarmerPage'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -113,6 +117,10 @@ function AppContent() {
                   <Route path="/property-tax" element={<PropertyTaxPage />} />
                   <Route path="/schemes" element={<SchemesPage />} />
                   <Route path="/report" element={<ReportingLandingPage />} />
+                  <Route path="/weather/forecast" element={<WeatherForecastPage />} />
+                  <Route path="/reservoirs" element={<ReservoirsPage />} />
+                  <Route path="/parks" element={<ParksPage />} />
+                  <Route path="/farmers" element={<FarmerPage />} />
                   <Route path="/:region" element={<SubRegionPage />} />
                   <Route path="*" element={<NotFound />} />
                 </>

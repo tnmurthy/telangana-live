@@ -29,6 +29,8 @@ export const emergencyService = {
      * @param {function} onUpdate - Callback function when status changes
      */
     subscribe(onUpdate) {
+        // Realtime updates are unavailable when Supabase credentials are not configured
+        if (!supabase) return null;
         return supabase
             .channel('emergency-changes')
             .on(
