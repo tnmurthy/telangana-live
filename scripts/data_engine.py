@@ -292,6 +292,11 @@ if __name__ == "__main__":
         default='all',
         help="Which data to sync (default: all)",
     )
+    parser.add_argument(
+        "--finance-only",
+        action="store_true",
+        help="Sync only gold, fuel, and pulses rates (skip news and AI pulse)",
+    )
     args = parser.parse_args()
 
     TASK_MAP = {
@@ -303,19 +308,10 @@ if __name__ == "__main__":
         'ai_pulse': [("AI Pulse", sync_ai_pulse)],
     }
 
-    tasks = TASK_MAP[args.task]
-    parser = argparse.ArgumentParser(description="Telangana Live data sync engine")
-    parser.add_argument(
-        "--finance-only",
-        action="store_true",
-        help="Sync only gold and fuel rates (skip news and AI pulse)",
-    )
-    args = parser.parse_args()
-
     if args.finance_only:
         tasks = [("Finance", sync_finance), ("Pulses", sync_pulses)]
     else:
-        tasks = [("Finance", sync_finance), ("Pulses", sync_pulses), ("News", sync_news), ("AI Pulse", sync_ai_pulse)]
+        tasks = TASK_MAP[args.task]
 
     errors = []
     for name, fn in tasks:
@@ -327,5 +323,4 @@ if __name__ == "__main__":
     if errors:
         print(f"\nSync completed with errors in: {', '.join(errors)}")
     else:
-        print(f"\nSynchronization complete ({args.task}).")
-        print("\nSync complete." if args.finance_only else "\nFull Synchronization Complete.")
+        print("\nSync complete." if args.finance_only else f"\nSynchronization complete ({args.task}).")
