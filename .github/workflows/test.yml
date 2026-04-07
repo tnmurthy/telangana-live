@@ -39,3 +39,6 @@ jobs:
         python -c "from agents.quality_checker import QualityChecker"
         echo "All imports successful!"
 
+    - name: Run Python unit tests
+      run: python -m pytest tests/test_data_engine.py -v
+

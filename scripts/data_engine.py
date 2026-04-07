@@ -28,9 +28,8 @@ try:
 except ImportError:
     genai = None
 
-# Add scripts dir to path so news_scraper can be imported
+# Add scripts dir to path so news_scraper can be imported when needed
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from news_scraper import NewsScraper
 
 # Configuration
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
@@ -248,6 +247,7 @@ def sync_pulses():
 
 def sync_news():
     print("Syncing News via NewsScraper...")
+    from news_scraper import NewsScraper  # defer import so feedparser is only required when this function runs
     scraper = NewsScraper()
     all_news = scraper.scrape(limit=10)
     
