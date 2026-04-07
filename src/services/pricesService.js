@@ -97,11 +97,11 @@ export async function fetchGoldRates() {
   } catch (err) {
     console.warn('fetchGoldRates fallback:', err.message);
     return {
-      gold22k:    { price: staticGold.gold22k?.price    || 7180,  unit: 'per gram', change: 0 },
-      gold24k:    { price: staticGold.gold24k?.price    || 7830,  unit: 'per gram', change: 0 },
-      silver:     { price: staticGold.silver?.price     || 93.50, unit: 'per gram', change: 0 },
-      gold10g22k: { price: (staticGold.gold22k?.price || 7180) * 10,  unit: 'per 10 grams', change: 0 },
-      gold10g24k: { price: (staticGold.gold24k?.price || 7830) * 10,  unit: 'per 10 grams', change: 0 },
+      gold22k:    { price: staticGold.gold22k?.price    || 7180,  unit: 'per gram', change: staticGold.gold22k?.change    ?? 0 },
+      gold24k:    { price: staticGold.gold24k?.price    || 7830,  unit: 'per gram', change: staticGold.gold24k?.change    ?? 0 },
+      silver:     { price: staticGold.silver?.price     || 93.50, unit: 'per gram', change: staticGold.silver?.change     ?? 0 },
+      gold10g22k: { price: (staticGold.gold22k?.price || 7180) * 10,  unit: 'per 10 grams', change: (staticGold.gold22k?.change ?? 0) * 10 },
+      gold10g24k: { price: (staticGold.gold24k?.price || 7830) * 10,  unit: 'per 10 grams', change: (staticGold.gold24k?.change ?? 0) * 10 },
       source: 'static-fallback',
       lastUpdated: new Date().toISOString()
     };

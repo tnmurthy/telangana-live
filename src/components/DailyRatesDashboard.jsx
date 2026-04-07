@@ -26,7 +26,7 @@ function PriceChange({ change }) {
 const historyTabs = [
     { key: 'gold22k', label: '22K', field: 'gold22k', unit: '₹/g' },
     { key: 'gold24k', label: '24K', field: 'gold24k', unit: '₹/g' },
-    { key: 'silver', label: 'Silver', field: 'silver', unit: '₹/kg' },
+    { key: 'silver', label: 'Silver', field: 'silver', unit: '₹/g' },
 ];
 
 export default function DailyRatesDashboard() {
@@ -39,9 +39,9 @@ export default function DailyRatesDashboard() {
             if (data?.gold22k) {
                 setGoldRates(prev => ({
                     ...prev,
-                    gold22k: { ...prev.gold22k, price: data.gold22k.price, change: data.gold22k.change ?? 0 },
-                    gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? 0 },
-                    silver:  { ...prev.silver,  price: data.silver.price,  change: data.silver.change  ?? 0 },
+                    gold22k: { ...prev.gold22k, price: data.gold22k.price, change: data.gold22k.change ?? prev.gold22k.change },
+                    gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? prev.gold24k.change },
+                    silver:  { ...prev.silver,  price: data.silver.price,  change: data.silver.change  ?? prev.silver.change  },
                     date: data.lastUpdated ? new Date(data.lastUpdated).toISOString().slice(0, 10) : prev.date,
                 }));
             }
