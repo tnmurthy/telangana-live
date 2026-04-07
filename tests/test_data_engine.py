@@ -177,9 +177,6 @@ class TestNewsJsonSchema:
             assert "source" in item
             assert "category" in item
             assert "region" in item
-Unit tests for scripts/data_engine.py and scripts/news_scraper.py.
-Run with: python -m pytest tests/test_data_engine.py -v
-"""
 
 import json
 import os
@@ -632,7 +629,7 @@ class TestSyncFinanceGoldParsing:
         assert data["gold24k"]["price"] == 7830.0
 
     def test_silver_per_gram_preserved(self, tmp_path):
-        """Silver value ≤ 1000 should be stored as-is (integer, regex strips decimal)."""
+        """Silver value <= 1000 should be stored as-is (integer, regex strips decimal)."""
         self._run_finance_sync(tmp_path)
         content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
         match = re.search(r"= (\{[\s\S]*\});", content)
@@ -960,7 +957,7 @@ class TestSyncNews:
         assert len(saved) == 2
         assert saved[0]["title"] == "Hyderabad flood alert"
 
-    def test_sync_news_uses_limit_10(self, tmp_path):
+    def test_sync_news_uses_limit_50(self, tmp_path):
         news_path = str(tmp_path / "news.json")
         original_path = data_engine.PATHS["news"]
         data_engine.PATHS["news"] = news_path
@@ -970,6 +967,6 @@ class TestSyncNews:
             import news_scraper as _ns_mod
             with patch.object(_ns_mod, "NewsScraper", return_value=mock_scraper):
                 data_engine.sync_news()
-            mock_scraper.scrape.assert_called_once_with(limit=10)
+            mock_scraper.scrape.assert_called_once_with(limit=50)
         finally:
             data_engine.PATHS["news"] = original_path
