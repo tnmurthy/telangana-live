@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { fetchWeather } from '../services/weatherService';
+import { fetchGoldRates, fetchFuelPrices } from '../services/pricesService';
 import { Icons } from './Icons';
-import { goldRates } from '../data/goldRates';
-import { fuelPrices } from '../data/fuelPrices';
+import { goldRates as staticGold } from '../data/goldRates';
+import { fuelPrices as staticFuel } from '../data/fuelPrices';
 
 const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
   const [weather, setWeather] = useState(null);
@@ -53,6 +54,29 @@ const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
 };
 
 const MarketWidget = () => {
+  const [goldRates, setGoldRates] = useState(staticGold);
+  const [fuelPrices, setFuelPrices] = useState(staticFuel);
+
+  useEffect(() => {
+    fetchGoldRates().then(data => {
+      if (data?.gold24k) {
+        setGoldRates(prev => ({
+          ...prev,
+          gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? prev.gold24k.change },
+        }));
+      }
+    }).catch(() => {});
+
+    fetchFuelPrices().then(data => {
+      if (data?.petrol) {
+        setFuelPrices(prev => ({
+          ...prev,
+          petrol: { ...prev.petrol, price: data.petrol.price, change: data.petrol.change ?? 0 },
+        }));
+      }
+    }).catch(() => {});
+  }, []);
+
   const gold24k = goldRates.gold24k;
   const petrol = fuelPrices.petrol;
   const goldPer10g = (gold24k.price * 10).toLocaleString('en-IN');

@@ -1,4 +1,6 @@
-import { fuelPrices } from '../data/fuelPrices';
+import { useState, useEffect } from 'react';
+import { fuelPrices as staticFuelPrices } from '../data/fuelPrices';
+import { fetchFuelPrices } from '../services/pricesService';
 import ShareWhatsApp from './ShareWhatsApp';
 
 /* ── SVG Icons for fuel types ── */
@@ -34,6 +36,23 @@ const fuelColors = {
 };
 
 export default function FuelPriceWidget() {
+    const [fuelPrices, setFuelPrices] = useState(staticFuelPrices);
+
+    useEffect(() => {
+        fetchFuelPrices().then(data => {
+            if (data?.petrol) {
+                setFuelPrices(prev => ({
+                    ...prev,
+                    petrol: { ...prev.petrol, price: data.petrol.price, change: data.petrol.change ?? 0 },
+                    diesel: { ...prev.diesel, price: data.diesel.price, change: data.diesel.change ?? 0 },
+                    ...(data.lpg ? { lpgHousehold: { ...prev.lpgHousehold, price: data.lpg.price, change: data.lpg.change ?? 0 } } : {}),
+                    ...(data.cng ? { cngVehicle:   { ...prev.cngVehicle,   price: data.cng.price, change: data.cng.change ?? 0 } } : {}),
+                    date: data.lastUpdated ? new Date(data.lastUpdated).toISOString().slice(0, 10) : prev.date,
+                }));
+            }
+        }).catch(() => {});
+    }, []);
+
     const { city, date, petrol, diesel, lpgHousehold, cngVehicle } = fuelPrices;
 
     const fuels = [

@@ -81,6 +81,16 @@ const LeftSidebar = () => {
           <NavItem to="/schemes" icon={<span className="text-base">📋</span>} label="Gov Schemes" />
           <NavItem to="/property-tax" icon={<span className="text-base">🏠</span>} label="Property Tax" />
         </SidebarSection>
+
+        <div className="divider mx-3" />
+
+        {/* Nature & Environment */}
+        <SidebarSection title="Environment">
+          <NavItem to="/weather/forecast" icon={<span className="text-base">🌤️</span>} label="Weather Forecast" badge="30-Day" />
+          <NavItem to="/reservoirs" icon={<span className="text-base">💧</span>} label="Reservoir Levels" />
+          <NavItem to="/parks" icon={<span className="text-base">🌳</span>} label="Parks & Crowds" />
+          <NavItem to="/farmers" icon={<span className="text-base">🌾</span>} label="Farmer Portal" />
+        </SidebarSection>
       </nav>
     </aside>
   );
