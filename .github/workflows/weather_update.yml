@@ -5,6 +5,9 @@ on:
     - cron: '30 * * * *' # Every hour at :30 (offset from news at :00)
   workflow_dispatch: # Manual trigger
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: write
 
@@ -26,7 +29,12 @@ jobs:
       - name: Run Weather Scraper
         env:
           OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
-        run: python scripts/weather_scraper.py
+        run: |
+          if [ -z "$OWM_API_KEY" ]; then
+            echo "OWM_API_KEY secret is not configured. Skipping weather update."
+            exit 0
+          fi
+          python scripts/weather_scraper.py
 
       - name: Commit and Push Updates
         run: |
