@@ -26,7 +26,12 @@ try:
 except ImportError:
     HAS_GENAI = False
 
+
 class NewsScraper:
+    # Delay between API calls (seconds).  Can be overridden via the
+    # GEMINI_DELAY environment variable to avoid rate-limit errors.
+    _summary_delay: float = float(os.environ.get("GEMINI_DELAY", "0.5"))
+
     def __init__(self):
         self.client = None
         if HAS_GENAI:
@@ -35,23 +40,36 @@ class NewsScraper:
                 self.client = genai.Client(api_key=self.api_key)
 
     def clean_html(self, raw_html):
-        if not raw_html: return ""
+        if not raw_html:
+            return ""
         return re.sub(r'<.*?>', '', raw_html).strip()
 
-    def get_ai_summary(self, title, description):
-        if not self.client: return ""
-        prompt = f"Summarize this news article in exactly 2 concise lines for a civic portal. Title: {title}. Description: {description}"
-        try:
-            response = self.client.models.generate_content(
-                model='gemini-1.5-flash',
-                contents=prompt,
-            )
-            return response.text.strip()
-        except Exception as e:
-            print(f"AI Summary Error: {e}")
+    def get_ai_summary(self, title, description, retries=2, base_delay=1.0):
+        """Generate a 2-line AI summary with simple exponential back-off on failure."""
+        if not self.client:
             return ""
+        prompt = (
+            "Summarize this news article in exactly 2 concise lines for a civic portal. "
+            f"Title: {title}. Description: {description}"
+        )
+        delay = base_delay
+        for attempt in range(retries + 1):
+            try:
+                response = self.client.models.generate_content(
+                    model='gemini-1.5-flash',
+                    contents=prompt,
+                )
+                return response.text.strip()
+            except Exception as e:
+                if attempt < retries:
+                    print(f"AI Summary retry {attempt + 1}/{retries} after {delay}s: {e}")
+                    time.sleep(delay)
+                    delay *= 2
+                else:
+                    print(f"AI Summary Error (gave up after {retries} retries): {e}")
+        return ""
 
-    def scrape(self, limit=10):
+    def scrape(self, limit=50):
         all_news = []
         seen_links = set()
 
@@ -98,10 +116,11 @@ class NewsScraper:
                     elif any(k in low_title for k in ["hospital", "health", "covid", "dengue", "doctor"]):
                         item["category"] = "Health"
 
-                    if len(all_news) < limit:
+                    # Generate AI summaries for all items (configurable delay to avoid rate limits)
+                    if self.client:
                         print(f"Generating AI Summary for: {entry.title[:40]}...")
                         item["ai_summary"] = self.get_ai_summary(item["title"], item["description"])
-                        time.sleep(0.5)
+                        time.sleep(self._summary_delay)
 
                     all_news.append(item)
                     seen_links.add(entry.link)
@@ -110,13 +129,16 @@ class NewsScraper:
 
         return all_news[:50]
 
+
 def run_scraper():
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     scraper = NewsScraper()
-    news = scraper.scrape(limit=10)
+    news = scraper.scrape()
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(news, f, indent=2, ensure_ascii=False)
     print(f"Successfully saved {len(news)} items to {OUTPUT_FILE}")
 
+
 if __name__ == "__main__":
     run_scraper()
+

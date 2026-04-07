@@ -115,6 +115,65 @@ class SupabaseDB:
             logger.error(f"Error updating content: {str(e)}")
             return False
 
+    def publish_content(self, title):
+        """Mark content as published so the frontend can surface it."""
+        try:
+            self.client.table('content').update({'status': 'published', 'updated_at': datetime.now().isoformat()}).eq('title', title).execute()
+            logger.info(f"Content published: {title}")
+            return True
+        except Exception as e:
+            logger.error(f"Error publishing content: {str(e)}")
+            return False
+
+    def get_published_content(self, limit=10):
+        """Fetch recently published articles for the Stories bar."""
+        try:
+            response = (
+                self.client.table('content')
+                .select('id, title, category, content, source_url, updated_at')
+                .eq('status', 'published')
+                .order('updated_at', desc=True)
+                .limit(limit)
+                .execute()
+            )
+            return response.data
+        except Exception as e:
+            logger.error(f"Error fetching published content: {str(e)}")
+            return []
+
+    def get_pending_quality_check(self, limit=5):
+        """Fetch active content that has not yet been quality-checked."""
+        try:
+            response = (
+                self.client.table('content')
+                .select('id, title, content')
+                .eq('status', 'active')
+                .order('created_at', desc=True)
+                .limit(limit)
+                .execute()
+            )
+            return response.data
+        except Exception as e:
+            logger.error(f"Error fetching pending content: {str(e)}")
+            return []
+
+    def get_topic_queue(self):
+        """Fetch dynamic content topics queued by editors in Supabase.
+        Falls back to an empty list when the table doesn't exist yet."""
+        try:
+            response = (
+                self.client.table('topic_queue')
+                .select('topic, category, content_type')
+                .eq('status', 'pending')
+                .order('created_at', desc=True)
+                .limit(10)
+                .execute()
+            )
+            return response.data or []
+        except Exception as e:
+            logger.warning(f"topic_queue table not available ({e}); using default topics.")
+            return []
+
 
 db = SupabaseDB()
 

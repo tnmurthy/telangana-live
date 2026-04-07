@@ -1,10 +1,18 @@
 import anthropic
 import json
+import re
 from config import CONFIG
 from database import db
 import logging
 
 logger = logging.getLogger(__name__)
+
+# Default topics used when no dynamic queue is available in Supabase
+DEFAULT_TOPICS = [
+    ('Top Telangana Tourism Destinations', 'guides', 'guide'),
+    ('Latest IT Jobs in Hyderabad', 'listings', 'listing'),
+    ('Telangana Weekly News Roundup', 'news', 'article'),
+]
 
 class ContentGenerator:
     """Generates new content for telangana.live"""
@@ -49,8 +57,9 @@ Format your response as JSON with these exact keys:
         response_text = message.content[0].text
         
         try:
-            # Parse JSON response
-            generated = json.loads(response_text)
+            # Strip markdown code fences if the model wrapped the JSON
+            clean = re.sub(r'^```(?:json)?\s*|\s*```$', '', response_text.strip(), flags=re.MULTILINE)
+            generated = json.loads(clean)
             
             # Store in Supabase
             db.insert_content(
@@ -72,14 +81,22 @@ Format your response as JSON with these exact keys:
             return None, tokens
     
     def run(self):
-        """Execute generation cycle with default topics"""
-        logger.info("Starting content generator...")
+        """Execute generation cycle.
         
-        topics = [
-            ('Top Telangana Tourism Destinations', 'guides', 'guide'),
-            ('Latest IT Jobs in Hyderabad', 'listings', 'listing'),
-            ('Telangana Weekly News Roundup', 'news', 'article'),
-        ]
+        First tries to pull dynamic topics from the Supabase ``topic_queue``
+        table (populated by editors / admin UI).  Falls back to the hard-coded
+        DEFAULT_TOPICS list when the table is empty or unavailable.
+        """
+        logger.info("Starting content generator...")
+
+        # Prefer editor-supplied topic queue
+        queued = db.get_topic_queue()
+        if queued:
+            topics = [(row['topic'], row['category'], row.get('content_type', 'article')) for row in queued]
+            logger.info(f"Using {len(topics)} topic(s) from Supabase topic_queue.")
+        else:
+            topics = DEFAULT_TOPICS
+            logger.info("No queued topics found; using default topics.")
         
         results = []
         for topic, category, content_type in topics:

@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 import CrisisDashboard from './CrisisDashboard';
 import HeatwavePanel from './HeatwavePanel';
+import { WidgetErrorBoundary } from './ErrorBoundary';
 
 const MainLayout = ({ children, isEmergencyActive }) => {
   const location = useLocation();
@@ -23,7 +24,9 @@ const MainLayout = ({ children, isEmergencyActive }) => {
       <Header />
       <DateTimeBar />
       <div id="ticker-section">
-        <NewsTicker />
+        <WidgetErrorBoundary name="News Ticker">
+          <NewsTicker />
+        </WidgetErrorBoundary>
       </div>
 
       <main className="max-w-[1440px] mx-auto px-3 sm:px-5 lg:px-6 py-5">
@@ -33,13 +36,19 @@ const MainLayout = ({ children, isEmergencyActive }) => {
 
           {/* Central Feed */}
           <section className="min-w-0 space-y-6 animate-fade-in">
-            <CrisisDashboard currentRegion={currentRegion === 'general' ? 'hyderabad' : currentRegion} />
-            <HeatwavePanel />
+            <WidgetErrorBoundary name="Crisis Dashboard">
+              <CrisisDashboard currentRegion={currentRegion === 'general' ? 'hyderabad' : currentRegion} />
+            </WidgetErrorBoundary>
+            <WidgetErrorBoundary name="Heatwave Panel">
+              <HeatwavePanel />
+            </WidgetErrorBoundary>
             {children}
           </section>
 
           {/* Right Sidebar - Hidden on Tab/Mobile */}
-          <RightSidebar />
+          <WidgetErrorBoundary name="Right Sidebar">
+            <RightSidebar />
+          </WidgetErrorBoundary>
         </div>
       </main>
     </div>

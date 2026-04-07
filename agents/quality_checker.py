@@ -6,13 +6,13 @@ import logging
 logger = logging.getLogger(__name__)
 
 class QualityChecker:
-    """Checks and improves content quality"""
+    """Checks and improves content quality, then publishes it."""
     
     def __init__(self):
         self.client = anthropic.Anthropic(api_key=CONFIG['api_key'])
     
     def check_quality(self, title, content):
-        """Check content quality and suggest improvements"""
+        """Check content quality, save improvements, and publish the article."""
         message = self.client.messages.create(
             model=CONFIG['model'],
             max_tokens=1500,
@@ -43,9 +43,25 @@ Keep it the same length or slightly longer.
         tokens = message.usage.input_tokens + message.usage.output_tokens
         improved_content = message.content[0].text
         
-        # Update in Supabase
+        # Save improved content and promote status to 'published'
         db.update_content(title, improved_content, tokens)
-        db.log_activity('QualityChecker', 'check', 'success', f'Checked {title}', tokens)
-        logger.info(f"Quality check complete: {title}. Tokens: {tokens}")
+        db.publish_content(title)
+        db.log_activity('QualityChecker', 'check_and_publish', 'success', f'Checked & published: {title}', tokens)
+        logger.info(f"Quality check complete, published: {title}. Tokens: {tokens}")
         
         return improved_content, tokens
+
+    def run(self):
+        """Quality-check all content that is still in 'active' (draft) status."""
+        logger.info("Starting quality checker...")
+        pending = db.get_pending_quality_check(limit=5)
+        if not pending:
+            logger.info("No pending content to quality-check.")
+            return
+
+        for item in pending:
+            try:
+                self.check_quality(item['title'], item['content'])
+            except Exception as e:
+                logger.error(f"Quality check failed for '{item['title']}': {e}")
+                db.log_activity('QualityChecker', 'check', 'error', str(e), 0)

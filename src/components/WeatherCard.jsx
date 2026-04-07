@@ -33,7 +33,7 @@ export default function WeatherCard({ selectedDistrict }) {
         return () => { cancelled = true; };
     }, [selectedDistrict]);
 
-    if (loading || !weather) {
+    if (loading) {
         return (
             <div className="glass-card section-block animate-fade-in h-full flex items-center justify-center min-h-[280px]">
                 <div className="flex flex-col items-center gap-3">
@@ -42,6 +42,25 @@ export default function WeatherCard({ selectedDistrict }) {
                 </div>
             </div>
         );
+    }
+
+    if (!weather) {
+        return (
+            <div className="glass-card section-block animate-fade-in h-full flex items-center justify-center min-h-[280px]">
+                <div className="flex flex-col items-center gap-3 text-center px-4">
+                    <span className="text-4xl">🌫️</span>
+                    <p className="text-sm font-bold text-white">Weather Unavailable</p>
+                    <p className="text-xs text-text-muted leading-relaxed">
+                        Live weather data could not be loaded.{' '}
+                        <span className="text-heritage-gold">Set <code className="font-mono">VITE_OWM_API_KEY</code></span> to enable real-time conditions.
+                    </p>
+                </div>
+            </div>
+        );
+    }
+
+    if (source === 'mock') {
+        // Show a subtle "demo data" badge but still render the card
     }
 
     return (
@@ -53,6 +72,7 @@ export default function WeatherCard({ selectedDistrict }) {
                         Weather & AQI
                         {source === 'live' && <span className="text-[9px] text-success bg-success/10 px-1.5 py-0.5 rounded-full font-semibold uppercase">Live</span>}
                         {source === 'cache' && <span className="text-[9px] text-heritage-gold bg-heritage-gold/10 px-1.5 py-0.5 rounded-full font-semibold uppercase">Cached</span>}
+                        {source === 'mock' && <span className="text-[9px] text-text-muted bg-white/10 px-1.5 py-0.5 rounded-full font-semibold uppercase">Demo</span>}
                     </p>
                 </div>
                 <span className="text-4xl sm:text-5xl drop-shadow-lg">{condIcons[weather.condition] || '🌤️'}</span>

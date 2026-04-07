@@ -21,6 +21,41 @@ export const citizenReportsService = {
   },
 
   /**
+   * Submit a new citizen report; returns the created row (with tracking id).
+   */
+  async submitReport(reportData) {
+    if (!supabase) {
+      // Offline / no credentials – return a local mock tracking id
+      return { id: `LOCAL-${Date.now()}`, status: 'pending_moderation' };
+    }
+    try {
+      const payload = {
+        category: reportData.category,
+        description: reportData.description,
+        lat: reportData.lat,
+        lng: reportData.lng,
+        ward: reportData.ward,
+        corporation: reportData.corporation,
+        status: 'pending_moderation',
+        photo_url: reportData.photo || null,
+        created_at: new Date().toISOString(),
+      };
+      const { data, error } = await supabase
+        .from('citizen_reports')
+        .insert([payload])
+        .select()
+        .single();
+
+      if (error) throw error;
+      return data;
+    } catch (error) {
+      console.error('Error submitting citizen report:', error);
+      // Graceful degradation: still give the user a local id
+      return { id: `LOCAL-${Date.now()}`, status: 'pending_moderation' };
+    }
+  },
+
+  /**
    * Subscribe to new approved reports (Realtime)
    */
   subscribeToReports(onNewReport) {

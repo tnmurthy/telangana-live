@@ -57,6 +57,8 @@ export default function ReportingMap() {
     const [clickedPos, setClickedPos] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [filterCategory, setFilterCategory] = useState('all');
+    const [trackingId, setTrackingId] = useState(null);
+    const [submitting, setSubmitting] = useState(false);
 
     // Fetch live reports from Supabase on mount
     useEffect(() => {
@@ -90,33 +92,40 @@ export default function ReportingMap() {
         });
 
         return () => {
-            subscription.unsubscribe();
+            if (subscription) subscription.unsubscribe();
         };
     }, []);
 
     const handleMapClick = useCallback((latlng) => {
         setClickedPos(latlng);
         setShowForm(true);
+        setTrackingId(null);
     }, []);
 
-    const handleSubmit = useCallback((report) => {
+    const handleSubmit = useCallback(async (report) => {
         const corp = detectCorporation(report.lat, report.lng);
-        const newReport = {
+        const fullReport = {
             ...report,
-            id: Date.now(), // Local temp ID
-            status: 'reported',
             corporation: corp.shortName,
             date: new Date().toISOString().split('T')[0],
         };
 
-        // Async background send to n8n for moderation
-        n8nService.sendReport(newReport);
-
-        // We DON'T add to state immediately because it needs moderation
-        // But for UX, we can show a "Pending Moderation" toast or similar
-        setShowForm(false);
-        setClickedPos(null);
-        alert("Report submitted! It will appear on the map after AI moderation.");
+        setSubmitting(true);
+        try {
+            // Persist to Supabase and also notify n8n for moderation workflow
+            const [saved] = await Promise.all([
+                citizenReportsService.submitReport(fullReport),
+                n8nService.sendReport(fullReport),
+            ]);
+            setTrackingId(saved.id);
+        } catch (err) {
+            console.error('Report submission error:', err);
+            setTrackingId(`LOCAL-${Date.now()}`);
+        } finally {
+            setSubmitting(false);
+            setShowForm(false);
+            setClickedPos(null);
+        }
     }, []);
 
     const filtered = filterCategory === 'all' ? reports : reports.filter(r => r.category === filterCategory);
@@ -202,6 +211,41 @@ export default function ReportingMap() {
                     onSubmit={handleSubmit}
                     onClose={() => { setShowForm(false); setClickedPos(null); }}
                 />
+            )}
+
+            {/* Submitting overlay */}
+            {submitting && (
+                <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+                    <div className="glass-card p-6 text-center space-y-3">
+                        <div className="w-10 h-10 border-4 border-telangana-green/20 border-t-telangana-green rounded-full animate-spin mx-auto"></div>
+                        <p className="text-sm text-white font-bold">Submitting report…</p>
+                    </div>
+                </div>
+            )}
+
+            {/* Tracking ID toast */}
+            {trackingId && (
+                <div className="glass-card p-4 border border-success/30 bg-success/5 flex items-start gap-3">
+                    <span className="text-2xl">✅</span>
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-white">Report submitted successfully!</p>
+                        <p className="text-[11px] text-text-secondary mt-0.5">
+                            It will appear on the map after AI moderation.
+                        </p>
+                        <p className="text-[10px] text-text-muted mt-1 font-mono break-all">
+                            Tracking ID: <span className="text-heritage-gold">{trackingId}</span>
+                        </p>
+                    </div>
+                    <button
+                        onClick={() => setTrackingId(null)}
+                        className="p-1 rounded-lg hover:bg-white/10 text-text-muted"
+                        aria-label="Dismiss"
+                    >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             )}
 
             {/* Recent Reports List */}
