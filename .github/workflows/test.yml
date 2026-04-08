@@ -1,7 +1,7 @@
 name: Test Agent
 
 on:
-  workflow_dispatch:   # manual only — re-enable push trigger once tests exist
+  workflow_dispatch:   # manual only â€” re-enable push trigger once tests exist
 
   
 env:
@@ -39,4 +39,3 @@ jobs:
 
     - name: Run Python unit tests
       run: python -m pytest tests/test_data_engine.py -v
-
