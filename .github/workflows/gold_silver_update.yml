@@ -35,6 +35,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/goldRates.js
-          git commit -m "chore: update gold and silver rates [automated]" || echo "No changes to commit"
+          git add src/data/fuelPrices.js src/data/pulses.js src/data/aiBriefingData.js
+          git commit -m "chore: update fuel, commodity, and AI pulse data [automated]" || echo "No changes to commit"
+          git pull --rebase origin master
           git push
