@@ -31,7 +31,7 @@ jobs:
       - name: Sync Gold & Silver Prices
         run: python scripts/data_engine.py --task gold
 
-- name: Commit and Push Updates
+ name: Commit and Push Updates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
