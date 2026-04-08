@@ -18,7 +18,8 @@ import requests
 from bs4 import BeautifulSoup
 
 NOW = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "src", "data")
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src", "data")
+
 os.makedirs(DATA_DIR, exist_ok=True)
 
 def write_js(filename, var_name, data):
