@@ -3,11 +3,14 @@ name: Hourly Weather Update
 on:
   schedule:
     - cron: '30 * * * *' # Every hour at :30 (offset from news at :00)
+  push:
+    branches: [ "master" ]
   workflow_dispatch: # Manual trigger
   permissions:
     contents: write
-  env:
-    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: write

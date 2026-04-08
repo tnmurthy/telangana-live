@@ -3,11 +3,14 @@ name: Secondary Prices Update (6-hour)
 on:
   schedule:
     - cron: '15 */6 * * *' # Every 6 hours at :15 (fuel, commodities, AI pulse)
+  push:
+    branches: [ "master" ]
   workflow_dispatch: # Manual trigger
   permissions:
     contents: write
-  env:
-    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: write

@@ -1,11 +1,8 @@
 name: Test Agent
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:   # manual only — re-enable push trigger once tests exist
+
   
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
