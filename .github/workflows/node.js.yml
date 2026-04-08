@@ -2,28 +2,35 @@ name: Node.js CI
 
 on:
   push:
-    branches: ["master"]
+    branches: [ "master", "dev" ]
+    paths:
+      - 'frontend/**'
   pull_request:
-    branches: ["master"]
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    branches: [ "master" ]
+    paths:
+      - 'frontend/**'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+
     strategy:
       matrix:
-        node-version: [20.x]   # Pin to one LTS version — no need to test 3
+        node-version: [22.x]
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
       - run: npm ci
-      - run: npm run build
-      # Removed: npm test (no test runner configured)
-      # Add this later when Playwright/Vitest is set up
+      - run: npm run build --if-present
+      - run: npm test --if-present
