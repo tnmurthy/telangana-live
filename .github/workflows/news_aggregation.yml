@@ -13,9 +13,6 @@ jobs:
   aggregate:
     runs-on: ubuntu-latest
     # DELETE the defaults/working-directory block below
-    # defaults:
-    #   run:
-    #     working-directory: ./backend
 
     steps:
       - uses: actions/checkout@v4
