@@ -1,0 +1,48 @@
+# =============================================================
+# SUPABASE (Required for live data: emergency status, reports, power alerts)
+# Create a project at https://supabase.com and copy the values from
+# Project Settings → API
+# =============================================================
+VITE_SUPABASE_URL=https://xgzxbenwlcmqtloajroi.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhnenhiZW53bGNtcXRsb2Fqcm9pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMjQyNDYsImV4cCI6MjA4ODkwMDI0Nn0.B9_Dhac413G79uV4JAVyzHQgix4L6UW6GeVxMGAT-ZI
+NEXT_PUBLIC_SUPABASE_URL=https://xgzxbenwlcmqtloajroi.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY=sb_publishable_5_LuY0uYasZ1doC29-GJ2A_rNtxQKV4
+
+# OpenWeatherMap API Key
+# Sign up at https://openweathermap.org/api and paste your key below.
+# The free tier (1000 calls/day) is more than enough for this portal.
+# If left empty, the app will use mock data automatically.
+VITE_OWM_API_KEY=239902eb0a2f1c4cdd4aa8f06db8e8b7
+
+# OWM_API_KEY is used by the server-side weather_scraper.py (same key as above).
+OWM_API_KEY=1ea9a9635a7581687777f0a5930d8d92
+
+
+# =============================================================
+# UPSTASH REDIS (Free tier: https://upstash.com)
+# Used by /api/power-alerts.js to read n8n-scraped data
+# Create a database -> copy REST URL and Token
+# =============================================================
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=5945f9ec-4889-4d92-815a-32b64e7259c34
+
+# =============================================================
+# NOTION INTEGRATION (Optional - for n8n to write power cuts)
+# Create integration at https://www.notion.so/my-integrations
+# Copy the Internal Integration Secret below
+# =============================================================
+NOTION_API_KEY=AIzaSyAqIeBCnJWBmEHgupGgkjglW_ptoe-4FTM
+
+
+# =============================================================
+# VERCEL ENVIRONMENT (auto-set by Vercel, no action needed)
+# Used to determine if running in production vs local
+# =============================================================
+VERCEL_ENV=development
+
+# =============================================================
+# LOCAL DEV ONLY - Base URL for API calls
+# In production (Vercel), leave empty - APIs are at /api/*
+# In local dev, set to empty string (Vite proxy handles it)
+# =============================================================
+VITE_API_BASE=
