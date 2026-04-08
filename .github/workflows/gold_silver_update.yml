@@ -2,18 +2,16 @@ name: Gold & Silver Update (12-hour)
 
 on:
   schedule:
-    - cron: '45 */12 * * *' # Every 12 hours at :45 (gold and silver prices)
+    - cron: '45 */12 * * *'
   push:
     branches: [ "master" ]
-  workflow_dispatch: # Manual trigger
-  permissions:
-    contents: write
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update-gold-silver:
