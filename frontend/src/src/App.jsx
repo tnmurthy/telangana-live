@@ -52,10 +52,18 @@ const LoadingScreen = () => (
 );
 
 function EmergencyToggle() {
-  const { isEmergencyActive, activateEmergency, deactivateEmergency } = useEmergency();
+  const { isEmergencyActive, emergencyType, activateEmergency, deactivateEmergency } = useEmergency();
+  
+  const handleToggle = () => {
+    if (!isEmergencyActive) return activateEmergency('heatwave');
+    if (emergencyType === 'heatwave') return activateEmergency('coldwave');
+    if (emergencyType === 'coldwave') return activateEmergency('flood');
+    return deactivateEmergency();
+  };
+
   return (
     <button
-      onClick={() => isEmergencyActive ? deactivateEmergency() : activateEmergency('heatwave')}
+      onClick={handleToggle}
       className={`fixed top-24 right-4 z-[60] px-3 py-2 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 ${isEmergencyActive
         ? 'bg-red-500 text-white animate-pulse-live'
         : 'bg-white/10 text-text-muted hover:bg-red-500/20 hover:text-red-300 border border-white/10'

@@ -22,11 +22,21 @@ export default function CrisisDashboard({ currentRegion = 'hyderabad' }) {
 
     const regional = emergencyContacts.regional[currentRegion];
     const isHighSeverity = emergencyData?.severity === 'critical' || emergencyData?.severity === 'high';
-    const bgClass = isHighSeverity 
-        ? 'from-red-950 via-red-900 to-red-950' 
-        : emergencyType === 'heatwave' 
-            ? 'from-red-900 via-orange-900 to-red-900' 
-            : 'from-red-900 via-red-800 to-red-900';
+    const getBgClass = () => {
+        if (isHighSeverity) return 'from-red-950 via-red-900 to-red-950';
+        if (emergencyType === 'heatwave') return 'from-orange-900 via-red-900 to-orange-900';
+        if (emergencyType === 'coldwave') return 'from-blue-900 via-slate-800 to-blue-900';
+        if (emergencyType === 'flood') return 'from-cyan-900 via-blue-900 to-cyan-900';
+        return 'from-red-900 via-red-800 to-red-900';
+    };
+    const bgClass = getBgClass();
+
+    const getHeaderContent = () => {
+        if (emergencyType === 'heatwave') return <><Icons.Power className="w-5 h-5 text-orange-400" /> Heatwave Alert</>;
+        if (emergencyType === 'coldwave') return <><Icons.Snowflake className="w-5 h-5 text-blue-300" /> Coldwave Alert</>;
+        if (emergencyType === 'flood') return <><Icons.WaterDrop className="w-5 h-5 text-cyan-400" /> Flood Warning</>;
+        return <><Icons.Emergency className="w-5 h-5 text-red-400" /> Crisis Dashboard</>;
+    };
 
     return (
         <div className={`bg-gradient-to-r ${bgClass} border-b-2 border-red-500/40 animate-fade-in`}>
@@ -36,7 +46,7 @@ export default function CrisisDashboard({ currentRegion = 'hyderabad' }) {
                     <div className="flex items-center gap-3">
                         <span className={`w-3 h-3 rounded-full animate-pulse-live ${isHighSeverity ? 'bg-red-400' : 'bg-red-500'}`}></span>
                         <h2 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight uppercase flex items-center gap-2">
-                            {emergencyType === 'heatwave' ? <><Icons.Power className="w-5 h-5 text-orange-400" /> Heatwave Alert</> : <><Icons.Emergency className="w-5 h-5 text-red-400" /> Crisis Dashboard</>}
+                            {getHeaderContent()}
                             {emergencyData?.severity && (
                                 <span className={`ml-2 text-[10px] px-2 py-0.5 rounded border ${
                                     isHighSeverity ? 'bg-red-500/20 border-red-500 text-red-200' : 'bg-orange-500/20 border-orange-500 text-orange-200'

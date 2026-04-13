@@ -2,6 +2,7 @@ from supabase import create_client, Client
 from datetime import datetime
 from config import CONFIG
 import logging
+from schemas import ContentModel, ActivityLogModel
 
 logger = logging.getLogger(__name__)
 
@@ -28,19 +29,12 @@ class SupabaseDB:
 
     def insert_content(self, title, category, content, source_url, generated_code, token_usage):
         """Insert or update content in Supabase."""
-        now = datetime.now().isoformat()
-
-        data = {
-            'title': title,
-            'category': category,
-            'content': content,
-            'source_url': source_url,
-            'generated_code': generated_code,
-            'status': 'active',
-            'created_at': now,
-            'updated_at': now,
-            'token_usage': token_usage,
-        }
+        validated = ContentModel(
+            title=title, category=category, content=content,
+            source_url=source_url, generated_code=generated_code,
+            token_usage=token_usage or 0
+        )
+        data = validated.model_dump()
 
         try:
             response = self.client.table('content').update(data).eq('title', title).execute()
@@ -54,16 +48,11 @@ class SupabaseDB:
 
     def log_activity(self, agent, action, status, details, tokens_used):
         """Log agent activity to Supabase."""
-        now = datetime.now().isoformat()
-
-        data = {
-            'agent': agent,
-            'action': action,
-            'status': status,
-            'timestamp': now,
-            'details': details,
-            'tokens_used': tokens_used,
-        }
+        validated = ActivityLogModel(
+            agent=agent, action=action, status=status,
+            details=details, tokens_used=tokens_used or 0
+        )
+        data = validated.model_dump()
 
         try:
             self.client.table('activity_log').insert(data).execute()
