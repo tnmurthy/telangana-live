@@ -26,3 +26,4 @@ export const pulses = {
     }
   ]
 };
+export { pulses as pulsesData };
