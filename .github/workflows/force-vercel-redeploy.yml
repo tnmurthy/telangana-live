@@ -12,7 +12,6 @@ on:
 jobs:
   redeploy:
     runs-on: ubuntu-latest
-    if: ${{ secrets.VERCEL_DEPLOY_HOOK_URL != '' }}
     steps:
       - name: Trigger Vercel deploy hook
         run: curl -X POST "$VERCEL_DEPLOY_HOOK_URL"
