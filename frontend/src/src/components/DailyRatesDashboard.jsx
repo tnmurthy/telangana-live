@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { goldRates as staticGoldRates } from '../data/goldRates';
 import { fuelPrices as staticFuelPrices } from '../data/fuelPrices';
-import { pulsesData } from '../data/pulses';
+import { pulses as pulsesData } from '../data/pulses';
 import { fetchGoldRates, fetchFuelPrices } from '../services/pricesService';
 import ShareWhatsApp from './ShareWhatsApp';
 import FuelTaxCard from './FuelTaxCard';
