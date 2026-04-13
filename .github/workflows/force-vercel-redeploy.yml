@@ -1,0 +1,20 @@
+name: Force Vercel Redeploy After Data Sync
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'src/data/**'
+      - 'scripts/data_engine.py'
+      - 'vercel.json'
+  workflow_dispatch:
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    if: ${{ secrets.VERCEL_DEPLOY_HOOK_URL != '' }}
+    steps:
+      - name: Trigger Vercel deploy hook
+        run: curl -X POST "$VERCEL_DEPLOY_HOOK_URL"
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
