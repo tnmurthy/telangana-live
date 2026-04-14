@@ -71,17 +71,17 @@ const MarketWidget = () => {
       if (data?.petrol) {
         setFuelPrices(prev => ({
           ...prev,
-          petrol: { ...prev.petrol, price: data.petrol.price, change: data.petrol.change ?? 0 },
+          petrol: { ...prev.petrol, price: data.petrol?.price, change: data.petrol?.change ?? 0 },
         }));
       }
     }).catch(() => {});
   }, []);
 
-  const gold24k = goldRates.gold24k;
-  const petrol = fuelPrices.petrol;
-  const goldPer10g = (gold24k.price * 10).toLocaleString('en-IN');
-  const goldChange = gold24k.change;
-  const petrolChange = petrol.change;
+  const gold24k = goldRates?.gold24k;
+  const petrol = fuelPrices?.petrol;
+  const goldPer10g = ((gold24k?.price ?? 0) * 10).toLocaleString('en-IN');
+  const goldChange = gold24k?.change ?? 0;
+  const petrolChange = petrol?.change ?? 0;
 
   return (
     <div className="widget-card hover-lift-gold">
