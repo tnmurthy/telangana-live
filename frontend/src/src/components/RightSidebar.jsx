@@ -5,9 +5,11 @@ import { Icons } from './Icons';
 import { goldRates as staticGold } from '../data/goldRates';
 import { fuelPrices as staticFuel } from '../data/fuelPrices';
 
+
 const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     async function loadWeather() {
@@ -23,6 +25,7 @@ const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
     loadWeather();
   }, [selectedDistrict]);
 
+
   if (loading || !weather) {
     return (
       <div className="widget-card animate-pulse">
@@ -32,6 +35,7 @@ const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
       </div>
     );
   }
+
 
   return (
     <div className="widget-card group hover-lift">
@@ -53,9 +57,11 @@ const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
   );
 };
 
+
 const MarketWidget = () => {
   const [goldRates, setGoldRates] = useState(staticGold);
   const [fuelPrices, setFuelPrices] = useState(staticFuel);
+
 
   useEffect(() => {
     fetchGoldRates().then(data => {
@@ -67,6 +73,7 @@ const MarketWidget = () => {
       }
     }).catch(() => {});
 
+
     fetchFuelPrices().then(data => {
       if (data?.petrol) {
         setFuelPrices(prev => ({
@@ -77,11 +84,13 @@ const MarketWidget = () => {
     }).catch(() => {});
   }, []);
 
+
   const gold24k = goldRates?.gold24k;
   const petrol = fuelPrices?.petrol;
   const goldPer10g = ((gold24k?.price ?? 0) * 10).toLocaleString('en-IN');
   const goldChange = gold24k?.change ?? 0;
   const petrolChange = petrol?.change ?? 0;
+
 
   return (
     <div className="widget-card hover-lift-gold">
@@ -92,6 +101,7 @@ const MarketWidget = () => {
           Live
         </span>
       </div>
+
 
       {/* Gold */}
       <div className="flex justify-between items-end mb-3.5">
@@ -112,13 +122,15 @@ const MarketWidget = () => {
         </div>
       </div>
 
+
       <div className="divider mb-3.5"></div>
+
 
       {/* Fuel */}
       <div className="flex justify-between items-end">
         <div className="flex flex-col gap-0.5">
           <span className="text-[9px] text-text-muted font-semibold uppercase tracking-wider">Petrol (HYD)</span>
-          <span className="text-xl font-black text-white tracking-tight leading-none">₹{petrol.price.toFixed(2)}</span>
+          <span className="text-xl font-black text-white tracking-tight leading-none">₹{(petrol?.price ?? 0).toFixed(2)}</span>
         </div>
         <span className={`text-[10px] font-bold px-2 py-1 rounded-lg uppercase tracking-wider ${
           petrolChange === 0 ? 'text-text-muted bg-white/[0.04]' : petrolChange > 0 ? 'text-danger bg-danger/10' : 'text-success bg-success/10'
@@ -129,6 +141,7 @@ const MarketWidget = () => {
     </div>
   );
 };
+
 
 const TransportWidget = () => (
   <div className="widget-card hover-lift-green relative overflow-hidden">
@@ -142,6 +155,7 @@ const TransportWidget = () => (
     </p>
   </div>
 );
+
 
 const TrendingWidget = () => (
   <div className="widget-card">
@@ -161,6 +175,7 @@ const TrendingWidget = () => (
   </div>
 );
 
+
 const RightSidebar = () => {
   return (
     <aside className="w-[300px] hidden xl:flex flex-col sticky top-[7.5rem] h-[calc(100vh-8rem)] overflow-y-auto pl-2 space-y-4 custom-scrollbar">
@@ -171,5 +186,6 @@ const RightSidebar = () => {
     </aside>
   );
 };
+
 
 export default RightSidebar;
