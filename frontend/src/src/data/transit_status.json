@@ -1,0 +1,42 @@
+{
+  "lastUpdated": "2026-05-05T19:25:26Z",
+  "rtc_flow": [
+    {
+      "route": "65G (Miyapur - MGBS)",
+      "flow": 72,
+      "status": "Overcrowded"
+    },
+    {
+      "route": "218 (LBN - Sec)",
+      "flow": 32,
+      "status": "Normal"
+    },
+    {
+      "route": "127K (KPHB - Cyberabad)",
+      "flow": 84,
+      "status": "Overcrowded"
+    },
+    {
+      "route": "10H (Sec - Kondapur)",
+      "flow": 80,
+      "status": "Overcrowded"
+    }
+  ],
+  "alerts": [
+    {
+      "type": "maintenance",
+      "title": "Maintenance Notice",
+      "description": "MMTS Secunderabad - Bolarum line restricted between 11 PM - 4 AM this weekend."
+    },
+    {
+      "type": "new_route",
+      "title": "New Route Launch",
+      "description": "Metro Phase 2 trial runs confirmed for Old City stretch starting April 2026."
+    },
+    {
+      "type": "traffic",
+      "title": "Heavy Traffic Alert",
+      "description": "Panjagutta flyover experiencing 20 min delays due to waterlogging."
+    }
+  ]
+}

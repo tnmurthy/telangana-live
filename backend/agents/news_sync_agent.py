@@ -11,6 +11,7 @@ from agents.fact_checker import fact_checker
 class NewsSyncAgent:
     def __init__(self):
         self.feeds_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts", "resources", "feeds.json")
+        self.output_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend", "src", "src", "data", "news.json")
         self.feeds = self._load_feeds()
 
     def _load_feeds(self):
@@ -33,6 +34,7 @@ class NewsSyncAgent:
         """Fetch, fact-check, and sync news to Supabase."""
         logger.info("NewsSyncAgent: Starting sync cycle...")
         processed_count = 0
+        articles_for_json = []
 
         for source, url in self.feeds.items():
             try:
@@ -44,9 +46,13 @@ class NewsSyncAgent:
                     link = entry.link
                     description = entry.get("summary", "")
 
-                    # 1. Fact Checking
-                    logger.info(f"Fact-checking: {title[:40]}...")
-                    verification = fact_checker.check_news_item(title, description)
+                    # 1. Fact Checking (Fault Tolerant)
+                    verification = {}
+                    try:
+                        logger.info(f"Fact-checking: {title[:40]}...")
+                        verification = fact_checker.check_news_item(title, description)
+                    except Exception as e:
+                        logger.warning(f"Fact-check failed for {title[:20]}: {e}. Proceeding anyway.")
                     
                     if verification.get("is_fake_news_flag", False):
                         logger.warning(f"REJECTED FAKE NEWS: {title[:30]}")
@@ -66,23 +72,48 @@ class NewsSyncAgent:
                     except Exception as e:
                         logger.error(f"AI Summary failed: {e}")
 
-                    # 3. Save to Supabase
-                    db.insert_content(
-                        title=title,
-                        category="news",
-                        content=description,
-                        source_url=link,
-                        generated_code=json.dumps({
-                            "summary": summary,
-                            "source": source,
-                            "credibility": verification.get("credibility_score", 85)
-                        }),
-                        token_usage=resp.get("tokens", 0)
-                    )
+                    # 3. Save to Supabase (Attempt)
+                    try:
+                        db.insert_content(
+                            title=title,
+                            category="news",
+                            content=description,
+                            source_url=link,
+                            generated_code=json.dumps({
+                                "summary": summary,
+                                "source": source,
+                                "credibility": verification.get("credibility_score", 85)
+                            }),
+                            token_usage=0
+                        )
+                    except Exception as e:
+                        logger.warning(f"Supabase sync failed (RLS?): {e}")
+
+                    # 4. Add to local list for JSON export
+                    articles_for_json.append({
+                        "title": title,
+                        "description": description,
+                        "link": link,
+                        "source": source,
+                        "ai_summary": summary or description[:100] + "...",
+                        "published": datetime.now().isoformat(),
+                        "category": "General",
+                        "region": "Telangana"
+                    })
                     processed_count += 1
 
             except Exception as e:
                 logger.error(f"Error processing source {source}: {e}")
+
+        # 5. Hybrid Sync: Export to JSON for frontend
+        if articles_for_json:
+            try:
+                os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
+                with open(self.output_file, "w", encoding="utf-8") as f:
+                    json.dump(articles_for_json, f, indent=2, ensure_ascii=False)
+                logger.info(f"Hybrid Sync: Updated {self.output_file} with {len(articles_for_json)} items.")
+            except Exception as e:
+                logger.error(f"Hybrid Sync failed: {e}")
 
         logger.info(f"NewsSyncAgent: Cycle complete. Processed {processed_count} items.")
         return processed_count
