@@ -1,10 +1,15 @@
 import os
 import time
 import logging
+import json
+import requests
 from typing import Optional, Dict, Any
 import anthropic
 import google.generativeai as genai
-from config import CONFIG
+try:
+    from backend.config import CONFIG
+except ImportError:
+    from config import CONFIG
 
 logger = logging.getLogger(__name__)
 
@@ -20,6 +25,8 @@ class LLMProvider:
         else:
             self.gemini_available = False
 
+        self.ollama_url = CONFIG.get('ollama_url') or os.getenv('OLLAMA_URL', 'http://localhost:11434')
+
     def generate(self, prompt: str, provider: str = "anthropic", model: str = "claude-3-haiku-20240307", temperature: float = 0.7, max_tokens: int = 1500, retries: int = 2, system_prompt: Optional[str] = None) -> Dict[str, Any]:
         last_error = None
         for attempt in range(retries + 1):
@@ -28,6 +35,8 @@ class LLMProvider:
                     return self._call_anthropic(prompt, model, temperature, max_tokens, system_prompt)
                 elif provider == "gemini":
                     return self._call_gemini(prompt, model, temperature, system_prompt)
+                elif provider == "ollama":
+                    return self._call_ollama(prompt, model, temperature, system_prompt)
                 else:
                     raise ValueError(f"Unknown provider: {provider}")
             except Exception as e:
@@ -52,5 +61,22 @@ class LLMProvider:
         model_instance = genai.GenerativeModel(**model_kwargs)
         response = model_instance.generate_content(prompt, generation_config=generation_config)
         return {"text": response.text, "tokens": 0}
+
+    def _call_ollama(self, prompt, model, temperature, system_prompt):
+        payload = {
+            "model": model,
+            "prompt": prompt,
+            "stream": False,
+            "options": {
+                "temperature": temperature
+            }
+        }
+        if system_prompt:
+            payload["system"] = system_prompt
+            
+        response = requests.post(f"{self.ollama_url}/api/generate", json=payload)
+        response.raise_for_status()
+        data = response.json()
+        return {"text": data.get("response"), "tokens": data.get("prompt_eval_count", 0) + data.get("eval_count", 0)}
 
 llm = LLMProvider()
