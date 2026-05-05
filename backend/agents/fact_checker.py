@@ -6,7 +6,7 @@ import os
 # Ensure providers can be imported
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 try:
-    from providers.llm_provider import llm
+    from core.llm_provider import llm
 except ImportError:
     llm = None
     print("Warning: llm_provider could not be imported. Fact Checker will return defaults.")

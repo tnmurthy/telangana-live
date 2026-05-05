@@ -1,8 +1,10 @@
 import anthropic
+import openai
+import requests
 import json
 import re
-from config import CONFIG
-from database import db
+from core.config import CONFIG
+from core.database import db
 import logging
 
 logger = logging.getLogger(__name__)
@@ -15,19 +17,38 @@ DEFAULT_TOPICS = [
 ]
 
 class ContentGenerator:
-    """Generates new content for telangana.live"""
-    
     def __init__(self):
-        self.client = anthropic.Anthropic(api_key=CONFIG['api_key'])
+        self.provider = CONFIG['llm_provider']
+        
+        if self.provider == 'zai':
+            self.zai_api_key = CONFIG['z_ai_api_key']
+            self.zai_base_url = CONFIG['z_ai_base_url']
+            self.zai_model = CONFIG['z_ai_model']
+        else:
+            self.client = anthropic.Anthropic(api_key=CONFIG['api_key'])
+    
+    def _call_zai(self, prompt, max_tokens=2000):
+        """Call z.ai API"""
+        headers = {
+            'Authorization': f'Bearer {self.zai_api_key}',
+            'Content-Type': 'application/json'
+        }
+        payload = {
+            'model': self.zai_model,
+            'messages': [{'role': 'user', 'content': prompt}],
+            'max_tokens': max_tokens
+        }
+        response = requests.post(
+            f'{self.zai_base_url}/chat/completions',
+            headers=headers,
+            json=payload
+        )
+        response.raise_for_status()
+        return response.json()['choices'][0]['message']['content']
     
     def generate_content(self, topic, category, content_type='article'):
         """Generate new content and store in Supabase"""
-        message = self.client.messages.create(
-            model=CONFIG['model'],
-            max_tokens=2000,
-            messages=[{
-                'role': 'user',
-                'content': f"""
+        prompt = f"""
 Generate a {content_type} for telangana.live about: {topic}
 
 Category: {category}
@@ -50,11 +71,18 @@ Format your response as JSON with these exact keys:
   "cta": "..."
 }}
 """
-            }]
-        )
         
-        tokens = message.usage.input_tokens + message.usage.output_tokens
-        response_text = message.content[0].text
+        if self.provider == 'zai':
+            response_text = self._call_zai(prompt)
+            tokens = len(prompt.split()) * 2 + len(response_text.split()) * 2
+        else:
+            message = self.client.messages.create(
+                model=CONFIG['model'],
+                max_tokens=2000,
+                messages=[{'role': 'user', 'content': prompt}]
+            )
+            tokens = message.usage.input_tokens + message.usage.output_tokens
+            response_text = message.content[0].text
         
         try:
             # Strip markdown code fences if the model wrapped the JSON
