@@ -10,7 +10,8 @@ on:
 jobs:
   aggregate:
     runs-on: ubuntu-latest
-    # DELETE the defaults/working-directory block below
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -27,4 +28,13 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python scripts/news_aggregation.py
+
+      - name: Commit and push updated news
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add frontend/src/src/data/news.json
+          git commit -m "chore: sync news feed [automated]" || echo "No changes to commit"
+          git push

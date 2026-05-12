@@ -1,345 +1,269 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 2400" width="1500" height="2400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1900" width="1400" height="1900">
 <defs>
-    <style>
-        .page-title { font-family: system-ui, -apple-system, sans-serif; font-size: 28px; font-weight: bold; fill: #115e59; text-anchor: middle; }
-        .page-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; fill: #0f766e; text-anchor: middle; letter-spacing: 0.5px; }
-        
-        .zone-header { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: bold; fill: #ffffff; text-anchor: middle; letter-spacing: 1px;}
-        
-        .box-title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: bold; fill: #0f766e; text-anchor: middle; }
-        .box-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; fill: #115e59; text-anchor: middle; }
-        .tech-text { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 13px; font-weight: bold; fill: #ccfbf1; text-anchor: middle; }
-        
-        .code-title { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-style: italic; fill: #a7f3d0; }
-        .code-body { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; fill: #34d399; }
-        
-        .envelope-title { font-family: system-ui, -apple-system, sans-serif; font-size: 18px; font-weight: bold; fill: #1e3a8a; text-anchor: middle; }
-        .json-key { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; fill: #93c5fd; }
-        .json-val { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 14px; fill: #eff6ff; }
-        
-        .footer-title { font-family: system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: bold; text-anchor: middle; }
-        .footer-sub { font-family: system-ui, -apple-system, sans-serif; font-size: 16px; text-anchor: middle; }
-    </style>
-    
-    <!-- Markers -->
-    <marker id="arr-teal" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#0d9488"/></marker>
-    <marker id="arr-down" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1e3a8a"/></marker>
+<style>
+.ttl{font:bold 20px system-ui;fill:#fff;text-anchor:middle}
+.sub{font:13px system-ui;fill:#93c5fd;text-anchor:middle}
+.zh{font:bold 13px system-ui;fill:#fff;text-anchor:middle;letter-spacing:1px}
+.bt{font:bold 15px system-ui;fill:#0f766e;text-anchor:middle}
+.bts{font:bold 15px system-ui;fill:#1e3a8a;text-anchor:middle}
+.bs{font:12px system-ui;fill:#115e59;text-anchor:middle}
+.tx{font:12px system-ui;fill:#334155;text-anchor:middle}
+.tl{font:11px system-ui;fill:#e2e8f0;text-anchor:middle}
+.cd{font:12px ui-monospace;fill:#34d399}
+.cm{font:11px ui-monospace;fill:#94a3b8}
+.ck{font:12px ui-monospace;fill:#93c5fd}
+.cv{font:12px ui-monospace;fill:#eff6ff}
+.tt{font:12px ui-monospace;fill:#ccfbf1;text-anchor:middle}
+</style>
+<marker id="at" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#0d9488"/></marker>
+<marker id="ab" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1e3a8a"/></marker>
+<marker id="ag" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#059669"/></marker>
 </defs>
+<rect width="1400" height="1900" fill="#f8fafc"/>
 
-<!-- Background -->
-<rect width="1500" height="2400" fill="#f8fafc"/>
+<!-- HEADER -->
+<rect x="40" y="15" width="1320" height="65" fill="#134e4a" rx="8"/>
+<text x="700" y="42" class="ttl">AIGEN Phase 2 — Run Time · Low-Level Architecture</text>
+<text x="700" y="63" class="sub">Executes Phase 1 code · Codex for semantic mapping · Document Analyzer for unstructured docs · JSON as master output</text>
 
-<!-- ========================================== -->
-<!-- HEADER                                     -->
-<!-- ========================================== -->
-<rect x="50" y="30" width="1400" height="80" fill="#ccfbf1" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="750" y="65" class="page-title">AIGEN Phase 2 — Run Time (Azure Data Plane)</text>
-<text x="750" y="90" class="page-sub">triggered by data arriving · executes Phase 1 generated code · no AI active · no manifest inference · no code generation</text>
+<!-- Z1 REAL DATA -->
+<rect x="40" y="95" width="1320" height="24" fill="#0f766e" rx="4"/>
+<text x="700" y="112" class="zh">ZONE 1 — REAL DATA SOURCES (adapters deployed by Phase 1 CI/CD)</text>
 
-<!-- ========================================== -->
-<!-- ZONE 1: REAL DATA                          -->
-<!-- ========================================== -->
-<rect x="50" y="130" width="1400" height="35" fill="#0f766e" rx="6"/>
-<text x="750" y="153" class="zone-header">ZONE 1 — REAL DATA ARRIVES (triggers the deployed adapters · all generated by Phase 1)</text>
+<rect x="40" y="130" width="240" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="160" y="155" class="bt">Event Hubs</text>
+<text x="160" y="172" class="bs">Kafka-compatible stream</text>
+<text x="160" y="192" class="bs">JSON / Avro events</text>
+<text x="160" y="212" class="bs">offset: earliest/latest</text>
+<rect x="52" y="225" width="216" height="18" fill="#115e59" rx="4"/>
+<text x="160" y="238" class="tt">confluent-kafka-python</text>
+<text x="160" y="258" class="bs">fastavro · Apicurio registry</text>
 
-<!-- Event Hubs -->
-<rect x="50" y="180" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="180" y="210" class="box-title">Azure Event Hubs</text>
-<text x="180" y="235" class="box-sub">(Kafka-compatible)</text>
-<text x="180" y="255" class="box-sub">JSON / Avro events</text>
-<text x="180" y="275" class="box-sub">continuous stream</text>
-<rect x="60" y="290" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="180" y="313" class="tech-text">confluent-kafka-py</text>
+<rect x="295" y="130" width="240" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="415" y="155" class="bt">Blob Storage</text>
+<text x="415" y="172" class="bs">batch file drops</text>
+<text x="415" y="192" class="bs">CSV · Parquet · Avro</text>
+<text x="415" y="212" class="bs">Event Grid trigger</text>
+<rect x="307" y="225" width="216" height="18" fill="#115e59" rx="4"/>
+<text x="415" y="238" class="tt">pandas · pyarrow · polars</text>
+<text x="415" y="258" class="bs">Document Analyzer: PDF/Word docs</text>
 
-<!-- Blob Storage -->
-<rect x="335" y="180" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="465" y="210" class="box-title">Azure Blob Storage</text>
-<text x="465" y="235" class="box-sub">batch file drop</text>
-<text x="465" y="255" class="box-sub">CSV · Parquet · Avro</text>
-<text x="465" y="275" class="box-sub">Event Grid trigger</text>
-<rect x="345" y="290" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="465" y="313" class="tech-text">pandas · pyarrow · polars</text>
+<rect x="550" y="130" width="240" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="670" y="155" class="bt">REST API / Webhooks</text>
+<text x="670" y="172" class="bs">Azure APIM gateway</text>
+<text x="670" y="192" class="bs">Azure Functions poller</text>
+<text x="670" y="212" class="bs">pagination + OAuth handled</text>
+<rect x="562" y="225" width="216" height="18" fill="#115e59" rx="4"/>
+<text x="670" y="238" class="tt">httpx · requests · Azure SDK</text>
 
-<!-- REST API -->
-<rect x="620" y="180" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="750" y="210" class="box-title">REST API / Webhooks</text>
-<text x="750" y="235" class="box-sub">Azure API Management (APIM)</text>
-<text x="750" y="255" class="box-sub">polled via Azure Functions</text>
-<text x="750" y="275" class="box-sub">pagination &amp; auth handled</text>
-<rect x="630" y="290" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="750" y="313" class="tech-text">requests · httpx · Azure SDK</text>
+<rect x="805" y="130" width="240" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="925" y="155" class="bt">Azure SQL / CDC</text>
+<text x="925" y="172" class="bs">row-level change capture</text>
+<text x="925" y="192" class="bs">Debezium → Service Bus</text>
+<text x="925" y="212" class="bs">op: insert / update / delete</text>
+<rect x="817" y="225" width="216" height="18" fill="#115e59" rx="4"/>
+<text x="925" y="238" class="tt">Debezium · azure-servicebus</text>
 
-<!-- Azure SQL CDC -->
-<rect x="905" y="180" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="1035" y="210" class="box-title">Azure SQL / CDC</text>
-<text x="1035" y="235" class="box-sub">row-level changes</text>
-<text x="1035" y="255" class="box-sub">Debezium → Service Bus</text>
-<text x="1035" y="275" class="box-sub">insert / update / delete</text>
-<rect x="915" y="290" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="1035" y="313" class="tech-text">Debezium · azure-servicebus</text>
+<rect x="1060" y="130" width="300" height="150" fill="#fef2f2" stroke="#ef4444" stroke-width="2" rx="6"/>
+<text x="1210" y="155" class="bt" style="fill:#b91c1c">DLQ (per source)</text>
+<text x="1210" y="172" class="bs" style="fill:#991b1b">schema mismatch → dead-letter</text>
+<text x="1210" y="192" class="bs" style="fill:#991b1b">parse failure → error envelope</text>
+<text x="1210" y="212" class="bs" style="fill:#991b1b">replay via Service Bus DLQ</text>
+<rect x="1072" y="225" width="276" height="18" fill="#7f1d1d" rx="4"/>
+<text x="1210" y="238" class="tt">Service Bus dead-letter queue</text>
 
-<!-- Service Bus -->
-<rect x="1190" y="180" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="1320" y="210" class="box-title">Service Bus</text>
-<text x="1320" y="235" class="box-sub">push subscription</text>
-<text x="1320" y="255" class="box-sub">internal events</text>
-<text x="1320" y="275" class="box-sub">downstream feeds</text>
-<rect x="1200" y="290" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="1320" y="313" class="tech-text">azure-servicebus SDK</text>
+<!-- raw message example -->
+<rect x="40" y="293" width="1320" height="48" fill="#064e3b" rx="6"/>
+<text x="55" y="313" class="cm" style="fill:#a7f3d0;font-style:italic">Raw Kafka message (before adapter):</text>
+<text x="55" y="332" class="cd">{"id":"A123","customer_id":"C99","items":[{"sku":"X1","qty":2},{"sku":"X2","qty":1}],"ts":"1705312200000","status":"ACTIVE"}</text>
 
-<!-- Code block Raw Event -->
-<rect x="50" y="360" width="1400" height="65" fill="#064e3b" rx="8"/>
-<text x="70" y="385" class="code-title">Example — raw Event Hubs (Kafka) message received by the adapter:</text>
-<text x="70" y="408" class="code-body">{"id":"A123", "customer_id":"C99", "items":[{"sku":"X1","qty":2}, {"sku":"X2","qty":1}], "ts":"1705312200000", "status":"ACTIVE"}</text>
+<!-- arrows Z1→Z2 -->
+<path d="M 160 355 L 160 410" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#at)"/>
+<path d="M 415 355 L 415 410" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#at)"/>
+<path d="M 670 355 L 670 410" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#at)"/>
+<path d="M 925 355 L 925 410" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#at)"/>
 
-<!-- Data Flow Lines Z1->Z2 -->
-<path d="M 180 425 L 180 490" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
-<path d="M 465 425 L 465 490" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
-<path d="M 750 425 L 750 490" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
-<path d="M 1035 425 L 1035 490" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
+<!-- Z2 ADAPTERS -->
+<rect x="40" y="420" width="1320" height="24" fill="#0f766e" rx="4"/>
+<text x="700" y="437" class="zh">ZONE 2 — FEDERATED ADAPTERS (Python Parser Models · Databricks/AKS/Functions)</text>
 
-<!-- ========================================== -->
-<!-- ZONE 2: FEDERATED ADAPTERS                 -->
-<!-- ========================================== -->
-<rect x="50" y="450" width="1400" height="35" fill="#0f766e" rx="6"/>
-<text x="750" y="473" class="zone-header">ZONE 2 — FEDERATED ADAPTERS (Runs Python Parser Models · Hosted on Databricks/AKS/Functions)</text>
+<rect x="40" y="456" width="280" height="155" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="180" y="478" class="bt">Event Hubs Adapter</text>
+<text x="180" y="496" class="bs">Avro deserialise · schema lookup</text>
+<text x="180" y="514" class="bs">offset commit on success</text>
+<text x="180" y="534" class="bs">consumer group isolation</text>
+<rect x="52" y="548" width="256" height="18" fill="#115e59" rx="4"/><text x="180" y="561" class="tt">fastavro · schema_registry_client</text>
+<rect x="52" y="572" width="256" height="26" fill="#115e59" rx="4"/><text x="180" y="581" class="tt">Document Analyzer: extract</text><text x="180" y="594" class="tt">structured fields from PDF docs</text>
 
-<!-- EH Adapter -->
-<rect x="50" y="500" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="180" y="530" class="box-title">Event Hubs adapter</text>
-<text x="180" y="555" class="box-sub">Avro deserialise</text>
-<text x="180" y="575" class="box-sub">schema lookup</text>
-<text x="180" y="595" class="box-sub">offset commit</text>
-<rect x="60" y="610" width="240" height="40" fill="#115e59" rx="4"/>
-<text x="180" y="628" class="tech-text">fastavro</text>
-<text x="180" y="645" class="tech-text">Apicurio registry</text>
+<rect x="335" y="456" width="280" height="155" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="475" y="478" class="bt">Blob File Adapter</text>
+<text x="475" y="496" class="bs">Pydantic Parser Models</text>
+<text x="475" y="514" class="bs">custom type inference per field</text>
+<text x="475" y="534" class="bs">null-handling / coerce logic</text>
+<rect x="347" y="548" width="256" height="18" fill="#115e59" rx="4"/><text x="475" y="561" class="tt">pandas · pydantic v2 · polars</text>
+<rect x="347" y="572" width="256" height="26" fill="#115e59" rx="4"/><text x="475" y="581" class="tt">Document Analyzer: layout model</text><text x="475" y="594" class="tt">for Word/PDF lineage attachments</text>
 
-<!-- Blob Adapter -->
-<rect x="335" y="500" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="465" y="530" class="box-title">Blob file adapter</text>
-<text x="465" y="555" class="box-sub">Python Parser Models</text>
-<text x="465" y="575" class="box-sub">custom type inference</text>
-<text x="465" y="595" class="box-sub">null handling logic</text>
-<rect x="345" y="610" width="240" height="40" fill="#115e59" rx="4"/>
-<text x="465" y="628" class="tech-text">pandas · pydantic models</text>
-<text x="465" y="645" class="tech-text">Azure Doc Intelligence API</text>
+<rect x="630" y="456" width="280" height="155" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="770" y="478" class="bt">API Adapter</text>
+<text x="770" y="496" class="bs">Pydantic Parsing Models</text>
+<text x="770" y="514" class="bs">semantic flattening via jmespath</text>
+<text x="770" y="534" class="bs">Pydantic validation layers</text>
+<rect x="642" y="548" width="256" height="18" fill="#115e59" rx="4"/><text x="770" y="561" class="tt">pydantic · jmespath · httpx</text>
+<rect x="642" y="572" width="256" height="26" fill="#115e59" rx="4"/><text x="770" y="581" class="tt">Codex: semantic field mapping</text><text x="770" y="594" class="tt">when API schema is ambiguous</text>
 
-<!-- API Adapter -->
-<rect x="620" y="500" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="750" y="530" class="box-title">API adapter</text>
-<text x="750" y="555" class="box-sub">Python Parsing Models</text>
-<text x="750" y="575" class="box-sub">semantic flattening</text>
-<text x="750" y="595" class="box-sub">Pydantic validation layers</text>
-<rect x="630" y="610" width="240" height="40" fill="#115e59" rx="4"/>
-<text x="750" y="628" class="tech-text">pydantic · jmespath</text>
-<text x="750" y="645" class="tech-text">Azure Cognitive Services (OCR)</text>
+<rect x="925" y="456" width="280" height="155" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="1065" y="478" class="bt">CDC Adapter</text>
+<text x="1065" y="496" class="bs">before/after value extraction</text>
+<text x="1065" y="514" class="bs">op-type normalise: I/U/D</text>
+<text x="1065" y="534" class="bs">transaction_id preserved</text>
+<rect x="937" y="548" width="256" height="18" fill="#115e59" rx="4"/><text x="1065" y="561" class="tt">Debezium · azure-servicebus SDK</text>
 
-<!-- CDC Adapter -->
-<rect x="905" y="500" width="260" height="160" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="1035" y="530" class="box-title">CDC adapter</text>
-<text x="1035" y="555" class="box-sub">before/after values</text>
-<text x="1035" y="575" class="box-sub">op type: I/U/D</text>
-<text x="1035" y="595" class="box-sub">transaction ID</text>
-<rect x="915" y="610" width="240" height="40" fill="#115e59" rx="4"/>
-<text x="1035" y="628" class="tech-text">Debezium</text>
-<text x="1035" y="645" class="tech-text">azure-servicebus</text>
+<!-- converge arrows to Z3 -->
+<path d="M 180 611 L 180 660 L 700 660 L 700 700" fill="none" stroke="#1e3a8a" stroke-width="2" marker-end="url(#ab)"/>
+<path d="M 475 611 L 475 660" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+<path d="M 770 611 L 770 660" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+<path d="M 1065 611 L 1065 660" fill="none" stroke="#1e3a8a" stroke-width="2"/>
 
-<!-- DLQ -->
-<rect x="1190" y="500" width="260" height="160" fill="#ef4444" stroke="#991b1b" stroke-width="2" rx="8"/>
-<text x="1320" y="530" class="box-title" fill="#ffffff">DLQ (per adapter)</text>
-<text x="1320" y="555" class="box-sub" fill="#fecaca">invalid messages</text>
-<text x="1320" y="575" class="box-sub" fill="#fecaca">schema mismatch</text>
-<text x="1320" y="595" class="box-sub" fill="#fecaca">error envelope</text>
-<text x="1320" y="615" class="box-sub" fill="#fecaca">replay capability</text>
-<rect x="1200" y="625" width="240" height="25" fill="#7f1d1d" rx="4"/>
-<text x="1320" y="643" class="tech-text">Service Bus dead-letter</text>
+<!-- Z3 CANONICAL ENVELOPE -->
+<rect x="40" y="710" width="1320" height="24" fill="#1e3a8a" rx="4"/>
+<text x="700" y="727" class="zh">ZONE 3 — CANONICAL ENVELOPE (all adapters output this identical JSON object)</text>
 
+<rect x="40" y="746" width="1320" height="170" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="8"/>
+<text x="700" y="770" class="bts">Every adapter emits this envelope — transformation engine only reads this format</text>
+<rect x="60" y="782" width="620" height="110" fill="#1e3a8a" rx="6"/>
+<text x="80" y="806" class="ck">{ "pipeline_id": <tspan class="cv">"orders_v1"</tspan>,</text>
+<text x="80" y="826" class="ck">  "source_type": <tspan class="cv">"event_hubs"</tspan>,   "schema_version": <tspan class="cv">"2.1"</tspan>,</text>
+<text x="80" y="846" class="ck">  "ingestion_ts": <tspan class="cv">"2024-01-15T10:30:00Z"</tspan>,</text>
+<text x="80" y="866" class="ck">  "confidence": <tspan class="cv">1.0</tspan>,   "errors": <tspan class="cv">[]</tspan> }</text>
+<rect x="700" y="782" width="640" height="110" fill="#1e3a8a" rx="6"/>
+<text x="720" y="806" class="ck">  "payload": {</text>
+<text x="720" y="826" class="ck">    "order_id": <tspan class="cv">"A123"</tspan>, "customer_id": <tspan class="cv">"C99"</tspan>,</text>
+<text x="720" y="846" class="ck">    "items": <tspan class="cv">[{"sku":"X1","qty":2},{"sku":"X2","qty":1}]</tspan>,</text>
+<text x="720" y="866" class="ck">    "ts": <tspan class="cv">1705312200000</tspan>, "status": <tspan class="cv">"ACTIVE"</tspan> }</text>
+<text x="700" y="900" class="bts" style="font-size:12px">CSV row · API JSON · Kafka event · CDC record → all become this before transformation runs</text>
 
-<!-- Data Flow to Zone 3 -->
-<path d="M 180 660 L 180 720 L 750 720 L 750 750" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-down)"/>
-<path d="M 465 660 L 465 720 L 750 720" fill="none" stroke="#2563eb" stroke-width="2"/>
-<path d="M 750 660 L 750 750" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-down)"/>
-<path d="M 1035 660 L 1035 720 L 750 720" fill="none" stroke="#2563eb" stroke-width="2"/>
+<path d="M 700 916 L 700 956" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#at)"/>
 
-<!-- ========================================== -->
-<!-- ZONE 3: CANONICAL ENVELOPE                 -->
-<!-- ========================================== -->
-<rect x="50" y="700" width="1400" height="35" fill="#1e3a8a" rx="6"/>
-<text x="750" y="723" class="zone-header">ZONE 3 — CANONICAL ENVELOPE (Enforced via Python Models &amp; Azure Schema Registry)</text>
+<!-- Z4 TRANSFORM ENGINE -->
+<rect x="40" y="966" width="1320" height="24" fill="#0f766e" rx="4"/>
+<text x="700" y="983" class="zh">ZONE 4 — TRANSFORMATION ENGINE (executes Phase 1 generated PySpark/SQL · no AI inference)</text>
 
-<rect x="50" y="750" width="1400" height="190" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="8"/>
-<text x="750" y="785" class="envelope-title">Every adapter outputs this identical envelope — transformation sees only this, never the raw format</text>
+<rect x="40" y="1000" width="420" height="165" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="250" y="1024" class="bt">Streaming — Databricks</text>
+<text x="250" y="1042" class="bs">Structured Streaming core engine</text>
+<text x="250" y="1060" class="bs">Stateful Pandas UDFs applied</text>
+<text x="250" y="1078" class="bs">Checkpoints → ADLS Gen 2</text>
+<text x="250" y="1096" class="bs">watermark: 10min event-time lag</text>
+<rect x="52" y="1110" width="396" height="18" fill="#115e59" rx="4"/>
+<text x="250" y="1123" class="tt">pyspark · Azure Databricks ML · Delta Lake</text>
+<rect x="52" y="1134" width="396" height="18" fill="#064e3b" rx="4"/>
+<text x="250" y="1147" class="tt">df.withColumn("item", explode(col("items")))</text>
 
-<!-- Envelope parts (Left = Meta, Right = Payload) -->
-<rect x="80" y="810" width="650" height="110" fill="#1e3a8a" rx="8"/>
-<text x="100" y="835" class="json-key">{ "pipeline_id": <tspan class="json-val">"orders_v1"</tspan>,</text>
-<text x="100" y="855" class="json-key">  "source_type": <tspan class="json-val">"event_hubs"</tspan>,</text>
-<text x="100" y="875" class="json-key">  "schema_version": <tspan class="json-val">"2.1"</tspan>,</text>
-<text x="100" y="895" class="json-key">  "ingestion_ts": <tspan class="json-val">"2024-01-15T10:30:00Z"</tspan>, </text>
+<rect x="475" y="1000" width="420" height="165" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="685" y="1024" class="bt">Batch — ADF / Synapse</text>
+<text x="685" y="1042" class="bs">ADF Pipeline scheduled trigger</text>
+<text x="685" y="1060" class="bs">Python rules on ephemeral Spark pool</text>
+<text x="685" y="1078" class="bs">Synapse SQL for in-warehouse joins</text>
+<text x="685" y="1096" class="bs">WRITE_TRUNCATE / APPEND mode</text>
+<rect x="487" y="1110" width="396" height="18" fill="#115e59" rx="4"/>
+<text x="685" y="1123" class="tt">pyspark · ADF · Azure Synapse Analytics</text>
+<rect x="487" y="1134" width="396" height="18" fill="#064e3b" rx="4"/>
+<text x="685" y="1147" class="tt">F.to_utc_timestamp(F.col("ts")/1000)</text>
 
-<rect x="770" y="810" width="650" height="110" fill="#1e3a8a" rx="8"/>
-<text x="790" y="835" class="json-key">  "payload": { <tspan class="json-val">"order_id":"A123"</tspan> },</text>
-<text x="790" y="855" class="json-key">  "items": <tspan class="json-val">[{"sku":"X1"}, {"sku":"X2"}]</tspan>,</text>
-<text x="790" y="875" class="json-key">  "tx": <tspan class="json-val">1705312200000</tspan>, "status":<tspan class="json-val">"ACTIVE"</tspan> },</text>
-<text x="790" y="895" class="json-key">  "confidence":<tspan class="json-val">1.0</tspan>, "errors":<tspan class="json-val">[]</tspan> }</text>
+<rect x="910" y="1000" width="450" height="165" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="1135" y="1024" class="bt">SQL-Only — Synapse Serverless</text>
+<text x="1135" y="1042" class="bs">no cluster required · on-demand</text>
+<text x="1135" y="1060" class="bs">T-SQL only transformation logic</text>
+<text x="1135" y="1078" class="bs">external table over ADLS parquet</text>
+<text x="1135" y="1096" class="bs">CTAS → new partitioned output</text>
+<rect x="922" y="1110" width="426" height="18" fill="#115e59" rx="4"/>
+<text x="1135" y="1123" class="tt">Synapse SQL Serverless Pool</text>
+<rect x="922" y="1134" width="426" height="18" fill="#064e3b" rx="4"/>
+<text x="1135" y="1147" class="tt">df.filter(col("status") != "CANCELLED")</text>
 
-<text x="750" y="965" font-family="system-ui" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">A CSV row, an API JSON response, and a Kafka event all become this same structure before transformation runs</text>
+<path d="M 700 1165 L 700 1205" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#at)"/>
 
+<!-- Z5 JSON OUTPUT -->
+<rect x="40" y="1215" width="1320" height="24" fill="#0f766e" rx="4"/>
+<text x="700" y="1232" class="zh">ZONE 5 — JSON OUTPUT CONSOLIDATION (primary canonical format for all consumers)</text>
 
-<path d="M 750 970 L 750 1010" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
+<rect x="40" y="1250" width="420" height="120" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="250" y="1274" class="bt">JSON Serialization</text>
+<text x="250" y="1294" class="bs">All transformation output → JSON first</text>
+<text x="250" y="1312" class="bs">RFC 8259 compliant · UTF-8 encoded</text>
+<text x="250" y="1332" class="bs">envelope wrapper preserved</text>
+<rect x="52" y="1344" width="396" height="18" fill="#115e59" rx="4"/><text x="250" y="1357" class="tt">orjson · ujson · pyspark df.toJSON()</text>
 
-<!-- ========================================== -->
-<!-- ZONE 4: TRANSFORMATION ENGINE              -->
-<!-- ========================================== -->
-<rect x="50" y="1000" width="1400" height="35" fill="#0f766e" rx="6"/>
-<text x="750" y="1023" class="zone-header">ZONE 4 — TRANSFORMATION ENGINE (runs Phase 1 generated code · no AI · no manifest)</text>
+<rect x="475" y="1250" width="420" height="120" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="685" y="1274" class="bt">Schema Validation Gate</text>
+<text x="685" y="1294" class="bs">output JSON vs target schema</text>
+<text x="685" y="1312" class="bs">row counts vs source ±5%</text>
+<text x="685" y="1332" class="bs">DLQ backlog → Azure Monitor alert</text>
+<rect x="487" y="1344" width="396" height="18" fill="#115e59" rx="4"/><text x="685" y="1357" class="tt">jsonschema · Great Expectations · azure-monitor</text>
 
-<!-- Boxes w=450 -->
-<!-- Box 1 -->
-<rect x="50" y="1050" width="450" height="180" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="275" y="1080" class="box-title">Streaming (Databricks)</text>
-<text x="275" y="1110" class="box-sub">Structured Streaming Core Engine</text>
-<text x="275" y="1130" class="box-sub">Applies native Python transform ML models</text>
-<text x="275" y="1150" class="box-sub">Applies stateful Pandas UDFs</text>
-<text x="275" y="1170" class="box-sub">Checkpoints state to Azure ADLS Gen 2</text>
-<rect x="60" y="1185" width="430" height="35" fill="#115e59" rx="4"/>
-<text x="275" y="1208" class="tech-text">pyspark · Azure Databricks ML</text>
+<rect x="910" y="1250" width="450" height="120" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="1135" y="1274" class="bt">Observability &amp; Lineage</text>
+<text x="1135" y="1294" class="bs">pipeline_complete event → Service Bus</text>
+<text x="1135" y="1312" class="bs">Purview: source → transform → sink</text>
+<text x="1135" y="1332" class="bs">Azure Monitor: lag · DLQ · job failure</text>
+<rect x="922" y="1344" width="426" height="18" fill="#115e59" rx="4"/><text x="1135" y="1357" class="tt">azure-servicebus · Microsoft Purview SDK</text>
 
-<!-- Box 2 -->
-<rect x="525" y="1050" width="450" height="180" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="750" y="1080" class="box-title">Batch (Databricks / Synapse)</text>
-<text x="750" y="1110" class="box-sub">Azure Data Factory Pipeline Scheduled Trigger</text>
-<text x="750" y="1130" class="box-sub">Applies complex Python rules &amp; logic models</text>
-<text x="750" y="1150" class="box-sub">Distributed across ephemeral Spark pools</text>
-<text x="750" y="1170" class="box-sub">Synapse SQL pushes for in-warehouse joins</text>
-<rect x="535" y="1185" width="430" height="35" fill="#115e59" rx="4"/>
-<text x="750" y="1208" class="tech-text">pyspark · ADF · Azure Synapse Analytics</text>
+<!-- output example -->
+<rect x="40" y="1382" width="1320" height="48" fill="#064e3b" rx="6"/>
+<text x="55" y="1402" class="cm" style="fill:#a7f3d0;font-style:italic">Canonical JSON output (2 rows exploded from 1 Kafka message):</text>
+<text x="55" y="1421" class="cd">{"order_id":"A123","sku":"X1","qty":2,"ts":"2024-01-15T10:30:00Z","status":"ACTIVE"} · {"order_id":"A123","sku":"X2","qty":1,...}</text>
 
-<!-- Box 3 -->
-<rect x="1000" y="1050" width="450" height="180" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="1225" y="1080" class="box-title">SQL-only (Synapse)</text>
-<text x="1225" y="1110" class="box-sub">Synapse scheduled SQL query</text>
-<text x="1225" y="1130" class="box-sub">no cluster needed</text>
-<text x="1225" y="1150" class="box-sub">serverless pool</text>
-<text x="1225" y="1170" class="box-sub">WRITE_TRUNCATE or APPEND</text>
-<rect x="1010" y="1185" width="430" height="35" fill="#115e59" rx="4"/>
-<text x="1225" y="1208" class="tech-text">Azure Synapse SQL</text>
+<path d="M 700 1430 L 700 1468" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#ag)"/>
 
-<!-- Code block outputs -->
-<rect x="50" y="1250" width="1400" height="65" fill="#064e3b" rx="8"/>
-<text x="70" y="1275" class="code-title">Output — what the generated PySpark code does to the canonical envelope:</text>
-<text x="70" y="1295" class="code-body">df.withColumn("items", explode("payload.items")) <tspan fill="#6ee7b7"># flatten array -> 2 rows for order A123</tspan></text>
-<text x="70" y="1310" class="code-body">df.withColumn("ts", to_utc_timestamp(from_unixtime(col("payload.ts")/1000),"UTC")) <tspan fill="#6ee7b7"># epoch ms -> UTC</tspan></text>
+<!-- Z6 MULTI-FORMAT REGEN -->
+<rect x="40" y="1478" width="1320" height="24" fill="#047857" rx="4"/>
+<text x="700" y="1495" class="zh">ZONE 6 — MULTI-FORMAT REGENERATION (JSON → consumer-specific format · no re-processing)</text>
 
+<rect x="40" y="1514" width="248" height="130" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="164" y="1536" class="bt">Relational DB</text>
+<text x="164" y="1554" class="bs">JSON rows → SQL INSERT</text>
+<text x="164" y="1572" class="bs">upsert via primary key merge</text>
+<text x="164" y="1590" class="bs">Azure SQL / Synapse DW</text>
+<rect x="52" y="1604" width="224" height="18" fill="#115e59" rx="4"/><text x="164" y="1617" class="tt">SQLAlchemy · pyodbc</text>
 
-<path d="M 750 1315 L 750 1360" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
+<rect x="302" y="1514" width="248" height="130" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="426" y="1536" class="bt">Kafka / Event Hubs</text>
+<text x="426" y="1554" class="bs">JSON → message bus publish</text>
+<text x="426" y="1572" class="bs">downstream streaming consumers</text>
+<text x="426" y="1590" class="bs">topic: orders_clean_v1</text>
+<rect x="314" y="1604" width="224" height="18" fill="#115e59" rx="4"/><text x="426" y="1617" class="tt">confluent-kafka-python</text>
 
-<!-- ========================================== -->
-<!-- ZONE 5: OUTPUT VALIDATION                  -->
-<!-- ========================================== -->
-<rect x="50" y="1350" width="1400" height="35" fill="#0f766e" rx="6"/>
-<text x="750" y="1373" class="zone-header">ZONE 5 — OUTPUT VALIDATION (post-run automated checks)</text>
+<rect x="564" y="1514" width="248" height="130" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="688" y="1536" class="bt">Parquet / ADLS Lake</text>
+<text x="688" y="1554" class="bs">JSON → columnar Parquet</text>
+<text x="688" y="1572" class="bs">partitioned by date/region</text>
+<text x="688" y="1590" class="bs">ADLS Gen 2 prefix structure</text>
+<rect x="576" y="1604" width="224" height="18" fill="#115e59" rx="4"/><text x="688" y="1617" class="tt">pyarrow · delta-rs</text>
 
-<!-- Validation Boxes w=450 -->
-<!-- Box 1 -->
-<rect x="50" y="1400" width="450" height="90" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="275" y="1430" class="box-title">Row count check</text>
-<text x="275" y="1452" class="box-sub">output ≈ source count · ±5% tolerance</text>
-<text x="275" y="1472" class="box-sub" fill="#0d9488" font-weight="bold">Tool: Synapse query · pandas</text>
+<rect x="826" y="1514" width="248" height="130" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="950" y="1536" class="bt">NoSQL / Search</text>
+<text x="950" y="1554" class="bs">native JSON → direct push</text>
+<text x="950" y="1572" class="bs">Cosmos DB / Elastic index</text>
+<text x="950" y="1590" class="bs">full-text search enabled</text>
+<rect x="838" y="1604" width="224" height="18" fill="#115e59" rx="4"/><text x="950" y="1617" class="tt">azure-cosmos · elasticsearch-py</text>
 
-<!-- Box 2 -->
-<rect x="525" y="1400" width="450" height="90" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="750" y="1430" class="box-title">Schema compliance</text>
-<text x="750" y="1452" class="box-sub">output matches target_schema completely</text>
-<text x="750" y="1472" class="box-sub" fill="#0d9488" font-weight="bold">Tool: jsonschema · Great Expectations</text>
+<rect x="1088" y="1514" width="272" height="130" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="6"/>
+<text x="1224" y="1536" class="bt">REST API / Webhook</text>
+<text x="1224" y="1554" class="bs">JSON POST to downstream</text>
+<text x="1224" y="1572" class="bs">retry + exponential backoff</text>
+<text x="1224" y="1590" class="bs">HMAC signature on payload</text>
+<rect x="1100" y="1604" width="248" height="18" fill="#115e59" rx="4"/><text x="1224" y="1617" class="tt">httpx · tenacity · azure-apim</text>
 
-<!-- Box 3 -->
-<rect x="1000" y="1400" width="450" height="90" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="1225" y="1430" class="box-title">DLQ alert check</text>
-<text x="1225" y="1452" class="box-sub">backlog > 0 → Azure Monitor alert</text>
-<text x="1225" y="1472" class="box-sub" fill="#0d9488" font-weight="bold">Tool: azure-monitor · Service Bus SDK</text>
+<!-- FOOTER -->
+<rect x="40" y="1662" width="640" height="90" fill="#fef2f2" stroke="#ef4444" stroke-width="2" rx="8"/>
+<text x="360" y="1684" class="tx" style="font-weight:bold;fill:#b91c1c">Phase 2 AI usage — minimal and targeted only</text>
+<text x="360" y="1704" class="tx" style="fill:#991b1b">Codex: semantic field mapping in API adapter (ambiguous schemas)</text>
+<text x="360" y="1722" class="tx" style="fill:#991b1b">Document Analyzer: unstructured docs arriving at Blob adapter</text>
+<text x="360" y="1742" class="tx" style="fill:#991b1b">No GPT-4 · No manifest inference · No code generation in runtime</text>
 
-
-<path d="M 750 1490 L 750 1530" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
-
-<!-- ========================================== -->
-<!-- ZONE 6: OUTPUT SINKS                       -->
-<!-- ========================================== -->
-<rect x="50" y="1520" width="1400" height="35" fill="#0f766e" rx="6"/>
-<text x="750" y="1543" class="zone-header">ZONE 6 — OUTPUT SINKS (defined in manifest · configured by Phase 1 generated code)</text>
-
-<!-- Output Boxes x=260 -->
-<rect x="50" y="1570" width="260" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="180" y="1600" class="box-title">Azure Synapse</text>
-<text x="180" y="1625" class="box-sub">partitioned table</text>
-<text x="180" y="1645" class="box-sub">analytics warehouse</text>
-<rect x="60" y="1670" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="180" y="1693" class="tech-text">pyodbc · SQLAlchemy</text>
-
-<rect x="335" y="1570" width="260" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="465" y="1600" class="box-title">Azure Blob Storage</text>
-<text x="465" y="1625" class="box-sub">Parquet / CSV files</text>
-<text x="465" y="1645" class="box-sub">partitioned prefix struct</text>
-<rect x="345" y="1670" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="465" y="1693" class="tech-text">azure-storage-blob</text>
-
-<rect x="620" y="1570" width="260" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="750" y="1600" class="box-title">Azure SQL DB</text>
-<text x="750" y="1625" class="box-sub">upsert / insert modes</text>
-<text x="750" y="1645" class="box-sub">primary key merge logic</text>
-<rect x="630" y="1670" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="750" y="1693" class="tech-text">SQLAlchemy · pyodbc</text>
-
-<rect x="905" y="1570" width="260" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="1035" y="1600" class="box-title">Azure SFTP</text>
-<text x="1035" y="1625" class="box-sub">ADLS Gen 2 SFTP endpoint</text>
-<text x="1035" y="1645" class="box-sub">Legacy partner ingestion</text>
-<rect x="915" y="1670" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="1035" y="1693" class="tech-text">Azure Blob Storage SFTP</text>
-
-<rect x="1190" y="1570" width="260" height="150" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="1320" y="1600" class="box-title">Event Hubs topic</text>
-<text x="1320" y="1625" class="box-sub">publish results back</text>
-<text x="1320" y="1645" class="box-sub">downstream service feeds</text>
-<rect x="1200" y="1670" width="240" height="35" fill="#115e59" rx="4"/>
-<text x="1320" y="1693" class="tech-text">confluent-kafka-py</text>
-
-
-<rect x="50" y="1740" width="1400" height="65" fill="#064e3b" rx="8"/>
-<text x="70" y="1765" class="code-title">Output — rows written to Synapse orders_clean table (2 rows from 1 Kafka message):</text>
-<text x="70" y="1785" class="code-body">{"id":"A123", "sky":"X1", "qty":2, "ts":"2024-01-15T10:30:00Z", "status":"ACTIVE" }</text>
-<text x="70" y="1800" class="code-body">{"id":"A123", "sky":"X2", "qty":1, "ts":"2024-01-15T10:30:00Z", "status":"ACTIVE" }  <tspan fill="#6ee7b7">→ items[] exploded directly to 2 tabular rows</tspan></text>
-
-
-<path d="M 750 1805 L 750 1850" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
-
-<!-- ========================================== -->
-<!-- ZONE 7: OBSERVABILITY                      -->
-<!-- ========================================== -->
-<rect x="50" y="1840" width="1400" height="35" fill="#0f766e" rx="6"/>
-<text x="750" y="1863" class="zone-header">ZONE 7 — OBSERVABILITY + LINEAGE</text>
-
-<rect x="50" y="1890" width="675" height="85" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="387" y="1920" class="box-title">Completion notification</text>
-<text x="387" y="1945" class="box-sub">publish pipeline_complete event to Service Bus</text>
-<text x="387" y="1965" class="box-sub" fill="#0d9488" font-weight="bold">Tool: azure-servicebus SDK</text>
-
-<rect x="775" y="1890" width="675" height="85" fill="#f0fdfa" stroke="#0f766e" stroke-width="2" rx="8"/>
-<text x="1112" y="1920" class="box-title">Microsoft Purview lineage + Azure Monitor</text>
-<text x="1112" y="1945" class="box-sub">source → transform → sink lineage recorded</text>
-<text x="1112" y="1965" class="box-sub" fill="#0d9488" font-weight="bold">alerts: lag · DLQ backlog · job failure</text>
-
-
-<!-- ========================================== -->
-<!-- FOOTERS                                    -->
-<!-- ========================================== -->
-<rect x="50" y="2020" width="1400" height="120" fill="#eff6ff" stroke="#3b82f6" stroke-width="3" rx="12"/>
-<text x="750" y="2060" class="footer-title" fill="#1e40af">When does Phase 2 pause and Phase 1 re-run?</text>
-<text x="750" y="2090" class="footer-sub" fill="#2563eb">Format change • new source/sink • transformation rule change • schema version bump → <tspan font-weight="bold">re-run Phase 1 • redeploy • Phase 2 resumes</tspan></text>
-<text x="750" y="2115" class="footer-sub" fill="#2563eb">More data arriving • volume increase • same format → <tspan font-weight="bold">Phase 2 continues completely dynamically • Phase 1 is never involved</tspan></text>
-
-<rect x="50" y="2180" width="1400" height="100" fill="#ef4444" rx="12"/>
-<text x="750" y="2225" class="footer-title" fill="#ffffff">Phase 2 contains: no manifest files • no Azure OpenAI calls • no code generators • no AI core</text>
-<text x="750" y="2255" class="footer-sub" font-weight="bold" fill="#fecaca">It only executes code that Phase 1 already wrote and Azure DevOps CI/CD already deployed.</text>
-
+<rect x="700" y="1662" width="660" height="90" fill="#ecfdf5" stroke="#059669" stroke-width="2" rx="8"/>
+<text x="1030" y="1684" class="tx" style="font-weight:bold;fill:#047857">JSON-first architecture benefit</text>
+<text x="1030" y="1704" class="tx" style="fill:#065f46">Master JSON stored once → regenerated to any sink on-demand</text>
+<text x="1030" y="1722" class="tx" style="fill:#065f46">No re-processing needed when new sink type added</text>
+<text x="1030" y="1742" class="tx" style="fill:#065f46">Zone 6 converters are thin adapters, not transformation logic</text>
 </svg>

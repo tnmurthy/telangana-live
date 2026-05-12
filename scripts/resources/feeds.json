@@ -6,18 +6,18 @@
     {"source": "Times of India - Hyderabad", "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms"},
     {"source": "Deccan Chronicle - Hyderabad", "url": "https://www.deccanchronicle.com/rss_feed/"},
     {"source": "Siasat Daily", "url": "https://www.siasat.com/feed/"},
-    {"source": "NTV Telangana", "url": "https://www.ntvtelugunews.com/rss/rss.xml"}
+    {"source": "Eenadu Telangana", "url": "https://www.eenadu.net/telangana/rss.xml"}
   ],
   "national": [
     {"source": "The Print", "url": "https://theprint.in/feed/"},
     {"source": "India Today", "url": "https://www.indiatoday.in/rss/home"},
-    {"source": "NDTV Top Stories", "url": "https://feeds.ndtv.com/ndtvnews-top-stories"},
-    {"source": "Scroll.in", "url": "https://scroll.in/rss"}
+    {"source": "News18 India", "url": "https://www.news18.com/rss/india.xml"},
+    {"source": "Financial Express", "url": "https://www.financialexpress.com/feed/"}
   ],
   "finance": [
     {"source": "Economic Times Markets", "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"},
     {"source": "Business Line", "url": "https://www.thehindubusinessline.com/feeder/default.rss"},
-    {"source": "Moneycontrol Economy", "url": "https://www.moneycontrol.com/rss/economy.xml"},
+    {"source": "Business Standard", "url": "https://www.business-standard.com/rss/home_page_top_stories.rss"},
     {"source": "SEBI Updates", "url": "https://www.sebi.gov.in/sebirss.xml"}
   ],
   "tech_ai": [

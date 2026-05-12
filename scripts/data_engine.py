@@ -93,7 +93,7 @@ def http_get(url):
         url,
         timeout=20,
         headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
         },
     )
 
@@ -135,6 +135,7 @@ def clean_price(value):
 def sync_gold():
     print("Syncing gold rates...")
     rates = {}
+    history = []
     # Fallback values match test expectations
     fallback = {
         "22K Gold (1g)": {"today": "₹7,180", "yesterday": "₹7,180"},
@@ -144,47 +145,90 @@ def sync_gold():
     silver_gram = 96.50   # default fallback
 
     try:
-        url = "https://www.livemint.com/gold-prices/hyderabad"
+        # PRIMARY SOURCE: Live Chennai (Very stable table structure for Hyderabad)
+        url = "https://www.livechennai.com/gold_silverrate_hyderabad.asp"
         resp = http_get(url)
-        resp.raise_for_status()
-        html = resp.text
-
-        m_24 = re.search(r"24\s*Karat.*?₹\s*([\d,]+)", html, re.I | re.S)
-        m_22 = re.search(r"22\s*Karat.*?₹\s*([\d,]+)", html, re.I | re.S)
-        m_silver = re.search(r"Silver[^\d₹]{0,30}₹?\s*([\d,]+(?:\.\d+)?)", html, re.I)
-
-        if m_24:
-            rates["24K Gold (1g)"] = {"today": f"₹{m_24.group(1)}", "yesterday": f"₹{m_24.group(1)}"}
-        if m_22:
-            rates["22K Gold (1g)"] = {"today": f"₹{m_22.group(1)}", "yesterday": f"₹{m_22.group(1)}"}
-        if m_silver:
-            raw = float(m_silver.group(1).replace(",", ""))
-            silver_gram = round(raw / 1000, 2) if raw > 1000 else raw
-
-        if not rates:
-            url = "https://www.goodreturns.in/gold-rates/hyderabad.html"
-            resp = http_get(url)
-            resp.raise_for_status()
+        if resp.status_code == 200:
             html = resp.text
-            patterns = [
-                ("24K Gold (1g)", r"24\s*Carat.*?Per Gram.*?\|1\|₹?([\d,]+(?:\.\d+)?)\|₹?([\d,]+(?:\.\d+)?)\|"),
-                ("22K Gold (1g)", r"22\s*Carat.*?Per Gram.*?\|1\|₹?([\d,]+(?:\.\d+)?)\|₹?([\d,]+(?:\.\d+)?)\|"),
-            ]
-            for label, pattern in patterns:
-                m = re.search(pattern, html, re.I | re.S)
-                if m:
-                    rates[label] = {"today": f"₹{m.group(1)}", "yesterday": f"₹{m.group(2)}"}
-            m_silver = re.search(r"Silver[^\d₹]{0,30}₹?\s*([\d,]+(?:\.\d+)?)", html, re.I)
-            if m_silver:
-                raw = float(m_silver.group(1).replace(",", ""))
-                silver_gram = round(raw / 1000, 2) if raw > 1000 else raw
+            soup = BeautifulSoup(html, "html.parser")
+            tables = soup.find_all("table")
+            
+            # Find the main price table (usually one with '24 k' or 'Standard Gold')
+            for table in tables:
+                table_text = table.get_text().lower()
+                if "24 k" in table_text and "date" in table_text:
+                    rows = table.find_all("tr")
+                    temp_history = []
+                    for row in rows:
+                        cols = row.find_all("td")
+                        if len(cols) >= 3:
+                            date_raw = cols[0].get_text(strip=True)
+                            p24_raw = cols[1].get_text(strip=True).replace(",", "").split("(")[0].strip()
+                            p22_raw = cols[2].get_text(strip=True).replace(",", "").split("(")[0].strip()
+                            
+                            try:
+                                # Format: 12/May/2026 or 12/05/2026
+                                # We'll try to parse it
+                                dt = None
+                                for fmt in ["%d/%b/%Y", "%d/%m/%Y"]:
+                                    try:
+                                        dt = datetime.datetime.strptime(date_raw, fmt)
+                                        break
+                                    except: continue
+                                
+                                if dt:
+                                    v24 = float(p24_raw)
+                                    v22 = float(p22_raw)
+                                    
+                                    # Normalize (Live Chennai often shows 1g directly or 8g)
+                                    # 14,000+ is usually 2g. 60,000+ is 8g. 7,000+ is 1g.
+                                    def normalize_g(v):
+                                        if v > 50000: return v / 8
+                                        if v > 12000: return v / 2
+                                        return v
+                                    
+                                    n24 = round(normalize_g(v24), 2)
+                                    n22 = round(normalize_g(v22), 2)
+                                    
+                                    temp_history.append({
+                                        "date": dt.strftime("%Y-%m-%d"),
+                                        "gold22k": n22,
+                                        "gold24k": n24,
+                                        "silver": silver_gram
+                                    })
+                                    
+                                    # First row is today
+                                    if "24K Gold (1g)" not in rates:
+                                        rates["24K Gold (1g)"] = {"today": f"₹{int(n24):,}", "yesterday": f"₹{int(n24):,}"}
+                                        rates["22K Gold (1g)"] = {"today": f"₹{int(n22):,}", "yesterday": f"₹{int(n22):,}"}
+                                        gold24, gold22 = n24, n22
+                            except:
+                                continue
+                    
+                    if temp_history:
+                        history = sorted(temp_history, key=lambda x: x["date"])[-7:]
+                        break
 
     except Exception as e:
         print(f"  ⚠️ Gold scrape failed: {e}")
 
+    # Fallback to current behavior if history scraping failed
+    if not history:
+        # Load prior history from file if available
+        try:
+            if os.path.exists(PATHS["gold"]):
+                with open(PATHS["gold"], encoding="utf-8") as f:
+                    raw = f.read()
+                m = re.search(r"= (\{[\s\S]*\});", raw)
+                if m:
+                    existing = json.loads(m.group(1))
+                    history = existing.get("history", [])
+        except: pass
+
     if not rates:
         print("  ⚠️ No gold rows parsed, using initial fallback")
         rates = fallback
+        gold22, gold24 = 7180.0, 7830.0
 
     # Numeric conversions
     try:
@@ -193,33 +237,26 @@ def sync_gold():
     except Exception:
         gold22, gold24 = 7180.0, 7830.0
 
-    # Load prior history and compute day-over-day change
-    prior_history = []
+    # Calculate day-over-day change
     prev_gold22 = gold22
     prev_gold24 = gold24
     prev_silver = silver_gram
-    try:
-        if os.path.exists(PATHS["gold"]):
-            with open(PATHS["gold"], encoding="utf-8") as f:
-                raw = f.read()
-            m = re.search(r"= (\{[\s\S]*\});", raw)
-            if m:
-                existing = json.loads(m.group(1))
-                prior_history = existing.get("history", [])
-                today_str = NOW[:10]
-                # Remove any existing entry for today (we'll replace it)
-                prior_history = [h for h in prior_history if h.get("date") != today_str]
-                if prior_history:
-                    last = prior_history[-1]
-                    prev_gold22 = last.get("gold22k", gold22)
-                    prev_gold24 = last.get("gold24k", gold24)
-                    prev_silver = last.get("silver", silver_gram)
-    except Exception as e:
-        print(f"  ⚠️ Could not load prior gold history: {e}")
+    
+    today_str = NOW[:10]
+    past_entries = [h for h in history if h["date"] < today_str]
+    if past_entries:
+        # Sort to ensure we get the absolute latest past entry
+        past_entries.sort(key=lambda x: x["date"])
+        last_past = past_entries[-1]
+        prev_gold22 = last_past.get("gold22k", gold22)
+        prev_gold24 = last_past.get("gold24k", gold24)
+        prev_silver = last_past.get("silver", silver_gram)
 
-    today_entry = {"date": NOW[:10], "gold22k": gold22, "gold24k": gold24, "silver": silver_gram}
-    history = prior_history + [today_entry]
-    history = history[-7:]  # cap at 7 days
+    # Ensure today's entry is in history
+    if not any(h["date"] == today_str for h in history):
+        history.append({"date": today_str, "gold22k": gold22, "gold24k": gold24, "silver": silver_gram})
+    
+    history = sorted(history, key=lambda x: x["date"])[-7:]
 
     change22 = round(gold22 - prev_gold22, 2)
     change24 = round(gold24 - prev_gold24, 2)
