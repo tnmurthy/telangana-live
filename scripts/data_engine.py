@@ -311,6 +311,7 @@ def sync_fuel():
             r"Diesel Price in Hyderabad[^\u20b9]{0,80}₹\s*([\d.]+)",
         ]
 
+        # Petrol & Diesel
         for pattern in petrol_patterns:
             m = re.search(pattern, text, re.I)
             if m:
@@ -326,6 +327,31 @@ def sync_fuel():
                 if 50 < v < 200:
                     diesel_price = v
                 break
+
+        # LPG (14.2kg Domestic)
+        try:
+            lpg_url = "https://www.goodreturns.in/lpg-price-in-hyderabad.html"
+            lpg_resp = http_get(lpg_url)
+            if lpg_resp.status_code == 200:
+                lpg_soup = BeautifulSoup(lpg_resp.text, "html.parser")
+                # Look for the price in a table cell or a prominent div
+                lpg_text = lpg_soup.get_text()
+                m_lpg = re.search(r"LPG Price[^\d]{0,80}₹\s*([\d,.]+)", lpg_text, re.I)
+                if m_lpg:
+                    lpg_price = float(m_lpg.group(1).replace(",", ""))
+        except: pass
+
+        # CNG
+        try:
+            cng_url = "https://www.goodreturns.in/cng-price-in-hyderabad.html"
+            cng_resp = http_get(cng_url)
+            if cng_resp.status_code == 200:
+                cng_soup = BeautifulSoup(cng_resp.text, "html.parser")
+                cng_text = cng_soup.get_text()
+                m_cng = re.search(r"CNG Price[^\d]{0,80}₹\s*([\d,.]+)", cng_text, re.I)
+                if m_cng:
+                    cng_price = float(m_cng.group(1).replace(",", ""))
+        except: pass
 
     except Exception as e:
         print(f"  ⚠️ Fuel scrape failed ({e}), using fallback values")

@@ -5,11 +5,32 @@ import { alerts } from '../data/alerts';
 const BREAKING_TYPES = new Set(['power', 'water', 'emergency']);
 
 export default function BreakingNewsBanner() {
+  const [breakingAlerts, setBreakingAlerts] = useState([]);
   const [visible, setVisible] = useState(false);
   const [item, setItem] = useState(null);
   const [idx, setIdx] = useState(0);
 
-  const breakingAlerts = alerts.filter(a => BREAKING_TYPES.has(a.type));
+  useEffect(() => {
+    async function loadAlerts() {
+      try {
+        const resp = await fetch('/data/alerts.json');
+        if (resp.ok) {
+          const data = await resp.json();
+          setBreakingAlerts(data.filter(a => BREAKING_TYPES.has(a.type)));
+        } else {
+          // Fallback to static data
+          setBreakingAlerts(alerts.filter(a => BREAKING_TYPES.has(a.type)));
+        }
+      } catch (err) {
+        setBreakingAlerts(alerts.filter(a => BREAKING_TYPES.has(a.type)));
+      }
+    }
+    loadAlerts();
+    
+    // Refresh every 5 minutes in the UI
+    const interval = setInterval(loadAlerts, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (!breakingAlerts.length) return;
@@ -18,7 +39,7 @@ export default function BreakingNewsBanner() {
 
     const timer = setTimeout(() => setVisible(false), 10000);
     return () => clearTimeout(timer);
-  }, [idx]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [idx, breakingAlerts]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Cycle to next alert when one dismisses
   useEffect(() => {
