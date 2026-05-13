@@ -29,7 +29,8 @@ except ImportError:
     llm = None
 
 NOW = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "src", "src", "data")
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "src", "data")
+FRONTEND_DATA_DIR = DATA_DIR
 
 os.makedirs(DATA_DIR, exist_ok=True)
 
