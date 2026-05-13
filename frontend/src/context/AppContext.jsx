@@ -67,6 +67,24 @@ export function AppProvider({ children }) {
     });
   }, []);
 
+  // Followed content
+  const [followed, setFollowed] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('tg-followed') || '{"topics":[], "regions":[]}');
+    } catch { return { topics: [], regions: [] }; }
+  });
+
+  const toggleFollow = useCallback((type, value) => {
+    setFollowed(prev => {
+      const list = prev[type] || [];
+      const isFollowing = list.includes(value);
+      const newList = isFollowing ? list.filter(i => i !== value) : [...list, value];
+      const next = { ...prev, [type]: newList };
+      localStorage.setItem('tg-followed', JSON.stringify(next));
+      return next;
+    });
+  }, []);
+
   return (
     <AppContext.Provider value={{
       theme, toggleTheme,
@@ -74,6 +92,7 @@ export function AppProvider({ children }) {
       myDistrict, saveDistrict,
       showDistrictPrompt, dismissDistrictPrompt,
       streak, recordRead,
+      followed, toggleFollow,
     }}>
       {children}
     </AppContext.Provider>

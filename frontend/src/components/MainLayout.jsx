@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import BreakingNewsBanner from './BreakingNewsBanner';
 import LeftSidebar from './LeftSidebar';
 import RightSidebar from './RightSidebar';
 import DateTimeBar from './DateTimeBar';
@@ -32,6 +33,7 @@ const MainLayout = ({ children, isEmergencyActive }) => {
   return (
     <div className={`min-h-screen transition-colors duration-500 ${getEmergencyBg()}`}>
       <Header />
+      <BreakingNewsBanner />
       <DateTimeBar />
       <div id="ticker-section">
         <WidgetErrorBoundary name="News Ticker">

@@ -1,244 +1,299 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { Icons } from './Icons';
 import ShareWhatsApp from './ShareWhatsApp';
 import ArticleModal from './ArticleModal';
 import { formatRelativeTime } from '../utils/timeUtils';
 import { useAppContext } from '../context/AppContext';
 
-/* ─── Animated Waveform (voice active indicator) ─────────────── */
-function Waveform() {
+/* ─── News Reaction Pulse (Phase 4) ──────────────────────────── */
+function ReactionPulse({ articleId }) {
+  const [reactions, setReactions] = useState(() => {
+    const saved = localStorage.getItem(`tg-react-${articleId}`);
+    // Simulate live feeling with randomized initial counters
+    const base = (articleId.length % 5) * 12 + 5;
+    return {
+      safe: { count: base + 2, active: saved === 'safe' },
+      helpful: { count: base + 18, active: saved === 'helpful' },
+      eye: { count: base % 4, active: saved === 'eye' },
+    };
+  });
+
+  const handleReact = (type) => {
+    setReactions(prev => {
+      const isRemoving = prev[type].active;
+      const next = {
+        ...prev,
+        [type]: { count: prev[type].count + (isRemoving ? -1 : 1), active: !isRemoving },
+        // Unset others
+        ...(type !== 'safe' ? { safe: { ...prev.safe, active: false } } : {}),
+        ...(type !== 'helpful' ? { helpful: { ...prev.helpful, active: false } } : {}),
+        ...(type !== 'eye' ? { eye: { ...prev.eye, active: false } } : {}),
+      };
+      if (!isRemoving) localStorage.setItem(`tg-react-${articleId}`, type);
+      else localStorage.removeItem(`tg-react-${articleId}`);
+      return next;
+    });
+  };
+
   return (
-    <span className="flex items-end gap-[2px] h-4">
-      {[1, 2, 3, 4, 3].map((d, i) => (
-        <span
-          key={i}
-          className="w-[2px] bg-telangana-green rounded-full animate-waveform"
-          style={{ animationDelay: `${i * 0.1}s` }}
-        />
-      ))}
-    </span>
+    <div className="flex items-center gap-1.5 mt-3 sm:mt-0">
+      <button 
+        onClick={(e) => { e.stopPropagation(); handleReact('safe'); }}
+        className={`flex items-center gap-1.5 px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${reactions.safe.active ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30' : 'bg-white/5 text-text-muted hover:bg-white/10'}`}
+      >
+        <span>🛡️</span> {reactions.safe.count}
+      </button>
+      <button 
+        onClick={(e) => { e.stopPropagation(); handleReact('helpful'); }}
+        className={`flex items-center gap-1.5 px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${reactions.helpful.active ? 'bg-telangana-green/20 text-telangana-green border border-telangana-green/30' : 'bg-white/5 text-text-muted hover:bg-white/10'}`}
+      >
+        <span>✅</span> {reactions.helpful.count}
+      </button>
+      {reactions.eye.count > 0 && (
+        <button 
+          onClick={(e) => { e.stopPropagation(); handleReact('eye'); }}
+          className={`flex items-center gap-1.5 px-2 py-1 rounded-lg text-[10px] font-bold transition-all ${reactions.eye.active ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' : 'bg-white/5 text-text-muted hover:bg-white/10'}`}
+        >
+          <span>👁️</span> {reactions.eye.count}
+        </button>
+      )}
+    </div>
   );
 }
 
 /* ─── AI Confidence Ring ─────────────────────────────────────── */
 function AIRing({ score = 78 }) {
-  const r = 10;
+  const r = 9;
   const circ = 2 * Math.PI * r;
   const dash = (score / 100) * circ;
   return (
-    <span className="flex items-center gap-1" title={`AI confidence: ${score}%`}>
-      <svg width="26" height="26" viewBox="0 0 26 26" className="-rotate-90">
-        <circle cx="13" cy="13" r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="3" />
+    <div className="flex items-center gap-1.5" title={`AI Accuracy: ${score}%`}>
+      <svg width="20" height="20" viewBox="0 0 26 26" className="-rotate-90">
+        <circle cx="13" cy="13" r={r} fill="none" stroke="rgba(255,255,255,0.04)" strokeWidth="2.5" />
         <circle
           cx="13" cy="13" r={r} fill="none"
-          stroke="#00a86b" strokeWidth="3"
+          stroke="var(--telangana-green)" strokeWidth="2.5"
           strokeDasharray={`${dash} ${circ}`}
           strokeLinecap="round"
-          className="transition-all duration-700"
+          className="transition-all duration-1000"
         />
       </svg>
-      <span className="text-[9px] font-bold text-telangana-green">{score}%</span>
-    </span>
-  );
-}
-
-/* ─── Share Buttons ──────────────────────────────────────────── */
-function ShareButtons({ title, link, summary }) {
-  const [copied, setCopied] = useState(false);
-  const text = encodeURIComponent(`📰 ${title}\n${link}`);
-
-  const copyLink = async () => {
-    await navigator.clipboard.writeText(link).catch(() => {});
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <div className="flex items-center gap-1.5">
-      {/* WhatsApp */}
-      <ShareWhatsApp type="custom" customTitle={`📰 ${title}`} customContent={summary || ''} customLink={link} />
-      {/* Twitter/X */}
-      <a
-        href={`https://twitter.com/intent/tweet?text=${text}`}
-        target="_blank" rel="noopener noreferrer"
-        className="p-1.5 rounded-lg bg-white/[0.04] hover:bg-sky-500/20 text-text-muted hover:text-sky-400 transition-all duration-200"
-        title="Share on X / Twitter"
-      >
-        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.629L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/>
-        </svg>
-      </a>
-      {/* Telegram */}
-      <a
-        href={`https://t.me/share/url?url=${encodeURIComponent(link)}&text=${encodeURIComponent(title)}`}
-        target="_blank" rel="noopener noreferrer"
-        className="p-1.5 rounded-lg bg-white/[0.04] hover:bg-blue-500/20 text-text-muted hover:text-blue-400 transition-all duration-200"
-        title="Share on Telegram"
-      >
-        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M11.944 0A12 12 0 1 0 24 12 12.013 12.013 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-        </svg>
-      </a>
-      {/* Copy */}
-      <button
-        onClick={copyLink}
-        className="p-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-text-muted hover:text-white transition-all duration-200"
-        title="Copy link"
-      >
-        {copied
-          ? <svg className="w-3.5 h-3.5 text-telangana-green" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-          : <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>
-        }
-      </button>
+      <span className="text-[9px] font-mono text-telangana-green/80 font-bold">{score}%</span>
     </div>
   );
 }
 
-/* ─── Main NewsCard ──────────────────────────────────────────── */
+/* ─── NewsCard (Google News / Premium Civic Portal Style) ────── */
 const NewsCard = ({ news, variant = 'standard' }) => {
-  const { title, link, source, published, description, region, category, ai_summary, image_url } = news;
+  const { id, title, link, source, published, description, region, category, ai_summary, image_url } = news;
   const [speaking, setSpeaking] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const { recordRead } = useAppContext();
+  const { recordRead, followed, toggleFollow } = useAppContext();
 
   const relTime = formatRelativeTime(published);
+  const aiConfidence = ai_summary ? Math.min(98, 70 + (title.length % 25)) : null;
 
-  // Derive a deterministic confidence score from the title length (demo; replace with real field)
-  const aiConfidence = ai_summary ? Math.min(98, 60 + (title.length % 39)) : null;
+  // 1. Badge Logic
+  const sourceLower = source.toLowerCase();
+  const titleLower = title.toLowerCase();
+  const isOfficial = sourceLower.includes('ghmc') || sourceLower.includes('hmwssb') || sourceLower.includes('tsrtc') || 
+                    sourceLower.includes('police') || sourceLower.includes('hydra') || sourceLower.includes('government') || sourceLower.includes('pds');
+  const isVerifiedNews = sourceLower.includes('hindu') || sourceLower.includes('telangana today') || 
+                        sourceLower.includes('chronicle') || sourceLower.includes('india today') || sourceLower.includes('times of india');
 
-  const handleSpeak = useCallback(() => {
+  // 2. Follow Status
+  const isTopicFollowed = followed.topics.includes(category);
+  const isRegionFollowed = followed.regions.includes(region);
+  const isFollowing = isTopicFollowed || isRegionFollowed;
+
+  // 3. Civic Action Button Logic (Phase 3)
+  const civicAction = useMemo(() => {
+    if (titleLower.includes('tax') || titleLower.includes('property')) return { label: 'Pay Tax', path: '/property-tax', icon: <Icons.Building className="w-3 h-3" /> };
+    if (titleLower.includes('water') || titleLower.includes('hmwssb')) return { label: 'Check Supply', path: '/water-supply', icon: <Icons.Search className="w-3 h-3" /> };
+    if (titleLower.includes('metro') || titleLower.includes('tsrtc') || titleLower.includes('transit')) return { label: 'Plan Trip', path: '/transport/metro', icon: <Icons.Location className="w-3 h-3" /> };
+    if (titleLower.includes('ration') || titleLower.includes('pds')) return { label: 'Check Ration', path: '/ration-pds', icon: <Icons.Info className="w-3 h-3" /> };
+    if (titleLower.includes('scheme') || titleLower.includes('beneficiary')) return { label: 'Apply Now', path: '/schemes', icon: <Icons.Building className="w-3 h-3" /> };
+    if (titleLower.includes('rain') || titleLower.includes('weather') || titleLower.includes('heatwave')) return { label: 'View Forecast', path: '/weather/forecast', icon: <Icons.Cloud className="w-3 h-3" /> };
+    return null;
+  }, [titleLower]);
+
+  // 4. Image Fallbacks
+  const finalImage = useMemo(() => {
+    if (image_url) return image_url;
+    if (description && description.includes('<img')) {
+      const match = description.match(/src="([^"]+)"/);
+      if (match) return match[1];
+    }
+    const localFallbacks = {
+      Politics: '/images/fallback/assembly.png',
+      Transit: '/images/fallback/metro.png',
+      Business: '/images/fallback/market.png',
+      Hyderabad: '/images/fallback/hyderabad_skyline.png',
+    };
+    if (category === 'Politics') return localFallbacks.Politics;
+    if (category === 'Transit') return localFallbacks.Transit;
+    if (category === 'Business') return localFallbacks.Business;
+    if (region?.includes('Hyderabad')) return localFallbacks.Hyderabad;
+    return 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=400&auto=format';
+  }, [image_url, description, category, region]);
+
+  const cleanDescription = useMemo(() => {
+    if (!description) return '';
+    return description.replace(/<[^>]*>/g, '').trim();
+  }, [description]);
+
+  const handleSpeak = useCallback((e) => {
+    e.stopPropagation();
     if (!window.speechSynthesis) return;
     if (speaking) {
       window.speechSynthesis.cancel();
       setSpeaking(false);
       return;
     }
-    const utt = new SpeechSynthesisUtterance(`${title}. ${ai_summary || description || ''}`);
+    const utt = new SpeechSynthesisUtterance(`${title}. ${ai_summary || cleanDescription}`);
     utt.lang = 'en-IN';
-    utt.rate = 0.95;
     utt.onend = () => setSpeaking(false);
-    utt.onerror = () => setSpeaking(false);
     window.speechSynthesis.speak(utt);
     setSpeaking(true);
-  }, [speaking, title, ai_summary, description]);
+  }, [speaking, title, ai_summary, cleanDescription]);
 
   const handleOpenModal = () => {
     recordRead();
     setModalOpen(true);
   };
 
+  const handleFollow = (e) => {
+    e.stopPropagation();
+    if (region && region !== 'Telangana') toggleFollow('regions', region);
+    else toggleFollow('topics', category);
+  };
+
   return (
     <>
       <article
-        className="group relative overflow-hidden rounded-2xl
-                   bg-white/[0.03] border border-white/[0.06]
-                   hover:border-telangana-green/20 transition-all duration-500
-                   hover:bg-white/[0.05] hover:shadow-xl hover:shadow-black/20
-                   backdrop-blur-sm"
+        onClick={handleOpenModal}
+        className={`group relative cursor-pointer overflow-hidden rounded-2xl bg-white/[0.01] border transition-all duration-500 hover:shadow-2xl hover:shadow-black/40 p-4 sm:p-5
+                   ${isFollowing ? 'border-telangana-green/40 bg-telangana-green/[0.02]' : 'border-white/[0.04] hover:border-telangana-green/30 hover:bg-white/[0.04]'}`}
       >
-        {/* Shimmer border on hover */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-telangana-green/10 to-transparent animate-card-shimmer" />
-        </div>
+        {isFollowing && (
+          <div className="absolute top-0 right-0 w-20 h-20 pointer-events-none overflow-hidden">
+            <div className="absolute top-2 right-[-24px] rotate-45 bg-telangana-green text-dark-bg text-[8px] font-black py-0.5 px-8 uppercase tracking-widest">
+              Pinned
+            </div>
+          </div>
+        )}
 
-        <div className={`flex flex-col ${variant !== 'compact' ? 'md:flex-row' : ''}`}>
-          {/* Image / Thumbnail */}
-          <div className={`relative overflow-hidden ${variant === 'compact' ? 'h-36' : 'h-40 md:h-auto md:w-44 lg:w-52'} shrink-0`}>
-            {image_url ? (
-              <img
-                src={image_url}
+        <div className="flex flex-col-reverse sm:flex-row gap-4 sm:gap-6">
+          <div className="flex-grow min-w-0 flex flex-col justify-between">
+            <div>
+              {/* Header: Source & Badges */}
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5 bg-white/5 rounded-full pl-1.5 pr-2.5 py-0.5 border border-white/5">
+                    <div className="w-3.5 h-3.5 rounded-full bg-telangana-green/20 flex items-center justify-center text-[7px] font-black text-telangana-green uppercase">
+                      {source.charAt(0)}
+                    </div>
+                    <span className="text-[10px] font-bold text-text-secondary uppercase tracking-wider">{source}</span>
+                  </div>
+
+                  {isOfficial && (
+                    <span className="flex items-center gap-1 bg-red-500/10 text-red-400 text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded border border-red-500/20">
+                      <Icons.Emergency className="w-2.5 h-2.5" />
+                      Official
+                    </span>
+                  )}
+                  {isVerifiedNews && !isOfficial && (
+                    <span className="flex items-center gap-1 bg-blue-500/10 text-blue-400 text-[8px] font-black uppercase tracking-widest px-2 py-0.5 rounded border border-blue-500/20">
+                      <Icons.Check className="w-2.5 h-2.5" />
+                      Verified
+                    </span>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-2">
+                   <span className="text-[10px] text-text-muted font-semibold tracking-tighter uppercase">{relTime}</span>
+                   <button 
+                    onClick={handleFollow}
+                    className={`p-1 rounded-full transition-all duration-300 ${isFollowing ? 'text-telangana-green scale-110' : 'text-text-muted/40 hover:text-white hover:scale-110'}`}
+                   >
+                     {isFollowing ? <Icons.Heart className="w-4 h-4 fill-current" /> : <Icons.Heart className="w-4 h-4" />}
+                   </button>
+                </div>
+              </div>
+
+              {/* Headline */}
+              <h3 className="text-base sm:text-lg lg:text-[1.15rem] font-heading font-extrabold text-white leading-[1.25] mb-3 group-hover:text-telangana-green-light transition-colors line-clamp-3">
+                {title}
+              </h3>
+
+              {/* Civic Action Button (Phase 3) */}
+              {civicAction && (
+                <Link 
+                  to={civicAction.path}
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 mb-4 rounded-lg bg-telangana-green text-dark-bg text-[10px] font-black uppercase tracking-wider hover:bg-telangana-green-light transition-all shadow-lg shadow-telangana-green/10"
+                >
+                  {civicAction.icon}
+                  {civicAction.label}
+                </Link>
+              )}
+
+              {/* AI Insight */}
+              {ai_summary && (
+                <div className="relative mb-4 bg-telangana-green/[0.03] rounded-xl p-3 border-l-2 border-telangana-green/40 group-hover:bg-telangana-green/[0.05] transition-colors">
+                  <div className="flex items-start gap-2.5">
+                    <Icons.Info className="w-3 h-3 text-telangana-green mt-0.5 shrink-0" />
+                    <p className="text-[11.5px] leading-relaxed text-text-secondary line-clamp-3">
+                      <span className="text-telangana-green font-bold text-[9px] uppercase tracking-widest block mb-0.5">Quick Summary</span>
+                      {ai_summary}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Footer & Reaction Pulse (Phase 4) */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-2 pt-3 border-t border-white/[0.03]">
+              <div className="flex items-center gap-4">
+                <button 
+                  onClick={(e) => { e.stopPropagation(); toggleFollow('regions', region); }}
+                  className={`flex items-center gap-1.5 text-[9px] font-black uppercase tracking-[0.15em] px-2 py-1 rounded-md transition-all ${isRegionFollowed ? 'bg-telangana-green/20 text-telangana-green' : 'text-text-muted opacity-60 hover:opacity-100 hover:bg-white/5'}`}
+                >
+                  <Icons.Pin className="w-2.5 h-2.5" />
+                  {region}
+                </button>
+                {aiConfidence && <AIRing score={aiConfidence} />}
+              </div>
+
+              <div className="flex items-center justify-between sm:justify-end gap-3 mt-3 sm:mt-0">
+                <ReactionPulse articleId={id || title} />
+                <div className="w-px h-3 bg-white/10 hidden sm:block" />
+                <div className="flex items-center gap-1">
+                  <button 
+                    onClick={handleSpeak}
+                    className={`p-2 rounded-xl transition-all ${speaking ? 'bg-telangana-green text-dark-bg' : 'hover:bg-white/10 text-text-muted hover:text-white'}`}
+                  >
+                    <Icons.Sound className="w-3.5 h-3.5" />
+                  </button>
+                  <ShareWhatsApp type="custom" customTitle={title} customLink={link} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* IMAGE AREA */}
+          {finalImage && (
+            <div className="w-full sm:w-28 sm:h-28 lg:w-40 lg:h-40 shrink-0 rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.05] relative shadow-2xl">
+               <img
+                src={finalImage}
                 alt={title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 loading="lazy"
+                onError={(e) => { e.target.style.display = 'none'; }}
               />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-white/[0.04] to-white/[0.01] flex items-center justify-center">
-                <div className="w-12 h-12 rounded-xl bg-white/[0.05] flex items-center justify-center">
-                  <svg className="w-6 h-6 text-text-muted/40" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5" /></svg>
-                </div>
-              </div>
-            )}
-            {/* Category Badge */}
-            <div className="absolute top-3 left-3">
-              <span className="px-2 py-0.5 rounded-md bg-dark-bg/80 backdrop-blur-sm text-white text-[9px] font-bold uppercase tracking-[0.1em] border border-white/10">
-                {category}
-              </span>
             </div>
-            {/* Voice active indicator */}
-            {speaking && (
-              <div className="absolute bottom-3 right-3 bg-dark-bg/80 backdrop-blur-sm rounded-lg px-2 py-1.5">
-                <Waveform />
-              </div>
-            )}
-          </div>
-
-          {/* Content */}
-          <div className="flex-grow flex flex-col p-4 lg:p-5 min-w-0">
-            {/* Source & Time */}
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-[10px] font-bold text-telangana-green uppercase tracking-wider">{source}</span>
-              <span className="w-1 h-1 rounded-full bg-white/15" />
-              <span className="text-[10px] text-text-muted font-medium" title={published}>{relTime}</span>
-            </div>
-
-            {/* Headline */}
-            <h3
-              className="text-[15px] lg:text-base font-bold text-white mb-2 leading-snug
-                         group-hover:text-telangana-green-light transition-colors duration-300 line-clamp-2 cursor-pointer"
-              onClick={handleOpenModal}
-            >
-              {title}
-            </h3>
-
-            {/* AI Summary with confidence ring */}
-            {ai_summary && (
-              <div className="mb-3 px-3 py-2.5 rounded-xl bg-telangana-green/[0.04] border-l-2 border-telangana-green/40">
-                <div className="flex items-start gap-2">
-                  <svg className="w-3 h-3 text-telangana-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" /></svg>
-                  <p className="text-xs text-text-secondary leading-relaxed font-light italic flex-grow">{ai_summary}</p>
-                  {aiConfidence !== null && <AIRing score={aiConfidence} />}
-                </div>
-              </div>
-            )}
-
-            {/* Description */}
-            <p className="text-text-muted text-xs line-clamp-2 mb-4 leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity">
-              {description}
-            </p>
-
-            {/* Footer Actions */}
-            <div className="mt-auto flex items-center justify-between pt-2 border-t border-white/[0.04]">
-              <span className="text-[10px] text-text-muted font-semibold uppercase tracking-widest flex items-center gap-1.5">
-                <svg className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
-                {region}
-              </span>
-
-              <div className="flex items-center gap-1.5">
-                {/* Voice readout */}
-                <button
-                  onClick={handleSpeak}
-                  className={`p-1.5 rounded-lg transition-all duration-200 ${
-                    speaking
-                      ? 'bg-telangana-green/20 text-telangana-green'
-                      : 'bg-white/[0.04] hover:bg-white/[0.08] text-text-muted hover:text-white'
-                  }`}
-                  title={speaking ? 'Stop reading' : 'Read aloud'}
-                >
-                  🔊
-                </button>
-                {/* Reader view */}
-                <button
-                  onClick={handleOpenModal}
-                  className="p-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-text-muted hover:text-white transition-all duration-200"
-                  title="Reader view"
-                >
-                  <Icons.ExternalLink className="w-3.5 h-3.5" />
-                </button>
-                {/* Share */}
-                <ShareButtons title={title} link={link} summary={ai_summary || description} />
-              </div>
-            </div>
-          </div>
+          )}
         </div>
       </article>
 
@@ -248,4 +303,3 @@ const NewsCard = ({ news, variant = 'standard' }) => {
 };
 
 export default NewsCard;
-

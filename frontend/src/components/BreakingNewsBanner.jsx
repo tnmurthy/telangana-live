@@ -16,75 +16,96 @@ export default function BreakingNewsBanner() {
         const resp = await fetch('/data/alerts.json');
         if (resp.ok) {
           const data = await resp.json();
-          setBreakingAlerts(data.filter(a => BREAKING_TYPES.has(a.type)));
-        } else {
-          // Fallback to static data
-          setBreakingAlerts(alerts.filter(a => BREAKING_TYPES.has(a.type)));
+          const filtered = data.filter(a => BREAKING_TYPES.has(a.type));
+          setBreakingAlerts(filtered);
+          if (filtered.length > 0) {
+            setItem(filtered[0]);
+            setVisible(true);
+          }
         }
       } catch (err) {
-        setBreakingAlerts(alerts.filter(a => BREAKING_TYPES.has(a.type)));
+        console.error("Failed to load alerts", err);
       }
     }
     loadAlerts();
-    
-    // Refresh every 5 minutes in the UI
     const interval = setInterval(loadAlerts, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    if (!breakingAlerts.length) return;
-    setItem(breakingAlerts[idx % breakingAlerts.length]);
-    setVisible(true);
-
-    const timer = setTimeout(() => setVisible(false), 10000);
-    return () => clearTimeout(timer);
-  }, [idx, breakingAlerts]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // Cycle to next alert when one dismisses
-  useEffect(() => {
-    if (!visible && breakingAlerts.length > 1) {
-      const t = setTimeout(() => setIdx(i => i + 1), 1500);
-      return () => clearTimeout(t);
+    if (breakingAlerts.length > 0) {
+      setItem(breakingAlerts[idx % breakingAlerts.length]);
     }
-  }, [visible]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [idx, breakingAlerts]);
 
-  if (!item) return null;
+  if (!item || !visible) return null;
 
   return (
     <AnimatePresence>
-      {visible && (
-        <motion.div
-          key={idx}
-          initial={{ y: -56, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -56, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 320, damping: 28 }}
-          className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between gap-3
-                     bg-red-600/95 backdrop-blur-md px-4 py-2.5 shadow-2xl shadow-red-900/40"
-        >
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: 'auto', opacity: 1 }}
+        exit={{ height: 0, opacity: 0 }}
+        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+        className="relative z-40 bg-[#c00] border-b border-white/5 overflow-hidden group"
+      >
+        {/* Subtle animated background pattern */}
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.2),transparent_50%)] pointer-events-none" />
+        
+        <div className="max-w-[1440px] mx-auto px-3 sm:px-5 lg:px-6 h-10 sm:h-11 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <span className="flex-shrink-0 flex items-center gap-1.5 bg-white/20 rounded-full px-2.5 py-0.5
-                             text-[9px] font-black text-white uppercase tracking-[0.2em]">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse-live" />
-              Breaking
-            </span>
-            <p className="text-[13px] font-semibold text-white truncate">{item.message}</p>
-          </div>
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <span className="text-[10px] text-white/60 font-medium hidden sm:block">{item.time}</span>
-            <button
-              onClick={() => setVisible(false)}
-              className="p-1 rounded-lg hover:bg-white/20 text-white/80 hover:text-white transition-colors"
-              aria-label="Dismiss"
+            <motion.span 
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              className="flex-shrink-0 inline-flex items-center gap-1.5 bg-white text-[#c00] rounded-[3px] px-2 py-0.5
+                             text-[10px] font-black uppercase tracking-widest shadow-lg"
             >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </button>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c00] animate-pulse" />
+              Breaking
+            </motion.span>
+            
+            <div className="flex-grow min-w-0">
+               <motion.p 
+                key={item.id}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="text-[13px] sm:text-[14px] font-bold text-white truncate leading-none tracking-tight"
+               >
+                {item.message}
+              </motion.p>
+            </div>
           </div>
-        </motion.div>
-      )}
+
+          <div className="flex items-center gap-3 sm:gap-5 flex-shrink-0">
+            <span className="text-[10px] sm:text-[11px] text-white/60 font-semibold uppercase tracking-tighter hidden md:block">
+              {item.time}
+            </span>
+            
+            <div className="flex items-center gap-1 border-l border-white/10 pl-3">
+              {breakingAlerts.length > 1 && (
+                <button 
+                  onClick={() => setIdx(i => (i + 1) % breakingAlerts.length)}
+                  className="p-1.5 rounded hover:bg-white/10 text-white/80 transition-colors"
+                  title="Next Update"
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
+              )}
+              <button
+                onClick={() => setVisible(false)}
+                className="p-1.5 rounded hover:bg-white/10 text-white/90 hover:text-white transition-colors"
+                aria-label="Dismiss"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </AnimatePresence>
   );
 }

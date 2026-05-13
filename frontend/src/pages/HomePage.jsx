@@ -30,7 +30,7 @@ const FeedSection = ({ title, items, icon, delay = '0ms' }) => (
 );
 
 export default function HomePage() {
-  const { searchQuery, myDistrict } = useAppContext();
+  const { searchQuery, myDistrict, followed } = useAppContext();
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All');
   const [page, setPage] = useState(1);
@@ -47,7 +47,7 @@ export default function HomePage() {
     setPage(1);
   }, [activeCategory, searchQuery]);
 
-  // Filter news
+  // Filter & Sort news
   const filteredNews = useMemo(() => {
     let items = [...newsData];
     if (searchQuery) {
@@ -64,8 +64,16 @@ export default function HomePage() {
         (n.category || '').toLowerCase() === activeCategory.toLowerCase()
       );
     }
-    return items;
-  }, [searchQuery, activeCategory]);
+
+    // Prioritization logic: Followed > Rest
+    return items.sort((a, b) => {
+      const aFollowed = followed.topics.includes(a.category) || followed.regions.includes(a.region);
+      const bFollowed = followed.topics.includes(b.category) || followed.regions.includes(b.region);
+      if (aFollowed && !bFollowed) return -1;
+      if (!aFollowed && bFollowed) return 1;
+      return 0;
+    });
+  }, [searchQuery, activeCategory, followed]);
 
   const myDistrictNews = useMemo(() => {
     if (!myDistrict) return [];
