@@ -454,7 +454,7 @@ def sync_pulses():
         ]
     }
 
-    write_js_module(PATHS["pulses"], "pulsesData", frontend_pulses)
+    write_js_module(PATHS["pulses"], "pulses", frontend_pulses)
     return frontend_pulses
 
 
