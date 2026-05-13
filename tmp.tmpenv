@@ -31,7 +31,7 @@ UPSTASH_REDIS_REST_TOKEN=5945f9ec-4889-4d92-815a-32b64e7259c34
 # Create integration at https://www.notion.so/my-integrations
 # Copy the Internal Integration Secret below
 # =============================================================
-NOTION_API_KEY=AIzaSyAqIeBCnJWBmEHgupGgkjglW_ptoe-4FTM
+GOOGLE_API_KEY=AIzaSyAqIeBCnJWBmEHgupGgkjglW_ptoe-4FTM
 
 
 # =============================================================
