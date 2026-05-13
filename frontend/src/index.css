@@ -111,5 +111,27 @@ body {
   }
 }
 
-/* ─── Ticker Pause Helper ────────────────────────────────────── */
-.pause { animation-play-state: paused; }
+/* ─── Emergency Theme Shifts ────────────────────────────── */
+:root.theme-emergency-heatwave {
+  --telangana-green: #ea580c;
+  --telangana-green-light: #fb923c;
+}
+
+:root.theme-emergency-flood {
+  --telangana-green: #0891b2;
+  --telangana-green-light: #22d3ee;
+}
+
+:root.theme-emergency-critical {
+  --telangana-green: #dc2626;
+  --telangana-green-light: #ef4444;
+}
+
+.emergency-pulse {
+  animation: emergency-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes emergency-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.98); }
+}
