@@ -97,9 +97,6 @@ function AppContent() {
 
   return (
     <div className="min-h-screen">
-      {/* Breaking news banner — fixed at very top */}
-      {!isSplash && <BreakingNewsBanner />}
-
       <MainLayout isEmergencyActive={isEmergencyActive}>
         <ErrorBoundary>
           <Suspense fallback={<LoadingScreen />}>
