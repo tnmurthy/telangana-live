@@ -7,11 +7,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 class QualityChecker:
-<<<<<<< HEAD:backend/agents/agents/quality_checker.py
     """Checks and improves content quality, then publishes it."""
     
-=======
->>>>>>> 18e0bf2 (updating repo):agents/quality_checker.py
     def __init__(self):
         self.provider = CONFIG['llm_provider']
         
@@ -41,17 +38,8 @@ class QualityChecker:
         return response.json()['choices'][0]['message']['content']
     
     def check_quality(self, title, content):
-<<<<<<< HEAD:backend/agents/agents/quality_checker.py
         """Check content quality, save improvements, and publish the article."""
-        message = self.client.messages.create(
-            model=CONFIG['model'],
-            max_tokens=1500,
-            messages=[{
-                'role': 'user',
-                'content': f"""
-=======
         prompt = f"""
->>>>>>> 18e0bf2 (updating repo):agents/quality_checker.py
 Review and improve this content for quality and accuracy.
 
 Title: {title}
