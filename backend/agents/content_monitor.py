@@ -1,57 +1,34 @@
-import anthropic
 import requests
 from bs4 import BeautifulSoup
+import logging
 from core.config import CONFIG
 from core.database import db
-import logging
+from core.llm_provider import llm
 
 logger = logging.getLogger(__name__)
+
 
 class ContentMonitor:
     def __init__(self):
         self.provider = CONFIG['llm_provider']
-        
-        if self.provider == 'zai':
-            self.zai_api_key = CONFIG['z_ai_api_key']
-            self.zai_base_url = CONFIG['z_ai_base_url']
-            self.zai_model = CONFIG['z_ai_model']
-        else:
-            self.client = anthropic.Anthropic(api_key=CONFIG['api_key'])
-    
-    def _call_zai(self, prompt, max_tokens=1500):
-        headers = {
-            'Authorization': f'Bearer {self.zai_api_key}',
-            'Content-Type': 'application/json'
-        }
-        payload = {
-            'model': self.zai_model,
-            'messages': [{'role': 'user', 'content': prompt}],
-            'max_tokens': max_tokens
-        }
-        response = requests.post(
-            f'{self.zai_base_url}/chat/completions',
-            headers=headers,
-            json=payload
-        )
-        response.raise_for_status()
-        return response.json()['choices'][0]['message']['content']
-    
+        self.model = CONFIG.get('z_ai_model', 'glm-4-plus') if self.provider == 'zai' else CONFIG.get('model', 'claude-3-5-haiku-20241022')
+
     def fetch_website(self):
-        """Fetch and parse website content"""
+        """Fetch and parse website content."""
         try:
             response = requests.get(CONFIG['site_url'], timeout=10)
             response.raise_for_status()
             soup = BeautifulSoup(response.content, 'html.parser')
-            
-            for script in soup(['script', 'style']):
-                script.decompose()
-            
+
+            for tag in soup(['script', 'style']):
+                tag.decompose()
+
             text = soup.get_text(separator='\n', strip=True)
             return text[:8000]
-        except Exception as e:
-            logger.error(f"Error fetching website: {str(e)}")
+        except Exception as exc:
+            logger.error(f"Error fetching website: {exc}")
             return None
-    
+
     def analyze_for_updates(self, content):
         prompt = f"""
 You are a content analyst for telangana.live. Analyze this website content and identify:
@@ -75,28 +52,23 @@ Provide a JSON response with:
   "recommendations": ["..."]
 }}
 """
-        
-        if self.provider == 'zai':
-            result = self._call_zai(prompt)
-            tokens = len(prompt.split()) * 2 + len(result.split()) * 2
-        else:
-            message = self.client.messages.create(
-                model=CONFIG['model'],
-                max_tokens=1500,
-                messages=[{'role': 'user', 'content': prompt}]
-            )
-            tokens = message.usage.input_tokens + message.usage.output_tokens
-            result = message.content[0].text
-        
-        db.log_activity('ContentMonitor', 'analyze', 'success', result, tokens)
-        
-        return result, tokens
-    
+        result = llm.generate(
+            prompt,
+            provider=self.provider,
+            model=self.model,
+            max_tokens=1500,
+        )
+        analysis = result.get('text') or ''
+        tokens = result.get('tokens', 0)
+
+        db.log_activity('ContentMonitor', 'analyze', 'success', analysis, tokens)
+        return analysis, tokens
+
     def run(self):
-        """Execute monitoring cycle"""
+        """Execute monitoring cycle."""
         logger.info("Starting content monitor...")
         content = self.fetch_website()
-        
+
         if content:
             analysis, tokens = self.analyze_for_updates(content)
             logger.info(f"Analysis complete. Tokens used: {tokens}")
