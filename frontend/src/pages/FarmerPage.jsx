@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { fetchMandiPrices } from '../services/pricesService';
 import {
     mspPrices,
     cropAdvisories,
@@ -133,6 +134,11 @@ export default function FarmerPage() {
     const [activeTab, setActiveTab] = useState('advisory');
     const [mspSeason, setMspSeason] = useState('All');
     const [mspCategory, setMspCategory] = useState('All');
+    const [liveMandi, setLiveMandi] = useState({ items: [], lastUpdated: '' });
+
+    useEffect(() => {
+        fetchMandiPrices().then(data => setLiveMandi(data));
+    }, []);
 
     const categories = ['All', ...new Set(mspPrices.crops.map(c => c.category))];
     const seasons = ['All', 'Kharif', 'Rabi'];
@@ -248,32 +254,55 @@ export default function FarmerPage() {
             {activeTab === 'market' && (
                 <div className="space-y-4">
                     <p className="text-xs text-text-muted px-1">
-                        APMC regulated market prices ·{' '}
-                        <span className="text-text-secondary">Last updated: {marketPrices.lastUpdated}</span>
+                        APMC regulated market prices (Hybrid Sync) ·{' '}
+                        <span className="text-text-secondary">Last updated: {liveMandi.lastUpdated || marketPrices.lastUpdated}</span>
                     </p>
-                    {marketPrices.markets.map(m => (
-                        <div key={m.market} className="glass-card p-4">
-                            <h3 className="text-sm font-bold text-white mb-3">{m.market}</h3>
-                            <div className="space-y-0">
-                                {m.commodities.map(c => (
+                    <div className="glass-card p-4">
+                        <h3 className="text-sm font-bold text-white mb-3">Live Mandi Rates</h3>
+                        <div className="space-y-0">
+                            {liveMandi.items.length > 0 ? (
+                                liveMandi.items.map(c => (
                                     <div key={c.name} className="flex items-center justify-between py-2.5 border-b border-white/[0.04] last:border-0">
                                         <p className="text-sm text-text-secondary">{c.name}</p>
                                         <div className="text-right">
                                             <p className="text-sm font-bold text-white">₹{c.price.toLocaleString('en-IN')}</p>
                                             <p className="text-[9px] text-text-muted">{c.unit}</p>
-                                            {c.change !== 0 && (
-                                                <span className={`text-[9px] font-bold ${c.change > 0 ? 'text-red-400' : 'text-telangana-green'}`}>
-                                                    {c.change > 0 ? '▲' : '▼'} ₹{Math.abs(c.change)}
-                                                </span>
-                                            )}
                                         </div>
                                     </div>
-                                ))}
-                            </div>
+                                ))
+                            ) : (
+                                <p className="text-xs text-text-muted">Loading live rates...</p>
+                            )}
                         </div>
-                    ))}
+                    </div>
+                    
+                    {/* Fallback Static Data */}
+                    <div className="mt-6">
+                        <p className="text-xs text-text-muted px-1 mb-2">Historical/Static APMC Data</p>
+                        {marketPrices.markets.map(m => (
+                            <div key={m.market} className="glass-card p-4 mb-4">
+                                <h3 className="text-sm font-bold text-white mb-3">{m.market}</h3>
+                                <div className="space-y-0">
+                                    {m.commodities.map(c => (
+                                        <div key={c.name} className="flex items-center justify-between py-2.5 border-b border-white/[0.04] last:border-0">
+                                            <p className="text-sm text-text-secondary">{c.name}</p>
+                                            <div className="text-right">
+                                                <p className="text-sm font-bold text-white">₹{c.price.toLocaleString('en-IN')}</p>
+                                                <p className="text-[9px] text-text-muted">{c.unit}</p>
+                                                {c.change !== 0 && (
+                                                    <span className={`text-[9px] font-bold ${c.change > 0 ? 'text-red-400' : 'text-telangana-green'}`}>
+                                                        {c.change > 0 ? '▲' : '▼'} ₹{Math.abs(c.change)}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                     <p className="text-[10px] text-text-muted px-1">
-                        Source: {marketPrices.source}
+                        Source: Enum / Local Network Sync
                     </p>
                 </div>
             )}

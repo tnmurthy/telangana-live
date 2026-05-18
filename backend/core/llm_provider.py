@@ -6,10 +6,7 @@ import requests
 from typing import Optional, Dict, Any
 import anthropic
 import google.generativeai as genai
-try:
-    from backend.config import CONFIG
-except ImportError:
-    from config import CONFIG
+from core.config import CONFIG
 
 logger = logging.getLogger(__name__)
 

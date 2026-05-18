@@ -15,4 +15,8 @@ CONFIG = {
     'max_tokens': 2048,
     'schedule_morning': '06:00',
     'schedule_evening': '18:00',
+    'llm_provider': os.getenv('LLM_PROVIDER', 'openai'),
+    'z_ai_api_key': os.getenv('Z_AI_API_KEY'),
+    'z_ai_base_url': os.getenv('Z_AI_BASE_URL', 'https://open.z.ai/v1'),
+    'z_ai_model': os.getenv('Z_AI_MODEL', 'glm-4-plus'),
 }

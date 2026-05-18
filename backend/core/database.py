@@ -1,6 +1,6 @@
 from supabase import create_client, Client
 from datetime import datetime
-from config import CONFIG
+from core.config import CONFIG
 import logging
 from schemas import ContentModel, ActivityLogModel
 

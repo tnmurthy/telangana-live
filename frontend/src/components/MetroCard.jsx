@@ -24,7 +24,7 @@ export default function MetroCard() {
                     <h2 className="section-title flex items-center gap-2">
                         <Icons.Airport className="w-6 h-6 rotate-[225deg]" /> Public Transport
                     </h2>
-                    <p className="section-subtitle">Metro & MMTS 2026 updates</p>
+                    <p className="section-subtitle">Metro & MMTS Live Updates</p>
                 </div>
             </div>
 

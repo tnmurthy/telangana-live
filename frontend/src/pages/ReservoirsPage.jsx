@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { reservoirsData, getReservoirStatus } from '../data/reservoirsData';
+import { useState, useEffect } from 'react';
+import { getReservoirStatus } from '../data/reservoirsData';
+import { fetchWaterLevels } from '../services/waterService';
 
 function LevelBar({ pct, color }) {
     return (
@@ -122,16 +123,26 @@ function SummaryBar({ reservoirs }) {
 }
 
 export default function ReservoirsPage() {
-    const { reservoirs, lastUpdated } = reservoirsData;
+    const [liveData, setLiveData] = useState({ reservoirs: [], lastUpdated: '' });
     const [filter, setFilter] = useState('all');
+
+    useEffect(() => {
+        fetchWaterLevels().then(data => {
+            if (data && data.reservoirs) {
+                setLiveData(data);
+            }
+        });
+    }, []);
+
+    const reservoirs = liveData.reservoirs;
 
     const filtered = filter === 'all' ? reservoirs
         : filter === 'low' ? reservoirs.filter(r => getReservoirStatus(r).pct < 50)
         : reservoirs.filter(r => getReservoirStatus(r).pct >= 50);
 
-    const updatedTime = new Date(lastUpdated).toLocaleString('en-IN', {
+    const updatedTime = liveData.lastUpdated ? new Date(liveData.lastUpdated).toLocaleString('en-IN', {
         day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit',
-    });
+    }) : 'Loading...';
 
     return (
         <div className="space-y-6 animate-fade-in">
@@ -155,7 +166,11 @@ export default function ReservoirsPage() {
             </div>
 
             {/* Summary */}
-            <SummaryBar reservoirs={reservoirs} />
+            {reservoirs.length > 0 ? (
+                <SummaryBar reservoirs={reservoirs} />
+            ) : (
+                <div className="glass-card p-5 text-center text-text-muted">Loading live reservoir data...</div>
+            )}
 
             {/* Filter */}
             <div className="flex gap-2 flex-wrap">
