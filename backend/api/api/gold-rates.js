@@ -8,12 +8,11 @@
 export const config = { runtime: 'edge' };
 
 const FALLBACK = {
-  gold22k:    { price: 7180,  unit: 'per gram',     change: null },
-  gold24k:    { price: 7830,  unit: 'per gram',     change: null },
+  gold22k:    { price: 14000, unit: 'per gram',    change: null },  // Updated Apr 9, 2026
+  gold24k:    { price: 15300, unit: 'per gram',    change: null },  // Updated Apr 9, 2026
   silver:     { price: 93.50, unit: 'per gram',     change: null },
-  gold10g22k: { price: 71800, unit: 'per 10 grams', change: null },
-  gold10g24k: { price: 78300, unit: 'per 10 grams', change: null },
-  lastUpdated: new Date().toISOString(),
+  gold10g22k: { price: 140000, unit: 'per 10 grams', change: null },  // Updated Apr 9, 2026
+  gold10g24k: { price: 153000, unit: 'per 10 grams', change: null },  // Updated Apr 9, 2026  lastUpdated: new Date().toISOString(),
   source: 'fallback',
 };
 
