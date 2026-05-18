@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.telangana.live/</loc><changefreq>hourly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.telangana.live/dashboard</loc><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.telangana.live/rates/gold</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.telangana.live/rates/fuel</loc><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.telangana.live/rates/pulses</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.telangana.live/weather</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.telangana.live/news</loc><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.telangana.live/civic</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.telangana.live/power-alerts</loc><changefreq>hourly</changefreq><priority>0.8</priority></url>
+</urlset>

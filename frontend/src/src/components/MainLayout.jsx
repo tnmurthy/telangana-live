@@ -9,9 +9,11 @@ import { useLocation } from 'react-router-dom';
 import CrisisDashboard from './CrisisDashboard';
 import HeatwavePanel from './HeatwavePanel';
 import { WidgetErrorBoundary } from './ErrorBoundary';
+import { useEmergency } from '../hooks/useEmergency';
 
 const MainLayout = ({ children, isEmergencyActive }) => {
   const location = useLocation();
+  const { emergencyType } = useEmergency();
   const isSplash = location.pathname === '/';
 
   const pathParts = location.pathname.split('/');
@@ -19,8 +21,16 @@ const MainLayout = ({ children, isEmergencyActive }) => {
 
   if (isSplash) return <>{children}</>;
 
+  const getEmergencyBg = () => {
+    if (!isEmergencyActive) return 'bg-dark-bg';
+    if (emergencyType === 'heatwave') return 'bg-orange-950/30';
+    if (emergencyType === 'coldwave') return 'bg-blue-950/30';
+    if (emergencyType === 'flood') return 'bg-cyan-950/30';
+    return 'bg-red-950/30'; // fallback
+  };
+
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${isEmergencyActive ? 'bg-red-950/30' : 'bg-dark-bg'}`}>
+    <div className={`min-h-screen transition-colors duration-500 ${getEmergencyBg()}`}>
       <Header />
       <DateTimeBar />
       <div id="ticker-section">

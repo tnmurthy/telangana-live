@@ -153,5 +153,15 @@ export const Icons = {
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h8a2 2 0 012 2v10a2 2 0 01-2 2H8a2 2 0 01-2-2V9a2 2 0 012-2zm0 0V5a2 2 0 012-2h4a2 2 0 012 2v2m-9 8h.01M16 15h.01M9 19h.01M15 19h.01" />
         </svg>
+    ),
+    Snowflake: (props) => (
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v20M17 5l-5 5-5-5M17 19l-5-5-5 5M2 12h20M5 7l5 5-5 5M19 7l-5 5 5 5" />
+        </svg>
+    ),
+    WaterDrop: (props) => (
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />
+        </svg>
     )
 };

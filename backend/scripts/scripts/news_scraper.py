@@ -2,8 +2,17 @@ import feedparser
 import json
 import os
 import re
+import collections
 import time
 from datetime import datetime
+import sys
+
+_BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, _BACKEND_DIR)
+try:
+    from agents.fact_checker import fact_checker
+except ImportError:
+    fact_checker = None
 
 # RSS feeds for Telangana news
 FEEDS = {
@@ -116,7 +125,22 @@ class NewsScraper:
                     elif any(k in low_title for k in ["hospital", "health", "covid", "dengue", "doctor"]):
                         item["category"] = "Health"
 
-                    # Generate AI summaries for all items (configurable delay to avoid rate limits)
+                    # Step 1: Execute Fact Checking Pipeline
+                    if fact_checker:
+                        print(f"Fact-checking: {entry.title[:40]}...")
+                        verification = fact_checker.check_news_item(item["title"], item["description"])
+                        
+                        if verification.get("is_fake_news_flag", False):
+                            print(f"🚨 REJECTED FAKE NEWS: {entry.title[:30]}... Reason: {verification.get('reasoning')}")
+                            continue # Kill the item before it hits the DB
+                        
+                        item["credibility_score"] = verification.get("credibility_score", 85)
+                        item["civic_action_required"] = verification.get("civic_action_required", False)
+                        
+                        if item["civic_action_required"]:
+                            print(f"⚠️ CIVIC ACTION IDENTIFIED: Routing to Dashboards!")
+                    
+                    # Step 2: Generate AI summaries for all items
                     if self.client:
                         print(f"Generating AI Summary for: {entry.title[:40]}...")
                         item["ai_summary"] = self.get_ai_summary(item["title"], item["description"])

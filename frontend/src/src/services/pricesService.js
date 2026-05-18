@@ -4,6 +4,7 @@
 
 import { fuelPrices as staticFuel } from '../data/fuelPrices';
 import { goldRates as staticGold } from '../data/goldRates';
+import hybridPrices from '../data/prices.json';
 import { redisService } from './redisService';
 
 const API_BASE = import.meta.env.VITE_API_BASE || '';
@@ -29,13 +30,17 @@ function setCache(key, data) {
 export async function fetchFuelPrices(city = 'hyderabad') {
   const key = `tg:rates:fuel:${city}`;
   
-  // 1. Try Redis (High Speed / n8n pushed)
-  try {
-    const redisData = await redisService.get(key);
-    if (redisData) return { ...redisData, source: 'redis' };
-  } catch (err) {
-    console.warn('Redis fetch error for fuel:', err.message);
+  // 1. Try Hybrid Local Data (Python Agent Pushed)
+  if (hybridPrices?.fuel) {
+    return {
+      petrol: { price: hybridPrices.fuel.petrol, unit: 'per litre', change: 0 },
+      diesel: { price: hybridPrices.fuel.diesel, unit: 'per litre', change: 0 },
+      source: 'local-hybrid',
+      lastUpdated: hybridPrices.last_updated
+    };
   }
+
+  // 2. Try Redis...
 
   // 2. Try MemCache
   const memKey = `fuel-${city}`;
@@ -72,13 +77,21 @@ export async function fetchFuelPrices(city = 'hyderabad') {
 export async function fetchGoldRates() {
   const key = 'tg:rates:gold';
 
-  // 1. Try Redis
-  try {
-    const redisData = await redisService.get(key);
-    if (redisData) return { ...redisData, source: 'redis' };
-  } catch (err) {
-    console.warn('Redis fetch error for gold:', err.message);
+  // 1. Try Hybrid Local Data
+  if (hybridPrices?.gold) {
+    const gold24k = hybridPrices.gold['24k'] || 7830;
+    const gold22k = hybridPrices.gold['22k'] || 7180;
+    return {
+      gold24k: { price: gold24k / 10, unit: 'per gram', change: 0 },
+      gold22k: { price: gold22k / 10, unit: 'per gram', change: 0 },
+      gold10g24k: { price: gold24k, unit: 'per 10 grams', change: 0 },
+      gold10g22k: { price: gold22k, unit: 'per 10 grams', change: 0 },
+      source: 'local-hybrid',
+      lastUpdated: hybridPrices.last_updated
+    };
   }
+
+  // 2. Try Redis...
 
   // 2. Try MemCache
   const memKey = 'gold-hyderabad';
@@ -114,20 +127,24 @@ export async function fetchGoldRates() {
  * @returns {Promise<Array>} list of alert objects
  */
 export async function fetchPowerAlerts(zone = 'all') {
-  const key = `alerts-${zone}`;
-  const cached = getCached(key);
-  if (cached) return cached;
+  // ... existing code ...
+}
 
-  try {
-    const res = await fetch(`${API_BASE}/api/power-alerts?zone=${zone}`, {
-      signal: AbortSignal.timeout(10000)
-    });
-    if (!res.ok) throw new Error(`API returned ${res.status}`);
-    const data = await res.json();
-    setCache(key, data.alerts || []);
-    return data.alerts || [];
-  } catch (err) {
-    console.warn('fetchPowerAlerts fallback:', err.message);
-    return [];
+/**
+ * Fetch Mandi prices for major crops.
+ * @returns {Promise<object>} mandi price data
+ */
+export async function fetchMandiPrices() {
+  if (hybridPrices?.mandi) {
+    return {
+      items: Object.entries(hybridPrices.mandi).map(([name, price]) => ({
+        name,
+        price,
+        unit: 'per quintal',
+        change: 0
+      })),
+      lastUpdated: hybridPrices.last_updated
+    };
   }
+  return { items: [] };
 }

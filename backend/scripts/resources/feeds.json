@@ -1,0 +1,33 @@
+{
+  "telangana": [
+    {"source": "The Hindu - Hyderabad", "url": "https://www.thehindu.com/news/cities/Hyderabad/feeder/default.rss"},
+    {"source": "The Hindu - Telangana", "url": "https://www.thehindu.com/news/national/telangana/feeder/default.rss"},
+    {"source": "Telangana Today", "url": "https://telanganatoday.com/feed"},
+    {"source": "Times of India - Hyderabad", "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms"},
+    {"source": "Deccan Chronicle - Hyderabad", "url": "https://www.deccanchronicle.com/rss_feed/"},
+    {"source": "Siasat Daily", "url": "https://www.siasat.com/feed/"},
+    {"source": "NTV Telangana", "url": "https://www.ntvtelugunews.com/rss/rss.xml"}
+  ],
+  "national": [
+    {"source": "The Print", "url": "https://theprint.in/feed/"},
+    {"source": "India Today", "url": "https://www.indiatoday.in/rss/home"},
+    {"source": "NDTV Top Stories", "url": "https://feeds.ndtv.com/ndtvnews-top-stories"},
+    {"source": "Scroll.in", "url": "https://scroll.in/rss"}
+  ],
+  "finance": [
+    {"source": "Economic Times Markets", "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"},
+    {"source": "Business Line", "url": "https://www.thehindubusinessline.com/feeder/default.rss"},
+    {"source": "Moneycontrol Economy", "url": "https://www.moneycontrol.com/rss/economy.xml"},
+    {"source": "SEBI Updates", "url": "https://www.sebi.gov.in/sebirss.xml"}
+  ],
+  "tech_ai": [
+    {"source": "TLDR AI", "url": "https://tldr.tech/api/rss/ai"},
+    {"source": "Wired AI", "url": "https://www.wired.com/feed/tag/ai/latest/rss"},
+    {"source": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index"},
+    {"source": "MIT Technology Review", "url": "https://www.technologyreview.com/feed/"}
+  ],
+  "govt": [
+    {"source": "National Portal of India", "url": "https://services.india.gov.in/feed/index?ln=en"},
+    {"source": "PIB Hyderabad", "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3"}
+  ]
+}
