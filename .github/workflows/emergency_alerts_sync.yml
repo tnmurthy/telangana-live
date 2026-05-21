@@ -25,7 +25,7 @@ jobs:
       - name: Sync emergency alerts
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: python scripts/emergency_alerts.py
+        run: python backend/scripts/emergency_alerts.py
         
       - name: Commit and push updated alerts
         run: |

@@ -1,10 +1,14 @@
-import os, json, datetime, requests
+import os, json, datetime, requests, sys
 import google.generativeai as genai
 from bs4 import BeautifulSoup
 
+# Fix Unicode output for Windows terminal
+if sys.stdout.encoding != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 # Setup
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
-FRONTEND_PUBLIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "public", "data")
+FRONTEND_PUBLIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "frontend", "public", "data")
 ALERTS_JSON_PATH = os.path.join(FRONTEND_PUBLIC_DIR, "alerts.json")
 
 def fetch_latest_alerts():

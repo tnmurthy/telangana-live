@@ -16,7 +16,7 @@ SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 
 # Output path for frontend static data
-FRONTEND_DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "src", "data")
+FRONTEND_DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "frontend", "src", "data")
 NEWS_JSON_PATH = os.path.join(FRONTEND_DATA_DIR, "news.json")
 
 FEEDS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources", "feeds.json")

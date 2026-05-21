@@ -36,13 +36,13 @@ jobs:
             echo "OWM_API_KEY secret is not configured. Skipping weather update."
             exit 0
           fi
-          python scripts/weather_scraper.py
+          python backend/scripts/weather_scraper.py
 
       - name: Commit and Push Updates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add src/data/fuelPrices.js src/data/pulses.js src/data/aiBriefingData.js
-          git commit -m "chore: update fuel, commodity, and AI pulse data [automated]" || echo "No changes to commit"
+          git add frontend/src/data/weatherData.js
+          git commit -m "chore: update weather data [automated]" || echo "No changes to commit"
           git pull --rebase origin master
           git push

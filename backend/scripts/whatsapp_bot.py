@@ -50,7 +50,7 @@ def build_summary(gold_data, fuel_data, pulse_data):
 
 def send_whatsapp_message(message):
     """Sends the message via Meta WhatsApp Cloud API."""
-    load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env"))
+    load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".env"))
     
     phone_id = os.getenv("WHATSAPP_PHONE_NUMBER_ID")
     token = os.getenv("WHATSAPP_TOKEN")

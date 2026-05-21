@@ -31,12 +31,12 @@ jobs:
         run: pip install requests beautifulsoup4 feedparser
 
       - name: Sync gold & fuel rates
-        run: python scripts/data_engine.py --finance-only
+        run: python backend/scripts/data_engine.py --finance-only
 
       - name: Commit and push updated rate files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-                  git add frontend/src/src/data/goldRates.js frontend/src/src/data/fuelPrices.js frontend/src/src/data/pulses.js
+          git add frontend/src/data/goldRates.js frontend/src/data/fuelPrices.js frontend/src/data/pulses.js
           git commit -m "chore: sync market rates (gold, fuel, pulses) [automated]" || echo "No changes to commit"
           git push
