@@ -47,6 +47,8 @@ const LeftSidebar = () => {
           <NavItem to="/hyderabad" icon={<Icons.Building size="sm" />} label="Hyderabad" />
           <NavItem to="/cyberabad" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm1.5-12h7.5v7.5h-7.5V7.5Z" /></svg>} label="Cyberabad" />
           <NavItem to="/malkajgiri" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>} label="Malkajgiri" />
+          <NavItem to="/warangal" icon={<span className="text-base flex items-center justify-center">🏰</span>} label="Warangal" />
+          <NavItem to="/karimnagar" icon={<span className="text-base flex items-center justify-center">🏢</span>} label="Karimnagar" />
         </SidebarSection>
 
         <div className="divider mx-3" />

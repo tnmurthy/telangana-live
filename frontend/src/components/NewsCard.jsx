@@ -63,7 +63,14 @@ const NewsCard = ({ news }) => {
   return (
     <>
       <article
-        onClick={() => { recordRead(); setModalOpen(true); }}
+        onClick={() => {
+          recordRead();
+          if (link) {
+            window.open(link, '_blank', 'noopener,noreferrer');
+          } else {
+            setModalOpen(true);
+          }
+        }}
         className="liquid-glass liquid-glass-hover group relative flex flex-col md:flex-row gap-6 p-5 sm:p-6 overflow-hidden cursor-pointer"
       >
         {/* Inner Gradient Glow */}
@@ -105,10 +112,10 @@ const NewsCard = ({ news }) => {
             {title}
           </h3>
 
-          {/* AI Summary Snippet */}
-          {ai_summary && (
+          {/* AI Summary or Description Snippet */}
+          {(ai_summary || description) && (
             <p className="text-xs text-white/60 leading-relaxed line-clamp-2 mb-4">
-              {ai_summary}
+              {ai_summary || description}
             </p>
           )}
 

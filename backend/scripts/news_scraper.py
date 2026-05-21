@@ -14,6 +14,8 @@ try:
 except ImportError:
     fact_checker = None
 
+from core.news_classifier import classify_article, extract_image_url
+
 
 # Load feeds from shared feeds.json (telangana + national only for scraper)
 _FEEDS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources", "feeds.json")
@@ -108,38 +110,22 @@ class NewsScraper:
                     if entry.link in seen_links:
                         continue
 
+                    desc = self.clean_html(entry.get("summary", ""))
+                    cat, reg = classify_article(entry.title, desc)
+                    img = extract_image_url(entry)
+
                     item = {
                         "title": entry.title,
                         "link": entry.link,
                         "source": source,
                         "published": entry.get("published", datetime.now().strftime("%Y-%m-%d")),
-                        "description": self.clean_html(entry.get("summary", "")),
-                        "category": "General",
-                        "region": "Telangana",
+                        "description": desc,
+                        "category": cat,
+                        "region": reg,
+                        "image_url": img,
                         "ai_summary": "",
                         "tags": []
                     }
-
-                    low_title = entry.title.lower()
-                    if any(k in low_title for k in ["hyderabad", "ghmc", "banjara", "jubilee", "secunderabad"]):
-                        item["region"] = "Hyderabad"
-                    elif any(k in low_title for k in ["cyberabad", "hitec", "gachibowli", "kondapur", "madhapur"]):
-                        item["region"] = "Cyberabad"
-                    elif any(k in low_title for k in ["malkajgiri", "uppal", "alwal", "kapra"]):
-                        item["region"] = "Malkajgiri"
-
-                    if any(k in low_title for k in ["traffic", "metro", "rtc", "train", "road"]):
-                        item["category"] = "Transit"
-                    elif any(k in low_title for k in ["rain", "flood", "heat", "weather", "imd"]):
-                        item["category"] = "Weather"
-                    elif any(k in low_title for k in ["police", "crime", "robbery", "arrest"]):
-                        item["category"] = "Safety"
-                    elif any(k in low_title for k in ["school", "college", "exam", "result"]):
-                        item["category"] = "Education"
-                    elif any(k in low_title for k in ["gold", "silver", "stock", "market", "rupee"]):
-                        item["category"] = "Finance"
-                    elif any(k in low_title for k in ["hospital", "health", "covid", "dengue", "doctor"]):
-                        item["category"] = "Health"
 
                     # Step 1: Execute Fact Checking Pipeline
                     if fact_checker:

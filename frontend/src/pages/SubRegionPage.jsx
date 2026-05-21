@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { Icons } from '../components/Icons';
 import { partners } from '../data/partners';
@@ -7,6 +8,8 @@ import WeatherCard from '../components/WeatherCard';
 import BasthiDawakhana from '../components/BasthiDawakhana';
 import MetroCard from '../components/MetroCard';
 import useJsonLd from '../hooks/useJsonLd';
+import NewsCard from '../components/NewsCard';
+import newsData from '../data/news.json';
 
 const regionMetadata = {
     hyderabad: {
@@ -18,14 +21,26 @@ const regionMetadata = {
     cyberabad: {
         title: 'Cyberabad IT Corridor',
         subtitle: 'CMC - Madhapur, Gachibowli & Hitech City Focus',
-        icon: 'IT',
-        district: 'Rangareddy'
+        icon: 'AI',
+        district: 'Cyberabad'
     },
     malkajgiri: {
         title: 'Malkajgiri Residential',
         subtitle: 'MMC - East Hyderabad & Residential Focus',
-        icon: 'Residential',
-        district: 'Medchal-Malkajgiri'
+        icon: 'Building',
+        district: 'Malkajgiri'
+    },
+    warangal: {
+        title: 'Warangal Heritage City',
+        subtitle: 'Kakatiya Heritage, GWMC Civic & Tri-Cities Focus',
+        icon: 'Heritage',
+        district: 'Warangal'
+    },
+    karimnagar: {
+        title: 'Karimnagar Smart City',
+        subtitle: 'Granite Hub & Karimnagar Municipal Corporation Focus',
+        icon: 'Building',
+        district: 'Karimnagar'
     }
 };
 
@@ -70,6 +85,12 @@ export default function SubRegionPage() {
 
     useJsonLd(breadcrumbSchema, `breadcrumb-subregion-${region || 'hyderabad'}`);
     useJsonLd(localAreaSchema, `area-subregion-${region || 'hyderabad'}`);
+
+    const regionNews = useMemo(() => {
+        return newsData.filter(item => 
+            (item.region || '').toLowerCase() === meta.district.toLowerCase()
+        ).slice(0, 6);
+    }, [meta.district]);
 
     return (
         <div className="space-y-8 sm:space-y-10 animate-fade-in">
@@ -125,6 +146,39 @@ export default function SubRegionPage() {
             {/* Local Health Finder */}
             <BasthiDawakhana />
 
+            {/* Local News Feed */}
+            <section id="local-news" className="space-y-6">
+                <div className="section-header flex items-center justify-between">
+                    <div>
+                        <h3 className="section-title flex items-center gap-2">
+                            <span>
+                                <svg className="w-5 h-5 text-telangana-green" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5" /></svg>
+                            </span> <span className="gold-text">Local News</span>
+                        </h3>
+                        <p className="section-subtitle">Real-time civic & community updates for {meta.title}</p>
+                    </div>
+                </div>
+
+                {regionNews.length > 0 ? (
+                    <div className="flex flex-col gap-6">
+                        {regionNews.map((news, idx) => (
+                            <NewsCard key={news.link || idx} news={news} />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="flex flex-col items-center justify-center py-12 px-4 text-center space-y-3 rounded-2xl bg-white/5 border border-dashed border-white/10">
+                        <div className="p-3 rounded-full bg-white/5 text-text-muted">
+                            <Icons.Info className="w-6 h-6" />
+                        </div>
+                        <div className="space-y-1">
+                            <h4 className="text-white font-bold text-sm">No local updates yet</h4>
+                            <p className="text-text-muted text-xs">
+                                Check back shortly for automated news reports.
+                            </p>
+                        </div>
+                    </div>
+                )}
+            </section>
         </div>
     );
 }

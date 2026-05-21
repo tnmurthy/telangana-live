@@ -9,15 +9,22 @@ const NewsListingPage = () => {
   const [regionFilter, setRegionFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const categories = ['All', ...new Set(newsData.map(item => item.category))];
-  const regions = ['All', 'Hyderabad', 'Cyberabad', 'Malkajgiri', 'Telangana'];
+  const categories = useMemo(() => {
+    const cats = [...new Set(newsData.map(item => item.category).filter(Boolean))].sort();
+    return ['All', ...cats];
+  }, []);
+
+  const regions = useMemo(() => {
+    const regs = [...new Set(newsData.map(item => item.region).filter(Boolean))].sort();
+    return ['All', ...regs];
+  }, []);
 
   const filteredNews = useMemo(() => {
     return newsData.filter(item => {
       const matchCategory = filter === 'All' || item.category === filter;
       const matchRegion = regionFilter === 'All' || item.region === regionFilter;
       const matchSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          item.description.toLowerCase().includes(searchQuery.toLowerCase());
+                          (item.description || '').toLowerCase().includes(searchQuery.toLowerCase());
       return matchCategory && matchRegion && matchSearch;
     });
   }, [filter, regionFilter, searchQuery]);

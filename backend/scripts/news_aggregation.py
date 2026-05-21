@@ -7,6 +7,10 @@ Requires: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY env vars
 
 import os, json, hashlib, datetime, feedparser, requests, sys
 
+# Ensure project root is in path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from core.news_classifier import classify_article, extract_image_url
+
 # Fix Unicode output for Windows terminal
 if sys.stdout.encoding != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
@@ -49,24 +53,8 @@ for category, feeds in CATEGORIZED_FEEDS.items():
                 summary = entry.get("summary", "")
                 published = entry.get("published", datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0530"))
                 
-                # Basic region tagging
-                region = "Telangana"
-                low_title = title.lower()
-                if any(k in low_title for k in ["hyderabad", "ghmc", "banjara", "jubilee", "secunderabad"]):
-                    region = "Hyderabad"
-                elif any(k in low_title for k in ["cyberabad", "hitec", "gachibowli", "kondapur", "madhapur"]):
-                    region = "Cyberabad"
-                elif any(k in low_title for k in ["malkajgiri", "uppal", "alwal", "kapra"]):
-                    region = "Malkajgiri"
-
-                # Category tagging refinement
-                cat = category.capitalize()
-                if any(k in low_title for k in ["traffic", "metro", "rtc", "train", "road"]):
-                    cat = "Transit"
-                elif any(k in low_title for k in ["rain", "flood", "heat", "weather", "imd"]):
-                    cat = "Weather"
-                elif any(k in low_title for k in ["police", "crime", "robbery", "arrest"]):
-                    cat = "Safety"
+                cat, region = classify_article(title, summary)
+                img = extract_image_url(entry)
 
                 articles.append({
                     "id":          uid(link),
@@ -77,6 +65,7 @@ for category, feeds in CATEGORIZED_FEEDS.items():
                     "description": summary[:500],
                     "category":    cat,
                     "region":      region,
+                    "image_url":   img,
                     "ai_summary":  "", # Placeholder for now
                     "tags":        []
                 })

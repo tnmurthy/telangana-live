@@ -36,7 +36,11 @@ export function NewsCard({ article }) {
     : (article.district ? [article.district] : []);
 
   return (
-    <article className="news-card">
+    <article 
+      className="news-card"
+      onClick={() => url && window.open(url, '_blank', 'noopener,noreferrer')}
+      style={{ cursor: 'pointer' }}
+    >
       {imageUrl && (
         <div className="news-card__image">
           <img 

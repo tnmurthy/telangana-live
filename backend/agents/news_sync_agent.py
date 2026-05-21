@@ -7,6 +7,7 @@ from core.database import db
 from core.logger import logger
 from core.llm_provider import llm
 from agents.fact_checker import fact_checker
+from core.news_classifier import classify_article, extract_image_url
 
 class NewsSyncAgent:
     def __init__(self):
@@ -46,7 +47,12 @@ class NewsSyncAgent:
                     link = entry.link
                     description = entry.get("summary", "")
 
-                    # 1. Fact Checking (Fault Tolerant)
+                    # 1. Classification & Image Extraction
+                    cat, reg = classify_article(title, description)
+                    img = extract_image_url(entry)
+                    published_date = entry.get("published", datetime.now().isoformat())
+
+                    # 2. Fact Checking (Fault Tolerant)
                     verification = {}
                     try:
                         logger.info(f"Fact-checking: {title[:40]}...")
@@ -58,7 +64,7 @@ class NewsSyncAgent:
                         logger.warning(f"REJECTED FAKE NEWS: {title[:30]}")
                         continue
 
-                    # 2. AI Summarization (Using local Ollama)
+                    # 3. AI Summarization (Using local Ollama)
                     summary = ""
                     try:
                         prompt = f"Summarize this news in 1 concise line for a mobile app:\nTitle: {title}\nDescription: {description}"
@@ -72,7 +78,7 @@ class NewsSyncAgent:
                     except Exception as e:
                         logger.error(f"AI Summary failed: {e}")
 
-                    # 3. Save to Supabase (Attempt)
+                    # 4. Save to Supabase (Attempt)
                     try:
                         db.insert_content(
                             title=title,
@@ -89,16 +95,17 @@ class NewsSyncAgent:
                     except Exception as e:
                         logger.warning(f"Supabase sync failed (RLS?): {e}")
 
-                    # 4. Add to local list for JSON export
+                    # 5. Add to local list for JSON export
                     articles_for_json.append({
                         "title": title,
                         "description": description,
                         "link": link,
                         "source": source,
                         "ai_summary": summary or description[:100] + "...",
-                        "published": datetime.now().isoformat(),
-                        "category": "General",
-                        "region": "Telangana"
+                        "published": published_date,
+                        "category": cat,
+                        "region": reg,
+                        "image_url": img
                     })
                     processed_count += 1
 

@@ -1,28 +1,40 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 export default function StickyAnchorAd() {
     const [isVisible, setIsVisible] = useState(false);
+    const location = useLocation();
+
+    // Exclude ads on critical civic and emergency routes
+    const isCriticalRoute = [
+        '/emergency-contacts',
+        '/weather',
+        '/health/basthi-dawakhana',
+        '/reservoirs'
+    ].some(route => location.pathname.startsWith(route));
 
     useEffect(() => {
         // Show after a short delay (e.g., 2 seconds) for better UX and performance
         const closedSession = sessionStorage.getItem('sticky_ad_closed');
-        if (!closedSession) {
+        if (!closedSession && !isCriticalRoute) {
             const timer = setTimeout(() => {
                 setIsVisible(true);
             }, 2000);
             return () => clearTimeout(timer);
         }
-    }, []);
+    }, [location.pathname, isCriticalRoute]);
 
     const handleClose = () => {
         setIsVisible(false);
         sessionStorage.setItem('sticky_ad_closed', 'true');
     };
 
+    const shouldShow = isVisible && !isCriticalRoute;
+
     return (
         <AnimatePresence>
-            {isVisible && (
+            {shouldShow && (
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}

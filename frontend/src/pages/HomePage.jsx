@@ -64,7 +64,11 @@ export default function HomePage() {
     }
     
     if (activeCategory !== 'All') {
-      items = items.filter(n => (n.category || '').toLowerCase() === activeCategory.toLowerCase());
+      if (activeCategory.toLowerCase() === 'telangana') {
+        items = items.filter(n => (n.region || '').toLowerCase() === 'telangana');
+      } else {
+        items = items.filter(n => (n.category || '').toLowerCase() === activeCategory.toLowerCase());
+      }
     }
 
     return items.sort((a, b) => {
