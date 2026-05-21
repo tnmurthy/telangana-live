@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import newsData from '../data/news.json';
 import NewsCard from '../components/NewsCard';
 import { Icons } from '../components/Icons';
+import ProgrammaticAd from '../components/ProgrammaticAd';
 
 const NewsListingPage = () => {
   const [filter, setFilter] = useState('All');
@@ -88,7 +89,12 @@ const NewsListingPage = () => {
       {filteredNews.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredNews.map((news, idx) => (
-            <NewsCard key={idx} news={news} />
+            <React.Fragment key={idx}>
+              <NewsCard news={news} />
+              {(idx + 1) % 5 === 0 && (
+                <ProgrammaticAd />
+              )}
+            </React.Fragment>
           ))}
         </div>
       ) : (

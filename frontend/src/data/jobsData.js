@@ -88,6 +88,7 @@ export const jobs = [
     salaryMax: 700000,
     location: 'Hyderabad',
     category: 'IT',
+    is_sponsored: true,
   },
   {
     id: 7,
@@ -178,6 +179,7 @@ export const jobs = [
     salaryMax: 1200000,
     location: 'Hyderabad',
     category: 'IT',
+    is_sponsored: true,
   },
   {
     id: 13,
@@ -253,6 +255,7 @@ export const jobs = [
     salaryMax: 1400000,
     location: 'Hyderabad',
     category: 'IT',
+    is_sponsored: true,
   },
   {
     id: 18,

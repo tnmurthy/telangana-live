@@ -1,7 +1,7 @@
 /**
  * Standard WhatsApp Caption Generator
  */
-const generateWACaption = (type, data) => {
+const generateWACaption = (type, data, customTitle, customLink) => {
     const base = "Get live updates on telangana.live";
 
     switch (type) {
@@ -13,6 +13,10 @@ const generateWACaption = (type, data) => {
             return `Metro Status: ${data.line} is ${data.status} (${data.crowdLabel}). Next train in 3 mins. ${base}`;
         case 'weather':
             return `Weather Alert for ${data.district}: ${data.temp}°C, ${data.condition}. ${base}`;
+        case 'custom':
+            const title = customTitle || (data && data.title) || "Check this out";
+            const link = customLink || (data && data.link) || "https://telangana.live";
+            return `${title} - ${link}`;
         default:
             return base;
     }
@@ -21,8 +25,8 @@ const generateWACaption = (type, data) => {
 /**
  * Common WhatsApp Share Component
  */
-export default function ShareWhatsApp({ type, data, className = "" }) {
-    const caption = generateWACaption(type, data);
+export default function ShareWhatsApp({ type, data, customTitle, customLink, className = "" }) {
+    const caption = generateWACaption(type, data, customTitle, customLink);
     const url = `https://wa.me/?text=${encodeURIComponent(caption)}`;
 
     return (

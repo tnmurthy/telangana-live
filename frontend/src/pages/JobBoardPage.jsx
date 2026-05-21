@@ -33,6 +33,12 @@ export default function JobBoardPage() {
     return matchCat && matchSearch;
   });
 
+  const sortedJobs = [...filtered].sort((a, b) => {
+    if (a.is_sponsored && !b.is_sponsored) return -1;
+    if (!a.is_sponsored && b.is_sponsored) return 1;
+    return 0;
+  });
+
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Hero */}
@@ -97,15 +103,26 @@ export default function JobBoardPage() {
 
       {/* Job Cards */}
       <div className="space-y-4">
-        {filtered.map(job => {
+        {sortedJobs.map(job => {
           const days = daysUntil(job.lastDate);
           const isUrgent = days <= 7;
           const isToday = days === 0;
           return (
-            <div key={job.id} className={`widget-card hover-lift p-4 ${isUrgent ? 'border-red-500/30' : 'border-white/5'}`}>
+            <div key={job.id} className={`widget-card hover-lift p-4 ${
+              job.is_sponsored 
+                ? 'border-heritage-gold/50 shadow-[0_0_15px_rgba(212,175,55,0.15)] bg-heritage-gold/[0.02]' 
+                : isUrgent 
+                  ? 'border-red-500/30' 
+                  : 'border-white/5'
+            }`}>
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
+                    {job.is_sponsored && (
+                      <span className="badge-live bg-heritage-gold/25 text-heritage-gold border border-heritage-gold/45 font-extrabold uppercase tracking-wider text-[8px]">
+                        ★ Sponsored
+                      </span>
+                    )}
                     {isToday && <span className="badge-live bg-red-500/20 text-red-400 border border-red-500/30">Last date today!</span>}
                     {!isToday && isUrgent && <span className="badge-live bg-orange-500/20 text-orange-400 border border-orange-500/30">⏰ {days}d left</span>}
                     <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${typeColors[job.type] || 'bg-white/10 text-white'}`}>{job.type}</span>

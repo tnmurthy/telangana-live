@@ -20,6 +20,47 @@ export default function ArticleModal({ article, onClose }) {
     };
   }, [onClose]);
 
+  useEffect(() => {
+    if (!article) return;
+
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": article.title,
+      "description": article.description || article.ai_summary || "",
+      "datePublished": article.published,
+      "author": {
+        "@type": "Organization",
+        "name": article.source
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Telangana Live",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://telangana.live/favicon.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": article.link || "https://telangana.live"
+      }
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'news-article-jsonld';
+    script.innerHTML = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => {
+      const existingScript = document.getElementById('news-article-jsonld');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, [article]);
+
   if (!article) return null;
   const { title, source, published, description, ai_summary, link, category, region } = article;
   const readTime = estimateReadTime((description || '') + ' ' + (ai_summary || ''));

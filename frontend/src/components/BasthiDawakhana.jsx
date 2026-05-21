@@ -1,9 +1,49 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { basthiDawakhanas } from '../data/transportData';
 
 export default function BasthiDawakhana() {
     const [search, setSearch] = useState('');
     const [selectedZone, setSelectedZone] = useState('all');
+
+    useEffect(() => {
+        const itemListElement = basthiDawakhanas.map((d, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+                "@type": "MedicalClinic",
+                "name": d.name,
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": d.area,
+                    "addressRegion": "Telangana",
+                    "addressCountry": "IN"
+                },
+                "telephone": d.phone,
+                "openingHours": "Mo-Sa 09:00-16:00"
+            }
+        }));
+
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Basthi Dawakhana Clinics in Telangana",
+            "numberOfItems": basthiDawakhanas.length,
+            "itemListElement": itemListElement
+        };
+
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'basthi-dawakhana-jsonld';
+        script.innerHTML = JSON.stringify(schema);
+        document.head.appendChild(script);
+
+        return () => {
+            const existingScript = document.getElementById('basthi-dawakhana-jsonld');
+            if (existingScript) {
+                existingScript.remove();
+            }
+        };
+    }, []);
 
     const filtered = basthiDawakhanas.filter((d) => {
         const matchesSearch = d.name.toLowerCase().includes(search.toLowerCase()) || d.area.toLowerCase().includes(search.toLowerCase());
