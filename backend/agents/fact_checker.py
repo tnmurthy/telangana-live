@@ -21,7 +21,7 @@ class NewsFactChecker:
         Runs the content through an LLM to assess factual credibility,
         detect sensationalism, and format a civic action flag.
         """
-        if not llm:
+        if not llm or not getattr(llm, "gemini_available", False):
             return self._default_pass()
             
         prompt = f"""

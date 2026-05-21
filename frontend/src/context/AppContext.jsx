@@ -36,8 +36,16 @@ export function AppProvider({ children }) {
   // Reading streak
   const [streak, setStreak] = useState(() => {
     try {
-      const data = JSON.parse(localStorage.getItem('tg-streak') || '{}');
-      return { count: data.count || 0, today: data.today || '', reads: data.reads || 0, ...data };
+      const stored = localStorage.getItem('tg-streak');
+      if (!stored) return { count: 0, today: '', reads: 0 };
+      const data = JSON.parse(stored);
+      if (!data || typeof data !== 'object') return { count: 0, today: '', reads: 0 };
+      return {
+        count: typeof data.count === 'number' ? data.count : 0,
+        today: typeof data.today === 'string' ? data.today : '',
+        reads: typeof data.reads === 'number' ? data.reads : 0,
+        ...data
+      };
     } catch { return { count: 0, today: '', reads: 0 }; }
   });
 
@@ -54,15 +62,21 @@ export function AppProvider({ children }) {
       const today = getISTDateString();
       const yesterday = new Date(new Date(today).getTime() - 86400000).toDateString();
 
-      let newCount = prev.count;
-      let newReads = (prev.today === today ? prev.reads : 0) + 1;
+      const safePrev = prev && typeof prev === 'object' ? prev : { count: 0, today: '', reads: 0 };
 
-      if (prev.today !== today) {
-        newCount = prev.today === yesterday ? prev.count + 1 : 1;
+      let newCount = safePrev.count || 0;
+      let newReads = (safePrev.today === today ? (safePrev.reads || 0) : 0) + 1;
+
+      if (safePrev.today !== today) {
+        newCount = safePrev.today === yesterday ? (safePrev.count || 0) + 1 : 1;
       }
 
       const next = { count: newCount, today, reads: newReads };
-      localStorage.setItem('tg-streak', JSON.stringify(next));
+      try {
+        localStorage.setItem('tg-streak', JSON.stringify(next));
+      } catch (err) {
+        console.error('Failed to save streak to localStorage', err);
+      }
       return next;
     });
   }, []);

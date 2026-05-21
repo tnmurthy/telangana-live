@@ -731,7 +731,7 @@ def _placeholder_briefing():
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--task", choices=["gold", "fuel", "pulses", "ai_pulse"])
+    parser.add_argument("--task", choices=["gold", "fuel", "pulses", "ai_pulse", "news"])
     parser.add_argument("--finance-only", action="store_true")
     args = parser.parse_args()
 
@@ -747,6 +747,8 @@ def main():
         sync_pulses()
     elif args.task == "ai_pulse":
         sync_ai_pulse()
+    elif args.task == "news":
+        sync_news()
     else:
         parser.print_help()
         sys.exit(1)

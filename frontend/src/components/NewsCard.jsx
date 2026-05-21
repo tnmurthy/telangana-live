@@ -1,10 +1,12 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { Icons } from './Icons';
 import ShareWhatsApp from './ShareWhatsApp';
 import ArticleModal from './ArticleModal';
 import { formatRelativeTime } from '../utils/timeUtils';
 import { useAppContext } from '../context/AppContext';
+
 
 /* ─── Apple-Style Confidence Badge ──────────────────────────── */
 function ConfidenceBadge({ score = 78 }) {
@@ -153,7 +155,9 @@ const NewsCard = ({ news }) => {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50" />
       </article>
 
-      {modalOpen && <ArticleModal article={news} onClose={() => setModalOpen(false)} />}
+      <AnimatePresence>
+        {modalOpen && <ArticleModal article={news} onClose={() => setModalOpen(false)} />}
+      </AnimatePresence>
     </>
   );
 };

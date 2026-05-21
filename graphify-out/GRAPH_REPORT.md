@@ -1,11 +1,11 @@
 # Graph Report - .  (2026-05-21)
 
 ## Corpus Check
-- 281 files · ~296,354 words
+- 281 files · ~301,437 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2158 nodes · 2980 edges · 257 communities detected
+- 2158 nodes · 2981 edges · 257 communities detected
 - Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 403 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
@@ -383,7 +383,7 @@ Cohesion: 0.16
 Nodes (21): _detect_url_type(), _download_binary(), _fetch_arxiv(), _fetch_html(), _fetch_tweet(), _fetch_webpage(), _html_to_markdown(), ingest() (+13 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.17
+Cohesion: 0.18
 Nodes (19): clean_html(), get_ai_summary(), http_get(), main(), _placeholder_briefing(), Wrapper that runs gold + fuel syncs sequentially. Used by tests., Scrape news via NewsScraper and save to PATHS['news']., Alias used by tests — writes directly to the given path. (+11 more)
 
 ### Community 23 - "Community 23"
@@ -399,12 +399,12 @@ Cohesion: 0.16
 Nodes (18): _body_content(), cache_dir(), cached_files(), check_semantic_cache(), clear_cache(), file_hash(), load_cached(), Return set of file paths that have a valid cache entry (hash still matches). (+10 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.16
-Nodes (17): build_graph(), cluster(), cohesion_score(), _partition(), Leiden community detection on NetworkX graphs. Splits oversized communities. Ret, Run a second Leiden pass on a community subgraph to split it further., Context manager to suppress stdout/stderr during library calls.      graspolog, Ratio of actual intra-community edges to maximum possible. (+9 more)
-
-### Community 27 - "Community 27"
 Cohesion: 0.19
 Nodes (18): make_graph(), to_html accepts member_counts without raising., Node file paths in canvas must be vault-root-relative (just fname.md), not hardc, test_to_canvas_file_paths_relative_to_vault(), test_to_cypher_contains_merge_statements(), test_to_cypher_creates_file(), test_to_graphml_creates_file(), test_to_graphml_has_community_attribute() (+10 more)
+
+### Community 27 - "Community 27"
+Cohesion: 0.16
+Nodes (17): build_graph(), cluster(), cohesion_score(), _partition(), Leiden community detection on NetworkX graphs. Splits oversized communities. Ret, Run a second Leiden pass on a community subgraph to split it further., Context manager to suppress stdout/stderr during library calls.      graspolog, Ratio of actual intra-community edges to maximum possible. (+9 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.14

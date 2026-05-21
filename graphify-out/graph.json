@@ -2878,7 +2878,7 @@
       "label": "ConfidenceBadge()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "id": "newscard_confidencebadge",
       "community": 86,
       "norm_label": "confidencebadge()"
@@ -3283,7 +3283,7 @@
       "label": "useAppContext()",
       "file_type": "code",
       "source_file": "frontend\\src\\context\\AppContext.jsx",
-      "source_location": "L102",
+      "source_location": "L116",
       "id": "appcontext_useappcontext",
       "community": 103,
       "norm_label": "useappcontext()"
@@ -5238,7 +5238,7 @@
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L1",
       "id": "graphify_graphify_cluster_py",
-      "community": 26,
+      "community": 27,
       "norm_label": "cluster.py"
     },
     {
@@ -5247,7 +5247,7 @@
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L10",
       "id": "cluster_suppress_output",
-      "community": 26,
+      "community": 27,
       "norm_label": "_suppress_output()"
     },
     {
@@ -5256,7 +5256,7 @@
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L21",
       "id": "cluster_partition",
-      "community": 26,
+      "community": 27,
       "norm_label": "_partition()"
     },
     {
@@ -5265,7 +5265,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L27",
       "id": "cluster_cluster",
-      "community": 26,
+      "community": 27,
       "norm_label": "cluster()"
     },
     {
@@ -5274,7 +5274,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L72",
       "id": "cluster_split_community",
-      "community": 26,
+      "community": 27,
       "norm_label": "_split_community()"
     },
     {
@@ -5283,7 +5283,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L92",
       "id": "cluster_cohesion_score",
-      "community": 26,
+      "community": 27,
       "norm_label": "cohesion_score()"
     },
     {
@@ -5292,7 +5292,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L103",
       "id": "cluster_score_all",
-      "community": 26,
+      "community": 27,
       "norm_label": "score_all()"
     },
     {
@@ -5300,7 +5300,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L1",
-      "community": 26,
+      "community": 27,
       "norm_label": "leiden community detection on networkx graphs. splits oversized communities. ret",
       "id": "cluster_rationale_1"
     },
@@ -5309,7 +5309,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L11",
-      "community": 26,
+      "community": 27,
       "norm_label": "context manager to suppress stdout/stderr during library calls.      graspolog",
       "id": "cluster_rationale_11"
     },
@@ -5318,7 +5318,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L22",
-      "community": 26,
+      "community": 27,
       "norm_label": "run community detection. returns {node_id: community_id}.      tries leiden (g",
       "id": "cluster_rationale_22"
     },
@@ -5327,7 +5327,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L60",
-      "community": 26,
+      "community": 27,
       "norm_label": "run leiden community detection. returns {community_id: [node_ids]}.      commu",
       "id": "cluster_rationale_60"
     },
@@ -5336,7 +5336,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L108",
-      "community": 26,
+      "community": 27,
       "norm_label": "run a second leiden pass on a community subgraph to split it further.",
       "id": "cluster_rationale_108"
     },
@@ -5345,7 +5345,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L126",
-      "community": 26,
+      "community": 27,
       "norm_label": "ratio of actual intra-community edges to maximum possible.",
       "id": "cluster_rationale_126"
     },
@@ -9774,7 +9774,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L1",
       "id": "graphify_tests_test_export_py",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_export.py"
     },
     {
@@ -9783,7 +9783,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L10",
       "id": "test_export_make_graph",
-      "community": 27,
+      "community": 26,
       "norm_label": "make_graph()"
     },
     {
@@ -9792,7 +9792,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L13",
       "id": "test_export_test_to_json_creates_file",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_json_creates_file()"
     },
     {
@@ -9801,7 +9801,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L21",
       "id": "test_export_test_to_json_valid_json",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_json_valid_json()"
     },
     {
@@ -9810,7 +9810,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L31",
       "id": "test_export_test_to_json_nodes_have_community",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_json_nodes_have_community()"
     },
     {
@@ -9819,7 +9819,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L41",
       "id": "test_export_test_to_cypher_creates_file",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_cypher_creates_file()"
     },
     {
@@ -9828,7 +9828,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L48",
       "id": "test_export_test_to_cypher_contains_merge_statements",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_cypher_contains_merge_statements()"
     },
     {
@@ -9837,7 +9837,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L56",
       "id": "test_export_test_to_graphml_creates_file",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_graphml_creates_file()"
     },
     {
@@ -9846,7 +9846,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L64",
       "id": "test_export_test_to_graphml_valid_xml",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_graphml_valid_xml()"
     },
     {
@@ -9855,7 +9855,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L74",
       "id": "test_export_test_to_graphml_has_community_attribute",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_graphml_has_community_attribute()"
     },
     {
@@ -9864,7 +9864,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L83",
       "id": "test_export_test_to_html_creates_file",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_creates_file()"
     },
     {
@@ -9873,7 +9873,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L91",
       "id": "test_export_test_to_html_contains_visjs",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_contains_visjs()"
     },
     {
@@ -9882,7 +9882,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L100",
       "id": "test_export_test_to_html_contains_search",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_contains_search()"
     },
     {
@@ -9891,7 +9891,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L109",
       "id": "test_export_test_to_html_contains_legend_with_labels",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_contains_legend_with_labels()"
     },
     {
@@ -9900,7 +9900,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L119",
       "id": "test_export_test_to_html_contains_nodes_and_edges",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_contains_nodes_and_edges()"
     },
     {
@@ -9909,7 +9909,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L130",
       "id": "test_export_test_to_html_member_counts_accepted",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_member_counts_accepted()"
     },
     {
@@ -9918,7 +9918,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L141",
       "id": "test_export_test_to_canvas_file_paths_relative_to_vault",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_canvas_file_paths_relative_to_vault()"
     },
     {
@@ -9926,7 +9926,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L131",
-      "community": 27,
+      "community": 26,
       "norm_label": "to_html accepts member_counts without raising.",
       "id": "test_export_rationale_131"
     },
@@ -9935,7 +9935,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L142",
-      "community": 27,
+      "community": 26,
       "norm_label": "node file paths in canvas must be vault-root-relative (just fname.md), not hardc",
       "id": "test_export_rationale_142"
     },
@@ -17496,7 +17496,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L1",
       "id": "graphify_worked_mixed_corpus_raw_cluster_py",
-      "community": 26,
+      "community": 27,
       "norm_label": "cluster.py"
     },
     {
@@ -17505,7 +17505,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L6",
       "id": "cluster_build_graph",
-      "community": 26,
+      "community": 27,
       "norm_label": "build_graph()"
     },
     {
@@ -17513,7 +17513,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L7",
-      "community": 26,
+      "community": 27,
       "norm_label": "build a networkx graph from graphify node/edge dicts.      preserves original",
       "id": "cluster_rationale_7"
     },
@@ -17522,7 +17522,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L28",
-      "community": 26,
+      "community": 27,
       "norm_label": "run leiden community detection. returns {community_id: [node_ids]}.      commu",
       "id": "cluster_rationale_28"
     },
@@ -17531,7 +17531,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L73",
-      "community": 26,
+      "community": 27,
       "norm_label": "run a second leiden pass on a community subgraph to split it further.",
       "id": "cluster_rationale_73"
     },
@@ -17540,7 +17540,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L93",
-      "community": 26,
+      "community": 27,
       "norm_label": "ratio of actual intra-community edges to maximum possible.",
       "id": "cluster_rationale_93"
     },
@@ -23148,6 +23148,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\scripts\\data_engine.py",
+      "source_location": "L751",
+      "weight": 1.0,
+      "_src": "data_engine_main",
+      "_tgt": "data_engine_sync_news",
+      "source": "data_engine_sync_news",
+      "target": "data_engine_main",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend\\scripts\\data_engine.py",
@@ -25035,7 +25047,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0,
       "_src": "frontend_src_components_newscard_jsx",
       "_tgt": "newscard_confidencebadge",
@@ -25047,7 +25059,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_src": "frontend_src_components_newscard_jsx",
       "_tgt": "newscard_newscard",
@@ -25407,7 +25419,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\context\\AppContext.jsx",
-      "source_location": "L102",
+      "source_location": "L116",
       "weight": 1.0,
       "_src": "frontend_src_context_appcontext_jsx",
       "_tgt": "appcontext_useappcontext",

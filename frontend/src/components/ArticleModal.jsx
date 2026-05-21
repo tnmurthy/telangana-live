@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 function estimateReadTime(text = '') {
   const words = text.trim().split(/\s+/).length;
@@ -25,16 +25,15 @@ export default function ArticleModal({ article, onClose }) {
   const readTime = estimateReadTime((description || '') + ' ' + (ai_summary || ''));
 
   return (
-    <AnimatePresence>
+    <motion.div
+      ref={backdropRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[150] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
+      onClick={e => { if (e.target === backdropRef.current) onClose(); }}
+    >
       <motion.div
-        ref={backdropRef}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[150] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
-        onClick={e => { if (e.target === backdropRef.current) onClose(); }}
-      >
-        <motion.div
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 40, opacity: 0 }}
@@ -131,6 +130,5 @@ export default function ArticleModal({ article, onClose }) {
           </div>
         </motion.div>
       </motion.div>
-    </AnimatePresence>
   );
 }
