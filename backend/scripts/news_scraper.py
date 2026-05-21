@@ -7,7 +7,7 @@ import time
 from datetime import datetime
 import sys
 
-_BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_BACKEND_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, _BACKEND_DIR)
 try:
     from agents.fact_checker import fact_checker
@@ -39,10 +39,10 @@ FEEDS = _load_feeds()
 
 # Resolve output path — write to the frontend data directory the React app reads
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
-_REPO_ROOT = os.path.dirname(_SCRIPTS_DIR)
-OUTPUT_FILE = os.path.join(_REPO_ROOT, "frontend", "src", "src", "data", "news.json")
+_REPO_ROOT = os.path.abspath(os.path.join(_SCRIPTS_DIR, "..", ".."))
+OUTPUT_FILE = os.path.abspath(os.path.join(_REPO_ROOT, "frontend", "src", "data", "news.json"))
 # Fallback: old location
-_LEGACY_FILE = os.path.join(_REPO_ROOT, "src", "data", "news.json")
+_LEGACY_FILE = OUTPUT_FILE
 
 
 try:

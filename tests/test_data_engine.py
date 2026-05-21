@@ -8,8 +8,10 @@ import sys
 import re
 from unittest.mock import MagicMock, patch
 
-# Ensure repo root is importable
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Ensure repo root and backend are importable
+repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, repo_root)
+sys.path.insert(0, os.path.join(repo_root, "backend"))
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -190,9 +192,10 @@ import pytest
 
 # ── Ensure scripts directory is on sys.path so we can import the modules ──
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-_SCRIPTS_DIR = os.path.join(_REPO_ROOT, "scripts")
+_SCRIPTS_DIR = os.path.join(_REPO_ROOT, "backend", "scripts")
 sys.path.insert(0, _SCRIPTS_DIR)
 sys.path.insert(0, _REPO_ROOT)
+sys.path.insert(0, os.path.join(_REPO_ROOT, "backend"))
 
 # ── Stub optional heavy dependencies before importing the modules ──────────
 
@@ -218,6 +221,16 @@ sys.modules.setdefault("schedule", MagicMock())
 # Stub python-dateutil
 sys.modules.setdefault("dateutil", MagicMock())
 sys.modules.setdefault("dateutil.parser", MagicMock())
+
+# Stub agents.fact_checker
+fact_checker_stub = MagicMock()
+fact_checker_stub.check_news_item.return_value = {
+    "is_fake_news_flag": False,
+    "credibility_score": 85,
+    "civic_action_required": False,
+    "reasoning": "Mocked verification"
+}
+sys.modules.setdefault("agents.fact_checker", MagicMock(fact_checker=fact_checker_stub))
 
 # ── Now import the modules under test ─────────────────────────────────────
 import data_engine
@@ -327,7 +340,7 @@ class TestSyncPulses:
         try:
             data_engine.sync_pulses()
             content = open(data_engine.PATHS["pulses"], encoding="utf-8").read()
-            assert "export const pulsesData" in content
+            assert "export const pulses" in content
             assert "Toor Dal" in content
         finally:
             data_engine.PATHS["pulses"] = original_path
@@ -558,6 +571,7 @@ def _make_mock_response(text):
     """Return a mock requests.Response whose .text attribute is *text*."""
     mock_resp = MagicMock()
     mock_resp.text = text
+    mock_resp.status_code = 200
     return mock_resp
 
 

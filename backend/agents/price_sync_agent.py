@@ -13,7 +13,7 @@ class PriceSyncAgent:
     def __init__(self):
         self.now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
         self.city = "Hyderabad"
-        self.output_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend", "src", "src", "data", "prices.json")
+        self.output_file = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend", "src", "data", "prices.json"))
 
     def _http_get(self, url):
         return requests.get(

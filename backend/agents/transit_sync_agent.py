@@ -10,7 +10,7 @@ class TransitSyncAgent:
         self.now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
         self.output_file = os.path.join(
             os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 
-            "frontend", "src", "src", "data", "transit_status.json"
+            "frontend", "src", "data", "transit_status.json"
         )
 
     def sync_transit(self):

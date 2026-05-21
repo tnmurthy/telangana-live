@@ -4,8 +4,7 @@ import logging
 import requests
 from typing import Optional, Dict, Any
 import anthropic
-import google.genai as genai
-from google.genai import types as genai_types
+import google.generativeai as genai
 from core.config import CONFIG
 
 logger = logging.getLogger(__name__)

@@ -24,12 +24,12 @@ from bs4 import BeautifulSoup
 # Ensure project root is in path for importing backend providers
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 try:
-    from backend.providers.llm_provider import llm
+    from core.llm_provider import llm
 except ImportError:
     llm = None
 
 NOW = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "frontend", "src", "data")
+DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "frontend", "src", "data"))
 FRONTEND_DATA_DIR = DATA_DIR
 
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -152,6 +152,21 @@ def sync_gold():
         if resp.status_code == 200:
             html = resp.text
             soup = BeautifulSoup(html, "html.parser")
+            
+            # Parse silver price if present in HTML (e.g., "Silver ₹97 per gram" or "Silver ₹97,000 per kg")
+            m_sil = re.search(r"Silver[^\u20b9₹]{0,100}[\u20b9₹]\s*([\d,.]+)(?:\s*per\s*(gram|kg))?", html, re.I)
+            if m_sil:
+                val_str = m_sil.group(1).replace(",", "")
+                unit_str = (m_sil.group(2) or "gram").lower()
+                try:
+                    val = float(val_str)
+                    if val > 1000 or unit_str == "kg":
+                        silver_gram = val / 1000.0
+                    else:
+                        silver_gram = val
+                except ValueError:
+                    pass
+
             tables = soup.find_all("table")
             
             # Find the main price table (usually one with '24 k' or 'Standard Gold')
@@ -478,7 +493,12 @@ def sync_news():
 def sync_ai_pulse():
     print("Syncing AI pulse briefing...")
     api_key = os.environ.get("GOOGLE_API_KEY", "")
-    briefing = {"updatedAt": NOW, "items": []}
+    
+    import datetime
+    now_formatted = datetime.datetime.now().strftime("%B %d, %Y")
+    briefing = _placeholder_briefing()
+    briefing["updatedAt"] = NOW
+    briefing["date"] = now_formatted
 
     # Fetch context from tech_ai RSS feeds
     context_headlines = []
@@ -499,16 +519,91 @@ def sync_ai_pulse():
         try:
             prompt = (
                 "You are the Telangana.live AI Daily Pulse agent. "
-                "Based on these recent headlines, generate 3 short, punchy news items relevant to a local tech audience in India. "
+                "Based on these recent headlines, generate a daily AI pulse briefing in JSON format. "
                 f"Headlines: {', '.join(context_headlines[:15])}\n\n"
-                "Format as JSON array: [{\"headline\": \"\", \"summary\": \"\"}]"
+                "Format as a JSON object matching this schema exactly:\n"
+                "{\n"
+                '  "date": "May 21, 2026",\n'
+                '  "executiveBrief": [\n'
+                '    {\n'
+                '      "id": "coding",\n'
+                '      "trend": "up",\n'
+                '      "title": "Coding & Intelligence",\n'
+                '      "description": "Short summary of latest coding model advances (e.g., Claude 3.5 Sonnet, GPT-4o updates).",\n'
+                '      "gainedGround": "Name of the leading model"\n'
+                '    },\n'
+                '    {\n'
+                '      "id": "context",\n'
+                '      "trend": "stable",\n'
+                '      "title": "Context & Reasoning",\n'
+                '      "description": "Short summary of context or reasoning advances.",\n'
+                '      "gainedGround": "Name of the leading model"\n'
+                '    },\n'
+                '    {\n'
+                '      "id": "compute",\n'
+                '      "trend": "alert",\n'
+                '      "title": "Compute & Spend",\n'
+                '      "description": "Short summary of pricing warfare or spend updates.",\n'
+                '      "gainedGround": "Model or provider gaining pricing advantage"\n'
+                '    }\n'
+                '  ],\n'
+                '  "deprecations": [\n'
+                '    {\n'
+                '      "model": "deprecated-model-name",\n'
+                '      "date": "YYYY-MM-DD",\n'
+                '      "replacement": "replacement-model-name",\n'
+                '      "provider": "ProviderName"\n'
+                '    }\n'
+                '  ],\n'
+                '  "comparisonStats": [\n'
+                '    {\n'
+                '      "model": "Claude 3.5 Sonnet",\n'
+                '      "provider": "Anthropic",\n'
+                '      "color": "bg-orange-500",\n'
+                '      "status": "Active",\n'
+                '      "codingScore": "92.0%",\n'
+                '      "agenticScore": "89.0%",\n'
+                '      "contextWindow": "200K",\n'
+                '      "pricePer1M": "$3.00 / $15.00",\n'
+                '      "priceChange": -0.15\n'
+                '    },\n'
+                '    {\n'
+                '      "model": "GPT-4o",\n'
+                '      "provider": "OpenAI",\n'
+                '      "color": "bg-green-500",\n'
+                '      "status": "Updated",\n'
+                '      "codingScore": "90.2%",\n'
+                '      "agenticScore": "87.5%",\n'
+                '      "contextWindow": "128K",\n'
+                '      "pricePer1M": "$5.00 / $15.00",\n'
+                '      "priceChange": 0.0\n'
+                '    },\n'
+                '    {\n'
+                '      "model": "Gemini 1.5 Pro",\n'
+                '      "provider": "Google",\n'
+                '      "color": "bg-blue-500",\n'
+                '      "status": "Active",\n'
+                '      "codingScore": "86.5%",\n'
+                '      "agenticScore": "85.2%",\n'
+                '      "contextWindow": "2M",\n'
+                '      "pricePer1M": "$3.50 / $10.50",\n'
+                '      "priceChange": -0.50\n'
+                '    },\n'
+                '    {\n'
+                '      "model": "Llama 3.1 405B",\n'
+                '      "provider": "Meta (Open Source)",\n'
+                '      "color": "bg-purple-500",\n'
+                '      "status": "Active",\n'
+                '      "codingScore": "85.0%",\n'
+                '      "agenticScore": "81.0%",\n'
+                '      "contextWindow": "128K",\n'
+                '      "pricePer1M": "$2.66 / $2.66",\n'
+                '      "priceChange": -0.20\n'
+                '    }\n'
+                '  ]\n'
+                "}\n"
+                "Return ONLY the raw JSON object. Do not include markdown code block syntax."
             )
-            
-            if not context_headlines:
-                prompt = (
-                    "Give me 3 short AI news headlines relevant to India for today "
-                    "in JSON array format: [{\"headline\": \"\", \"summary\": \"\"}]"
-                )
 
             # Use local Ollama (phi4-mini:latest) as requested by user
             # Fallback to gemini if ollama fails or is not selected in config
@@ -522,29 +617,115 @@ def sync_ai_pulse():
             text = resp.get("text", "")
             if text:
                 text = text.strip().strip("```json").strip("```").strip()
-                briefing["items"] = json.loads(text)
-                print("  ✅ Ollama (phi4-mini:latest) AI briefing generated with live context")
+                parsed = json.loads(text)
+                # Ensure all required keys exist
+                if all(k in parsed for k in ("executiveBrief", "deprecations", "comparisonStats")):
+                    briefing.update(parsed)
+                    briefing["date"] = now_formatted
+                    briefing["updatedAt"] = NOW
+                    print("  ✅ Ollama (phi4-mini:latest) AI briefing generated with live context")
+                else:
+                    raise ValueError("JSON missing required schema keys")
             else:
                 raise ValueError("LLM returned empty text")
         except Exception as e:
             print(f"  ⚠️ LLM failed ({e}), using placeholder")
-            briefing["items"] = _placeholder_ai_items()
     else:
         print("  ℹ️ LLMProvider not available — using placeholder content")
-        briefing["items"] = _placeholder_ai_items()
 
     write_js("aiBriefingData.js", "aiBriefingData", briefing)
 
 
-def _placeholder_ai_items():
-    return [
-        {"headline": "India AI Mission allocates ₹500Cr for GPU clusters",
-         "summary": "MeitY announces new compute infra under IndiaAI Mission."},
-        {"headline": "Hyderabad emerges as top AI hiring hub in South Asia",
-         "summary": "NASSCOM report shows 40% YoY growth in AI roles in Hyderabad."},
-        {"headline": "ISRO uses ML models for crop yield prediction in Telangana",
-         "summary": "Pilot covers 12 districts with 85% prediction accuracy."},
-    ]
+def _placeholder_briefing():
+    import datetime
+    now_formatted = datetime.datetime.now().strftime("%B %d, %Y")
+    return {
+        "updatedAt": NOW,
+        "date": now_formatted,
+        "executiveBrief": [
+            {
+                "id": "coding",
+                "trend": "up",
+                "title": "Coding & Intelligence",
+                "description": "Claude 3.5 Sonnet remains the developer favorite with superior code generation and refactoring, but GPT-4o is catching up with recent optimization updates.",
+                "gainedGround": "Claude 3.5 Sonnet"
+            },
+            {
+                "id": "context",
+                "trend": "stable",
+                "title": "Context & Reasoning",
+                "description": "Gemini 1.5 Pro dominates context-heavy workloads with its massive 2M token window, proving highly efficient for large codebase analysis.",
+                "gainedGround": "Gemini 1.5 Pro"
+            },
+            {
+                "id": "compute",
+                "trend": "alert",
+                "title": "Compute & Spend",
+                "description": "OpenAI and Google continue their pricing war, slash API costs for smaller models by up to 50%, while open-source options drive inference costs to near-zero.",
+                "gainedGround": "Llama 3.1 70B"
+            }
+        ],
+        "deprecations": [
+            {
+                "model": "gpt-4-0314",
+                "date": "2026-06-15",
+                "replacement": "gpt-4o",
+                "provider": "OpenAI"
+            },
+            {
+                "model": "claude-2.0",
+                "date": "2026-08-01",
+                "replacement": "claude-3-5-sonnet",
+                "provider": "Anthropic"
+            }
+        ],
+        "comparisonStats": [
+            {
+                "model": "Claude 3.5 Sonnet",
+                "provider": "Anthropic",
+                "color": "bg-orange-500",
+                "status": "Active",
+                "codingScore": "92.0%",
+                "agenticScore": "89.0%",
+                "contextWindow": "200K",
+                "pricePer1M": "$3.00 / $15.00",
+                "priceChange": -0.15
+            },
+            {
+                "model": "GPT-4o",
+                "provider": "OpenAI",
+                "color": "bg-green-500",
+                "status": "Updated",
+                "codingScore": "90.2%",
+                "agenticScore": "87.5%",
+                "contextWindow": "128K",
+                "pricePer1M": "$5.00 / $15.00",
+                "priceChange": 0.0
+            },
+            {
+                "model": "Gemini 1.5 Pro",
+                "provider": "Google",
+                "color": "bg-blue-500",
+                "status": "Active",
+                "codingScore": "86.5%",
+                "agenticScore": "85.2%",
+                "contextWindow": "2M",
+                "pricePer1M": "$3.50 / $10.50",
+                "priceChange": -0.50
+            },
+            {
+                "model": "Llama 3.1 405B",
+                "provider": "Meta (Open Source)",
+                "color": "bg-purple-500",
+                "status": "Active",
+                "codingScore": "85.0%",
+                "agenticScore": "81.0%",
+                "contextWindow": "128K",
+                "pricePer1M": "$2.66 / $2.66",
+                "priceChange": -0.20
+            }
+        ]
+    }
 
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────

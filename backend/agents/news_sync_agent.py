@@ -11,7 +11,7 @@ from agents.fact_checker import fact_checker
 class NewsSyncAgent:
     def __init__(self):
         self.feeds_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts", "resources", "feeds.json")
-        self.output_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend", "src", "src", "data", "news.json")
+        self.output_file = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend", "src", "data", "news.json"))
         self.feeds = self._load_feeds()
 
     def _load_feeds(self):

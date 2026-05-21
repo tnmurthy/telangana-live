@@ -9,7 +9,7 @@ class WaterSyncAgent:
         self.now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
         self.output_file = os.path.join(
             os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 
-            "frontend", "src", "src", "data", "water_levels.json"
+            "frontend", "src", "data", "water_levels.json"
         )
 
     def sync_reservoirs(self):
