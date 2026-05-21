@@ -14,6 +14,7 @@ import { Icons } from './components/Icons';
 import MainLayout from './components/MainLayout';
 import BreakingNewsBanner from './components/BreakingNewsBanner';
 import PulseCounter from './components/PulseCounter';
+import StickyAnchorAd from './components/StickyAnchorAd';
 
 // Lazy loading for production grade performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -141,6 +142,7 @@ function AppContent() {
       {!isSplash && <BottomNav />}
       {!isSplash && <EmergencyToggle />}
       {!isSplash && <PulseCounter />}
+      {!isSplash && <StickyAnchorAd />}
     </div>
   );
 }

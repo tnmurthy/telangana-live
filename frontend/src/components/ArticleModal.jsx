@@ -147,9 +147,9 @@ export default function ArticleModal({ article, onClose }) {
             )}
 
             {/* Body */}
-            {description && (
+            {(description || !ai_summary) && (
               <p className="text-text-secondary leading-relaxed" style={{ fontSize: `${fontSize}px` }}>
-                {description}
+                {description || `Full coverage of this update is available directly from the publisher. Telangana.Live provides automated real-time local updates and summaries. Since this article is hosted externally at ${source}, please click 'Read Full Article' below to read the complete story.`}
               </p>
             )}
 

@@ -3,10 +3,31 @@ import { useEmergency } from '../hooks/useEmergency';
 import { emergencyContacts } from '../data/emergencyData';
 import { Icons } from './Icons';
 import { powerAlertsService } from '../services/powerAlertsService';
+import useJsonLd from '../hooks/useJsonLd';
 
 export default function CrisisDashboard({ currentRegion = 'hyderabad' }) {
     const { isEmergencyActive, emergencyType, emergencyData, deactivateEmergency } = useEmergency();
     const [powerAlerts, setPowerAlerts] = useState([]);
+
+    // Dynamic LiveBlogPosting schema during emergencies
+    const liveBlogSchema = isEmergencyActive ? {
+        "@context": "https://schema.org",
+        "@type": "LiveBlogPosting",
+        "headline": `${emergencyType ? emergencyType.toUpperCase() : 'Emergency'} Alert for ${currentRegion.toUpperCase()}`,
+        "description": emergencyData?.message || "Telangana.Live real-time automated emergency dashboard and local crisis alerts.",
+        "coverageStartTime": emergencyData?.last_updated || new Date().toISOString(),
+        "coverageEndTime": new Date(new Date().getTime() + 12 * 60 * 60 * 1000).toISOString(),
+        "liveBlogUpdate": [
+            {
+                "@type": "BlogPosting",
+                "headline": emergencyData?.message || "Emergency updates active",
+                "datePublished": emergencyData?.last_updated || new Date().toISOString(),
+                "articleBody": emergencyData?.message || "Monitoring live civic conditions and warnings."
+            }
+        ]
+    } : null;
+
+    useJsonLd(liveBlogSchema, `liveblog-emergency-${currentRegion}`);
 
     useEffect(() => {
         if (isEmergencyActive) {

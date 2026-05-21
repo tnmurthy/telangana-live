@@ -4,6 +4,7 @@ import { fetchGoldRates, fetchFuelPrices, fetchMandiPrices } from '../services/p
 import { Icons } from './Icons';
 import { goldRates as staticGold } from '../data/goldRates';
 import { fuelPrices as staticFuel } from '../data/fuelPrices';
+import ProgrammaticAd from './ProgrammaticAd';
 
 
 const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
@@ -196,6 +197,7 @@ const RightSidebar = () => {
     <aside className="w-[300px] hidden xl:flex flex-col sticky top-[7.5rem] h-[calc(100vh-8rem)] overflow-y-auto pl-2 space-y-4 custom-scrollbar">
       <WeatherWidget />
       <MarketWidget />
+      <ProgrammaticAd />
       <MandiWidget />
       <TransportWidget />
       <TrendingWidget />

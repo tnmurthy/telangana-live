@@ -6,6 +6,7 @@ import DailyRatesDashboard from '../components/DailyRatesDashboard';
 import WeatherCard from '../components/WeatherCard';
 import BasthiDawakhana from '../components/BasthiDawakhana';
 import MetroCard from '../components/MetroCard';
+import useJsonLd from '../hooks/useJsonLd';
 
 const regionMetadata = {
     hyderabad: {
@@ -32,6 +33,43 @@ export default function SubRegionPage() {
     const { region } = useParams();
     const meta = regionMetadata[region] || regionMetadata.hyderabad;
     const regionPartners = partners[region] || [];
+
+    // dynamic Breadcrumb Schema
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://telangana.live/dashboard"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": meta.title,
+                "item": `https://telangana.live/${region || 'hyderabad'}`
+            }
+        ]
+    };
+
+    // dynamic Local Region Schema
+    const localAreaSchema = {
+        "@context": "https://schema.org",
+        "@type": "AdministrativeArea",
+        "name": meta.title,
+        "description": meta.subtitle,
+        "containedInPlace": {
+            "@type": "State",
+            "name": "Telangana",
+            "sameAs": "https://en.wikipedia.org/wiki/Telangana"
+        },
+        "identifier": meta.district
+    };
+
+    useJsonLd(breadcrumbSchema, `breadcrumb-subregion-${region || 'hyderabad'}`);
+    useJsonLd(localAreaSchema, `area-subregion-${region || 'hyderabad'}`);
 
     return (
         <div className="space-y-8 sm:space-y-10 animate-fade-in">

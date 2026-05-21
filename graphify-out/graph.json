@@ -90,7 +90,7 @@
       "source_file": "branch-cleanup.ps1",
       "source_location": "L1",
       "id": "branch_cleanup_ps1",
-      "community": 181,
+      "community": 184,
       "norm_label": "branch-cleanup.ps1"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "restructure.ps1",
       "source_location": "L1",
       "id": "restructure_ps1",
-      "community": 182,
+      "community": 185,
       "norm_label": "restructure.ps1"
     },
     {
@@ -342,7 +342,7 @@
       "source_file": "backend\\__init__.py",
       "source_location": "L1",
       "id": "backend_init_py",
-      "community": 183,
+      "community": 186,
       "norm_label": "__init__.py"
     },
     {
@@ -909,7 +909,7 @@
       "source_file": "backend\\agents\\__init__.py",
       "source_location": "L1",
       "id": "backend_agents_init_py",
-      "community": 184,
+      "community": 187,
       "norm_label": "__init__.py"
     },
     {
@@ -1125,7 +1125,7 @@
       "source_file": "backend\\core\\config.py",
       "source_location": "L1",
       "id": "backend_core_config_py",
-      "community": 185,
+      "community": 188,
       "norm_label": "config.py"
     },
     {
@@ -2187,7 +2187,7 @@
       "source_file": "frontend\\eslint.config.js",
       "source_location": "L1",
       "id": "frontend_eslint_config_js",
-      "community": 186,
+      "community": 189,
       "norm_label": "eslint.config.js"
     },
     {
@@ -2196,7 +2196,7 @@
       "source_file": "frontend\\playwright.config.ts",
       "source_location": "L1",
       "id": "frontend_playwright_config_ts",
-      "community": 187,
+      "community": 190,
       "norm_label": "playwright.config.ts"
     },
     {
@@ -2205,7 +2205,7 @@
       "source_file": "frontend\\postcss.config.js",
       "source_location": "L1",
       "id": "frontend_postcss_config_js",
-      "community": 188,
+      "community": 191,
       "norm_label": "postcss.config.js"
     },
     {
@@ -2214,7 +2214,7 @@
       "source_file": "frontend\\tailwind.config.js",
       "source_location": "L1",
       "id": "frontend_tailwind_config_js",
-      "community": 189,
+      "community": 192,
       "norm_label": "tailwind.config.js"
     },
     {
@@ -2223,7 +2223,7 @@
       "source_file": "frontend\\vite.config.js",
       "source_location": "L1",
       "id": "frontend_vite_config_js",
-      "community": 190,
+      "community": 193,
       "norm_label": "vite.config.js"
     },
     {
@@ -2232,7 +2232,7 @@
       "source_file": "frontend\\vite.config.ts",
       "source_location": "L1",
       "id": "frontend_vite_config_ts",
-      "community": 191,
+      "community": 194,
       "norm_label": "vite.config.ts"
     },
     {
@@ -2241,16 +2241,16 @@
       "source_file": "frontend\\vitest.config.ts",
       "source_location": "L1",
       "id": "frontend_vitest_config_ts",
-      "community": 192,
+      "community": 195,
       "norm_label": "vitest.config.ts"
     },
     {
       "label": "sw.js",
       "file_type": "code",
-      "source_file": "frontend\\public\\public\\sw.js",
+      "source_file": "frontend\\public\\sw.js",
       "source_location": "L1",
-      "id": "frontend_public_public_sw_js",
-      "community": 193,
+      "id": "frontend_public_sw_js",
+      "community": 196,
       "norm_label": "sw.js"
     },
     {
@@ -2266,7 +2266,7 @@
       "label": "LoadingScreen()",
       "file_type": "code",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "id": "app_loadingscreen",
       "community": 71,
       "norm_label": "loadingscreen()"
@@ -2275,7 +2275,7 @@
       "label": "EmergencyToggle()",
       "file_type": "code",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L54",
+      "source_location": "L55",
       "id": "app_emergencytoggle",
       "community": 71,
       "norm_label": "emergencytoggle()"
@@ -2284,7 +2284,7 @@
       "label": "AppContent()",
       "file_type": "code",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L79",
+      "source_location": "L80",
       "id": "app_appcontent",
       "community": 71,
       "norm_label": "appcontent()"
@@ -2293,7 +2293,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L148",
+      "source_location": "L150",
       "id": "app_app",
       "community": 71,
       "norm_label": "app()"
@@ -2430,7 +2430,7 @@
       "source_file": "frontend\\src\\components\\Button.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_button_tsx",
-      "community": 194,
+      "community": 197,
       "norm_label": "button.tsx"
     },
     {
@@ -2464,7 +2464,7 @@
       "label": "CrisisDashboard()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\CrisisDashboard.jsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "id": "crisisdashboard_crisisdashboard",
       "community": 123,
       "norm_label": "crisisdashboard()"
@@ -2475,7 +2475,7 @@
       "source_file": "frontend\\src\\components\\CTA.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_cta_tsx",
-      "community": 195,
+      "community": 198,
       "norm_label": "cta.tsx"
     },
     {
@@ -2763,7 +2763,7 @@
       "source_file": "frontend\\src\\components\\Footer.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_footer_tsx",
-      "community": 196,
+      "community": 199,
       "norm_label": "footer.tsx"
     },
     {
@@ -2862,7 +2862,7 @@
       "source_file": "frontend\\src\\components\\Hero.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_hero_tsx",
-      "community": 197,
+      "community": 200,
       "norm_label": "hero.tsx"
     },
     {
@@ -2871,7 +2871,7 @@
       "source_file": "frontend\\src\\components\\Icons.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_icons_jsx",
-      "community": 198,
+      "community": 201,
       "norm_label": "icons.jsx"
     },
     {
@@ -2997,7 +2997,7 @@
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_newscard_jsx",
-      "community": 86,
+      "community": 85,
       "norm_label": "newscard.jsx"
     },
     {
@@ -3006,7 +3006,7 @@
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
       "source_location": "L12",
       "id": "newscard_confidencebadge",
-      "community": 86,
+      "community": 85,
       "norm_label": "confidencebadge()"
     },
     {
@@ -3015,7 +3015,7 @@
       "source_file": "frontend\\src\\components\\news\\NewsCard.jsx",
       "source_location": "L4",
       "id": "newscard_newscard",
-      "community": 86,
+      "community": 85,
       "norm_label": "newscard()"
     },
     {
@@ -3078,8 +3078,26 @@
       "source_file": "frontend\\src\\components\\Pricing.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_pricing_tsx",
-      "community": 199,
+      "community": 202,
       "norm_label": "pricing.tsx"
+    },
+    {
+      "label": "ProgrammaticAd.jsx",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\ProgrammaticAd.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_components_programmaticad_jsx",
+      "community": 141,
+      "norm_label": "programmaticad.jsx"
+    },
+    {
+      "label": "ProgrammaticAd()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\ProgrammaticAd.jsx",
+      "source_location": "L27",
+      "id": "programmaticad_programmaticad",
+      "community": 141,
+      "norm_label": "programmaticad()"
     },
     {
       "label": "PulseCounter.jsx",
@@ -3087,7 +3105,7 @@
       "source_file": "frontend\\src\\components\\PulseCounter.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_pulsecounter_jsx",
-      "community": 141,
+      "community": 142,
       "norm_label": "pulsecounter.jsx"
     },
     {
@@ -3096,7 +3114,7 @@
       "source_file": "frontend\\src\\components\\PulseCounter.jsx",
       "source_location": "L4",
       "id": "pulsecounter_pulsecounter",
-      "community": 141,
+      "community": 142,
       "norm_label": "pulsecounter()"
     },
     {
@@ -3105,7 +3123,7 @@
       "source_file": "frontend\\src\\components\\ReportForm.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_reportform_jsx",
-      "community": 142,
+      "community": 143,
       "norm_label": "reportform.jsx"
     },
     {
@@ -3114,7 +3132,7 @@
       "source_file": "frontend\\src\\components\\ReportForm.jsx",
       "source_location": "L5",
       "id": "reportform_reportform",
-      "community": 142,
+      "community": 143,
       "norm_label": "reportform()"
     },
     {
@@ -3175,7 +3193,7 @@
       "label": "WeatherWidget()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "id": "rightsidebar_weatherwidget",
       "community": 58,
       "norm_label": "weatherwidget()"
@@ -3184,7 +3202,7 @@
       "label": "MarketWidget()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L61",
+      "source_location": "L62",
       "id": "rightsidebar_marketwidget",
       "community": 58,
       "norm_label": "marketwidget()"
@@ -3193,7 +3211,7 @@
       "label": "MandiWidget()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L130",
+      "source_location": "L131",
       "id": "rightsidebar_mandiwidget",
       "community": 58,
       "norm_label": "mandiwidget()"
@@ -3202,7 +3220,7 @@
       "label": "TransportWidget()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L161",
+      "source_location": "L162",
       "id": "rightsidebar_transportwidget",
       "community": 58,
       "norm_label": "transportwidget()"
@@ -3211,7 +3229,7 @@
       "label": "TrendingWidget()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L175",
+      "source_location": "L176",
       "id": "rightsidebar_trendingwidget",
       "community": 58,
       "norm_label": "trendingwidget()"
@@ -3220,7 +3238,7 @@
       "label": "RightSidebar()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L194",
+      "source_location": "L195",
       "id": "rightsidebar_rightsidebar",
       "community": 58,
       "norm_label": "rightsidebar()"
@@ -3274,7 +3292,7 @@
       "label": "ShareWhatsApp()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\ShareWhatsApp.jsx",
-      "source_location": "L24",
+      "source_location": "L28",
       "id": "sharewhatsapp_sharewhatsapp",
       "community": 102,
       "norm_label": "sharewhatsapp()"
@@ -3307,12 +3325,30 @@
       "norm_label": "skeletonfeed()"
     },
     {
+      "label": "StickyAnchorAd.jsx",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\StickyAnchorAd.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_components_stickyanchorad_jsx",
+      "community": 144,
+      "norm_label": "stickyanchorad.jsx"
+    },
+    {
+      "label": "StickyAnchorAd()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\StickyAnchorAd.jsx",
+      "source_location": "L4",
+      "id": "stickyanchorad_stickyanchorad",
+      "community": 144,
+      "norm_label": "stickyanchorad()"
+    },
+    {
       "label": "StoriesBar.jsx",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_storiesbar_jsx",
-      "community": 85,
+      "community": 86,
       "norm_label": "storiesbar.jsx"
     },
     {
@@ -3321,7 +3357,7 @@
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
       "source_location": "L16",
       "id": "storiesbar_getstoryfordistrict",
-      "community": 85,
+      "community": 86,
       "norm_label": "getstoryfordistrict()"
     },
     {
@@ -3330,7 +3366,7 @@
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
       "source_location": "L51",
       "id": "storiesbar_storyoverlay",
-      "community": 85,
+      "community": 86,
       "norm_label": "storyoverlay()"
     },
     {
@@ -3339,7 +3375,7 @@
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
       "source_location": "L133",
       "id": "storiesbar_storiesbar",
-      "community": 85,
+      "community": 86,
       "norm_label": "storiesbar()"
     },
     {
@@ -3348,7 +3384,7 @@
       "source_file": "frontend\\src\\components\\Turnstile.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_turnstile_jsx",
-      "community": 143,
+      "community": 145,
       "norm_label": "turnstile.jsx"
     },
     {
@@ -3357,7 +3393,7 @@
       "source_file": "frontend\\src\\components\\Turnstile.jsx",
       "source_location": "L3",
       "id": "turnstile_turnstile",
-      "community": 143,
+      "community": 145,
       "norm_label": "turnstile()"
     },
     {
@@ -3366,7 +3402,7 @@
       "source_file": "frontend\\src\\components\\WeatherCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_weathercard_jsx",
-      "community": 144,
+      "community": 146,
       "norm_label": "weathercard.jsx"
     },
     {
@@ -3375,7 +3411,7 @@
       "source_file": "frontend\\src\\components\\WeatherCard.jsx",
       "source_location": "L9",
       "id": "weathercard_weathercard",
-      "community": 144,
+      "community": 146,
       "norm_label": "weathercard()"
     },
     {
@@ -3384,7 +3420,7 @@
       "source_file": "frontend\\src\\components\\news\\NewsCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_news_newscard_jsx",
-      "community": 86,
+      "community": 85,
       "norm_label": "newscard.jsx"
     },
     {
@@ -3420,7 +3456,7 @@
       "source_file": "frontend\\src\\context\\EmergencyContext.js",
       "source_location": "L1",
       "id": "frontend_src_context_emergencycontext_js",
-      "community": 200,
+      "community": 203,
       "norm_label": "emergencycontext.js"
     },
     {
@@ -3429,7 +3465,7 @@
       "source_file": "frontend\\src\\context\\EmergencyProvider.jsx",
       "source_location": "L1",
       "id": "frontend_src_context_emergencyprovider_jsx",
-      "community": 145,
+      "community": 147,
       "norm_label": "emergencyprovider.jsx"
     },
     {
@@ -3438,7 +3474,7 @@
       "source_file": "frontend\\src\\context\\EmergencyProvider.jsx",
       "source_location": "L5",
       "id": "emergencyprovider_emergencyprovider",
-      "community": 145,
+      "community": 147,
       "norm_label": "emergencyprovider()"
     },
     {
@@ -3447,7 +3483,7 @@
       "source_file": "frontend\\src\\data\\aiBriefingData.js",
       "source_location": "L1",
       "id": "frontend_src_data_aibriefingdata_js",
-      "community": 201,
+      "community": 204,
       "norm_label": "aibriefingdata.js"
     },
     {
@@ -3456,7 +3492,7 @@
       "source_file": "frontend\\src\\data\\alerts.js",
       "source_location": "L1",
       "id": "frontend_src_data_alerts_js",
-      "community": 202,
+      "community": 205,
       "norm_label": "alerts.js"
     },
     {
@@ -3465,7 +3501,7 @@
       "source_file": "frontend\\src\\data\\budgetData.js",
       "source_location": "L1",
       "id": "frontend_src_data_budgetdata_js",
-      "community": 203,
+      "community": 206,
       "norm_label": "budgetdata.js"
     },
     {
@@ -3474,7 +3510,7 @@
       "source_file": "frontend\\src\\data\\calendarData.js",
       "source_location": "L1",
       "id": "frontend_src_data_calendardata_js",
-      "community": 204,
+      "community": 207,
       "norm_label": "calendardata.js"
     },
     {
@@ -3483,7 +3519,7 @@
       "source_file": "frontend\\src\\data\\districtCoords.js",
       "source_location": "L1",
       "id": "frontend_src_data_districtcoords_js",
-      "community": 205,
+      "community": 208,
       "norm_label": "districtcoords.js"
     },
     {
@@ -3492,7 +3528,7 @@
       "source_file": "frontend\\src\\data\\districts.js",
       "source_location": "L1",
       "id": "frontend_src_data_districts_js",
-      "community": 206,
+      "community": 209,
       "norm_label": "districts.js"
     },
     {
@@ -3501,7 +3537,7 @@
       "source_file": "frontend\\src\\data\\emergencyData.js",
       "source_location": "L1",
       "id": "frontend_src_data_emergencydata_js",
-      "community": 207,
+      "community": 210,
       "norm_label": "emergencydata.js"
     },
     {
@@ -3510,7 +3546,7 @@
       "source_file": "frontend\\src\\data\\farmerData.js",
       "source_location": "L1",
       "id": "frontend_src_data_farmerdata_js",
-      "community": 208,
+      "community": 211,
       "norm_label": "farmerdata.js"
     },
     {
@@ -3519,7 +3555,7 @@
       "source_file": "frontend\\src\\data\\fuelPrices.js",
       "source_location": "L1",
       "id": "frontend_src_data_fuelprices_js",
-      "community": 209,
+      "community": 212,
       "norm_label": "fuelprices.js"
     },
     {
@@ -3528,7 +3564,7 @@
       "source_file": "frontend\\src\\data\\goldRates.js",
       "source_location": "L1",
       "id": "frontend_src_data_goldrates_js",
-      "community": 210,
+      "community": 213,
       "norm_label": "goldrates.js"
     },
     {
@@ -3537,7 +3573,7 @@
       "source_file": "frontend\\src\\data\\jobsData.js",
       "source_location": "L1",
       "id": "frontend_src_data_jobsdata_js",
-      "community": 211,
+      "community": 214,
       "norm_label": "jobsdata.js"
     },
     {
@@ -3546,7 +3582,7 @@
       "source_file": "frontend\\src\\data\\parksData.js",
       "source_location": "L1",
       "id": "frontend_src_data_parksdata_js",
-      "community": 146,
+      "community": 148,
       "norm_label": "parksdata.js"
     },
     {
@@ -3555,7 +3591,7 @@
       "source_file": "frontend\\src\\data\\parksData.js",
       "source_location": "L8",
       "id": "parksdata_getcrowdbyhour",
-      "community": 146,
+      "community": 148,
       "norm_label": "getcrowdbyhour()"
     },
     {
@@ -3564,7 +3600,7 @@
       "source_file": "frontend\\src\\data\\partners.js",
       "source_location": "L1",
       "id": "frontend_src_data_partners_js",
-      "community": 212,
+      "community": 215,
       "norm_label": "partners.js"
     },
     {
@@ -3573,7 +3609,7 @@
       "source_file": "frontend\\src\\data\\pdsData.js",
       "source_location": "L1",
       "id": "frontend_src_data_pdsdata_js",
-      "community": 213,
+      "community": 216,
       "norm_label": "pdsdata.js"
     },
     {
@@ -3582,7 +3618,7 @@
       "source_file": "frontend\\src\\data\\politiciansData.js",
       "source_location": "L1",
       "id": "frontend_src_data_politiciansdata_js",
-      "community": 214,
+      "community": 217,
       "norm_label": "politiciansdata.js"
     },
     {
@@ -3591,7 +3627,7 @@
       "source_file": "frontend\\src\\data\\pollData.js",
       "source_location": "L1",
       "id": "frontend_src_data_polldata_js",
-      "community": 215,
+      "community": 218,
       "norm_label": "polldata.js"
     },
     {
@@ -3600,7 +3636,7 @@
       "source_file": "frontend\\src\\data\\propertyTaxData.js",
       "source_location": "L1",
       "id": "frontend_src_data_propertytaxdata_js",
-      "community": 216,
+      "community": 219,
       "norm_label": "propertytaxdata.js"
     },
     {
@@ -3609,7 +3645,7 @@
       "source_file": "frontend\\src\\data\\pulses.js",
       "source_location": "L1",
       "id": "frontend_src_data_pulses_js",
-      "community": 217,
+      "community": 220,
       "norm_label": "pulses.js"
     },
     {
@@ -3618,7 +3654,7 @@
       "source_file": "frontend\\src\\data\\reportingData.js",
       "source_location": "L1",
       "id": "frontend_src_data_reportingdata_js",
-      "community": 147,
+      "community": 149,
       "norm_label": "reportingdata.js"
     },
     {
@@ -3627,7 +3663,7 @@
       "source_file": "frontend\\src\\data\\reportingData.js",
       "source_location": "L47",
       "id": "reportingdata_detectcorporation",
-      "community": 147,
+      "community": 149,
       "norm_label": "detectcorporation()"
     },
     {
@@ -3636,7 +3672,7 @@
       "source_file": "frontend\\src\\data\\reservoirsData.js",
       "source_location": "L1",
       "id": "frontend_src_data_reservoirsdata_js",
-      "community": 148,
+      "community": 150,
       "norm_label": "reservoirsdata.js"
     },
     {
@@ -3645,7 +3681,7 @@
       "source_file": "frontend\\src\\data\\reservoirsData.js",
       "source_location": "L202",
       "id": "reservoirsdata_getreservoirstatus",
-      "community": 148,
+      "community": 150,
       "norm_label": "getreservoirstatus()"
     },
     {
@@ -3654,7 +3690,7 @@
       "source_file": "frontend\\src\\data\\schemesData.js",
       "source_location": "L1",
       "id": "frontend_src_data_schemesdata_js",
-      "community": 218,
+      "community": 221,
       "norm_label": "schemesdata.js"
     },
     {
@@ -3663,7 +3699,7 @@
       "source_file": "frontend\\src\\data\\services.js",
       "source_location": "L1",
       "id": "frontend_src_data_services_js",
-      "community": 219,
+      "community": 222,
       "norm_label": "services.js"
     },
     {
@@ -3672,7 +3708,7 @@
       "source_file": "frontend\\src\\data\\shlokas.js",
       "source_location": "L1",
       "id": "frontend_src_data_shlokas_js",
-      "community": 149,
+      "community": 151,
       "norm_label": "shlokas.js"
     },
     {
@@ -3681,7 +3717,7 @@
       "source_file": "frontend\\src\\data\\shlokas.js",
       "source_location": "L53",
       "id": "shlokas_getdailyshloka",
-      "community": 149,
+      "community": 151,
       "norm_label": "getdailyshloka()"
     },
     {
@@ -3690,7 +3726,7 @@
       "source_file": "frontend\\src\\data\\transportData.js",
       "source_location": "L1",
       "id": "frontend_src_data_transportdata_js",
-      "community": 220,
+      "community": 223,
       "norm_label": "transportdata.js"
     },
     {
@@ -3699,7 +3735,7 @@
       "source_file": "frontend\\src\\data\\wardData.js",
       "source_location": "L1",
       "id": "frontend_src_data_warddata_js",
-      "community": 150,
+      "community": 152,
       "norm_label": "warddata.js"
     },
     {
@@ -3708,7 +3744,7 @@
       "source_file": "frontend\\src\\data\\wardData.js",
       "source_location": "L72",
       "id": "warddata_searchward",
-      "community": 150,
+      "community": 152,
       "norm_label": "searchward()"
     },
     {
@@ -3717,7 +3753,7 @@
       "source_file": "frontend\\src\\data\\waterSupplyData.js",
       "source_location": "L1",
       "id": "frontend_src_data_watersupplydata_js",
-      "community": 221,
+      "community": 224,
       "norm_label": "watersupplydata.js"
     },
     {
@@ -3726,7 +3762,7 @@
       "source_file": "frontend\\src\\data\\weatherData.js",
       "source_location": "L1",
       "id": "frontend_src_data_weatherdata_js",
-      "community": 151,
+      "community": 153,
       "norm_label": "weatherdata.js"
     },
     {
@@ -3735,7 +3771,7 @@
       "source_file": "frontend\\src\\data\\weatherData.js",
       "source_location": "L5",
       "id": "weatherdata_generateweather",
-      "community": 151,
+      "community": 153,
       "norm_label": "generateweather()"
     },
     {
@@ -3771,7 +3807,7 @@
       "source_file": "frontend\\src\\hooks\\useEmergency.js",
       "source_location": "L1",
       "id": "frontend_src_hooks_useemergency_js",
-      "community": 152,
+      "community": 154,
       "norm_label": "useemergency.js"
     },
     {
@@ -3780,8 +3816,26 @@
       "source_file": "frontend\\src\\hooks\\useEmergency.js",
       "source_location": "L4",
       "id": "useemergency_useemergency",
-      "community": 152,
+      "community": 154,
       "norm_label": "useemergency()"
+    },
+    {
+      "label": "useJsonLd.js",
+      "file_type": "code",
+      "source_file": "frontend\\src\\hooks\\useJsonLd.js",
+      "source_location": "L1",
+      "id": "frontend_src_hooks_usejsonld_js",
+      "community": 155,
+      "norm_label": "usejsonld.js"
+    },
+    {
+      "label": "useJsonLd()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\hooks\\useJsonLd.js",
+      "source_location": "L10",
+      "id": "usejsonld_usejsonld",
+      "community": 155,
+      "norm_label": "usejsonld()"
     },
     {
       "label": "AIPulsePage.jsx",
@@ -3870,7 +3924,7 @@
       "source_file": "frontend\\src\\pages\\ContentAdminCockpit.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_contentadmincockpit_jsx",
-      "community": 153,
+      "community": 156,
       "norm_label": "contentadmincockpit.jsx"
     },
     {
@@ -3879,7 +3933,7 @@
       "source_file": "frontend\\src\\pages\\ContentAdminCockpit.jsx",
       "source_location": "L8",
       "id": "contentadmincockpit_contentadmincockpit",
-      "community": 153,
+      "community": 156,
       "norm_label": "contentadmincockpit()"
     },
     {
@@ -3888,7 +3942,7 @@
       "source_file": "frontend\\src\\pages\\EmergencyContactsPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_emergencycontactspage_jsx",
-      "community": 154,
+      "community": 157,
       "norm_label": "emergencycontactspage.jsx"
     },
     {
@@ -3897,7 +3951,7 @@
       "source_file": "frontend\\src\\pages\\EmergencyContactsPage.jsx",
       "source_location": "L1",
       "id": "emergencycontactspage_emergencycontactspage",
-      "community": 154,
+      "community": 157,
       "norm_label": "emergencycontactspage()"
     },
     {
@@ -3951,7 +4005,7 @@
       "source_file": "frontend\\src\\pages\\FuelLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_fuellandingpage_jsx",
-      "community": 155,
+      "community": 158,
       "norm_label": "fuellandingpage.jsx"
     },
     {
@@ -3960,7 +4014,7 @@
       "source_file": "frontend\\src\\pages\\FuelLandingPage.jsx",
       "source_location": "L4",
       "id": "fuellandingpage_fuellandingpage",
-      "community": 155,
+      "community": 158,
       "norm_label": "fuellandingpage()"
     },
     {
@@ -3969,7 +4023,7 @@
       "source_file": "frontend\\src\\pages\\GoldLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_goldlandingpage_jsx",
-      "community": 156,
+      "community": 159,
       "norm_label": "goldlandingpage.jsx"
     },
     {
@@ -3978,7 +4032,7 @@
       "source_file": "frontend\\src\\pages\\GoldLandingPage.jsx",
       "source_location": "L7",
       "id": "goldlandingpage_goldlandingpage",
-      "community": 156,
+      "community": 159,
       "norm_label": "goldlandingpage()"
     },
     {
@@ -3987,7 +4041,7 @@
       "source_file": "frontend\\src\\pages\\HealthLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_healthlandingpage_jsx",
-      "community": 157,
+      "community": 160,
       "norm_label": "healthlandingpage.jsx"
     },
     {
@@ -3996,7 +4050,7 @@
       "source_file": "frontend\\src\\pages\\HealthLandingPage.jsx",
       "source_location": "L3",
       "id": "healthlandingpage_healthlandingpage",
-      "community": 157,
+      "community": 160,
       "norm_label": "healthlandingpage()"
     },
     {
@@ -4068,16 +4122,16 @@
       "source_file": "frontend\\src\\pages\\NewsListingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_newslistingpage_jsx",
-      "community": 158,
+      "community": 161,
       "norm_label": "newslistingpage.jsx"
     },
     {
       "label": "NewsListingPage()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\NewsListingPage.jsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "id": "newslistingpage_newslistingpage",
-      "community": 158,
+      "community": 161,
       "norm_label": "newslistingpage()"
     },
     {
@@ -4086,7 +4140,7 @@
       "source_file": "frontend\\src\\pages\\NewsPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_newspage_jsx",
-      "community": 159,
+      "community": 162,
       "norm_label": "newspage.jsx"
     },
     {
@@ -4095,7 +4149,7 @@
       "source_file": "frontend\\src\\pages\\NewsPage.jsx",
       "source_location": "L6",
       "id": "newspage_newspage",
-      "community": 159,
+      "community": 162,
       "norm_label": "newspage()"
     },
     {
@@ -4104,7 +4158,7 @@
       "source_file": "frontend\\src\\pages\\NotFound.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_notfound_jsx",
-      "community": 160,
+      "community": 163,
       "norm_label": "notfound.jsx"
     },
     {
@@ -4113,7 +4167,7 @@
       "source_file": "frontend\\src\\pages\\NotFound.jsx",
       "source_location": "L3",
       "id": "notfound_notfound",
-      "community": 160,
+      "community": 163,
       "norm_label": "notfound()"
     },
     {
@@ -4221,7 +4275,7 @@
       "source_file": "frontend\\src\\pages\\PropertyTaxPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_propertytaxpage_jsx",
-      "community": 161,
+      "community": 164,
       "norm_label": "propertytaxpage.jsx"
     },
     {
@@ -4230,7 +4284,7 @@
       "source_file": "frontend\\src\\pages\\PropertyTaxPage.jsx",
       "source_location": "L4",
       "id": "propertytaxpage_propertytaxpage",
-      "community": 161,
+      "community": 164,
       "norm_label": "propertytaxpage()"
     },
     {
@@ -4266,7 +4320,7 @@
       "source_file": "frontend\\src\\pages\\ReportingLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_reportinglandingpage_jsx",
-      "community": 162,
+      "community": 165,
       "norm_label": "reportinglandingpage.jsx"
     },
     {
@@ -4275,7 +4329,7 @@
       "source_file": "frontend\\src\\pages\\ReportingLandingPage.jsx",
       "source_location": "L5",
       "id": "reportinglandingpage_reportinglandingpage",
-      "community": 162,
+      "community": 165,
       "norm_label": "reportinglandingpage()"
     },
     {
@@ -4329,7 +4383,7 @@
       "source_file": "frontend\\src\\pages\\SchemesPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_schemespage_jsx",
-      "community": 163,
+      "community": 166,
       "norm_label": "schemespage.jsx"
     },
     {
@@ -4338,7 +4392,7 @@
       "source_file": "frontend\\src\\pages\\SchemesPage.jsx",
       "source_location": "L6",
       "id": "schemespage_schemespage",
-      "community": 163,
+      "community": 166,
       "norm_label": "schemespage()"
     },
     {
@@ -4392,7 +4446,7 @@
       "source_file": "frontend\\src\\pages\\SplashScreen.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_splashscreen_jsx",
-      "community": 164,
+      "community": 167,
       "norm_label": "splashscreen.jsx"
     },
     {
@@ -4401,7 +4455,7 @@
       "source_file": "frontend\\src\\pages\\SplashScreen.jsx",
       "source_location": "L5",
       "id": "splashscreen_splashscreen",
-      "community": 164,
+      "community": 167,
       "norm_label": "splashscreen()"
     },
     {
@@ -4410,16 +4464,16 @@
       "source_file": "frontend\\src\\pages\\SubRegionPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_subregionpage_jsx",
-      "community": 165,
+      "community": 168,
       "norm_label": "subregionpage.jsx"
     },
     {
       "label": "SubRegionPage()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\SubRegionPage.jsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "id": "subregionpage_subregionpage",
-      "community": 165,
+      "community": 168,
       "norm_label": "subregionpage()"
     },
     {
@@ -4428,7 +4482,7 @@
       "source_file": "frontend\\src\\pages\\TransportLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_transportlandingpage_jsx",
-      "community": 166,
+      "community": 169,
       "norm_label": "transportlandingpage.jsx"
     },
     {
@@ -4437,7 +4491,7 @@
       "source_file": "frontend\\src\\pages\\TransportLandingPage.jsx",
       "source_location": "L5",
       "id": "transportlandingpage_transportlandingpage",
-      "community": 166,
+      "community": 169,
       "norm_label": "transportlandingpage()"
     },
     {
@@ -4446,7 +4500,7 @@
       "source_file": "frontend\\src\\pages\\WaterSupplyPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_watersupplypage_jsx",
-      "community": 167,
+      "community": 170,
       "norm_label": "watersupplypage.jsx"
     },
     {
@@ -4455,7 +4509,7 @@
       "source_file": "frontend\\src\\pages\\WaterSupplyPage.jsx",
       "source_location": "L19",
       "id": "watersupplypage_watersupplypage",
-      "community": 167,
+      "community": 170,
       "norm_label": "watersupplypage()"
     },
     {
@@ -4500,7 +4554,7 @@
       "source_file": "frontend\\src\\services\\citizenReportsService.js",
       "source_location": "L1",
       "id": "frontend_src_services_citizenreportsservice_js",
-      "community": 222,
+      "community": 225,
       "norm_label": "citizenreportsservice.js"
     },
     {
@@ -4509,7 +4563,7 @@
       "source_file": "frontend\\src\\services\\emergencyService.js",
       "source_location": "L1",
       "id": "frontend_src_services_emergencyservice_js",
-      "community": 223,
+      "community": 226,
       "norm_label": "emergencyservice.js"
     },
     {
@@ -4518,7 +4572,7 @@
       "source_file": "frontend\\src\\services\\n8nService.js",
       "source_location": "L1",
       "id": "frontend_src_services_n8nservice_js",
-      "community": 168,
+      "community": 171,
       "norm_label": "n8nservice.js"
     },
     {
@@ -4527,7 +4581,7 @@
       "source_file": "frontend\\src\\services\\n8nService.js",
       "source_location": "L13",
       "id": "n8nservice_sendton8n",
-      "community": 168,
+      "community": 171,
       "norm_label": "sendton8n()"
     },
     {
@@ -4608,7 +4662,7 @@
       "source_file": "frontend\\src\\services\\powerAlertsService.js",
       "source_location": "L1",
       "id": "frontend_src_services_poweralertsservice_js",
-      "community": 224,
+      "community": 227,
       "norm_label": "poweralertsservice.js"
     },
     {
@@ -4680,7 +4734,7 @@
       "source_file": "frontend\\src\\services\\redisService.js",
       "source_location": "L1",
       "id": "frontend_src_services_redisservice_js",
-      "community": 225,
+      "community": 228,
       "norm_label": "redisservice.js"
     },
     {
@@ -4743,7 +4797,7 @@
       "source_file": "frontend\\src\\services\\supabaseClient.js",
       "source_location": "L1",
       "id": "frontend_src_services_supabaseclient_js",
-      "community": 226,
+      "community": 229,
       "norm_label": "supabaseclient.js"
     },
     {
@@ -4752,7 +4806,7 @@
       "source_file": "frontend\\src\\services\\transitService.js",
       "source_location": "L1",
       "id": "frontend_src_services_transitservice_js",
-      "community": 169,
+      "community": 172,
       "norm_label": "transitservice.js"
     },
     {
@@ -4761,7 +4815,7 @@
       "source_file": "frontend\\src\\services\\transitService.js",
       "source_location": "L3",
       "id": "transitservice_fetchtransitstatus",
-      "community": 169,
+      "community": 172,
       "norm_label": "fetchtransitstatus()"
     },
     {
@@ -4770,7 +4824,7 @@
       "source_file": "frontend\\src\\services\\waterService.js",
       "source_location": "L1",
       "id": "frontend_src_services_waterservice_js",
-      "community": 170,
+      "community": 173,
       "norm_label": "waterservice.js"
     },
     {
@@ -4779,7 +4833,7 @@
       "source_file": "frontend\\src\\services\\waterService.js",
       "source_location": "L3",
       "id": "waterservice_fetchwaterlevels",
-      "community": 170,
+      "community": 173,
       "norm_label": "fetchwaterlevels()"
     },
     {
@@ -4788,7 +4842,7 @@
       "source_file": "frontend\\src\\services\\weatherService.js",
       "source_location": "L1",
       "id": "frontend_src_services_weatherservice_js",
-      "community": 171,
+      "community": 174,
       "norm_label": "weatherservice.js"
     },
     {
@@ -4797,7 +4851,7 @@
       "source_file": "frontend\\src\\services\\weatherService.js",
       "source_location": "L15",
       "id": "weatherservice_fetchweather",
-      "community": 171,
+      "community": 174,
       "norm_label": "fetchweather()"
     },
     {
@@ -4806,7 +4860,7 @@
       "source_file": "frontend\\src\\utils\\timeUtils.js",
       "source_location": "L1",
       "id": "frontend_src_utils_timeutils_js",
-      "community": 172,
+      "community": 175,
       "norm_label": "timeutils.js"
     },
     {
@@ -4815,7 +4869,7 @@
       "source_file": "frontend\\src\\utils\\timeUtils.js",
       "source_location": "L5",
       "id": "timeutils_formatrelativetime",
-      "community": 172,
+      "community": 175,
       "norm_label": "formatrelativetime()"
     },
     {
@@ -5130,7 +5184,7 @@
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L1",
       "id": "graphify_graphify_build_py",
-      "community": 37,
+      "community": 38,
       "norm_label": "build.py"
     },
     {
@@ -5139,7 +5193,7 @@
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L30",
       "id": "build_normalize_id",
-      "community": 37,
+      "community": 38,
       "norm_label": "_normalize_id()"
     },
     {
@@ -5148,7 +5202,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\build.py",
       "source_location": "L8",
       "id": "build_build_from_json",
-      "community": 37,
+      "community": 38,
       "norm_label": "build_from_json()"
     },
     {
@@ -5157,7 +5211,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\build.py",
       "source_location": "L31",
       "id": "build_build",
-      "community": 37,
+      "community": 38,
       "norm_label": "build()"
     },
     {
@@ -5165,7 +5219,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L31",
-      "community": 37,
+      "community": 38,
       "norm_label": "normalize an id string the same way extract._make_id does.      used to reconc",
       "id": "build_rationale_31"
     },
@@ -5174,7 +5228,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L41",
-      "community": 37,
+      "community": 38,
       "norm_label": "build a networkx graph from an extraction dict.      directed=true produces a",
       "id": "build_rationale_41"
     },
@@ -5183,7 +5237,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L96",
-      "community": 37,
+      "community": 38,
       "norm_label": "merge multiple extraction results into one graph.      directed=true produces",
       "id": "build_rationale_96"
     },
@@ -7110,7 +7164,7 @@
       "source_file": "graphify\\graphify\\manifest.py",
       "source_location": "L1",
       "id": "graphify_graphify_manifest_py",
-      "community": 227,
+      "community": 230,
       "norm_label": "manifest.py"
     },
     {
@@ -7434,7 +7488,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L1",
       "id": "graphify_graphify_transcribe_py",
-      "community": 38,
+      "community": 37,
       "norm_label": "transcribe.py"
     },
     {
@@ -7443,7 +7497,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L17",
       "id": "transcribe_model_name",
-      "community": 38,
+      "community": 37,
       "norm_label": "_model_name()"
     },
     {
@@ -7452,7 +7506,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L21",
       "id": "transcribe_get_whisper",
-      "community": 38,
+      "community": 37,
       "norm_label": "_get_whisper()"
     },
     {
@@ -7461,7 +7515,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L32",
       "id": "transcribe_get_yt_dlp",
-      "community": 38,
+      "community": 37,
       "norm_label": "_get_yt_dlp()"
     },
     {
@@ -7470,7 +7524,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L43",
       "id": "transcribe_is_url",
-      "community": 38,
+      "community": 37,
       "norm_label": "is_url()"
     },
     {
@@ -7479,7 +7533,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L48",
       "id": "transcribe_download_audio",
-      "community": 38,
+      "community": 37,
       "norm_label": "download_audio()"
     },
     {
@@ -7488,7 +7542,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L91",
       "id": "transcribe_build_whisper_prompt",
-      "community": 38,
+      "community": 37,
       "norm_label": "build_whisper_prompt()"
     },
     {
@@ -7497,7 +7551,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L114",
       "id": "transcribe_transcribe",
-      "community": 38,
+      "community": 37,
       "norm_label": "transcribe()"
     },
     {
@@ -7506,7 +7560,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L162",
       "id": "transcribe_transcribe_all",
-      "community": 38,
+      "community": 37,
       "norm_label": "transcribe_all()"
     },
     {
@@ -7514,7 +7568,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L44",
-      "community": 38,
+      "community": 37,
       "norm_label": "return true if the string looks like a url rather than a file path.",
       "id": "transcribe_rationale_44"
     },
@@ -7523,7 +7577,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L49",
-      "community": 38,
+      "community": 37,
       "norm_label": "download audio-only stream from a url using yt-dlp.      returns the path to t",
       "id": "transcribe_rationale_49"
     },
@@ -7532,7 +7586,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L92",
-      "community": 38,
+      "community": 37,
       "norm_label": "build a domain hint for whisper from god nodes extracted from the corpus.",
       "id": "transcribe_rationale_92"
     },
@@ -7541,7 +7595,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L120",
-      "community": 38,
+      "community": 37,
       "norm_label": "transcribe a video/audio file or url to a .txt transcript.      if video_path",
       "id": "transcribe_rationale_120"
     },
@@ -7550,7 +7604,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L167",
-      "community": 38,
+      "community": 37,
       "norm_label": "transcribe a list of video/audio files or urls, return paths to transcript .txt",
       "id": "transcribe_rationale_167"
     },
@@ -7560,7 +7614,7 @@
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L1",
       "id": "graphify_graphify_validate_py",
-      "community": 37,
+      "community": 38,
       "norm_label": "validate.py"
     },
     {
@@ -7569,7 +7623,7 @@
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L10",
       "id": "validate_validate_extraction",
-      "community": 37,
+      "community": 38,
       "norm_label": "validate_extraction()"
     },
     {
@@ -7578,7 +7632,7 @@
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L67",
       "id": "validate_assert_valid",
-      "community": 37,
+      "community": 38,
       "norm_label": "assert_valid()"
     },
     {
@@ -7586,7 +7640,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L11",
-      "community": 37,
+      "community": 38,
       "norm_label": "validate an extraction json dict against the graphify schema.     returns a lis",
       "id": "validate_rationale_11"
     },
@@ -7595,7 +7649,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L68",
-      "community": 37,
+      "community": 38,
       "norm_label": "raise valueerror with all errors if extraction is invalid.",
       "id": "validate_rationale_68"
     },
@@ -13896,7 +13950,7 @@
       "source_file": "graphify\\tests\\__init__.py",
       "source_location": "L1",
       "id": "graphify_tests_init_py",
-      "community": 228,
+      "community": 231,
       "norm_label": "__init__.py"
     },
     {
@@ -17604,7 +17658,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\build.py",
       "source_location": "L1",
       "id": "graphify_worked_mixed_corpus_raw_build_py",
-      "community": 37,
+      "community": 38,
       "norm_label": "build.py"
     },
     {
@@ -17612,7 +17666,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\build.py",
       "source_location": "L32",
-      "community": 37,
+      "community": 38,
       "norm_label": "merge multiple extraction results into one graph.",
       "id": "build_rationale_32"
     },
@@ -17676,7 +17730,7 @@
       "source_file": "scratch\\check_fuel_sources.py",
       "source_location": "L1",
       "id": "scratch_check_fuel_sources_py",
-      "community": 173,
+      "community": 176,
       "norm_label": "check_fuel_sources.py"
     },
     {
@@ -17685,7 +17739,7 @@
       "source_file": "scratch\\check_fuel_sources.py",
       "source_location": "L3",
       "id": "check_fuel_sources_check",
-      "community": 173,
+      "community": 176,
       "norm_label": "check()"
     },
     {
@@ -17694,7 +17748,7 @@
       "source_file": "scratch\\check_sources.py",
       "source_location": "L1",
       "id": "scratch_check_sources_py",
-      "community": 174,
+      "community": 177,
       "norm_label": "check_sources.py"
     },
     {
@@ -17703,7 +17757,7 @@
       "source_file": "scratch\\check_sources.py",
       "source_location": "L3",
       "id": "check_sources_check",
-      "community": 174,
+      "community": 177,
       "norm_label": "check()"
     },
     {
@@ -17712,7 +17766,7 @@
       "source_file": "scratch\\debug_chennai_history.py",
       "source_location": "L1",
       "id": "scratch_debug_chennai_history_py",
-      "community": 175,
+      "community": 178,
       "norm_label": "debug_chennai_history.py"
     },
     {
@@ -17721,7 +17775,7 @@
       "source_file": "scratch\\debug_chennai_history.py",
       "source_location": "L4",
       "id": "debug_chennai_history_debug_live_chennai",
-      "community": 175,
+      "community": 178,
       "norm_label": "debug_live_chennai()"
     },
     {
@@ -17730,7 +17784,7 @@
       "source_file": "scratch\\debug_gold.py",
       "source_location": "L1",
       "id": "scratch_debug_gold_py",
-      "community": 229,
+      "community": 232,
       "norm_label": "debug_gold.py"
     },
     {
@@ -17739,7 +17793,7 @@
       "source_file": "scratch\\debug_mint_rows.py",
       "source_location": "L1",
       "id": "scratch_debug_mint_rows_py",
-      "community": 230,
+      "community": 233,
       "norm_label": "debug_mint_rows.py"
     },
     {
@@ -17748,7 +17802,7 @@
       "source_file": "scratch\\scrape_gold_history.py",
       "source_location": "L1",
       "id": "scratch_scrape_gold_history_py",
-      "community": 176,
+      "community": 179,
       "norm_label": "scrape_gold_history.py"
     },
     {
@@ -17757,7 +17811,7 @@
       "source_file": "scratch\\scrape_gold_history.py",
       "source_location": "L4",
       "id": "scrape_gold_history_scrape_history",
-      "community": 176,
+      "community": 179,
       "norm_label": "scrape_history()"
     },
     {
@@ -17766,7 +17820,7 @@
       "source_file": "scratch\\scrape_gold_history_v2.py",
       "source_location": "L1",
       "id": "scratch_scrape_gold_history_v2_py",
-      "community": 177,
+      "community": 180,
       "norm_label": "scrape_gold_history_v2.py"
     },
     {
@@ -17775,7 +17829,7 @@
       "source_file": "scratch\\scrape_gold_history_v2.py",
       "source_location": "L5",
       "id": "scrape_gold_history_v2_scrape_history",
-      "community": 177,
+      "community": 180,
       "norm_label": "scrape_history()"
     },
     {
@@ -17838,7 +17892,7 @@
       "source_file": "tests\\enterprise-briefing.spec.ts",
       "source_location": "L1",
       "id": "tests_enterprise_briefing_spec_ts",
-      "community": 231,
+      "community": 234,
       "norm_label": "enterprise-briefing.spec.ts"
     },
     {
@@ -17847,7 +17901,7 @@
       "source_file": "tests\\extended.spec.ts",
       "source_location": "L1",
       "id": "tests_extended_spec_ts",
-      "community": 232,
+      "community": 235,
       "norm_label": "extended.spec.ts"
     },
     {
@@ -17856,7 +17910,7 @@
       "source_file": "tests\\homepage.spec.ts",
       "source_location": "L1",
       "id": "tests_homepage_spec_ts",
-      "community": 233,
+      "community": 236,
       "norm_label": "homepage.spec.ts"
     },
     {
@@ -17865,7 +17919,7 @@
       "source_file": "tests\\smoke_test.spec.ts",
       "source_location": "L1",
       "id": "tests_smoke_test_spec_ts",
-      "community": 234,
+      "community": 237,
       "norm_label": "smoke_test.spec.ts"
     },
     {
@@ -18900,7 +18954,7 @@
       "source_file": "tests\\__init__.py",
       "source_location": "L1",
       "id": "tests_init_py",
-      "community": 235,
+      "community": 238,
       "norm_label": "__init__.py"
     },
     {
@@ -18990,7 +19044,7 @@
       "source_file": "tests\\unit\\redisService.test.js",
       "source_location": "L1",
       "id": "tests_unit_redisservice_test_js",
-      "community": 178,
+      "community": 181,
       "norm_label": "redisservice.test.js"
     },
     {
@@ -18999,7 +19053,7 @@
       "source_file": "tests\\unit\\redisService.test.js",
       "source_location": "L5",
       "id": "redisservice_test_makejsonresponse",
-      "community": 178,
+      "community": 181,
       "norm_label": "makejsonresponse()"
     },
     {
@@ -19008,7 +19062,7 @@
       "source_file": "tests\\unit\\rssParser.test.js",
       "source_location": "L1",
       "id": "tests_unit_rssparser_test_js",
-      "community": 179,
+      "community": 182,
       "norm_label": "rssparser.test.js"
     },
     {
@@ -19017,7 +19071,7 @@
       "source_file": "tests\\unit\\rssParser.test.js",
       "source_location": "L6",
       "id": "rssparser_test_parseurl",
-      "community": 179,
+      "community": 182,
       "norm_label": "parseurl()"
     },
     {
@@ -19026,7 +19080,7 @@
       "source_file": "tests\\unit\\timeUtils.test.js",
       "source_location": "L1",
       "id": "tests_unit_timeutils_test_js",
-      "community": 236,
+      "community": 239,
       "norm_label": "timeutils.test.js"
     },
     {
@@ -19035,7 +19089,7 @@
       "source_file": "tests\\unit\\weatherService.test.js",
       "source_location": "L1",
       "id": "tests_unit_weatherservice_test_js",
-      "community": 180,
+      "community": 183,
       "norm_label": "weatherservice.test.js"
     },
     {
@@ -19044,7 +19098,7 @@
       "source_file": "tests\\unit\\weatherService.test.js",
       "source_location": "L5",
       "id": "weatherservice_test_mockfetchweatherandaqi",
-      "community": 180,
+      "community": 183,
       "norm_label": "mockfetchweatherandaqi()"
     },
     {
@@ -19061,7 +19115,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L18",
-      "community": 237,
+      "community": 240,
       "norm_label": "generates new content for telangana.live",
       "id": "content_generator_rationale_18"
     },
@@ -19070,7 +19124,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L24",
-      "community": 238,
+      "community": 241,
       "norm_label": "generate new content and store in supabase",
       "id": "content_generator_rationale_24"
     },
@@ -19079,7 +19133,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L84",
-      "community": 239,
+      "community": 242,
       "norm_label": "execute generation cycle.                  first tries to pull dynamic topics",
       "id": "content_generator_rationale_84"
     },
@@ -19088,7 +19142,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L11",
-      "community": 240,
+      "community": 243,
       "norm_label": "monitors telangana.live for content that needs updates",
       "id": "content_monitor_rationale_11"
     },
@@ -19097,7 +19151,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L34",
-      "community": 241,
+      "community": 244,
       "norm_label": "use claude to analyze content and identify what needs updates",
       "id": "content_monitor_rationale_34"
     },
@@ -19106,7 +19160,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L71",
-      "community": 242,
+      "community": 245,
       "norm_label": "execute monitoring cycle",
       "id": "content_monitor_rationale_71"
     },
@@ -19115,7 +19169,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_updater.py",
       "source_location": "L9",
-      "community": 243,
+      "community": 246,
       "norm_label": "updates existing content with new information",
       "id": "content_updater_rationale_9"
     },
@@ -19124,7 +19178,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_updater.py",
       "source_location": "L15",
-      "community": 244,
+      "community": 247,
       "norm_label": "update existing content with new information",
       "id": "content_updater_rationale_15"
     },
@@ -19133,7 +19187,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L9",
-      "community": 245,
+      "community": 248,
       "norm_label": "checks and improves content quality, then publishes it.",
       "id": "quality_checker_rationale_9"
     },
@@ -19142,7 +19196,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L15",
-      "community": 246,
+      "community": 249,
       "norm_label": "check content quality, save improvements, and publish the article.",
       "id": "quality_checker_rationale_15"
     },
@@ -19151,7 +19205,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L55",
-      "community": 247,
+      "community": 250,
       "norm_label": "quality-check all content that is still in 'active' (draft) status.",
       "id": "quality_checker_rationale_55"
     },
@@ -19196,7 +19250,7 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\scripts\\news_scraper.py",
       "source_location": "L57",
-      "community": 248,
+      "community": 251,
       "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
       "id": "news_scraper_rationale_57"
     },
@@ -24495,7 +24549,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L47",
+      "source_location": "L48",
       "weight": 1.0,
       "_src": "frontend_src_app_jsx",
       "_tgt": "app_loadingscreen",
@@ -24507,7 +24561,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L54",
+      "source_location": "L55",
       "weight": 1.0,
       "_src": "frontend_src_app_jsx",
       "_tgt": "app_emergencytoggle",
@@ -24519,7 +24573,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L79",
+      "source_location": "L80",
       "weight": 1.0,
       "_src": "frontend_src_app_jsx",
       "_tgt": "app_appcontent",
@@ -24531,7 +24585,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L148",
+      "source_location": "L150",
       "weight": 1.0,
       "_src": "frontend_src_app_jsx",
       "_tgt": "app_app",
@@ -24603,7 +24657,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\ArticleModal.jsx",
-      "source_location": "L25",
+      "source_location": "L66",
       "weight": 1.0,
       "_src": "articlemodal_articlemodal",
       "_tgt": "articlemodal_estimatereadtime",
@@ -24663,7 +24717,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\CrisisDashboard.jsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_src": "frontend_src_components_crisisdashboard_jsx",
       "_tgt": "crisisdashboard_crisisdashboard",
@@ -25202,6 +25256,18 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\ProgrammaticAd.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_src": "frontend_src_components_programmaticad_jsx",
+      "_tgt": "programmaticad_programmaticad",
+      "source": "frontend_src_components_programmaticad_jsx",
+      "target": "programmaticad_programmaticad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\PulseCounter.jsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -25275,7 +25341,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_src": "frontend_src_components_rightsidebar_jsx",
       "_tgt": "rightsidebar_weatherwidget",
@@ -25287,7 +25353,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L61",
+      "source_location": "L62",
       "weight": 1.0,
       "_src": "frontend_src_components_rightsidebar_jsx",
       "_tgt": "rightsidebar_marketwidget",
@@ -25299,7 +25365,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L130",
+      "source_location": "L131",
       "weight": 1.0,
       "_src": "frontend_src_components_rightsidebar_jsx",
       "_tgt": "rightsidebar_mandiwidget",
@@ -25311,7 +25377,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L161",
+      "source_location": "L162",
       "weight": 1.0,
       "_src": "frontend_src_components_rightsidebar_jsx",
       "_tgt": "rightsidebar_transportwidget",
@@ -25323,7 +25389,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L175",
+      "source_location": "L176",
       "weight": 1.0,
       "_src": "frontend_src_components_rightsidebar_jsx",
       "_tgt": "rightsidebar_trendingwidget",
@@ -25335,7 +25401,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
-      "source_location": "L194",
+      "source_location": "L195",
       "weight": 1.0,
       "_src": "frontend_src_components_rightsidebar_jsx",
       "_tgt": "rightsidebar_rightsidebar",
@@ -25383,7 +25449,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\ShareWhatsApp.jsx",
-      "source_location": "L24",
+      "source_location": "L28",
       "weight": 1.0,
       "_src": "frontend_src_components_sharewhatsapp_jsx",
       "_tgt": "sharewhatsapp_sharewhatsapp",
@@ -25395,7 +25461,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\ShareWhatsApp.jsx",
-      "source_location": "L25",
+      "source_location": "L29",
       "weight": 1.0,
       "_src": "sharewhatsapp_sharewhatsapp",
       "_tgt": "sharewhatsapp_generatewacaption",
@@ -25425,6 +25491,18 @@
       "_tgt": "skeletoncard_skeletonfeed",
       "source": "frontend_src_components_skeletoncard_jsx",
       "target": "skeletoncard_skeletonfeed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\StickyAnchorAd.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "frontend_src_components_stickyanchorad_jsx",
+      "_tgt": "stickyanchorad_stickyanchorad",
+      "source": "frontend_src_components_stickyanchorad_jsx",
+      "target": "stickyanchorad_stickyanchorad",
       "confidence_score": 1.0
     },
     {
@@ -25629,6 +25707,18 @@
       "_tgt": "useemergency_useemergency",
       "source": "frontend_src_hooks_useemergency_js",
       "target": "useemergency_useemergency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\hooks\\useJsonLd.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "frontend_src_hooks_usejsonld_js",
+      "_tgt": "usejsonld_usejsonld",
+      "source": "frontend_src_hooks_usejsonld_js",
+      "target": "usejsonld_usejsonld",
       "confidence_score": 1.0
     },
     {
@@ -25875,7 +25965,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\NewsListingPage.jsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_src": "frontend_src_pages_newslistingpage_jsx",
       "_tgt": "newslistingpage_newslistingpage",
@@ -26187,7 +26277,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\SubRegionPage.jsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0,
       "_src": "frontend_src_pages_subregionpage_jsx",
       "_tgt": "subregionpage_subregionpage",

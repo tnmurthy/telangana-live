@@ -25,12 +25,16 @@ const generateWACaption = (type, data, customTitle, customLink) => {
 /**
  * Common WhatsApp Share Component
  */
-export default function ShareWhatsApp({ type, data, customTitle, customLink, className = "" }) {
+export default function ShareWhatsApp({ type, data, customTitle, customLink, className = "", onClick }) {
     const caption = generateWACaption(type, data, customTitle, customLink);
     const url = `https://wa.me/?text=${encodeURIComponent(caption)}`;
 
     return (
         <a href={url} target="_blank" rel="noopener noreferrer"
+            onClick={(e) => {
+                e.stopPropagation();
+                if (onClick) onClick(e);
+            }}
             className={`inline-flex items-center gap-1.5 text-xs text-green-400/80 hover:text-green-300 transition-all duration-300 px-2.5 py-1.5 rounded-lg hover:bg-green-400/10 ${className}`}
             title="Share to WhatsApp">
             <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">

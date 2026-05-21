@@ -23,6 +23,7 @@ const NewsCard = ({ news }) => {
   const { id, title, link, source, published, description, region, category, ai_summary, image_url } = news;
   const [speaking, setSpeaking] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const { recordRead, followed, toggleFollow } = useAppContext();
 
   const relTime = formatRelativeTime(published);
@@ -32,16 +33,9 @@ const NewsCard = ({ news }) => {
   const isVerified = source?.toLowerCase().includes('hindu') || source?.toLowerCase().includes('today');
   const isFollowing = followed.topics.includes(category) || followed.regions.includes(region);
 
-  const finalImage = useMemo(() => {
-    if (image_url) return image_url;
-    const fallbacks = {
-      Politics: 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=400&auto=format',
-      Safety: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=400&auto=format',
-      Transit: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=400&auto=format',
-      General: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=400&auto=format',
-    };
-    return fallbacks[category] || fallbacks.General;
-  }, [image_url, category]);
+  // Google News layout logic: If no image is provided, do not use generic stock fallbacks.
+  // Instead, set finalImage to null so the card collapses and text fills 100% width.
+  const finalImage = (!imageError && image_url) ? image_url : null;
 
   const civicAction = useMemo(() => {
     const t = title?.toLowerCase() || '';
@@ -81,6 +75,7 @@ const NewsCard = ({ news }) => {
             <img 
               src={finalImage} 
               alt={title} 
+              onError={() => setImageError(true)}
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

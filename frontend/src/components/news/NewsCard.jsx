@@ -1,31 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './NewsCard.module.css';
 
 export function NewsCard({ article }) {
+  const [imageError, setImageError] = useState(false);
+  const imageUrl = (!imageError && (article.imageUrl || article.image_url)) ? (article.imageUrl || article.image_url) : null;
+  const description = article.summary || article.description;
+  const url = article.link || article.url;
+  const publishedDate = article.publishedAt || article.published;
+  
   const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('te-IN', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
+    if (!dateString) return '';
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('te-IN', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    } catch (e) {
+      return dateString;
+    }
   };
 
-  const handleWhatsAppShare = () => {
-    const text = `${article.title}\n\nRead more: ${article.url}\n\nvia Telangana.live`;
+  const handleWhatsAppShare = (e) => {
+    e.stopPropagation();
+    const text = `${article.title}\n\nRead more: ${url || ''}\n\nvia Telangana.live`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
   };
 
+  const districts = Array.isArray(article.district)
+    ? article.district
+    : (article.district ? [article.district] : []);
+
   return (
     <article className="news-card">
-      {article.imageUrl && (
+      {imageUrl && (
         <div className="news-card__image">
           <img 
-            src={article.imageUrl} 
+            src={imageUrl} 
             alt={article.title}
+            onError={() => setImageError(true)}
             loading="lazy"
           />
         </div>
@@ -33,36 +50,38 @@ export function NewsCard({ article }) {
       
       <div className="news-card__content">
         <div className="news-card__meta">
-          <span className="news-card__source">{article.source.toUpperCase()}</span>
-          <span className="news-card__category">{article.category}</span>
-          <span className="news-card__date">{formatDate(article.publishedAt)}</span>
+          <span className="news-card__source">{(article.source || '').toUpperCase()}</span>
+          {article.category && <span className="news-card__category">{article.category}</span>}
+          {publishedDate && <span className="news-card__date">{formatDate(publishedDate)}</span>}
         </div>
 
         <h3 className="news-card__title">
-          <a href={article.url} target="_blank" rel="noopener noreferrer">
+          <a href={url || '#'} target="_blank" rel="noopener noreferrer">
             {article.title}
           </a>
         </h3>
 
-        <p className="news-card__description">{article.description}</p>
+        {description && <p className="news-card__description">{description}</p>}
 
-        {article.district.length > 0 && (
+        {districts.length > 0 && (
           <div className="news-card__districts">
-            {article.district.map(d => (
+            {districts.map(d => (
               <span key={d} className="district-tag">{d}</span>
             ))}
           </div>
         )}
 
         <div className="news-card__actions">
-          <a 
-            href={article.url} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-read-more"
-          >
-            Read Full Article
-          </a>
+          {url && (
+            <a 
+              href={url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-read-more"
+            >
+              Read Full Article
+            </a>
+          )}
           <button 
             onClick={handleWhatsAppShare}
             className="btn-share-whatsapp"
@@ -74,3 +93,4 @@ export function NewsCard({ article }) {
     </article>
   );
 }
+
