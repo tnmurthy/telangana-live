@@ -3,6 +3,24 @@ import time
 import logging
 import requests
 from typing import Optional, Dict, Any
+
+# Monkeypatch httpx to map 'proxies' to 'proxy' for backward compatibility with older client SDKs
+import httpx
+for client_class in (httpx.Client, httpx.AsyncClient):
+    original_init = client_class.__init__
+    def make_patched_init(orig_init):
+        def patched_init(self, *args, **kwargs):
+            if 'proxies' in kwargs:
+                proxies = kwargs.pop('proxies')
+                if proxies and not kwargs.get('proxy'):
+                    if isinstance(proxies, dict):
+                        kwargs['proxy'] = next(iter(proxies.values()))
+                    else:
+                        kwargs['proxy'] = proxies
+            orig_init(self, *args, **kwargs)
+        return patched_init
+    client_class.__init__ = make_patched_init(original_init)
+
 import anthropic
 import google.generativeai as genai
 from core.config import CONFIG

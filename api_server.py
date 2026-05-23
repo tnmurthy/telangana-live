@@ -4,7 +4,7 @@ import os
 
 # Ensure the root and scripts folders are in the Python path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "backend", "scripts"))
 
 from data_engine import sync_gold, sync_fuel, sync_pulses
 from whatsapp_bot import build_summary, send_whatsapp_message

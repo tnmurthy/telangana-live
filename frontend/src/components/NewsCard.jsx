@@ -20,14 +20,14 @@ function ConfidenceBadge({ score = 78 }) {
 
 /* ─── NewsCard (Liquid Glass Edition) ───────────────────────── */
 const NewsCard = ({ news }) => {
-  const { id, title, link, source, published, description, region, category, ai_summary, image_url } = news;
+  const { id, title, link, source, published, description, region, category, ai_summary, image_url, credibility_score } = news;
   const [speaking, setSpeaking] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [imageError, setImageError] = useState(false);
   const { recordRead, followed, toggleFollow } = useAppContext();
 
   const relTime = formatRelativeTime(published);
-  const aiConfidence = ai_summary ? Math.min(98, 75 + (title.length % 20)) : null;
+  const aiConfidence = credibility_score || (ai_summary ? Math.min(98, 75 + (title.length % 20)) : null);
 
   const isOfficial = source?.toLowerCase().includes('ghmc') || source?.toLowerCase().includes('govt');
   const isVerified = source?.toLowerCase().includes('hindu') || source?.toLowerCase().includes('today');

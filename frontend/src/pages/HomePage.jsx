@@ -142,6 +142,16 @@ export default function HomePage() {
 
       <DistrictOnboarding />
 
+      {/* Local District Briefing */}
+      {activeCategory === 'All' && myDistrict && myDistrictNews.length > 0 && (
+        <FeedSection
+          title={`${myDistrict} Updates`}
+          items={myDistrictNews.slice(0, 4)}
+          icon={<Icons.Location className="w-6 h-6 text-telangana-green" />}
+          delay="50ms"
+        />
+      )}
+
       {/* Main Intelligence Feed */}
       <FeedSection
         title={activeCategory === 'All' ? 'Intelligence Dashboard' : activeCategory}
