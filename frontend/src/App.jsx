@@ -102,37 +102,32 @@ function AppContent() {
         <ErrorBoundary>
           <Suspense fallback={<LoadingScreen />}>
             <Routes>
-              {isSplash ? (
-                <Route path="/" element={<SplashScreen />} />
-              ) : (
-                <>
-                  <Route path="/dashboard" element={<HomePage />} />
-                  <Route path="/rates/gold" element={<GoldLandingPage />} />
-                  <Route path="/rates/fuel" element={<FuelLandingPage />} />
-                  <Route path="/transport/metro" element={<TransportLandingPage />} />
-                  <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
-                  <Route path="/news" element={<NewsListingPage />} />
-                  <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
-                  <Route path="/ai-pulse" element={<AIPulsePage />} />
-                  <Route path="/emergency-contacts" element={<EmergencyContactsPage />} />
-                  <Route path="/water-supply" element={<WaterSupplyPage />} />
-                  <Route path="/ration-pds" element={<RationPDSPage />} />
-                  <Route path="/jobs" element={<JobBoardPage />} />
-                  <Route path="/events" element={<CalendarPage />} />
-                  <Route path="/budget" element={<BudgetTrackerPage />} />
-                  <Route path="/politicians" element={<PoliticianTrackerPage />} />
-                  <Route path="/property-tax" element={<PropertyTaxPage />} />
-                  <Route path="/schemes" element={<SchemesPage />} />
-                  <Route path="/report" element={<ReportingLandingPage />} />
-                  <Route path="/search" element={<SearchPage />} />
-                  <Route path="/weather/forecast" element={<WeatherForecastPage />} />
-                  <Route path="/reservoirs" element={<ReservoirsPage />} />
-                  <Route path="/parks" element={<ParksPage />} />
-                  <Route path="/farmers" element={<FarmerPage />} />
-                  <Route path="/:region" element={<SubRegionPage />} />
-                  <Route path="*" element={<NotFound />} />
-                </>
-              )}
+              <Route path="/" element={<SplashScreen />} />
+              <Route path="/dashboard" element={<HomePage />} />
+              <Route path="/rates/gold" element={<GoldLandingPage />} />
+              <Route path="/rates/fuel" element={<FuelLandingPage />} />
+              <Route path="/transport/metro" element={<TransportLandingPage />} />
+              <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
+              <Route path="/news" element={<NewsListingPage />} />
+              <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
+              <Route path="/ai-pulse" element={<AIPulsePage />} />
+              <Route path="/emergency-contacts" element={<EmergencyContactsPage />} />
+              <Route path="/water-supply" element={<WaterSupplyPage />} />
+              <Route path="/ration-pds" element={<RationPDSPage />} />
+              <Route path="/jobs" element={<JobBoardPage />} />
+              <Route path="/events" element={<CalendarPage />} />
+              <Route path="/budget" element={<BudgetTrackerPage />} />
+              <Route path="/politicians" element={<PoliticianTrackerPage />} />
+              <Route path="/property-tax" element={<PropertyTaxPage />} />
+              <Route path="/schemes" element={<SchemesPage />} />
+              <Route path="/report" element={<ReportingLandingPage />} />
+              <Route path="/search" element={<SearchPage />} />
+              <Route path="/weather/forecast" element={<WeatherForecastPage />} />
+              <Route path="/reservoirs" element={<ReservoirsPage />} />
+              <Route path="/parks" element={<ParksPage />} />
+              <Route path="/farmers" element={<FarmerPage />} />
+              <Route path="/:region" element={<SubRegionPage />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </ErrorBoundary>

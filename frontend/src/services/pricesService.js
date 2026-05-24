@@ -86,6 +86,7 @@ export async function fetchGoldRates() {
       gold22k: { price: gold22k / 10, unit: 'per gram', change: 0 },
       gold10g24k: { price: gold24k, unit: 'per 10 grams', change: 0 },
       gold10g22k: { price: gold22k, unit: 'per 10 grams', change: 0 },
+      silver: { price: staticGold.silver?.price || 93.50, unit: 'per gram', change: 0 },
       source: 'local-hybrid',
       lastUpdated: hybridPrices.last_updated
     };

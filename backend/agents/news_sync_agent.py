@@ -1,6 +1,7 @@
 import os
 import json
 import feedparser
+import requests
 from datetime import datetime
 from core.config import CONFIG
 from core.database import db
@@ -8,8 +9,17 @@ from core.logger import logger
 from core.llm_provider import llm
 from agents.fact_checker import fact_checker
 from core.news_classifier import classify_article, extract_image_url
+from core.clustering import cluster_articles
 
 class NewsSyncAgent:
+    def _check_ollama_online(self):
+        try:
+            url = CONFIG.get('ollama_url') or os.getenv('OLLAMA_URL', 'http://localhost:11434')
+            resp = requests.get(url, timeout=1)
+            return resp.status_code == 200
+        except Exception:
+            return False
+
     def __init__(self):
         self.feeds_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts", "resources", "feeds.json")
         self.output_file = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend", "src", "data", "news.json"))
@@ -36,6 +46,9 @@ class NewsSyncAgent:
         logger.info("NewsSyncAgent: Starting sync cycle...")
         processed_count = 0
         articles_for_json = []
+        ollama_online = self._check_ollama_online()
+        if not ollama_online:
+            logger.info("Ollama is offline. Bypassing AI summarization.")
 
         for source, url in self.feeds.items():
             try:
@@ -66,17 +79,21 @@ class NewsSyncAgent:
 
                     # 3. AI Summarization (Using local Ollama)
                     summary = ""
-                    try:
-                        prompt = f"Summarize this news in 1 concise line for a mobile app:\nTitle: {title}\nDescription: {description}"
-                        resp = llm.generate(
-                            prompt=prompt,
-                            provider="ollama",
-                            model=CONFIG.get('model', 'qwen2.5-coder:7b'),
-                            max_tokens=100
-                        )
-                        summary = resp.get("text", "").strip()
-                    except Exception as e:
-                        logger.error(f"AI Summary failed: {e}")
+                    if ollama_online:
+                        try:
+                            prompt = f"Summarize this news in 1 concise line for a mobile app:\nTitle: {title}\nDescription: {description}"
+                            resp = llm.generate(
+                                prompt=prompt,
+                                provider="ollama",
+                                model=CONFIG.get('model', 'qwen2.5-coder:7b'),
+                                max_tokens=100,
+                                retries=0
+                            )
+                            summary = resp.get("text", "").strip()
+                        except Exception as e:
+                            logger.error(f"AI Summary failed: {e}")
+                    else:
+                        summary = description[:100] + "..." if description else ""
 
                     # 4. Save to Supabase (Attempt)
                     try:
@@ -112,12 +129,12 @@ class NewsSyncAgent:
             except Exception as e:
                 logger.error(f"Error processing source {source}: {e}")
 
-        # 5. Hybrid Sync: Export to JSON for frontend
         if articles_for_json:
             try:
                 os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
+                clustered_news = cluster_articles(articles_for_json)
                 with open(self.output_file, "w", encoding="utf-8") as f:
-                    json.dump(articles_for_json, f, indent=2, ensure_ascii=False)
+                    json.dump(clustered_news, f, indent=2, ensure_ascii=False)
                 logger.info(f"Hybrid Sync: Updated {self.output_file} with {len(articles_for_json)} items.")
             except Exception as e:
                 logger.error(f"Hybrid Sync failed: {e}")

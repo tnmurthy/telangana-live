@@ -97,7 +97,7 @@ const NewsListingPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredNews.map((news, idx) => (
             <React.Fragment key={idx}>
-              <NewsCard news={news} />
+              <NewsCard news={news} isSpotlight={idx === 0} />
               {(idx + 1) % 5 === 0 && (
                 <ProgrammaticAd />
               )}

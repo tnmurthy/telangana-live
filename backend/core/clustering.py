@@ -43,19 +43,31 @@ def jaccard_similarity(s1: str, s2: str) -> float:
         return 0.0
     return len(words1.intersection(words2)) / len(words1.union(words2))
 
-def cluster_articles(articles: list, threshold: float = 0.82, jaccard_threshold: float = 0.35) -> list:
+def cluster_articles(articles: list, threshold: float = 0.82, jaccard_threshold: float = 0.30) -> list:
     """
     Cluster articles list using semantic embeddings or Jaccard fallback.
     Updates the representative article in-place with 'other_sources' list.
     """
     clustered = []
-    # Pre-calculate embeddings to avoid redundant calls
+    
+    # Check if Ollama is online once
+    ollama_online = False
+    try:
+        resp = requests.get(OLLAMA_URL, timeout=1)
+        ollama_online = (resp.status_code == 200)
+    except Exception:
+        pass
+
+    # Pre-calculate embeddings to avoid redundant calls (only if online)
     embeddings = []
-    for art in articles:
-        # Combine title and a snippet of description for better semantic capture
-        text = f"{art.get('title', '')} {art.get('description', '')[:100]}"
-        emb = get_embedding(text)
-        embeddings.append(emb)
+    if ollama_online:
+        for art in articles:
+            # Combine title and a snippet of description for better semantic capture
+            text = f"{art.get('title', '')} {art.get('description', '')[:100]}"
+            emb = get_embedding(text)
+            embeddings.append(emb)
+    else:
+        embeddings = [None] * len(articles)
 
     for i, art in enumerate(articles):
         art["other_sources"] = art.get("other_sources", [])
@@ -87,7 +99,9 @@ def cluster_articles(articles: list, threshold: float = 0.82, jaccard_threshold:
             if not any(src.get("link") == art.get("link") for src in matched_rep["other_sources"]):
                 matched_rep["other_sources"].append({
                     "source": art.get("source", "Other Source"),
-                    "link": art.get("link", "#")
+                    "link": art.get("link", "#"),
+                    "title": art.get("title", ""),
+                    "published": art.get("published", "")
                 })
         else:
             # No match found, this article is a new representative

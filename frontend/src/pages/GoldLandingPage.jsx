@@ -13,9 +13,9 @@ export default function GoldLandingPage() {
             if (data?.gold22k) {
                 setGoldRates(prev => ({
                     ...prev,
-                    gold22k: { ...prev.gold22k, price: data.gold22k.price, change: data.gold22k.change ?? prev.gold22k.change },
-                    gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change ?? prev.gold24k.change },
-                    silver:  { ...prev.silver,  price: data.silver.price,  change: data.silver.change  ?? prev.silver.change  },
+                    gold22k: { ...prev.gold22k, price: data.gold22k?.price ?? prev.gold22k.price, change: data.gold22k?.change ?? prev.gold22k.change },
+                    gold24k: { ...prev.gold24k, price: data.gold24k?.price ?? prev.gold24k.price, change: data.gold24k?.change ?? prev.gold24k.change },
+                    silver:  { ...prev.silver,  price: data.silver?.price  ?? prev.silver.price,  change: data.silver?.change  ?? prev.silver.change  },
                     date: data.lastUpdated ? new Date(data.lastUpdated).toISOString().slice(0, 10) : prev.date,
                 }));
             }

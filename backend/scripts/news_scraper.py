@@ -15,6 +15,7 @@ except ImportError:
     fact_checker = None
 
 from core.news_classifier import classify_article, extract_image_url
+from core.clustering import cluster_articles
 
 
 # Load feeds from shared feeds.json (telangana + national only for scraper)
@@ -153,7 +154,8 @@ class NewsScraper:
             except Exception as e:
                 print(f"Error fetching from {source}: {e}")
 
-        return all_news[:50]
+        clustered = cluster_articles(all_news)
+        return clustered[:50]
 
 
 def run_scraper():
