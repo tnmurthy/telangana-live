@@ -78,19 +78,23 @@ if not SUPABASE_URL or not SUPABASE_KEY:
     print("\nℹ️  Supabase secrets not set — printing article count only.")
     print(f"  Total articles fetched: {len(articles)}")
 else:
-    headers = {
-        "apikey": SUPABASE_KEY,
-        "Authorization": f"Bearer {SUPABASE_KEY}",
-        "Content-Type": "application/json",
-        "Prefer": "resolution=merge-duplicates",
-    }
-    resp = requests.post(
-        f"{SUPABASE_URL}/rest/v1/news_articles",
-        headers=headers,
-        json=articles,
-        timeout=30,
-    )
-    print(f"\n✅ Upserted {len(articles)} articles → Supabase ({resp.status_code})")
+    try:
+        headers = {
+            "apikey": SUPABASE_KEY,
+            "Authorization": f"Bearer {SUPABASE_KEY}",
+            "Content-Type": "application/json",
+            "Prefer": "resolution=merge-duplicates",
+        }
+        resp = requests.post(
+            f"{SUPABASE_URL}/rest/v1/news_articles",
+            headers=headers,
+            json=articles,
+            timeout=30,
+        )
+        resp.raise_for_status()
+        print(f"\n✅ Upserted {len(articles)} articles → Supabase ({resp.status_code})")
+    except Exception as e:
+        print(f"\n⚠️ Failed to upsert articles to Supabase: {e}. Falling back to local storage only.")
 
 # Write to local news.json for static frontend consumption
 try:

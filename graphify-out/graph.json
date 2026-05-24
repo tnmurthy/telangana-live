@@ -1637,9 +1637,9 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\news_classifier.py",
       "source_location": "L190",
-      "id": "news_classifier_rationale_190",
       "community": 55,
-      "norm_label": "maps high-level domain entities to database type/id keys.     returns (entity_ty"
+      "norm_label": "maps high-level domain entities to database type/id keys.     returns (entity_ty",
+      "id": "news_classifier_rationale_190"
     },
     {
       "label": "data_engine.py",
