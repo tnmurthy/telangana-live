@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const MOCK_ADS = [
     {
@@ -27,8 +28,18 @@ const MOCK_ADS = [
 export default function ProgrammaticAd({ className = "" }) {
     const [loading, setLoading] = useState(true);
     const [ad, setAd] = useState(null);
+    const location = useLocation();
+
+    // Exclude ads on critical civic and emergency routes
+    const isCriticalRoute = [
+        '/emergency',
+        '/weather',
+        '/health',
+        '/reservoirs'
+    ].some(route => location.pathname.startsWith(route));
 
     useEffect(() => {
+        if (isCriticalRoute) return;
         const randomAd = MOCK_ADS[Math.floor(Math.random() * MOCK_ADS.length)];
         setAd(randomAd);
 
@@ -37,7 +48,11 @@ export default function ProgrammaticAd({ className = "" }) {
         }, 800);
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [isCriticalRoute]);
+
+    if (isCriticalRoute) {
+        return null;
+    }
 
     return (
         <div className={`glass-card relative overflow-hidden flex flex-col justify-between p-5 min-h-[200px] border border-white/[0.08] rounded-2xl bg-white/[0.02] backdrop-blur-md transition-all duration-300 ${className}`}>

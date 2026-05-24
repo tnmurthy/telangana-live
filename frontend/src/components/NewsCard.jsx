@@ -93,11 +93,7 @@ const NewsCard = ({ news, isSpotlight = false }) => {
       <article
         onClick={() => {
           recordRead();
-          if (link) {
-            window.open(link, '_blank', 'noopener,noreferrer');
-          } else {
-            setModalOpen(true);
-          }
+          setModalOpen(true);
         }}
         className={`liquid-glass liquid-glass-hover group relative flex overflow-hidden cursor-pointer ${
           isSpotlight 

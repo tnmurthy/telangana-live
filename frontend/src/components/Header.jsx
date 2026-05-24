@@ -105,6 +105,7 @@ export default function Header() {
 
                         {/* Theme toggle */}
                         <button
+                            id="theme-toggle-btn"
                             onClick={toggleTheme}
                             className="p-2 hover:bg-white/5 rounded-xl text-text-muted hover:text-white transition-all duration-200"
                             title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}

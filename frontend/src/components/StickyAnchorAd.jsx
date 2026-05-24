@@ -8,9 +8,9 @@ export default function StickyAnchorAd() {
 
     // Exclude ads on critical civic and emergency routes
     const isCriticalRoute = [
-        '/emergency-contacts',
+        '/emergency',
         '/weather',
-        '/health/basthi-dawakhana',
+        '/health',
         '/reservoirs'
     ].some(route => location.pathname.startsWith(route));
 

@@ -100,3 +100,161 @@ def extract_image_url(entry):
                 return img_match.group(1)
 
     return ""
+
+def extract_entities(title: str, description: str) -> dict:
+    """
+    Extracts civic entities from news text.
+    Returns a dict with 'domain_entities' and 'locations'.
+    """
+    text = f"{title or ''} {description or ''}".lower()
+    entities = {
+        "domain_entities": [],
+        "locations": []
+    }
+    
+    # Deterministic mapping keywords
+    mappings = {
+        # Transit
+        "Red Line": ["red line", "miyapur", "lb nagar", "ameerpet"],
+        "Blue Line": ["blue line", "nagole", "raidurg", "hitec city"],
+        
+        # Reservoirs
+        "Nagarjuna Sagar": ["nagarjuna sagar", "nssp", "krishna river"],
+        "Srisailam": ["srisailam", "nagarkurnool"],
+        
+        # Financial
+        "Gold": ["gold rate", "gold price", "24k gold", "22k gold", "gold jewellery"],
+        "Fuel": ["petrol", "diesel", "fuel hike", "fuel tax"],
+        
+        # Mandi Commodities
+        "Red Chillies": ["red chillies", "chilli price", "chillies rate", "mirchi price", "chili price"],
+        "Maize": ["maize rate", "maize price", "maize crop", "corn rate", "corn price", "makka"],
+        "Paddy (Common)": ["paddy price", "paddy procurement", "paddy rate", "common paddy"],
+        "Cotton": ["cotton price", "cotton rate", "cotton procurement", "kapas"],
+        
+        # Basthi Dawakhanas
+        "Basthi Dawakhana Kushaiguda": ["basthi dawakhana kushaiguda", "kushaiguda dawakhana", "kushaiguda basti dawakhana"],
+        "Basthi Dawakhana Vanasthalipuram": ["basthi dawakhana vanasthalipuram", "vanasthalipuram dawakhana", "vanasthalipuram basti dawakhana"],
+        "Basthi Dawakhana Kondapur": ["basthi dawakhana kondapur", "kondapur dawakhana", "kondapur basti dawakhana"],
+        "Basthi Dawakhana Madhapur": ["basthi dawakhana madhapur", "madhapur dawakhana", "madhapur basti dawakhana"],
+        "Basthi Dawakhana Charminar": ["basthi dawakhana charminar", "charminar dawakhana", "charminar basti dawakhana"],
+        "Basthi Dawakhana Musheerabad": ["basthi dawakhana musheerabad", "musheerabad dawakhana", "musheerabad basti dawakhana"],
+        "Basthi Dawakhana Uppal": ["basthi dawakhana uppal", "uppal dawakhana", "uppal basti dawakhana"],
+        "Basthi Dawakhana Kukatpally": ["basthi dawakhana kukatpally", "kukatpally dawakhana", "kukatpally basti dawakhana"],
+        "Basthi Dawakhana Shamshabad": ["basthi dawakhana shamshabad", "shamshabad dawakhana", "shamshabad basti dawakhana"],
+        "Basthi Dawakhana LB Nagar": ["basthi dawakhana lb nagar", "lb nagar dawakhana", "lb nagar basti dawakhana"],
+        
+        # Districts
+        "Adilabad District": ["adilabad"],
+        "Bhadradri Kothagudem District": ["bhadradri", "kothagudem"],
+        "Hyderabad District": ["hyderabad", "secunderabad"],
+        "Jagtial District": ["jagtial"],
+        "Jangaon District": ["jangaon"],
+        "Jayashankar Bhupalpally District": ["bhupalpally", "jayashankar"],
+        "Jogulamba Gadwal District": ["jogulamba", "gadwal"],
+        "Kamareddy District": ["kamareddy"],
+        "Karimnagar District": ["karimnagar"],
+        "Khammam District": ["khammam"],
+        "Kumuram Bheem Asifabad District": ["kumuram bheem", "asifabad"],
+        "Mahabubabad District": ["mahabubabad"],
+        "Mahbubnagar District": ["mahbubnagar"],
+        "Mancherial District": ["mancherial"],
+        "Medak District": ["medak"],
+        "Medchal-Malkajgiri District": ["medchal", "malkajgiri"],
+        "Mulugu District": ["mulugu"],
+        "Nagarkurnool District": ["nagarkurnool"],
+        "Nalgonda District": ["nalgonda"],
+        "Narayanpet District": ["narayanpet"],
+        "Nirmal District": ["nirmal"],
+        "Nizamabad District": ["nizamabad"],
+        "Peddapalli District": ["peddapalli"],
+        "Rajanna Sircilla District": ["sircilla", "rajanna"],
+        "Rangareddy District": ["rangareddy"],
+        "Sangareddy District": ["sangareddy"],
+        "Siddipet District": ["siddipet"],
+        "Suryapet District": ["suryapet"],
+        "Vikarabad District": ["vikarabad"],
+        "Wanaparthy District": ["wanaparthy"],
+        "Warangal District": ["warangal"],
+        "Yadadri Bhuvanagiri District": ["yadadri", "bhuvanagiri"],
+        "Hanumakonda District": ["hanumakonda", "hanamkonda"]
+    }
+    
+    for entity, keywords in mappings.items():
+        if any(kw in text for kw in keywords):
+            entities["domain_entities"].append(entity)
+            
+    return entities
+
+def map_domain_to_civic_schema(domain_entity: str):
+    """
+    Maps high-level domain entities to database type/ID keys.
+    Returns (entity_type, entity_id).
+    """
+    mapping = {
+        # Transit
+        "Red Line": ("metro_line", "Red Line"),
+        "Blue Line": ("metro_line", "Blue Line"),
+        
+        # Reservoirs
+        "Nagarjuna Sagar": ("reservoir", "nagarjuna-sagar"),
+        "Srisailam": ("reservoir", "srisailam"),
+        
+        # Financial
+        "Gold": ("gold_rate", "gold"),
+        "Fuel": ("fuel_price", "petrol"),
+        
+        # Mandi Commodities
+        "Red Chillies": ("mandi_price", "Red Chillies"),
+        "Maize": ("mandi_price", "Maize"),
+        "Paddy (Common)": ("mandi_price", "Paddy (Common)"),
+        "Cotton": ("mandi_price", "Cotton"),
+        
+        # Basthi Dawakhanas
+        "Basthi Dawakhana Kushaiguda": ("basthi_dawakhana", "Basthi Dawakhana Kushaiguda"),
+        "Basthi Dawakhana Vanasthalipuram": ("basthi_dawakhana", "Basthi Dawakhana Vanasthalipuram"),
+        "Basthi Dawakhana Kondapur": ("basthi_dawakhana", "Basthi Dawakhana Kondapur"),
+        "Basthi Dawakhana Madhapur": ("basthi_dawakhana", "Basthi Dawakhana Madhapur"),
+        "Basthi Dawakhana Charminar": ("basthi_dawakhana", "Basthi Dawakhana Charminar"),
+        "Basthi Dawakhana Musheerabad": ("basthi_dawakhana", "Basthi Dawakhana Musheerabad"),
+        "Basthi Dawakhana Uppal": ("basthi_dawakhana", "Basthi Dawakhana Uppal"),
+        "Basthi Dawakhana Kukatpally": ("basthi_dawakhana", "Basthi Dawakhana Kukatpally"),
+        "Basthi Dawakhana Shamshabad": ("basthi_dawakhana", "Basthi Dawakhana Shamshabad"),
+        "Basthi Dawakhana LB Nagar": ("basthi_dawakhana", "Basthi Dawakhana LB Nagar"),
+        
+        # Districts
+        "Adilabad District": ("district", "Adilabad"),
+        "Bhadradri Kothagudem District": ("district", "Bhadradri Kothagudem"),
+        "Hyderabad District": ("district", "Hyderabad"),
+        "Jagtial District": ("district", "Jagtial"),
+        "Jangaon District": ("district", "Jangaon"),
+        "Jayashankar Bhupalpally District": ("district", "Jayashankar Bhupalpally"),
+        "Jogulamba Gadwal District": ("district", "Jogulamba Gadwal"),
+        "Kamareddy District": ("district", "Kamareddy"),
+        "Karimnagar District": ("district", "Karimnagar"),
+        "Khammam District": ("district", "Khammam"),
+        "Kumuram Bheem Asifabad District": ("district", "Kumuram Bheem Asifabad"),
+        "Mahabubabad District": ("district", "Mahabubabad"),
+        "Mahbubnagar District": ("district", "Mahbubnagar"),
+        "Mancherial District": ("district", "Mancherial"),
+        "Medak District": ("district", "Medak"),
+        "Medchal-Malkajgiri District": ("district", "Medchal-Malkajgiri"),
+        "Mulugu District": ("district", "Mulugu"),
+        "Nagarkurnool District": ("district", "Nagarkurnool"),
+        "Nalgonda District": ("district", "Nalgonda"),
+        "Narayanpet District": ("district", "Narayanpet"),
+        "Nirmal District": ("district", "Nirmal"),
+        "Nizamabad District": ("district", "Nizamabad"),
+        "Peddapalli District": ("district", "Peddapalli"),
+        "Rajanna Sircilla District": ("district", "Rajanna Sircilla"),
+        "Rangareddy District": ("district", "Rangareddy"),
+        "Sangareddy District": ("district", "Sangareddy"),
+        "Siddipet District": ("district", "Siddipet"),
+        "Suryapet District": ("district", "Suryapet"),
+        "Vikarabad District": ("district", "Vikarabad"),
+        "Wanaparthy District": ("district", "Wanaparthy"),
+        "Warangal District": ("district", "Warangal"),
+        "Yadadri Bhuvanagiri District": ("district", "Yadadri Bhuvanagiri"),
+        "Hanumakonda District": ("district", "Hanumakonda")
+    }
+    return mapping.get(domain_entity, (None, None))

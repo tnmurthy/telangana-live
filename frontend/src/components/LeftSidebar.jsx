@@ -47,8 +47,8 @@ const LeftSidebar = () => {
           <NavItem to="/hyderabad" icon={<Icons.Building size="sm" />} label="Hyderabad" />
           <NavItem to="/cyberabad" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm1.5-12h7.5v7.5h-7.5V7.5Z" /></svg>} label="Cyberabad" />
           <NavItem to="/malkajgiri" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>} label="Malkajgiri" />
-          <NavItem to="/warangal" icon={<span className="text-base flex items-center justify-center">🏰</span>} label="Warangal" />
-          <NavItem to="/karimnagar" icon={<span className="text-base flex items-center justify-center">🏢</span>} label="Karimnagar" />
+          <NavItem to="/warangal" icon={<Icons.Heritage size="sm" />} label="Warangal" />
+          <NavItem to="/karimnagar" icon={<Icons.Building size="sm" />} label="Karimnagar" />
         </SidebarSection>
 
         <div className="divider mx-3" />
@@ -73,25 +73,25 @@ const LeftSidebar = () => {
 
         {/* City Services */}
         <SidebarSection title="City Services">
-          <NavItem to="/emergency-contacts" icon={<span className="text-base">🆘</span>} label="Emergency Contacts" />
-          <NavItem to="/water-supply" icon={<span className="text-base">💧</span>} label="Water Schedule" />
-          <NavItem to="/ration-pds" icon={<span className="text-base">🌾</span>} label="Ration / PDS" />
-          <NavItem to="/jobs" icon={<span className="text-base">💼</span>} label="Jobs Board" />
-          <NavItem to="/events" icon={<span className="text-base">🎉</span>} label="Holidays" />
-          <NavItem to="/budget" icon={<span className="text-base">📊</span>} label="Budget Tracker" />
-          <NavItem to="/politicians" icon={<span className="text-base">🏛️</span>} label="Politicians" />
-          <NavItem to="/schemes" icon={<span className="text-base">📋</span>} label="Gov Schemes" />
-          <NavItem to="/property-tax" icon={<span className="text-base">🏠</span>} label="Property Tax" />
+          <NavItem to="/emergency-contacts" icon={<Icons.Emergency size="sm" />} label="Emergency Contacts" />
+          <NavItem to="/water-supply" icon={<Icons.WaterDrop size="sm" />} label="Water Schedule" />
+          <NavItem to="/ration-pds" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21V9.75M3.284 14.253A9.004 9.004 0 0 1 12 3c2.208 0 4.256.793 5.86 2.114M18.75 8.25c.002-.224-.005-.45-.02-.676M4.5 12h15" /></svg>} label="Ration / PDS" />
+          <NavItem to="/jobs" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 .621-.504 1.125-1.125 1.125H4.875A1.125 1.125 0 0 1 3.75 18.4V14.15m16.5 0c0-1.224-1.008-2.25-2.25-2.25H6c-1.242 0-2.25 1.026-2.25 2.25m16.5 0V8.625c0-.621-.504-1.125-1.125-1.125H4.875c-.621 0-1.125.504-1.125 1.125v5.525M8.25 21V8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125V21" /></svg>} label="Jobs Board" />
+          <NavItem to="/events" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>} label="Holidays" />
+          <NavItem to="/budget" icon={<Icons.TrendingUp size="sm" />} label="Budget Tracker" />
+          <NavItem to="/politicians" icon={<Icons.Building size="sm" />} label="Politicians" />
+          <NavItem to="/schemes" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2Z" /></svg>} label="Gov Schemes" />
+          <NavItem to="/property-tax" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" /></svg>} label="Property Tax" />
         </SidebarSection>
 
         <div className="divider mx-3" />
 
         {/* Nature & Environment */}
         <SidebarSection title="Environment">
-          <NavItem to="/weather/forecast" icon={<span className="text-base">🌤️</span>} label="Weather Forecast" badge="30-Day" />
-          <NavItem to="/reservoirs" icon={<span className="text-base">💧</span>} label="Reservoir Levels" />
-          <NavItem to="/parks" icon={<span className="text-base">🌳</span>} label="Parks & Crowds" />
-          <NavItem to="/farmers" icon={<span className="text-base">🌾</span>} label="Farmer Portal" />
+          <NavItem to="/weather/forecast" icon={<Icons.Cloud size="sm" />} label="Weather Forecast" badge="30-Day" />
+          <NavItem to="/reservoirs" icon={<Icons.WaterDrop size="sm" />} label="Reservoir Levels" />
+          <NavItem to="/parks" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21V10.5m0 0a3 3 0 1 0-3-3M12 10.5a3 3 0 1 1 3-3M9.75 15.75a3 3 0 1 0-6 0c0 .878.377 1.668.98 2.213M3.75 15.75H12m0 0h8.25m0 0a3 3 0 1 0-6 0c0 .878.377 1.668.98 2.213" /></svg>} label="Parks & Crowds" />
+          <NavItem to="/farmers" icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18M12 3c-3 3-3 8 0 11M12 7c3 2 3 6 0 9" /></svg>} label="Farmer Portal" />
         </SidebarSection>
       </nav>
     </aside>

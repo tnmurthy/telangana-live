@@ -12,6 +12,7 @@ import NewsCard from '../components/NewsCard';
 import newsData from '../data/news.json';
 import PowerTariffCard from '../components/PowerTariffCard';
 import ServicesDirectory from '../components/ServicesDirectory';
+import NotFound from './NotFound';
 
 const regionMetadata = {
     hyderabad: {
@@ -48,6 +49,11 @@ const regionMetadata = {
 
 export default function SubRegionPage() {
     const { region } = useParams();
+
+    if (region && !regionMetadata[region]) {
+        return <NotFound />;
+    }
+
     const meta = regionMetadata[region] || regionMetadata.hyderabad;
     const regionPartners = partners[region] || [];
 
@@ -89,9 +95,39 @@ export default function SubRegionPage() {
     useJsonLd(localAreaSchema, `area-subregion-${region || 'hyderabad'}`);
 
     const regionNews = useMemo(() => {
-        return newsData.filter(item => 
-            (item.region || '').toLowerCase() === meta.district.toLowerCase()
-        ).slice(0, 6);
+        const district = meta.district.toLowerCase();
+        
+        // Define localized keywords for fallback filtering
+        const keywordsMap = {
+            hyderabad: ['hyderabad', 'charminar', 'mehdipatnam', 'secunderabad', 'old city', 'ghmc'],
+            cyberabad: ['cyberabad', 'hitech city', 'gachibowli', 'madhapur', 'kondapur', 'knowledge city', 'it corridor'],
+            malkajgiri: ['malkajgiri', 'alwal', 'kukatpally', 'kapra', 'uppal', 'quthbullapur', 'medchal'],
+            warangal: ['warangal', 'hanmakonda', 'kazipet', 'kakatiya', 'gwmc', 'tri-cities'],
+            karimnagar: ['karimnagar', 'smart city', 'granite']
+        };
+        const keywords = keywordsMap[district] || [district];
+
+        // 1. Filter articles explicitly matching region name OR containing key keywords
+        let matched = newsData.filter(item => {
+            const itemRegion = (item.region || '').toLowerCase();
+            const itemTitle = (item.title || '').toLowerCase();
+            const itemDesc = (item.description || '').toLowerCase();
+            
+            if (itemRegion === district) return true;
+            return keywords.some(kw => itemTitle.includes(kw) || itemDesc.includes(kw));
+        });
+
+        // 2. Pad with general Telangana articles if we have less than 4 items
+        if (matched.length < 4) {
+            const matchedLinks = new Set(matched.map(m => m.link));
+            const generalArticles = newsData.filter(item => {
+                if (matchedLinks.has(item.link)) return false;
+                return (item.region || '').toLowerCase() === 'telangana';
+            });
+            matched = [...matched, ...generalArticles];
+        }
+
+        return matched.slice(0, 6);
     }, [meta.district]);
 
     return (

@@ -100,10 +100,36 @@ class WaterSyncAgent:
         logger.info("WaterSyncAgent cycle started.")
         data = self.sync_reservoirs()
         
+        # Enrich reservoir metrics with dynamic Supabase news correlations
+        for res in data.get("reservoirs", []):
+            correlated_news = []
+            try:
+                correlations = db.get_correlations_by_entity("reservoir", res["id"])
+                for corr in correlations:
+                    article = db.get_content_by_id(corr["content_id"])
+                    if article:
+                        # Extract source from generated_code
+                        source = "Local News"
+                        if article.get("generated_code"):
+                            try:
+                                gen_data = json.loads(article["generated_code"])
+                                source = gen_data.get("source", source)
+                            except Exception:
+                                pass
+                        correlated_news.append({
+                            "article_id": article["id"],
+                            "title": article["title"],
+                            "source": source,
+                            "link": article["source_url"] or ""
+                        })
+            except Exception as e:
+                logger.warning(f"Failed to fetch correlations for reservoir {res['id']}: {e}")
+            res["correlated_news"] = correlated_news
+        
         try:
             os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
             with open(self.output_file, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=2)
+                json.dump(data, f, indent=2, ensure_ascii=False)
             logger.info(f"Hybrid Sync: Updated {self.output_file}")
             
             # Log to DB

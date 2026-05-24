@@ -40,15 +40,21 @@ export async function fetchFuelPrices(city = 'hyderabad') {
     };
   }
 
-  // 2. Try Redis...
+  // 2. Try Redis
+  try {
+    const redisData = await redisService.get(key);
+    if (redisData) return { ...redisData, source: 'redis' };
+  } catch (err) {
+    console.warn('Redis fetch error for fuel:', err.message);
+  }
 
-  // 2. Try MemCache
+  // 3. Try MemCache
   const memKey = `fuel-${city}`;
   const cached = getCached(memKey);
   if (cached) return cached;
 
   try {
-    // 3. Try Vercel API (Legacy Scraper)
+    // 4. Try Vercel API (Legacy Scraper)
     const res = await fetch(`${API_BASE}/api/fuel-prices?city=${city}`, {
       signal: AbortSignal.timeout(8000)
     });
@@ -58,7 +64,7 @@ export async function fetchFuelPrices(city = 'hyderabad') {
     return data;
   } catch (err) {
     console.warn('fetchFuelPrices fallback:', err.message);
-    // 4. Return static data
+    // 5. Return static data
     return {
       petrol: { price: staticFuel.petrol?.price || 102.68, unit: 'per litre', change: 0 },
       diesel: { price: staticFuel.diesel?.price || 88.73,  unit: 'per litre', change: 0 },
@@ -92,15 +98,21 @@ export async function fetchGoldRates() {
     };
   }
 
-  // 2. Try Redis...
+  // 2. Try Redis
+  try {
+    const redisData = await redisService.get(key);
+    if (redisData) return { ...redisData, source: 'redis' };
+  } catch (err) {
+    console.warn('Redis fetch error for gold:', err.message);
+  }
 
-  // 2. Try MemCache
+  // 3. Try MemCache
   const memKey = 'gold-hyderabad';
   const cached = getCached(memKey);
   if (cached) return cached;
 
   try {
-    // 3. Try Vercel API
+    // 4. Try Vercel API
     const res = await fetch(`${API_BASE}/api/gold-rates`, {
       signal: AbortSignal.timeout(8000)
     });
@@ -128,7 +140,22 @@ export async function fetchGoldRates() {
  * @returns {Promise<Array>} list of alert objects
  */
 export async function fetchPowerAlerts(zone = 'all') {
-  // ... existing code ...
+  const key = `alerts-${zone}`;
+  const cached = getCached(key);
+  if (cached) return cached;
+
+  try {
+    const res = await fetch(`${API_BASE}/api/power-alerts?zone=${zone}`, {
+      signal: AbortSignal.timeout(10000)
+    });
+    if (!res.ok) throw new Error(`API returned ${res.status}`);
+    const data = await res.json();
+    setCache(key, data.alerts || []);
+    return data.alerts || [];
+  } catch (err) {
+    console.warn('fetchPowerAlerts fallback:', err.message);
+    return [];
+  }
 }
 
 /**

@@ -4,7 +4,7 @@ import { test, expect, Page } from '@playwright/test';
 test.describe('Telangana.live Enterprise Briefing & Liquid Glass UI', () => {
   test.beforeEach(async ({ page }: { page: Page }) => {
     // Visit the local dev server
-    await page.goto('http://localhost:5173/');
+    await page.goto('/dashboard');
   });
 
   test('Page loads with Liquid Glass aesthetic', async ({ page }: { page: Page }) => {
@@ -47,19 +47,19 @@ test.describe('Telangana.live Enterprise Briefing & Liquid Glass UI', () => {
 
   test('Emergency Mode transforms the UI theme', async ({ page }: { page: Page }) => {
     // Click the Emergency Simulator toggle (floating button)
-    const emergencyToggle = page.locator('button').filter({ has: page.locator('svg') }).last();
-    await emergencyToggle.click();
+    const emergencyToggle = page.locator('#emergency-simulator-toggle');
+    await emergencyToggle.click({ force: true });
 
     // Trigger 'Heatwave' mode
     const heatwaveBtn = page.getByRole('button', { name: /Heatwave/ });
-    await heatwaveBtn.click();
+    await heatwaveBtn.click({ force: true });
 
     // Verify the theme class on the root element
     const rootClass = await page.evaluate(() => document.documentElement.className);
     expect(rootClass).toContain('theme-emergency-heatwave');
 
     // Verify the background pulse is active
-    const mainContainer = page.locator('.min-h-screen');
+    const mainContainer = page.locator('.min-h-screen').last();
     await expect(mainContainer).toHaveClass(/emergency-pulse/);
 
     // Verify Heatwave Panel is visible

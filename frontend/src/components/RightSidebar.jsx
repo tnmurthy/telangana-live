@@ -5,6 +5,8 @@ import { Icons } from './Icons';
 import { goldRates as staticGold } from '../data/goldRates';
 import { fuelPrices as staticFuel } from '../data/fuelPrices';
 import ProgrammaticAd from './ProgrammaticAd';
+import { useAppContext } from '../context/AppContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
@@ -173,23 +175,39 @@ const TransportWidget = () => (
 );
 
 
-const TrendingWidget = () => (
-  <div className="widget-card">
-    <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted mb-3">Trending in TG</h4>
-    <ul className="space-y-2">
-      {[
-        { tag: '#HydMetro', count: '12K posts' },
-        { tag: '#RTCFreeBus', count: '8.4K posts' },
-        { tag: '#GHMCUpdates', count: '5.1K posts' },
-      ].map(item => (
-        <li key={item.tag} className="flex justify-between items-center group cursor-pointer">
-          <span className="text-xs text-telangana-green font-bold group-hover:underline underline-offset-2 transition-colors">{item.tag}</span>
-          <span className="text-[9px] text-text-muted/60 font-medium">{item.count}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+const TrendingWidget = () => {
+  const { setSearchQuery } = useAppContext();
+  const navigate = useNavigate();
+
+  const trendingItems = [
+    { tag: '#HydMetro', count: '12K posts', query: 'Metro' },
+    { tag: '#RTCFreeBus', count: '8.4K posts', query: 'Bus' },
+    { tag: '#GHMCUpdates', count: '5.1K posts', query: 'GHMC' },
+  ];
+
+  const handleHashtagClick = (query) => {
+    setSearchQuery(query);
+    navigate('/search');
+  };
+
+  return (
+    <div className="widget-card">
+      <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted mb-3">Trending in TG</h4>
+      <ul className="space-y-2">
+        {trendingItems.map(item => (
+          <li 
+            key={item.tag} 
+            onClick={() => handleHashtagClick(item.query)}
+            className="flex justify-between items-center group cursor-pointer"
+          >
+            <span className="text-xs text-telangana-green font-bold group-hover:underline underline-offset-2 transition-colors">{item.tag}</span>
+            <span className="text-[9px] text-text-muted/60 font-medium">{item.count}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 
 const RightSidebar = () => {

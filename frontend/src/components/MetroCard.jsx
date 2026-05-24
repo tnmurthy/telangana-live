@@ -1,4 +1,5 @@
 import { metroData, mmtsData } from '../data/transportData';
+import transitStatus from '../data/transit_status.json';
 import ShareWhatsApp from './ShareWhatsApp';
 import { Icons } from './Icons';
 
@@ -42,20 +43,39 @@ export default function MetroCard() {
 
             {/* Metro Lines */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-                {metroData.lines.map((line) => (
-                    <div key={line.name} className="glass-card p-4 hover-lift-blue">
-                        <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center gap-2">
-                                <span className="w-3 h-3 rounded-full" style={{ backgroundColor: line.color }}></span>
-                                <span className="text-sm font-bold text-white">{line.name}</span>
+                {metroData.lines.map((line) => {
+                    // Filter alerts matching this metro line from transitStatus
+                    const lineAlerts = transitStatus?.alerts?.filter(alert => 
+                        alert.title.toLowerCase().includes(line.name.toLowerCase()) ||
+                        alert.description.toLowerCase().includes(line.name.toLowerCase())
+                    ) || [];
+
+                    return (
+                        <div key={line.name} className="glass-card p-4 hover-lift-blue flex flex-col justify-between">
+                            <div>
+                                <div className="flex items-center justify-between mb-2">
+                                    <div className="flex items-center gap-2">
+                                        <span className="w-3 h-3 rounded-full" style={{ backgroundColor: line.color }}></span>
+                                        <span className="text-sm font-bold text-white">{line.name}</span>
+                                    </div>
+                                    <ShareWhatsApp type="metro" data={{ line: line.name, status: 'Operational', crowdLabel: line.crowdLabel }} />
+                                </div>
+                                <p className="text-xs text-text-secondary mb-1">{line.route}</p>
+                                <CrowdMeter level={line.crowdLevel} label={line.crowdLabel} color={crowdColors(line.crowdLevel)} />
+                                <p className="text-[10px] text-text-muted mt-2">Peak: {line.peakHours}</p>
                             </div>
-                            <ShareWhatsApp type="metro" data={{ line: line.name, status: 'Operational', crowdLabel: line.crowdLabel }} />
+                            {lineAlerts.map((alert, idx) => (
+                                <div key={idx} className="mt-3 p-2 rounded-lg bg-orange-500/10 border border-orange-500/25 text-[10px] text-orange-400 flex items-start gap-1.5 animate-pulse-live">
+                                    <span className="shrink-0">⚠️</span>
+                                    <div>
+                                        <p className="font-bold text-white leading-normal">{alert.title}</p>
+                                        <p className="text-text-muted leading-relaxed mt-0.5">{alert.description}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                        <p className="text-xs text-text-secondary mb-1">{line.route}</p>
-                        <CrowdMeter level={line.crowdLevel} label={line.crowdLabel} color={crowdColors(line.crowdLevel)} />
-                        <p className="text-[10px] text-text-muted mt-2">Peak: {line.peakHours}</p>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
 

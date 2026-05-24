@@ -86,6 +86,27 @@ function ReservoirCard({ reservoir }) {
                             <p className="text-xs text-orange-300">⚠️ {reservoir.alertMessage}</p>
                         </div>
                     )}
+                    {reservoir.correlated_news && reservoir.correlated_news.length > 0 && (
+                        <div className="mt-2.5 pt-2.5 border-t border-white/[0.06] space-y-2" onClick={e => e.stopPropagation()}>
+                            <p className="text-[10px] text-text-muted font-semibold uppercase tracking-wider">Related News Coverage</p>
+                            <div className="space-y-1.5">
+                                {reservoir.correlated_news.map((item, idx) => (
+                                    <a
+                                        key={idx}
+                                        href={item.link || '#'}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block p-2 rounded bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.06] transition-colors"
+                                    >
+                                        <div className="flex justify-between items-center text-[10px]">
+                                            <span className="text-white font-medium truncate flex-1 pr-2">{item.title}</span>
+                                            <span className="text-telangana-green font-bold text-[9px] shrink-0 uppercase">{item.source}</span>
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                     <p className="text-[10px] text-text-muted">Full reservoir level: {reservoir.fullLevelFt} ft</p>
                 </div>
             )}

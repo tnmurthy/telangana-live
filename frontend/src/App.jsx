@@ -112,6 +112,7 @@ function AppContent() {
               <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
               <Route path="/ai-pulse" element={<AIPulsePage />} />
               <Route path="/emergency-contacts" element={<EmergencyContactsPage />} />
+              <Route path="/emergency" element={<EmergencyContactsPage />} />
               <Route path="/water-supply" element={<WaterSupplyPage />} />
               <Route path="/ration-pds" element={<RationPDSPage />} />
               <Route path="/jobs" element={<JobBoardPage />} />
@@ -123,6 +124,7 @@ function AppContent() {
               <Route path="/report" element={<ReportingLandingPage />} />
               <Route path="/search" element={<SearchPage />} />
               <Route path="/weather/forecast" element={<WeatherForecastPage />} />
+              <Route path="/weather" element={<WeatherForecastPage />} />
               <Route path="/reservoirs" element={<ReservoirsPage />} />
               <Route path="/parks" element={<ParksPage />} />
               <Route path="/farmers" element={<FarmerPage />} />

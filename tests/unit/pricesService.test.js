@@ -1,5 +1,9 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 
+vi.mock('../../src/data/prices.json', () => ({
+  default: {}
+}));
+
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 function mockFetchSuccess(payload) {

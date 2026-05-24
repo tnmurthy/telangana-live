@@ -25,6 +25,8 @@ describe('redisService', () => {
 
   beforeEach(async () => {
     // Reset module registry so each test gets a fresh instance
+    vi.stubEnv('VITE_UPSTASH_REDIS_REST_URL', '');
+    vi.stubEnv('VITE_UPSTASH_REDIS_REST_TOKEN', '');
     vi.resetModules();
     redisService = (await import('../../src/services/redisService.js')).redisService;
   });

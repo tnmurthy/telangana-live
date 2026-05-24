@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-05T19:24:21Z",
+  "lastUpdated": "2026-05-24T18:07:43Z",
   "reservoirs": [
     {
       "id": "nagarjuna-sagar",
@@ -17,7 +17,8 @@
       "currentLevelTMC": 182.4,
       "inflow": 4200,
       "outflow": 6500,
-      "inflowUnit": "cusecs"
+      "inflowUnit": "cusecs",
+      "correlated_news": []
     },
     {
       "id": "srisailam",
@@ -35,7 +36,8 @@
       "inflow": 2100,
       "outflow": 1500,
       "inflowUnit": "cusecs",
-      "alertMessage": "Low storage level. Power generation restricted."
+      "alertMessage": "Low storage level. Power generation restricted.",
+      "correlated_news": []
     },
     {
       "id": "sriram-sagar",
@@ -52,7 +54,8 @@
       "currentLevelTMC": 42.1,
       "inflow": 1200,
       "outflow": 500,
-      "inflowUnit": "cusecs"
+      "inflowUnit": "cusecs",
+      "correlated_news": []
     },
     {
       "id": "osman-sagar",
@@ -68,7 +71,8 @@
       "currentLevelTMC": 2.1,
       "inflow": 0,
       "outflow": 25,
-      "inflowUnit": "cusecs"
+      "inflowUnit": "cusecs",
+      "correlated_news": []
     },
     {
       "id": "himayat-sagar",
@@ -84,7 +88,8 @@
       "currentLevelTMC": 1.4,
       "inflow": 0,
       "outflow": 15,
-      "inflowUnit": "cusecs"
+      "inflowUnit": "cusecs",
+      "correlated_news": []
     }
   ]
 }

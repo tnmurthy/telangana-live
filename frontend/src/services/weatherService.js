@@ -13,21 +13,29 @@ const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
  * Falls back to mock data if no API key or on error.
  */
 export async function fetchWeather(districtName) {
+    // Map custom/virtual regions to official meteorological districts
+    let searchName = districtName;
+    if (districtName === 'Cyberabad') {
+        searchName = 'Hyderabad';
+    } else if (districtName === 'Malkajgiri') {
+        searchName = 'Medchal-Malkajgiri';
+    }
+
     // No key → graceful fallback to mock
     if (!API_KEY) {
-        return { data: mockWeather[districtName], source: 'mock' };
+        return { data: mockWeather[searchName], source: 'mock' };
     }
 
     // Check cache
-    const cacheKey = districtName;
+    const cacheKey = searchName;
     const cached = cache.get(cacheKey);
     if (cached && Date.now() - cached.timestamp < CACHE_TTL) {
         return { data: cached.data, source: 'cache' };
     }
 
-    const coords = districtCoords[districtName];
+    const coords = districtCoords[searchName];
     if (!coords) {
-        return { data: mockWeather[districtName], source: 'mock' };
+        return { data: mockWeather[searchName], source: 'mock' };
     }
 
     try {
@@ -92,7 +100,7 @@ export async function fetchWeather(districtName) {
 
         return { data, source: 'live' };
     } catch (err) {
-        console.warn(`[WeatherService] Failed for ${districtName}, using mock:`, err.message);
-        return { data: mockWeather[districtName], source: 'mock' };
+        console.warn(`[WeatherService] Failed for ${searchName}, using mock:`, err.message);
+        return { data: mockWeather[searchName], source: 'mock' };
     }
 }

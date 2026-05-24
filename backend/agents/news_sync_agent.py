@@ -8,7 +8,7 @@ from core.database import db
 from core.logger import logger
 from core.llm_provider import llm
 from agents.fact_checker import fact_checker
-from core.news_classifier import classify_article, extract_image_url
+from core.news_classifier import classify_article, extract_image_url, extract_entities, map_domain_to_civic_schema
 from core.clustering import cluster_articles
 
 class NewsSyncAgent:
@@ -60,8 +60,9 @@ class NewsSyncAgent:
                     link = entry.link
                     description = entry.get("summary", "")
 
-                    # 1. Classification & Image Extraction
+                    # 1. Classification, Entity Extraction & Image Extraction
                     cat, reg = classify_article(title, description)
+                    entities = extract_entities(title, description)
                     img = extract_image_url(entry)
                     published_date = entry.get("published", datetime.now().isoformat())
 
@@ -95,9 +96,10 @@ class NewsSyncAgent:
                     else:
                         summary = description[:100] + "..." if description else ""
 
-                    # 4. Save to Supabase (Attempt)
+                    # 4. Save to Supabase (Attempt) and establish correlations
+                    content_id = None
                     try:
-                        db.insert_content(
+                        content_id = db.insert_content(
                             title=title,
                             category="news",
                             content=description,
@@ -107,22 +109,41 @@ class NewsSyncAgent:
                                 "source": source,
                                 "credibility": verification.get("credibility_score", 85)
                             }),
-                            token_usage=0
+                            token_usage=0,
+                            civic_tags=entities.get("domain_entities", []),
+                            entities=entities,
+                            district=reg
                         )
+                        
+                        if content_id:
+                            for domain_entity in entities.get("domain_entities", []):
+                                entity_type, entity_id = map_domain_to_civic_schema(domain_entity)
+                                if entity_type and entity_id:
+                                    db.create_correlation(content_id, entity_type, entity_id)
                     except Exception as e:
-                        logger.warning(f"Supabase sync failed (RLS?): {e}")
+                        logger.warning(f"Supabase sync failed or correlation write error: {e}")
 
                     # 5. Add to local list for JSON export
+                    correlated_civic_entities = []
+                    for domain_entity in entities.get("domain_entities", []):
+                        entity_type, entity_id = map_domain_to_civic_schema(domain_entity)
+                        if entity_type and entity_id:
+                            correlated_civic_entities.append({
+                                "entity_type": entity_type,
+                                "entity_id": entity_id
+                            })
+
                     articles_for_json.append({
-                        "title": title,
-                        "description": description,
-                        "link": link,
-                        "source": source,
-                        "ai_summary": summary or description[:100] + "...",
-                        "published": published_date,
-                        "category": cat,
-                        "region": reg,
-                        "image_url": img
+                         "title": title,
+                         "description": description,
+                         "link": link,
+                         "source": source,
+                         "ai_summary": summary or description[:100] + "...",
+                         "published": published_date,
+                         "category": cat,
+                         "region": reg,
+                         "image_url": img,
+                         "correlated_civic_entities": correlated_civic_entities
                     })
                     processed_count += 1
 

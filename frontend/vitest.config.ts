@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitest/config';
+import path from 'path';
 
 export default defineConfig({
   test: {
@@ -9,6 +10,11 @@ export default defineConfig({
       provider: 'v8',
       include: ['src/utils/**', 'src/services/**'],
       reporter: ['text', 'html'],
+    },
+  },
+  resolve: {
+    alias: {
+      '../../src': path.resolve(__dirname, './src'),
     },
   },
 });
