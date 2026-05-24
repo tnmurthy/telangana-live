@@ -63,7 +63,7 @@ const NewsCard = ({ news, isSpotlight = false }) => {
   const isVerified = source?.toLowerCase().includes('hindu') || source?.toLowerCase().includes('today');
   const isFollowing = followed.topics.includes(category) || followed.regions.includes(region);
 
-  const finalImage = !imageError ? (image_url || getCategoryCover(category)) : getCategoryCover(category);
+  const finalImage = (!imageError && image_url) ? image_url : null;
 
   const civicAction = useMemo(() => {
     const t = title?.toLowerCase() || '';
@@ -99,22 +99,18 @@ const NewsCard = ({ news, isSpotlight = false }) => {
             setModalOpen(true);
           }
         }}
-        className={`liquid-glass liquid-glass-hover group relative flex flex-col gap-6 p-5 sm:p-6 overflow-hidden cursor-pointer ${
+        className={`liquid-glass liquid-glass-hover group relative flex overflow-hidden cursor-pointer ${
           isSpotlight 
-            ? 'col-span-full md:flex-row md:p-8 border border-white/10 shadow-[0_0_30px_rgba(0,176,116,0.05)]' 
-            : 'md:flex-row-reverse justify-between items-start'
+            ? 'flex-col md:flex-row gap-6 p-5 sm:p-6 md:p-8 border border-white/10 col-span-full shadow-[0_0_30px_rgba(0,176,116,0.05)]' 
+            : 'flex-row justify-between items-start gap-4 p-4 sm:p-5'
         }`}
       >
         {/* Inner Gradient Glow */}
         <div className="absolute inset-0 gradient-glass pointer-events-none" />
         
-        {/* Image Area (Google News styled) */}
-        {finalImage && (
-          <div className={`shrink-0 rounded-2xl overflow-hidden relative z-10 border border-white/10 shadow-lg ${
-            isSpotlight 
-              ? 'w-full md:w-[42%] h-52 md:h-60' 
-              : 'w-full md:w-28 h-28 md:h-28 self-start md:ml-4'
-          }`}>
+        {/* Image - Spotlight Left/Top */}
+        {isSpotlight && finalImage && (
+          <div className="shrink-0 w-full md:w-[42%] h-52 md:h-60 rounded-2xl overflow-hidden relative z-10 border border-white/10 shadow-lg">
             <img 
               src={finalImage} 
               alt={title} 
@@ -128,32 +124,29 @@ const NewsCard = ({ news, isSpotlight = false }) => {
         {/* Content Area */}
         <div className="flex-grow min-w-0 flex flex-col relative z-10">
           {/* Header Row */}
-          <div className="flex items-center justify-between mb-2.5">
-            <div className="flex items-center gap-2.5">
-              <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-white/5 border border-white/5">
-                <PublisherLogo name={source} />
-                <span className="text-[9px] font-black text-white/90 uppercase tracking-wider">{source}</span>
-              </div>
-              {isOfficial && (
-                <div className="flex items-center gap-1.5 text-[9px] font-black text-red-400 uppercase tracking-wider">
-                  <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                  Official
-                </div>
-              )}
-            </div>
-            <span className="text-[9px] font-bold text-white/40 uppercase tracking-widest">{relTime}</span>
+          <div className="flex items-center gap-2 mb-2 text-[11px] text-white/50 font-medium">
+            <PublisherLogo name={source} />
+            <span className="font-semibold text-white/80">{source}</span>
+            <span>•</span>
+            <span>{relTime}</span>
+            {isOfficial && (
+              <span className="flex items-center gap-1 text-[10px] font-bold text-red-400 uppercase tracking-wider ml-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                Official
+              </span>
+            )}
           </div>
 
           {/* Headline */}
-          <h3 className={`font-bold text-white leading-snug mb-2 group-hover:text-telangana-green transition-colors line-clamp-3 ${
-            isSpotlight ? 'text-xl sm:text-2xl font-black' : 'text-base sm:text-lg'
+          <h3 className={`font-bold text-white leading-snug mb-1.5 group-hover:text-telangana-green transition-colors line-clamp-3 ${
+            isSpotlight ? 'text-xl sm:text-2xl font-black' : 'text-sm sm:text-base'
           }`}>
             {title}
           </h3>
 
           {/* AI Summary or Description Snippet */}
           {(ai_summary || description) && (
-            <p className="text-xs text-white/50 leading-relaxed line-clamp-2 mb-3">
+            <p className="text-xs text-white/40 leading-relaxed line-clamp-2 mb-3">
               {ai_summary || description}
             </p>
           )}
@@ -186,20 +179,28 @@ const NewsCard = ({ news, isSpotlight = false }) => {
                     transition={{ duration: 0.25, ease: 'easeInOut' }}
                     className="overflow-hidden mt-3 space-y-2 border-l border-emerald-500/20 pl-3.5 py-1"
                   >
-                    {other_sources.map((src, idx) => (
-                      <a 
-                        key={idx}
-                        href={src.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-2 py-1 text-xs text-white/50 hover:text-telangana-green transition-all"
-                      >
-                        <PublisherLogo name={src.source} />
-                        <span className="font-bold text-white/70 hover:underline">{src.source}</span>
-                        <span className="text-[10px] text-white/30">• Alternative Coverage Link</span>
-                      </a>
-                    ))}
+                    {other_sources.map((src, idx) => {
+                      const relativeTime = formatRelativeTime(src.published);
+                      return (
+                        <div key={idx} className="flex flex-col gap-1 py-2 border-b border-white/5 last:border-b-0">
+                          <div className="flex items-center gap-2 text-[10px] text-white/40">
+                            <PublisherLogo name={src.source} />
+                            <span className="font-semibold text-white/60">{src.source}</span>
+                            <span>•</span>
+                            <span>{relativeTime}</span>
+                          </div>
+                          <a 
+                            href={src.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="text-xs text-white/80 hover:text-telangana-green hover:underline font-medium transition-all line-clamp-2"
+                          >
+                            {src.title}
+                          </a>
+                        </div>
+                      );
+                    })}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -239,6 +240,19 @@ const NewsCard = ({ news, isSpotlight = false }) => {
             </div>
           </div>
         </div>
+
+        {/* Image - Standard Right */}
+        {!isSpotlight && finalImage && (
+          <div className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border border-white/10 shadow-md relative z-10 self-start">
+            <img 
+              src={finalImage} 
+              alt={title} 
+              onError={() => setImageError(true)}
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          </div>
+        )}
 
         {/* Glass Reflection Highlight */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50" />

@@ -54,9 +54,9 @@ export default function Header() {
                               <span className="text-white font-black text-base tracking-tighter">T</span>
                             </div>
                             <div className="hidden sm:flex flex-col -space-y-0.5">
-                              <span className="font-heading font-extrabold text-[1.05rem] text-white tracking-tight leading-none">
-                                  TG<span className="text-telangana-green">News</span>
-                              </span>
+                              <h1 className="font-heading font-extrabold text-[1.05rem] text-white tracking-tight leading-none">
+                                   telangana<span className="text-telangana-green">.live</span>
+                              </h1>
                               <span className="text-[9px] text-text-muted font-medium tracking-[0.15em] uppercase">Civic Portal</span>
                             </div>
                         </Link>

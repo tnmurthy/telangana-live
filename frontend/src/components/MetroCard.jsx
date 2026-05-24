@@ -79,10 +79,10 @@ export default function MetroCard() {
                                 ))}
                             </div>
                             {route.highlightNote && (
-                                <p className="text-xs text-heritage-gold mt-2 font-medium flex items-center gap-2">
+                                <div className="text-xs text-heritage-gold mt-2 font-medium flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-heritage-gold animate-pulse" />
                                     {route.highlightNote}
-                                </p>
+                                </div>
                             )}
                         </div>
                     ))}

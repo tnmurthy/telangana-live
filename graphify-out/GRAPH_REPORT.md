@@ -1,11 +1,11 @@
 # Graph Report - .  (2026-05-24)
 
 ## Corpus Check
-- 281 files · ~308,520 words
+- 281 files · ~304,620 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2183 nodes · 3004 edges · 263 communities detected
+- 2187 nodes · 3008 edges · 264 communities detected
 - Extraction: 87% EXTRACTED · 13% INFERRED · 0% AMBIGUOUS · INFERRED: 403 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
@@ -273,6 +273,7 @@
 - [[_COMMUNITY_Community 260|Community 260]]
 - [[_COMMUNITY_Community 261|Community 261]]
 - [[_COMMUNITY_Community 262|Community 262]]
+- [[_COMMUNITY_Community 263|Community 263]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `NewsScraper` - 61 edges
@@ -405,12 +406,12 @@ Cohesion: 0.16
 Nodes (18): _body_content(), cache_dir(), cached_files(), check_semantic_cache(), clear_cache(), file_hash(), load_cached(), Return set of file paths that have a valid cache entry (hash still matches). (+10 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.16
-Nodes (17): build_graph(), cluster(), cohesion_score(), _partition(), Leiden community detection on NetworkX graphs. Splits oversized communities. Ret, Run a second Leiden pass on a community subgraph to split it further., Context manager to suppress stdout/stderr during library calls.      graspolog, Ratio of actual intra-community edges to maximum possible. (+9 more)
-
-### Community 27 - "Community 27"
 Cohesion: 0.19
 Nodes (18): make_graph(), to_html accepts member_counts without raising., Node file paths in canvas must be vault-root-relative (just fname.md), not hardc, test_to_canvas_file_paths_relative_to_vault(), test_to_cypher_contains_merge_statements(), test_to_cypher_creates_file(), test_to_graphml_creates_file(), test_to_graphml_has_community_attribute() (+10 more)
+
+### Community 27 - "Community 27"
+Cohesion: 0.16
+Nodes (17): build_graph(), cluster(), cohesion_score(), _partition(), Leiden community detection on NetworkX graphs. Splits oversized communities. Ret, Run a second Leiden pass on a community subgraph to split it further., Context manager to suppress stdout/stderr during library calls.      graspolog, Ratio of actual intra-community edges to maximum possible. (+9 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.14
@@ -570,43 +571,43 @@ Nodes (5): build_summary(), main(), Formats the scraped data into a WhatsApp-fri
 
 ### Community 67 - "Community 67"
 Cohesion: 0.33
-Nodes (0): 
+Nodes (1): NewsCard()
 
 ### Community 68 - "Community 68"
 Cohesion: 0.33
-Nodes (1): RSSParser
+Nodes (0): 
 
 ### Community 69 - "Community 69"
 Cohesion: 0.33
-Nodes (5): Animal, -initWithName, -speak, Dog, -fetch
+Nodes (1): RSSParser
 
 ### Community 70 - "Community 70"
-Cohesion: 0.47
-Nodes (2): build_graph(), Graph
+Cohesion: 0.33
+Nodes (5): Animal, -initWithName, -speak, Dog, -fetch
 
 ### Community 71 - "Community 71"
 Cohesion: 0.47
-Nodes (4): AppServiceProvider, CashierGateway, PaymentGateway, StripeGateway
+Nodes (2): build_graph(), Graph
 
 ### Community 72 - "Community 72"
-Cohesion: 0.4
-Nodes (4): classify_article(), extract_image_url(), Classifies a news article into a category and a region based on title and descri, Extracts an image URL from an RSS feed entry checking various standard fields
+Cohesion: 0.47
+Nodes (4): AppServiceProvider, CashierGateway, PaymentGateway, StripeGateway
 
 ### Community 73 - "Community 73"
 Cohesion: 0.4
-Nodes (0): 
+Nodes (4): classify_article(), extract_image_url(), Classifies a news article into a category and a region based on title and descri, Extracts an image URL from an RSS feed entry checking various standard fields
 
 ### Community 74 - "Community 74"
 Cohesion: 0.4
 Nodes (0): 
 
 ### Community 75 - "Community 75"
-Cohesion: 0.7
-Nodes (4): DateTimeBar(), formatGregorian(), formatTime(), getVikramSamvatDate()
-
-### Community 76 - "Community 76"
 Cohesion: 0.4
 Nodes (0): 
+
+### Community 76 - "Community 76"
+Cohesion: 0.7
+Nodes (4): DateTimeBar(), formatGregorian(), formatTime(), getVikramSamvatDate()
 
 ### Community 77 - "Community 77"
 Cohesion: 0.4
@@ -625,36 +626,36 @@ Cohesion: 0.4
 Nodes (0): 
 
 ### Community 81 - "Community 81"
-Cohesion: 0.5
-Nodes (3): MyApp.Accounts.User, create(), validate()
-
-### Community 82 - "Community 82"
-Cohesion: 0.6
-Nodes (2): RateLimiter, Throttle
-
-### Community 83 - "Community 83"
-Cohesion: 0.6
-Nodes (2): ColorResolver, DefaultPalette
-
-### Community 84 - "Community 84"
 Cohesion: 0.4
 Nodes (0): 
 
+### Community 82 - "Community 82"
+Cohesion: 0.5
+Nodes (3): MyApp.Accounts.User, create(), validate()
+
+### Community 83 - "Community 83"
+Cohesion: 0.6
+Nodes (2): RateLimiter, Throttle
+
+### Community 84 - "Community 84"
+Cohesion: 0.6
+Nodes (2): ColorResolver, DefaultPalette
+
 ### Community 85 - "Community 85"
+Cohesion: 0.4
+Nodes (0): 
+
+### Community 86 - "Community 86"
 Cohesion: 0.5
 Nodes (1): ContentUpdater
 
-### Community 86 - "Community 86"
+### Community 87 - "Community 87"
 Cohesion: 0.83
 Nodes (3): fetchFromRedis(), handler(), scrapeFromTSSPDCL()
 
-### Community 87 - "Community 87"
-Cohesion: 0.5
-Nodes (0): 
-
 ### Community 88 - "Community 88"
 Cohesion: 0.5
-Nodes (1): NewsCard()
+Nodes (0): 
 
 ### Community 89 - "Community 89"
 Cohesion: 0.5
@@ -1286,74 +1287,78 @@ Nodes (1): Fetch, fact-check, and sync news to Supabase.
 
 ### Community 246 - "Community 246"
 Cohesion: 1.0
-Nodes (1): Generate text via the requested provider with automatic retry.          Returns
+Nodes (1): Fetch, fact-check, and sync news to Supabase.
 
 ### Community 247 - "Community 247"
 Cohesion: 1.0
-Nodes (1): Call the z.ai OpenAI-compatible chat completions endpoint.
+Nodes (1): Generate text via the requested provider with automatic retry.          Returns
 
 ### Community 248 - "Community 248"
 Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+Nodes (1): Call the z.ai OpenAI-compatible chat completions endpoint.
 
 ### Community 249 - "Community 249"
 Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
+Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
 
 ### Community 250 - "Community 250"
 Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+Nodes (1): Fetch, fact-check, and sync news to Supabase.
 
 ### Community 251 - "Community 251"
 Cohesion: 1.0
-Nodes (1): Generates new content for telangana.live
+Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
 
 ### Community 252 - "Community 252"
 Cohesion: 1.0
-Nodes (1): Generate new content and store in Supabase
+Nodes (1): Generates new content for telangana.live
 
 ### Community 253 - "Community 253"
 Cohesion: 1.0
-Nodes (1): Execute generation cycle.                  First tries to pull dynamic topics
+Nodes (1): Generate new content and store in Supabase
 
 ### Community 254 - "Community 254"
 Cohesion: 1.0
-Nodes (1): Monitors telangana.live for content that needs updates
+Nodes (1): Execute generation cycle.                  First tries to pull dynamic topics
 
 ### Community 255 - "Community 255"
 Cohesion: 1.0
-Nodes (1): Use Claude to analyze content and identify what needs updates
+Nodes (1): Monitors telangana.live for content that needs updates
 
 ### Community 256 - "Community 256"
 Cohesion: 1.0
-Nodes (1): Execute monitoring cycle
+Nodes (1): Use Claude to analyze content and identify what needs updates
 
 ### Community 257 - "Community 257"
 Cohesion: 1.0
-Nodes (1): Updates existing content with new information
+Nodes (1): Execute monitoring cycle
 
 ### Community 258 - "Community 258"
 Cohesion: 1.0
-Nodes (1): Update existing content with new information
+Nodes (1): Updates existing content with new information
 
 ### Community 259 - "Community 259"
 Cohesion: 1.0
-Nodes (1): Checks and improves content quality, then publishes it.
+Nodes (1): Update existing content with new information
 
 ### Community 260 - "Community 260"
 Cohesion: 1.0
-Nodes (1): Check content quality, save improvements, and publish the article.
+Nodes (1): Checks and improves content quality, then publishes it.
 
 ### Community 261 - "Community 261"
 Cohesion: 1.0
-Nodes (1): Quality-check all content that is still in 'active' (draft) status.
+Nodes (1): Check content quality, save improvements, and publish the article.
 
 ### Community 262 - "Community 262"
+Cohesion: 1.0
+Nodes (1): Quality-check all content that is still in 'active' (draft) status.
+
+### Community 263 - "Community 263"
 Cohesion: 1.0
 Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
 
 ## Knowledge Gaps
-- **421 isolated node(s):** `Scrapes and returns the latest gold rates for Hyderabad.`, `Scrapes and returns the latest fuel prices for Hyderabad.`, `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.`, `Scrapes data and sends a summary message via the WhatsApp bot.`, `Generate new content and store in Supabase.` (+416 more)
+- **422 isolated node(s):** `Scrapes and returns the latest gold rates for Hyderabad.`, `Scrapes and returns the latest fuel prices for Hyderabad.`, `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.`, `Scrapes data and sends a summary message via the WhatsApp bot.`, `Generate new content and store in Supabase.` (+417 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **Thin community `Community 119`** (2 nodes): `fuel-prices.js`, `handler()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -1609,39 +1614,41 @@ Nodes (1): Generate a 2-line AI summary with simple exponential back-off on fail
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 245`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 246`** (1 nodes): `Generate text via the requested provider with automatic retry.          Returns`
+- **Thin community `Community 246`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 247`** (1 nodes): `Call the z.ai OpenAI-compatible chat completions endpoint.`
+- **Thin community `Community 247`** (1 nodes): `Generate text via the requested provider with automatic retry.          Returns`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 248`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+- **Thin community `Community 248`** (1 nodes): `Call the z.ai OpenAI-compatible chat completions endpoint.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 249`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+- **Thin community `Community 249`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 250`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+- **Thin community `Community 250`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 251`** (1 nodes): `Generates new content for telangana.live`
+- **Thin community `Community 251`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 252`** (1 nodes): `Generate new content and store in Supabase`
+- **Thin community `Community 252`** (1 nodes): `Generates new content for telangana.live`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 253`** (1 nodes): `Execute generation cycle.                  First tries to pull dynamic topics`
+- **Thin community `Community 253`** (1 nodes): `Generate new content and store in Supabase`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 254`** (1 nodes): `Monitors telangana.live for content that needs updates`
+- **Thin community `Community 254`** (1 nodes): `Execute generation cycle.                  First tries to pull dynamic topics`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 255`** (1 nodes): `Use Claude to analyze content and identify what needs updates`
+- **Thin community `Community 255`** (1 nodes): `Monitors telangana.live for content that needs updates`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 256`** (1 nodes): `Execute monitoring cycle`
+- **Thin community `Community 256`** (1 nodes): `Use Claude to analyze content and identify what needs updates`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 257`** (1 nodes): `Updates existing content with new information`
+- **Thin community `Community 257`** (1 nodes): `Execute monitoring cycle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 258`** (1 nodes): `Update existing content with new information`
+- **Thin community `Community 258`** (1 nodes): `Updates existing content with new information`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 259`** (1 nodes): `Checks and improves content quality, then publishes it.`
+- **Thin community `Community 259`** (1 nodes): `Update existing content with new information`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 260`** (1 nodes): `Check content quality, save improvements, and publish the article.`
+- **Thin community `Community 260`** (1 nodes): `Checks and improves content quality, then publishes it.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 261`** (1 nodes): `Quality-check all content that is still in 'active' (draft) status.`
+- **Thin community `Community 261`** (1 nodes): `Check content quality, save improvements, and publish the article.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 262`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+- **Thin community `Community 262`** (1 nodes): `Quality-check all content that is still in 'active' (draft) status.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 263`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
@@ -1658,6 +1665,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 39 inferred relationships involving `Request` (e.g. with `Auth` and `BasicAuth`) actually correct?**
   _`Request` has 39 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Scrapes and returns the latest gold rates for Hyderabad.`, `Scrapes and returns the latest fuel prices for Hyderabad.`, `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.` to the rest of the system?**
-  _421 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _422 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.03 - nodes in this community are weakly interconnected._

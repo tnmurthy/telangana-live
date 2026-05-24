@@ -495,7 +495,7 @@
       "source_file": "backend\\agents\\content_updater.py",
       "source_location": "L1",
       "id": "backend_agents_content_updater_py",
-      "community": 85,
+      "community": 86,
       "norm_label": "content_updater.py"
     },
     {
@@ -504,7 +504,7 @@
       "source_file": "backend\\agents\\content_updater.py",
       "source_location": "L9",
       "id": "content_updater_contentupdater",
-      "community": 85,
+      "community": 86,
       "norm_label": "contentupdater"
     },
     {
@@ -513,7 +513,7 @@
       "source_file": "backend\\agents\\content_updater.py",
       "source_location": "L10",
       "id": "content_updater_contentupdater_init",
-      "community": 85,
+      "community": 86,
       "norm_label": ".__init__()"
     },
     {
@@ -522,7 +522,7 @@
       "source_file": "backend\\agents\\content_updater.py",
       "source_location": "L14",
       "id": "content_updater_contentupdater_update_content",
-      "community": 85,
+      "community": 86,
       "norm_label": ".update_content()"
     },
     {
@@ -592,16 +592,25 @@
       "label": "NewsSyncAgent",
       "file_type": "code",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "id": "news_sync_agent_newssyncagent",
       "community": 3,
       "norm_label": "newssyncagent"
     },
     {
+      "label": "._check_ollama_online()",
+      "file_type": "code",
+      "source_file": "backend\\agents\\news_sync_agent.py",
+      "source_location": "L15",
+      "id": "news_sync_agent_newssyncagent_check_ollama_online",
+      "community": 3,
+      "norm_label": "._check_ollama_online()"
+    },
+    {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L14",
+      "source_location": "L23",
       "id": "news_sync_agent_newssyncagent_init",
       "community": 3,
       "norm_label": ".__init__()"
@@ -610,7 +619,7 @@
       "label": "._load_feeds()",
       "file_type": "code",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L19",
+      "source_location": "L28",
       "id": "news_sync_agent_newssyncagent_load_feeds",
       "community": 3,
       "norm_label": "._load_feeds()"
@@ -619,7 +628,7 @@
       "label": ".process_news()",
       "file_type": "code",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L35",
+      "source_location": "L44",
       "id": "news_sync_agent_newssyncagent_process_news",
       "community": 3,
       "norm_label": ".process_news()"
@@ -628,8 +637,8 @@
       "label": "Fetch, fact-check, and sync news to Supabase.",
       "file_type": "rationale",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L36",
-      "id": "news_sync_agent_rationale_36",
+      "source_location": "L45",
+      "id": "news_sync_agent_rationale_45",
       "community": 3,
       "norm_label": "fetch, fact-check, and sync news to supabase."
     },
@@ -1080,7 +1089,7 @@
       "source_file": "backend\\api\\api\\power-alerts.js",
       "source_location": "L1",
       "id": "backend_api_api_power_alerts_js",
-      "community": 86,
+      "community": 87,
       "norm_label": "power-alerts.js"
     },
     {
@@ -1089,7 +1098,7 @@
       "source_file": "backend\\api\\api\\power-alerts.js",
       "source_location": "L20",
       "id": "power_alerts_fetchfromredis",
-      "community": 86,
+      "community": 87,
       "norm_label": "fetchfromredis()"
     },
     {
@@ -1098,7 +1107,7 @@
       "source_file": "backend\\api\\api\\power-alerts.js",
       "source_location": "L37",
       "id": "power_alerts_scrapefromtsspdcl",
-      "community": 86,
+      "community": 87,
       "norm_label": "scrapefromtsspdcl()"
     },
     {
@@ -1107,7 +1116,7 @@
       "source_file": "backend\\api\\api\\power-alerts.js",
       "source_location": "L83",
       "id": "power_alerts_handler",
-      "community": 86,
+      "community": 87,
       "norm_label": "handler()"
     },
     {
@@ -1178,36 +1187,36 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\clustering.py",
       "source_location": "L12",
-      "id": "clustering_rationale_12",
       "community": 54,
-      "norm_label": "generate a vector embedding using local ollama nomic-embed-text."
+      "norm_label": "generate a vector embedding using local ollama nomic-embed-text.",
+      "id": "clustering_rationale_12"
     },
     {
       "label": "Compute cosine similarity between two float vectors.",
       "file_type": "rationale",
       "source_file": "backend\\core\\clustering.py",
       "source_location": "L28",
-      "id": "clustering_rationale_28",
       "community": 54,
-      "norm_label": "compute cosine similarity between two float vectors."
+      "norm_label": "compute cosine similarity between two float vectors.",
+      "id": "clustering_rationale_28"
     },
     {
       "label": "Fallback text similarity score (Jaccard word set intersection).",
       "file_type": "rationale",
       "source_file": "backend\\core\\clustering.py",
       "source_location": "L39",
-      "id": "clustering_rationale_39",
       "community": 54,
-      "norm_label": "fallback text similarity score (jaccard word set intersection)."
+      "norm_label": "fallback text similarity score (jaccard word set intersection).",
+      "id": "clustering_rationale_39"
     },
     {
       "label": "Cluster articles list using semantic embeddings or Jaccard fallback.     Updates",
       "file_type": "rationale",
       "source_file": "backend\\core\\clustering.py",
       "source_location": "L47",
-      "id": "clustering_rationale_47",
       "community": 54,
-      "norm_label": "cluster articles list using semantic embeddings or jaccard fallback.     updates"
+      "norm_label": "cluster articles list using semantic embeddings or jaccard fallback.     updates",
+      "id": "clustering_rationale_47"
     },
     {
       "label": "config.py",
@@ -1511,18 +1520,18 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\llm_provider.py",
       "source_location": "L62",
-      "id": "llm_provider_rationale_62",
       "community": 3,
-      "norm_label": "generate text via the requested provider with automatic retry.          returns"
+      "norm_label": "generate text via the requested provider with automatic retry.          returns",
+      "id": "llm_provider_rationale_62"
     },
     {
       "label": "Call the z.ai OpenAI-compatible chat completions endpoint.",
       "file_type": "rationale",
       "source_file": "backend\\core\\llm_provider.py",
       "source_location": "L140",
-      "id": "llm_provider_rationale_140",
       "community": 3,
-      "norm_label": "call the z.ai openai-compatible chat completions endpoint."
+      "norm_label": "call the z.ai openai-compatible chat completions endpoint.",
+      "id": "llm_provider_rationale_140"
     },
     {
       "label": "logger.py",
@@ -1557,7 +1566,7 @@
       "source_file": "backend\\core\\news_classifier.py",
       "source_location": "L1",
       "id": "backend_core_news_classifier_py",
-      "community": 72,
+      "community": 73,
       "norm_label": "news_classifier.py"
     },
     {
@@ -1566,7 +1575,7 @@
       "source_file": "backend\\core\\news_classifier.py",
       "source_location": "L3",
       "id": "news_classifier_classify_article",
-      "community": 72,
+      "community": 73,
       "norm_label": "classify_article()"
     },
     {
@@ -1575,7 +1584,7 @@
       "source_file": "backend\\core\\news_classifier.py",
       "source_location": "L49",
       "id": "news_classifier_extract_image_url",
-      "community": 72,
+      "community": 73,
       "norm_label": "extract_image_url()"
     },
     {
@@ -1583,7 +1592,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\news_classifier.py",
       "source_location": "L4",
-      "community": 72,
+      "community": 73,
       "norm_label": "classifies a news article into a category and a region based on title and descri",
       "id": "news_classifier_rationale_4"
     },
@@ -1592,7 +1601,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\news_classifier.py",
       "source_location": "L50",
-      "community": 72,
+      "community": 73,
       "norm_label": "extracts an image url from an rss feed entry checking various standard fields",
       "id": "news_classifier_rationale_50"
     },
@@ -1916,9 +1925,9 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\news_scraper.py",
       "source_location": "L76",
-      "id": "news_scraper_rationale_76",
       "community": 1,
-      "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure."
+      "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
+      "id": "news_scraper_rationale_76"
     },
     {
       "label": "setup-city-repos.ps1",
@@ -1926,7 +1935,7 @@
       "source_file": "backend\\scripts\\setup-city-repos.ps1",
       "source_location": "L1",
       "id": "backend_scripts_setup_city_repos_ps1",
-      "community": 73,
+      "community": 74,
       "norm_label": "setup-city-repos.ps1"
     },
     {
@@ -1935,7 +1944,7 @@
       "source_file": "backend\\scripts\\setup-city-repos.ps1",
       "source_location": "L51",
       "id": "setup_city_repos_write_ok",
-      "community": 73,
+      "community": 74,
       "norm_label": "write-ok()"
     },
     {
@@ -1944,7 +1953,7 @@
       "source_file": "backend\\scripts\\setup-city-repos.ps1",
       "source_location": "L52",
       "id": "setup_city_repos_write_info",
-      "community": 73,
+      "community": 74,
       "norm_label": "write-info()"
     },
     {
@@ -1953,7 +1962,7 @@
       "source_file": "backend\\scripts\\setup-city-repos.ps1",
       "source_location": "L53",
       "id": "setup_city_repos_write_warn",
-      "community": 73,
+      "community": 74,
       "norm_label": "write-warn()"
     },
     {
@@ -1962,7 +1971,7 @@
       "source_file": "backend\\scripts\\setup-city-repos.ps1",
       "source_location": "L54",
       "id": "setup_city_repos_write_err",
-      "community": 73,
+      "community": 74,
       "norm_label": "write-err()"
     },
     {
@@ -2421,7 +2430,7 @@
       "source_file": "frontend\\src\\App.jsx",
       "source_location": "L1",
       "id": "frontend_src_app_jsx",
-      "community": 74,
+      "community": 75,
       "norm_label": "app.jsx"
     },
     {
@@ -2430,7 +2439,7 @@
       "source_file": "frontend\\src\\App.jsx",
       "source_location": "L48",
       "id": "app_loadingscreen",
-      "community": 74,
+      "community": 75,
       "norm_label": "loadingscreen()"
     },
     {
@@ -2439,7 +2448,7 @@
       "source_file": "frontend\\src\\App.jsx",
       "source_location": "L55",
       "id": "app_emergencytoggle",
-      "community": 74,
+      "community": 75,
       "norm_label": "emergencytoggle()"
     },
     {
@@ -2448,7 +2457,7 @@
       "source_file": "frontend\\src\\App.jsx",
       "source_location": "L80",
       "id": "app_appcontent",
-      "community": 74,
+      "community": 75,
       "norm_label": "appcontent()"
     },
     {
@@ -2457,7 +2466,7 @@
       "source_file": "frontend\\src\\App.jsx",
       "source_location": "L145",
       "id": "app_app",
-      "community": 74,
+      "community": 75,
       "norm_label": "app()"
     },
     {
@@ -2691,7 +2700,7 @@
       "source_file": "frontend\\src\\components\\DateTimeBar.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_datetimebar_jsx",
-      "community": 75,
+      "community": 76,
       "norm_label": "datetimebar.jsx"
     },
     {
@@ -2700,7 +2709,7 @@
       "source_file": "frontend\\src\\components\\DateTimeBar.jsx",
       "source_location": "L7",
       "id": "datetimebar_getvikramsamvatdate",
-      "community": 75,
+      "community": 76,
       "norm_label": "getvikramsamvatdate()"
     },
     {
@@ -2709,7 +2718,7 @@
       "source_file": "frontend\\src\\components\\DateTimeBar.jsx",
       "source_location": "L31",
       "id": "datetimebar_formatgregorian",
-      "community": 75,
+      "community": 76,
       "norm_label": "formatgregorian()"
     },
     {
@@ -2718,7 +2727,7 @@
       "source_file": "frontend\\src\\components\\DateTimeBar.jsx",
       "source_location": "L35",
       "id": "datetimebar_formattime",
-      "community": 75,
+      "community": 76,
       "norm_label": "formattime()"
     },
     {
@@ -2727,7 +2736,7 @@
       "source_file": "frontend\\src\\components\\DateTimeBar.jsx",
       "source_location": "L39",
       "id": "datetimebar_datetimebar",
-      "community": 75,
+      "community": 76,
       "norm_label": "datetimebar()"
     },
     {
@@ -3060,7 +3069,7 @@
       "source_file": "frontend\\src\\components\\LeftSidebar.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_leftsidebar_jsx",
-      "community": 87,
+      "community": 88,
       "norm_label": "leftsidebar.jsx"
     },
     {
@@ -3069,7 +3078,7 @@
       "source_file": "frontend\\src\\components\\LeftSidebar.jsx",
       "source_location": "L5",
       "id": "leftsidebar_navitem",
-      "community": 87,
+      "community": 88,
       "norm_label": "navitem()"
     },
     {
@@ -3078,7 +3087,7 @@
       "source_file": "frontend\\src\\components\\LeftSidebar.jsx",
       "source_location": "L24",
       "id": "leftsidebar_sidebarsection",
-      "community": 87,
+      "community": 88,
       "norm_label": "sidebarsection()"
     },
     {
@@ -3087,7 +3096,7 @@
       "source_file": "frontend\\src\\components\\LeftSidebar.jsx",
       "source_location": "L33",
       "id": "leftsidebar_leftsidebar",
-      "community": 87,
+      "community": 88,
       "norm_label": "leftsidebar()"
     },
     {
@@ -3159,16 +3168,34 @@
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_newscard_jsx",
-      "community": 88,
+      "community": 67,
       "norm_label": "newscard.jsx"
+    },
+    {
+      "label": "getCategoryCover()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\NewsCard.jsx",
+      "source_location": "L10",
+      "id": "newscard_getcategorycover",
+      "community": 67,
+      "norm_label": "getcategorycover()"
+    },
+    {
+      "label": "PublisherLogo()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\NewsCard.jsx",
+      "source_location": "L24",
+      "id": "newscard_publisherlogo",
+      "community": 67,
+      "norm_label": "publisherlogo()"
     },
     {
       "label": "ConfidenceBadge()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
-      "source_location": "L12",
+      "source_location": "L41",
       "id": "newscard_confidencebadge",
-      "community": 88,
+      "community": 67,
       "norm_label": "confidencebadge()"
     },
     {
@@ -3177,7 +3204,7 @@
       "source_file": "frontend\\src\\components\\news\\NewsCard.jsx",
       "source_location": "L4",
       "id": "newscard_newscard",
-      "community": 88,
+      "community": 67,
       "norm_label": "newscard()"
     },
     {
@@ -3303,7 +3330,7 @@
       "source_file": "frontend\\src\\components\\ReportingMap.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_reportingmap_jsx",
-      "community": 76,
+      "community": 77,
       "norm_label": "reportingmap.jsx"
     },
     {
@@ -3312,7 +3339,7 @@
       "source_file": "frontend\\src\\components\\ReportingMap.jsx",
       "source_location": "L19",
       "id": "reportingmap_createicon",
-      "community": 76,
+      "community": 77,
       "norm_label": "createicon()"
     },
     {
@@ -3321,7 +3348,7 @@
       "source_file": "frontend\\src\\components\\ReportingMap.jsx",
       "source_location": "L28",
       "id": "reportingmap_clickhandler",
-      "community": 76,
+      "community": 77,
       "norm_label": "clickhandler()"
     },
     {
@@ -3330,7 +3357,7 @@
       "source_file": "frontend\\src\\components\\ReportingMap.jsx",
       "source_location": "L37",
       "id": "reportingmap_statusbar",
-      "community": 76,
+      "community": 77,
       "norm_label": "statusbar()"
     },
     {
@@ -3339,7 +3366,7 @@
       "source_file": "frontend\\src\\components\\ReportingMap.jsx",
       "source_location": "L55",
       "id": "reportingmap_reportingmap",
-      "community": 76,
+      "community": 77,
       "norm_label": "reportingmap()"
     },
     {
@@ -3582,7 +3609,7 @@
       "source_file": "frontend\\src\\components\\news\\NewsCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_news_newscard_jsx",
-      "community": 88,
+      "community": 67,
       "norm_label": "newscard.jsx"
     },
     {
@@ -4122,7 +4149,7 @@
       "source_file": "frontend\\src\\pages\\FarmerPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_farmerpage_jsx",
-      "community": 77,
+      "community": 78,
       "norm_label": "farmerpage.jsx"
     },
     {
@@ -4131,7 +4158,7 @@
       "source_file": "frontend\\src\\pages\\FarmerPage.jsx",
       "source_location": "L19",
       "id": "farmerpage_msprow",
-      "community": 77,
+      "community": 78,
       "norm_label": "msprow()"
     },
     {
@@ -4140,7 +4167,7 @@
       "source_file": "frontend\\src\\pages\\FarmerPage.jsx",
       "source_location": "L39",
       "id": "farmerpage_advisorycard",
-      "community": 77,
+      "community": 78,
       "norm_label": "advisorycard()"
     },
     {
@@ -4149,7 +4176,7 @@
       "source_file": "frontend\\src\\pages\\FarmerPage.jsx",
       "source_location": "L80",
       "id": "farmerpage_schemecard",
-      "community": 77,
+      "community": 78,
       "norm_label": "schemecard()"
     },
     {
@@ -4158,7 +4185,7 @@
       "source_file": "frontend\\src\\pages\\FarmerPage.jsx",
       "source_location": "L133",
       "id": "farmerpage_farmerpage",
-      "community": 77,
+      "community": 78,
       "norm_label": "farmerpage()"
     },
     {
@@ -4338,7 +4365,7 @@
       "source_file": "frontend\\src\\pages\\ParksPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_parkspage_jsx",
-      "community": 67,
+      "community": 68,
       "norm_label": "parkspage.jsx"
     },
     {
@@ -4347,7 +4374,7 @@
       "source_file": "frontend\\src\\pages\\ParksPage.jsx",
       "source_location": "L4",
       "id": "parkspage_crowdbadge",
-      "community": 67,
+      "community": 68,
       "norm_label": "crowdbadge()"
     },
     {
@@ -4356,7 +4383,7 @@
       "source_file": "frontend\\src\\pages\\ParksPage.jsx",
       "source_location": "L17",
       "id": "parkspage_occupancybar",
-      "community": 67,
+      "community": 68,
       "norm_label": "occupancybar()"
     },
     {
@@ -4365,7 +4392,7 @@
       "source_file": "frontend\\src\\pages\\ParksPage.jsx",
       "source_location": "L35",
       "id": "parkspage_parkcard",
-      "community": 67,
+      "community": 68,
       "norm_label": "parkcard()"
     },
     {
@@ -4374,7 +4401,7 @@
       "source_file": "frontend\\src\\pages\\ParksPage.jsx",
       "source_location": "L123",
       "id": "parkspage_crowdlegend",
-      "community": 67,
+      "community": 68,
       "norm_label": "crowdlegend()"
     },
     {
@@ -4383,7 +4410,7 @@
       "source_file": "frontend\\src\\pages\\ParksPage.jsx",
       "source_location": "L140",
       "id": "parkspage_parkspage",
-      "community": 67,
+      "community": 68,
       "norm_label": "parkspage()"
     },
     {
@@ -4392,7 +4419,7 @@
       "source_file": "frontend\\src\\pages\\PoliticianTrackerPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_politiciantrackerpage_jsx",
-      "community": 78,
+      "community": 79,
       "norm_label": "politiciantrackerpage.jsx"
     },
     {
@@ -4401,7 +4428,7 @@
       "source_file": "frontend\\src\\pages\\PoliticianTrackerPage.jsx",
       "source_location": "L4",
       "id": "politiciantrackerpage_accountabilityscore",
-      "community": 78,
+      "community": 79,
       "norm_label": "accountabilityscore()"
     },
     {
@@ -4410,7 +4437,7 @@
       "source_file": "frontend\\src\\pages\\PoliticianTrackerPage.jsx",
       "source_location": "L11",
       "id": "politiciantrackerpage_initialsavatar",
-      "community": 78,
+      "community": 79,
       "norm_label": "initialsavatar()"
     },
     {
@@ -4419,7 +4446,7 @@
       "source_file": "frontend\\src\\pages\\PoliticianTrackerPage.jsx",
       "source_location": "L21",
       "id": "politiciantrackerpage_scorering",
-      "community": 78,
+      "community": 79,
       "norm_label": "scorering()"
     },
     {
@@ -4428,7 +4455,7 @@
       "source_file": "frontend\\src\\pages\\PoliticianTrackerPage.jsx",
       "source_location": "L31",
       "id": "politiciantrackerpage_politiciantrackerpage",
-      "community": 78,
+      "community": 79,
       "norm_label": "politiciantrackerpage()"
     },
     {
@@ -4500,7 +4527,7 @@
       "source_file": "frontend\\src\\pages\\ReservoirsPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_reservoirspage_jsx",
-      "community": 79,
+      "community": 80,
       "norm_label": "reservoirspage.jsx"
     },
     {
@@ -4509,7 +4536,7 @@
       "source_file": "frontend\\src\\pages\\ReservoirsPage.jsx",
       "source_location": "L5",
       "id": "reservoirspage_levelbar",
-      "community": 79,
+      "community": 80,
       "norm_label": "levelbar()"
     },
     {
@@ -4518,7 +4545,7 @@
       "source_file": "frontend\\src\\pages\\ReservoirsPage.jsx",
       "source_location": "L16",
       "id": "reservoirspage_reservoircard",
-      "community": 79,
+      "community": 80,
       "norm_label": "reservoircard()"
     },
     {
@@ -4527,7 +4554,7 @@
       "source_file": "frontend\\src\\pages\\ReservoirsPage.jsx",
       "source_location": "L96",
       "id": "reservoirspage_summarybar",
-      "community": 79,
+      "community": 80,
       "norm_label": "summarybar()"
     },
     {
@@ -4536,7 +4563,7 @@
       "source_file": "frontend\\src\\pages\\ReservoirsPage.jsx",
       "source_location": "L125",
       "id": "reservoirspage_reservoirspage",
-      "community": 79,
+      "community": 80,
       "norm_label": "reservoirspage()"
     },
     {
@@ -4563,7 +4590,7 @@
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_searchpage_jsx",
-      "community": 80,
+      "community": 81,
       "norm_label": "searchpage.jsx"
     },
     {
@@ -4572,7 +4599,7 @@
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
       "source_location": "L17",
       "id": "searchpage_flattenservices",
-      "community": 80,
+      "community": 81,
       "norm_label": "flattenservices()"
     },
     {
@@ -4581,7 +4608,7 @@
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
       "source_location": "L37",
       "id": "searchpage_highlight",
-      "community": 80,
+      "community": 81,
       "norm_label": "highlight()"
     },
     {
@@ -4590,7 +4617,7 @@
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
       "source_location": "L48",
       "id": "searchpage_sectionheader",
-      "community": 80,
+      "community": 81,
       "norm_label": "sectionheader()"
     },
     {
@@ -4599,7 +4626,7 @@
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
       "source_location": "L59",
       "id": "searchpage_searchpage",
-      "community": 80,
+      "community": 81,
       "norm_label": "searchpage()"
     },
     {
@@ -4633,7 +4660,7 @@
       "label": "SubRegionPage()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\SubRegionPage.jsx",
-      "source_location": "L47",
+      "source_location": "L49",
       "id": "subregionpage_subregionpage",
       "community": 173,
       "norm_label": "subregionpage()"
@@ -4876,7 +4903,7 @@
       "label": "fetchPowerAlerts()",
       "file_type": "code",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L129",
+      "source_location": "L130",
       "id": "pricesservice_fetchpoweralerts",
       "community": 61,
       "norm_label": "fetchpoweralerts()"
@@ -4885,7 +4912,7 @@
       "label": "fetchMandiPrices()",
       "file_type": "code",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L137",
+      "source_location": "L138",
       "id": "pricesservice_fetchmandiprices",
       "community": 61,
       "norm_label": "fetchmandiprices()"
@@ -4905,7 +4932,7 @@
       "source_file": "frontend\\src\\services\\rssParser.js",
       "source_location": "L1",
       "id": "frontend_src_services_rssparser_js",
-      "community": 68,
+      "community": 69,
       "norm_label": "rssparser.js"
     },
     {
@@ -4914,7 +4941,7 @@
       "source_file": "frontend\\src\\services\\rssParser.js",
       "source_location": "L3",
       "id": "rssparser_rssparser",
-      "community": 68,
+      "community": 69,
       "norm_label": "rssparser"
     },
     {
@@ -4923,7 +4950,7 @@
       "source_file": "frontend\\src\\services\\rssParser.js",
       "source_location": "L4",
       "id": "rssparser_rssparser_constructor",
-      "community": 68,
+      "community": 69,
       "norm_label": ".constructor()"
     },
     {
@@ -4932,7 +4959,7 @@
       "source_file": "frontend\\src\\services\\rssParser.js",
       "source_location": "L13",
       "id": "rssparser_rssparser_fetchfeed",
-      "community": 68,
+      "community": 69,
       "norm_label": ".fetchfeed()"
     },
     {
@@ -4941,7 +4968,7 @@
       "source_file": "frontend\\src\\services\\rssParser.js",
       "source_location": "L36",
       "id": "rssparser_rssparser_extractdistrict",
-      "community": 68,
+      "community": 69,
       "norm_label": "._extractdistrict()"
     },
     {
@@ -4950,7 +4977,7 @@
       "source_file": "frontend\\src\\services\\rssParser.js",
       "source_location": "L42",
       "id": "rssparser_rssparser_extractimage",
-      "community": 68,
+      "community": 69,
       "norm_label": "._extractimage()"
     },
     {
@@ -5580,7 +5607,7 @@
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L1",
       "id": "graphify_graphify_cluster_py",
-      "community": 26,
+      "community": 27,
       "norm_label": "cluster.py"
     },
     {
@@ -5589,7 +5616,7 @@
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L10",
       "id": "cluster_suppress_output",
-      "community": 26,
+      "community": 27,
       "norm_label": "_suppress_output()"
     },
     {
@@ -5598,7 +5625,7 @@
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L21",
       "id": "cluster_partition",
-      "community": 26,
+      "community": 27,
       "norm_label": "_partition()"
     },
     {
@@ -5607,7 +5634,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L27",
       "id": "cluster_cluster",
-      "community": 26,
+      "community": 27,
       "norm_label": "cluster()"
     },
     {
@@ -5616,7 +5643,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L72",
       "id": "cluster_split_community",
-      "community": 26,
+      "community": 27,
       "norm_label": "_split_community()"
     },
     {
@@ -5625,7 +5652,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L92",
       "id": "cluster_cohesion_score",
-      "community": 26,
+      "community": 27,
       "norm_label": "cohesion_score()"
     },
     {
@@ -5634,7 +5661,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L103",
       "id": "cluster_score_all",
-      "community": 26,
+      "community": 27,
       "norm_label": "score_all()"
     },
     {
@@ -5642,7 +5669,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L1",
-      "community": 26,
+      "community": 27,
       "norm_label": "leiden community detection on networkx graphs. splits oversized communities. ret",
       "id": "cluster_rationale_1"
     },
@@ -5651,7 +5678,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L11",
-      "community": 26,
+      "community": 27,
       "norm_label": "context manager to suppress stdout/stderr during library calls.      graspolog",
       "id": "cluster_rationale_11"
     },
@@ -5660,7 +5687,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L22",
-      "community": 26,
+      "community": 27,
       "norm_label": "run community detection. returns {node_id: community_id}.      tries leiden (g",
       "id": "cluster_rationale_22"
     },
@@ -5669,7 +5696,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L60",
-      "community": 26,
+      "community": 27,
       "norm_label": "run leiden community detection. returns {community_id: [node_ids]}.      commu",
       "id": "cluster_rationale_60"
     },
@@ -5678,7 +5705,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L108",
-      "community": 26,
+      "community": 27,
       "norm_label": "run a second leiden pass on a community subgraph to split it further.",
       "id": "cluster_rationale_108"
     },
@@ -5687,7 +5714,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\cluster.py",
       "source_location": "L126",
-      "community": 26,
+      "community": 27,
       "norm_label": "ratio of actual intra-community edges to maximum possible.",
       "id": "cluster_rationale_126"
     },
@@ -10116,7 +10143,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L1",
       "id": "graphify_tests_test_export_py",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_export.py"
     },
     {
@@ -10125,7 +10152,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L10",
       "id": "test_export_make_graph",
-      "community": 27,
+      "community": 26,
       "norm_label": "make_graph()"
     },
     {
@@ -10134,7 +10161,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L13",
       "id": "test_export_test_to_json_creates_file",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_json_creates_file()"
     },
     {
@@ -10143,7 +10170,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L21",
       "id": "test_export_test_to_json_valid_json",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_json_valid_json()"
     },
     {
@@ -10152,7 +10179,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L31",
       "id": "test_export_test_to_json_nodes_have_community",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_json_nodes_have_community()"
     },
     {
@@ -10161,7 +10188,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L41",
       "id": "test_export_test_to_cypher_creates_file",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_cypher_creates_file()"
     },
     {
@@ -10170,7 +10197,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L48",
       "id": "test_export_test_to_cypher_contains_merge_statements",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_cypher_contains_merge_statements()"
     },
     {
@@ -10179,7 +10206,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L56",
       "id": "test_export_test_to_graphml_creates_file",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_graphml_creates_file()"
     },
     {
@@ -10188,7 +10215,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L64",
       "id": "test_export_test_to_graphml_valid_xml",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_graphml_valid_xml()"
     },
     {
@@ -10197,7 +10224,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L74",
       "id": "test_export_test_to_graphml_has_community_attribute",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_graphml_has_community_attribute()"
     },
     {
@@ -10206,7 +10233,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L83",
       "id": "test_export_test_to_html_creates_file",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_creates_file()"
     },
     {
@@ -10215,7 +10242,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L91",
       "id": "test_export_test_to_html_contains_visjs",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_contains_visjs()"
     },
     {
@@ -10224,7 +10251,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L100",
       "id": "test_export_test_to_html_contains_search",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_contains_search()"
     },
     {
@@ -10233,7 +10260,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L109",
       "id": "test_export_test_to_html_contains_legend_with_labels",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_contains_legend_with_labels()"
     },
     {
@@ -10242,7 +10269,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L119",
       "id": "test_export_test_to_html_contains_nodes_and_edges",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_contains_nodes_and_edges()"
     },
     {
@@ -10251,7 +10278,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L130",
       "id": "test_export_test_to_html_member_counts_accepted",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_html_member_counts_accepted()"
     },
     {
@@ -10260,7 +10287,7 @@
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L141",
       "id": "test_export_test_to_canvas_file_paths_relative_to_vault",
-      "community": 27,
+      "community": 26,
       "norm_label": "test_to_canvas_file_paths_relative_to_vault()"
     },
     {
@@ -10268,7 +10295,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L131",
-      "community": 27,
+      "community": 26,
       "norm_label": "to_html accepts member_counts without raising.",
       "id": "test_export_rationale_131"
     },
@@ -10277,7 +10304,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\tests\\test_export.py",
       "source_location": "L142",
-      "community": 27,
+      "community": 26,
       "norm_label": "node file paths in canvas must be vault-root-relative (just fname.md), not hardc",
       "id": "test_export_rationale_142"
     },
@@ -14247,7 +14274,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.ex",
       "source_location": "L1",
       "id": "graphify_tests_fixtures_sample_ex",
-      "community": 81,
+      "community": 82,
       "norm_label": "sample.ex"
     },
     {
@@ -14256,7 +14283,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.ex",
       "source_location": "L1",
       "id": "sample_myapp_accounts_user",
-      "community": 81,
+      "community": 82,
       "norm_label": "myapp.accounts.user"
     },
     {
@@ -14265,7 +14292,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.ex",
       "source_location": "L11",
       "id": "sample_myapp_accounts_user_create",
-      "community": 81,
+      "community": 82,
       "norm_label": "create()"
     },
     {
@@ -14274,7 +14301,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.ex",
       "source_location": "L17",
       "id": "sample_myapp_accounts_user_find",
-      "community": 81,
+      "community": 82,
       "norm_label": "find()"
     },
     {
@@ -14283,7 +14310,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.ex",
       "source_location": "L21",
       "id": "sample_myapp_accounts_user_validate",
-      "community": 81,
+      "community": 82,
       "norm_label": "validate()"
     },
     {
@@ -14535,7 +14562,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.m",
       "source_location": "L1",
       "id": "graphify_tests_fixtures_sample_m",
-      "community": 69,
+      "community": 70,
       "norm_label": "sample.m"
     },
     {
@@ -14544,7 +14571,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.m",
       "source_location": "L4",
       "id": "sample_animal",
-      "community": 69,
+      "community": 70,
       "norm_label": "animal"
     },
     {
@@ -14553,7 +14580,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.m",
       "source_location": "L8",
       "id": "sample_animal_initwithname",
-      "community": 69,
+      "community": 70,
       "norm_label": "-initwithname"
     },
     {
@@ -14562,7 +14589,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.m",
       "source_location": "L9",
       "id": "sample_animal_speak",
-      "community": 69,
+      "community": 70,
       "norm_label": "-speak"
     },
     {
@@ -14571,7 +14598,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.m",
       "source_location": "L29",
       "id": "sample_dog",
-      "community": 69,
+      "community": 70,
       "norm_label": "dog"
     },
     {
@@ -14580,7 +14607,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.m",
       "source_location": "L31",
       "id": "sample_dog_fetch",
-      "community": 69,
+      "community": 70,
       "norm_label": "-fetch"
     },
     {
@@ -14760,7 +14787,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.rs",
       "source_location": "L1",
       "id": "graphify_tests_fixtures_sample_rs",
-      "community": 70,
+      "community": 71,
       "norm_label": "sample.rs"
     },
     {
@@ -14769,7 +14796,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.rs",
       "source_location": "L3",
       "id": "sample_graph",
-      "community": 70,
+      "community": 71,
       "norm_label": "graph"
     },
     {
@@ -14778,7 +14805,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.rs",
       "source_location": "L8",
       "id": "sample_graph_new",
-      "community": 70,
+      "community": 71,
       "norm_label": ".new()"
     },
     {
@@ -14787,7 +14814,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.rs",
       "source_location": "L12",
       "id": "sample_graph_add_node",
-      "community": 70,
+      "community": 71,
       "norm_label": ".add_node()"
     },
     {
@@ -14796,7 +14823,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.rs",
       "source_location": "L16",
       "id": "sample_graph_add_edge",
-      "community": 70,
+      "community": 71,
       "norm_label": ".add_edge()"
     },
     {
@@ -14805,7 +14832,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample.rs",
       "source_location": "L21",
       "id": "sample_build_graph",
-      "community": 70,
+      "community": 71,
       "norm_label": "build_graph()"
     },
     {
@@ -15129,7 +15156,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_config.php",
       "source_location": "L1",
       "id": "graphify_tests_fixtures_sample_php_config_php",
-      "community": 82,
+      "community": 83,
       "norm_label": "sample_php_config.php"
     },
     {
@@ -15138,7 +15165,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_config.php",
       "source_location": "L5",
       "id": "sample_php_config_throttle",
-      "community": 82,
+      "community": 83,
       "norm_label": "throttle"
     },
     {
@@ -15147,7 +15174,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_config.php",
       "source_location": "L11",
       "id": "sample_php_config_ratelimiter",
-      "community": 82,
+      "community": 83,
       "norm_label": "ratelimiter"
     },
     {
@@ -15156,7 +15183,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_config.php",
       "source_location": "L13",
       "id": "sample_php_config_ratelimiter_persecond",
-      "community": 82,
+      "community": 83,
       "norm_label": ".persecond()"
     },
     {
@@ -15165,7 +15192,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_config.php",
       "source_location": "L18",
       "id": "sample_php_config_ratelimiter_perday",
-      "community": 82,
+      "community": 83,
       "norm_label": ".perday()"
     },
     {
@@ -15174,7 +15201,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_container.php",
       "source_location": "L1",
       "id": "graphify_tests_fixtures_sample_php_container_php",
-      "community": 71,
+      "community": 72,
       "norm_label": "sample_php_container.php"
     },
     {
@@ -15183,7 +15210,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_container.php",
       "source_location": "L5",
       "id": "sample_php_container_paymentgateway",
-      "community": 71,
+      "community": 72,
       "norm_label": "paymentgateway"
     },
     {
@@ -15192,7 +15219,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_container.php",
       "source_location": "L6",
       "id": "sample_php_container_stripegateway",
-      "community": 71,
+      "community": 72,
       "norm_label": "stripegateway"
     },
     {
@@ -15201,7 +15228,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_container.php",
       "source_location": "L7",
       "id": "sample_php_container_cashiergateway",
-      "community": 71,
+      "community": 72,
       "norm_label": "cashiergateway"
     },
     {
@@ -15210,7 +15237,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_container.php",
       "source_location": "L9",
       "id": "sample_php_container_appserviceprovider",
-      "community": 71,
+      "community": 72,
       "norm_label": "appserviceprovider"
     },
     {
@@ -15219,7 +15246,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_container.php",
       "source_location": "L11",
       "id": "sample_php_container_appserviceprovider_register",
-      "community": 71,
+      "community": 72,
       "norm_label": ".register()"
     },
     {
@@ -15291,7 +15318,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_static_prop.php",
       "source_location": "L1",
       "id": "graphify_tests_fixtures_sample_php_static_prop_php",
-      "community": 83,
+      "community": 84,
       "norm_label": "sample_php_static_prop.php"
     },
     {
@@ -15300,7 +15327,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_static_prop.php",
       "source_location": "L5",
       "id": "sample_php_static_prop_defaultpalette",
-      "community": 83,
+      "community": 84,
       "norm_label": "defaultpalette"
     },
     {
@@ -15309,7 +15336,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_static_prop.php",
       "source_location": "L11",
       "id": "sample_php_static_prop_colorresolver",
-      "community": 83,
+      "community": 84,
       "norm_label": "colorresolver"
     },
     {
@@ -15318,7 +15345,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_static_prop.php",
       "source_location": "L13",
       "id": "sample_php_static_prop_colorresolver_primary",
-      "community": 83,
+      "community": 84,
       "norm_label": ".primary()"
     },
     {
@@ -15327,7 +15354,7 @@
       "source_file": "graphify\\tests\\fixtures\\sample_php_static_prop.php",
       "source_location": "L18",
       "id": "sample_php_static_prop_colorresolver_accent",
-      "community": 83,
+      "community": 84,
       "norm_label": ".accent()"
     },
     {
@@ -17838,7 +17865,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L1",
       "id": "graphify_worked_mixed_corpus_raw_cluster_py",
-      "community": 26,
+      "community": 27,
       "norm_label": "cluster.py"
     },
     {
@@ -17847,7 +17874,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L6",
       "id": "cluster_build_graph",
-      "community": 26,
+      "community": 27,
       "norm_label": "build_graph()"
     },
     {
@@ -17855,7 +17882,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L7",
-      "community": 26,
+      "community": 27,
       "norm_label": "build a networkx graph from graphify node/edge dicts.      preserves original",
       "id": "cluster_rationale_7"
     },
@@ -17864,7 +17891,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L28",
-      "community": 26,
+      "community": 27,
       "norm_label": "run leiden community detection. returns {community_id: [node_ids]}.      commu",
       "id": "cluster_rationale_28"
     },
@@ -17873,7 +17900,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L73",
-      "community": 26,
+      "community": 27,
       "norm_label": "run a second leiden pass on a community subgraph to split it further.",
       "id": "cluster_rationale_73"
     },
@@ -17882,7 +17909,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\cluster.py",
       "source_location": "L93",
-      "community": 26,
+      "community": 27,
       "norm_label": "ratio of actual intra-community edges to maximum possible.",
       "id": "cluster_rationale_93"
     },
@@ -19188,7 +19215,7 @@
       "source_file": "tests\\unit\\pricesService.test.js",
       "source_location": "L1",
       "id": "tests_unit_pricesservice_test_js",
-      "community": 84,
+      "community": 85,
       "norm_label": "pricesservice.test.js"
     },
     {
@@ -19197,7 +19224,7 @@
       "source_file": "tests\\unit\\pricesService.test.js",
       "source_location": "L5",
       "id": "pricesservice_test_mockfetchsuccess",
-      "community": 84,
+      "community": 85,
       "norm_label": "mockfetchsuccess()"
     },
     {
@@ -19206,7 +19233,7 @@
       "source_file": "tests\\unit\\pricesService.test.js",
       "source_location": "L12",
       "id": "pricesservice_test_mockfetchfailure",
-      "community": 84,
+      "community": 85,
       "norm_label": "mockfetchfailure()"
     },
     {
@@ -19215,7 +19242,7 @@
       "source_file": "tests\\unit\\pricesService.test.js",
       "source_location": "L20",
       "id": "pricesservice_test_mockfetchthrows",
-      "community": 84,
+      "community": 85,
       "norm_label": "mockfetchthrows()"
     },
     {
@@ -19224,7 +19251,7 @@
       "source_file": "tests\\unit\\pricesService.test.js",
       "source_location": "L25",
       "id": "pricesservice_test_loadservice",
-      "community": 84,
+      "community": 85,
       "norm_label": "loadservice()"
     },
     {
@@ -19294,8 +19321,17 @@
       "label": "Fetch, fact-check, and sync news to Supabase.",
       "file_type": "rationale",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L35",
+      "source_location": "L36",
       "community": 245,
+      "norm_label": "fetch, fact-check, and sync news to supabase.",
+      "id": "news_sync_agent_rationale_36"
+    },
+    {
+      "label": "Fetch, fact-check, and sync news to Supabase.",
+      "file_type": "rationale",
+      "source_file": "backend\\agents\\news_sync_agent.py",
+      "source_location": "L35",
+      "community": 246,
       "norm_label": "fetch, fact-check, and sync news to supabase.",
       "id": "news_sync_agent_rationale_35"
     },
@@ -19304,7 +19340,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\llm_provider.py",
       "source_location": "L44",
-      "community": 246,
+      "community": 247,
       "norm_label": "generate text via the requested provider with automatic retry.          returns",
       "id": "llm_provider_rationale_44"
     },
@@ -19313,7 +19349,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\llm_provider.py",
       "source_location": "L122",
-      "community": 247,
+      "community": 248,
       "norm_label": "call the z.ai openai-compatible chat completions endpoint.",
       "id": "llm_provider_rationale_122"
     },
@@ -19322,7 +19358,7 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\news_scraper.py",
       "source_location": "L75",
-      "community": 248,
+      "community": 249,
       "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
       "id": "news_scraper_rationale_75"
     },
@@ -19331,7 +19367,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\news_sync_agent.py",
       "source_location": "L34",
-      "community": 249,
+      "community": 250,
       "norm_label": "fetch, fact-check, and sync news to supabase.",
       "id": "news_sync_agent_rationale_34"
     },
@@ -19340,7 +19376,7 @@
       "file_type": "rationale",
       "source_file": "scripts\\news_scraper.py",
       "source_location": "L73",
-      "community": 250,
+      "community": 251,
       "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
       "id": "news_scraper_rationale_73"
     },
@@ -19358,7 +19394,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L18",
-      "community": 251,
+      "community": 252,
       "norm_label": "generates new content for telangana.live",
       "id": "content_generator_rationale_18"
     },
@@ -19367,7 +19403,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L24",
-      "community": 252,
+      "community": 253,
       "norm_label": "generate new content and store in supabase",
       "id": "content_generator_rationale_24"
     },
@@ -19376,7 +19412,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L84",
-      "community": 253,
+      "community": 254,
       "norm_label": "execute generation cycle.                  first tries to pull dynamic topics",
       "id": "content_generator_rationale_84"
     },
@@ -19385,7 +19421,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L11",
-      "community": 254,
+      "community": 255,
       "norm_label": "monitors telangana.live for content that needs updates",
       "id": "content_monitor_rationale_11"
     },
@@ -19394,7 +19430,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L34",
-      "community": 255,
+      "community": 256,
       "norm_label": "use claude to analyze content and identify what needs updates",
       "id": "content_monitor_rationale_34"
     },
@@ -19403,7 +19439,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L71",
-      "community": 256,
+      "community": 257,
       "norm_label": "execute monitoring cycle",
       "id": "content_monitor_rationale_71"
     },
@@ -19412,7 +19448,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_updater.py",
       "source_location": "L9",
-      "community": 257,
+      "community": 258,
       "norm_label": "updates existing content with new information",
       "id": "content_updater_rationale_9"
     },
@@ -19421,7 +19457,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_updater.py",
       "source_location": "L15",
-      "community": 258,
+      "community": 259,
       "norm_label": "update existing content with new information",
       "id": "content_updater_rationale_15"
     },
@@ -19430,7 +19466,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L9",
-      "community": 259,
+      "community": 260,
       "norm_label": "checks and improves content quality, then publishes it.",
       "id": "quality_checker_rationale_9"
     },
@@ -19439,7 +19475,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L15",
-      "community": 260,
+      "community": 261,
       "norm_label": "check content quality, save improvements, and publish the article.",
       "id": "quality_checker_rationale_15"
     },
@@ -19448,7 +19484,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L55",
-      "community": 261,
+      "community": 262,
       "norm_label": "quality-check all content that is still in 'active' (draft) status.",
       "id": "quality_checker_rationale_55"
     },
@@ -19493,7 +19529,7 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\scripts\\news_scraper.py",
       "source_location": "L57",
-      "community": 262,
+      "community": 263,
       "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
       "id": "news_scraper_rationale_57"
     },
@@ -21384,7 +21420,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_src": "backend_agents_news_sync_agent_py",
       "_tgt": "news_sync_agent_newssyncagent",
@@ -21396,7 +21432,19 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L14",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "news_sync_agent_newssyncagent",
+      "_tgt": "news_sync_agent_newssyncagent_check_ollama_online",
+      "source": "news_sync_agent_newssyncagent",
+      "target": "news_sync_agent_newssyncagent_check_ollama_online",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\agents\\news_sync_agent.py",
+      "source_location": "L23",
       "weight": 1.0,
       "_src": "news_sync_agent_newssyncagent",
       "_tgt": "news_sync_agent_newssyncagent_init",
@@ -21408,7 +21456,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L19",
+      "source_location": "L28",
       "weight": 1.0,
       "_src": "news_sync_agent_newssyncagent",
       "_tgt": "news_sync_agent_newssyncagent_load_feeds",
@@ -21420,7 +21468,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L35",
+      "source_location": "L44",
       "weight": 1.0,
       "_src": "news_sync_agent_newssyncagent",
       "_tgt": "news_sync_agent_newssyncagent_process_news",
@@ -21516,7 +21564,19 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L17",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_src": "news_sync_agent_newssyncagent_process_news",
+      "_tgt": "news_sync_agent_newssyncagent_check_ollama_online",
+      "source": "news_sync_agent_newssyncagent_check_ollama_online",
+      "target": "news_sync_agent_newssyncagent_process_news",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\agents\\news_sync_agent.py",
+      "source_location": "L26",
       "weight": 1.0,
       "_src": "news_sync_agent_newssyncagent_init",
       "_tgt": "news_sync_agent_newssyncagent_load_feeds",
@@ -21528,12 +21588,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend\\agents\\news_sync_agent.py",
-      "source_location": "L36",
+      "source_location": "L45",
       "weight": 1.0,
-      "_src": "news_sync_agent_rationale_36",
+      "_src": "news_sync_agent_rationale_45",
       "_tgt": "news_sync_agent_newssyncagent_process_news",
       "source": "news_sync_agent_newssyncagent_process_news",
-      "target": "news_sync_agent_rationale_36",
+      "target": "news_sync_agent_rationale_45",
       "confidence_score": 1.0
     },
     {
@@ -22512,7 +22572,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "backend\\core\\clustering.py",
-      "source_location": "L57",
+      "source_location": "L67",
       "weight": 1.0,
       "_src": "clustering_cluster_articles",
       "_tgt": "clustering_get_embedding",
@@ -22536,7 +22596,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "backend\\core\\clustering.py",
-      "source_location": "L72",
+      "source_location": "L84",
       "weight": 1.0,
       "_src": "clustering_cluster_articles",
       "_tgt": "clustering_cosine_similarity",
@@ -22560,7 +22620,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "backend\\core\\clustering.py",
-      "source_location": "L78",
+      "source_location": "L90",
       "weight": 1.0,
       "_src": "clustering_cluster_articles",
       "_tgt": "clustering_jaccard_similarity",
@@ -25656,7 +25716,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
-      "source_location": "L12",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_src": "frontend_src_components_newscard_jsx",
+      "_tgt": "newscard_getcategorycover",
+      "source": "frontend_src_components_newscard_jsx",
+      "target": "newscard_getcategorycover",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\NewsCard.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_src": "frontend_src_components_newscard_jsx",
+      "_tgt": "newscard_publisherlogo",
+      "source": "frontend_src_components_newscard_jsx",
+      "target": "newscard_publisherlogo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\NewsCard.jsx",
+      "source_location": "L41",
       "weight": 1.0,
       "_src": "frontend_src_components_newscard_jsx",
       "_tgt": "newscard_confidencebadge",
@@ -25668,7 +25752,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\NewsCard.jsx",
-      "source_location": "L22",
+      "source_location": "L51",
       "weight": 1.0,
       "_src": "frontend_src_components_newscard_jsx",
       "_tgt": "newscard_newscard",
@@ -26748,7 +26832,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\SubRegionPage.jsx",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0,
       "_src": "frontend_src_pages_subregionpage_jsx",
       "_tgt": "subregionpage_subregionpage",
@@ -27000,7 +27084,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L129",
+      "source_location": "L130",
       "weight": 1.0,
       "_src": "frontend_src_services_pricesservice_js",
       "_tgt": "pricesservice_fetchpoweralerts",
@@ -27012,7 +27096,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L137",
+      "source_location": "L138",
       "weight": 1.0,
       "_src": "frontend_src_services_pricesservice_js",
       "_tgt": "pricesservice_fetchmandiprices",
@@ -27036,7 +27120,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L98",
+      "source_location": "L99",
       "weight": 1.0,
       "_src": "pricesservice_fetchgoldrates",
       "_tgt": "pricesservice_getcached",
@@ -27060,7 +27144,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L108",
+      "source_location": "L109",
       "weight": 1.0,
       "_src": "pricesservice_fetchgoldrates",
       "_tgt": "pricesservice_setcache",

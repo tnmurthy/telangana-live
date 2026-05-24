@@ -10,6 +10,8 @@ import MetroCard from '../components/MetroCard';
 import useJsonLd from '../hooks/useJsonLd';
 import NewsCard from '../components/NewsCard';
 import newsData from '../data/news.json';
+import PowerTariffCard from '../components/PowerTariffCard';
+import ServicesDirectory from '../components/ServicesDirectory';
 
 const regionMetadata = {
     hyderabad: {
@@ -135,8 +137,9 @@ export default function SubRegionPage() {
                 <div className="lg:col-span-2">
                     <DailyRatesDashboard />
                 </div>
-                <div>
+                <div className="space-y-6">
                     <WeatherCard selectedDistrict={meta.district} />
+                    <PowerTariffCard />
                 </div>
             </div>
 
@@ -145,6 +148,9 @@ export default function SubRegionPage() {
 
             {/* Local Health Finder */}
             <BasthiDawakhana />
+
+            {/* Services Directory */}
+            <ServicesDirectory />
 
             {/* Local News Feed */}
             <section id="local-news" className="space-y-6">

@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Homepage — Compact Layout & Core Components', () => {
 
     test.beforeEach(async ({ page }) => {
-        await page.goto('/dashboard', { waitUntil: 'networkidle' });
+        await page.goto('/hyderabad', { waitUntil: 'networkidle' });
     });
 
     test('page loads with correct title', async ({ page }) => {
@@ -16,7 +16,7 @@ test.describe('Homepage — Compact Layout & Core Components', () => {
     });
 
     test('news ticker is visible', async ({ page }) => {
-        await expect(page.locator('.animate-ticker')).toBeVisible();
+        await expect(page.getByTestId('news-ticker')).toBeVisible();
     });
 
     test('daily rates card renders', async ({ page }) => {

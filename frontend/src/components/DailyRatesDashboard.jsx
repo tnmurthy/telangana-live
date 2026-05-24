@@ -188,7 +188,7 @@ export default function DailyRatesDashboard() {
                 <div className="flex items-center justify-between mb-4">
                     <h4 className="label-xs flex items-center gap-1.5 uppercase tracking-wider">
                         <Icons.TrendingUp className="w-3 h-3 text-heritage-gold" />
-                        Fuel Transparency (Hyderabad)
+                        Fuel Prices (Hyderabad)
                     </h4>
                 </div>
                 
