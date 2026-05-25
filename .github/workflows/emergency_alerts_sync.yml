@@ -35,4 +35,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add frontend/public/data/alerts.json
           git commit -m "chore: sync real-time emergency alerts [automated]" || echo "No changes to commit"
+          git pull --rebase origin master
           git push
