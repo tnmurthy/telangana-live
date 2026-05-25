@@ -10,6 +10,7 @@ from core.llm_provider import llm
 from agents.fact_checker import fact_checker
 from core.news_classifier import classify_article, extract_image_url, extract_entities, map_domain_to_civic_schema
 from core.clustering import cluster_articles
+from core.correlation_engine import map_article_to_civic_entities
 
 class NewsSyncAgent:
     def _check_ollama_online(self):
@@ -98,6 +99,7 @@ class NewsSyncAgent:
 
                     # 4. Save to Supabase (Attempt) and establish correlations
                     content_id = None
+                    correlated_civic_entities = map_article_to_civic_entities(title, description)
                     try:
                         content_id = db.insert_content(
                             title=title,
@@ -116,22 +118,17 @@ class NewsSyncAgent:
                         )
                         
                         if content_id:
-                            for domain_entity in entities.get("domain_entities", []):
-                                entity_type, entity_id = map_domain_to_civic_schema(domain_entity)
-                                if entity_type and entity_id:
-                                    db.create_correlation(content_id, entity_type, entity_id)
+                            for correlation in correlated_civic_entities:
+                                db.create_correlation(
+                                    content_id=content_id,
+                                    entity_type=correlation["entity_type"],
+                                    entity_id=correlation["entity_id"],
+                                    correlation_score=correlation["score"]
+                                )
                     except Exception as e:
                         logger.warning(f"Supabase sync failed or correlation write error: {e}")
 
-                    # 5. Add to local list for JSON export
-                    correlated_civic_entities = []
-                    for domain_entity in entities.get("domain_entities", []):
-                        entity_type, entity_id = map_domain_to_civic_schema(domain_entity)
-                        if entity_type and entity_id:
-                            correlated_civic_entities.append({
-                                "entity_type": entity_type,
-                                "entity_id": entity_id
-                            })
+                    # 5. Add to local list for JSON export (uses correlated_civic_entities mapped above)
 
                     articles_for_json.append({
                          "title": title,

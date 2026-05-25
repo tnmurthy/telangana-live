@@ -180,4 +180,5 @@ if __name__ == "__main__":
         write_weather_module(data)
         print("Done.")
     else:
-        raise SystemExit("No weather data fetched – aborting write.")
+        print("WARNING: No weather data could be fetched (network or API offline). Skipping write to avoid blanking out existing data.")
+        raise SystemExit(0)

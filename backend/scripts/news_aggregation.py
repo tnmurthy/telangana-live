@@ -10,6 +10,7 @@ import os, json, hashlib, datetime, feedparser, requests, sys
 # Ensure project root is in path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.news_classifier import classify_article, extract_image_url
+from core.correlation_engine import map_article_to_civic_entities
 
 # Fix Unicode output for Windows terminal
 if sys.stdout.encoding != 'utf-8':
@@ -37,6 +38,7 @@ def uid(url):
     return hashlib.md5(url.encode()).hexdigest()
 
 articles = []
+seen_links = set()
 for category, feeds in CATEGORIZED_FEEDS.items():
     print(f"\n📂 Processing Category: {category.upper()}")
     for feed_meta in feeds:
@@ -49,12 +51,16 @@ for category, feeds in CATEGORIZED_FEEDS.items():
             count = 0
             for entry in feed.entries[:10]:
                 link = entry.get("link", "")
+                if not link or link in seen_links:
+                    continue
+                seen_links.add(link)
                 title = entry.get("title", "")
                 summary = entry.get("summary", "")
                 published = entry.get("published", datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0530"))
                 
                 cat, region = classify_article(title, summary)
                 img = extract_image_url(entry)
+                correlated_entities = map_article_to_civic_entities(title, summary)
 
                 articles.append({
                     "id":          uid(link),
@@ -67,7 +73,8 @@ for category, feeds in CATEGORIZED_FEEDS.items():
                     "region":      region,
                     "image_url":   img,
                     "ai_summary":  "", # Placeholder for now
-                    "tags":        []
+                    "tags":        [],
+                    "correlated_civic_entities": correlated_entities
                 })
                 count += 1
             print(f"  ✅ {feed_meta['source']}: {count} articles")
@@ -97,12 +104,15 @@ else:
         print(f"\n⚠️ Failed to upsert articles to Supabase: {e}. Falling back to local storage only.")
 
 # Write to local news.json for static frontend consumption
-try:
-    os.makedirs(FRONTEND_DATA_DIR, exist_ok=True)
-    with open(NEWS_JSON_PATH, "w", encoding="utf-8") as f:
-        json.dump(articles, f, indent=2, ensure_ascii=False)
-    print(f"✅ Written {len(articles)} articles to {NEWS_JSON_PATH}")
-except Exception as e:
-    print(f"⚠️ Failed to write news.json: {e}")
+if not articles:
+    print("\n⚠️ No articles fetched (all feeds failed). Skipping write to local news.json to preserve existing data.")
+else:
+    try:
+        os.makedirs(FRONTEND_DATA_DIR, exist_ok=True)
+        with open(NEWS_JSON_PATH, "w", encoding="utf-8") as f:
+            json.dump(articles, f, indent=2, ensure_ascii=False)
+        print(f"✅ Written {len(articles)} articles to {NEWS_JSON_PATH}")
+    except Exception as e:
+        print(f"⚠️ Failed to write news.json: {e}")
 
 print("\n✅ news_aggregation.py completed.")

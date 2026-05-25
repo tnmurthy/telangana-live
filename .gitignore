@@ -36,3 +36,4 @@ __pycache__
  
 .env
 graphify-out/cache/
+tmp_pytest/

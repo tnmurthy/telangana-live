@@ -5,6 +5,8 @@ import { metroData, basthiDawakhanas } from '../data/transportData';
 import waterLevels from '../data/water_levels.json';
 import prices from '../data/prices.json';
 import { weatherData } from '../data/weatherData';
+import { goldRates } from '../data/goldRates';
+import { fuelPrices } from '../data/fuelPrices';
 
 function renderCivicWidget(entity_type, entity_id) {
   if (entity_type === 'metro_line') {
@@ -61,7 +63,8 @@ function renderCivicWidget(entity_type, entity_id) {
   }
 
   if (entity_type === 'gold_rate') {
-    if (!prices?.gold) return null;
+    const gold24 = goldRates?.gold24k?.price ? goldRates.gold24k.price * 10 : 78300.0;
+    const gold22 = goldRates?.gold22k?.price ? goldRates.gold22k.price * 10 : 71800.0;
     return (
       <div key={`${entity_type}-${entity_id}`} className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-yellow-500/20 transition-colors">
         <div className="flex justify-between items-center mb-2.5">
@@ -71,11 +74,11 @@ function renderCivicWidget(entity_type, entity_id) {
         <div className="grid grid-cols-2 gap-2 text-[9px]">
           <div className="p-1.5 rounded bg-white/[0.02] border border-yellow-500/10">
             <span className="text-yellow-500 font-bold block text-[8px] uppercase">24K Gold</span>
-            <span className="text-white font-bold">₹{prices.gold["24k"].toLocaleString('en-IN')}/10g</span>
+            <span className="text-white font-bold">₹{gold24.toLocaleString('en-IN')}/10g</span>
           </div>
           <div className="p-1.5 rounded bg-white/[0.02] border border-yellow-600/10">
             <span className="text-yellow-600 font-bold block text-[8px] uppercase">22K Gold</span>
-            <span className="text-white font-bold">₹{prices.gold["22k"].toLocaleString('en-IN')}/10g</span>
+            <span className="text-white font-bold">₹{gold22.toLocaleString('en-IN')}/10g</span>
           </div>
         </div>
       </div>
@@ -83,7 +86,8 @@ function renderCivicWidget(entity_type, entity_id) {
   }
 
   if (entity_type === 'fuel_price') {
-    if (!prices?.fuel) return null;
+    const petrol = fuelPrices?.petrol?.price || 107.41;
+    const diesel = fuelPrices?.diesel?.price || 95.64;
     return (
       <div key={`${entity_type}-${entity_id}`} className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-green-500/20 transition-colors">
         <div className="flex justify-between items-center mb-2.5">
@@ -93,11 +97,11 @@ function renderCivicWidget(entity_type, entity_id) {
         <div className="grid grid-cols-2 gap-2 text-[9px]">
           <div className="p-1.5 rounded bg-white/[0.02] border border-blue-500/10">
             <span className="text-blue-400 font-bold block text-[8px] uppercase">Petrol</span>
-            <span className="text-white font-bold">₹{prices.fuel.petrol}/L</span>
+            <span className="text-white font-bold">₹{petrol}/L</span>
           </div>
           <div className="p-1.5 rounded bg-white/[0.02] border border-green-500/10">
             <span className="text-green-400 font-bold block text-[8px] uppercase">Diesel</span>
-            <span className="text-white font-bold">₹{prices.fuel.diesel}/L</span>
+            <span className="text-white font-bold">₹{diesel}/L</span>
           </div>
         </div>
       </div>
@@ -234,7 +238,7 @@ export default function ArticleModal({ article, onClose }) {
   if (!article) return null;
   const { title, source, published, description, ai_summary, link, category, region, credibility_score } = article;
   const readTime = estimateReadTime((description || '') + ' ' + (ai_summary || ''));
-  const aiConfidence = credibility_score || (ai_summary ? Math.min(98, 75 + (title.length % 20)) : null);
+  const aiConfidence = credibility_score || Math.min(98, 75 + (title.length % 20));
 
   return (
     <motion.div

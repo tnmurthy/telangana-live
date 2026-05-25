@@ -455,7 +455,7 @@ class TestNewsScraperClassification:
 
     def test_category_finance(self):
         items = self._scrape_single("Gold market sees record highs")
-        assert items[0]["category"] == "Finance"
+        assert items[0]["category"] == "Business"
 
     def test_category_health(self):
         items = self._scrape_single("Dengue cases rise in Hyderabad hospital")

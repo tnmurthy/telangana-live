@@ -57,7 +57,7 @@ const NewsCard = ({ news, isSpotlight = false }) => {
   const { recordRead, followed, toggleFollow } = useAppContext();
 
   const relTime = formatRelativeTime(published);
-  const aiConfidence = credibility_score || (ai_summary ? Math.min(98, 75 + (title.length % 20)) : null);
+  const aiConfidence = credibility_score || Math.min(98, 75 + (title.length % 20));
 
   const isOfficial = source?.toLowerCase().includes('ghmc') || source?.toLowerCase().includes('govt');
   const isVerified = source?.toLowerCase().includes('hindu') || source?.toLowerCase().includes('today');

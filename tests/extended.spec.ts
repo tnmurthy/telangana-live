@@ -26,9 +26,10 @@ test.describe('Additional Routes', () => {
 
     test('/rates/fuel loads the fuel landing page', async ({ page }) => {
         await page.goto('/rates/fuel', { waitUntil: 'networkidle' });
-        await expect(page.locator('main').first()).toBeVisible();
+        const main = page.locator('main').first();
+        await expect(main).toBeVisible();
         // Fuel page should mention "Fuel" or "Petrol" somewhere in main content
-        await expect(page.getByText(/Fuel|Petrol/i).first()).toBeVisible();
+        await expect(main.getByText(/Fuel|Petrol/i).first()).toBeVisible();
     });
 
     test('/emergency loads the emergency contacts page', async ({ page }) => {

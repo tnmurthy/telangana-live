@@ -47,7 +47,7 @@ This document details the data flow and configuration steps to push code from yo
 2. Click **Add New...** and select **Project**.
 3. Under "Import Git Repository," select **GitHub** and connect your account.
 4. Import your `telangana-live` repository.
-5. Leave the "Framework Preset" as **Other** (since it is standard HTML/JS).
+5. In the project settings, set the **Root Directory** to `frontend`. Vercel will automatically detect the **Vite** framework preset and configure the build command and output directory.
 6. Click **Deploy**. Vercel will build your site and generate a `.vercel.app` preview URL.
 
 ---

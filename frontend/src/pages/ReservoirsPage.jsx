@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getReservoirStatus } from '../data/reservoirsData';
 import { fetchWaterLevels } from '../services/waterService';
+import newsData from '../data/news.json';
 
 function LevelBar({ pct, color }) {
     return (
@@ -16,6 +17,25 @@ function LevelBar({ pct, color }) {
 function ReservoirCard({ reservoir }) {
     const { color, label, pct } = getReservoirStatus(reservoir);
     const [expanded, setExpanded] = useState(false);
+
+    // Combine database correlations with local news.json correlations
+    const localCorrelations = newsData?.filter(article => 
+        article.correlated_civic_entities?.some(ent => 
+            ent.entity_type === 'reservoir' && ent.entity_id === reservoir.id
+        )
+    ).map(article => ({
+        article_id: article.id,
+        title: article.title,
+        source: article.source,
+        link: article.link
+    })) || [];
+
+    const allCorrelatedNews = [
+        ...(reservoir.correlated_news || []),
+        ...localCorrelations.filter(local => 
+            !(reservoir.correlated_news || []).some(dbItem => dbItem.article_id === local.article_id)
+        )
+    ];
 
     return (
         <div
@@ -86,11 +106,11 @@ function ReservoirCard({ reservoir }) {
                             <p className="text-xs text-orange-300">⚠️ {reservoir.alertMessage}</p>
                         </div>
                     )}
-                    {reservoir.correlated_news && reservoir.correlated_news.length > 0 && (
+                    {allCorrelatedNews && allCorrelatedNews.length > 0 && (
                         <div className="mt-2.5 pt-2.5 border-t border-white/[0.06] space-y-2" onClick={e => e.stopPropagation()}>
                             <p className="text-[10px] text-text-muted font-semibold uppercase tracking-wider">Related News Coverage</p>
                             <div className="space-y-1.5">
-                                {reservoir.correlated_news.map((item, idx) => (
+                                {allCorrelatedNews.map((item, idx) => (
                                     <a
                                         key={idx}
                                         href={item.link || '#'}

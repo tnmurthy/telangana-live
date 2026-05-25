@@ -1,5 +1,6 @@
 import { metroData, mmtsData } from '../data/transportData';
 import transitStatus from '../data/transit_status.json';
+import newsData from '../data/news.json';
 import ShareWhatsApp from './ShareWhatsApp';
 import { Icons } from './Icons';
 
@@ -50,6 +51,13 @@ export default function MetroCard() {
                         alert.description.toLowerCase().includes(line.name.toLowerCase())
                     ) || [];
 
+                    // Filter news correlations from news.json
+                    const correlatedNews = newsData?.filter(article => 
+                        article.correlated_civic_entities?.some(ent => 
+                            ent.entity_type === 'metro_line' && ent.entity_id === line.name
+                        )
+                    ) || [];
+
                     return (
                         <div key={line.name} className="glass-card p-4 hover-lift-blue flex flex-col justify-between">
                             <div>
@@ -70,6 +78,15 @@ export default function MetroCard() {
                                     <div>
                                         <p className="font-bold text-white leading-normal">{alert.title}</p>
                                         <p className="text-text-muted leading-relaxed mt-0.5">{alert.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                            {correlatedNews.slice(0, 1).map((news, idx) => (
+                                <div key={idx} className="mt-3 p-2 rounded-lg bg-red-500/10 border border-red-500/20 text-[10px] text-red-400 flex items-start gap-1.5 animate-pulse">
+                                    <span className="shrink-0">⚡</span>
+                                    <div>
+                                        <p className="font-bold text-white leading-normal">News Alert: {news.title}</p>
+                                        <p className="text-text-muted leading-relaxed mt-0.5">{news.ai_summary || news.description}</p>
                                     </div>
                                 </div>
                             ))}

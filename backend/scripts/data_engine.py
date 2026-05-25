@@ -60,6 +60,38 @@ def write_js_module(path, var_name, data):
         f.write(js)
 
 
+def get_recent_news_for_entity(entity_type: str, entity_id: str, limit: int = 5) -> list:
+    """Reads news.json and returns a list of recent articles matching the entity_type and entity_id."""
+    news_path = PATHS["news"]
+    if not os.path.exists(news_path):
+        return []
+    try:
+        with open(news_path, "r", encoding="utf-8") as f:
+            articles = json.load(f)
+        matches = []
+        for article in articles:
+            correlated = article.get("correlated_civic_entities", [])
+            for ent in correlated:
+                if ent.get("entity_type") == entity_type and ent.get("entity_id") == entity_id:
+                    matches.append({
+                        "id": article.get("id"),
+                        "title": article.get("title"),
+                        "description": article.get("description"),
+                        "link": article.get("link"),
+                        "source": article.get("source"),
+                        "published": article.get("published"),
+                        "category": article.get("category"),
+                        "region": article.get("region"),
+                        "image_url": article.get("image_url"),
+                        "ai_summary": article.get("ai_summary")
+                    })
+                    break
+        return matches[:limit]
+    except Exception as e:
+        print(f"  ⚠️ Error reading news for correlations: {e}")
+        return []
+
+
 # ── Test-compatibility shims ───────────────────────────────────────────────────
 # These functions/attributes were part of an older engine API.
 # They are kept so the existing test suite remains green without modification.
@@ -294,7 +326,8 @@ def sync_gold():
         "gold22k": {"price": gold22, "unit": "per gram", "change": change22},
         "gold24k": {"price": gold24, "unit": "per gram", "change": change24},
         "silver":  {"price": silver_gram, "unit": "per gram", "change": change_silver},
-        "history": history
+        "history": history,
+        "correlated_news": get_recent_news_for_entity("gold_rate", "gold") + get_recent_news_for_entity("gold_rate", "silver")
     }
 
     write_js_module(PATHS["gold"], "goldRates", frontend_gold)
@@ -398,7 +431,8 @@ def sync_fuel():
         "petrol": {"price": petrol_price, "unit": "per litre", "change": 0, "taxBreakup": _tax_breakup(petrol_price)},
         "diesel": {"price": diesel_price, "unit": "per litre", "change": 0, "taxBreakup": _tax_breakup(diesel_price)},
         "lpgHousehold": {"price": lpg_price, "unit": "per cylinder (14.2kg)", "change": 0, "label": "LPG Domestic"},
-        "cngVehicle": {"price": cng_price, "unit": "per kg", "change": 0, "label": "CNG Vehicle"}
+        "cngVehicle": {"price": cng_price, "unit": "per kg", "change": 0, "label": "CNG Vehicle"},
+        "news_alerts": get_recent_news_for_entity("fuel_price", "fuel")
     }
 
     write_js_module(PATHS["fuel"], "fuelPrices", frontend_fuel)
@@ -465,7 +499,8 @@ def sync_pulses():
                 "name": item["name"],
                 "price": float(item["price"].replace("₹", "").replace("/kg", "")),
                 "unit": "kg",
-                "change": 0
+                "change": 0,
+                "correlated_news": get_recent_news_for_entity("mandi_price", item["name"])
             } for item in items
         ]
     }
@@ -481,6 +516,9 @@ def sync_news():
         from news_scraper import NewsScraper
         scraper = NewsScraper()
         articles = scraper.scrape(limit=50)
+        if not articles:
+            print("  ⚠️ No news articles fetched (network or feeds offline). Skipping write to preserve existing data.")
+            return
         os.makedirs(os.path.dirname(PATHS["news"]), exist_ok=True)
         with open(PATHS["news"], "w", encoding="utf-8") as f:
             json.dump(articles, f, indent=2, ensure_ascii=False)

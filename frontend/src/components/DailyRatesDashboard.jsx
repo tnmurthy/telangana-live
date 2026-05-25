@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { goldRates as staticGoldRates } from '../data/goldRates';
 import { fuelPrices as staticFuelPrices } from '../data/fuelPrices';
 import { pulses as pulsesData } from '../data/pulses';
+import newsData from '../data/news.json';
 import { fetchGoldRates, fetchFuelPrices } from '../services/pricesService';
 import ShareWhatsApp from './ShareWhatsApp';
 import FuelTaxCard from './FuelTaxCard';
@@ -61,8 +62,19 @@ export default function DailyRatesDashboard() {
         }).catch(() => {});
     }, []);
 
+    const [newsExpanded, setNewsExpanded] = useState(false);
+
     const { gold22k, gold24k, silver, date, history } = goldRates;
     const currentTab = historyTabs.find(t => t.key === activeTab);
+
+    // Filter news matching gold_rate, fuel_price, or mandi_price
+    const marketNews = newsData?.filter(article => 
+        article.correlated_civic_entities?.some(ent => 
+            ent.entity_type === 'gold_rate' || 
+            ent.entity_type === 'fuel_price' || 
+            ent.entity_type === 'mandi_price'
+        )
+    ) || [];
 
     const rateItems = [
         { label: 'Gold 22K', key: 'gold22k', price: gold22k.price, change: gold22k.change, unit: gold22k.unit, accent: 'gold-text' },
@@ -214,6 +226,43 @@ export default function DailyRatesDashboard() {
                     </div>
                 </div>
             </div>
+
+            {/* Market News Panel */}
+            {marketNews && marketNews.length > 0 && (
+                <div className="mt-6 pt-4 border-t border-white/[0.08]">
+                    <button 
+                        onClick={() => setNewsExpanded(!newsExpanded)}
+                        className="w-full flex items-center justify-between label-xs text-heritage-gold mb-2.5 hover:text-white transition-colors"
+                    >
+                        <span className="flex items-center gap-1.5">
+                            <Icons.TrendingUp className="w-3.5 h-3.5" />
+                            Market News & Inflation Analysis
+                        </span>
+                        <span className="text-[10px] text-text-muted">
+                            {newsExpanded ? 'Hide' : `Show (${marketNews.length})`}
+                        </span>
+                    </button>
+                    {newsExpanded && (
+                        <div className="space-y-2 animate-slide-down">
+                            {marketNews.slice(0, 3).map((news, idx) => (
+                                <a 
+                                    key={idx} 
+                                    href={news.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block p-2.5 rounded-lg bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.04] transition-all text-xs"
+                                >
+                                    <div className="text-white font-semibold line-clamp-1 hover:text-heritage-gold">{news.title}</div>
+                                    <div className="flex justify-between text-[9px] text-text-muted mt-1.5">
+                                        <span>{news.source}</span>
+                                        <span>{news.published}</span>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
     );
 }

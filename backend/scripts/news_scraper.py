@@ -16,6 +16,7 @@ except ImportError:
 
 from core.news_classifier import classify_article, extract_image_url
 from core.clustering import cluster_articles
+from core.correlation_engine import map_article_to_civic_entities
 
 
 # Load feeds from shared feeds.json (telangana + national only for scraper)
@@ -115,6 +116,8 @@ class NewsScraper:
                     cat, reg = classify_article(entry.title, desc)
                     img = extract_image_url(entry)
 
+                    correlated_entities = map_article_to_civic_entities(entry.title, desc)
+
                     item = {
                         "title": entry.title,
                         "link": entry.link,
@@ -125,7 +128,8 @@ class NewsScraper:
                         "region": reg,
                         "image_url": img,
                         "ai_summary": "",
-                        "tags": []
+                        "tags": [],
+                        "correlated_civic_entities": correlated_entities
                     }
 
                     # Step 1: Execute Fact Checking Pipeline
@@ -162,6 +166,9 @@ def run_scraper():
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     scraper = NewsScraper()
     news = scraper.scrape()
+    if not news:
+        print("  ⚠️ No news articles fetched (network or feeds offline). Skipping write to preserve existing data.")
+        return
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(news, f, indent=2, ensure_ascii=False)
     print(f"Successfully saved {len(news)} items to {OUTPUT_FILE}")
