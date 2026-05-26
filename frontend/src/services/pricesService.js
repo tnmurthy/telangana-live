@@ -22,6 +22,14 @@ function setCache(key, data) {
   memCache.set(key, { data, ts: Date.now() });
 }
 
+function getTaxBreakup(price) {
+  const base = parseFloat((price * 0.55).toFixed(2));
+  const excise = parseFloat((price * 0.22).toFixed(2));
+  const vat = parseFloat((price * 0.15).toFixed(2));
+  const dealer = parseFloat((price - base - excise - vat).toFixed(2));
+  return { basePrice: base, exciseDuty: excise, vatPercent: vat, dealerCommission: dealer };
+}
+
 /**
  * Fetch live fuel prices for a city.
  * @param {string} city - e.g. 'hyderabad'
@@ -32,9 +40,21 @@ export async function fetchFuelPrices(city = 'hyderabad') {
   
   // 1. Try Hybrid Local Data (Python Agent Pushed)
   if (hybridPrices?.fuel) {
+    const petrolPrice = hybridPrices.fuel.petrol;
+    const dieselPrice = hybridPrices.fuel.diesel;
     return {
-      petrol: { price: hybridPrices.fuel.petrol, unit: 'per litre', change: 0 },
-      diesel: { price: hybridPrices.fuel.diesel, unit: 'per litre', change: 0 },
+      petrol: { 
+        price: petrolPrice, 
+        unit: 'per litre', 
+        change: 0,
+        taxBreakup: getTaxBreakup(petrolPrice)
+      },
+      diesel: { 
+        price: dieselPrice, 
+        unit: 'per litre', 
+        change: 0,
+        taxBreakup: getTaxBreakup(dieselPrice)
+      },
       source: 'local-hybrid',
       lastUpdated: hybridPrices.last_updated
     };
@@ -65,9 +85,21 @@ export async function fetchFuelPrices(city = 'hyderabad') {
   } catch (err) {
     console.warn('fetchFuelPrices fallback:', err.message);
     // 5. Return static data
+    const petrolPrice = staticFuel.petrol?.price || 102.68;
+    const dieselPrice = staticFuel.diesel?.price || 88.73;
     return {
-      petrol: { price: staticFuel.petrol?.price || 102.68, unit: 'per litre', change: 0 },
-      diesel: { price: staticFuel.diesel?.price || 88.73,  unit: 'per litre', change: 0 },
+      petrol: { 
+        price: petrolPrice, 
+        unit: 'per litre', 
+        change: 0,
+        taxBreakup: staticFuel.petrol?.taxBreakup || getTaxBreakup(petrolPrice)
+      },
+      diesel: { 
+        price: dieselPrice, 
+        unit: 'per litre', 
+        change: 0,
+        taxBreakup: staticFuel.diesel?.taxBreakup || getTaxBreakup(dieselPrice)
+      },
       lpg:    { price: staticFuel.lpgHousehold?.price || 803.00, unit: 'per cylinder', change: 0 },
       cng:    { price: staticFuel.cngVehicle?.price   || 72.80,  unit: 'per kg', change: 0 },
       source: 'static-fallback',

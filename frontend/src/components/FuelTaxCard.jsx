@@ -7,9 +7,11 @@ export default function FuelTaxCard({ type, data }) {
     const { price, unit, taxBreakup } = data;
     const labels = {
         basePrice: "Base Price",
+        exciseDuty: "Central Excise",
+        vatPercent: "State VAT (TS)",
+        dealerCommission: "Dealer Commission",
         centralExcise: "Central Excise",
         stateVAT: "State VAT (TS)",
-        dealerCommission: "Dealer Commission",
         gst: "GST",
         distributorCommission: "Distributor Comm.",
         excise: "Addl. Excise"

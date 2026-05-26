@@ -647,9 +647,9 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\news_sync_agent.py",
       "source_location": "L46",
-      "id": "news_sync_agent_rationale_46",
       "community": 3,
-      "norm_label": "fetch, fact-check, and sync news to supabase."
+      "norm_label": "fetch, fact-check, and sync news to supabase.",
+      "id": "news_sync_agent_rationale_46"
     },
     {
       "label": "price_sync_agent.py",
@@ -1259,9 +1259,9 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\correlation_engine.py",
       "source_location": "L80",
-      "id": "correlation_engine_rationale_80",
       "community": 100,
-      "norm_label": "scans article text for matching keywords and returns a list of dictionaries:"
+      "norm_label": "scans article text for matching keywords and returns a list of dictionaries:",
+      "id": "correlation_engine_rationale_80"
     },
     {
       "label": "database.py",
@@ -1898,45 +1898,45 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L64",
-      "id": "data_engine_rationale_64",
       "community": 20,
-      "norm_label": "reads news.json and returns a list of recent articles matching the entity_type a"
+      "norm_label": "reads news.json and returns a list of recent articles matching the entity_type a",
+      "id": "data_engine_rationale_64"
     },
     {
       "label": "Strip all HTML tags and return plain text. Returns '' for None/empty.",
       "file_type": "rationale",
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L100",
-      "id": "data_engine_rationale_100",
       "community": 20,
-      "norm_label": "strip all html tags and return plain text. returns '' for none/empty."
+      "norm_label": "strip all html tags and return plain text. returns '' for none/empty.",
+      "id": "data_engine_rationale_100"
     },
     {
       "label": "Generate a 2-line AI summary. Returns '' if model is None or on error.",
       "file_type": "rationale",
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L110",
-      "id": "data_engine_rationale_110",
       "community": 20,
-      "norm_label": "generate a 2-line ai summary. returns '' if model is none or on error."
+      "norm_label": "generate a 2-line ai summary. returns '' if model is none or on error.",
+      "id": "data_engine_rationale_110"
     },
     {
       "label": "Wrapper that runs gold + fuel syncs sequentially. Used by tests.",
       "file_type": "rationale",
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L443",
-      "id": "data_engine_rationale_443",
       "community": 20,
-      "norm_label": "wrapper that runs gold + fuel syncs sequentially. used by tests."
+      "norm_label": "wrapper that runs gold + fuel syncs sequentially. used by tests.",
+      "id": "data_engine_rationale_443"
     },
     {
       "label": "Scrape news via NewsScraper and save to PATHS['news'].",
       "file_type": "rationale",
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L513",
-      "id": "data_engine_rationale_513",
       "community": 20,
-      "norm_label": "scrape news via newsscraper and save to paths['news']."
+      "norm_label": "scrape news via newsscraper and save to paths['news'].",
+      "id": "data_engine_rationale_513"
     },
     {
       "label": "emergency_alerts.py",
@@ -2069,9 +2069,9 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\news_scraper.py",
       "source_location": "L77",
-      "id": "news_scraper_rationale_77",
       "community": 1,
-      "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure."
+      "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
+      "id": "news_scraper_rationale_77"
     },
     {
       "label": "setup-city-repos.ps1",
@@ -2950,7 +2950,7 @@
       "label": "DistrictOnboarding()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\DistrictOnboarding.jsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "id": "districtonboarding_districtonboarding",
       "community": 131,
       "norm_label": "districtonboarding()"
@@ -3573,7 +3573,7 @@
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_rightsidebar_jsx",
-      "community": 61,
+      "community": 62,
       "norm_label": "rightsidebar.jsx"
     },
     {
@@ -3582,7 +3582,7 @@
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
       "source_location": "L12",
       "id": "rightsidebar_weatherwidget",
-      "community": 61,
+      "community": 62,
       "norm_label": "weatherwidget()"
     },
     {
@@ -3591,7 +3591,7 @@
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
       "source_location": "L64",
       "id": "rightsidebar_marketwidget",
-      "community": 61,
+      "community": 62,
       "norm_label": "marketwidget()"
     },
     {
@@ -3600,7 +3600,7 @@
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
       "source_location": "L133",
       "id": "rightsidebar_mandiwidget",
-      "community": 61,
+      "community": 62,
       "norm_label": "mandiwidget()"
     },
     {
@@ -3609,7 +3609,7 @@
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
       "source_location": "L164",
       "id": "rightsidebar_transportwidget",
-      "community": 61,
+      "community": 62,
       "norm_label": "transportwidget()"
     },
     {
@@ -3618,7 +3618,7 @@
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
       "source_location": "L178",
       "id": "rightsidebar_trendingwidget",
-      "community": 61,
+      "community": 62,
       "norm_label": "trendingwidget()"
     },
     {
@@ -3627,7 +3627,7 @@
       "source_file": "frontend\\src\\components\\RightSidebar.jsx",
       "source_location": "L213",
       "id": "rightsidebar_rightsidebar",
-      "community": 61,
+      "community": 62,
       "norm_label": "rightsidebar()"
     },
     {
@@ -3742,7 +3742,7 @@
       "label": "getStoryForDistrict()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "id": "storiesbar_getstoryfordistrict",
       "community": 90,
       "norm_label": "getstoryfordistrict()"
@@ -3751,7 +3751,7 @@
       "label": "StoryOverlay()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
-      "source_location": "L51",
+      "source_location": "L53",
       "id": "storiesbar_storyoverlay",
       "community": 90,
       "norm_label": "storyoverlay()"
@@ -3760,7 +3760,7 @@
       "label": "StoriesBar()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
-      "source_location": "L133",
+      "source_location": "L156",
       "id": "storiesbar_storiesbar",
       "community": 90,
       "norm_label": "storiesbar()"
@@ -5058,7 +5058,7 @@
       "source_file": "frontend\\src\\services\\pricesService.js",
       "source_location": "L1",
       "id": "frontend_src_services_pricesservice_js",
-      "community": 62,
+      "community": 61,
       "norm_label": "pricesservice.js"
     },
     {
@@ -5067,7 +5067,7 @@
       "source_file": "frontend\\src\\services\\pricesService.js",
       "source_location": "L15",
       "id": "pricesservice_getcached",
-      "community": 62,
+      "community": 61,
       "norm_label": "getcached()"
     },
     {
@@ -5076,43 +5076,52 @@
       "source_file": "frontend\\src\\services\\pricesService.js",
       "source_location": "L21",
       "id": "pricesservice_setcache",
-      "community": 62,
+      "community": 61,
       "norm_label": "setcache()"
+    },
+    {
+      "label": "getTaxBreakup()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\services\\pricesService.js",
+      "source_location": "L25",
+      "id": "pricesservice_gettaxbreakup",
+      "community": 61,
+      "norm_label": "gettaxbreakup()"
     },
     {
       "label": "fetchFuelPrices()",
       "file_type": "code",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L30",
+      "source_location": "L38",
       "id": "pricesservice_fetchfuelprices",
-      "community": 62,
+      "community": 61,
       "norm_label": "fetchfuelprices()"
     },
     {
       "label": "fetchGoldRates()",
       "file_type": "code",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L83",
+      "source_location": "L115",
       "id": "pricesservice_fetchgoldrates",
-      "community": 62,
+      "community": 61,
       "norm_label": "fetchgoldrates()"
     },
     {
       "label": "fetchPowerAlerts()",
       "file_type": "code",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L142",
+      "source_location": "L174",
       "id": "pricesservice_fetchpoweralerts",
-      "community": 62,
+      "community": 61,
       "norm_label": "fetchpoweralerts()"
     },
     {
       "label": "fetchMandiPrices()",
       "file_type": "code",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L165",
+      "source_location": "L197",
       "id": "pricesservice_fetchmandiprices",
-      "community": 62,
+      "community": 61,
       "norm_label": "fetchmandiprices()"
     },
     {
@@ -5571,7 +5580,7 @@
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L1",
       "id": "graphify_graphify_build_py",
-      "community": 39,
+      "community": 38,
       "norm_label": "build.py"
     },
     {
@@ -5580,7 +5589,7 @@
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L30",
       "id": "build_normalize_id",
-      "community": 39,
+      "community": 38,
       "norm_label": "_normalize_id()"
     },
     {
@@ -5589,7 +5598,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\build.py",
       "source_location": "L8",
       "id": "build_build_from_json",
-      "community": 39,
+      "community": 38,
       "norm_label": "build_from_json()"
     },
     {
@@ -5598,7 +5607,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\build.py",
       "source_location": "L31",
       "id": "build_build",
-      "community": 39,
+      "community": 38,
       "norm_label": "build()"
     },
     {
@@ -5606,7 +5615,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L31",
-      "community": 39,
+      "community": 38,
       "norm_label": "normalize an id string the same way extract._make_id does.      used to reconc",
       "id": "build_rationale_31"
     },
@@ -5615,7 +5624,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L41",
-      "community": 39,
+      "community": 38,
       "norm_label": "build a networkx graph from an extraction dict.      directed=true produces a",
       "id": "build_rationale_41"
     },
@@ -5624,7 +5633,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\build.py",
       "source_location": "L96",
-      "community": 39,
+      "community": 38,
       "norm_label": "merge multiple extraction results into one graph.      directed=true produces",
       "id": "build_rationale_96"
     },
@@ -7875,7 +7884,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L1",
       "id": "graphify_graphify_transcribe_py",
-      "community": 38,
+      "community": 39,
       "norm_label": "transcribe.py"
     },
     {
@@ -7884,7 +7893,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L17",
       "id": "transcribe_model_name",
-      "community": 38,
+      "community": 39,
       "norm_label": "_model_name()"
     },
     {
@@ -7893,7 +7902,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L21",
       "id": "transcribe_get_whisper",
-      "community": 38,
+      "community": 39,
       "norm_label": "_get_whisper()"
     },
     {
@@ -7902,7 +7911,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L32",
       "id": "transcribe_get_yt_dlp",
-      "community": 38,
+      "community": 39,
       "norm_label": "_get_yt_dlp()"
     },
     {
@@ -7911,7 +7920,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L43",
       "id": "transcribe_is_url",
-      "community": 38,
+      "community": 39,
       "norm_label": "is_url()"
     },
     {
@@ -7920,7 +7929,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L48",
       "id": "transcribe_download_audio",
-      "community": 38,
+      "community": 39,
       "norm_label": "download_audio()"
     },
     {
@@ -7929,7 +7938,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L91",
       "id": "transcribe_build_whisper_prompt",
-      "community": 38,
+      "community": 39,
       "norm_label": "build_whisper_prompt()"
     },
     {
@@ -7938,7 +7947,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L114",
       "id": "transcribe_transcribe",
-      "community": 38,
+      "community": 39,
       "norm_label": "transcribe()"
     },
     {
@@ -7947,7 +7956,7 @@
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L162",
       "id": "transcribe_transcribe_all",
-      "community": 38,
+      "community": 39,
       "norm_label": "transcribe_all()"
     },
     {
@@ -7955,7 +7964,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L44",
-      "community": 38,
+      "community": 39,
       "norm_label": "return true if the string looks like a url rather than a file path.",
       "id": "transcribe_rationale_44"
     },
@@ -7964,7 +7973,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L49",
-      "community": 38,
+      "community": 39,
       "norm_label": "download audio-only stream from a url using yt-dlp.      returns the path to t",
       "id": "transcribe_rationale_49"
     },
@@ -7973,7 +7982,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L92",
-      "community": 38,
+      "community": 39,
       "norm_label": "build a domain hint for whisper from god nodes extracted from the corpus.",
       "id": "transcribe_rationale_92"
     },
@@ -7982,7 +7991,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L120",
-      "community": 38,
+      "community": 39,
       "norm_label": "transcribe a video/audio file or url to a .txt transcript.      if video_path",
       "id": "transcribe_rationale_120"
     },
@@ -7991,7 +8000,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\transcribe.py",
       "source_location": "L167",
-      "community": 38,
+      "community": 39,
       "norm_label": "transcribe a list of video/audio files or urls, return paths to transcript .txt",
       "id": "transcribe_rationale_167"
     },
@@ -8001,7 +8010,7 @@
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L1",
       "id": "graphify_graphify_validate_py",
-      "community": 39,
+      "community": 38,
       "norm_label": "validate.py"
     },
     {
@@ -8010,7 +8019,7 @@
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L10",
       "id": "validate_validate_extraction",
-      "community": 39,
+      "community": 38,
       "norm_label": "validate_extraction()"
     },
     {
@@ -8019,7 +8028,7 @@
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L67",
       "id": "validate_assert_valid",
-      "community": 39,
+      "community": 38,
       "norm_label": "assert_valid()"
     },
     {
@@ -8027,7 +8036,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L11",
-      "community": 39,
+      "community": 38,
       "norm_label": "validate an extraction json dict against the graphify schema.     returns a lis",
       "id": "validate_rationale_11"
     },
@@ -8036,7 +8045,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\validate.py",
       "source_location": "L68",
-      "community": 39,
+      "community": 38,
       "norm_label": "raise valueerror with all errors if extraction is invalid.",
       "id": "validate_rationale_68"
     },
@@ -18045,7 +18054,7 @@
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\build.py",
       "source_location": "L1",
       "id": "graphify_worked_mixed_corpus_raw_build_py",
-      "community": 39,
+      "community": 38,
       "norm_label": "build.py"
     },
     {
@@ -18053,7 +18062,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\worked\\mixed-corpus\\raw\\build.py",
       "source_location": "L32",
-      "community": 39,
+      "community": 38,
       "norm_label": "merge multiple extraction results into one graph.",
       "id": "build_rationale_32"
     },
@@ -24526,9 +24535,9 @@
       "weight": 0.8,
       "_src": "llm_provider_llmprovider",
       "_tgt": "llm_provider_llmprovider",
+      "confidence_score": 0.5,
       "source": "llm_provider_llmprovider",
-      "target": "llm_provider_llmprovider",
-      "confidence_score": 0.5
+      "target": "llm_provider_llmprovider"
     },
     {
       "relation": "uses",
@@ -24536,11 +24545,11 @@
       "source_file": "backend\\tests\\smoke_test.py",
       "source_location": "L60",
       "weight": 0.8,
-      "_src": "smoke_test_rationale_1",
-      "_tgt": "llm_provider_llmprovider",
+      "_src": "llm_provider_llmprovider",
+      "_tgt": "smoke_test_rationale_1",
+      "confidence_score": 0.5,
       "source": "llm_provider_llmprovider",
-      "target": "smoke_test_rationale_1",
-      "confidence_score": 0.5
+      "target": "smoke_test_rationale_1"
     },
     {
       "relation": "uses",
@@ -24548,11 +24557,11 @@
       "source_file": "backend\\tests\\smoke_test.py",
       "source_location": "L60",
       "weight": 0.8,
-      "_src": "smoke_test_rationale_15",
-      "_tgt": "llm_provider_llmprovider",
+      "_src": "llm_provider_llmprovider",
+      "_tgt": "smoke_test_rationale_15",
+      "confidence_score": 0.5,
       "source": "llm_provider_llmprovider",
-      "target": "smoke_test_rationale_15",
-      "confidence_score": 0.5
+      "target": "smoke_test_rationale_15"
     },
     {
       "relation": "uses",
@@ -24560,11 +24569,11 @@
       "source_file": "backend\\tests\\smoke_test.py",
       "source_location": "L60",
       "weight": 0.8,
-      "_src": "smoke_test_rationale_29",
-      "_tgt": "llm_provider_llmprovider",
+      "_src": "llm_provider_llmprovider",
+      "_tgt": "smoke_test_rationale_29",
+      "confidence_score": 0.5,
       "source": "llm_provider_llmprovider",
-      "target": "smoke_test_rationale_29",
-      "confidence_score": 0.5
+      "target": "smoke_test_rationale_29"
     },
     {
       "relation": "uses",
@@ -24572,11 +24581,11 @@
       "source_file": "backend\\tests\\smoke_test.py",
       "source_location": "L60",
       "weight": 0.8,
-      "_src": "smoke_test_rationale_43",
-      "_tgt": "llm_provider_llmprovider",
+      "_src": "llm_provider_llmprovider",
+      "_tgt": "smoke_test_rationale_43",
+      "confidence_score": 0.5,
       "source": "llm_provider_llmprovider",
-      "target": "smoke_test_rationale_43",
-      "confidence_score": 0.5
+      "target": "smoke_test_rationale_43"
     },
     {
       "relation": "uses",
@@ -24584,11 +24593,11 @@
       "source_file": "backend\\tests\\smoke_test.py",
       "source_location": "L60",
       "weight": 0.8,
-      "_src": "smoke_test_rationale_58",
-      "_tgt": "llm_provider_llmprovider",
+      "_src": "llm_provider_llmprovider",
+      "_tgt": "smoke_test_rationale_58",
+      "confidence_score": 0.5,
       "source": "llm_provider_llmprovider",
-      "target": "smoke_test_rationale_58",
-      "confidence_score": 0.5
+      "target": "smoke_test_rationale_58"
     },
     {
       "relation": "uses",
@@ -24596,11 +24605,11 @@
       "source_file": "backend\\tests\\smoke_test.py",
       "source_location": "L60",
       "weight": 0.8,
-      "_src": "smoke_test_rationale_72",
-      "_tgt": "llm_provider_llmprovider",
+      "_src": "llm_provider_llmprovider",
+      "_tgt": "smoke_test_rationale_72",
+      "confidence_score": 0.5,
       "source": "llm_provider_llmprovider",
-      "target": "smoke_test_rationale_72",
-      "confidence_score": 0.5
+      "target": "smoke_test_rationale_72"
     },
     {
       "relation": "uses",
@@ -24608,11 +24617,11 @@
       "source_file": "backend\\tests\\smoke_test.py",
       "source_location": "L60",
       "weight": 0.8,
-      "_src": "smoke_test_rationale_83",
-      "_tgt": "llm_provider_llmprovider",
+      "_src": "llm_provider_llmprovider",
+      "_tgt": "smoke_test_rationale_83",
+      "confidence_score": 0.5,
       "source": "llm_provider_llmprovider",
-      "target": "smoke_test_rationale_83",
-      "confidence_score": 0.5
+      "target": "smoke_test_rationale_83"
     },
     {
       "relation": "calls",
@@ -25306,9 +25315,9 @@
       "weight": 0.8,
       "_src": "data_engine_rationale_64",
       "_tgt": "news_scraper_newsscraper",
+      "confidence_score": 0.5,
       "source": "data_engine_rationale_64",
-      "target": "news_scraper_newsscraper",
-      "confidence_score": 0.5
+      "target": "news_scraper_newsscraper"
     },
     {
       "relation": "uses",
@@ -25318,9 +25327,9 @@
       "weight": 0.8,
       "_src": "data_engine_rationale_100",
       "_tgt": "news_scraper_newsscraper",
+      "confidence_score": 0.5,
       "source": "data_engine_rationale_100",
-      "target": "news_scraper_newsscraper",
-      "confidence_score": 0.5
+      "target": "news_scraper_newsscraper"
     },
     {
       "relation": "uses",
@@ -25330,9 +25339,9 @@
       "weight": 0.8,
       "_src": "data_engine_rationale_110",
       "_tgt": "news_scraper_newsscraper",
+      "confidence_score": 0.5,
       "source": "data_engine_rationale_110",
-      "target": "news_scraper_newsscraper",
-      "confidence_score": 0.5
+      "target": "news_scraper_newsscraper"
     },
     {
       "relation": "uses",
@@ -25342,9 +25351,9 @@
       "weight": 0.8,
       "_src": "data_engine_rationale_443",
       "_tgt": "news_scraper_newsscraper",
+      "confidence_score": 0.5,
       "source": "data_engine_rationale_443",
-      "target": "news_scraper_newsscraper",
-      "confidence_score": 0.5
+      "target": "news_scraper_newsscraper"
     },
     {
       "relation": "uses",
@@ -25354,9 +25363,9 @@
       "weight": 0.8,
       "_src": "data_engine_rationale_513",
       "_tgt": "news_scraper_newsscraper",
+      "confidence_score": 0.5,
       "source": "data_engine_rationale_513",
-      "target": "news_scraper_newsscraper",
-      "confidence_score": 0.5
+      "target": "news_scraper_newsscraper"
     },
     {
       "relation": "contains",
@@ -25868,8 +25877,8 @@
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L481",
       "weight": 0.8,
-      "_src": "data_engine_rationale_68",
-      "_tgt": "news_scraper_newsscraper",
+      "_src": "news_scraper_newsscraper",
+      "_tgt": "data_engine_rationale_68",
       "confidence_score": 0.5,
       "source": "news_scraper_newsscraper",
       "target": "data_engine_rationale_68"
@@ -25880,8 +25889,8 @@
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L481",
       "weight": 0.8,
-      "_src": "data_engine_rationale_78",
-      "_tgt": "news_scraper_newsscraper",
+      "_src": "news_scraper_newsscraper",
+      "_tgt": "data_engine_rationale_78",
       "confidence_score": 0.5,
       "source": "news_scraper_newsscraper",
       "target": "data_engine_rationale_78"
@@ -25892,8 +25901,8 @@
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L481",
       "weight": 0.8,
-      "_src": "data_engine_rationale_409",
-      "_tgt": "news_scraper_newsscraper",
+      "_src": "news_scraper_newsscraper",
+      "_tgt": "data_engine_rationale_409",
       "confidence_score": 0.5,
       "source": "news_scraper_newsscraper",
       "target": "data_engine_rationale_409"
@@ -25904,8 +25913,8 @@
       "source_file": "backend\\scripts\\data_engine.py",
       "source_location": "L481",
       "weight": 0.8,
-      "_src": "data_engine_rationale_478",
-      "_tgt": "news_scraper_newsscraper",
+      "_src": "news_scraper_newsscraper",
+      "_tgt": "data_engine_rationale_478",
       "confidence_score": 0.5,
       "source": "news_scraper_newsscraper",
       "target": "data_engine_rationale_478"
@@ -27066,7 +27075,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\DistrictOnboarding.jsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_src": "frontend_src_components_districtonboarding_jsx",
       "_tgt": "districtonboarding_districtonboarding",
@@ -27750,7 +27759,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "_src": "frontend_src_components_storiesbar_jsx",
       "_tgt": "storiesbar_getstoryfordistrict",
@@ -27762,7 +27771,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
-      "source_location": "L51",
+      "source_location": "L53",
       "weight": 1.0,
       "_src": "frontend_src_components_storiesbar_jsx",
       "_tgt": "storiesbar_storyoverlay",
@@ -27774,7 +27783,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\StoriesBar.jsx",
-      "source_location": "L133",
+      "source_location": "L156",
       "weight": 1.0,
       "_src": "frontend_src_components_storiesbar_jsx",
       "_tgt": "storiesbar_storiesbar",
@@ -28746,7 +28755,19 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L30",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "frontend_src_services_pricesservice_js",
+      "_tgt": "pricesservice_gettaxbreakup",
+      "source": "frontend_src_services_pricesservice_js",
+      "target": "pricesservice_gettaxbreakup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\services\\pricesService.js",
+      "source_location": "L38",
       "weight": 1.0,
       "_src": "frontend_src_services_pricesservice_js",
       "_tgt": "pricesservice_fetchfuelprices",
@@ -28758,7 +28779,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L83",
+      "source_location": "L115",
       "weight": 1.0,
       "_src": "frontend_src_services_pricesservice_js",
       "_tgt": "pricesservice_fetchgoldrates",
@@ -28770,7 +28791,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L142",
+      "source_location": "L174",
       "weight": 1.0,
       "_src": "frontend_src_services_pricesservice_js",
       "_tgt": "pricesservice_fetchpoweralerts",
@@ -28782,7 +28803,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L165",
+      "source_location": "L197",
       "weight": 1.0,
       "_src": "frontend_src_services_pricesservice_js",
       "_tgt": "pricesservice_fetchmandiprices",
@@ -28794,7 +28815,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L53",
+      "source_location": "L73",
       "weight": 1.0,
       "_src": "pricesservice_fetchfuelprices",
       "_tgt": "pricesservice_getcached",
@@ -28806,7 +28827,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L111",
+      "source_location": "L143",
       "weight": 1.0,
       "_src": "pricesservice_fetchgoldrates",
       "_tgt": "pricesservice_getcached",
@@ -28818,7 +28839,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L144",
+      "source_location": "L176",
       "weight": 1.0,
       "_src": "pricesservice_fetchpoweralerts",
       "_tgt": "pricesservice_getcached",
@@ -28830,24 +28851,12 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L63",
+      "source_location": "L83",
       "weight": 1.0,
       "_src": "pricesservice_fetchfuelprices",
       "_tgt": "pricesservice_setcache",
       "source": "pricesservice_setcache",
       "target": "pricesservice_fetchfuelprices",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend\\src\\services\\pricesService.js",
-      "source_location": "L121",
-      "weight": 1.0,
-      "_src": "pricesservice_fetchgoldrates",
-      "_tgt": "pricesservice_setcache",
-      "source": "pricesservice_setcache",
-      "target": "pricesservice_fetchgoldrates",
       "confidence_score": 1.0
     },
     {
@@ -28856,10 +28865,34 @@
       "source_file": "frontend\\src\\services\\pricesService.js",
       "source_location": "L153",
       "weight": 1.0,
+      "_src": "pricesservice_fetchgoldrates",
+      "_tgt": "pricesservice_setcache",
+      "source": "pricesservice_setcache",
+      "target": "pricesservice_fetchgoldrates",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\services\\pricesService.js",
+      "source_location": "L185",
+      "weight": 1.0,
       "_src": "pricesservice_fetchpoweralerts",
       "_tgt": "pricesservice_setcache",
       "source": "pricesservice_setcache",
       "target": "pricesservice_fetchpoweralerts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\services\\pricesService.js",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "pricesservice_fetchfuelprices",
+      "_tgt": "pricesservice_gettaxbreakup",
+      "source": "pricesservice_gettaxbreakup",
+      "target": "pricesservice_fetchfuelprices",
       "confidence_score": 1.0
     },
     {

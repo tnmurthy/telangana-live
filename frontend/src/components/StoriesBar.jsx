@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import newsData from '../data/news.json';
 import { supabase } from '../services/supabaseClient';
+import { useAppContext } from '../context/AppContext';
 
 const STORY_DISTRICTS = [
   { name: 'Top', emoji: '🔥', color: 'from-red-500 to-orange-400' },
@@ -48,7 +50,7 @@ function getStoryForDistrict(districtName, publishedStories) {
   ) || newsData[0];
 }
 
-function StoryOverlay({ story, district, onClose }) {
+function StoryOverlay({ story, district, onClose, onNavigate }) {
   if (!story) return null;
   return (
     <motion.div
@@ -84,11 +86,22 @@ function StoryOverlay({ story, district, onClose }) {
         {/* Content */}
         <div className="relative p-6 space-y-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl">{district.emoji}</span>
-              <span className="text-sm font-bold text-white">{district.name}</span>
-            </div>
-            <button onClick={onClose} className="p-1.5 rounded-lg bg-white/10 text-white/70 hover:text-white">
+            <button 
+              onClick={() => onNavigate(district.name)}
+              className="flex items-center gap-2 group/header text-left hover:opacity-90 transition-opacity"
+              title={`Go to ${district.name} Feed`}
+            >
+              <span className="text-2xl group-hover/header:scale-110 transition-transform duration-300">{district.emoji}</span>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold text-white group-hover/header:text-telangana-green-light transition-colors flex items-center gap-1">
+                  {district.name}
+                  <svg className="w-3.5 h-3.5 opacity-0 group-hover/header:opacity-100 group-hover/header:translate-x-0.5 transition-all" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                  </svg>
+                </span>
+              </div>
+            </button>
+            <button onClick={onClose} className="p-1.5 rounded-lg bg-white/10 text-white/70 hover:text-white transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
@@ -113,16 +126,26 @@ function StoryOverlay({ story, district, onClose }) {
             </p>
           )}
 
-          <div className="flex items-center justify-between pt-2 border-t border-white/[0.06]">
-            <span className="text-[10px] text-text-muted">{story.source}</span>
-            <a
-              href={story.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-bold text-telangana-green hover:text-telangana-green-light transition-colors"
+          <div className="pt-2 border-t border-white/[0.06] flex flex-col gap-3">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] text-text-muted">{story.source}</span>
+              <a
+                href={story.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-bold text-telangana-green hover:text-telangana-green-light transition-colors"
+              >
+                Read Full Story →
+              </a>
+            </div>
+
+            <button
+              onClick={() => onNavigate(district.name)}
+              className="w-full py-2.5 bg-gradient-to-r from-telangana-green/30 to-emerald-600/30 hover:from-telangana-green/45 hover:to-emerald-600/45 border border-telangana-green/40 hover:border-telangana-green/60 rounded-xl text-xs font-bold text-white transition-all flex items-center justify-center gap-1.5 active:scale-[0.98] shadow-md shadow-telangana-green/10 mt-1"
             >
-              Read Full Story →
-            </a>
+              <span>📍</span>
+              View {district.name} Feed & Dashboard
+            </button>
           </div>
         </div>
       </motion.div>
@@ -134,6 +157,17 @@ export default function StoriesBar() {
   const [activeStory, setActiveStory] = useState(null);
   const [seenDistricts, setSeenDistricts] = useState(new Set());
   const [publishedStories, setPublishedStories] = useState([]);
+  const navigate = useNavigate();
+  const { saveDistrict } = useAppContext();
+
+  const routeMap = {
+    'hyderabad': 'hyderabad',
+    'warangal': 'warangal',
+    'karimnagar': 'karimnagar',
+    'medchal-malkajgiri': 'malkajgiri',
+    'malkajgiri': 'malkajgiri',
+    'cyberabad': 'cyberabad'
+  };
 
   // Fetch published AI-generated stories from Supabase
   useEffect(() => {
@@ -156,6 +190,17 @@ export default function StoriesBar() {
   };
 
   const closeStory = () => setActiveStory(null);
+
+  const handleNavigate = (districtName) => {
+    closeStory();
+    saveDistrict(districtName);
+    const targetRoute = routeMap[districtName.toLowerCase()];
+    if (targetRoute) {
+      navigate(`/${targetRoute}`);
+    } else {
+      navigate('/dashboard');
+    }
+  };
 
   return (
     <>
@@ -197,6 +242,7 @@ export default function StoriesBar() {
             story={activeStory.story}
             district={activeStory.district}
             onClose={closeStory}
+            onNavigate={handleNavigate}
           />
         )}
       </AnimatePresence>

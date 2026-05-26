@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { districts } from '../data/districts';
 import { useAppContext } from '../context/AppContext';
@@ -6,10 +7,36 @@ import { useAppContext } from '../context/AppContext';
 export default function DistrictOnboarding() {
   const { showDistrictPrompt, saveDistrict, dismissDistrictPrompt } = useAppContext();
   const [selected, setSelected] = useState('');
+  const navigate = useNavigate();
 
   if (!showDistrictPrompt) return null;
 
   const popular = ['Hyderabad', 'Rangareddy', 'Medchal-Malkajgiri', 'Warangal', 'Karimnagar', 'Nizamabad'];
+
+  const routeMap = {
+    'hyderabad': 'hyderabad',
+    'warangal': 'warangal',
+    'karimnagar': 'karimnagar',
+    'medchal-malkajgiri': 'malkajgiri',
+    'malkajgiri': 'malkajgiri',
+    'cyberabad': 'cyberabad'
+  };
+
+  const handleSelectPopular = (d) => {
+    saveDistrict(d);
+    const targetRoute = routeMap[d.toLowerCase()];
+    if (targetRoute) {
+      navigate(`/${targetRoute}`);
+    }
+  };
+
+  const handleSetDistrict = () => {
+    saveDistrict(selected);
+    const targetRoute = routeMap[selected.toLowerCase()];
+    if (targetRoute) {
+      navigate(`/${targetRoute}`);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -39,7 +66,7 @@ export default function DistrictOnboarding() {
           {popular.map(d => (
             <button
               key={d}
-              onClick={() => setSelected(d)}
+              onClick={() => handleSelectPopular(d)}
               className={`px-3 py-1 rounded-full text-[11px] font-semibold border transition-all
                 ${selected === d
                   ? 'bg-telangana-green/20 border-telangana-green text-telangana-green-light'
@@ -64,7 +91,7 @@ export default function DistrictOnboarding() {
             ))}
           </select>
           <button
-            onClick={() => saveDistrict(selected)}
+            onClick={handleSetDistrict}
             className="px-4 py-2 bg-telangana-green/20 hover:bg-telangana-green/30
                        border border-telangana-green/30 rounded-xl text-xs font-bold
                        text-telangana-green transition-all"

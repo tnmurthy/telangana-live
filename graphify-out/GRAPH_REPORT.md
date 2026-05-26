@@ -1,11 +1,11 @@
-# Graph Report - .  (2026-05-25)
+# Graph Report - .  (2026-05-26)
 
 ## Corpus Check
-- 336 files · ~318,606 words
+- 336 files · ~360,146 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2273 nodes · 3086 edges · 319 communities detected
+- 2274 nodes · 3088 edges · 319 communities detected
 - Extraction: 86% EXTRACTED · 14% INFERRED · 0% AMBIGUOUS · INFERRED: 444 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
@@ -509,12 +509,12 @@ Cohesion: 0.29
 Nodes (13): _make_graph(), Tests for graphify/benchmark.py., test_print_benchmark_no_crash(), test_query_bfs_expands_neighbors(), test_query_returns_positive_for_matching_question(), test_query_returns_zero_for_no_match(), test_run_benchmark_corpus_tokens_proportional(), test_run_benchmark_error_on_empty_graph() (+5 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.21
-Nodes (13): build_whisper_prompt(), download_audio(), _get_whisper(), _get_yt_dlp(), is_url(), _model_name(), Transcribe a video/audio file or URL to a .txt transcript.      If video_path, Transcribe a list of video/audio files or URLs, return paths to transcript .txt (+5 more)
-
-### Community 39 - "Community 39"
 Cohesion: 0.19
 Nodes (11): build(), build_from_json(), _normalize_id(), Normalize an ID string the same way extract._make_id does.      Used to reconc, Merge multiple extraction results into one graph., Build a NetworkX graph from an extraction dict.      directed=True produces a, Merge multiple extraction results into one graph.      directed=True produces, assert_valid() (+3 more)
+
+### Community 39 - "Community 39"
+Cohesion: 0.21
+Nodes (13): build_whisper_prompt(), download_audio(), _get_whisper(), _get_yt_dlp(), is_url(), _model_name(), Transcribe a video/audio file or URL to a .txt transcript.      If video_path, Transcribe a list of video/audio files or URLs, return paths to transcript .txt (+5 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.2
@@ -601,12 +601,12 @@ Cohesion: 0.36
 Nodes (1): NewsService
 
 ### Community 61 - "Community 61"
-Cohesion: 0.29
-Nodes (0): 
+Cohesion: 0.5
+Nodes (6): fetchFuelPrices(), fetchGoldRates(), fetchPowerAlerts(), getCached(), getTaxBreakup(), setCache()
 
 ### Community 62 - "Community 62"
-Cohesion: 0.57
-Nodes (5): fetchFuelPrices(), fetchGoldRates(), fetchPowerAlerts(), getCached(), setCache()
+Cohesion: 0.29
+Nodes (0): 
 
 ### Community 63 - "Community 63"
 Cohesion: 0.43

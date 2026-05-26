@@ -33,9 +33,9 @@ test.describe('Homepage — Compact Layout & Core Components', () => {
     });
 
     test('fuel prices section renders', async ({ page }) => {
-        await expect(page.getByText('Fuel Prices', { exact: false }).first()).toBeVisible();
+        await expect(page.locator('main').getByText('Fuel Prices', { exact: false }).first()).toBeVisible();
         // Verify petrol entry exists
-        await expect(page.getByText('Petrol').first()).toBeVisible();
+        await expect(page.locator('main').getByText('Petrol').first()).toBeVisible();
     });
 
     test('power tariff card is visible', async ({ page }) => {
