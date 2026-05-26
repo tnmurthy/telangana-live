@@ -51,7 +51,14 @@ export default function Header() {
                         </button>
                         <Link to="/dashboard" className="flex items-center gap-2.5 group">
                             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-telangana-green to-emerald-600 flex items-center justify-center shadow-lg shadow-telangana-green/20 group-hover:shadow-telangana-green/30 transition-all duration-300 group-hover:scale-105">
-                              <span className="text-white font-black text-base tracking-tighter">T</span>
+                              <svg className="w-5.5 h-5.5 text-heritage-gold filter drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.3)]" viewBox="0 0 512 512" fill="none" stroke="currentColor" strokeWidth={32} strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M 160 440 V 220" />
+                                <path d="M 352 440 V 220" strokeWidth={32} />
+                                <path d="M 100 220 H 412" strokeWidth={40} />
+                                <path d="M 120 160 H 392" strokeWidth={24} />
+                                <path d="M 160 160 Q 256 80 352 160" />
+                                <path d="M 210 220 Q 256 180 302 220" />
+                              </svg>
                             </div>
                             <div className="hidden sm:flex flex-col -space-y-0.5">
                               <h1 className="font-heading font-extrabold text-[1.05rem] text-white tracking-tight leading-none">

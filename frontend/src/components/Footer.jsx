@@ -9,7 +9,14 @@ export default function Footer() {
           {/* Brand */}
           <Link to="/dashboard" className="flex items-center gap-2.5">
             <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-telangana-green to-emerald-600 flex items-center justify-center">
-              <span className="text-white font-black text-sm">T</span>
+              <svg className="w-4.5 h-4.5 text-heritage-gold" viewBox="0 0 512 512" fill="none" stroke="currentColor" strokeWidth={32} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M 160 440 V 220" />
+                <path d="M 352 440 V 220" strokeWidth={32} />
+                <path d="M 100 220 H 412" strokeWidth={40} />
+                <path d="M 120 160 H 392" strokeWidth={24} />
+                <path d="M 160 160 Q 256 80 352 160" />
+                <path d="M 210 220 Q 256 180 302 220" />
+              </svg>
             </div>
             <span className="font-heading font-extrabold text-sm text-white">
               TG<span className="text-telangana-green">News</span>
