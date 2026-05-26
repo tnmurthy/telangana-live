@@ -122,6 +122,29 @@ export default function WeatherCard({ selectedDistrict }) {
                     </div>
                 </div>
             </div>
+
+            {/* Conditional Heatwave/Monsoon Advisory */}
+            {(weather.temp > 40 || weather.condition.toLowerCase().includes('rain') || weather.condition.toLowerCase().includes('cloudy')) && (
+                <div className="mt-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 flex gap-2">
+                    <span className="text-base flex-shrink-0 mt-0.5">
+                        {weather.temp > 40 ? '🥵' : '🌧️'}
+                    </span>
+                    <div className="min-w-0">
+                        <p className="text-[10px] font-bold text-white leading-snug">
+                            {weather.temp > 40 
+                                ? `Extreme heat alert: Local Basthi Dawakhaanas are open with free ORS and cooling relief.` 
+                                : `Heavy rain condition: Basthi Dawakhaanas are offering free diagnostics and seasonal advice.`
+                            }
+                        </p>
+                        <a 
+                            href="/health/basthi-dawakhana"
+                            className="text-[9px] font-bold text-heritage-gold hover:underline mt-1.5 inline-block"
+                        >
+                            Find Nearest Basthi Dawakhana ↗
+                        </a>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

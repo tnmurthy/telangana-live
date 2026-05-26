@@ -338,7 +338,7 @@ export default function ArticleModal({ article, onClose }) {
                 )}
 
                 {/* CTA */}
-                <div className="pt-4 border-t border-white/[0.05]">
+                <div className="pt-4 border-t border-white/[0.05] flex flex-wrap gap-4 items-center justify-between">
                   <a
                     href={link}
                     target="_blank"
@@ -351,6 +351,36 @@ export default function ArticleModal({ article, onClose }) {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                     </svg>
                   </a>
+
+                  {/* Grievance Action Link */}
+                  {(() => {
+                    const text = `${title} ${description || ''}`.toLowerCase();
+                    if (text.includes('pothole') || text.includes('flooding') || text.includes('garbage') || text.includes('water leak')) {
+                      return (
+                        <a
+                          href="https://www.ghmc.gov.in/Grievance_Redressal.aspx"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-xs font-bold text-red-400 transition-colors"
+                        >
+                          <span>⚠️ Report to GHMC</span>
+                        </a>
+                      );
+                    }
+                    if (text.includes('power cut') || text.includes('outage') || text.includes('electricity') || text.includes('tsspdcl')) {
+                      return (
+                        <a
+                          href="https://www.tsspdcl.org"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-xs font-bold text-amber-400 transition-colors"
+                        >
+                          <span>⚡ Lodge TSSPDCL Complaint</span>
+                        </a>
+                      );
+                    }
+                    return null;
+                  })()}
                 </div>
               </div>
 

@@ -31,4 +31,29 @@ export const services = {
             { name: 'Chirec International', area: 'Kondapur, Hyderabad', type: 'Private (CBSE/Cambridge)', rating: 4.6 },
         ],
     },
+    meeseva: {
+        icon: 'FileText',
+        label: 'MeeSeva',
+        description: 'Access official Telangana Government electronic services (certificates, land records, bill payments) at nearby MeeSeva centres',
+        count: 4500,
+        offerings: [
+            'Caste & Income Certificates',
+            'Residence & Nativity Certificates',
+            'Adangal / Pahani Copies (Land Records)',
+            'Utility Bill Payments (Electricity, Water)',
+            'Ration Card Corrections & Applications',
+            'Encumbrance Certificates (Registration)',
+            'Aadhaar Enrolment & Updates'
+        ],
+        items: [
+            { name: 'MeeSeva Centre - Khairatabad', area: 'Municipal Office Compound, Khairatabad, Hyderabad Central', type: 'Government Authorised', rating: 4.4 },
+            { name: 'MeeSeva Centre - Madhapur', area: 'Opp. Image Gardens, Madhapur, Cyberabad', type: 'Government Authorised', rating: 4.2 },
+            { name: 'MeeSeva Centre - Hanamkonda', area: 'Collectorate Road, Hanamkonda, Warangal', type: 'Government Authorised', rating: 4.5 },
+            { name: 'MeeSeva Centre - Karimnagar', area: 'Opp. Collectorate Office, Karimnagar', type: 'Government Authorised', rating: 4.3 },
+            { name: 'MeeSeva Centre - Nizamabad', area: 'Pragathi Nagar, Nizamabad', type: 'Government Authorised', rating: 4.1 },
+            { name: 'MeeSeva Centre - Secunderabad', area: 'YMCA Circle, Secunderabad', type: 'Government Authorised', rating: 4.4 },
+            { name: 'MeeSeva Centre - Malkajgiri', area: 'Vidyut Nagar, Malkajgiri', type: 'Government Authorised', rating: 4.0 },
+            { name: 'MeeSeva Centre - Kazipet', area: 'Near Railway Station Road, Kazipet, Warangal', type: 'Government Authorised', rating: 4.2 }
+        ],
+    },
 };

@@ -172,3 +172,63 @@ test.describe('Live News Clustering Modal', () => {
         await expect(searchInput).toHaveValue('Telangana');
     });
 });
+
+test.describe('MeeSeva Portal Page', () => {
+
+    test.beforeEach(async ({ page }) => {
+        await page.goto('/meeseva', { waitUntil: 'networkidle' });
+    });
+
+    test('meeseva page has header and assistance info', async ({ page }) => {
+        await expect(page.locator('main h1')).toHaveText(/MeeSeva Citizen Portal/i);
+        await expect(page.locator('text=ESD Helpline')).toBeVisible();
+    });
+
+    test('meeseva page offerings can be searched and expanded', async ({ page }) => {
+        // Find search input for offerings
+        const searchInput = page.locator('input[placeholder="Search services..."]');
+        await expect(searchInput).toBeVisible();
+        await searchInput.fill('Income');
+        
+        // Income offering should be visible
+        const incomeHeader = page.locator('button', { hasText: 'Income Certificate' });
+        await expect(incomeHeader).toBeVisible();
+        
+        // Expand offering
+        await incomeHeader.click({ force: true });
+        
+        // Check list of documents
+        await expect(page.locator('text=Required Documents Check')).toBeVisible();
+        await expect(page.locator('text=Self-Declaration Form')).toBeVisible();
+    });
+
+    test('meeseva centres locator works with search and filtering', async ({ page }) => {
+        // District filter
+        const select = page.locator('select');
+        await expect(select).toBeVisible();
+        await select.selectOption('Warangal');
+
+        // Locate a centre in Warangal
+        await expect(page.locator('text=MeeSeva Centre - Hanamkonda')).toBeVisible();
+
+        // Search locality filter
+        const searchLocality = page.locator('input[placeholder="Filter locality / PIN..."]');
+        await expect(searchLocality).toBeVisible();
+        await searchLocality.fill('Kazipet');
+
+        await expect(page.locator('text=MeeSeva Centre - Kazipet')).toBeVisible();
+        await expect(page.locator('text=MeeSeva Centre - Hanamkonda')).not.toBeVisible();
+    });
+
+    test('meeseva application tracker runs', async ({ page }) => {
+        const trackInput = page.locator('input[placeholder*="Enter App No"]');
+        await expect(trackInput).toBeVisible();
+        await trackInput.fill('TS-RE-98765');
+        await trackInput.press('Enter');
+        
+        // Tracked results block should appear
+        await expect(page.locator('text=Applicant:')).toBeVisible();
+        await expect(page.locator('text=Application Submitted')).toBeVisible();
+    });
+});
+

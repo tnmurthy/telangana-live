@@ -12,6 +12,7 @@ const CATEGORY_ROUTES = {
     Schools: '/dashboard',
     Markets: '/dashboard',
     Parks: '/dashboard',
+    MeeSeva: '/dashboard#services',
 };
 
 function flattenServices() {

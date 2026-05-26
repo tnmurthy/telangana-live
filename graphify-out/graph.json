@@ -90,7 +90,7 @@
       "source_file": "branch-cleanup.ps1",
       "source_location": "L1",
       "id": "branch_cleanup_ps1",
-      "community": 191,
+      "community": 192,
       "norm_label": "branch-cleanup.ps1"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "git-push.ps1",
       "source_location": "L1",
       "id": "git_push_ps1",
-      "community": 192,
+      "community": 193,
       "norm_label": "git-push.ps1"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "restructure.ps1",
       "source_location": "L1",
       "id": "restructure_ps1",
-      "community": 193,
+      "community": 194,
       "norm_label": "restructure.ps1"
     },
     {
@@ -360,7 +360,7 @@
       "source_file": "backend\\__init__.py",
       "source_location": "L1",
       "id": "backend_init_py",
-      "community": 194,
+      "community": 195,
       "norm_label": "__init__.py"
     },
     {
@@ -936,7 +936,7 @@
       "source_file": "backend\\agents\\__init__.py",
       "source_location": "L1",
       "id": "backend_agents_init_py",
-      "community": 195,
+      "community": 196,
       "norm_label": "__init__.py"
     },
     {
@@ -1233,7 +1233,7 @@
       "source_file": "backend\\core\\config.py",
       "source_location": "L1",
       "id": "backend_core_config_py",
-      "community": 196,
+      "community": 197,
       "norm_label": "config.py"
     },
     {
@@ -2151,7 +2151,7 @@
       "source_file": "backend\\scripts\\test_api_server.py",
       "source_location": "L1",
       "id": "backend_scripts_test_api_server_py",
-      "community": 123,
+      "community": 124,
       "norm_label": "test_api_server.py"
     },
     {
@@ -2160,7 +2160,7 @@
       "source_file": "backend\\scripts\\test_api_server.py",
       "source_location": "L3",
       "id": "test_api_server_test_api",
-      "community": 123,
+      "community": 124,
       "norm_label": "test_api()"
     },
     {
@@ -2484,7 +2484,7 @@
       "source_file": "frontend\\eslint.config.js",
       "source_location": "L1",
       "id": "frontend_eslint_config_js",
-      "community": 197,
+      "community": 198,
       "norm_label": "eslint.config.js"
     },
     {
@@ -2520,7 +2520,7 @@
       "source_file": "frontend\\playwright.config.ts",
       "source_location": "L1",
       "id": "frontend_playwright_config_ts",
-      "community": 198,
+      "community": 199,
       "norm_label": "playwright.config.ts"
     },
     {
@@ -2529,7 +2529,7 @@
       "source_file": "frontend\\postcss.config.js",
       "source_location": "L1",
       "id": "frontend_postcss_config_js",
-      "community": 199,
+      "community": 200,
       "norm_label": "postcss.config.js"
     },
     {
@@ -2538,7 +2538,7 @@
       "source_file": "frontend\\tailwind.config.js",
       "source_location": "L1",
       "id": "frontend_tailwind_config_js",
-      "community": 200,
+      "community": 201,
       "norm_label": "tailwind.config.js"
     },
     {
@@ -2547,7 +2547,7 @@
       "source_file": "frontend\\vite.config.ts",
       "source_location": "L1",
       "id": "frontend_vite_config_ts",
-      "community": 201,
+      "community": 202,
       "norm_label": "vite.config.ts"
     },
     {
@@ -2556,7 +2556,7 @@
       "source_file": "frontend\\vitest.config.ts",
       "source_location": "L1",
       "id": "frontend_vitest_config_ts",
-      "community": 202,
+      "community": 203,
       "norm_label": "vitest.config.ts"
     },
     {
@@ -2610,7 +2610,7 @@
       "source_file": "frontend\\public\\sw.js",
       "source_location": "L1",
       "id": "frontend_public_sw_js",
-      "community": 203,
+      "community": 204,
       "norm_label": "sw.js"
     },
     {
@@ -2626,7 +2626,7 @@
       "label": "LoadingScreen()",
       "file_type": "code",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "id": "app_loadingscreen",
       "community": 76,
       "norm_label": "loadingscreen()"
@@ -2635,7 +2635,7 @@
       "label": "EmergencyToggle()",
       "file_type": "code",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L55",
+      "source_location": "L56",
       "id": "app_emergencytoggle",
       "community": 76,
       "norm_label": "emergencytoggle()"
@@ -2644,7 +2644,7 @@
       "label": "AppContent()",
       "file_type": "code",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L80",
+      "source_location": "L81",
       "id": "app_appcontent",
       "community": 76,
       "norm_label": "appcontent()"
@@ -2653,7 +2653,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L147",
+      "source_location": "L149",
       "id": "app_app",
       "community": 76,
       "norm_label": "app()"
@@ -2691,7 +2691,7 @@
       "source_file": "frontend\\src\\api\\whatsapp.js",
       "source_location": "L1",
       "id": "frontend_src_api_whatsapp_js",
-      "community": 124,
+      "community": 125,
       "norm_label": "whatsapp.js"
     },
     {
@@ -2700,7 +2700,7 @@
       "source_file": "frontend\\src\\api\\whatsapp.js",
       "source_location": "L12",
       "id": "whatsapp_handlewhatsappmessage",
-      "community": 124,
+      "community": 125,
       "norm_label": "handlewhatsappmessage()"
     },
     {
@@ -2745,7 +2745,7 @@
       "source_file": "frontend\\src\\components\\BasthiDawakhana.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_basthidawakhana_jsx",
-      "community": 125,
+      "community": 126,
       "norm_label": "basthidawakhana.jsx"
     },
     {
@@ -2754,7 +2754,7 @@
       "source_file": "frontend\\src\\components\\BasthiDawakhana.jsx",
       "source_location": "L4",
       "id": "basthidawakhana_basthidawakhana",
-      "community": 125,
+      "community": 126,
       "norm_label": "basthidawakhana()"
     },
     {
@@ -2763,7 +2763,7 @@
       "source_file": "frontend\\src\\components\\BottomNav.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_bottomnav_jsx",
-      "community": 126,
+      "community": 127,
       "norm_label": "bottomnav.jsx"
     },
     {
@@ -2772,7 +2772,7 @@
       "source_file": "frontend\\src\\components\\BottomNav.jsx",
       "source_location": "L4",
       "id": "bottomnav_bottomnav",
-      "community": 126,
+      "community": 127,
       "norm_label": "bottomnav()"
     },
     {
@@ -2781,7 +2781,7 @@
       "source_file": "frontend\\src\\components\\BreakingNewsBanner.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_breakingnewsbanner_jsx",
-      "community": 127,
+      "community": 128,
       "norm_label": "breakingnewsbanner.jsx"
     },
     {
@@ -2790,7 +2790,7 @@
       "source_file": "frontend\\src\\components\\BreakingNewsBanner.jsx",
       "source_location": "L7",
       "id": "breakingnewsbanner_breakingnewsbanner",
-      "community": 127,
+      "community": 128,
       "norm_label": "breakingnewsbanner()"
     },
     {
@@ -2799,7 +2799,7 @@
       "source_file": "frontend\\src\\components\\Button.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_button_tsx",
-      "community": 204,
+      "community": 205,
       "norm_label": "button.tsx"
     },
     {
@@ -2808,7 +2808,7 @@
       "source_file": "frontend\\src\\components\\CitizenPoll.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_citizenpoll_jsx",
-      "community": 128,
+      "community": 129,
       "norm_label": "citizenpoll.jsx"
     },
     {
@@ -2817,7 +2817,7 @@
       "source_file": "frontend\\src\\components\\CitizenPoll.jsx",
       "source_location": "L7",
       "id": "citizenpoll_citizenpoll",
-      "community": 128,
+      "community": 129,
       "norm_label": "citizenpoll()"
     },
     {
@@ -2826,7 +2826,7 @@
       "source_file": "frontend\\src\\components\\CrisisDashboard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_crisisdashboard_jsx",
-      "community": 129,
+      "community": 130,
       "norm_label": "crisisdashboard.jsx"
     },
     {
@@ -2835,7 +2835,7 @@
       "source_file": "frontend\\src\\components\\CrisisDashboard.jsx",
       "source_location": "L8",
       "id": "crisisdashboard_crisisdashboard",
-      "community": 129,
+      "community": 130,
       "norm_label": "crisisdashboard()"
     },
     {
@@ -2844,7 +2844,7 @@
       "source_file": "frontend\\src\\components\\CTA.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_cta_tsx",
-      "community": 205,
+      "community": 206,
       "norm_label": "cta.tsx"
     },
     {
@@ -2880,7 +2880,7 @@
       "source_file": "frontend\\src\\components\\DailyShloka.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_dailyshloka_jsx",
-      "community": 130,
+      "community": 131,
       "norm_label": "dailyshloka.jsx"
     },
     {
@@ -2889,7 +2889,7 @@
       "source_file": "frontend\\src\\components\\DailyShloka.jsx",
       "source_location": "L3",
       "id": "dailyshloka_dailyshloka",
-      "community": 130,
+      "community": 131,
       "norm_label": "dailyshloka()"
     },
     {
@@ -2943,7 +2943,7 @@
       "source_file": "frontend\\src\\components\\DistrictOnboarding.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_districtonboarding_jsx",
-      "community": 131,
+      "community": 132,
       "norm_label": "districtonboarding.jsx"
     },
     {
@@ -2952,7 +2952,7 @@
       "source_file": "frontend\\src\\components\\DistrictOnboarding.jsx",
       "source_location": "L7",
       "id": "districtonboarding_districtonboarding",
-      "community": 131,
+      "community": 132,
       "norm_label": "districtonboarding()"
     },
     {
@@ -2961,7 +2961,7 @@
       "source_file": "frontend\\src\\components\\DistrictSelector.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_districtselector_jsx",
-      "community": 132,
+      "community": 133,
       "norm_label": "districtselector.jsx"
     },
     {
@@ -2970,7 +2970,7 @@
       "source_file": "frontend\\src\\components\\DistrictSelector.jsx",
       "source_location": "L4",
       "id": "districtselector_districtselector",
-      "community": 132,
+      "community": 133,
       "norm_label": "districtselector()"
     },
     {
@@ -2979,7 +2979,7 @@
       "source_file": "frontend\\src\\components\\EmergencySimulator.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_emergencysimulator_jsx",
-      "community": 133,
+      "community": 134,
       "norm_label": "emergencysimulator.jsx"
     },
     {
@@ -2988,7 +2988,7 @@
       "source_file": "frontend\\src\\components\\EmergencySimulator.jsx",
       "source_location": "L5",
       "id": "emergencysimulator_emergencysimulator",
-      "community": 133,
+      "community": 134,
       "norm_label": "emergencysimulator()"
     },
     {
@@ -3096,7 +3096,7 @@
       "source_file": "frontend\\src\\components\\Features.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_features_tsx",
-      "community": 134,
+      "community": 135,
       "norm_label": "features.tsx"
     },
     {
@@ -3105,7 +3105,7 @@
       "source_file": "frontend\\src\\components\\Features.tsx",
       "source_location": "L44",
       "id": "features_features",
-      "community": 134,
+      "community": 135,
       "norm_label": "features()"
     },
     {
@@ -3114,7 +3114,7 @@
       "source_file": "frontend\\src\\components\\Footer.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_footer_jsx",
-      "community": 135,
+      "community": 136,
       "norm_label": "footer.jsx"
     },
     {
@@ -3123,7 +3123,7 @@
       "source_file": "frontend\\src\\components\\Footer.jsx",
       "source_location": "L3",
       "id": "footer_footer",
-      "community": 135,
+      "community": 136,
       "norm_label": "footer()"
     },
     {
@@ -3132,7 +3132,7 @@
       "source_file": "frontend\\src\\components\\Footer.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_footer_tsx",
-      "community": 206,
+      "community": 207,
       "norm_label": "footer.tsx"
     },
     {
@@ -3141,7 +3141,7 @@
       "source_file": "frontend\\src\\components\\FuelPriceWidget.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_fuelpricewidget_jsx",
-      "community": 136,
+      "community": 137,
       "norm_label": "fuelpricewidget.jsx"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_file": "frontend\\src\\components\\FuelPriceWidget.jsx",
       "source_location": "L38",
       "id": "fuelpricewidget_fuelpricewidget",
-      "community": 136,
+      "community": 137,
       "norm_label": "fuelpricewidget()"
     },
     {
@@ -3159,7 +3159,7 @@
       "source_file": "frontend\\src\\components\\FuelTaxCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_fueltaxcard_jsx",
-      "community": 137,
+      "community": 138,
       "norm_label": "fueltaxcard.jsx"
     },
     {
@@ -3168,7 +3168,7 @@
       "source_file": "frontend\\src\\components\\FuelTaxCard.jsx",
       "source_location": "L4",
       "id": "fueltaxcard_fueltaxcard",
-      "community": 137,
+      "community": 138,
       "norm_label": "fueltaxcard()"
     },
     {
@@ -3177,7 +3177,7 @@
       "source_file": "frontend\\src\\components\\GrievanceDashboard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_grievancedashboard_jsx",
-      "community": 138,
+      "community": 139,
       "norm_label": "grievancedashboard.jsx"
     },
     {
@@ -3186,7 +3186,7 @@
       "source_file": "frontend\\src\\components\\GrievanceDashboard.jsx",
       "source_location": "L5",
       "id": "grievancedashboard_grievancedashboard",
-      "community": 138,
+      "community": 139,
       "norm_label": "grievancedashboard()"
     },
     {
@@ -3195,7 +3195,7 @@
       "source_file": "frontend\\src\\components\\Header.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_header_jsx",
-      "community": 139,
+      "community": 140,
       "norm_label": "header.jsx"
     },
     {
@@ -3204,7 +3204,7 @@
       "source_file": "frontend\\src\\components\\Header.jsx",
       "source_location": "L7",
       "id": "header_header",
-      "community": 139,
+      "community": 140,
       "norm_label": "header()"
     },
     {
@@ -3213,7 +3213,7 @@
       "source_file": "frontend\\src\\components\\HeatwavePanel.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_heatwavepanel_jsx",
-      "community": 140,
+      "community": 141,
       "norm_label": "heatwavepanel.jsx"
     },
     {
@@ -3222,7 +3222,7 @@
       "source_file": "frontend\\src\\components\\HeatwavePanel.jsx",
       "source_location": "L5",
       "id": "heatwavepanel_heatwavepanel",
-      "community": 140,
+      "community": 141,
       "norm_label": "heatwavepanel()"
     },
     {
@@ -3231,7 +3231,7 @@
       "source_file": "frontend\\src\\components\\Hero.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_hero_tsx",
-      "community": 207,
+      "community": 208,
       "norm_label": "hero.tsx"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_file": "frontend\\src\\components\\Icons.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_icons_jsx",
-      "community": 208,
+      "community": 209,
       "norm_label": "icons.jsx"
     },
     {
@@ -3249,7 +3249,7 @@
       "source_file": "frontend\\src\\components\\KnowYourWard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_knowyourward_jsx",
-      "community": 141,
+      "community": 142,
       "norm_label": "knowyourward.jsx"
     },
     {
@@ -3258,7 +3258,7 @@
       "source_file": "frontend\\src\\components\\KnowYourWard.jsx",
       "source_location": "L6",
       "id": "knowyourward_knowyourward",
-      "community": 141,
+      "community": 142,
       "norm_label": "knowyourward()"
     },
     {
@@ -3303,7 +3303,7 @@
       "source_file": "frontend\\src\\components\\MainLayout.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_mainlayout_jsx",
-      "community": 142,
+      "community": 143,
       "norm_label": "mainlayout.jsx"
     },
     {
@@ -3312,7 +3312,7 @@
       "source_file": "frontend\\src\\components\\MainLayout.jsx",
       "source_location": "L16",
       "id": "mainlayout_mainlayout",
-      "community": 142,
+      "community": 143,
       "norm_label": "mainlayout()"
     },
     {
@@ -3348,7 +3348,7 @@
       "source_file": "frontend\\src\\components\\Navigation.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_navigation_tsx",
-      "community": 143,
+      "community": 144,
       "norm_label": "navigation.tsx"
     },
     {
@@ -3357,7 +3357,7 @@
       "source_file": "frontend\\src\\components\\Navigation.tsx",
       "source_location": "L7",
       "id": "navigation_navigation",
-      "community": 143,
+      "community": 144,
       "norm_label": "navigation()"
     },
     {
@@ -3411,7 +3411,7 @@
       "source_file": "frontend\\src\\components\\NewsClusterModal.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_newsclustermodal_jsx",
-      "community": 144,
+      "community": 145,
       "norm_label": "newsclustermodal.jsx"
     },
     {
@@ -3420,7 +3420,7 @@
       "source_file": "frontend\\src\\components\\NewsClusterModal.jsx",
       "source_location": "L33",
       "id": "newsclustermodal_newsclustermodal",
-      "community": 144,
+      "community": 145,
       "norm_label": "newsclustermodal()"
     },
     {
@@ -3429,7 +3429,7 @@
       "source_file": "frontend\\src\\components\\NewsTicker.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_newsticker_jsx",
-      "community": 145,
+      "community": 146,
       "norm_label": "newsticker.jsx"
     },
     {
@@ -3438,7 +3438,7 @@
       "source_file": "frontend\\src\\components\\NewsTicker.jsx",
       "source_location": "L7",
       "id": "newsticker_newsticker",
-      "community": 145,
+      "community": 146,
       "norm_label": "newsticker()"
     },
     {
@@ -3447,7 +3447,7 @@
       "source_file": "frontend\\src\\components\\PartnerCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_partnercard_jsx",
-      "community": 146,
+      "community": 147,
       "norm_label": "partnercard.jsx"
     },
     {
@@ -3456,7 +3456,7 @@
       "source_file": "frontend\\src\\components\\PartnerCard.jsx",
       "source_location": "L3",
       "id": "partnercard_partnercard",
-      "community": 146,
+      "community": 147,
       "norm_label": "partnercard()"
     },
     {
@@ -3465,7 +3465,7 @@
       "source_file": "frontend\\src\\components\\PowerTariffCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_powertariffcard_jsx",
-      "community": 147,
+      "community": 148,
       "norm_label": "powertariffcard.jsx"
     },
     {
@@ -3474,7 +3474,7 @@
       "source_file": "frontend\\src\\components\\PowerTariffCard.jsx",
       "source_location": "L3",
       "id": "powertariffcard_powertariffcard",
-      "community": 147,
+      "community": 148,
       "norm_label": "powertariffcard()"
     },
     {
@@ -3483,7 +3483,7 @@
       "source_file": "frontend\\src\\components\\Pricing.tsx",
       "source_location": "L1",
       "id": "frontend_src_components_pricing_tsx",
-      "community": 209,
+      "community": 210,
       "norm_label": "pricing.tsx"
     },
     {
@@ -3492,7 +3492,7 @@
       "source_file": "frontend\\src\\components\\ProgrammaticAd.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_programmaticad_jsx",
-      "community": 148,
+      "community": 149,
       "norm_label": "programmaticad.jsx"
     },
     {
@@ -3501,7 +3501,7 @@
       "source_file": "frontend\\src\\components\\ProgrammaticAd.jsx",
       "source_location": "L28",
       "id": "programmaticad_programmaticad",
-      "community": 148,
+      "community": 149,
       "norm_label": "programmaticad()"
     },
     {
@@ -3510,7 +3510,7 @@
       "source_file": "frontend\\src\\components\\PulseCounter.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_pulsecounter_jsx",
-      "community": 149,
+      "community": 150,
       "norm_label": "pulsecounter.jsx"
     },
     {
@@ -3519,7 +3519,7 @@
       "source_file": "frontend\\src\\components\\PulseCounter.jsx",
       "source_location": "L5",
       "id": "pulsecounter_pulsecounter",
-      "community": 149,
+      "community": 150,
       "norm_label": "pulsecounter()"
     },
     {
@@ -3528,7 +3528,7 @@
       "source_file": "frontend\\src\\components\\ReportForm.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_reportform_jsx",
-      "community": 150,
+      "community": 151,
       "norm_label": "reportform.jsx"
     },
     {
@@ -3537,7 +3537,7 @@
       "source_file": "frontend\\src\\components\\ReportForm.jsx",
       "source_location": "L5",
       "id": "reportform_reportform",
-      "community": 150,
+      "community": 151,
       "norm_label": "reportform()"
     },
     {
@@ -3670,7 +3670,7 @@
       "label": "ServicesDirectory()",
       "file_type": "code",
       "source_file": "frontend\\src\\components\\ServicesDirectory.jsx",
-      "source_location": "L55",
+      "source_location": "L79",
       "id": "servicesdirectory_servicesdirectory",
       "community": 109,
       "norm_label": "servicesdirectory()"
@@ -3735,7 +3735,7 @@
       "source_file": "frontend\\src\\components\\StickyAnchorAd.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_stickyanchorad_jsx",
-      "community": 151,
+      "community": 152,
       "norm_label": "stickyanchorad.jsx"
     },
     {
@@ -3744,7 +3744,7 @@
       "source_file": "frontend\\src\\components\\StickyAnchorAd.jsx",
       "source_location": "L5",
       "id": "stickyanchorad_stickyanchorad",
-      "community": 151,
+      "community": 152,
       "norm_label": "stickyanchorad()"
     },
     {
@@ -3789,7 +3789,7 @@
       "source_file": "frontend\\src\\components\\Turnstile.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_turnstile_jsx",
-      "community": 152,
+      "community": 153,
       "norm_label": "turnstile.jsx"
     },
     {
@@ -3798,7 +3798,7 @@
       "source_file": "frontend\\src\\components\\Turnstile.jsx",
       "source_location": "L3",
       "id": "turnstile_turnstile",
-      "community": 152,
+      "community": 153,
       "norm_label": "turnstile()"
     },
     {
@@ -3807,7 +3807,7 @@
       "source_file": "frontend\\src\\components\\WeatherCard.jsx",
       "source_location": "L1",
       "id": "frontend_src_components_weathercard_jsx",
-      "community": 153,
+      "community": 154,
       "norm_label": "weathercard.jsx"
     },
     {
@@ -3816,7 +3816,7 @@
       "source_file": "frontend\\src\\components\\WeatherCard.jsx",
       "source_location": "L9",
       "id": "weathercard_weathercard",
-      "community": 153,
+      "community": 154,
       "norm_label": "weathercard()"
     },
     {
@@ -3861,7 +3861,7 @@
       "source_file": "frontend\\src\\context\\EmergencyContext.js",
       "source_location": "L1",
       "id": "frontend_src_context_emergencycontext_js",
-      "community": 210,
+      "community": 211,
       "norm_label": "emergencycontext.js"
     },
     {
@@ -3870,7 +3870,7 @@
       "source_file": "frontend\\src\\context\\EmergencyProvider.jsx",
       "source_location": "L1",
       "id": "frontend_src_context_emergencyprovider_jsx",
-      "community": 154,
+      "community": 155,
       "norm_label": "emergencyprovider.jsx"
     },
     {
@@ -3879,7 +3879,7 @@
       "source_file": "frontend\\src\\context\\EmergencyProvider.jsx",
       "source_location": "L5",
       "id": "emergencyprovider_emergencyprovider",
-      "community": 154,
+      "community": 155,
       "norm_label": "emergencyprovider()"
     },
     {
@@ -3888,7 +3888,7 @@
       "source_file": "frontend\\src\\data\\aiBriefingData.js",
       "source_location": "L1",
       "id": "frontend_src_data_aibriefingdata_js",
-      "community": 211,
+      "community": 212,
       "norm_label": "aibriefingdata.js"
     },
     {
@@ -3897,7 +3897,7 @@
       "source_file": "frontend\\src\\data\\alerts.js",
       "source_location": "L1",
       "id": "frontend_src_data_alerts_js",
-      "community": 212,
+      "community": 213,
       "norm_label": "alerts.js"
     },
     {
@@ -3906,7 +3906,7 @@
       "source_file": "frontend\\src\\data\\budgetData.js",
       "source_location": "L1",
       "id": "frontend_src_data_budgetdata_js",
-      "community": 213,
+      "community": 214,
       "norm_label": "budgetdata.js"
     },
     {
@@ -3915,7 +3915,7 @@
       "source_file": "frontend\\src\\data\\calendarData.js",
       "source_location": "L1",
       "id": "frontend_src_data_calendardata_js",
-      "community": 214,
+      "community": 215,
       "norm_label": "calendardata.js"
     },
     {
@@ -3924,7 +3924,7 @@
       "source_file": "frontend\\src\\data\\districtCoords.js",
       "source_location": "L1",
       "id": "frontend_src_data_districtcoords_js",
-      "community": 215,
+      "community": 216,
       "norm_label": "districtcoords.js"
     },
     {
@@ -3933,7 +3933,7 @@
       "source_file": "frontend\\src\\data\\districts.js",
       "source_location": "L1",
       "id": "frontend_src_data_districts_js",
-      "community": 216,
+      "community": 217,
       "norm_label": "districts.js"
     },
     {
@@ -3942,7 +3942,7 @@
       "source_file": "frontend\\src\\data\\emergencyData.js",
       "source_location": "L1",
       "id": "frontend_src_data_emergencydata_js",
-      "community": 217,
+      "community": 218,
       "norm_label": "emergencydata.js"
     },
     {
@@ -3951,7 +3951,7 @@
       "source_file": "frontend\\src\\data\\farmerData.js",
       "source_location": "L1",
       "id": "frontend_src_data_farmerdata_js",
-      "community": 218,
+      "community": 219,
       "norm_label": "farmerdata.js"
     },
     {
@@ -3960,7 +3960,7 @@
       "source_file": "frontend\\src\\data\\fuelPrices.js",
       "source_location": "L1",
       "id": "frontend_src_data_fuelprices_js",
-      "community": 219,
+      "community": 220,
       "norm_label": "fuelprices.js"
     },
     {
@@ -3969,7 +3969,7 @@
       "source_file": "frontend\\src\\data\\goldRates.js",
       "source_location": "L1",
       "id": "frontend_src_data_goldrates_js",
-      "community": 220,
+      "community": 221,
       "norm_label": "goldrates.js"
     },
     {
@@ -3978,8 +3978,17 @@
       "source_file": "frontend\\src\\data\\jobsData.js",
       "source_location": "L1",
       "id": "frontend_src_data_jobsdata_js",
-      "community": 221,
+      "community": 222,
       "norm_label": "jobsdata.js"
+    },
+    {
+      "label": "meesevaData.js",
+      "file_type": "code",
+      "source_file": "frontend\\src\\data\\meesevaData.js",
+      "source_location": "L1",
+      "id": "frontend_src_data_meesevadata_js",
+      "community": 223,
+      "norm_label": "meesevadata.js"
     },
     {
       "label": "parksData.js",
@@ -3987,7 +3996,7 @@
       "source_file": "frontend\\src\\data\\parksData.js",
       "source_location": "L1",
       "id": "frontend_src_data_parksdata_js",
-      "community": 155,
+      "community": 156,
       "norm_label": "parksdata.js"
     },
     {
@@ -3996,7 +4005,7 @@
       "source_file": "frontend\\src\\data\\parksData.js",
       "source_location": "L8",
       "id": "parksdata_getcrowdbyhour",
-      "community": 155,
+      "community": 156,
       "norm_label": "getcrowdbyhour()"
     },
     {
@@ -4005,7 +4014,7 @@
       "source_file": "frontend\\src\\data\\partners.js",
       "source_location": "L1",
       "id": "frontend_src_data_partners_js",
-      "community": 222,
+      "community": 224,
       "norm_label": "partners.js"
     },
     {
@@ -4014,7 +4023,7 @@
       "source_file": "frontend\\src\\data\\pdsData.js",
       "source_location": "L1",
       "id": "frontend_src_data_pdsdata_js",
-      "community": 223,
+      "community": 225,
       "norm_label": "pdsdata.js"
     },
     {
@@ -4023,7 +4032,7 @@
       "source_file": "frontend\\src\\data\\politiciansData.js",
       "source_location": "L1",
       "id": "frontend_src_data_politiciansdata_js",
-      "community": 224,
+      "community": 226,
       "norm_label": "politiciansdata.js"
     },
     {
@@ -4032,7 +4041,7 @@
       "source_file": "frontend\\src\\data\\pollData.js",
       "source_location": "L1",
       "id": "frontend_src_data_polldata_js",
-      "community": 225,
+      "community": 227,
       "norm_label": "polldata.js"
     },
     {
@@ -4041,7 +4050,7 @@
       "source_file": "frontend\\src\\data\\propertyTaxData.js",
       "source_location": "L1",
       "id": "frontend_src_data_propertytaxdata_js",
-      "community": 226,
+      "community": 228,
       "norm_label": "propertytaxdata.js"
     },
     {
@@ -4050,7 +4059,7 @@
       "source_file": "frontend\\src\\data\\pulses.js",
       "source_location": "L1",
       "id": "frontend_src_data_pulses_js",
-      "community": 227,
+      "community": 229,
       "norm_label": "pulses.js"
     },
     {
@@ -4059,7 +4068,7 @@
       "source_file": "frontend\\src\\data\\reportingData.js",
       "source_location": "L1",
       "id": "frontend_src_data_reportingdata_js",
-      "community": 156,
+      "community": 157,
       "norm_label": "reportingdata.js"
     },
     {
@@ -4068,7 +4077,7 @@
       "source_file": "frontend\\src\\data\\reportingData.js",
       "source_location": "L47",
       "id": "reportingdata_detectcorporation",
-      "community": 156,
+      "community": 157,
       "norm_label": "detectcorporation()"
     },
     {
@@ -4077,7 +4086,7 @@
       "source_file": "frontend\\src\\data\\reservoirsData.js",
       "source_location": "L1",
       "id": "frontend_src_data_reservoirsdata_js",
-      "community": 157,
+      "community": 158,
       "norm_label": "reservoirsdata.js"
     },
     {
@@ -4086,7 +4095,7 @@
       "source_file": "frontend\\src\\data\\reservoirsData.js",
       "source_location": "L202",
       "id": "reservoirsdata_getreservoirstatus",
-      "community": 157,
+      "community": 158,
       "norm_label": "getreservoirstatus()"
     },
     {
@@ -4095,7 +4104,7 @@
       "source_file": "frontend\\src\\data\\schemesData.js",
       "source_location": "L1",
       "id": "frontend_src_data_schemesdata_js",
-      "community": 228,
+      "community": 230,
       "norm_label": "schemesdata.js"
     },
     {
@@ -4104,7 +4113,7 @@
       "source_file": "frontend\\src\\data\\services.js",
       "source_location": "L1",
       "id": "frontend_src_data_services_js",
-      "community": 229,
+      "community": 231,
       "norm_label": "services.js"
     },
     {
@@ -4113,7 +4122,7 @@
       "source_file": "frontend\\src\\data\\shlokas.js",
       "source_location": "L1",
       "id": "frontend_src_data_shlokas_js",
-      "community": 158,
+      "community": 159,
       "norm_label": "shlokas.js"
     },
     {
@@ -4122,7 +4131,7 @@
       "source_file": "frontend\\src\\data\\shlokas.js",
       "source_location": "L53",
       "id": "shlokas_getdailyshloka",
-      "community": 158,
+      "community": 159,
       "norm_label": "getdailyshloka()"
     },
     {
@@ -4131,7 +4140,7 @@
       "source_file": "frontend\\src\\data\\transportData.js",
       "source_location": "L1",
       "id": "frontend_src_data_transportdata_js",
-      "community": 230,
+      "community": 232,
       "norm_label": "transportdata.js"
     },
     {
@@ -4140,7 +4149,7 @@
       "source_file": "frontend\\src\\data\\wardData.js",
       "source_location": "L1",
       "id": "frontend_src_data_warddata_js",
-      "community": 159,
+      "community": 160,
       "norm_label": "warddata.js"
     },
     {
@@ -4149,7 +4158,7 @@
       "source_file": "frontend\\src\\data\\wardData.js",
       "source_location": "L72",
       "id": "warddata_searchward",
-      "community": 159,
+      "community": 160,
       "norm_label": "searchward()"
     },
     {
@@ -4158,7 +4167,7 @@
       "source_file": "frontend\\src\\data\\waterSupplyData.js",
       "source_location": "L1",
       "id": "frontend_src_data_watersupplydata_js",
-      "community": 231,
+      "community": 233,
       "norm_label": "watersupplydata.js"
     },
     {
@@ -4167,7 +4176,7 @@
       "source_file": "frontend\\src\\data\\weatherData.js",
       "source_location": "L1",
       "id": "frontend_src_data_weatherdata_js",
-      "community": 160,
+      "community": 161,
       "norm_label": "weatherdata.js"
     },
     {
@@ -4176,7 +4185,7 @@
       "source_file": "frontend\\src\\data\\weatherData.js",
       "source_location": "L5",
       "id": "weatherdata_generateweather",
-      "community": 160,
+      "community": 161,
       "norm_label": "generateweather()"
     },
     {
@@ -4212,7 +4221,7 @@
       "source_file": "frontend\\src\\hooks\\useEmergency.js",
       "source_location": "L1",
       "id": "frontend_src_hooks_useemergency_js",
-      "community": 161,
+      "community": 162,
       "norm_label": "useemergency.js"
     },
     {
@@ -4221,7 +4230,7 @@
       "source_file": "frontend\\src\\hooks\\useEmergency.js",
       "source_location": "L4",
       "id": "useemergency_useemergency",
-      "community": 161,
+      "community": 162,
       "norm_label": "useemergency()"
     },
     {
@@ -4230,7 +4239,7 @@
       "source_file": "frontend\\src\\hooks\\useJsonLd.js",
       "source_location": "L1",
       "id": "frontend_src_hooks_usejsonld_js",
-      "community": 162,
+      "community": 163,
       "norm_label": "usejsonld.js"
     },
     {
@@ -4239,7 +4248,7 @@
       "source_file": "frontend\\src\\hooks\\useJsonLd.js",
       "source_location": "L10",
       "id": "usejsonld_usejsonld",
-      "community": 162,
+      "community": 163,
       "norm_label": "usejsonld()"
     },
     {
@@ -4329,7 +4338,7 @@
       "source_file": "frontend\\src\\pages\\ContentAdminCockpit.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_contentadmincockpit_jsx",
-      "community": 163,
+      "community": 164,
       "norm_label": "contentadmincockpit.jsx"
     },
     {
@@ -4338,7 +4347,7 @@
       "source_file": "frontend\\src\\pages\\ContentAdminCockpit.jsx",
       "source_location": "L8",
       "id": "contentadmincockpit_contentadmincockpit",
-      "community": 163,
+      "community": 164,
       "norm_label": "contentadmincockpit()"
     },
     {
@@ -4347,7 +4356,7 @@
       "source_file": "frontend\\src\\pages\\EmergencyContactsPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_emergencycontactspage_jsx",
-      "community": 164,
+      "community": 165,
       "norm_label": "emergencycontactspage.jsx"
     },
     {
@@ -4356,7 +4365,7 @@
       "source_file": "frontend\\src\\pages\\EmergencyContactsPage.jsx",
       "source_location": "L1",
       "id": "emergencycontactspage_emergencycontactspage",
-      "community": 164,
+      "community": 165,
       "norm_label": "emergencycontactspage()"
     },
     {
@@ -4410,7 +4419,7 @@
       "source_file": "frontend\\src\\pages\\FuelLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_fuellandingpage_jsx",
-      "community": 165,
+      "community": 166,
       "norm_label": "fuellandingpage.jsx"
     },
     {
@@ -4419,7 +4428,7 @@
       "source_file": "frontend\\src\\pages\\FuelLandingPage.jsx",
       "source_location": "L4",
       "id": "fuellandingpage_fuellandingpage",
-      "community": 165,
+      "community": 166,
       "norm_label": "fuellandingpage()"
     },
     {
@@ -4428,7 +4437,7 @@
       "source_file": "frontend\\src\\pages\\GoldLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_goldlandingpage_jsx",
-      "community": 166,
+      "community": 167,
       "norm_label": "goldlandingpage.jsx"
     },
     {
@@ -4437,7 +4446,7 @@
       "source_file": "frontend\\src\\pages\\GoldLandingPage.jsx",
       "source_location": "L7",
       "id": "goldlandingpage_goldlandingpage",
-      "community": 166,
+      "community": 167,
       "norm_label": "goldlandingpage()"
     },
     {
@@ -4446,7 +4455,7 @@
       "source_file": "frontend\\src\\pages\\HealthLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_healthlandingpage_jsx",
-      "community": 167,
+      "community": 168,
       "norm_label": "healthlandingpage.jsx"
     },
     {
@@ -4455,7 +4464,7 @@
       "source_file": "frontend\\src\\pages\\HealthLandingPage.jsx",
       "source_location": "L3",
       "id": "healthlandingpage_healthlandingpage",
-      "community": 167,
+      "community": 168,
       "norm_label": "healthlandingpage()"
     },
     {
@@ -4522,12 +4531,39 @@
       "norm_label": "jobboardpage()"
     },
     {
+      "label": "MeeSevaPage.jsx",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MeeSevaPage.jsx",
+      "source_location": "L1",
+      "id": "frontend_src_pages_meesevapage_jsx",
+      "community": 118,
+      "norm_label": "meesevapage.jsx"
+    },
+    {
+      "label": "getCategoryIcon()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MeeSevaPage.jsx",
+      "source_location": "L40",
+      "id": "meesevapage_getcategoryicon",
+      "community": 118,
+      "norm_label": "getcategoryicon()"
+    },
+    {
+      "label": "MeeSevaPage()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\pages\\MeeSevaPage.jsx",
+      "source_location": "L46",
+      "id": "meesevapage_meesevapage",
+      "community": 118,
+      "norm_label": "meesevapage()"
+    },
+    {
       "label": "NewsListingPage.jsx",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\NewsListingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_newslistingpage_jsx",
-      "community": 168,
+      "community": 169,
       "norm_label": "newslistingpage.jsx"
     },
     {
@@ -4536,7 +4572,7 @@
       "source_file": "frontend\\src\\pages\\NewsListingPage.jsx",
       "source_location": "L7",
       "id": "newslistingpage_newslistingpage",
-      "community": 168,
+      "community": 169,
       "norm_label": "newslistingpage()"
     },
     {
@@ -4545,7 +4581,7 @@
       "source_file": "frontend\\src\\pages\\NewsPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_newspage_jsx",
-      "community": 169,
+      "community": 170,
       "norm_label": "newspage.jsx"
     },
     {
@@ -4554,7 +4590,7 @@
       "source_file": "frontend\\src\\pages\\NewsPage.jsx",
       "source_location": "L6",
       "id": "newspage_newspage",
-      "community": 169,
+      "community": 170,
       "norm_label": "newspage()"
     },
     {
@@ -4563,7 +4599,7 @@
       "source_file": "frontend\\src\\pages\\NotFound.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_notfound_jsx",
-      "community": 170,
+      "community": 171,
       "norm_label": "notfound.jsx"
     },
     {
@@ -4572,7 +4608,7 @@
       "source_file": "frontend\\src\\pages\\NotFound.jsx",
       "source_location": "L3",
       "id": "notfound_notfound",
-      "community": 170,
+      "community": 171,
       "norm_label": "notfound()"
     },
     {
@@ -4680,7 +4716,7 @@
       "source_file": "frontend\\src\\pages\\PropertyTaxPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_propertytaxpage_jsx",
-      "community": 171,
+      "community": 172,
       "norm_label": "propertytaxpage.jsx"
     },
     {
@@ -4689,7 +4725,7 @@
       "source_file": "frontend\\src\\pages\\PropertyTaxPage.jsx",
       "source_location": "L4",
       "id": "propertytaxpage_propertytaxpage",
-      "community": 171,
+      "community": 172,
       "norm_label": "propertytaxpage()"
     },
     {
@@ -4698,7 +4734,7 @@
       "source_file": "frontend\\src\\pages\\RationPDSPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_rationpdspage_jsx",
-      "community": 118,
+      "community": 119,
       "norm_label": "rationpdspage.jsx"
     },
     {
@@ -4707,7 +4743,7 @@
       "source_file": "frontend\\src\\pages\\RationPDSPage.jsx",
       "source_location": "L12",
       "id": "rationpdspage_quotabar",
-      "community": 118,
+      "community": 119,
       "norm_label": "quotabar()"
     },
     {
@@ -4716,7 +4752,7 @@
       "source_file": "frontend\\src\\pages\\RationPDSPage.jsx",
       "source_location": "L27",
       "id": "rationpdspage_rationpdspage",
-      "community": 118,
+      "community": 119,
       "norm_label": "rationpdspage()"
     },
     {
@@ -4725,7 +4761,7 @@
       "source_file": "frontend\\src\\pages\\ReportingLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_reportinglandingpage_jsx",
-      "community": 172,
+      "community": 173,
       "norm_label": "reportinglandingpage.jsx"
     },
     {
@@ -4734,7 +4770,7 @@
       "source_file": "frontend\\src\\pages\\ReportingLandingPage.jsx",
       "source_location": "L5",
       "id": "reportinglandingpage_reportinglandingpage",
-      "community": 172,
+      "community": 173,
       "norm_label": "reportinglandingpage()"
     },
     {
@@ -4788,7 +4824,7 @@
       "source_file": "frontend\\src\\pages\\SchemesPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_schemespage_jsx",
-      "community": 173,
+      "community": 174,
       "norm_label": "schemespage.jsx"
     },
     {
@@ -4797,7 +4833,7 @@
       "source_file": "frontend\\src\\pages\\SchemesPage.jsx",
       "source_location": "L6",
       "id": "schemespage_schemespage",
-      "community": 173,
+      "community": 174,
       "norm_label": "schemespage()"
     },
     {
@@ -4813,7 +4849,7 @@
       "label": "flattenServices()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "id": "searchpage_flattenservices",
       "community": 82,
       "norm_label": "flattenservices()"
@@ -4822,7 +4858,7 @@
       "label": "highlight()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
-      "source_location": "L37",
+      "source_location": "L38",
       "id": "searchpage_highlight",
       "community": 82,
       "norm_label": "highlight()"
@@ -4831,7 +4867,7 @@
       "label": "SectionHeader()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "id": "searchpage_sectionheader",
       "community": 82,
       "norm_label": "sectionheader()"
@@ -4840,7 +4876,7 @@
       "label": "SearchPage()",
       "file_type": "code",
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
-      "source_location": "L59",
+      "source_location": "L60",
       "id": "searchpage_searchpage",
       "community": 82,
       "norm_label": "searchpage()"
@@ -4851,7 +4887,7 @@
       "source_file": "frontend\\src\\pages\\SplashScreen.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_splashscreen_jsx",
-      "community": 174,
+      "community": 175,
       "norm_label": "splashscreen.jsx"
     },
     {
@@ -4860,7 +4896,7 @@
       "source_file": "frontend\\src\\pages\\SplashScreen.jsx",
       "source_location": "L5",
       "id": "splashscreen_splashscreen",
-      "community": 174,
+      "community": 175,
       "norm_label": "splashscreen()"
     },
     {
@@ -4869,7 +4905,7 @@
       "source_file": "frontend\\src\\pages\\SubRegionPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_subregionpage_jsx",
-      "community": 175,
+      "community": 176,
       "norm_label": "subregionpage.jsx"
     },
     {
@@ -4878,7 +4914,7 @@
       "source_file": "frontend\\src\\pages\\SubRegionPage.jsx",
       "source_location": "L50",
       "id": "subregionpage_subregionpage",
-      "community": 175,
+      "community": 176,
       "norm_label": "subregionpage()"
     },
     {
@@ -4887,7 +4923,7 @@
       "source_file": "frontend\\src\\pages\\TransportLandingPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_transportlandingpage_jsx",
-      "community": 176,
+      "community": 177,
       "norm_label": "transportlandingpage.jsx"
     },
     {
@@ -4896,7 +4932,7 @@
       "source_file": "frontend\\src\\pages\\TransportLandingPage.jsx",
       "source_location": "L5",
       "id": "transportlandingpage_transportlandingpage",
-      "community": 176,
+      "community": 177,
       "norm_label": "transportlandingpage()"
     },
     {
@@ -4905,7 +4941,7 @@
       "source_file": "frontend\\src\\pages\\WaterSupplyPage.jsx",
       "source_location": "L1",
       "id": "frontend_src_pages_watersupplypage_jsx",
-      "community": 177,
+      "community": 178,
       "norm_label": "watersupplypage.jsx"
     },
     {
@@ -4914,7 +4950,7 @@
       "source_file": "frontend\\src\\pages\\WaterSupplyPage.jsx",
       "source_location": "L19",
       "id": "watersupplypage_watersupplypage",
-      "community": 177,
+      "community": 178,
       "norm_label": "watersupplypage()"
     },
     {
@@ -4959,7 +4995,7 @@
       "source_file": "frontend\\src\\services\\citizenReportsService.js",
       "source_location": "L1",
       "id": "frontend_src_services_citizenreportsservice_js",
-      "community": 232,
+      "community": 234,
       "norm_label": "citizenreportsservice.js"
     },
     {
@@ -4968,7 +5004,7 @@
       "source_file": "frontend\\src\\services\\emergencyService.js",
       "source_location": "L1",
       "id": "frontend_src_services_emergencyservice_js",
-      "community": 233,
+      "community": 235,
       "norm_label": "emergencyservice.js"
     },
     {
@@ -4977,7 +5013,7 @@
       "source_file": "frontend\\src\\services\\n8nService.js",
       "source_location": "L1",
       "id": "frontend_src_services_n8nservice_js",
-      "community": 178,
+      "community": 179,
       "norm_label": "n8nservice.js"
     },
     {
@@ -4986,7 +5022,7 @@
       "source_file": "frontend\\src\\services\\n8nService.js",
       "source_location": "L13",
       "id": "n8nservice_sendton8n",
-      "community": 178,
+      "community": 179,
       "norm_label": "sendton8n()"
     },
     {
@@ -5067,7 +5103,7 @@
       "source_file": "frontend\\src\\services\\powerAlertsService.js",
       "source_location": "L1",
       "id": "frontend_src_services_poweralertsservice_js",
-      "community": 234,
+      "community": 236,
       "norm_label": "poweralertsservice.js"
     },
     {
@@ -5148,7 +5184,7 @@
       "source_file": "frontend\\src\\services\\redisService.js",
       "source_location": "L1",
       "id": "frontend_src_services_redisservice_js",
-      "community": 235,
+      "community": 237,
       "norm_label": "redisservice.js"
     },
     {
@@ -5211,7 +5247,7 @@
       "source_file": "frontend\\src\\services\\supabaseClient.js",
       "source_location": "L1",
       "id": "frontend_src_services_supabaseclient_js",
-      "community": 236,
+      "community": 238,
       "norm_label": "supabaseclient.js"
     },
     {
@@ -5220,7 +5256,7 @@
       "source_file": "frontend\\src\\services\\transitService.js",
       "source_location": "L1",
       "id": "frontend_src_services_transitservice_js",
-      "community": 179,
+      "community": 180,
       "norm_label": "transitservice.js"
     },
     {
@@ -5229,7 +5265,7 @@
       "source_file": "frontend\\src\\services\\transitService.js",
       "source_location": "L3",
       "id": "transitservice_fetchtransitstatus",
-      "community": 179,
+      "community": 180,
       "norm_label": "fetchtransitstatus()"
     },
     {
@@ -5238,7 +5274,7 @@
       "source_file": "frontend\\src\\services\\waterService.js",
       "source_location": "L1",
       "id": "frontend_src_services_waterservice_js",
-      "community": 180,
+      "community": 181,
       "norm_label": "waterservice.js"
     },
     {
@@ -5247,7 +5283,7 @@
       "source_file": "frontend\\src\\services\\waterService.js",
       "source_location": "L3",
       "id": "waterservice_fetchwaterlevels",
-      "community": 180,
+      "community": 181,
       "norm_label": "fetchwaterlevels()"
     },
     {
@@ -5256,7 +5292,7 @@
       "source_file": "frontend\\src\\services\\weatherService.js",
       "source_location": "L1",
       "id": "frontend_src_services_weatherservice_js",
-      "community": 181,
+      "community": 182,
       "norm_label": "weatherservice.js"
     },
     {
@@ -5265,7 +5301,7 @@
       "source_file": "frontend\\src\\services\\weatherService.js",
       "source_location": "L15",
       "id": "weatherservice_fetchweather",
-      "community": 181,
+      "community": 182,
       "norm_label": "fetchweather()"
     },
     {
@@ -5274,7 +5310,7 @@
       "source_file": "frontend\\src\\utils\\timeUtils.js",
       "source_location": "L1",
       "id": "frontend_src_utils_timeutils_js",
-      "community": 182,
+      "community": 183,
       "norm_label": "timeutils.js"
     },
     {
@@ -5283,7 +5319,7 @@
       "source_file": "frontend\\src\\utils\\timeUtils.js",
       "source_location": "L5",
       "id": "timeutils_formatrelativetime",
-      "community": 182,
+      "community": 183,
       "norm_label": "formatrelativetime()"
     },
     {
@@ -7578,7 +7614,7 @@
       "source_file": "graphify\\graphify\\manifest.py",
       "source_location": "L1",
       "id": "graphify_graphify_manifest_py",
-      "community": 237,
+      "community": 239,
       "norm_label": "manifest.py"
     },
     {
@@ -8262,7 +8298,7 @@
       "source_file": "graphify\\graphify\\__init__.py",
       "source_location": "L1",
       "id": "graphify_graphify_init_py",
-      "community": 119,
+      "community": 120,
       "norm_label": "__init__.py"
     },
     {
@@ -8271,7 +8307,7 @@
       "source_file": "graphify\\graphify\\__init__.py",
       "source_location": "L4",
       "id": "init_getattr",
-      "community": 119,
+      "community": 120,
       "norm_label": "__getattr__()"
     },
     {
@@ -8279,7 +8315,7 @@
       "file_type": "rationale",
       "source_file": "graphify\\graphify\\__init__.py",
       "source_location": "L1",
-      "community": 119,
+      "community": 120,
       "norm_label": "graphify - extract \u00b7 build \u00b7 cluster \u00b7 analyze \u00b7 report.",
       "id": "init_rationale_1"
     },
@@ -14364,7 +14400,7 @@
       "source_file": "graphify\\tests\\__init__.py",
       "source_location": "L1",
       "id": "graphify_tests_init_py",
-      "community": 238,
+      "community": 240,
       "norm_label": "__init__.py"
     },
     {
@@ -18144,7 +18180,7 @@
       "source_file": "scratch\\check_fuel_sources.py",
       "source_location": "L1",
       "id": "scratch_check_fuel_sources_py",
-      "community": 183,
+      "community": 184,
       "norm_label": "check_fuel_sources.py"
     },
     {
@@ -18153,7 +18189,7 @@
       "source_file": "scratch\\check_fuel_sources.py",
       "source_location": "L3",
       "id": "check_fuel_sources_check",
-      "community": 183,
+      "community": 184,
       "norm_label": "check()"
     },
     {
@@ -18162,7 +18198,7 @@
       "source_file": "scratch\\check_sources.py",
       "source_location": "L1",
       "id": "scratch_check_sources_py",
-      "community": 184,
+      "community": 185,
       "norm_label": "check_sources.py"
     },
     {
@@ -18171,7 +18207,7 @@
       "source_file": "scratch\\check_sources.py",
       "source_location": "L3",
       "id": "check_sources_check",
-      "community": 184,
+      "community": 185,
       "norm_label": "check()"
     },
     {
@@ -18180,7 +18216,7 @@
       "source_file": "scratch\\debug_chennai_history.py",
       "source_location": "L1",
       "id": "scratch_debug_chennai_history_py",
-      "community": 185,
+      "community": 186,
       "norm_label": "debug_chennai_history.py"
     },
     {
@@ -18189,7 +18225,7 @@
       "source_file": "scratch\\debug_chennai_history.py",
       "source_location": "L4",
       "id": "debug_chennai_history_debug_live_chennai",
-      "community": 185,
+      "community": 186,
       "norm_label": "debug_live_chennai()"
     },
     {
@@ -18198,7 +18234,7 @@
       "source_file": "scratch\\debug_gold.py",
       "source_location": "L1",
       "id": "scratch_debug_gold_py",
-      "community": 239,
+      "community": 241,
       "norm_label": "debug_gold.py"
     },
     {
@@ -18207,7 +18243,7 @@
       "source_file": "scratch\\debug_mint_rows.py",
       "source_location": "L1",
       "id": "scratch_debug_mint_rows_py",
-      "community": 240,
+      "community": 242,
       "norm_label": "debug_mint_rows.py"
     },
     {
@@ -18216,7 +18252,7 @@
       "source_file": "scratch\\scrape_gold_history.py",
       "source_location": "L1",
       "id": "scratch_scrape_gold_history_py",
-      "community": 186,
+      "community": 187,
       "norm_label": "scrape_gold_history.py"
     },
     {
@@ -18225,7 +18261,7 @@
       "source_file": "scratch\\scrape_gold_history.py",
       "source_location": "L4",
       "id": "scrape_gold_history_scrape_history",
-      "community": 186,
+      "community": 187,
       "norm_label": "scrape_history()"
     },
     {
@@ -18234,7 +18270,7 @@
       "source_file": "scratch\\scrape_gold_history_v2.py",
       "source_location": "L1",
       "id": "scratch_scrape_gold_history_v2_py",
-      "community": 187,
+      "community": 188,
       "norm_label": "scrape_gold_history_v2.py"
     },
     {
@@ -18243,7 +18279,7 @@
       "source_file": "scratch\\scrape_gold_history_v2.py",
       "source_location": "L5",
       "id": "scrape_gold_history_v2_scrape_history",
-      "community": 187,
+      "community": 188,
       "norm_label": "scrape_history()"
     },
     {
@@ -18252,7 +18288,7 @@
       "source_file": "scratch\\test_clustering.py",
       "source_location": "L1",
       "id": "scratch_test_clustering_py",
-      "community": 120,
+      "community": 121,
       "norm_label": "test_clustering.py"
     },
     {
@@ -18261,7 +18297,7 @@
       "source_file": "scratch\\test_clustering.py",
       "source_location": "L9",
       "id": "test_clustering_test_jaccard",
-      "community": 120,
+      "community": 121,
       "norm_label": "test_jaccard()"
     },
     {
@@ -18270,7 +18306,7 @@
       "source_file": "scratch\\test_clustering.py",
       "source_location": "L24",
       "id": "test_clustering_test_clustering_workflow",
-      "community": 120,
+      "community": 121,
       "norm_label": "test_clustering_workflow()"
     },
     {
@@ -18279,7 +18315,7 @@
       "source_file": "scratch\\test_fuel.py",
       "source_location": "L1",
       "id": "scratch_test_fuel_py",
-      "community": 121,
+      "community": 122,
       "norm_label": "test_fuel.py"
     },
     {
@@ -18288,7 +18324,7 @@
       "source_file": "scratch\\test_fuel.py",
       "source_location": "L4",
       "id": "test_fuel_test_source",
-      "community": 121,
+      "community": 122,
       "norm_label": "test_source()"
     },
     {
@@ -18297,7 +18333,7 @@
       "source_file": "scratch\\test_fuel.py",
       "source_location": "L19",
       "id": "test_fuel_find_fuel",
-      "community": 121,
+      "community": 122,
       "norm_label": "find_fuel()"
     },
     {
@@ -18306,7 +18342,7 @@
       "source_file": "scratch\\test_scrapers.py",
       "source_location": "L1",
       "id": "scratch_test_scrapers_py",
-      "community": 122,
+      "community": 123,
       "norm_label": "test_scrapers.py"
     },
     {
@@ -18315,7 +18351,7 @@
       "source_file": "scratch\\test_scrapers.py",
       "source_location": "L5",
       "id": "test_scrapers_test_source",
-      "community": 122,
+      "community": 123,
       "norm_label": "test_source()"
     },
     {
@@ -18324,7 +18360,7 @@
       "source_file": "scratch\\test_scrapers.py",
       "source_location": "L20",
       "id": "test_scrapers_find_gold",
-      "community": 122,
+      "community": 123,
       "norm_label": "find_gold()"
     },
     {
@@ -18333,7 +18369,7 @@
       "source_file": "tests\\enterprise-briefing.spec.ts",
       "source_location": "L1",
       "id": "tests_enterprise_briefing_spec_ts",
-      "community": 241,
+      "community": 243,
       "norm_label": "enterprise-briefing.spec.ts"
     },
     {
@@ -18342,7 +18378,7 @@
       "source_file": "tests\\extended.spec.ts",
       "source_location": "L1",
       "id": "tests_extended_spec_ts",
-      "community": 242,
+      "community": 244,
       "norm_label": "extended.spec.ts"
     },
     {
@@ -18351,7 +18387,7 @@
       "source_file": "tests\\homepage.spec.ts",
       "source_location": "L1",
       "id": "tests_homepage_spec_ts",
-      "community": 243,
+      "community": 245,
       "norm_label": "homepage.spec.ts"
     },
     {
@@ -18360,7 +18396,7 @@
       "source_file": "tests\\smoke_test.spec.ts",
       "source_location": "L1",
       "id": "tests_smoke_test_spec_ts",
-      "community": 244,
+      "community": 246,
       "norm_label": "smoke_test.spec.ts"
     },
     {
@@ -19395,7 +19431,7 @@
       "source_file": "tests\\__init__.py",
       "source_location": "L1",
       "id": "tests_init_py",
-      "community": 245,
+      "community": 247,
       "norm_label": "__init__.py"
     },
     {
@@ -19485,7 +19521,7 @@
       "source_file": "tests\\unit\\redisService.test.js",
       "source_location": "L1",
       "id": "tests_unit_redisservice_test_js",
-      "community": 188,
+      "community": 189,
       "norm_label": "redisservice.test.js"
     },
     {
@@ -19494,7 +19530,7 @@
       "source_file": "tests\\unit\\redisService.test.js",
       "source_location": "L5",
       "id": "redisservice_test_makejsonresponse",
-      "community": 188,
+      "community": 189,
       "norm_label": "makejsonresponse()"
     },
     {
@@ -19503,7 +19539,7 @@
       "source_file": "tests\\unit\\rssParser.test.js",
       "source_location": "L1",
       "id": "tests_unit_rssparser_test_js",
-      "community": 189,
+      "community": 190,
       "norm_label": "rssparser.test.js"
     },
     {
@@ -19512,7 +19548,7 @@
       "source_file": "tests\\unit\\rssParser.test.js",
       "source_location": "L6",
       "id": "rssparser_test_parseurl",
-      "community": 189,
+      "community": 190,
       "norm_label": "parseurl()"
     },
     {
@@ -19521,7 +19557,7 @@
       "source_file": "tests\\unit\\timeUtils.test.js",
       "source_location": "L1",
       "id": "tests_unit_timeutils_test_js",
-      "community": 246,
+      "community": 248,
       "norm_label": "timeutils.test.js"
     },
     {
@@ -19530,7 +19566,7 @@
       "source_file": "tests\\unit\\weatherService.test.js",
       "source_location": "L1",
       "id": "tests_unit_weatherservice_test_js",
-      "community": 190,
+      "community": 191,
       "norm_label": "weatherservice.test.js"
     },
     {
@@ -19539,7 +19575,7 @@
       "source_file": "tests\\unit\\weatherService.test.js",
       "source_location": "L5",
       "id": "weatherservice_test_mockfetchweatherandaqi",
-      "community": 190,
+      "community": 191,
       "norm_label": "mockfetchweatherandaqi()"
     },
     {
@@ -19548,7 +19584,7 @@
       "source_file": "tmp_pytest\\test_creates_file_with_correct0\\output.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_creates_file_with_correct0_output_js",
-      "community": 247,
+      "community": 249,
       "norm_label": "output.js"
     },
     {
@@ -19557,7 +19593,7 @@
       "source_file": "tmp_pytest\\test_day_over_day_change_compu0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_day_over_day_change_compu0_fuelprices_js",
-      "community": 248,
+      "community": 250,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19566,7 +19602,7 @@
       "source_file": "tmp_pytest\\test_day_over_day_change_compu0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_day_over_day_change_compu0_goldrates_js",
-      "community": 249,
+      "community": 251,
       "norm_label": "goldrates.js"
     },
     {
@@ -19575,7 +19611,7 @@
       "source_file": "tmp_pytest\\test_diesel_price_parsed0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_diesel_price_parsed0_fuelprices_js",
-      "community": 250,
+      "community": 252,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19584,7 +19620,7 @@
       "source_file": "tmp_pytest\\test_diesel_price_parsed0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_diesel_price_parsed0_goldrates_js",
-      "community": 251,
+      "community": 253,
       "norm_label": "goldrates.js"
     },
     {
@@ -19593,7 +19629,7 @@
       "source_file": "tmp_pytest\\test_file_starts_with_generate0\\output.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_file_starts_with_generate0_output_js",
-      "community": 252,
+      "community": 254,
       "norm_label": "output.js"
     },
     {
@@ -19602,7 +19638,7 @@
       "source_file": "tmp_pytest\\test_fuel_data_contains_lpg_an0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_fuel_data_contains_lpg_an0_fuelprices_js",
-      "community": 253,
+      "community": 255,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19611,7 +19647,7 @@
       "source_file": "tmp_pytest\\test_fuel_data_contains_lpg_an0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_fuel_data_contains_lpg_an0_goldrates_js",
-      "community": 254,
+      "community": 256,
       "norm_label": "goldrates.js"
     },
     {
@@ -19620,7 +19656,7 @@
       "source_file": "tmp_pytest\\test_fuel_file_has_correct_exp0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_fuel_file_has_correct_exp0_fuelprices_js",
-      "community": 255,
+      "community": 257,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19629,7 +19665,7 @@
       "source_file": "tmp_pytest\\test_fuel_file_has_correct_exp0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_fuel_file_has_correct_exp0_goldrates_js",
-      "community": 256,
+      "community": 258,
       "norm_label": "goldrates.js"
     },
     {
@@ -19638,7 +19674,7 @@
       "source_file": "tmp_pytest\\test_fuel_tax_breakup_present0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_fuel_tax_breakup_present0_fuelprices_js",
-      "community": 257,
+      "community": 259,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19647,7 +19683,7 @@
       "source_file": "tmp_pytest\\test_fuel_tax_breakup_present0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_fuel_tax_breakup_present0_goldrates_js",
-      "community": 258,
+      "community": 260,
       "norm_label": "goldrates.js"
     },
     {
@@ -19656,7 +19692,7 @@
       "source_file": "tmp_pytest\\test_fuel_uses_fallback_when_r0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_fuel_uses_fallback_when_r0_fuelprices_js",
-      "community": 259,
+      "community": 261,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19665,7 +19701,7 @@
       "source_file": "tmp_pytest\\test_fuel_uses_fallback_when_r0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_fuel_uses_fallback_when_r0_goldrates_js",
-      "community": 260,
+      "community": 262,
       "norm_label": "goldrates.js"
     },
     {
@@ -19674,7 +19710,7 @@
       "source_file": "tmp_pytest\\test_gold22k_price_parsed0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold22k_price_parsed0_fuelprices_js",
-      "community": 261,
+      "community": 263,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19683,7 +19719,7 @@
       "source_file": "tmp_pytest\\test_gold22k_price_parsed0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold22k_price_parsed0_goldrates_js",
-      "community": 262,
+      "community": 264,
       "norm_label": "goldrates.js"
     },
     {
@@ -19692,7 +19728,7 @@
       "source_file": "tmp_pytest\\test_gold24k_price_parsed0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold24k_price_parsed0_fuelprices_js",
-      "community": 263,
+      "community": 265,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19701,7 +19737,7 @@
       "source_file": "tmp_pytest\\test_gold24k_price_parsed0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold24k_price_parsed0_goldrates_js",
-      "community": 264,
+      "community": 266,
       "norm_label": "goldrates.js"
     },
     {
@@ -19710,7 +19746,7 @@
       "source_file": "tmp_pytest\\test_gold_data_contains_requir0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold_data_contains_requir0_fuelprices_js",
-      "community": 265,
+      "community": 267,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19719,7 +19755,7 @@
       "source_file": "tmp_pytest\\test_gold_data_contains_requir0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold_data_contains_requir0_goldrates_js",
-      "community": 266,
+      "community": 268,
       "norm_label": "goldrates.js"
     },
     {
@@ -19728,7 +19764,7 @@
       "source_file": "tmp_pytest\\test_gold_file_has_correct_exp0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold_file_has_correct_exp0_fuelprices_js",
-      "community": 267,
+      "community": 269,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19737,7 +19773,7 @@
       "source_file": "tmp_pytest\\test_gold_file_has_correct_exp0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold_file_has_correct_exp0_goldrates_js",
-      "community": 268,
+      "community": 270,
       "norm_label": "goldrates.js"
     },
     {
@@ -19746,7 +19782,7 @@
       "source_file": "tmp_pytest\\test_gold_file_written_with_de0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold_file_written_with_de0_fuelprices_js",
-      "community": 269,
+      "community": 271,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19755,7 +19791,7 @@
       "source_file": "tmp_pytest\\test_gold_file_written_with_de0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold_file_written_with_de0_goldrates_js",
-      "community": 270,
+      "community": 272,
       "norm_label": "goldrates.js"
     },
     {
@@ -19764,7 +19800,7 @@
       "source_file": "tmp_pytest\\test_gold_uses_fallback_when_r0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold_uses_fallback_when_r0_fuelprices_js",
-      "community": 271,
+      "community": 273,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19773,7 +19809,7 @@
       "source_file": "tmp_pytest\\test_gold_uses_fallback_when_r0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_gold_uses_fallback_when_r0_goldrates_js",
-      "community": 272,
+      "community": 274,
       "norm_label": "goldrates.js"
     },
     {
@@ -19782,7 +19818,7 @@
       "source_file": "tmp_pytest\\test_handles_unicode_content0\\output.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_handles_unicode_content0_output_js",
-      "community": 273,
+      "community": 275,
       "norm_label": "output.js"
     },
     {
@@ -19791,7 +19827,7 @@
       "source_file": "tmp_pytest\\test_history_capped_at_seven_d0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_history_capped_at_seven_d0_fuelprices_js",
-      "community": 274,
+      "community": 276,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19800,7 +19836,7 @@
       "source_file": "tmp_pytest\\test_history_capped_at_seven_d0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_history_capped_at_seven_d0_goldrates_js",
-      "community": 275,
+      "community": 277,
       "norm_label": "goldrates.js"
     },
     {
@@ -19809,7 +19845,7 @@
       "source_file": "tmp_pytest\\test_new_entry_appended_to_his0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_new_entry_appended_to_his0_fuelprices_js",
-      "community": 276,
+      "community": 278,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19818,7 +19854,7 @@
       "source_file": "tmp_pytest\\test_new_entry_appended_to_his0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_new_entry_appended_to_his0_goldrates_js",
-      "community": 277,
+      "community": 279,
       "norm_label": "goldrates.js"
     },
     {
@@ -19827,7 +19863,7 @@
       "source_file": "tmp_pytest\\test_output_is_valid_json_insi0\\output.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_output_is_valid_json_insi0_output_js",
-      "community": 278,
+      "community": 280,
       "norm_label": "output.js"
     },
     {
@@ -19836,7 +19872,7 @@
       "source_file": "tmp_pytest\\test_overwrites_existing_file0\\output.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_overwrites_existing_file0_output_js",
-      "community": 279,
+      "community": 281,
       "norm_label": "output.js"
     },
     {
@@ -19845,7 +19881,7 @@
       "source_file": "tmp_pytest\\test_petrol_price_parsed0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_petrol_price_parsed0_fuelprices_js",
-      "community": 280,
+      "community": 282,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19854,7 +19890,7 @@
       "source_file": "tmp_pytest\\test_petrol_price_parsed0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_petrol_price_parsed0_goldrates_js",
-      "community": 281,
+      "community": 283,
       "norm_label": "goldrates.js"
     },
     {
@@ -19863,7 +19899,7 @@
       "source_file": "tmp_pytest\\test_pulses_contain_required_f0\\pulses.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_pulses_contain_required_f0_pulses_js",
-      "community": 282,
+      "community": 284,
       "norm_label": "pulses.js"
     },
     {
@@ -19872,7 +19908,7 @@
       "source_file": "tmp_pytest\\test_pulses_date_is_today0\\pulses.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_pulses_date_is_today0_pulses_js",
-      "community": 283,
+      "community": 285,
       "norm_label": "pulses.js"
     },
     {
@@ -19881,7 +19917,7 @@
       "source_file": "tmp_pytest\\test_same_date_entry_deduplica0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_same_date_entry_deduplica0_fuelprices_js",
-      "community": 284,
+      "community": 286,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19890,7 +19926,7 @@
       "source_file": "tmp_pytest\\test_same_date_entry_deduplica0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_same_date_entry_deduplica0_goldrates_js",
-      "community": 285,
+      "community": 287,
       "norm_label": "goldrates.js"
     },
     {
@@ -19899,7 +19935,7 @@
       "source_file": "tmp_pytest\\test_silver_per_gram_preserved0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_silver_per_gram_preserved0_fuelprices_js",
-      "community": 286,
+      "community": 288,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19908,7 +19944,7 @@
       "source_file": "tmp_pytest\\test_silver_per_gram_preserved0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_silver_per_gram_preserved0_goldrates_js",
-      "community": 287,
+      "community": 289,
       "norm_label": "goldrates.js"
     },
     {
@@ -19917,7 +19953,7 @@
       "source_file": "tmp_pytest\\test_silver_per_kg_normalised_0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_silver_per_kg_normalised_0_fuelprices_js",
-      "community": 288,
+      "community": 290,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19926,7 +19962,7 @@
       "source_file": "tmp_pytest\\test_silver_per_kg_normalised_0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_silver_per_kg_normalised_0_goldrates_js",
-      "community": 289,
+      "community": 291,
       "norm_label": "goldrates.js"
     },
     {
@@ -19935,7 +19971,7 @@
       "source_file": "tmp_pytest\\test_writes_fuel_file0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_writes_fuel_file0_fuelprices_js",
-      "community": 290,
+      "community": 292,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19944,7 +19980,7 @@
       "source_file": "tmp_pytest\\test_writes_fuel_file0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_writes_fuel_file0_goldrates_js",
-      "community": 291,
+      "community": 293,
       "norm_label": "goldrates.js"
     },
     {
@@ -19953,7 +19989,7 @@
       "source_file": "tmp_pytest\\test_writes_gold_file0\\fuelPrices.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_writes_gold_file0_fuelprices_js",
-      "community": 292,
+      "community": 294,
       "norm_label": "fuelprices.js"
     },
     {
@@ -19962,7 +19998,7 @@
       "source_file": "tmp_pytest\\test_writes_gold_file0\\goldRates.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_writes_gold_file0_goldrates_js",
-      "community": 293,
+      "community": 295,
       "norm_label": "goldrates.js"
     },
     {
@@ -19971,7 +20007,7 @@
       "source_file": "tmp_pytest\\test_writes_pulses_file0\\pulses.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_writes_pulses_file0_pulses_js",
-      "community": 294,
+      "community": 296,
       "norm_label": "pulses.js"
     },
     {
@@ -19980,7 +20016,7 @@
       "source_file": "tmp_pytest\\test_write_js_module0\\test_output.js",
       "source_location": "L1",
       "id": "tmp_pytest_test_write_js_module0_test_output_js",
-      "community": 295,
+      "community": 297,
       "norm_label": "test_output.js"
     },
     {
@@ -19988,7 +20024,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\news_sync_agent.py",
       "source_location": "L45",
-      "community": 296,
+      "community": 298,
       "norm_label": "fetch, fact-check, and sync news to supabase.",
       "id": "news_sync_agent_rationale_45"
     },
@@ -20033,7 +20069,7 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\news_scraper.py",
       "source_location": "L76",
-      "community": 297,
+      "community": 299,
       "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
       "id": "news_scraper_rationale_76"
     },
@@ -20042,7 +20078,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\news_classifier.py",
       "source_location": "L132",
-      "community": 298,
+      "community": 300,
       "norm_label": "maps high-level domain entities to database type/id keys.     returns (entity_ty",
       "id": "news_classifier_rationale_132"
     },
@@ -20051,7 +20087,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\llm_provider.py",
       "source_location": "L62",
-      "community": 299,
+      "community": 301,
       "norm_label": "generate text via the requested provider with automatic retry.          returns",
       "id": "llm_provider_rationale_62"
     },
@@ -20060,7 +20096,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\llm_provider.py",
       "source_location": "L140",
-      "community": 300,
+      "community": 302,
       "norm_label": "call the z.ai openai-compatible chat completions endpoint.",
       "id": "llm_provider_rationale_140"
     },
@@ -20123,7 +20159,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\news_sync_agent.py",
       "source_location": "L36",
-      "community": 301,
+      "community": 303,
       "norm_label": "fetch, fact-check, and sync news to supabase.",
       "id": "news_sync_agent_rationale_36"
     },
@@ -20132,7 +20168,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\news_sync_agent.py",
       "source_location": "L35",
-      "community": 302,
+      "community": 304,
       "norm_label": "fetch, fact-check, and sync news to supabase.",
       "id": "news_sync_agent_rationale_35"
     },
@@ -20141,7 +20177,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\llm_provider.py",
       "source_location": "L44",
-      "community": 303,
+      "community": 305,
       "norm_label": "generate text via the requested provider with automatic retry.          returns",
       "id": "llm_provider_rationale_44"
     },
@@ -20150,7 +20186,7 @@
       "file_type": "rationale",
       "source_file": "backend\\core\\llm_provider.py",
       "source_location": "L122",
-      "community": 304,
+      "community": 306,
       "norm_label": "call the z.ai openai-compatible chat completions endpoint.",
       "id": "llm_provider_rationale_122"
     },
@@ -20159,7 +20195,7 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\news_scraper.py",
       "source_location": "L75",
-      "community": 305,
+      "community": 307,
       "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
       "id": "news_scraper_rationale_75"
     },
@@ -20168,7 +20204,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\news_sync_agent.py",
       "source_location": "L34",
-      "community": 306,
+      "community": 308,
       "norm_label": "fetch, fact-check, and sync news to supabase.",
       "id": "news_sync_agent_rationale_34"
     },
@@ -20177,7 +20213,7 @@
       "file_type": "rationale",
       "source_file": "scripts\\news_scraper.py",
       "source_location": "L73",
-      "community": 307,
+      "community": 309,
       "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
       "id": "news_scraper_rationale_73"
     },
@@ -20195,7 +20231,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L18",
-      "community": 308,
+      "community": 310,
       "norm_label": "generates new content for telangana.live",
       "id": "content_generator_rationale_18"
     },
@@ -20204,7 +20240,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L24",
-      "community": 309,
+      "community": 311,
       "norm_label": "generate new content and store in supabase",
       "id": "content_generator_rationale_24"
     },
@@ -20213,7 +20249,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_generator.py",
       "source_location": "L84",
-      "community": 310,
+      "community": 312,
       "norm_label": "execute generation cycle.                  first tries to pull dynamic topics",
       "id": "content_generator_rationale_84"
     },
@@ -20222,7 +20258,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L11",
-      "community": 311,
+      "community": 313,
       "norm_label": "monitors telangana.live for content that needs updates",
       "id": "content_monitor_rationale_11"
     },
@@ -20231,7 +20267,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L34",
-      "community": 312,
+      "community": 314,
       "norm_label": "use claude to analyze content and identify what needs updates",
       "id": "content_monitor_rationale_34"
     },
@@ -20240,7 +20276,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_monitor.py",
       "source_location": "L71",
-      "community": 313,
+      "community": 315,
       "norm_label": "execute monitoring cycle",
       "id": "content_monitor_rationale_71"
     },
@@ -20249,7 +20285,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_updater.py",
       "source_location": "L9",
-      "community": 314,
+      "community": 316,
       "norm_label": "updates existing content with new information",
       "id": "content_updater_rationale_9"
     },
@@ -20258,7 +20294,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\content_updater.py",
       "source_location": "L15",
-      "community": 315,
+      "community": 317,
       "norm_label": "update existing content with new information",
       "id": "content_updater_rationale_15"
     },
@@ -20267,7 +20303,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L9",
-      "community": 316,
+      "community": 318,
       "norm_label": "checks and improves content quality, then publishes it.",
       "id": "quality_checker_rationale_9"
     },
@@ -20276,7 +20312,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L15",
-      "community": 317,
+      "community": 319,
       "norm_label": "check content quality, save improvements, and publish the article.",
       "id": "quality_checker_rationale_15"
     },
@@ -20285,7 +20321,7 @@
       "file_type": "rationale",
       "source_file": "backend\\agents\\agents\\quality_checker.py",
       "source_location": "L55",
-      "community": 318,
+      "community": 320,
       "norm_label": "quality-check all content that is still in 'active' (draft) status.",
       "id": "quality_checker_rationale_55"
     },
@@ -20330,7 +20366,7 @@
       "file_type": "rationale",
       "source_file": "backend\\scripts\\scripts\\news_scraper.py",
       "source_location": "L57",
-      "community": 319,
+      "community": 321,
       "norm_label": "generate a 2-line ai summary with simple exponential back-off on failure.",
       "id": "news_scraper_rationale_57"
     },
@@ -26781,7 +26817,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0,
       "_src": "frontend_src_app_jsx",
       "_tgt": "app_loadingscreen",
@@ -26793,7 +26829,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0,
       "_src": "frontend_src_app_jsx",
       "_tgt": "app_emergencytoggle",
@@ -26805,7 +26841,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L80",
+      "source_location": "L81",
       "weight": 1.0,
       "_src": "frontend_src_app_jsx",
       "_tgt": "app_appcontent",
@@ -26817,7 +26853,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\App.jsx",
-      "source_location": "L147",
+      "source_location": "L149",
       "weight": 1.0,
       "_src": "frontend_src_app_jsx",
       "_tgt": "app_app",
@@ -27705,7 +27741,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\components\\ServicesDirectory.jsx",
-      "source_location": "L55",
+      "source_location": "L79",
       "weight": 1.0,
       "_src": "frontend_src_components_servicesdirectory_jsx",
       "_tgt": "servicesdirectory_servicesdirectory",
@@ -28244,6 +28280,30 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\pages\\MeeSevaPage.jsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_src": "frontend_src_pages_meesevapage_jsx",
+      "_tgt": "meesevapage_getcategoryicon",
+      "source": "frontend_src_pages_meesevapage_jsx",
+      "target": "meesevapage_getcategoryicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\pages\\MeeSevaPage.jsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "frontend_src_pages_meesevapage_jsx",
+      "_tgt": "meesevapage_meesevapage",
+      "source": "frontend_src_pages_meesevapage_jsx",
+      "target": "meesevapage_meesevapage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\NewsListingPage.jsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -28497,7 +28557,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_src": "frontend_src_pages_searchpage_jsx",
       "_tgt": "searchpage_flattenservices",
@@ -28509,7 +28569,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0,
       "_src": "frontend_src_pages_searchpage_jsx",
       "_tgt": "searchpage_highlight",
@@ -28521,7 +28581,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0,
       "_src": "frontend_src_pages_searchpage_jsx",
       "_tgt": "searchpage_sectionheader",
@@ -28533,7 +28593,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "frontend\\src\\pages\\SearchPage.jsx",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0,
       "_src": "frontend_src_pages_searchpage_jsx",
       "_tgt": "searchpage_searchpage",

@@ -25,27 +25,51 @@ function ServiceCard({ service, onExpand, isExpanded }) {
             </button>
 
             {/* Expanded Items */}
-            <div className={`transition-all duration-500 overflow-hidden ${isExpanded ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="border-t border-white/[0.05]">
-                    {service.items.map((item, idx) => (
-                        <div key={idx}
-                            className="px-5 sm:px-6 py-3.5 border-b border-white/[0.03] last:border-0 hover:bg-white/[0.02] transition-all duration-200"
-                            style={{ animationDelay: `${idx * 30}ms` }}>
-                            <div className="flex items-center justify-between gap-3">
-                                <div className="min-w-0">
-                                    <h4 className="text-sm font-semibold text-white truncate">{item.name}</h4>
-                                    <p className="text-xs text-text-muted mt-0.5">{item.area}</p>
-                                </div>
-                                <div className="text-right flex-shrink-0">
-                                    <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${item.type.includes('Government') ? 'bg-telangana-green/15 text-green-400' : 'bg-heritage-gold/10 text-heritage-gold'
-                                        }`}>
-                                        {item.type}
+            <div className={`transition-all duration-500 overflow-hidden ${isExpanded ? 'max-h-[850px] opacity-100 overflow-y-auto' : 'max-h-0 opacity-0'}`}>
+                <div className="border-t border-white/[0.05] p-5 space-y-4">
+                    {service.offerings && (
+                        <div>
+                            <h4 className="text-[10px] font-black uppercase text-heritage-gold tracking-wider mb-2">
+                                🔑 Key Services & Offerings
+                            </h4>
+                            <div className="flex flex-wrap gap-1.5">
+                                {service.offerings.map((offering, idx) => (
+                                    <span key={idx} className="text-[10px] px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.08] text-white/80 font-medium">
+                                        {offering}
                                     </span>
-                                    <div className="text-xs text-heritage-gold mt-1 font-semibold">★ {item.rating}</div>
-                                </div>
+                                ))}
                             </div>
                         </div>
-                    ))}
+                    )}
+
+                    <div>
+                        {service.offerings && (
+                            <h4 className="text-[10px] font-black uppercase text-heritage-gold tracking-wider mb-2">
+                                📍 Nearby Centres
+                            </h4>
+                        )}
+                        <div className="space-y-0.5">
+                            {service.items.map((item, idx) => (
+                                <div key={idx}
+                                    className="py-3.5 border-b border-white/[0.03] last:border-0 hover:bg-white/[0.02] transition-all duration-200"
+                                    style={{ animationDelay: `${idx * 30}ms` }}>
+                                    <div className="flex items-center justify-between gap-3">
+                                        <div className="min-w-0">
+                                            <h4 className="text-sm font-semibold text-white truncate">{item.name}</h4>
+                                            <p className="text-xs text-text-muted mt-0.5">{item.area}</p>
+                                        </div>
+                                        <div className="text-right flex-shrink-0">
+                                            <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${item.type.toLowerCase().includes('government') ? 'bg-telangana-green/15 text-green-400' : 'bg-heritage-gold/10 text-heritage-gold'
+                                                }`}>
+                                                {item.type}
+                                            </span>
+                                            <div className="text-xs text-heritage-gold mt-1 font-semibold">★ {item.rating}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,11 +85,13 @@ export default function ServicesDirectory() {
                 <h2 className="section-title">Services Directory</h2>
                 <p className="text-sm text-text-muted mt-1">Essential services across all districts</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <ServiceCard service={services.hospitals} isExpanded={expanded === 'hospitals'}
                     onExpand={() => setExpanded(expanded === 'hospitals' ? null : 'hospitals')} />
                 <ServiceCard service={services.schools} isExpanded={expanded === 'schools'}
                     onExpand={() => setExpanded(expanded === 'schools' ? null : 'schools')} />
+                <ServiceCard service={services.meeseva} isExpanded={expanded === 'meeseva'}
+                    onExpand={() => setExpanded(expanded === 'meeseva' ? null : 'meeseva')} />
             </div>
         </section>
     );
