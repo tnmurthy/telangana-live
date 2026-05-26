@@ -116,3 +116,59 @@ test.describe('Page Title — Route-specific', () => {
         await expect(page).toHaveTitle(/telangana/i);
     });
 });
+
+test.describe('Live News Clustering Modal', () => {
+
+    test.beforeEach(async ({ page }) => {
+        // Disable bottom advertisements via sessionStorage and dynamic DOM hiding before page scripts run
+        await page.addInitScript(() => {
+            sessionStorage.setItem('sticky_ad_closed', 'true');
+            setInterval(() => {
+                const elements = document.querySelectorAll('div');
+                elements.forEach(el => {
+                    if (el.className && typeof el.className === 'string' && el.className.includes('bottom-[74px]')) {
+                        el.style.setProperty('display', 'none', 'important');
+                        el.style.setProperty('pointer-events', 'none', 'important');
+                    }
+                });
+                const adBtn = document.querySelector('[aria-label="Close Advertisement"]');
+                if (adBtn) {
+                    const adContainer = adBtn.closest('div');
+                    if (adContainer) {
+                        adContainer.style.setProperty('display', 'none', 'important');
+                        adContainer.style.setProperty('pointer-events', 'none', 'important');
+                    }
+                }
+            }, 50);
+        });
+        await page.goto('/hyderabad', { waitUntil: 'networkidle' });
+    });
+
+    test('news updates counter is visible and opens modal on click', async ({ page }) => {
+        const pulseCounter = page.getByRole('button', { name: /View live news clusters/i });
+        await expect(pulseCounter).toBeVisible();
+
+        await pulseCounter.click({ force: true });
+
+        const modalHeading = page.locator('h2', { hasText: 'Live News Clusters' });
+        await expect(modalHeading).toBeVisible();
+    });
+
+    test('news clusters modal can switch tabs and filter updates', async ({ page }) => {
+        const pulseCounter = page.getByRole('button', { name: /View live news clusters/i });
+        await pulseCounter.click({ force: true });
+
+        const byDistrictTab = page.locator('button', { hasText: /By District/i });
+        await expect(byDistrictTab).toBeVisible();
+
+        const byCategoryTab = page.locator('button', { hasText: /By Category/i });
+        await expect(byCategoryTab).toBeVisible();
+        await byCategoryTab.click();
+
+        const searchInput = page.locator('input[placeholder="Search updates..."]');
+        await expect(searchInput).toBeVisible();
+        await searchInput.fill('Telangana');
+
+        await expect(searchInput).toHaveValue('Telangana');
+    });
+});

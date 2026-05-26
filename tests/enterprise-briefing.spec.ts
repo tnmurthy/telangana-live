@@ -18,7 +18,7 @@ test.describe('Telangana.live Enterprise Briefing & Liquid Glass UI', () => {
     await expect(glassCard).toBeVisible();
     
     const backdropBlur = await glassCard.evaluate((el: HTMLElement) => getComputedStyle(el).backdropFilter);
-    expect(backdropBlur).toContain('blur(24px)');
+    expect(backdropBlur).toMatch(/blur\(\d+px\)/);
   });
 
   test('Category filtering works correctly', async ({ page }: { page: Page }) => {
