@@ -37,3 +37,4 @@ __pycache__
 .env
 graphify-out/cache/
 tmp_pytest/
+ga_credentials.json
