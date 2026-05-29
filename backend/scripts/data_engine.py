@@ -185,19 +185,19 @@ def sync_gold():
             html = resp.text
             soup = BeautifulSoup(html, "html.parser")
             
-            # Parse silver price if present in HTML (e.g., "Silver ₹97 per gram" or "Silver ₹97,000 per kg")
-            m_sil = re.search(r"Silver[^\u20b9₹]{0,100}[\u20b9₹]\s*([\d,.]+)(?:\s*per\s*(gram|kg))?", html, re.I)
-            if m_sil:
-                val_str = m_sil.group(1).replace(",", "")
-                unit_str = (m_sil.group(2) or "gram").lower()
-                try:
-                    val = float(val_str)
-                    if val > 1000 or unit_str == "kg":
-                        silver_gram = val / 1000.0
-                    else:
-                        silver_gram = val
-                except ValueError:
-                    pass
+            # Parse silver price from the main summary table
+            for table in soup.find_all("table"):
+                if "silver 1 gm" in table.get_text().lower():
+                    try:
+                        rows = table.find_all("tr")
+                        if len(rows) > 1:
+                            tds = rows[1].find_all("td")
+                            if len(tds) >= 3:
+                                sil_text = tds[2].get_text(strip=True).split('(')[0].replace(',', '').replace('₹', '')
+                                silver_gram = float(sil_text)
+                                break
+                    except Exception as e:
+                        pass
 
             tables = soup.find_all("table")
             
@@ -229,15 +229,19 @@ def sync_gold():
                                     v22 = float(p22_raw)
                                     
                                     # Normalize (Live Chennai often shows 1g directly or 8g)
-                                    # 14,000+ is usually 2g. 60,000+ is 8g. 7,000+ is 1g.
+                                    # In 2026, 1g is ~14k-16k. 8g is ~110k+.
                                     def normalize_g(v):
-                                        if v > 50000: return v / 8
-                                        if v > 12000: return v / 2
+                                        if v > 100000: return v / 8
                                         return v
                                     
                                     n24 = round(normalize_g(v24), 2)
                                     n22 = round(normalize_g(v22), 2)
                                     
+                                    # Boundary anomaly checks (2026 data limits)
+                                    if n22 < 10000 or n22 > 30000: raise ValueError(f"Gold 22k out of bounds: {n22}")
+                                    if n24 < 10000 or n24 > 30000: raise ValueError(f"Gold 24k out of bounds: {n24}")
+                                    if silver_gram < 50 or silver_gram > 500: raise ValueError(f"Silver out of bounds: {silver_gram}")
+
                                     temp_history.append({
                                         "date": dt.strftime("%Y-%m-%d"),
                                         "gold22k": n22,
@@ -345,37 +349,24 @@ def sync_fuel():
     cng_price = 72.8
 
     try:
-        url = "https://www.goodreturns.in/petrol-price-in-hyderabad.html"
-        resp = http_get(url)
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
-        text = soup.get_text(" ", strip=True)
+        petrol_url = "https://www.goodreturns.in/petrol-price-in-hyderabad.html"
+        p_resp = http_get(petrol_url)
+        if p_resp.status_code == 200:
+            p_soup = BeautifulSoup(p_resp.text, "html.parser")
+            # Look for the strong/b tag in the intro content
+            intro = p_soup.find("div", id="gr_intro_content")
+            if intro and intro.find("b"):
+                val = float(intro.find("b").get_text(strip=True).replace(",", ""))
+                if 50 < val < 200: petrol_price = val
 
-        petrol_patterns = [
-            r"Petrol Price[^\d]{0,80}Rs\.?\s*([\d.]+)",
-            r"Petrol Price in Hyderabad[^\u20b9]{0,80}₹\s*([\d.]+)",
-        ]
-        diesel_patterns = [
-            r"Diesel Price[^\d]{0,80}Rs\.?\s*([\d.]+)",
-            r"Diesel Price in Hyderabad[^\u20b9]{0,80}₹\s*([\d.]+)",
-        ]
-
-        # Petrol & Diesel
-        for pattern in petrol_patterns:
-            m = re.search(pattern, text, re.I)
-            if m:
-                v = float(m.group(1))
-                if 50 < v < 200:   # sanity check
-                    petrol_price = v
-                break
-
-        for pattern in diesel_patterns:
-            m = re.search(pattern, text, re.I)
-            if m:
-                v = float(m.group(1))
-                if 50 < v < 200:
-                    diesel_price = v
-                break
+        diesel_url = "https://www.goodreturns.in/diesel-price-in-hyderabad.html"
+        d_resp = http_get(diesel_url)
+        if d_resp.status_code == 200:
+            d_soup = BeautifulSoup(d_resp.text, "html.parser")
+            intro = d_soup.find("div", id="gr_intro_content")
+            if intro and intro.find("b"):
+                val = float(intro.find("b").get_text(strip=True).replace(",", ""))
+                if 50 < val < 200: diesel_price = val
 
         # LPG (14.2kg Domestic)
         try:
