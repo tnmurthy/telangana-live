@@ -31,6 +31,8 @@ export default function Footer() {
             <Link to="/ai-pulse" className="hover:text-white transition-colors">AI Pulse</Link>
             <Link to="/rates/gold" className="hover:text-white transition-colors">Rates</Link>
             <Link to="/health/basthi-dawakhana" className="hover:text-white transition-colors">Health</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
           </nav>
 
           {/* Copyright */}

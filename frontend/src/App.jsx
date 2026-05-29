@@ -15,6 +15,7 @@ import MainLayout from './components/MainLayout';
 import BreakingNewsBanner from './components/BreakingNewsBanner';
 import PulseCounter from './components/PulseCounter';
 import StickyAnchorAd from './components/StickyAnchorAd';
+import CookieConsent from './components/CookieConsent';
 
 // Lazy loading for production grade performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -44,6 +45,8 @@ const ReservoirsPage = lazy(() => import('./pages/ReservoirsPage'));
 const ParksPage = lazy(() => import('./pages/ParksPage'));
 const FarmerPage = lazy(() => import('./pages/FarmerPage'));
 const MeeSevaPage = lazy(() => import('./pages/MeeSevaPage'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -130,6 +133,8 @@ function AppContent() {
               <Route path="/parks" element={<ParksPage />} />
               <Route path="/farmers" element={<FarmerPage />} />
               <Route path="/meeseva" element={<MeeSevaPage />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
               <Route path="/:region" element={<SubRegionPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -142,6 +147,7 @@ function AppContent() {
       {!isSplash && <EmergencyToggle />}
       {!isSplash && <PulseCounter />}
       {!isSplash && <StickyAnchorAd />}
+      <CookieConsent />
     </div>
   );
 }
