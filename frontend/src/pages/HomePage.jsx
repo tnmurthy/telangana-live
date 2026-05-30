@@ -6,6 +6,8 @@ import StoriesBar from '../components/StoriesBar';
 import DistrictOnboarding from '../components/DistrictOnboarding';
 import { SkeletonFeed } from '../components/SkeletonCard';
 import { useAppContext } from '../context/AppContext';
+import { useEmergency } from '../hooks/useEmergency';
+import { Link } from 'react-router-dom';
 
 const CATEGORIES = [
   { id: 'All', label: 'Briefing' },
@@ -37,6 +39,7 @@ const FeedSection = ({ title, items, icon, delay = '0ms' }) => (
 
 export default function HomePage() {
   const { searchQuery, myDistrict, followed } = useAppContext();
+  const { isEmergencyActive, activateEmergency } = useEmergency();
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All');
   const [page, setPage] = useState(1);
@@ -119,6 +122,38 @@ export default function HomePage() {
       {/* Liquid Header section */}
       <section className="animate-liquid-in">
         <StoriesBar />
+      </section>
+
+      {/* Prominent Civic Action Hub */}
+      <section className="animate-fade-in delay-100">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Link to="/report" className="glass-card p-6 border border-white/10 hover:border-telangana-green/50 hover:bg-white/5 transition-all group flex items-start gap-4 shadow-xl">
+            <div className="p-3 bg-telangana-green/20 rounded-xl text-telangana-green group-hover:scale-110 transition-transform">
+              <Icons.Location className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-lg font-black text-white mb-1 group-hover:text-telangana-green transition-colors">Citizen Grievances</h3>
+              <p className="text-sm text-text-secondary leading-snug">Drop a pin to report potholes, water leaks, or power outages directly to GHMC.</p>
+            </div>
+          </Link>
+          
+          <div 
+            onClick={() => !isEmergencyActive && activateEmergency('flood')}
+            className={`glass-card p-6 border transition-all group flex items-start gap-4 shadow-xl cursor-pointer ${isEmergencyActive ? 'border-red-500/50 bg-red-500/10' : 'border-white/10 hover:border-red-500/30 hover:bg-white/5'}`}
+          >
+            <div className={`p-3 rounded-xl transition-transform ${isEmergencyActive ? 'bg-red-500 text-white animate-pulse' : 'bg-red-500/20 text-red-400 group-hover:scale-110'}`}>
+              <Icons.Emergency className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className={`text-lg font-black mb-1 transition-colors ${isEmergencyActive ? 'text-red-400' : 'text-white group-hover:text-red-400'}`}>
+                Crisis Dashboard {isEmergencyActive && '(Active)'}
+              </h3>
+              <p className="text-sm text-text-secondary leading-snug">
+                {isEmergencyActive ? 'Live emergency alerts are currently active at the top of your screen.' : 'No active emergencies. Click to run a system simulation.'}
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Floating Category Pill */}

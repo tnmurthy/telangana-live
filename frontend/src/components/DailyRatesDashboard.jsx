@@ -35,6 +35,18 @@ export default function DailyRatesDashboard() {
     const [fuelPrices, setFuelPrices] = useState(staticFuelPrices);
     const [activeTab, setActiveTab] = useState('gold22k');
 
+    const handleTabChange = (tabKey) => {
+        setActiveTab(tabKey);
+        // GTM Tracking Event
+        if (window.dataLayer) {
+            window.dataLayer.push({
+                event: 'utility_interaction',
+                utility_type: 'gold_rates',
+                interaction_detail: `view_${tabKey}`
+            });
+        }
+    };
+
     useEffect(() => {
         fetchGoldRates().then(data => {
             if (data?.gold22k) {
@@ -121,7 +133,7 @@ export default function DailyRatesDashboard() {
                     {historyTabs.map((tab) => (
                         <button
                             key={tab.key}
-                            onClick={() => setActiveTab(tab.key)}
+                            onClick={() => handleTabChange(tab.key)}
                             className={`text-[9px] font-bold px-2 py-0.5 rounded-full transition-all uppercase tracking-wider ${activeTab === tab.key
                                 ? 'bg-heritage-gold/15 text-heritage-gold'
                                 : 'text-text-muted hover:text-text-secondary'

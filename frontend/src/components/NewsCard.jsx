@@ -94,6 +94,14 @@ const NewsCard = ({ news, isSpotlight = false }) => {
         onClick={() => {
           recordRead();
           setModalOpen(true);
+          // GTM Tracking Event
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: 'article_view',
+              article_category: category,
+              article_source: source
+            });
+          }
         }}
         className={`liquid-glass liquid-glass-hover group relative flex overflow-hidden cursor-pointer ${
           isSpotlight 
