@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { EmergencyProvider } from './context/EmergencyProvider';
 import { useEmergency } from './hooks/useEmergency';
+import { usePageTracking } from './hooks/usePageTracking';
 import Header from './components/Header';
 import DateTimeBar from './components/DateTimeBar';
 import CrisisDashboard from './components/CrisisDashboard';
@@ -47,6 +48,7 @@ const FarmerPage = lazy(() => import('./pages/FarmerPage'));
 const MeeSevaPage = lazy(() => import('./pages/MeeSevaPage'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const ClassifiedsPage = lazy(() => import('./pages/ClassifiedsPage'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -84,6 +86,7 @@ function EmergencyToggle() {
 function AppContent() {
   const { isEmergencyActive } = useEmergency();
   const location = useLocation();
+  usePageTracking(); // Fires GA4 synthetic page views on route change
 
   // Scroll to hash or top on route change
   useEffect(() => {
@@ -133,6 +136,7 @@ function AppContent() {
               <Route path="/parks" element={<ParksPage />} />
               <Route path="/farmers" element={<FarmerPage />} />
               <Route path="/meeseva" element={<MeeSevaPage />} />
+              <Route path="/classifieds" element={<ClassifiedsPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/:region" element={<SubRegionPage />} />
@@ -144,9 +148,11 @@ function AppContent() {
 
       {!isSplash && <Footer />}
       {!isSplash && <BottomNav />}
-      {!isSplash && <EmergencyToggle />}
-      {!isSplash && <PulseCounter />}
-      {!isSplash && <StickyAnchorAd />}
+      <div className="hidden lg:block">
+        {!isSplash && <EmergencyToggle />}
+        {!isSplash && <PulseCounter />}
+        {!isSplash && <StickyAnchorAd />}
+      </div>
       <CookieConsent />
     </div>
   );

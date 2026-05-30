@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
 import transitStatus from '../data/transit_status.json';
 import { metroData, basthiDawakhanas } from '../data/transportData';
@@ -240,7 +241,7 @@ export default function ArticleModal({ article, onClose }) {
   const readTime = estimateReadTime((description || '') + ' ' + (ai_summary || ''));
   const aiConfidence = credibility_score || Math.min(98, 75 + (title.length % 20));
 
-  return (
+  const modalContent = (
     <motion.div
       ref={backdropRef}
       initial={{ opacity: 0 }}
@@ -402,4 +403,6 @@ export default function ArticleModal({ article, onClose }) {
         </motion.div>
       </motion.div>
   );
+
+  return createPortal(modalContent, document.body);
 }

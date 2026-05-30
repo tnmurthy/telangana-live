@@ -114,3 +114,60 @@ CREATE POLICY "Enable read access for power alerts" ON power_alerts FOR SELECT U
 GRANT SELECT, INSERT ON citizen_reports TO anon;
 GRANT SELECT ON emergency_status TO anon;
 GRANT SELECT ON power_alerts TO anon;
+
+-- ==============================================================================
+-- SMART CLASSIFIEDS TABLE
+-- ==============================================================================
+
+CREATE TABLE IF NOT EXISTS smart_classifieds (
+  id BIGSERIAL PRIMARY KEY,
+  category TEXT NOT NULL,
+  title TEXT NOT NULL,
+  price NUMERIC,
+  description TEXT,
+  whatsapp_number TEXT,
+  lat NUMERIC,
+  lng NUMERIC,
+  ward TEXT,
+  status TEXT DEFAULT 'active', -- active, sold, rejected
+  image_url TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  expires_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() + INTERVAL '72 hours'
+);
+
+-- Enable RLS and create public read/insert policies
+ALTER TABLE smart_classifieds ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Enable read access for active classifieds" ON smart_classifieds;
+CREATE POLICY "Enable read access for active classifieds" ON smart_classifieds
+  FOR SELECT USING (status = 'active' AND expires_at > NOW());
+
+DROP POLICY IF EXISTS "Enable insert access for classifieds" ON smart_classifieds;
+CREATE POLICY "Enable insert access for classifieds" ON smart_classifieds
+  FOR INSERT WITH CHECK (true);
+
+GRANT SELECT, INSERT ON smart_classifieds TO anon;
+
+-- ==============================================================================
+-- DISTRICT NEWS SOURCES TABLE
+-- ==============================================================================
+
+CREATE TABLE IF NOT EXISTS district_news_sources (
+  id BIGSERIAL PRIMARY KEY,
+  district_name TEXT NOT NULL,
+  source_name TEXT NOT NULL,
+  source_type TEXT NOT NULL, -- 'RSS', 'Twitter', 'Scraper'
+  source_url TEXT,
+  language TEXT DEFAULT 'English', -- 'Telugu', 'Urdu', 'English'
+  is_active BOOLEAN DEFAULT true,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Enable RLS and create public read policies
+ALTER TABLE district_news_sources ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Enable read access for news sources" ON district_news_sources;
+CREATE POLICY "Enable read access for news sources" ON district_news_sources
+  FOR SELECT USING (is_active = true);
+
+GRANT SELECT ON district_news_sources TO anon;

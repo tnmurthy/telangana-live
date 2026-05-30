@@ -1,6 +1,20 @@
 {
   "version": 2,
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "telanganalive.in" }],
+      "destination": "https://telangana.live/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "telanganalive.online" }],
+      "destination": "https://telangana.live/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/((?!api/|ads\\.txt|robots\\.txt|sitemap\\.xml).*)", "destination": "/index.html" }

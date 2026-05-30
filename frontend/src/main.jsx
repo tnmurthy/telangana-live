@@ -5,13 +5,17 @@ import './index.css'
 import App from './App.jsx'
 import { AppProvider } from './context/AppContext.jsx'
 
+import { HelmetProvider } from 'react-helmet-async'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename={import.meta.env.VITE_BASE_PATH || ''}>
-      <AppProvider>
-        <App />
-      </AppProvider>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter basename={import.meta.env.VITE_BASE_PATH || ''}>
+        <AppProvider>
+          <App />
+        </AppProvider>
+      </BrowserRouter>
+    </HelmetProvider>
   </StrictMode>,
 )
 

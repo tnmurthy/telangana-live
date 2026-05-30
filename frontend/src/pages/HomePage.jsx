@@ -153,6 +153,17 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+          
+          {/* Smart Classifieds Link */}
+          <Link to="/classifieds" className="glass-card p-6 border border-white/10 hover:border-yellow-500/50 hover:bg-white/5 transition-all group flex items-start gap-4 shadow-xl md:col-span-2">
+            <div className="p-3 bg-yellow-500/20 rounded-xl text-yellow-500 group-hover:scale-110 transition-transform">
+              <Icons.Briefcase className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-lg font-black text-white mb-1 group-hover:text-yellow-500 transition-colors">Hyper-Local Market</h3>
+              <p className="text-sm text-text-secondary leading-snug">Buy, sell, or trade directly with neighbors in your ward. AI-powered smart classifieds via WhatsApp.</p>
+            </div>
+          </Link>
         </div>
       </section>
 

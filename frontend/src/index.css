@@ -29,13 +29,13 @@ body {
 @layer components {
   
   .liquid-glass {
-    @apply rounded-[24px] border border-white/[0.08] bg-white/[0.03] backdrop-blur-[24px] 
-           shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)];
+    @apply rounded-[24px] border border-white/[0.1] bg-white/[0.05] backdrop-blur-[40px] 
+           shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),_0_8px_32px_rgba(0,0,0,0.5)];
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .liquid-glass-hover {
-    @apply hover:bg-white/[0.06] hover:border-white/[0.15] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)];
+    @apply hover:bg-white/[0.08] hover:border-white/[0.2] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.3),_0_12px_48px_rgba(0,0,0,0.6)];
   }
 
   /* Fluid Buttons */
@@ -55,6 +55,16 @@ body {
 
   .text-liquid-muted {
     @apply text-white/50 font-medium;
+  }
+
+  /* Leaflet Popups (Dark Mode) */
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    @apply liquid-glass !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    color: white !important;
+  }
+  .leaflet-popup-close-button {
+    color: white !important;
   }
 
   /* Gradients */

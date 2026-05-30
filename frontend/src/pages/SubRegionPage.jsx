@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { Icons } from '../components/Icons';
 import { partners } from '../data/partners';
@@ -13,6 +14,7 @@ import newsData from '../data/news.json';
 import PowerTariffCard from '../components/PowerTariffCard';
 import ServicesDirectory from '../components/ServicesDirectory';
 import NotFound from './NotFound';
+import { districtNewsSources } from '../data/districtNewsSources';
 
 const regionMetadata = {
     hyderabad: {
@@ -130,8 +132,30 @@ export default function SubRegionPage() {
         return matched.slice(0, 6);
     }, [meta.district]);
 
+    const localSources = districtNewsSources[meta.district] || [];
+
     return (
         <div className="space-y-8 sm:space-y-10 animate-fade-in">
+            <Helmet>
+                <title>{meta.title} News & Local Updates - Telangana.live</title>
+                <meta name="description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
+                <meta name="keywords" content={`${meta.district} news, ${meta.district} local updates, ${meta.district} news today, ${meta.district} power cuts, Telangana news`} />
+                
+                {/* Open Graph / Social Media Meta Tags */}
+                <meta property="og:title" content={`${meta.title} News & Local Updates - Telangana.live`} />
+                <meta property="og:description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://telangana.live/${region || 'hyderabad'}`} />
+                <meta property="og:site_name" content="Telangana.live" />
+                
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${meta.title} News & Local Updates`} />
+                <meta name="twitter:description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
+                
+                {/* Canonical URL */}
+                <link rel="canonical" href={`https://telangana.live/${region || 'hyderabad'}`} />
+            </Helmet>
             {/* Region Header */}
             <div className="glass-card section-block relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 text-white/5 pointer-events-none">
@@ -200,6 +224,18 @@ export default function SubRegionPage() {
                         <p className="section-subtitle">Real-time civic & community updates for {meta.title}</p>
                     </div>
                 </div>
+
+                {localSources.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        <span className="text-xs font-bold text-text-muted my-auto mr-2 uppercase tracking-widest">Live Sources:</span>
+                        {localSources.map(src => (
+                            <span key={src.id} className="text-xs font-semibold px-2 py-1 bg-white/5 border border-white/10 rounded-lg text-telangana-green-light flex items-center gap-1">
+                                <span className={`w-1.5 h-1.5 rounded-full ${src.is_active ? 'bg-green-500 animate-pulse' : 'bg-gray-500'}`}></span>
+                                {src.name} <span className="text-white/30 text-[10px] uppercase ml-1">({src.type})</span>
+                            </span>
+                        ))}
+                    </div>
+                )}
 
                 {regionNews.length > 0 ? (
                     <div className="flex flex-col gap-6">
