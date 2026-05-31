@@ -1,10 +1,8 @@
-name: Secondary Prices Update (6-hour)
+name: Daily AI Pulse Update
 
 on:
   schedule:
-    - cron: '15 */6 * * *'
-  push:
-    branches: [ "master" ]
+    - cron: '0 1 * * *' # 1:00 AM UTC (6:30 AM IST)
   workflow_dispatch:
 
 permissions:
@@ -14,7 +12,7 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  update-secondary-prices:
+  update-ai-pulse:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -30,17 +28,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
 
-      - name: Sync Fuel Prices
-        run: python backend/scripts/data_engine.py --task fuel
-
-      - name: Sync Commodity (Pulses) Prices
-        run: python backend/scripts/data_engine.py --task pulses
+      - name: Sync AI Pulse Briefing
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python backend/scripts/data_engine.py --task ai_pulse
 
       - name: Commit and Push Updates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add frontend/src/data/fuelPrices.js frontend/src/data/pulses.js
-          git commit -m "chore: update fuel and commodity data [automated]" || echo "No changes to commit"
+          git add frontend/src/data/aiBriefingData.js
+          git commit -m "chore: update AI pulse data [automated]" || echo "No changes to commit"
           git pull --rebase origin master
           git push

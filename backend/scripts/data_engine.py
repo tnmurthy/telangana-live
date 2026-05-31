@@ -690,8 +690,8 @@ def _placeholder_briefing():
                 "id": "compute",
                 "trend": "alert",
                 "title": "Compute & Spend",
-                "description": "OpenAI and Google continue their pricing war, slash API costs for smaller models by up to 50%, while open-source options drive inference costs to near-zero.",
-                "gainedGround": "Llama 3.1 70B"
+                "description": "Google shifts Gemini from message limits to a compute-based model based on task weight (minutes), as pricing wars continue and API costs drop.",
+                "gainedGround": "Google Gemini"
             }
         ],
         "deprecations": [

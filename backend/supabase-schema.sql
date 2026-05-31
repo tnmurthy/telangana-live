@@ -171,3 +171,46 @@ CREATE POLICY "Enable read access for news sources" ON district_news_sources
   FOR SELECT USING (is_active = true);
 
 GRANT SELECT ON district_news_sources TO anon;
+
+-- ==============================================================================
+-- AI PULSE METRICS TABLES (ELO & NEWS)
+-- ==============================================================================
+
+CREATE TABLE IF NOT EXISTS public.ai_models_leaderboard (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    model_name TEXT NOT NULL,
+    provider TEXT,
+    elo_score NUMERIC,
+    rank INTEGER,
+    source TEXT NOT NULL, -- e.g., 'lmsys', 'huggingface'
+    snapshot_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE(model_name, source, snapshot_date)
+);
+
+CREATE TABLE IF NOT EXISTS public.ai_daily_news (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    title TEXT NOT NULL,
+    url TEXT NOT NULL,
+    source TEXT NOT NULL, -- e.g., 'hacker_news', 'rss'
+    score INTEGER DEFAULT 0, -- useful for HN upvotes
+    published_at TIMESTAMPTZ,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE(url)
+);
+
+-- Enable RLS and create public read policies
+ALTER TABLE public.ai_models_leaderboard ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Enable read access for ai leaderboards" ON public.ai_models_leaderboard;
+CREATE POLICY "Enable read access for ai leaderboards" ON public.ai_models_leaderboard
+  FOR SELECT USING (true);
+GRANT SELECT ON public.ai_models_leaderboard TO anon;
+GRANT SELECT ON public.ai_models_leaderboard TO authenticated;
+
+ALTER TABLE public.ai_daily_news ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Enable read access for ai news" ON public.ai_daily_news;
+CREATE POLICY "Enable read access for ai news" ON public.ai_daily_news
+  FOR SELECT USING (true);
+GRANT SELECT ON public.ai_daily_news TO anon;
+GRANT SELECT ON public.ai_daily_news TO authenticated;
+
