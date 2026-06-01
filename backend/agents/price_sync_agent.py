@@ -29,8 +29,8 @@ class PriceSyncAgent:
         logger.info("Syncing gold rates...")
         # Hyderabad May 6th, 2026 approx rates
         rates = {
-            "24k": 78300.0, # per 10g
-            "22k": 71800.0
+            "24k": 157040.0, # per 10g
+            "22k": 143950.0
         }
         return rates
 

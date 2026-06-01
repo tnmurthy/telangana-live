@@ -33,6 +33,12 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python backend/scripts/data_engine.py --task ai_pulse
 
+      - name: Sync AI Metrics (ELO & News)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python backend/scripts/sync_ai_metrics.py
+
       - name: Commit and Push Updates
         run: |
           git config --local user.email "action@github.com"

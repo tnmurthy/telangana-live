@@ -64,8 +64,8 @@ function renderCivicWidget(entity_type, entity_id) {
   }
 
   if (entity_type === 'gold_rate') {
-    const gold24 = goldRates?.gold24k?.price ? goldRates.gold24k.price * 10 : 78300.0;
-    const gold22 = goldRates?.gold22k?.price ? goldRates.gold22k.price * 10 : 71800.0;
+    const gold22 = goldRates?.gold22k?.price ? goldRates.gold22k.price * 10 : 143950.0;
+    const gold24 = goldRates?.gold24k?.price ? goldRates.gold24k.price * 10 : 157040.0;
     return (
       <div key={`${entity_type}-${entity_id}`} className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-yellow-500/20 transition-colors">
         <div className="flex justify-between items-center mb-2.5">

@@ -171,11 +171,11 @@ def sync_gold():
     history = []
     # Fallback values match test expectations
     fallback = {
-        "22K Gold (1g)": {"today": "₹7,180", "yesterday": "₹7,180"},
-        "24K Gold (1g)": {"today": "₹7,830", "yesterday": "₹7,830"},
-        "18K Gold (1g)": {"today": "₹5,876", "yesterday": "₹5,876"},
+        "22K Gold (1g)": {"today": "₹14,395", "yesterday": "₹14,450"},
+        "24K Gold (1g)": {"today": "₹15,704", "yesterday": "₹15,764"},
+        "18K Gold (1g)": {"today": "₹11,775", "yesterday": "₹11,775"},
     }
-    silver_gram = 96.50   # default fallback
+    silver_gram = 290.0   # default fallback
 
     try:
         # PRIMARY SOURCE: Live Chennai (Very stable table structure for Hyderabad)
@@ -280,14 +280,14 @@ def sync_gold():
     if not rates:
         print("  ⚠️ No gold rows parsed, using initial fallback")
         rates = fallback
-        gold22, gold24 = 7180.0, 7830.0
+        gold22, gold24 = 14395.0, 15704.0
 
     # Numeric conversions
     try:
-        gold22 = float(rates.get("22K Gold (1g)", {}).get("today", "₹7,180").replace("₹", "").replace(",", ""))
-        gold24 = float(rates.get("24K Gold (1g)", {}).get("today", "₹7,830").replace("₹", "").replace(",", ""))
+        gold22 = float(rates.get("22K Gold (1g)", {}).get("today", "₹14,395").replace("₹", "").replace(",", ""))
+        gold24 = float(rates.get("24K Gold (1g)", {}).get("today", "₹15,704").replace("₹", "").replace(",", ""))
     except Exception:
-        gold22, gold24 = 7180.0, 7830.0
+        gold22, gold24 = 14395.0, 15704.0
 
     # Calculate day-over-day change
     prev_gold22 = gold22

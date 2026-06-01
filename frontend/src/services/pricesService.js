@@ -117,8 +117,8 @@ export async function fetchGoldRates() {
 
   // 1. Try Hybrid Local Data
   if (hybridPrices?.gold) {
-    const gold24k = hybridPrices.gold['24k'] || 7830;
-    const gold22k = hybridPrices.gold['22k'] || 7180;
+    const gold24k = hybridPrices.gold['24k'] || 157040;
+    const gold22k = hybridPrices.gold['22k'] || 143950;
     return {
       gold24k: { price: gold24k / 10, unit: 'per gram', change: 0 },
       gold22k: { price: gold22k / 10, unit: 'per gram', change: 0 },
@@ -155,11 +155,11 @@ export async function fetchGoldRates() {
   } catch (err) {
     console.warn('fetchGoldRates fallback:', err.message);
     return {
-      gold22k:    { price: staticGold.gold22k?.price    || 7180,  unit: 'per gram', change: staticGold.gold22k?.change    ?? 0 },
-      gold24k:    { price: staticGold.gold24k?.price    || 7830,  unit: 'per gram', change: staticGold.gold24k?.change    ?? 0 },
-      silver:     { price: staticGold.silver?.price     || 93.50, unit: 'per gram', change: staticGold.silver?.change     ?? 0 },
-      gold10g22k: { price: (staticGold.gold22k?.price || 7180) * 10,  unit: 'per 10 grams', change: (staticGold.gold22k?.change ?? 0) * 10 },
-      gold10g24k: { price: (staticGold.gold24k?.price || 7830) * 10,  unit: 'per 10 grams', change: (staticGold.gold24k?.change ?? 0) * 10 },
+      gold22k:    { price: staticGold.gold22k?.price    || 14395,  unit: 'per gram', change: staticGold.gold22k?.change    ?? 0 },
+      gold24k:    { price: staticGold.gold24k?.price    || 15704,  unit: 'per gram', change: staticGold.gold24k?.change    ?? 0 },
+      silver:     { price: staticGold.silver?.price     || 290.0, unit: 'per gram', change: staticGold.silver?.change     ?? 0 },
+      gold10g22k: { price: (staticGold.gold22k?.price || 14395) * 10,  unit: 'per 10 grams', change: (staticGold.gold22k?.change ?? 0) * 10 },
+      gold10g24k: { price: (staticGold.gold24k?.price || 15704) * 10,  unit: 'per 10 grams', change: (staticGold.gold24k?.change ?? 0) * 10 },
       source: 'static-fallback',
       lastUpdated: new Date().toISOString()
     };
