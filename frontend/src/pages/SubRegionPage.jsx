@@ -19,22 +19,21 @@ import NotFound from './NotFound';
 import { districtNewsSources } from '../data/districtNewsSources';
 import odopData from '../data/odopData.json';
 
-const CollapsibleSection = ({ title, icon, children, defaultOpen = false }) => {
+const BentoBox = ({ title, icon, children, color = "telangana-red" }) => {
     return (
-        <details className="group bg-white dark:bg-card border border-border rounded-2xl shadow-sm overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300" open={defaultOpen}>
-            <summary className="flex items-center justify-between p-5 cursor-pointer font-bold text-lg text-text select-none hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                <div className="flex items-center gap-3">
-                    {icon && <span className="text-telangana-green">{icon}</span>}
-                    {title}
-                </div>
-                <span className="transition-transform duration-300 group-open:-rotate-180 text-text-muted">
-                    <svg fill="none" height="20" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
-                </span>
-            </summary>
-            <div className="p-5 pt-0 border-t border-border mt-2 animate-in slide-in-from-top-2 fade-in duration-300">
+        <div className={`backdrop-blur-xl bg-white/40 dark:bg-card/40 border border-white/20 dark:border-white/10 rounded-3xl p-6 md:p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:bg-white/60 dark:hover:bg-white/10 group relative overflow-hidden flex flex-col h-full`}>
+            {/* Ambient Animated Orb */}
+            <div className={`absolute -top-10 -right-10 w-40 h-40 bg-${color}/10 dark:bg-${color}/5 rounded-full blur-[40px] group-hover:bg-${color}/20 group-hover:scale-110 transition-all duration-700`}></div>
+            
+            <div className="relative z-10 flex items-center gap-3 mb-6">
+                {icon && <span className={`text-${color} group-hover:scale-110 transition-transform duration-300`}>{icon}</span>}
+                <h3 className="font-black text-xl tracking-tight text-text">{title}</h3>
+            </div>
+            
+            <div className="relative z-10 flex-grow animate-in fade-in duration-500">
                 {children}
             </div>
-        </details>
+        </div>
     );
 };
 
@@ -185,7 +184,7 @@ export default function SubRegionPage() {
     const localSources = districtNewsSources[meta.district] || [];
 
     return (
-        <div className="space-y-8 sm:space-y-10 animate-fade-in">
+        <div className="space-y-12 lg:space-y-16 animate-fade-in p-2 md:p-4 pb-24 max-w-7xl mx-auto">
             <Helmet>
                 <title>{meta.title} News & Local Updates - Telangana.live</title>
                 <meta name="description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
@@ -247,31 +246,31 @@ export default function SubRegionPage() {
                 </div>
             </section>
 
-            {/* Collapsible Local Utilities & Data */}
-            <div className="space-y-4">
-                <CollapsibleSection title="Daily Rates & Fuel" icon={<IndianRupee className="w-5 h-5" />} defaultOpen={true}>
+            {/* Bento Grid: Local Utilities & Data */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                <BentoBox title="Daily Rates & Fuel" icon={<IndianRupee className="w-6 h-6" />} color="telangana-gold">
                     <DailyRatesDashboard />
-                </CollapsibleSection>
+                </BentoBox>
 
-                <CollapsibleSection title="Weather & Environment" icon={<Cloud className="w-5 h-5" />}>
+                <BentoBox title="Weather & Environment" icon={<Cloud className="w-6 h-6" />} color="telangana-blue">
                     <WeatherCard selectedDistrict={meta.district} />
-                </CollapsibleSection>
+                </BentoBox>
 
-                <CollapsibleSection title="Power & Tariffs" icon={<TriangleAlert className="w-5 h-5" />}>
+                <BentoBox title="Power & Tariffs" icon={<TriangleAlert className="w-6 h-6" />} color="telangana-red">
                     <PowerTariffCard />
-                </CollapsibleSection>
+                </BentoBox>
 
-                <CollapsibleSection title="Local Transport" icon={<TrainFront className="w-5 h-5" />}>
+                <BentoBox title="Local Transport" icon={<TrainFront className="w-6 h-6" />} color="telangana-green">
                     <MetroCard />
-                </CollapsibleSection>
+                </BentoBox>
 
-                <CollapsibleSection title="Healthcare Finder" icon={<Hospital className="w-5 h-5" />}>
+                <BentoBox title="Healthcare Finder" icon={<Hospital className="w-6 h-6" />} color="telangana-red">
                     <BasthiDawakhana />
-                </CollapsibleSection>
+                </BentoBox>
 
-                <CollapsibleSection title="Services Directory" icon={<Phone className="w-5 h-5" />}>
+                <BentoBox title="Services Directory" icon={<Phone className="w-6 h-6" />} color="telangana-gold">
                     <ServicesDirectory />
-                </CollapsibleSection>
+                </BentoBox>
             </div>
 
             {/* Local News Feed */}
