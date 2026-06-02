@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { Icons } from '../components/Icons';
+import { IndianRupee, Cloud, TriangleAlert, TrainFront, Phone, Hospital } from 'lucide-react';
 import { partners } from '../data/partners';
 import PartnerCard from '../components/PartnerCard';
 import DailyRatesDashboard from '../components/DailyRatesDashboard';
@@ -15,6 +16,25 @@ import PowerTariffCard from '../components/PowerTariffCard';
 import ServicesDirectory from '../components/ServicesDirectory';
 import NotFound from './NotFound';
 import { districtNewsSources } from '../data/districtNewsSources';
+
+const CollapsibleSection = ({ title, icon, children, defaultOpen = false }) => {
+    return (
+        <details className="group bg-white dark:bg-card border border-border rounded-2xl shadow-sm overflow-hidden [&_summary::-webkit-details-marker]:hidden transition-all duration-300" open={defaultOpen}>
+            <summary className="flex items-center justify-between p-5 cursor-pointer font-bold text-lg text-text select-none hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                <div className="flex items-center gap-3">
+                    {icon && <span className="text-telangana-green">{icon}</span>}
+                    {title}
+                </div>
+                <span className="transition-transform duration-300 group-open:-rotate-180 text-text-muted">
+                    <svg fill="none" height="20" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+            </summary>
+            <div className="p-5 pt-0 border-t border-border mt-2 animate-in slide-in-from-top-2 fade-in duration-300">
+                {children}
+            </div>
+        </details>
+    );
+};
 
 const regionMetadata = {
     hyderabad: {
@@ -192,25 +212,32 @@ export default function SubRegionPage() {
                 </div>
             </section>
 
-            {/* Localized Rates & Weather Wrapper */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2">
+            {/* Collapsible Local Utilities & Data */}
+            <div className="space-y-4">
+                <CollapsibleSection title="Daily Rates & Fuel" icon={<IndianRupee className="w-5 h-5" />} defaultOpen={true}>
                     <DailyRatesDashboard />
-                </div>
-                <div className="space-y-6">
+                </CollapsibleSection>
+
+                <CollapsibleSection title="Weather & Environment" icon={<Cloud className="w-5 h-5" />}>
                     <WeatherCard selectedDistrict={meta.district} />
+                </CollapsibleSection>
+
+                <CollapsibleSection title="Power & Tariffs" icon={<TriangleAlert className="w-5 h-5" />}>
                     <PowerTariffCard />
-                </div>
+                </CollapsibleSection>
+
+                <CollapsibleSection title="Local Transport" icon={<TrainFront className="w-5 h-5" />}>
+                    <MetroCard />
+                </CollapsibleSection>
+
+                <CollapsibleSection title="Healthcare Finder" icon={<Hospital className="w-5 h-5" />}>
+                    <BasthiDawakhana />
+                </CollapsibleSection>
+
+                <CollapsibleSection title="Services Directory" icon={<Phone className="w-5 h-5" />}>
+                    <ServicesDirectory />
+                </CollapsibleSection>
             </div>
-
-            {/* Local Transport focus */}
-            <MetroCard />
-
-            {/* Local Health Finder */}
-            <BasthiDawakhana />
-
-            {/* Services Directory */}
-            <ServicesDirectory />
 
             {/* Local News Feed */}
             <section id="local-news" className="space-y-6">

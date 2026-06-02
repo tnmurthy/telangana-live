@@ -1,5 +1,47 @@
 [
   {
+    "id": "mock_warangal_1",
+    "title": "Kakatiya Heritage Festival announced for Warangal",
+    "link": "#",
+    "source": "Warangal Times",
+    "published": "Tue, 02 Jun 2026 12:00:00 +0530",
+    "description": "The annual heritage festival will highlight Kakatiya architecture and draw thousands to the Tri-Cities.",
+    "category": "General",
+    "region": "Warangal",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&q=80&w=600",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "mock_warangal_2",
+    "title": "GWMC announces new civic initiatives for Tri-Cities",
+    "link": "#",
+    "source": "Local News",
+    "published": "Tue, 02 Jun 2026 10:00:00 +0530",
+    "description": "Greater Warangal Municipal Corporation focuses on better roads and drainage.",
+    "category": "Civic",
+    "region": "Warangal",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "mock_karimnagar_1",
+    "title": "Karimnagar Smart City project enters phase 2",
+    "link": "#",
+    "source": "Deccan Chronicle",
+    "published": "Mon, 01 Jun 2026 12:00:00 +0530",
+    "description": "New granite export guidelines and smart city roads announced.",
+    "category": "Development",
+    "region": "Karimnagar",
+    "image_url": "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&q=80&w=600",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "594cad34fd41cc0ae9d07050d457100d",
     "title": "Pawan Kalyan seeks permission to hold press meet in Jubilee Hills",
     "link": "https://www.thehindu.com/news/national/telangana/pawan-kalyan-seeks-permission-to-hold-press-meet-in-jubilee-hills/article71051597.ece",
