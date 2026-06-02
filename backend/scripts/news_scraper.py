@@ -27,8 +27,8 @@ def _load_feeds():
         with open(_FEEDS_JSON, encoding="utf-8") as f:
             data = json.load(f)
         feeds = {}
-        # Prioritise telangana then national feeds for the news page
-        for category in ("telangana", "national"):
+        # Prioritise telangana and districts then national feeds for the news page
+        for category in ("telangana", "districts", "national"):
             for item in data.get(category, []):
                 feeds[item["source"]] = item["url"]
         return feeds

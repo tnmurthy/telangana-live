@@ -6,7 +6,20 @@
     {"source": "Times of India - Hyderabad", "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms"},
     {"source": "Deccan Chronicle - Hyderabad", "url": "https://www.deccanchronicle.com/rss_feed/"},
     {"source": "Siasat Daily", "url": "https://www.siasat.com/feed/"},
-    {"source": "Eenadu Telangana", "url": "https://www.eenadu.net/telangana/rss.xml"}
+    {"source": "Eenadu Telangana", "url": "https://www.eenadu.net/telangana/rss.xml"},
+    {"source": "Sakshi Telangana", "url": "https://www.sakshi.com/rss/telangana.xml"},
+    {"source": "Namasthe Telangana", "url": "https://www.ntnews.com/feed"},
+    {"source": "Hans India - Telangana", "url": "https://www.thehansindia.com/feeds/telangana.rss"}
+  ],
+  "districts": [
+    {"source": "Eenadu Warangal", "url": "https://www.eenadu.net/rss/telangana/warangal.xml"},
+    {"source": "Sakshi Warangal", "url": "https://www.sakshi.com/rss/warangal.xml"},
+    {"source": "Eenadu Karimnagar", "url": "https://www.eenadu.net/rss/karimnagar.xml"},
+    {"source": "Eenadu Nizamabad", "url": "https://www.eenadu.net/rss/nizamabad.xml"},
+    {"source": "Eenadu Khammam", "url": "https://www.eenadu.net/rss/khammam.xml"},
+    {"source": "Eenadu Nalgonda", "url": "https://www.eenadu.net/rss/nalgonda.xml"},
+    {"source": "Eenadu Mahbubnagar", "url": "https://www.eenadu.net/rss/mahbubnagar.xml"},
+    {"source": "Sakshi Hyderabad", "url": "https://www.sakshi.com/rss/hyderabad.xml"}
   ],
   "national": [
     {"source": "The Print", "url": "https://theprint.in/feed/"},

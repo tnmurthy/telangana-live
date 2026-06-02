@@ -17,5 +17,24 @@ export const districtNewsSources = {
     ],
     'Malkajgiri': [
         { id: 9, name: 'Sakshi Malkajgiri', type: 'Scraper', lang: 'Telugu', is_active: true }
+    ],
+    'Nizamabad': [
+        { id: 10, name: 'Eenadu Nizamabad', type: 'RSS', lang: 'Telugu', is_active: true },
+        { id: 11, name: 'Sakshi Nizamabad', type: 'RSS', lang: 'Telugu', is_active: true }
+    ],
+    'Khammam': [
+        { id: 12, name: 'Eenadu Khammam', type: 'RSS', lang: 'Telugu', is_active: true },
+        { id: 13, name: 'Sakshi Khammam', type: 'RSS', lang: 'Telugu', is_active: true }
+    ],
+    'Karimnagar': [
+        { id: 6, name: 'Namasthe Telangana', type: 'Scraper', lang: 'Telugu', is_active: true },
+        { id: 14, name: 'Eenadu Karimnagar', type: 'RSS', lang: 'Telugu', is_active: true }
+    ],
+    'Nalgonda': [
+        { id: 15, name: 'Sakshi Nalgonda', type: 'RSS', lang: 'Telugu', is_active: true },
+        { id: 16, name: 'Eenadu Nalgonda', type: 'RSS', lang: 'Telugu', is_active: true }
+    ],
+    'Mahbubnagar': [
+        { id: 17, name: 'Eenadu Mahbubnagar', type: 'RSS', lang: 'Telugu', is_active: true }
     ]
 };

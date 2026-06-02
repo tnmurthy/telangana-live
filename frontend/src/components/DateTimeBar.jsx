@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const VS_MONTHS = ['Pausha', 'Magha', 'Phalguna', 'Chaitra', 'Vaishakha', 'Jyeshtha', 'Ashadha', 'Shravana', 'Bhadrapada', 'Ashvina', 'Kartika', 'Margashirsha'];
 const TELUGU_MONTHS = ['పుష్య', 'మాఘ', 'ఫాల్గుణ', 'చైత్ర', 'వైశాఖ', 'జ్యేష్ఠ', 'ఆషాఢ', 'శ్రావణ', 'భాద్రపద', 'ఆశ్వయుజ', 'కార్తీక', 'మార్గశిర'];
@@ -38,13 +39,30 @@ function formatTime(date) {
 
 export default function DateTimeBar() {
     const [now, setNow] = useState(new Date());
+    const [vs, setVs] = useState(getVikramSamvatDate(new Date()));
 
     useEffect(() => {
         const timer = setInterval(() => setNow(new Date()), 1000);
         return () => clearInterval(timer);
     }, []);
 
-    const vs = getVikramSamvatDate(now);
+    useEffect(() => {
+        // Fetch accurate panchang once on load
+        fetch('/api/panchang/today')
+            .then(res => res.json())
+            .then(data => {
+                // Merge accurate data into our state, keeping day formatting
+                setVs(prev => ({
+                    ...prev,
+                    year: data.year,
+                    month: data.month,
+                    teluguMonth: data.teluguMonth,
+                    tithi: data.tithi
+                }));
+            })
+            .catch(err => console.error("Failed to fetch panchang", err));
+    }, []);
+
     const gregorian = formatGregorian(now);
     const time = formatTime(now);
 
@@ -58,8 +76,8 @@ export default function DateTimeBar() {
                 </div>
 
                 {/* Vikram Samvat + Telugu */}
-                <div className="flex items-center gap-2 text-[10px] text-text-muted">
-                    <span className="bg-heritage-gold/8 border border-heritage-gold/15 text-heritage-gold-light px-2 py-0.5 rounded-md font-medium">
+                <Link to="/panchang" className="flex items-center gap-2 text-[10px] text-text-muted hover:opacity-80 transition-opacity group">
+                    <span className="bg-heritage-gold/8 border border-heritage-gold/15 text-heritage-gold-light px-2 py-0.5 rounded-md font-medium group-hover:border-heritage-gold/30">
                         {vs.teluguDay}
                     </span>
                     <span className="hidden sm:inline text-white/10">|</span>
@@ -70,7 +88,7 @@ export default function DateTimeBar() {
                         <span className="text-white/10">·</span>
                         <span className="gold-text font-semibold">VS {vs.year}</span>
                     </span>
-                </div>
+                </Link>
             </div>
         </div>
     );

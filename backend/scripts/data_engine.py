@@ -165,177 +165,217 @@ def clean_price(value):
 
 
 # ── GOLD ──────────────────────────────────────────────────────────────────────
-def sync_gold():
-    print("Syncing gold rates...")
-    rates = {}
-    history = []
-    # Fallback values match test expectations
-    fallback = {
-        "22K Gold (1g)": {"today": "₹14,395", "yesterday": "₹14,450"},
-        "24K Gold (1g)": {"today": "₹15,704", "yesterday": "₹15,764"},
-        "18K Gold (1g)": {"today": "₹11,775", "yesterday": "₹11,775"},
-    }
-    silver_gram = 290.0   # default fallback
+# ── GOLD ──────────────────────────────────────────────────────────────────────
 
+def _scrape_live_chennai():
+    """Primary source for Hyderabad gold rates."""
+    url = "https://www.livechennai.com/gold_silverrate_hyderabad.asp"
     try:
-        # PRIMARY SOURCE: Live Chennai (Very stable table structure for Hyderabad)
-        url = "https://www.livechennai.com/gold_silverrate_hyderabad.asp"
         resp = http_get(url)
-        if resp.status_code == 200:
-            html = resp.text
-            soup = BeautifulSoup(html, "html.parser")
-            
-            # Parse silver price from the main summary table
-            for table in soup.find_all("table"):
-                if "silver 1 gm" in table.get_text().lower():
-                    try:
-                        rows = table.find_all("tr")
-                        if len(rows) > 1:
-                            tds = rows[1].find_all("td")
-                            if len(tds) >= 3:
-                                sil_text = tds[2].get_text(strip=True).split('(')[0].replace(',', '').replace('₹', '')
-                                silver_gram = float(sil_text)
-                                break
-                    except Exception as e:
-                        pass
-
-            tables = soup.find_all("table")
-            
-            # Find the main price table (usually one with '24 k' or 'Standard Gold')
-            for table in tables:
-                table_text = table.get_text().lower()
-                if "24 k" in table_text and "date" in table_text:
-                    rows = table.find_all("tr")
-                    temp_history = []
-                    for row in rows:
-                        cols = row.find_all("td")
-                        if len(cols) >= 3:
-                            date_raw = cols[0].get_text(strip=True)
-                            p24_raw = cols[1].get_text(strip=True).replace(",", "").split("(")[0].strip()
-                            p22_raw = cols[2].get_text(strip=True).replace(",", "").split("(")[0].strip()
-                            
-                            try:
-                                # Format: 12/May/2026 or 12/05/2026
-                                # We'll try to parse it
-                                dt = None
-                                for fmt in ["%d/%b/%Y", "%d/%m/%Y"]:
-                                    try:
-                                        dt = datetime.datetime.strptime(date_raw, fmt)
-                                        break
-                                    except: continue
-                                
-                                if dt:
-                                    v24 = float(p24_raw)
-                                    v22 = float(p22_raw)
-                                    
-                                    # Normalize (Live Chennai often shows 1g directly or 8g)
-                                    # In 2026, 1g is ~14k-16k. 8g is ~110k+.
-                                    def normalize_g(v):
-                                        if v > 100000: return v / 8
-                                        return v
-                                    
-                                    n24 = round(normalize_g(v24), 2)
-                                    n22 = round(normalize_g(v22), 2)
-                                    
-                                    # Boundary anomaly checks (2026 data limits)
-                                    if n22 < 10000 or n22 > 30000: raise ValueError(f"Gold 22k out of bounds: {n22}")
-                                    if n24 < 10000 or n24 > 30000: raise ValueError(f"Gold 24k out of bounds: {n24}")
-                                    if silver_gram < 50 or silver_gram > 500: raise ValueError(f"Silver out of bounds: {silver_gram}")
-
-                                    temp_history.append({
-                                        "date": dt.strftime("%Y-%m-%d"),
-                                        "gold22k": n22,
-                                        "gold24k": n24,
-                                        "silver": silver_gram
-                                    })
-                                    
-                                    # First row is today
-                                    if "24K Gold (1g)" not in rates:
-                                        rates["24K Gold (1g)"] = {"today": f"₹{int(n24):,}", "yesterday": f"₹{int(n24):,}"}
-                                        rates["22K Gold (1g)"] = {"today": f"₹{int(n22):,}", "yesterday": f"₹{int(n22):,}"}
-                                        gold24, gold22 = n24, n22
-                            except:
-                                continue
-                    
-                    if temp_history:
-                        history = sorted(temp_history, key=lambda x: x["date"])[-7:]
-                        break
-
+        if resp.status_code != 200:
+            return None
+        html_content = resp.text
     except Exception as e:
-        print(f"  ⚠️ Gold scrape failed: {e}")
+        print(f"  ⚠️ Live Chennai scrape failed (Request): {e}")
+        return None
 
-    # Fallback to current behavior if history scraping failed
-    if not history:
-        # Load prior history from file if available
-        try:
-            if os.path.exists(PATHS["gold"]):
-                with open(PATHS["gold"], encoding="utf-8") as f:
-                    raw = f.read()
-                m = re.search(r"= (\{[\s\S]*\});", raw)
-                if m:
-                    existing = json.loads(m.group(1))
-                    history = existing.get("history", [])
-        except: pass
+    soup = BeautifulSoup(html_content, "html.parser")
+    silver_gram = 0
+    history = []
 
-    if not rates:
-        print("  ⚠️ No gold rows parsed, using initial fallback")
-        rates = fallback
-        gold22, gold24 = 14395.0, 15704.0
-
-    # Numeric conversions
+    # Parse silver
     try:
-        gold22 = float(rates.get("22K Gold (1g)", {}).get("today", "₹14,395").replace("₹", "").replace(",", ""))
-        gold24 = float(rates.get("24K Gold (1g)", {}).get("today", "₹15,704").replace("₹", "").replace(",", ""))
-    except Exception:
-        gold22, gold24 = 14395.0, 15704.0
+        for table in soup.find_all("table"):
+            if "silver 1 gm" in table.get_text().lower():
+                rows = table.find_all("tr")
+                if len(rows) > 1:
+                    tds = rows[1].find_all("td")
+                    if len(tds) >= 3:
+                        sil_text = tds[2].get_text(strip=True).split('(')[0].replace(',', '').replace('₹', '') 
+                        silver_gram = float(sil_text)
+                        break
+    except: pass
 
-    # Calculate day-over-day change
-    prev_gold22 = gold22
-    prev_gold24 = gold24
-    prev_silver = silver_gram
-    
+    # Parse gold history table
+    try:
+        for table in soup.find_all("table"):
+            table_text = table.get_text().lower()
+            if "24 k" in table_text and "date" in table_text:
+                rows = table.find_all("tr")
+                for row in rows:
+                    cols = row.find_all("td")
+                    if len(cols) >= 3:
+                        date_raw = cols[0].get_text(strip=True)
+                        p24_raw = cols[1].get_text(strip=True).replace(",", "").split("(")[0].strip()
+                        p22_raw = cols[2].get_text(strip=True).replace(",", "").split("(")[0].strip()
+                        try:
+                            dt = None
+                            # Added %B for full month names like 'June'
+                            for fmt in ["%d/%b/%Y", "%d/%m/%Y", "%d/%B/%Y"]:
+                                try:
+                                    dt = datetime.datetime.strptime(date_raw, fmt)
+                                    break
+                                except: continue
+                            if dt:
+                                v24, v22 = float(p24_raw), float(p22_raw)
+                                def normalize_g(v): return v / 8 if v > 100000 else v
+                                history.append({
+                                    "date": dt.strftime("%Y-%m-%d"),
+                                    "gold22k": round(normalize_g(v22), 2),
+                                    "gold24k": round(normalize_g(v24), 2),
+                                    "silver": silver_gram
+                                })
+                        except: continue
+                break
+    except: pass
+    return history
+
+def _scrape_live_mint():
+    """Secondary source for verification."""
+    url = "https://www.livemint.com/gold-prices/hyderabad"
+    try:
+        resp = http_get(url)
+        if resp.status_code != 200:
+            return None
+        html_content = resp.text
+    except Exception as e:
+        print(f"  ⚠️ Live Mint scrape failed (Request): {e}")
+        return None
+
+    soup = BeautifulSoup(html_content, "html.parser")
+    history = []
+    try:
+        for table in soup.find_all("table"):
+            text = table.get_text().lower()
+            if "today" in text and "yesterday" in text and "gram" in text:
+                # Found current price table
+                rows = table.find_all("tr")
+                prices = {}
+                for row in rows:
+                    cols = row.find_all("td")
+                    if len(cols) >= 2:
+                        label = cols[0].get_text().lower()
+                        val = cols[1].get_text().replace("₹", "").replace(",", "").strip()
+                        try:
+                            if "24 karat" in label or "24k" in label: prices["24k"] = float(val)
+                            if "22 karat" in label or "22k" in label: prices["22k"] = float(val)
+                        except: pass
+
+                # Find date from history table on same page
+                for h_table in soup.find_all("table"):
+                    if "date" in h_table.get_text().lower() and "24k" in h_table.get_text().lower():
+                        h_rows = h_table.find_all("tr")
+                        for hr in h_rows:
+                            h_cols = hr.find_all("td")
+                            if len(h_cols) >= 3:
+                                d_raw = h_cols[0].get_text(strip=True)
+                                try:
+                                    # Mint uses 'Jun 2, 2026'
+                                    d_dt = datetime.datetime.strptime(d_raw, "%b %d, %Y")
+                                    history.append({
+                                        "date": d_dt.strftime("%Y-%m-%d"),
+                                        "gold22k": prices.get("22k"),
+                                        "gold24k": prices.get("24k"),
+                                        "silver": 290.0 # Mint silver is often separate
+                                    })
+                                except: continue
+                        break
+                break
+    except: pass
+    return history
+
+def sync_gold():
+    print("Syncing gold rates (Multi-Source Validation)...")
     today_str = NOW[:10]
-    past_entries = [h for h in history if h["date"] < today_str]
-    if past_entries:
-        # Sort to ensure we get the absolute latest past entry
-        past_entries.sort(key=lambda x: x["date"])
-        last_past = past_entries[-1]
-        prev_gold22 = last_past.get("gold22k", gold22)
-        prev_gold24 = last_past.get("gold24k", gold24)
-        prev_silver = last_past.get("silver", silver_gram)
-
-    # Ensure today's entry is in history
-    if not any(h["date"] == today_str for h in history):
-        history.append({"date": today_str, "gold22k": gold22, "gold24k": gold24, "silver": silver_gram})
     
-    history = sorted(history, key=lambda x: x["date"])[-7:]
+    # 1. Scrape multiple sources
+    sources = {
+        "live_chennai": _scrape_live_chennai(),
+        "live_mint": _scrape_live_mint()
+    }
+    
+    # 2. Validation & Consensus Layer
+    valid_today = []
+    all_history = []
+    
+    for s_name, s_data in sources.items():
+        if s_data:
+            all_history.extend(s_data)
+            today_entry = next((item for item in s_data if item["date"] == today_str), None)
+            if today_entry:
+                # Boundary Checks
+                g24, g22 = today_entry["gold24k"], today_entry["gold22k"]
+                if 10000 < g24 < 30000 and 10000 < g22 < 30000:
+                    valid_today.append(today_entry)
+                else:
+                    print(f"  ⚠️ Source {s_name} returned out-of-bounds data: 24k={g24}")
 
-    change22 = round(gold22 - prev_gold22, 2)
-    change24 = round(gold24 - prev_gold24, 2)
-    change_silver = round(silver_gram - prev_silver, 2)
+    # 3. Determine Final Values
+    is_stale = False
+    if valid_today:
+        # Consensus: Use average if sources differ slightly
+        gold24 = sum(item["gold24k"] for item in valid_today) / len(valid_today)
+        gold22 = sum(item["gold22k"] for item in valid_today) / len(valid_today)
+        silver = sum(item["silver"] for item in valid_today) / len(valid_today)
+        print(f"  ✅ Consensus reached from {len(valid_today)} sources.")
+    else:
+        print("  ⚠️ No fresh data found today. Using last known good values (Stale Mode).")
+        is_stale = True
+        # Try to load from local history first
+        try:
+            with open(PATHS["gold"], encoding="utf-8") as f:
+                existing = json.loads(re.search(r"= (\{[\s\S]*\});", f.read()).group(1))
+                latest = existing["history"][-1]
+                gold24, gold22, silver = latest["gold24k"], latest["gold22k"], latest["silver"]
+        except:
+            # Absolute fallback
+            gold24, gold22, silver = 15704.0, 14395.0, 290.0
 
-    # Push to Redis
-    sync_to_redis("tg:rates:gold", {
-        "gold22k": {"price": gold22, "unit": "per gram", "change": change22},
-        "gold24k": {"price": gold24, "unit": "per gram", "change": change24},
-        "silver":  {"price": silver_gram, "unit": "per gram", "change": change_silver},
-        "source": "python-agent",
-        "lastUpdated": NOW
-    })
+    # 4. History Management
+    # Deduplicate and sort all history entries
+    unique_history = {}
+    for entry in all_history:
+        unique_history[entry["date"]] = entry
+    
+    # Load existing file history to fill gaps
+    try:
+        if os.path.exists(PATHS["gold"]):
+            with open(PATHS["gold"], encoding="utf-8") as f:
+                old_data = json.loads(re.search(r"= (\{[\s\S]*\});", f.read()).group(1))
+                for entry in old_data.get("history", []):
+                    if entry["date"] not in unique_history:
+                        unique_history[entry["date"]] = entry
+    except: pass
 
-    frontend_gold = {
+    # Add today if not present (using our consensus/stale values)
+    if today_str not in unique_history:
+        unique_history[today_str] = {"date": today_str, "gold22k": gold22, "gold24k": gold24, "silver": silver}
+    
+    sorted_history = sorted(unique_history.values(), key=lambda x: x["date"])[-10:]
+
+    # 5. Calculate Changes
+    prev = sorted_history[-2] if len(sorted_history) >= 2 else sorted_history[-1]
+    change24 = round(gold24 - prev["gold24k"], 2)
+    change22 = round(gold22 - prev["gold22k"], 2)
+    change_sil = round(silver - prev["silver"], 2)
+
+    # 6. Final Data Objects
+    final_data = {
         "updatedAt": NOW,
-        "date": NOW[:10],
+        "date": today_str,
         "city": "Hyderabad",
-        "gold22k": {"price": gold22, "unit": "per gram", "change": change22},
-        "gold24k": {"price": gold24, "unit": "per gram", "change": change24},
-        "silver":  {"price": silver_gram, "unit": "per gram", "change": change_silver},
-        "history": history,
+        "isStale": is_stale,
+        "sourcesSynced": len(valid_today),
+        "gold22k": {"price": round(gold22, 2), "unit": "per gram", "change": change22},
+        "gold24k": {"price": round(gold24, 2), "unit": "per gram", "change": change24},
+        "silver":  {"price": round(silver, 2), "unit": "per gram", "change": change_sil},
+        "history": sorted_history[-7:],
         "correlated_news": get_recent_news_for_entity("gold_rate", "gold") + get_recent_news_for_entity("gold_rate", "silver")
     }
 
-    write_js_module(PATHS["gold"], "goldRates", frontend_gold)
-    return frontend_gold
+    sync_to_redis("tg:rates:gold", final_data)
+    write_js_module(PATHS["gold"], "goldRates", final_data)
+    return final_data
 
 
 # ── FUEL ──────────────────────────────────────────────────────────────────────

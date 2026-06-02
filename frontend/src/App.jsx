@@ -35,6 +35,7 @@ const WaterSupplyPage = lazy(() => import('./pages/WaterSupplyPage'));
 const RationPDSPage = lazy(() => import('./pages/RationPDSPage'));
 const JobBoardPage = lazy(() => import('./pages/JobBoardPage'));
 const CalendarPage = lazy(() => import('./pages/CalendarPage'));
+const PanchangPage = lazy(() => import('./pages/PanchangPage'));
 const BudgetTrackerPage = lazy(() => import('./pages/BudgetTrackerPage'));
 const PoliticianTrackerPage = lazy(() => import('./pages/PoliticianTrackerPage'));
 const PropertyTaxPage = lazy(() => import('./pages/PropertyTaxPage'));
@@ -124,6 +125,7 @@ function AppContent() {
               <Route path="/ration-pds" element={<RationPDSPage />} />
               <Route path="/jobs" element={<JobBoardPage />} />
               <Route path="/events" element={<CalendarPage />} />
+              <Route path="/panchang" element={<PanchangPage />} />
               <Route path="/budget" element={<BudgetTrackerPage />} />
               <Route path="/politicians" element={<PoliticianTrackerPage />} />
               <Route path="/property-tax" element={<PropertyTaxPage />} />

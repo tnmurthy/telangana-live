@@ -8,12 +8,23 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "bac
 
 from data_engine import sync_gold, sync_fuel, sync_pulses
 from whatsapp_bot import build_summary, send_whatsapp_message
+from panchang import get_vikram_samvat, answer_muhurat_query
+from pydantic import BaseModel
+
+# Import Civic Gateway
+from backend.api.civic_gateway import router as civic_router
 
 app = FastAPI(
     title="Telangana.live APIs",
     description="API for validating and viewing the scraped data and triggering backend agents like WhatsApp summaries.",
     version="1.0.0"
 )
+
+# Register Routers
+app.include_router(civic_router)
+
+class PanchangQuery(BaseModel):
+    query: str
 
 @app.get("/api/gold", tags=["Scrapers"])
 def get_gold_rates():
@@ -55,6 +66,21 @@ def trigger_whatsapp_summary():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/api/panchang/today", tags=["Panchang"])
+def get_today_panchang():
+    """Returns today's accurate Panchang data."""
+    try:
+        return get_vikram_samvat()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/panchang/query", tags=["Panchang"])
+def ask_panchang_query(payload: PanchangQuery):
+    """Answers a Muhurat query using AI and today's Panchang."""
+    try:
+        return answer_muhurat_query(payload.query)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     import uvicorn

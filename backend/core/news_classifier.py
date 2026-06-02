@@ -33,16 +33,40 @@ def classify_article(title: str, description: str):
         region = "Cyberabad"
     elif any(k in text for k in ["malkajgiri", "uppal", "alwal", "kapra", "medchal"]):
         region = "Malkajgiri"
-    elif any(k in text for k in ["warangal", "hanumakonda", "kazipet", "gwmc", "kakatiya"]):
+    elif any(k in text for k in ["warangal", "hanumakonda", "kazipet", "gwmc", "kakatiya", "ఓరుగల్లు", "వరంగల్", "హనుమకొండ", "కాజీపేట", "పరకాల"]):
         region = "Warangal"
-    elif any(k in text for k in ["karimnagar", "smart city", "granite hub", "kmc"]):
+    elif any(k in text for k in ["karimnagar", "smart city", "granite hub", "kmc", "కరీంనగర్"]):
         region = "Karimnagar"
-    elif any(k in text for k in ["khammam"]):
+    elif any(k in text for k in ["khammam", "stambhadri", "ఖమ్మం", "స్తంభాద్రి"]):
         region = "Khammam"
-    elif any(k in text for k in ["nizamabad"]):
+    elif any(k in text for k in ["nizamabad", "indur", "నిజామాబాద్", "ఇందూరు"]):
         region = "Nizamabad"
+    elif any(k in text for k in ["nalgonda", "neelagiri", "నల్గొండ", "నీలగిరి"]):
+        region = "Nalgonda"
+    elif any(k in text for k in ["mahbubnagar", "palamuru", "మహబూబ్ నగర్", "పాలమూరు"]):
+        region = "Mahbubnagar"
+    elif any(k in text for k in ["adilabad", "edulabad", "ఆదిలాబాద్"]):
+        region = "Adilabad"
     elif any(k in text for k in ["hyderabad", "ghmc", "banjara", "jubilee", "secunderabad", "charminar", "koti", "begumpet", "khairatabad", "nampally", "old city"]):
         region = "Hyderabad"
+    elif any(k in text for k in ["siddipet"]):
+        region = "Siddipet"
+    elif any(k in text for k in ["sangareddy"]):
+        region = "Sangareddy"
+    elif any(k in text for k in ["rangareddy"]):
+        region = "Rangareddy"
+    elif any(k in text for k in ["suryapet"]):
+        region = "Suryapet"
+    elif any(k in text for k in ["mancherial"]):
+        region = "Mancherial"
+    elif any(k in text for k in ["jagityal", "jagtial"]):
+        region = "Jagtial"
+    elif any(k in text for k in ["bhupalpally"]):
+        region = "Jayashankar Bhupalpally"
+    elif any(k in text for k in ["kothagudem", "bhadradri"]):
+        region = "Bhadradri Kothagudem"
+    elif any(k in text for k in ["bhuvanagiri", "yadadri"]):
+        region = "Yadadri Bhuvanagiri"
 
     return category, region
 
