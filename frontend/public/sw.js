@@ -54,8 +54,9 @@ self.addEventListener('fetch', (event) => {
                     }
                     const acceptHeader = event.request.headers.get('accept') || '';
                     if (acceptHeader.includes('text/html')) {
-                        return caches.match('/index.html');
+                        return caches.match('/index.html').then(res => res || new Response('Not Found', { status: 404, statusText: 'Not Found' }));
                     }
+                    return new Response('Not Found', { status: 404, statusText: 'Not Found' });
                 });
             })
     );
