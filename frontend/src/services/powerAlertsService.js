@@ -1,6 +1,6 @@
-import { supabase } from './supabaseClient';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
-// Static fallback alerts shown when Supabase / Redis are not configured.
+// Static fallback alerts shown when API is unreachable
 const FALLBACK_ALERTS = [
     {
         id: 'fallback-1',
@@ -22,35 +22,30 @@ const FALLBACK_ALERTS = [
 
 export const powerAlertsService = {
     /**
-     * Fetches real-time power alerts from Supabase.
-     * Schema: id, area, from_time, to_time, reason, source_url, created_at
-     * Falls back to static demo data when Supabase is not configured.
+     * Fetches real-time power alerts from the Civic Gateway API.
      */
     async getActiveAlerts() {
-        if (!supabase) {
-            return FALLBACK_ALERTS;
-        }
         try {
-            const { data, error } = await supabase
-                .from('power_alerts')
-                .select('*')
-                .order('created_at', { ascending: false })
-                .limit(10);
-
-            if (error) throw error;
+            const response = await fetch(`${API_URL}/api/civic/alerts`);
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
 
             if (!data || data.length === 0) return FALLBACK_ALERTS;
 
-            return data.map(item => ({
+            // Filter for power alerts and map to frontend format
+            const powerData = data.filter(item => item.type === 'power').map(item => ({
                 id: `power-${item.id}`,
-                message: `${item.area}: Power cut due to ${item.reason}`,
-                time: `${item.from_time} - ${item.to_time}`,
-                type: 'power',
-                link: item.source_url,
-                area: item.area
+                message: item.message,
+                time: item.time,
+                type: item.type,
+                link: null,
+                area: item.district || 'Telangana'
             }));
+
+            return powerData.length > 0 ? powerData : FALLBACK_ALERTS;
         } catch (error) {
-            console.error('Error fetching power alerts:', error);
+            console.error('Error fetching power alerts from API:', error);
+            // In a real environment, you might try Supabase as a secondary fallback here
             return FALLBACK_ALERTS;
         }
     }

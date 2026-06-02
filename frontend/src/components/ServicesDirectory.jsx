@@ -1,14 +1,17 @@
-import { useState } from 'react';
-import { services } from '../data/services';
+import { useState, useEffect } from 'react';
+import { civicServicesAPI } from '../services/civicServicesAPI';
+import { services as staticServicesFallback } from '../data/services';
 import { Icons } from './Icons';
+import { useAppContext } from '../context/AppContext';
 
 function ServiceCard({ service, onExpand, isExpanded }) {
+    if (!service) return null;
     return (
         <div className={`glass-card overflow-hidden transition-all duration-500 ${isExpanded ? 'ring-1 ring-deep-pink/20' : ''}`}>
             <button onClick={onExpand} className="w-full p-5 sm:p-6 text-left group">
                 <div className="flex items-center gap-4 mb-3">
                     <div className="w-14 h-14 rounded-2xl bg-deep-pink/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-deep-pink/15 transition-all duration-500">
-                        {Icons[service.icon] && Icons[service.icon]({ className: "w-8 h-8 text-deep-pink" })}
+                        {Icons[service.icon] ? Icons[service.icon]({ className: "w-8 h-8 text-deep-pink" }) : <Icons.Briefcase className="w-8 h-8 text-deep-pink" />}
                     </div>
                     <div className="flex-1">
                         <h3 className="font-heading font-bold text-white text-xl tracking-tight group-hover:text-deep-pink transition-colors duration-300">
@@ -43,27 +46,31 @@ function ServiceCard({ service, onExpand, isExpanded }) {
                     )}
 
                     <div>
-                        {service.offerings && (
-                            <h4 className="text-[10px] font-black uppercase text-heritage-gold tracking-wider mb-2">
-                                📍 Nearby Centres
-                            </h4>
-                        )}
+                        <h4 className="text-[10px] font-black uppercase text-heritage-gold tracking-wider mb-2">
+                            📍 Available Options
+                        </h4>
                         <div className="space-y-0.5">
-                            {service.items.map((item, idx) => (
+                            {service.items && service.items.map((item, idx) => (
                                 <div key={idx}
                                     className="py-3.5 border-b border-white/[0.03] last:border-0 hover:bg-white/[0.02] transition-all duration-200"
                                     style={{ animationDelay: `${idx * 30}ms` }}>
                                     <div className="flex items-center justify-between gap-3">
-                                        <div className="min-w-0">
-                                            <h4 className="text-sm font-semibold text-white truncate">{item.name}</h4>
+                                        <div className="min-w-0 flex-1">
+                                            <h4 className="text-sm font-semibold text-white truncate">
+                                                {item.url ? (
+                                                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:text-deep-pink transition-colors">
+                                                        {item.name} ↗
+                                                    </a>
+                                                ) : item.name}
+                                            </h4>
                                             <p className="text-xs text-text-muted mt-0.5">{item.area}</p>
                                         </div>
                                         <div className="text-right flex-shrink-0">
-                                            <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${item.type.toLowerCase().includes('government') ? 'bg-telangana-green/15 text-green-400' : 'bg-heritage-gold/10 text-heritage-gold'
+                                            <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${item.type?.toLowerCase().includes('government') ? 'bg-telangana-green/15 text-green-400' : 'bg-heritage-gold/10 text-heritage-gold'
                                                 }`}>
                                                 {item.type}
                                             </span>
-                                            <div className="text-xs text-heritage-gold mt-1 font-semibold">★ {item.rating}</div>
+                                            {item.rating && <div className="text-xs text-heritage-gold mt-1 font-semibold">★ {item.rating}</div>}
                                         </div>
                                     </div>
                                 </div>
@@ -78,21 +85,59 @@ function ServiceCard({ service, onExpand, isExpanded }) {
 
 export default function ServicesDirectory() {
     const [expanded, setExpanded] = useState(null);
+    const [apiServices, setApiServices] = useState({});
+    const [loading, setLoading] = useState(true);
+    const { myDistrict } = useAppContext();
+
+    useEffect(() => {
+        let isMounted = true;
+        const fetchServices = async () => {
+            setLoading(true);
+            const data = await civicServicesAPI.getServices(myDistrict);
+            if (isMounted) {
+                setApiServices(data);
+                setLoading(false);
+            }
+        };
+        fetchServices();
+        return () => { isMounted = false; };
+    }, [myDistrict]);
+
+    // Use dynamic API data if available, otherwise gracefully degrade to static mock data
+    const activeServices = Object.keys(apiServices).length > 0 ? apiServices : staticServicesFallback;
+    const serviceKeys = Object.keys(activeServices);
 
     return (
         <section id="services" className="animate-fade-in">
             <div className="mb-6">
                 <h2 className="section-title">Services Directory</h2>
-                <p className="text-sm text-text-muted mt-1">Essential services across all districts</p>
+                <p className="text-sm text-text-muted mt-1">Official registries and civic portals</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <ServiceCard service={services.hospitals} isExpanded={expanded === 'hospitals'}
-                    onExpand={() => setExpanded(expanded === 'hospitals' ? null : 'hospitals')} />
-                <ServiceCard service={services.schools} isExpanded={expanded === 'schools'}
-                    onExpand={() => setExpanded(expanded === 'schools' ? null : 'schools')} />
-                <ServiceCard service={services.meeseva} isExpanded={expanded === 'meeseva'}
-                    onExpand={() => setExpanded(expanded === 'meeseva' ? null : 'meeseva')} />
-            </div>
+            
+            {loading ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {[1, 2, 3].map(i => (
+                        <div key={i} className="glass-card h-32 animate-pulse flex items-center p-6 gap-4">
+                            <div className="w-14 h-14 bg-white/5 rounded-2xl"></div>
+                            <div className="flex-1 space-y-2">
+                                <div className="h-4 bg-white/10 rounded w-1/2"></div>
+                                <div className="h-3 bg-white/5 rounded w-3/4"></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {serviceKeys.map((key) => (
+                        <ServiceCard 
+                            key={key}
+                            service={activeServices[key]} 
+                            isExpanded={expanded === key}
+                            onExpand={() => setExpanded(expanded === key ? null : key)} 
+                        />
+                    ))}
+                </div>
+            )}
         </section>
     );
 }
