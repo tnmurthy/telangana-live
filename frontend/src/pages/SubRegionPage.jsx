@@ -66,6 +66,30 @@ const regionMetadata = {
         subtitle: 'Granite Hub & Karimnagar Municipal Corporation Focus',
         icon: 'Building',
         district: 'Karimnagar'
+    },
+    nizamabad: {
+        title: 'Nizamabad Indur',
+        subtitle: 'Agriculture Hub & Nizamabad Municipal Corporation Focus',
+        icon: 'Location',
+        district: 'Nizamabad'
+    },
+    khammam: {
+        title: 'Khammam Fort City',
+        subtitle: 'Stambhadri Heritage & Khammam Municipal Corporation Focus',
+        icon: 'Heritage',
+        district: 'Khammam'
+    },
+    nalgonda: {
+        title: 'Nalgonda',
+        subtitle: 'Nagarjuna Sagar & Local Civic Updates',
+        icon: 'WaterDrop',
+        district: 'Nalgonda'
+    },
+    mahbubnagar: {
+        title: 'Mahbubnagar',
+        subtitle: 'Palamuru & Local Development Updates',
+        icon: 'Building',
+        district: 'Mahbubnagar'
     }
 };
 
@@ -125,7 +149,11 @@ export default function SubRegionPage() {
             cyberabad: ['cyberabad', 'hitech city', 'gachibowli', 'madhapur', 'kondapur', 'knowledge city', 'it corridor'],
             malkajgiri: ['malkajgiri', 'alwal', 'kukatpally', 'kapra', 'uppal', 'quthbullapur', 'medchal'],
             warangal: ['warangal', 'hanmakonda', 'kazipet', 'kakatiya', 'gwmc', 'tri-cities'],
-            karimnagar: ['karimnagar', 'smart city', 'granite']
+            karimnagar: ['karimnagar', 'smart city', 'granite'],
+            nizamabad: ['nizamabad', 'indur', 'bodhan', 'armur'],
+            khammam: ['khammam', 'stambhadri', 'bhadrachalam', 'kothagudem'],
+            nalgonda: ['nalgonda', 'nagarjuna sagar', 'miryalaguda', 'suryapet'],
+            mahbubnagar: ['mahbubnagar', 'palamuru', 'jadcherla', 'narayanpet']
         };
         const keywords = keywordsMap[district] || [district];
 
