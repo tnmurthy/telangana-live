@@ -14,8 +14,10 @@ import NewsCard from '../components/NewsCard';
 import newsData from '../data/news.json';
 import PowerTariffCard from '../components/PowerTariffCard';
 import ServicesDirectory from '../components/ServicesDirectory';
+import OdopWidget from '../components/OdopWidget';
 import NotFound from './NotFound';
 import { districtNewsSources } from '../data/districtNewsSources';
+import odopData from '../data/odopData.json';
 
 const CollapsibleSection = ({ title, icon, children, defaultOpen = false }) => {
     return (
@@ -218,6 +220,11 @@ export default function SubRegionPage() {
                     </p>
                 </div>
             </div>
+
+            {/* Local Pride: ODOP Widget */}
+            {odopData && odopData[meta.district] && (
+                <OdopWidget data={odopData[meta.district]} />
+            )}
 
             {/* Partner Spotlight Section */}
             <section id="spotlight">
