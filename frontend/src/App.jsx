@@ -50,6 +50,9 @@ const MeeSevaPage = lazy(() => import('./pages/MeeSevaPage'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const ClassifiedsPage = lazy(() => import('./pages/ClassifiedsPage'));
+const HackOfTheDayPage = lazy(() => import('./pages/HackOfTheDayPage'));
+const StatnosticsPage = lazy(() => import('./pages/StatnosticsPage'));
+const DeepDivesPage = lazy(() => import('./pages/DeepDivesPage'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -139,6 +142,9 @@ function AppContent() {
               <Route path="/farmers" element={<FarmerPage />} />
               <Route path="/meeseva" element={<MeeSevaPage />} />
               <Route path="/classifieds" element={<ClassifiedsPage />} />
+              <Route path="/hacks" element={<HackOfTheDayPage />} />
+              <Route path="/insights" element={<StatnosticsPage />} />
+              <Route path="/deep-dives" element={<DeepDivesPage />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/:region" element={<SubRegionPage />} />
