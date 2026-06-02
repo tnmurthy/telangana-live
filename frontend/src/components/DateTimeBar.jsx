@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const VS_MONTHS = ['Pausha', 'Magha', 'Phalguna', 'Chaitra', 'Vaishakha', 'Jyeshtha', 'Ashadha', 'Shravana', 'Bhadrapada', 'Ashvina', 'Kartika', 'Margashirsha'];
 const TELUGU_MONTHS = ['పుష్య', 'మాఘ', 'ఫాల్గుణ', 'చైత్ర', 'వైశాఖ', 'జ్యేష్ఠ', 'ఆషాఢ', 'శ్రావణ', 'భాద్రపద', 'ఆశ్వయుజ', 'కార్తీక', 'మార్గశిర'];
@@ -75,8 +76,8 @@ export default function DateTimeBar() {
                 </div>
 
                 {/* Vikram Samvat + Telugu */}
-                <div className="flex items-center gap-2 text-[10px] text-text-muted">
-                    <span className="bg-heritage-gold/8 border border-heritage-gold/15 text-heritage-gold-light px-2 py-0.5 rounded-md font-medium">
+                <Link to="/panchang" className="flex items-center gap-2 text-[10px] text-text-muted hover:opacity-80 transition-opacity group">
+                    <span className="bg-heritage-gold/8 border border-heritage-gold/15 text-heritage-gold-light px-2 py-0.5 rounded-md font-medium group-hover:border-heritage-gold/30">
                         {vs.teluguDay}
                     </span>
                     <span className="hidden sm:inline text-white/10">|</span>
@@ -87,7 +88,7 @@ export default function DateTimeBar() {
                         <span className="text-white/10">·</span>
                         <span className="gold-text font-semibold">VS {vs.year}</span>
                     </span>
-                </div>
+                </Link>
             </div>
         </div>
     );
