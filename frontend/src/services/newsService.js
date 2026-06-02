@@ -1,28 +1,9 @@
-import { RSSParser } from './rssParser';
-
-const RSS_SOURCES = [
-  { 
-    url: 'https://timesofindia.indiatimes.com/rssfeeds/2950623.cms', 
-    source: 'toi',
-    name: 'Times of India'
-  },
-  { 
-    url: 'https://www.thehansindia.com/feeds/telangana', 
-    source: 'hans',
-    name: 'Hans India'
-  },
-  { 
-    url: 'https://www.eenadu.net/telangana/rss.xml', 
-    source: 'eenadu',
-    name: 'Eenadu'
-  }
-];
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 class NewsService {
   constructor() {
-    this.parser = new RSSParser();
     this.cache = new Map();
-    this.cacheTimeout = 15 * 60 * 1000; // 15 minutes
+    this.cacheTimeout = 5 * 60 * 1000; // 5 minutes cache for local dev
   }
 
   async fetchAllNews(options = {}) {
@@ -37,18 +18,10 @@ class NewsService {
       }
     }
 
-    // Fetch from all sources in parallel
     try {
-      const promises = RSS_SOURCES.map(({ url, source }) =>
-        this.parser.fetchFeed(url, source)
-      );
-
-      const results = await Promise.all(promises);
-      
-      // Combine and sort by date
-      const allArticles = results
-        .flat()
-        .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+      const response = await fetch(`${API_URL}/api/civic/news`);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const allArticles = await response.json();
 
       // Cache result
       this.cache.set(cacheKey, {
@@ -58,8 +31,14 @@ class NewsService {
 
       return allArticles.slice(0, limit);
     } catch (error) {
-      console.error('Error fetching news:', error);
-      return [];
+      console.error('Error fetching news from API:', error);
+      // Fallback to local json if API fails (e.g. backend not running during dev)
+      try {
+        const localData = await import('../data/news.json');
+        return localData.default.slice(0, limit);
+      } catch (e) {
+         return [];
+      }
     }
   }
 
@@ -71,15 +50,26 @@ class NewsService {
   async fetchNewsByCategory(category, limit = 20) {
     const allNews = await this.fetchAllNews({ limit: 200 });
     return allNews.filter(article => 
-      article.category.toLowerCase() === category.toLowerCase()
+      (article.category || '').toLowerCase() === category.toLowerCase()
     ).slice(0, limit);
   }
 
   async fetchNewsByDistrict(district, limit = 20) {
-    const allNews = await this.fetchAllNews({ limit: 200 });
-    return allNews.filter(article => 
-      article.district.includes(district)
-    ).slice(0, limit);
+    if (!district) return [];
+    try {
+      const response = await fetch(`${API_URL}/api/civic/news?district=${encodeURIComponent(district)}`);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const articles = await response.json();
+      return articles.slice(0, limit);
+    } catch (error) {
+        console.error('Error fetching district news from API:', error);
+        // Fallback
+        const allNews = await this.fetchAllNews({ limit: 200 });
+        return allNews.filter(article => 
+          (article.region || '').toLowerCase().includes(district.toLowerCase()) || 
+          (article.description || '').toLowerCase().includes(district.toLowerCase())
+        ).slice(0, limit);
+    }
   }
 
   clearCache() {

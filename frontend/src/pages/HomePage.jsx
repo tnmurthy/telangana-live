@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import newsData from '../data/news.json';
+import { newsService } from '../services/newsService';
 import NewsCard from '../components/NewsCard';
 import { Icons } from '../components/Icons';
 import StoriesBar from '../components/StoriesBar';
@@ -40,14 +40,25 @@ const FeedSection = ({ title, items, icon, delay = '0ms' }) => (
 export default function HomePage() {
   const { searchQuery, myDistrict, followed } = useAppContext();
   const { isEmergencyActive, activateEmergency } = useEmergency();
+  const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All');
   const [page, setPage] = useState(1);
   const sentinelRef = useRef(null);
 
   useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(t);
+    let isMounted = true;
+    const loadNews = async () => {
+      setLoading(true);
+      const data = await newsService.fetchAllNews({ limit: 100 });
+      if (isMounted) {
+        setNewsData(data || []);
+        // Optional slight delay for smooth UI transition
+        setTimeout(() => setLoading(false), 300);
+      }
+    };
+    loadNews();
+    return () => { isMounted = false; };
   }, []);
 
   useEffect(() => {
@@ -81,12 +92,13 @@ export default function HomePage() {
       if (!aFollowed && bFollowed) return 1;
       return new Date(b.published) - new Date(a.published);
     });
-  }, [searchQuery, activeCategory, followed]);
+  }, [newsData, searchQuery, activeCategory, followed]);
 
   const myDistrictNews = useMemo(() => {
     if (!myDistrict) return [];
     return filteredNews.filter(n =>
-      (n.region || '').toLowerCase().includes(myDistrict.toLowerCase())
+      (n.region || '').toLowerCase().includes(myDistrict.toLowerCase()) ||
+      (n.description || '').toLowerCase().includes(myDistrict.toLowerCase())
     );
   }, [filteredNews, myDistrict]);
 

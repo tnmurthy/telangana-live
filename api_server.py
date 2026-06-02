@@ -11,11 +11,17 @@ from whatsapp_bot import build_summary, send_whatsapp_message
 from panchang import get_vikram_samvat, answer_muhurat_query
 from pydantic import BaseModel
 
+# Import Civic Gateway
+from backend.api.civic_gateway import router as civic_router
+
 app = FastAPI(
     title="Telangana.live APIs",
     description="API for validating and viewing the scraped data and triggering backend agents like WhatsApp summaries.",
     version="1.0.0"
 )
+
+# Register Routers
+app.include_router(civic_router)
 
 class PanchangQuery(BaseModel):
     query: str
