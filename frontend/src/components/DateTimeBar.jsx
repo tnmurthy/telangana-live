@@ -38,13 +38,30 @@ function formatTime(date) {
 
 export default function DateTimeBar() {
     const [now, setNow] = useState(new Date());
+    const [vs, setVs] = useState(getVikramSamvatDate(new Date()));
 
     useEffect(() => {
         const timer = setInterval(() => setNow(new Date()), 1000);
         return () => clearInterval(timer);
     }, []);
 
-    const vs = getVikramSamvatDate(now);
+    useEffect(() => {
+        // Fetch accurate panchang once on load
+        fetch('/api/panchang/today')
+            .then(res => res.json())
+            .then(data => {
+                // Merge accurate data into our state, keeping day formatting
+                setVs(prev => ({
+                    ...prev,
+                    year: data.year,
+                    month: data.month,
+                    teluguMonth: data.teluguMonth,
+                    tithi: data.tithi
+                }));
+            })
+            .catch(err => console.error("Failed to fetch panchang", err));
+    }, []);
+
     const gregorian = formatGregorian(now);
     const time = formatTime(now);
 
