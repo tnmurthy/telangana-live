@@ -1,5 +1,33 @@
 [
   {
+    "id": "mock_malkajgiri_1",
+    "title": "Malkajgiri railway station set for major upgrade under Amrit Bharat scheme",
+    "link": "#",
+    "source": "Local News",
+    "published": "Tue, 02 Jun 2026 12:00:00 +0530",
+    "description": "The railway station will get new platforms, escalators, and better parking facilities.",
+    "category": "Development",
+    "region": "Malkajgiri",
+    "image_url": "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=600",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "mock_malkajgiri_2",
+    "title": "New water pipeline inaugurated in Malkajgiri zone to resolve summer water crisis",
+    "link": "#",
+    "source": "Civic Updates",
+    "published": "Mon, 01 Jun 2026 09:00:00 +0530",
+    "description": "Residents of East Anandbagh and Neredmet will benefit from the new 15MLD water reservoir.",
+    "category": "Civic",
+    "region": "Malkajgiri",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "mock_warangal_1",
     "title": "Kakatiya Heritage Festival announced for Warangal",
     "link": "#",
