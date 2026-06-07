@@ -1,4 +1,10 @@
 {
+  "mcpServers": {
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp?project_ref=xgzxbenwlcmqtloajroi",
+      "type": "http"
+    }
+  },
   "context": {
     "fileName": [
       "C:\\Users\\Sriad\\.gemini\\antigravity-cli\\scratch\\wshobson_agents\\AGENTS.md",

@@ -1,0 +1,17 @@
+{
+  "common": {
+    "water": "Water",
+    "power": "Power",
+    "jobs": "Jobs",
+    "news": "News",
+    "officials": "Officials",
+    "emergency": "Emergency",
+    "grievance": "Report Issue"
+  },
+  "officials": {
+    "title": "Your Representatives",
+    "subtitle": "Direct contact with your elected officials",
+    "role": "Role",
+    "party": "Party"
+  }
+}

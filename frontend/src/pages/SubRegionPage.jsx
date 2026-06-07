@@ -18,6 +18,7 @@ import OdopWidget from '../components/OdopWidget';
 import NotFound from './NotFound';
 import { districtNewsSources } from '../data/districtNewsSources';
 import odopData from '../data/odopData.json';
+import districtsData from '../data/districts.json';
 
 const BentoBox = ({ title, icon, children, color = "telangana-red" }) => {
     return (
@@ -37,71 +38,14 @@ const BentoBox = ({ title, icon, children, color = "telangana-red" }) => {
     );
 };
 
-const regionMetadata = {
-    hyderabad: {
-        title: 'Hyderabad Central',
-        subtitle: 'Heritage, Old City & Residual GHMC Focus',
-        icon: 'Heritage',
-        district: 'Hyderabad'
-    },
-    cyberabad: {
-        title: 'Cyberabad IT Corridor',
-        subtitle: 'CMC - Madhapur, Gachibowli & Hitech City Focus',
-        icon: 'AI',
-        district: 'Cyberabad'
-    },
-    malkajgiri: {
-        title: 'Malkajgiri Residential',
-        subtitle: 'MMC - East Hyderabad & Residential Focus',
-        icon: 'Building',
-        district: 'Malkajgiri'
-    },
-    warangal: {
-        title: 'Warangal Heritage City',
-        subtitle: 'Kakatiya Heritage, GWMC Civic & Tri-Cities Focus',
-        icon: 'Heritage',
-        district: 'Warangal'
-    },
-    karimnagar: {
-        title: 'Karimnagar Smart City',
-        subtitle: 'Granite Hub & Karimnagar Municipal Corporation Focus',
-        icon: 'Building',
-        district: 'Karimnagar'
-    },
-    nizamabad: {
-        title: 'Nizamabad Indur',
-        subtitle: 'Agriculture Hub & Nizamabad Municipal Corporation Focus',
-        icon: 'Location',
-        district: 'Nizamabad'
-    },
-    khammam: {
-        title: 'Khammam Fort City',
-        subtitle: 'Stambhadri Heritage & Khammam Municipal Corporation Focus',
-        icon: 'Heritage',
-        district: 'Khammam'
-    },
-    nalgonda: {
-        title: 'Nalgonda',
-        subtitle: 'Nagarjuna Sagar & Local Civic Updates',
-        icon: 'WaterDrop',
-        district: 'Nalgonda'
-    },
-    mahbubnagar: {
-        title: 'Mahbubnagar',
-        subtitle: 'Palamuru & Local Development Updates',
-        icon: 'Building',
-        district: 'Mahbubnagar'
-    }
-};
-
 export default function SubRegionPage() {
     const { region } = useParams();
 
-    if (region && !regionMetadata[region]) {
+    if (region && !districtsData[region]) {
         return <NotFound />;
     }
 
-    const meta = regionMetadata[region] || regionMetadata.hyderabad;
+    const meta = districtsData[region] || districtsData.hyderabad;
     const regionPartners = partners[region] || [];
 
     // dynamic Breadcrumb Schema
@@ -143,20 +87,7 @@ export default function SubRegionPage() {
 
     const regionNews = useMemo(() => {
         const district = meta.district.toLowerCase();
-        
-        // Define localized keywords for fallback filtering
-        const keywordsMap = {
-            hyderabad: ['hyderabad', 'charminar', 'mehdipatnam', 'secunderabad', 'old city', 'ghmc'],
-            cyberabad: ['cyberabad', 'hitech city', 'gachibowli', 'madhapur', 'kondapur', 'knowledge city', 'it corridor'],
-            malkajgiri: ['malkajgiri', 'alwal', 'kukatpally', 'kapra', 'uppal', 'quthbullapur', 'medchal'],
-            warangal: ['warangal', 'hanmakonda', 'kazipet', 'kakatiya', 'gwmc', 'tri-cities'],
-            karimnagar: ['karimnagar', 'smart city', 'granite'],
-            nizamabad: ['nizamabad', 'indur', 'bodhan', 'armur'],
-            khammam: ['khammam', 'stambhadri', 'bhadrachalam', 'kothagudem'],
-            nalgonda: ['nalgonda', 'nagarjuna sagar', 'miryalaguda', 'suryapet'],
-            mahbubnagar: ['mahbubnagar', 'palamuru', 'jadcherla', 'narayanpet']
-        };
-        const keywords = keywordsMap[district] || [district];
+        const keywords = meta.keywords || [district];
 
         // 1. Filter articles explicitly matching region name OR containing key keywords
         let matched = newsData.filter(item => {
@@ -179,7 +110,7 @@ export default function SubRegionPage() {
         }
 
         return matched.slice(0, 6);
-    }, [meta.district]);
+    }, [meta]);
 
     const localSources = districtNewsSources[meta.district] || [];
 

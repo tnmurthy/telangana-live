@@ -1,0 +1,240 @@
+{
+    "hyderabad": {
+        "title": "Hyderabad Central",
+        "subtitle": "Heritage, Old City & Residual GHMC Focus",
+        "icon": "Heritage",
+        "district": "Hyderabad",
+        "keywords": ["hyderabad", "charminar", "mehdipatnam", "secunderabad", "old city", "ghmc"]
+    },
+    "cyberabad": {
+        "title": "Cyberabad IT Corridor",
+        "subtitle": "CMC - Madhapur, Gachibowli & Hitech City Focus",
+        "icon": "AI",
+        "district": "Cyberabad",
+        "keywords": ["cyberabad", "hitech city", "gachibowli", "madhapur", "kondapur", "knowledge city", "it corridor"]
+    },
+    "malkajgiri": {
+        "title": "Malkajgiri Residential",
+        "subtitle": "MMC - East Hyderabad & Residential Focus",
+        "icon": "Building",
+        "district": "Malkajgiri",
+        "keywords": ["malkajgiri", "alwal", "kukatpally", "kapra", "uppal", "quthbullapur", "medchal"]
+    },
+    "warangal": {
+        "title": "Warangal Heritage City",
+        "subtitle": "Kakatiya Heritage, GWMC Civic & Tri-Cities Focus",
+        "icon": "Heritage",
+        "district": "Warangal",
+        "keywords": ["warangal", "hanmakonda", "kazipet", "kakatiya", "gwmc", "tri-cities"]
+    },
+    "karimnagar": {
+        "title": "Karimnagar Smart City",
+        "subtitle": "Granite Hub & Karimnagar Municipal Corporation Focus",
+        "icon": "Building",
+        "district": "Karimnagar",
+        "keywords": ["karimnagar", "smart city", "granite"]
+    },
+    "nizamabad": {
+        "title": "Nizamabad Indur",
+        "subtitle": "Agriculture Hub & Nizamabad Municipal Corporation Focus",
+        "icon": "Location",
+        "district": "Nizamabad",
+        "keywords": ["nizamabad", "indur", "bodhan", "armur"]
+    },
+    "khammam": {
+        "title": "Khammam Fort City",
+        "subtitle": "Stambhadri Heritage & Khammam Municipal Corporation Focus",
+        "icon": "Heritage",
+        "district": "Khammam",
+        "keywords": ["khammam", "stambhadri", "bhadrachalam", "kothagudem"]
+    },
+    "nalgonda": {
+        "title": "Nalgonda",
+        "subtitle": "Nagarjuna Sagar & Local Civic Updates",
+        "icon": "WaterDrop",
+        "district": "Nalgonda",
+        "keywords": ["nalgonda", "nagarjuna sagar", "miryalaguda", "suryapet"]
+    },
+    "mahbubnagar": {
+        "title": "Mahbubnagar",
+        "subtitle": "Palamuru & Local Development Updates",
+        "icon": "Building",
+        "district": "Mahbubnagar",
+        "keywords": ["mahbubnagar", "palamuru", "jadcherla", "narayanpet"]
+    },
+    "adilabad": {
+        "title": "Adilabad",
+        "subtitle": "Tribal Culture & Natural Resources",
+        "icon": "Location",
+        "district": "Adilabad",
+        "keywords": ["adilabad"]
+    },
+    "bhadradri-kothagudem": {
+        "title": "Bhadradri Kothagudem",
+        "subtitle": "Coal Mines & Bhadrachalam Temple",
+        "icon": "Location",
+        "district": "Bhadradri Kothagudem",
+        "keywords": ["bhadradri", "kothagudem", "bhadrachalam"]
+    },
+    "jagtial": {
+        "title": "Jagtial",
+        "subtitle": "Agriculture & Historical Forts",
+        "icon": "Location",
+        "district": "Jagtial",
+        "keywords": ["jagtial"]
+    },
+    "jangaon": {
+        "title": "Jangaon",
+        "subtitle": "Historical Jangaon Fort & Local Development",
+        "icon": "Location",
+        "district": "Jangaon",
+        "keywords": ["jangaon"]
+    },
+    "jayashankar-bhupalpally": {
+        "title": "Jayashankar Bhupalpally",
+        "subtitle": "Coal Mining & Wildlife Sanctuary",
+        "icon": "Location",
+        "district": "Jayashankar Bhupalpally",
+        "keywords": ["bhupalpally"]
+    },
+    "jogulamba-gadwal": {
+        "title": "Jogulamba Gadwal",
+        "subtitle": "Historical Gadwal Saree & Temple Heritage",
+        "icon": "Location",
+        "district": "Jogulamba Gadwal",
+        "keywords": ["gadwal"]
+    },
+    "kamareddy": {
+        "title": "Kamareddy",
+        "subtitle": "Agriculture & Local Governance",
+        "icon": "Location",
+        "district": "Kamareddy",
+        "keywords": ["kamareddy"]
+    },
+    "kumuram-bheem-asifabad": {
+        "title": "Kumuram Bheem Asifabad",
+        "subtitle": "Tribal History & Forest Reserves",
+        "icon": "Location",
+        "district": "Kumuram Bheem Asifabad",
+        "keywords": ["asifabad"]
+    },
+    "mahabubabad": {
+        "title": "Mahabubabad",
+        "subtitle": "Forestry & Local Community Updates",
+        "icon": "Location",
+        "district": "Mahabubabad",
+        "keywords": ["mahabubabad"]
+    },
+    "mancherial": {
+        "title": "Mancherial",
+        "subtitle": "Industrial Hub & Coal Mining",
+        "icon": "Location",
+        "district": "Mancherial",
+        "keywords": ["mancherial"]
+    },
+    "medak": {
+        "title": "Medak",
+        "subtitle": "Historical Medak Church & Agriculture",
+        "icon": "Location",
+        "district": "Medak",
+        "keywords": ["medak"]
+    },
+    "medchal-malkajgiri": {
+        "title": "Medchal-Malkajgiri",
+        "subtitle": "Educational Hub & Residential Suburbs",
+        "icon": "Building",
+        "district": "Medchal-Malkajgiri",
+        "keywords": ["medchal", "malkajgiri"]
+    },
+    "mulugu": {
+        "title": "Mulugu",
+        "subtitle": "Ramappa Temple & Wildlife Sanctuary",
+        "icon": "Location",
+        "district": "Mulugu",
+        "keywords": ["mulugu", "ramappa"]
+    },
+    "nagarkurnool": {
+        "title": "Nagarkurnool",
+        "subtitle": "Agriculture & Srisailam Backwaters",
+        "icon": "Location",
+        "district": "Nagarkurnool",
+        "keywords": ["nagarkurnool"]
+    },
+    "narayanpet": {
+        "title": "Narayanpet",
+        "subtitle": "Handloom Industry & Local Craft",
+        "icon": "Location",
+        "district": "Narayanpet",
+        "keywords": ["narayanpet"]
+    },
+    "nirmal": {
+        "title": "Nirmal",
+        "subtitle": "Nirmal Toys & Art Heritage",
+        "icon": "Location",
+        "district": "Nirmal",
+        "keywords": ["nirmal"]
+    },
+    "peddapalli": {
+        "title": "Peddapalli",
+        "subtitle": "Agriculture & Industrial Growth",
+        "icon": "Location",
+        "district": "Peddapalli",
+        "keywords": ["peddapalli"]
+    },
+    "rajanna-sircilla": {
+        "title": "Rajanna Sircilla",
+        "subtitle": "Textile Industry & Weaver Community",
+        "icon": "Location",
+        "district": "Rajanna Sircilla",
+        "keywords": ["sircilla"]
+    },
+    "rangareddy": {
+        "title": "Rangareddy",
+        "subtitle": "Industrial Hub & Peripheral GHMC Regions",
+        "icon": "Building",
+        "district": "Rangareddy",
+        "keywords": ["rangareddy"]
+    },
+    "sangareddy": {
+        "title": "Sangareddy",
+        "subtitle": "Industrial Clusters & Historical Heritage",
+        "icon": "Location",
+        "district": "Sangareddy",
+        "keywords": ["sangareddy"]
+    },
+    "siddipet": {
+        "title": "Siddipet",
+        "subtitle": "Model District & Agriculture Excellence",
+        "icon": "Location",
+        "district": "Siddipet",
+        "keywords": ["siddipet"]
+    },
+    "suryapet": {
+        "title": "Suryapet",
+        "subtitle": "Rice Bowl of Telangana",
+        "icon": "Location",
+        "district": "Suryapet",
+        "keywords": ["suryapet"]
+    },
+    "vikarabad": {
+        "title": "Vikarabad",
+        "subtitle": "Ananthagiri Hills & Tourism",
+        "icon": "Location",
+        "district": "Vikarabad",
+        "keywords": ["vikarabad", "ananthagiri"]
+    },
+    "wanaparthy": {
+        "title": "Wanaparthy",
+        "subtitle": "Historical Royal Heritage & Agriculture",
+        "icon": "Location",
+        "district": "Wanaparthy",
+        "keywords": ["wanaparthy"]
+    },
+    "yadadri-bhuvanagiri": {
+        "title": "Yadadri Bhuvanagiri",
+        "subtitle": "Yadadri Temple & Bhongir Fort",
+        "icon": "Location",
+        "district": "Yadadri Bhuvanagiri",
+        "keywords": ["yadadri", "bhongir"]
+    }
+}
