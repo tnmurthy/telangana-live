@@ -1,3 +1,5 @@
+import { trackEvent } from '../hooks/usePageTracking';
+
 /**
  * Standard WhatsApp Caption Generator
  */
@@ -33,6 +35,11 @@ export default function ShareWhatsApp({ type, data, customTitle, customLink, cla
         <a href={url} target="_blank" rel="noopener noreferrer"
             onClick={(e) => {
                 e.stopPropagation();
+                trackEvent('share', {
+                    method: 'WhatsApp',
+                    content_type: type,
+                    item_id: customTitle || (data && (data.label || data.type || data.district || data.title)) || 'general'
+                });
                 if (onClick) onClick(e);
             }}
             className={`inline-flex items-center gap-1.5 text-xs text-green-400/80 hover:text-green-300 transition-all duration-300 px-2.5 py-1.5 rounded-lg hover:bg-green-400/10 ${className}`}

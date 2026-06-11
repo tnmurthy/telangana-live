@@ -1,13 +1,68 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import newsData from '../data/news.json';
 import NewsCard from '../components/NewsCard';
 import { Icons } from '../components/Icons';
 import ProgrammaticAd from '../components/ProgrammaticAd';
+import { trackEvent } from '../hooks/usePageTracking';
+import useJsonLd from '../hooks/useJsonLd';
 
 const NewsListingPage = () => {
   const [filter, setFilter] = useState('All');
   const [regionFilter, setRegionFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://telangana.live/dashboard"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Civic News",
+        "item": "https://telangana.live/news"
+      }
+    ]
+  };
+
+  useJsonLd(breadcrumbSchema, 'breadcrumb-news-listing');
+
+  // Track filter changes
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+    trackEvent('news_filter_change', {
+      category: newFilter,
+      region: regionFilter
+    });
+  };
+
+  const handleRegionChange = (newRegion) => {
+    setRegionFilter(newRegion);
+    trackEvent('news_region_change', {
+      category: filter,
+      region: newRegion
+    });
+  };
+
+  // Track search (debounced)
+  useEffect(() => {
+    if (searchQuery.length > 2) {
+      const timer = setTimeout(() => {
+        trackEvent('news_search', {
+          search_term: searchQuery,
+          results_count: filteredNews.length
+        });
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [searchQuery]);
 
   const categories = useMemo(() => {
     const cats = [...new Set(newsData.map(item => item.category).filter(Boolean))].sort();
@@ -31,6 +86,15 @@ const NewsListingPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto space-y-8 pb-20 animate-fade-in">
+      <Helmet>
+        <title>Telangana Civic News - Real-Time Updates & AI Summaries | Telangana.live</title>
+        <meta name="description" content="Latest civic news from Hyderabad and across Telangana. Local government updates, community reports, and AI-powered news summaries." />
+        <link rel="canonical" href="https://telangana.live/news" />
+        <meta property="og:title" content="Telangana Civic News - Real-Time Updates & AI Summaries" />
+        <meta property="og:description" content="Latest civic news from Hyderabad and across Telangana. Local government updates, community reports, and AI-powered news summaries." />
+        <meta property="og:url" content="https://telangana.live/news" />
+        <meta name="twitter:title" content="Telangana Civic News - Real-Time Updates & AI Summaries" />
+      </Helmet>
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/5 pb-8">
         <div className="space-y-2">
@@ -62,7 +126,7 @@ const NewsListingPage = () => {
           {regions.map(r => (
             <button
               key={r}
-              onClick={() => setRegionFilter(r)}
+              onClick={() => handleRegionChange(r)}
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all border ${
                 regionFilter === r 
                 ? 'bg-telangana-green text-white border-telangana-green shadow-lg shadow-telangana-green/20' 
@@ -79,7 +143,7 @@ const NewsListingPage = () => {
           {categories.map(c => (
             <button
               key={c}
-              onClick={() => setFilter(c)}
+              onClick={() => handleFilterChange(c)}
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all border ${
                 filter === c 
                 ? 'bg-white text-dark-bg border-white shadow-lg' 

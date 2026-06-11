@@ -1,8 +1,32 @@
+import { Helmet } from 'react-helmet-async';
 import { fuelPrices } from '../data/fuelPrices';
 import ShareWhatsApp from '../components/ShareWhatsApp';
+import useJsonLd from '../hooks/useJsonLd';
 
 export default function FuelLandingPage() {
     const { petrol, diesel, lpgHousehold, cngVehicle, city } = fuelPrices;
+
+    // Breadcrumb Schema
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://telangana.live/dashboard"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Fuel Prices",
+                "item": "https://telangana.live/rates/fuel"
+            }
+        ]
+    };
+
+    useJsonLd(breadcrumbSchema, 'breadcrumb-fuel-prices');
 
     const cards = [
         { label: 'Petrol', ...petrol, color: 'text-emerald-400', icon: '⛽' },
@@ -13,6 +37,15 @@ export default function FuelLandingPage() {
 
     return (
         <div className="space-y-8 animate-fade-in">
+            <Helmet>
+                <title>Live Fuel Prices in Hyderabad - Petrol, Diesel & LPG Today | Telangana.live</title>
+                <meta name="description" content={`Check current petrol, diesel, LPG, and CNG prices in Hyderabad and across Telangana districts. Real-time fuel price updates for ${new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}.`} />
+                <link rel="canonical" href="https://telangana.live/rates/fuel" />
+                <meta property="og:title" content="Live Fuel Prices in Hyderabad - Petrol, Diesel & LPG Today" />
+                <meta property="og:description" content="Check current petrol, diesel, LPG, and CNG prices in Hyderabad and across Telangana districts. Real-time updates." />
+                <meta property="og:url" content="https://telangana.live/rates/fuel" />
+                <meta name="twitter:title" content="Live Fuel Prices in Hyderabad - Petrol, Diesel & LPG Today" />
+            </Helmet>
             <div className="glass-card section-block relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 text-8xl opacity-10 pointer-events-none">⚡</div>
                 <div className="relative z-10">
