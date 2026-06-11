@@ -240,6 +240,124 @@
     "correlated_civic_entities": []
   },
   {
+    "id": "c01cf83ed22ad80f7e1233f60f0d9e6e",
+    "title": "Editorial: Modi’s milestone calls for honest assessment",
+    "link": "https://telanganatoday.com/editorial-modis-milestone-calls-for-honest-assessment",
+    "source": "Telangana Today",
+    "published": "Thu, 11 Jun 2026 22:11:58 +0530",
+    "description": "India’s growth story resembles a relay race, with the baton passing through the hands of more than 13 Prime Ministers, each with their distinct strengths, political philosophies, and international stature",
+    "category": "Govt",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/MODI-EDIT-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "f4b5364cb22a50f65ec27e6ba470764b",
+    "title": "Medak youth slips from moving train, dies at Masaipet station",
+    "link": "https://telanganatoday.com/medak-youth-slips-from-moving-train-dies-at-masaipet-station",
+    "source": "Telangana Today",
+    "published": "Thu, 11 Jun 2026 22:11:45 +0530",
+    "description": "A 28-year-old man, Dundigolla Das of Islampur in Toopran mandal, died after slipping from a moving train at Masaipet railway station in Medak district on Thursday morning.",
+    "category": "Transit",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/Death-5-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Medak",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "bff5506ff077eef8fe8fc8fe0f1b1b4f",
+    "title": "Hyderabad: ASI duped of Rs 50,000 in fake RTA challan cyber fraud",
+    "link": "https://telanganatoday.com/hyderabad-asi-duped-of-rs-50000-in-fake-rta-challan-cyber-fraud",
+    "source": "Telangana Today",
+    "published": "Thu, 11 Jun 2026 22:06:28 +0530",
+    "description": "An Assistant Sub-Inspector at Punjagutta police station in Hyderabad lost nearly Rs 50,000 after downloading a fake RTA challan APK file sent by fraudsters.",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/Cyber-fraud-1-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "822bfdc2429bd4b10a6bf4ea8ed6bbd8",
+    "title": "TG ICET 2026 results to be declared on Friday",
+    "link": "https://telanganatoday.com/tg-icet-2026-results-to-be-declared-on-friday",
+    "source": "Telangana Today",
+    "published": "Thu, 11 Jun 2026 22:01:40 +0530",
+    "description": "The Telangana State Council of Higher Education will announce the TG ICET 2026 results on Friday afternoon. The entrance test results will be accessible on the official website after the announcement.",
+    "category": "Education",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/TGICET-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "8a66d1606776171ff1b02bd9e3cd3c62",
+    "title": "Hyderabad-based Anurag University launches MBA-BFSI with KPMG",
+    "link": "https://telanganatoday.com/hyderabad-based-anurag-university-launches-mba-bfsi-with-kpmg",
+    "source": "Telangana Today",
+    "published": "Thu, 11 Jun 2026 21:57:06 +0530",
+    "description": "Anurag University has announced a two-year MBA in Banking, Financial Services and Insurance (BFSI) in collaboration with KPMG in India. The programme, beginning August 2026, aims to bridge classroom learning with industry practice through applied modules, case studies, and specialised courses designed with KPMG’s inputs.",
+    "category": "Education",
+    "region": "Hyderabad",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/Anurag-varsity-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "770312aa720931a0671fd797dae0c31c",
+    "title": "Tiger safety: Forest dept turns to police for support in Adilabad",
+    "link": "https://telanganatoday.com/tiger-safety-forest-dept-turns-to-police-for-support-in-adilabad",
+    "source": "Telangana Today",
+    "published": "Thu, 11 Jun 2026 21:41:36 +0530",
+    "description": "Unconfirmed reports of a tiger being shot dead by poachers along the Nizamabad‑Jagtial border have raised alarm among forest officials. With two tigers currently settled in the region, the Adilabad forest department is planning to rope in the police for intelligence support to strengthen anti‑poaching measures.",
+    "category": "Safety",
+    "region": "Nizamabad",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/Tigers-1-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Adilabad",
+        "score": 1.0
+      },
+      {
+        "entity_type": "district",
+        "entity_id": "Jagtial",
+        "score": 0.75
+      },
+      {
+        "entity_type": "district",
+        "entity_id": "Nizamabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
     "id": "f2027279975f599c1078579c234cfe01",
     "title": "Medak Collector stresses healthy food for future generations",
     "link": "https://telanganatoday.com/medak-collector-stresses-healthy-food-for-future-generations",
@@ -320,91 +438,15 @@
     ]
   },
   {
-    "id": "b08333566fd80702a65ac07599c89b08",
-    "title": "After ‘vote chori’ and ‘sarkar chori’, Rahul alleges BJP’s ‘seat chori’ in Rajya Sabha polls",
-    "link": "https://telanganatoday.com/after-vote-chori-and-sarkar-chori-rahul-alleges-bjps-seat-chori-in-rajya-sabha-polls",
-    "source": "Telangana Today",
-    "published": "Thu, 11 Jun 2026 21:00:10 +0530",
-    "description": "Leader of Opposition Rahul Gandhi accused the BJP and Election Commission of \"seat chori\" after Congress candidate Meenakshi Natarajan's Rajya Sabha nomination was rejected in Madhya Pradesh. The BJP dismissed the charge, blaming Congress for procedural lapses",
+    "id": "da9ed4aeb02e50212ad75521436de6f7",
+    "title": "Kejriwal questions PM's message to Trump, says India must safeguard national interest",
+    "link": "https://timesofindia.indiatimes.com/india/kejriwal-questions-pms-message-to-trump-says-india-must-safeguard-national-interest/articleshow/131664217.cms",
+    "source": "Times of India - Hyderabad",
+    "published": "2026-06-11T22:06:04+05:30",
+    "description": "<a href=\"https://timesofindia.indiatimes.com/india/kejriwal-questions-pms-message-to-trump-says-india-must-safeguard-national-interest/articleshow/131664217.cms\"><img align=\"left\" border=\"0\" hspace=\"10\" src=\"https://timesofindia.indiatimes.com/photo/131664217.cms\" style=\"margin-top: 3px; margin-right: 5px;\" /></a>In a pointed critique, Aam Aadmi Party chief Arvind Kejriwal challenged Prime Minister Narendra Modi's public expressions of gratitude toward US President Donald Trump. Kejriwal argued ",
     "category": "Govt",
     "region": "Telangana",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/05/Rahul-Gandhifile-1-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "c79c9da0b892bb9a9c361b15fe3b6f63",
-    "title": "Mir, Shah fifties trump India’s 349 in rain-hit Tri-series clash",
-    "link": "https://telanganatoday.com/mir-shah-fifties-trump-indias-349-in-rain-hit-tri-series-clash",
-    "source": "Telangana Today",
-    "published": "Thu, 11 Jun 2026 20:59:22 +0530",
-    "description": "Afghanistan A clinched a dramatic four-run victory over India A via the DLS method in a rain-hit Tri-series match at Dambulla. Despite India A posting 349/9 powered by Prabhsimran Singh’s 84, unbeaten fifties from Imran Mir and Bahir Shah sealed the chase",
-    "category": "Weather",
-    "region": "Telangana",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/AFG-A-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "494ee39a05f277a841eb4469fe776033",
-    "title": "Nitin Nayak wins men’s 100m gold at Telangana State athletics championships",
-    "link": "https://telanganatoday.com/nitin-nayak-wins-mens-100m-gold-at-telangana-state-athletics-championships",
-    "source": "Telangana Today",
-    "published": "Thu, 11 Jun 2026 20:54:44 +0530",
-    "description": "Ranga Reddy’s Nitin Nayak clinched the men’s 100m title, clocking 10.77 seconds at the 12th Telangana State Athletics Championships at the OU synthetic track. The meet saw top performances across senior and junior categories from various districts",
-    "category": "Business",
-    "region": "Telangana",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/Running-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "1c602c8ba2c8c428e87e92d496f78947",
-    "title": "Khammam rape case: BRS minority leader slams bid to give religious colour",
-    "link": "https://telanganatoday.com/khammam-rape-case-brs-minority-leader-slams-bid-to-give-religious-colour",
-    "source": "Telangana Today",
-    "published": "Thu, 11 Jun 2026 20:54:35 +0530",
-    "description": "BRS minority wing leader Mohammed Tajuddin has condemned attempts by right‑wing groups to give a communal colour to the recent rape and attempted murder of a 12‑year‑old in Khammam.",
-    "category": "Safety",
-    "region": "Khammam",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/Khammam-protest-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Khammam",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "d99f49d437b780887872f2bb7a0eab02",
-    "title": "Dismissal from service should be reserved for grave misconduct: SC",
-    "link": "https://telanganatoday.com/dismissal-from-service-should-be-reserved-for-grave-misconduct-sc",
-    "source": "Telangana Today",
-    "published": "Thu, 11 Jun 2026 20:52:02 +0530",
-    "description": "The Supreme Court ruled that dismissal from service should be imposed only in cases of grave misconduct, stressing its severe impact on employees and their families. The court set aside a woman's dismissal as disproportionate and directed authorities to consider a lesser penalty",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "8d007f20554ec9dd502f63c68b887886",
-    "title": "Fresh controversy erupts over Pranit More stand-up show",
-    "link": "https://telanganatoday.com/fresh-controversy-erupts-over-pranit-more-stand-up-show",
-    "source": "Telangana Today",
-    "published": "Thu, 11 Jun 2026 20:48:47 +0530",
-    "description": "A fresh controversy linked to comedian Pranit More's stand-up show has emerged online, with audience member Dr Sejal Pawar issuing a public apology over her remarks. The incident has reignited debates about sexism, accountability and the boundaries of comedy content.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/06/Pranit-768x450.jpg",
+    "image_url": "https://static.toiimg.com/photo/msid-131664271,imgsize-54434.cms",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -536,95 +578,27 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "dd819c5940a7ba39930d2fca0509476a",
-    "title": "Evening news wrap: Kalyan Banerjee sends blunt message to Mamata; Indian sailors killed after US strike on oil tanker off Oman &amp; more",
-    "link": "https://timesofindia.indiatimes.com/india/evening-news-wrap-kalyan-banerjee-sends-blunt-message-to-mamata-indian-sailors-killed-after-us-strike-on-oil-tanker-off-oman-more/articleshow/131658139.cms",
-    "source": "Times of India - Hyderabad",
-    "published": "2026-06-11T17:09:19+05:30",
-    "description": "<a href=\"https://timesofindia.indiatimes.com/india/evening-news-wrap-kalyan-banerjee-sends-blunt-message-to-mamata-indian-sailors-killed-after-us-strike-on-oil-tanker-off-oman-more/articleshow/131658139.cms\"><img align=\"left\" border=\"0\" hspace=\"10\" src=\"https://timesofindia.indiatimes.com/photo/131658139.cms\" style=\"margin-top: 3px; margin-right: 5px;\" /></a>In a tragic incident near the Strait of Hormuz, we have confirmed the deaths of three Indian sailors aboard the MT Settebello after a US mi",
+    "id": "694521f90da175fdca27a746ae217a47",
+    "title": "Rohingya Gang Held for Stealing Copper Coils From Power Transformers",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/rohingya-gang-held-for-stealing-copper-coils-from-power-transformers-1962943",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Thu, 11 Jun 2026 16:52:56 GMT",
+    "description": "Police seize stolen property worth Rs 7.7 lakh, tools used in transformer break-ins",
     "category": "Safety",
     "region": "Telangana",
-    "image_url": "https://static.toiimg.com/photo/msid-131658102,imgsize-28824.cms",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "0a1d705a6cc81e71063c8d2af44de05d",
-    "title": "MP Tiger Reserve Extends Restriction of Mobile Phone Use to Guides",
-    "link": "https://www.deccanchronicle.com/nation/mp-tiger-reserve-extends-restriction-of-mobile-phone-use-to-guides-1962933",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:07:29 GMT",
-    "description": "The BTR authorities also extended the restrictions to the guides and drivers of the vehicles carrying tourists to the core safari zones.",
-    "category": "Govt",
-    "region": "Telangana",
     "image_url": "",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "be11f87d0e56e7cea2b863293133eb06",
-    "title": "Hyderabad Football Fans Divided Between Messi, Ronaldo Camps",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/hyderabad-football-fans-divided-between-messi-ronaldo-camps-1962932",
+    "id": "be1a1a4a1fc98f74509c4b2137f3a839",
+    "title": "HC Directs State to Establish Robust Grievance Redressal Mechanism for Students Affected by Delay in Scholarship",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/hc-directs-state-to-establish-robust-grievance-redressal-mechanism-for-students-affected-by-delay-in-scholarship-1962942",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:02:06 GMT",
-    "description": "Chief Minister A. Revanth Reddy kicked a football along with the legendary Lionel Messi during the Argentine star’s G.O.A.T. India Tour in December at the Uppal stadium",
-    "category": "Govt",
-    "region": "Malkajgiri",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "aa1c478adfb8c9e9af30f832fc6871db",
-    "title": "TN CM Vijay To Offer Prayers at Kollur Mookambika Temple on June 12",
-    "link": "https://www.deccanchronicle.com/southern-states/karnataka/tn-cm-vijay-to-offer-prayers-at-kollur-mookambika-temple-on-june-12-1962931",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 15:59:34 GMT",
-    "description": "The Chief Minister's visit is confined to offering prayers at the temple and no public programme has been scheduled.",
-    "category": "Govt",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "cb0095d8235449cb025d530dc13e43fa",
-    "title": "Bhadradri-Kothagudem Forest Officer Stresses Biodiversity Protection",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/bhadradri-kothagudem-forest-officer-stresses-biodiversity-protection-1962930",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 15:56:46 GMT",
-    "description": "The officer outlined government initiatives, including social forestry plantations, sustainable agriculture practices, biodiversity conservation in forests and common lands, and programmes on farmer livelihood enhancement, primary education, women empowerment, health and sanitation, solid waste management, and vocational training for rural youth.",
+    "published": "Thu, 11 Jun 2026 16:51:18 GMT",
+    "description": "The bench directed the petitioners to implead the three deparments as parties to the case",
     "category": "Transit",
-    "region": "Bhadradri Kothagudem",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Bhadradri Kothagudem",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "1259f9af9ba63a55bc3494c7413081b6",
-    "title": "After Bengal Push, The BJP High Command Launches “Mission Telangana”, Rajnath to Rally Intellectuals as Party Gears Up for Aggressive Campaigning",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/after-bengal-push-the-bjp-high-command-launches-mission-telangana-rajnath-to-rally-intellectuals-as-party-gears-up-for-aggressive-campaigning-1962929",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 15:48:30 GMT",
-    "description": "Next on the agenda, the party plans a statewide student mobilisation targeting fee reimbursement delays in higher education",
-    "category": "Education",
     "region": "Telangana",
     "image_url": "",
     "ai_summary": "",
@@ -632,60 +606,12 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "c0141eda2ede6fbe6f0a03cf4efe59c5",
-    "title": "Hyderabad: Dental Practitioners Found Performing Skin, Hair Procedures",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/hyderabad-dental-practitioners-found-performing-skin-hair-procedures-1962928",
+    "id": "ca8a7a0c1feeef6596602fc1b0bbd482",
+    "title": "DMK To Act On Its Poll Fiasco Analysis",
+    "link": "https://www.deccanchronicle.com/southern-states/tamil-nadu/dmk-to-act-on-its-poll-fiasco-analysis-1962941",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 15:37:23 GMT",
-    "description": "The council said that its officials found that few Clinics was allegedly offering skin and hair-related treatments without the presence of a qualified dermatologist",
-    "category": "Health",
-    "region": "Hyderabad",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "00958038cb7921071861291688011035",
-    "title": "TG Minister Directs Officials to Speed Up SLBC Works",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/tg-minister-directs-officials-to-speed-up-slbc-works-1962927",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 15:24:29 GMT",
-    "description": "He announced that the 136-km AMRP-SLBC canal stretch from Angadipet to the Musi project would also be taken up",
-    "category": "Govt",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "3b449ad9bf032821333ffe65f34fb0a8",
-    "title": "Telangana HC: LOC Against Cancer Research Scientist Kept In Abeyance",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/telangana-hc-loc-against-cancer-research-scientist-kept-in-abeyance-1962926",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 15:16:40 GMT",
-    "description": "Upon learning of the registration of the FIR, he approached the High Court and obtained anticipatory bail",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "8f0cb5961f5822e1f894a99a57acf46c",
-    "title": "Talk of the Town",
-    "link": "https://www.deccanchronicle.com/tabloid/hyderabad-chronicle/talk-of-the-town-1962925",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 15:10:11 GMT",
-    "description": "Owaisi’s Daughter Tops MBBS Batch After Marriage",
+    "published": "Thu, 11 Jun 2026 16:47:18 GMT",
+    "description": "The inaccessibility of top leaders to the rank and file of the party is reportedly citied to be one of the causes for the poll fiasco in the report submitted to Stalin at Anna Arivalayam on Wednesday by some lead members of the committee, including MPs Constantine Ravindran and Kanimozhi Karunanidh.",
     "category": "General",
     "region": "Telangana",
     "image_url": "",
@@ -694,18 +620,228 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "c1d271629e9d005c89f8ef0b0b98259a",
-    "title": "Revanth on a Spending Spree on Himself, School Kids Victims of His Corruption: Harish",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/revanth-on-a-spending-spree-on-himself-school-kids-victims-of-his-corruption-harish-1962924",
+    "id": "1dabe1132397d1349ce0f416fac1bef6",
+    "title": "Revanth Seeks Modi’s Help on Tummidihatti Project",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/revanth-seeks-modis-help-on-tummidihatti-project-1962940",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Thu, 11 Jun 2026 14:57:03 GMT",
-    "description": "“The postponement was because contracts related to uniforms, bags, notebooks, belts and other supplies were not finalised due to commission-related issues after a contract was issued to a Gujarat-based business,” Harish Rao alleged.",
+    "published": "Thu, 11 Jun 2026 16:46:53 GMT",
+    "description": "CM pushes for Metro expansion, Ring Road, Godavari barrage and Warangal airport",
+    "category": "Transit",
+    "region": "Warangal",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Warangal",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "262e7a21be9b878c0421b5c5d8a52b7f",
+    "title": "HC Clarifies on Applicability of Trafficking Laws Against Customers of Sex Workers and Brothel Houses",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/hc-clarifies-on-applicability-of-trafficking-laws-against-customers-of-sex-workers-and-brothel-houses-1962939",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Thu, 11 Jun 2026 16:45:47 GMT",
+    "description": "“A customer of a sex worker cannot be termed a trafficker merely because he avails sexual services,” the bench observed",
     "category": "Transit",
     "region": "Telangana",
     "image_url": "",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
+  },
+  {
+    "id": "61f93bd987ee2350e7bcef27c3dde046",
+    "title": "Vijay Doesn’t Deviate From DMK’s Line",
+    "link": "https://www.deccanchronicle.com/southern-states/tamil-nadu/vijay-doesnt-deviate-from-dmks-line-1962938",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Thu, 11 Jun 2026 16:40:25 GMT",
+    "description": "It reflected the strength of the diversified economy and the productivity of its workforce, underscoring its commitment to a Developed India by 2047 and the vision was anchored on four pillars – the Youth, the Poor, Women and Farmers.",
+    "category": "Business",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "8d0c1125592458a3cbc90c135bc4dc83",
+    "title": "Asaduddin Owaisi Expresses Concern Over Implication of SIR",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/asaduddin-owaisi-expresses-concern-over-implication-of-sir-1962937",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Thu, 11 Jun 2026 16:30:08 GMT",
+    "description": "AIMIM chief warns voter deletions could trigger questions over citizenship status",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "64760fcf61835414713d9a02937ae289",
+    "title": "Life Convict Escapes From Custody While Returning to Kadapa Jail",
+    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/life-convict-escapes-from-custody-while-returning-to-kadapa-jail-1962936",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Thu, 11 Jun 2026 16:28:17 GMT",
+    "description": "Following the incident, the escorting staff informed Kadapa Central Jail authorities. Police have launched a search operation to trace the absconding convict.",
+    "category": "Safety",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "b29ff2fe16b3d082a5fd2b69262e101b",
+    "title": "PM Surya Ghar Scheme Rolled Out in Addanki Villages; Minister Assures Solar Units for Eligible Households",
+    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/pm-surya-ghar-scheme-rolled-out-in-addanki-villages-minister-assures-solar-units-for-eligible-households-1962935",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Thu, 11 Jun 2026 16:14:30 GMT",
+    "description": "He further dedicated CC roads and side-drainage works worth Rs 40 lakh in Kothuru village",
+    "category": "Transit",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "c247e7d9f32d8502028f26ca2735b151",
+    "title": "Champion Farmers Should Act as Brand Ambassadors: Collector Himanshu Shukla",
+    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/champion-farmers-should-act-as-brand-ambassadors-collector-himanshu-shukla-1962934",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Thu, 11 Jun 2026 16:09:24 GMT",
+    "description": "Champion farmers from the agriculture, horticulture and animal husbandry sectors shared their experiences and suggestions during the interaction",
+    "category": "Govt",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "96d3bdf80b17287d71d441318bde3347",
+    "title": "Hyderabad Police arrest two in fake job racket, gold recovered",
+    "link": "https://www.siasat.com/hyderabad-police-arrest-two-in-fake-job-racket-gold-recovered-3487326/",
+    "source": "Siasat Daily",
+    "published": "Thu, 11 Jun 2026 16:40:23 +0000",
+    "description": "<p>Hyderabad: The Mailardevpally Police have arrested two members of an inter-state gang for allegedly cheating a woman through social media and dating apps by promising her a lucrative job. The prime accused, Kudumula Pandu Ranga Rao alias Sunny Naidu, 32, from Visakhapatnam, befriended the woman from Kattedan through Instagram and the Eaze app. Introducing himself &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hydera",
+    "category": "Weather",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2025/01/Untitled-design-2025-01-28T184452.020.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "ab9027025f63e5965bab548b914db3ee",
+    "title": "Karnataka HC halts free education for SC/ST in private schools",
+    "link": "https://www.siasat.com/karnataka-hc-halts-free-education-for-sc-st-in-private-schools-3487298/",
+    "source": "Siasat Daily",
+    "published": "Thu, 11 Jun 2026 16:38:08 +0000",
+    "description": "<p>Bengaluru: The Karnataka High Court has put on hold the state government&#8217;s decision to extend free education benefits for Scheduled Caste (SC) and Scheduled Tribe (ST) students studying in private schools under the Right to Education (RTE) framework beyond Class 8. The order comes after the Karnataka Associated Managements of Schools (KAMS) challenged a circular &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">H",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/karnataka-HC.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "201c4cbb8dbaa373278f72a813000edb",
+    "title": "Pilots’ body renews demand for judicial probe into Air India crash",
+    "link": "https://www.siasat.com/pilots-body-renews-demand-for-judicial-probe-into-air-india-crash-3487314/",
+    "source": "Siasat Daily",
+    "published": "Thu, 11 Jun 2026 16:30:53 +0000",
+    "description": "<p>Ahmedabad/New Delhi: The Federation of Indian Pilots (FIP) on Thursday, June 11, renewed its demand for a judicial probe into the AI-171 crash and urged authorities not to release any interim investigation report, saying it would create further confusion and speculation. In a related development, Air India staff will observe a two-minute silence at their &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City ",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/Untitled-design-2026-06-11T215750.052.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "a95d9a97ef84f013b9f4e2db742a47ae",
+    "title": "Top cop recalls Air India crash as his ‘most painful’ memory",
+    "link": "https://www.siasat.com/top-cop-recalls-air-india-crash-as-his-most-painful-memory-3487313/",
+    "source": "Siasat Daily",
+    "published": "Thu, 11 Jun 2026 16:21:20 +0000",
+    "description": "<p>Ahmedabad: A year after the devastating Air India crash in Ahmedabad killed 260 persons, Gujarat’s Director General of Police Gyanendra Singh Malik still carries the weight of that fateful day, describing it as the “most painful” chapter of his career. The tragedy is etched in his memory not just for its scale, but for the &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"https://www.s",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/Untitled-design-2026-06-11T214752.291.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "80e2bbb3a83d7f4ac9d5bc2ac6bf54b2",
+    "title": "100-page chargesheet filed against Vachanananda Swamiji in POCSO case",
+    "link": "https://www.siasat.com/100-page-chargesheet-filed-against-vachanananda-swamiji-in-pocso-case-3487296/",
+    "source": "Siasat Daily",
+    "published": "Thu, 11 Jun 2026 16:16:58 +0000",
+    "description": "<p>Davanagere: The investigation into the POCSO case registered against Vachanananda Swamiji, former head of the Harihar Veerashaiva Lingayat Panchamasali Gurupeetha, has reached a crucial stage with police submitting a detailed chargesheet before the Special POCSO Court. Officials said the chargesheet, running over 100 pages, was filed on June 6 following an intensive investigation that was &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"H",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/Swami-ji.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "347bce48fc38d955d4a16c4ccf33c875",
+    "title": "Air India crash anniversary: Staff to observe 2-min silence on Friday",
+    "link": "https://www.siasat.com/air-india-crash-anniversary-staff-to-observe-2-min-silence-on-friday-3487316/",
+    "source": "Siasat Daily",
+    "published": "Thu, 11 Jun 2026 16:13:58 +0000",
+    "description": "<p>New Delhi: Air India staff will observe a two-minute silence at their workstations on Friday as a mark of respect for those who passed away in the fatal crash of its plane on June 12 last year. &#8220;Employees may observe this moment at their workstations; those at airport check-in counters or engaged in essential ground &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"https://www.si",
+    "category": "Transit",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2025/06/Ahmedabad-Remains-of-an-Air-India-plane-that-crashed-moments-after-taking-off-from-the-Ahmedabad-airport-Thursday.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
   },
   {
     "id": "89299e33ee94f9bf91cc5c583e031231",
@@ -798,124 +934,18 @@
     ]
   },
   {
-    "id": "f16fa0ef7bd9581b275b130031b301b8",
-    "title": "Video: Siddaramaiah expresses displeasure over Congress MLA",
-    "link": "https://www.siasat.com/video-siddaramaiah-expresses-displeasure-over-congress-mla-3487287/",
-    "source": "Siasat Daily",
-    "published": "Thu, 11 Jun 2026 15:42:26 +0000",
-    "description": "<p>Bengaluru: A video of former Karnataka Chief Minister Siddaramaiah, purportedly accusing senior Congress MLA Zameer Ahmed Khan of working against him and the party, went viral on social media on Thursday. Siddaramaiah can be heard saying this to a man, reportedly a supporter of Khan, who urged the former CM to ensure that his leader &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"htt",
-    "category": "Govt",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/Untitled-design-2026-06-11T211002.677.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "83e288c3f053689432dec410dccfc4a0",
-    "title": "Young couple killed after gas tanker rams bike in Bengaluru",
-    "link": "https://www.siasat.com/young-couple-killed-after-gas-tanker-rams-bike-in-bengaluru-3487291/",
-    "source": "Siasat Daily",
-    "published": "Thu, 11 Jun 2026 15:11:50 +0000",
-    "description": "<p>Bengaluru: A young Bengaluru couple died after a gas tanker allegedly suffered a brake failure and rammed into their motorcycle near Goraguntepalya Junction on Thursday afternoon, June 11. The deceased have been identified as Shabraj, 28 and his 24-year-old wife Shabreen, residents of Nagarabhavi. The couple was travelling on a KTM Duke motorcycle towards Yeshwanthpur &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">H",
+    "id": "1327c7cc56b482575ad3709f7d2e523f",
+    "title": "Odisha | పెళ్లి చేసుకోవాలి అని ఒత్తిడి.. ప్రియురాలిని బ్రిడ్జిపైనుంచి తోసేసి చంపిన ప్రియుడు",
+    "link": "https://www.ntnews.com/national/odisha-man-pushes-girlfriend-off-overbridge-tries-to-pass-it-off-as-accident-in-ganjam-district-2417658",
+    "source": "Namasthe Telangana",
+    "published": "Thu, 11 Jun 2026 21:48:06 +0530",
+    "description": "Odisha : పెళ్లి చేసుకోవాలని ప్రేయసి ఒత్తిడి తెచ్చినందుకు ఆమెను హత్య చేశాడు ప్రియుడు. ఈ ఘటన ఒడిశాలోని గంజాం జిల్లాలో ఈ నెల 7న జరిగింది. హంతకుడిని పోలీసులు అరెస్టు చేశారు. పోలీసులు తెలిపిన వివరాల ప్రకారం.. స్థానికంగా రోహి గ్రామానికి చెందిన అంబిక అనే యువతి ఇంటర్ పూర్తి చేసుకుంది.",
     "category": "General",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/Untitled-design-2026-06-11T204011.299.jpg",
+    "region": "Telangana",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/06/Odisha-1024x576.jpg",
     "ai_summary": "",
     "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "c613655ed1e9f284a1e1363fc2851454",
-    "title": "Karnataka: Child’s body recovered from forest stream, uncle held",
-    "link": "https://www.siasat.com/karnataka-childs-body-recovered-from-forest-stream-uncle-held-3487283/",
-    "source": "Siasat Daily",
-    "published": "Thu, 11 Jun 2026 15:04:23 +0000",
-    "description": "<p>Davanagere: A seven-year-old boy who went to collect honey with his uncle was found dead in a forest stream in Davanagere. Aditya was a resident of Gandhinagar village in Jagaluru taluk. His uncle, Tavarenaik, 40, has been arrested and taken into police custody. On June 9, the child reportedly accompanied Tavarenaik into the forest area &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2025/08/Untitled-design-2025-08-15T202529.893.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "347aefc44be4652e7a03c7981e42ae6e",
-    "title": "Kharge, Khera, elected unopposed from Karnataka to Rajya Sabha",
-    "link": "https://www.siasat.com/kharge-khera-elected-unopposed-from-karnataka-to-rajya-sabha-3487285/",
-    "source": "Siasat Daily",
-    "published": "Thu, 11 Jun 2026 14:57:41 +0000",
-    "description": "<p>Bengaluru: Four candidates, including three from the Congress and one from the BJP, were elected unopposed to the Rajya Sabha from Karnataka after the withdrawal deadline ended without any contest. The elected members are Congress nominees Mallikarjun Kharge, Pawan Khera, and Mansoor Ali Khan, along with BJP candidate M Nagaraj. Returning Officer KM Vishalakshi officially &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City New",
-    "category": "Govt",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/Untitled-design-2026-06-11T202705.062.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "f838325b8310f0be68b396b1c62997e1",
-    "title": "Hyderabad to witness drinking water disruption in these areas",
-    "link": "https://www.siasat.com/hyderabad-to-witness-drinking-water-disruption-in-these-areas-3487277/",
-    "source": "Siasat Daily",
-    "published": "Thu, 11 Jun 2026 14:48:07 +0000",
-    "description": "<p>Hyderabad: Several parts of Hyderabad would face a drinking water situation on Friday, June 12, following a major leakage in the main pipeline of the Manjeera Phase-II water supply system near Rudraram village. According to the Hyderabad Metropolitan Water Supply and Sewerage Board (HMWSSB), water supply will be disrupted to rectify the leak. Also ReadBeware &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad C",
-    "category": "Transit",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2024/12/water-supply.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "6730a56ee14bdf1a23ad890bc254b58c",
-    "title": "Dubai jobs: TOMCOM seeks cab drivers, bike riders",
-    "link": "https://www.siasat.com/dubai-jobs-tomcom-seeks-cab-drivers-bike-riders-3487276/",
-    "source": "Siasat Daily",
-    "published": "Thu, 11 Jun 2026 14:48:04 +0000",
-    "description": "<p>Hyderabad: The Telangana Overseas Manpower Company Limited (TOMCOM) on Thursday, June 11, invited applications for job opportunities in Dubai as cab drivers and bike riders. According to a release, the cab driver position offers a monthly income from AED 2,500 to AED 4,000 (approximately Rs 64,850 to Rs 1,03,770). For bike riders, expect a monthly &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a",
-    "category": "General",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2025/11/Untitled-design-30.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
+    "correlated_civic_entities": []
   },
   {
     "id": "246003c72653b1cfbdd0ccf7a1acd658",
@@ -1044,20 +1074,6 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "9fe899cf25dfca32091be15ac2b1b5a1",
-    "title": "AP News | జగన్‌ బొద్దింక.. అందుకే జనం హిట్‌ కొట్టి తరిమారు : టీడీపీ ఎమ్మెల్సీ శ్రీకాంత్",
-    "link": "https://www.ntnews.com/news/ap-news-jagan-is-a-cockroach-that-is-why-the-people-hit-and-drove-him-away-tdp-mlc-srikanth-2417616",
-    "source": "Namasthe Telangana",
-    "published": "Thu, 11 Jun 2026 19:43:40 +0530",
-    "description": "AP News &#124; మాజీ ముఖ్యమంత్రి జగన్ నిజంగానే ఒక బొద్దింక లాంటి వారని, అందుకే 2024 ఎన్నికల్లో ప్రజలు ఓటు అనే 'హిట్‌' తో గట్టిగా కొట్టి తరిమేశారని టీడీపీ ఎమ్మెల్సీ కంచర్ల శ్రీకాంత్ తీవ్రస్థాయిలో ధ్వజమెత్తారు. ముఖ్యమంత్రి చంద్రబాబు గురించి మాట్లాడే కనీస అర్హత కూడా జగన్‌కు లేదని ఆయన మండిపడ్డారు.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/06/MLC-Srikanth-1024x576.gif",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
     "id": "19586838743d1c15ed6e13c0bfed126c",
     "title": "Blockade impartial: US rains Hellfire missiles on Jalveer, 20 Indians rescued",
     "link": "https://www.indiatoday.in/world/story/us-israel-iran-war-strait-of-hormuz-american-forces-hellfire-missiles-mt-jalveer-indian-crew-impartial-blockade-2925263-2026-06-11?utm_source=rss",
@@ -1077,24 +1093,10 @@
     "link": "https://www.indiatoday.in/world/us-news/story/trump-says-us-will-hit-iran-very-hard-tonight-will-take-kharg-island-in-future-2925236-2026-06-11?utm_source=rss",
     "source": "India Today",
     "published": "Thu, 11 Jun 2026 18:05:34 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/world/us-news/story/trump-says-us-will-hit-iran-very-hard-tonight-will-take-kharg-island-in-future-2925236-2026-06-11\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202606/trump-warning-on-kharg-island-174201912-16x9.jpg?VersionId=o6RejfFhVV4opK9asAOWxm3jxlbR5zSZ\" width=\"305\" /> </a> Trump warns of Iran strikes tonight Venezuelalike takeover of its oil in future",
+    "description": "<a href=\"https://www.indiatoday.in/world/us-news/story/trump-says-us-will-hit-iran-very-hard-tonight-will-take-kharg-island-in-future-2925236-2026-06-11\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202606/kharg-island--trump-112254383-16x9_0.jpg?VersionId=V2U39D51cinLrF9aDHsBQfLHosXAvEi8\" width=\"305\" /> </a> Trump warns of Iran strikes tonight Venezuelalike takeover of its oil in future",
     "category": "Govt",
     "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202606/trump-warning-on-kharg-island-174201912-16x9.jpg?VersionId=o6RejfFhVV4opK9asAOWxm3jxlbR5zSZ",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "06e2182d45f365577d1caa5ab77a50cc",
-    "title": "Pentagon evacuated, multiple floors locked down over possible hazardous exposure",
-    "link": "https://www.indiatoday.in/world/us-news/story/pentagon-evacuated-as-us-officials-probe-possible-hazardous-exposure-multiple-floors-under-lockdown-2925346-2026-06-11?utm_source=rss",
-    "source": "India Today",
-    "published": "Thu, 11 Jun 2026 21:21:54 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/world/us-news/story/pentagon-evacuated-as-us-officials-probe-possible-hazardous-exposure-multiple-floors-under-lockdown-2925346-2026-06-11\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202606/pentagon-115928823-16x9_0.jpg?VersionId=8cbT6dF6LZ4TTGdR5wG2sf3rV2DUiRz8\" width=\"305\" /> </a> Pentagon evacuated multiple floors locked down over possible hazardous exposure",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202606/pentagon-115928823-16x9_0.jpg?VersionId=8cbT6dF6LZ4TTGdR5wG2sf3rV2DUiRz8",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202606/kharg-island--trump-112254383-16x9_0.jpg?VersionId=V2U39D51cinLrF9aDHsBQfLHosXAvEi8",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1109,6 +1111,20 @@
     "category": "Safety",
     "region": "Telangana",
     "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202606/led-by-shafiqur-rahman--bangladesh-jamaat-e-islami-heads-an-11-party-opposition-coalition-in-banglad-114236373-16x9_0.jpg?VersionId=4MzxDpeQ8fIHsSUkO0t0UHsT4LJn1kMu",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "724e13b4e5b98ee0609607f8b20716a9",
+    "title": "Opening Ceremony Live: Shakira set to light up Azteca ahead of opener",
+    "link": "https://www.indiatoday.in/sports/football/story/fifa-world-cup-2026-opening-ceremony-live-updates-mexico-vs-south-africa-south-korea-vs-czechia-matches-2925362-2026-06-11?utm_source=rss",
+    "source": "India Today",
+    "published": "Thu, 11 Jun 2026 22:00:17 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/sports/football/story/fifa-world-cup-2026-opening-ceremony-live-updates-mexico-vs-south-africa-south-korea-vs-czechia-matches-2925362-2026-06-11\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202606/shakira-112947526-16x9_0.jpg?VersionId=XR2z5gpVMfpk.EzOmZrZEWuc8xURu5yP\" width=\"305\" /> </a> Opening Ceremony Live Shakira set to light up Azteca ahead of opener",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202606/shakira-112947526-16x9_0.jpg?VersionId=XR2z5gpVMfpk.EzOmZrZEWuc8xURu5yP",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1297,7 +1313,7 @@
   },
   {
     "id": "0e5f164de3e501f7d1257885760e1051",
-    "title": "US stocks | SpaceX IPO draws more than $70 billion in retail orders: Report",
+    "title": "US stocks | SpaceX IPO draws over $70 billion from retail investors ahead of record stock market debut",
     "link": "https://economictimes.indiatimes.com/markets/us-stocks/news/spacex-ipo-draws-more-than-70-billion-in-retail-orders-report/articleshow/131661404.cms",
     "source": "Economic Times Markets",
     "published": "Thu, 11 Jun 2026 19:18:30 +0530",
@@ -1338,53 +1354,95 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "23388cca0d364878050c1ba90733507a",
-    "title": "India’s space push: IN-SPACe funds startups building 800 kN engine, AI model and star tracker",
-    "link": "https://www.thehindubusinessline.com/news/science/in-space-selects-3-start-ups-for-funding-under-its-technology-adoption-fund-scheme/article71088609.ece",
+    "id": "415cad345d14855ef0e77f7991012d4f",
+    "title": "Air India Ahmedabad crash report may take a few more months to complete: sources",
+    "link": "https://www.thehindubusinessline.com/economy/logistics/air-india-ahmedabad-crash-report-may-take-a-few-more-months-to-complete-sources/article71090476.ece",
     "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:31:56 +0530",
-    "description": "The initiative aims to accelerate commercialisation of indigenous space solutions and strengthen India’s private space ecosystem by supporting companies from development to deployment",
-    "category": "General",
+    "published": "Thu, 11 Jun 2026 22:19:40 +0530",
+    "description": "Final investigation report likely in two-three months’ time; probe on track, say sources",
+    "category": "Safety",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/yhdfd0/article71088706.ece/alternates/LANDSCAPE_1200/IMG_BL20_Startup_rocket_2_1_MC86E99U.jpg",
+    "image_url": "https://bl-i.thgim.com/public/incoming/laan25/article71090549.ece/alternates/LANDSCAPE_1200/freshfile.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "9fb3524a6b469c1a423a4e85b7a34b92",
-    "title": "France invites ‘top priority’ partner India to all six sessions of G7 meet",
-    "link": "https://www.thehindubusinessline.com/economy/france-invites-top-priority-partner-india-to-all-six-sessions-of-g7-meet/article71090271.ece",
+    "id": "c2548687faf522fb6930e6fb631e74ef",
+    "title": "Zinc futures: Sell for a target of ₹350",
+    "link": "https://www.thehindubusinessline.com/portfolio/technical-analysis/commodity-calls/zinc-futures-sell-for-a-target-of-350/article71087734.ece",
     "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:31:36 +0530",
-    "description": "PM Modi to attend summit in Evian, discuss defence deals, innovation partnership",
+    "published": "Thu, 11 Jun 2026 22:17:59 +0530",
+    "description": "The contract is likely to undergo a correction",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/jd60fs/article71090310.ece/alternates/LANDSCAPE_1200/PTI06_10_2026_000437B.jpg",
+    "image_url": "https://bl-i.thgim.com/public/incoming/mwu7gd/article71087757.ece/alternates/LANDSCAPE_1200/Supply-side-risGQ9FU0F85.5.jpg.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "4fa7c9f248d58d5d2899ef0ed7d82ac5",
-    "title": "Game’s on",
-    "link": "https://www.thehindubusinessline.com/opinion/editorial/games-on/article71090391.ece",
+    "id": "420bcadab64ac0d327f7ab95087fcc1d",
+    "title": "Capex by CPSEs, Railway Board, NHAI touched over 17% in April-May",
+    "link": "https://www.thehindubusinessline.com/economy/capex-by-cpses-railway-board-nhai-touched-over-17-in-april-may/article71089612.ece",
     "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:29:38 +0530",
-    "description": "FIFA Cup promises to surprise and enthral",
+    "published": "Thu, 11 Jun 2026 22:16:32 +0530",
+    "description": "Over ₹1.44 lakh crore spent in two months of FY27; GAIL (India) tops the table",
+    "category": "Transit",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/csfrpf/article71089940.ece/alternates/LANDSCAPE_1200/IMG_BL2608_Banking_Lead__5_1_42D86TMD.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "9de94b78bf37f7e5eeb0d71c4d526bb7",
+    "title": "Score goals, save more: Supplyco launches FIFA World Cup-themed discounts",
+    "link": "https://www.thehindubusinessline.com/news/variety/score-goals-save-more-supplyco-launches-fifa-world-cup-themed-discounts/article71087861.ece",
+    "source": "Business Line",
+    "published": "Thu, 11 Jun 2026 22:15:17 +0530",
+    "description": "The Kerala State Civil Supplies Corporation (Supplyco) has launched ‘Supplyco Soccer Eleven’ to merge the excitement of the world’s biggest football tournament with everyday shopping",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/kadw3s/article71090392.ece/alternates/LANDSCAPE_1200/2026-06-11T075220Z_858142190_MT1USATODAY29172453_RTRMADP_3_SOCCER-FIFA-WORLD-CUP-2026-CITY-SCENES.JPG",
+    "image_url": "https://bl-i.thgim.com/public/incoming/hrtgok/article71088232.ece/alternates/LANDSCAPE_1200/1660926540412.jfif",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "72614746cf644d673bcaf32b491cfcd0",
+    "title": "Wheeled construction equipment sales fall 17.5% in May; JCB expands market lead",
+    "link": "https://www.thehindubusinessline.com/news/wheeled-construction-equipment-sales-fall-175-in-may-jcb-expands-market-lead/article71089390.ece",
+    "source": "Business Line",
+    "published": "Thu, 11 Jun 2026 22:14:14 +0530",
+    "description": "Industry sales in May 2026 declined nearly 20 per cent sequentially, indicating a broad-based demand moderation in the segment",
+    "category": "Transit",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/dqcobj/article71089580.ece/alternates/LANDSCAPE_1200/919263.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "49aa038d62dcc7647f9847678f34450f",
+    "title": "The sectors dominating India’s start-up landscape",
+    "link": "https://www.thehindubusinessline.com/data-stories/data-focus/the-sectors-dominating-indias-start-up-landscape/article71088788.ece",
+    "source": "Business Line",
+    "published": "Thu, 11 Jun 2026 22:12:15 +0530",
+    "description": "In India, start-ups have been created in different sectors of the economy, apart from technology and related sectors",
+    "category": "Business",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/wqgakq/article71089966.ece/alternates/LANDSCAPE_1200/IMG_Project_startup_conc_2_1_R8DBORNV.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
     "id": "4180c9a342561fcf2dc73b5921b00447",
-    "title": "Gujarat to set up space manufacturing hub near Khoraj in Ahmedabad; ₹100 crore testing facility planned for start-ups",
+    "title": "Gujarat to set up space manufacturing hub in Ahmedabad",
     "link": "https://www.thehindubusinessline.com/news/gujarat-to-set-up-space-manufacturing-hub-near-khoraj-in-ahmedabad-100-crore-testing-facility-planned-for-start-ups/article71090045.ece",
     "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:19:47 +0530",
+    "published": "Thu, 11 Jun 2026 22:05:29 +0530",
     "description": "Officials said the model is designed to make it easier for start-ups and smaller companies to enter the space sector by giving them access to high-end testing infrastructure that is typically available only with large organisations.",
     "category": "General",
     "region": "Telangana",
@@ -1394,85 +1452,43 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "bfab867b7b01a14926d7f3a7696f3fac",
-    "title": "Pocket",
-    "link": "https://www.thehindubusinessline.com/opinion/cartoons/pocket/article71089598.ece",
+    "id": "bc1d439a89eaecd39a312f08ca4d3baf",
+    "title": "Rafale deal unlikely to be announced during PM Modi’s France visit",
+    "link": "https://www.thehindubusinessline.com/news/rafale-deal-unlikely-to-be-announced-during-pm-modis-france-visit/article71090313.ece",
     "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:14:10 +0530",
-    "description": "",
+    "published": "Thu, 11 Jun 2026 21:59:41 +0530",
+    "description": "France engaging with India’s demand for access to source codes, manufacture aircraft in India",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/opinion/31b11d/article71089597.ece/alternates/LANDSCAPE_1200/Pocket-June12.jpg",
+    "image_url": "https://bl-i.thgim.com/public/incoming/goo2at/article71090448.ece/alternates/LANDSCAPE_1200/TH05-Saurabh-DAGVOFHTI9P.2.jpg.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "d838356353f77c48e3db65fe8f13bcc8",
-    "title": "Letters to the Editor dated June 11, 2026",
-    "link": "https://www.thehindubusinessline.com/opinion/letters/letters-to-editor/article71090239.ece",
+    "id": "b465a0e48787675cc9925f28328e652c",
+    "title": "Lava eyes 10% market share in sub-₹30,000 smartphone market",
+    "link": "https://www.thehindubusinessline.com/companies/lava-eyes-10-market-share-in-sub-30000-smartphone-market/article71090269.ece",
     "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:13:46 +0530",
-    "description": "",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "19a94a19f1bc93f8c88fead5d7a3c141",
-    "title": "Banks raise MCLR amid tight liquidity",
-    "link": "https://www.thehindubusinessline.com/money-and-banking/indian-banks-raise-mclr-amid-tight-liquidity/article71086147.ece",
-    "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:11:58 +0530",
-    "description": "Canara Bank raised MCLR for overnight to six-month tenures by 5 bps, while leaving longer-tenure rates unchanged",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/m2k91p/article71090312.ece/alternates/LANDSCAPE_1200/IMG_Cumulative-repo_GTB9_2_1_EF9NSCBF.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "93bc9c7f6498d5944d2d88e143da74e1",
-    "title": "India’s horticulture production rises to 378 mln ton in 2025-26, says Govt",
-    "link": "https://www.thehindubusinessline.com/economy/agri-business/indias-horticulture-production-rises-to-378-mln-ton-in-2025-26-says-govt/article71089747.ece",
-    "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:10:03 +0530",
-    "description": "Higher yields and marginal increase in acreage drive output growth",
-    "category": "Govt",
-    "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/7tee4k/article71090309.ece/alternates/LANDSCAPE_1200/DSC_9259.JPG",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "a2960a091b4ab606d55fb6f7b5c38c52",
-    "title": "19-year-old who exposed CBSE's OSM system flaws hired by IIT-Kanpur",
-    "link": "https://www.thehindubusinessline.com/news/19-year-old-who-exposed-cbses-osm-system-flaws-hired-by-iit-kanpur/article71090268.ece",
-    "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:09:45 +0530",
-    "description": "The move comes at a time when concerns over the security of digital public infrastructure are intensifying, especially in education and governance",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/8ishpv/article71090326.ece/alternates/LANDSCAPE_1200/download%202.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "736692df971f95d8b746a4971f2a2eae",
-    "title": "Trade sees India’s 2026-27 cotton carry-forward stocks 42% up at 85 lakh bales on higher imports",
-    "link": "https://www.thehindubusinessline.com/economy/agri-business/trade-sees-indias-2026-27-cotton-carry-forward-stocks-42-up-at-85-lakh-bales-on-higher-imports/article71089842.ece",
-    "source": "Business Line",
-    "published": "Thu, 11 Jun 2026 21:09:38 +0530",
-    "description": "Imports rise 32 per cent till May. With duty exemption total imports may top 60 lakh bales",
+    "published": "Thu, 11 Jun 2026 21:59:40 +0530",
+    "description": "Set to launch its flagship Agni series in the UK soon",
     "category": "Business",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/todays-paper/tp-agri-biz-and-commodity/j05bg2/article70926457.ece/alternates/LANDSCAPE_1200/Agriculture-MinG0GFU12DP.4.jpg.jpg",
+    "image_url": "https://bl-i.thgim.com/public/incoming/boy6rp/article71090514.ece/alternates/LANDSCAPE_1200/Lavas.jpeg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "60642594ba5647eeccb7d2caae4ff945",
+    "title": "SAT to hear pleas by five offshore funds named in Hindenburg report",
+    "link": "https://www.thehindubusinessline.com/news/sat-to-hear-case-against-sebi/article71090347.ece",
+    "source": "Business Line",
+    "published": "Thu, 11 Jun 2026 21:59:39 +0530",
+    "description": "Funds challenge SEBI’s adjudication proceedings for not considering earlier responses to show-cause notices",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/bx2njx/article71090490.ece/alternates/LANDSCAPE_1200/SEBI-set-to-easGP2G3JM7I.4.jpg.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -2182,7 +2198,7 @@
     "title": "प्रधानमंत्री श्री नरेन्द्र मोदी ने नीति आयोग की 11वीं शासी परिषद की बैठक की अध्यक्षता की",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271866",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2196,7 +2212,7 @@
     "title": "बायोफार्मास्युटिकल्स आधुनिक स्वास्थ्य सेवा के भविष्य को आकार दे रहे हैं; भारत एक वैश्विक अगुवा के रूप में उभरने के लिए मजबूत स्थिति में है : श्रीमती अनुप्रिया पटेल",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271864",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2210,7 +2226,21 @@
     "title": "भारतीय नौसेना ने कोच्चि के पास एक मर्चेंट टैंकर से बिना फटे मिसाइल वॉरहेड को सुरक्षित ढंग से बरामद किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271873",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
+    "description": "",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "3f7634c5eb545cc035d9825ebdeb0196",
+    "title": "भारत के विकसित अर्थव्यवस्थाओं के साथ मुक्त व्यापार समझौते विकास, नवाचार, बेहतर गुणवत्ता और रोजगार निर्माण को बढ़ावा देंगे: केंद्रीय वाणिज्य एवं उद्योग मंत्री श्री पीयूष गोयल",
+    "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271867",
+    "source": "PIB Hyderabad",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2224,7 +2254,7 @@
     "title": "पश्चिम एशिया में हाल के घटनाक्रमों पर विभिन्न मंत्रालयों द्वारा जानकारी",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271862",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2238,7 +2268,7 @@
     "title": "उप राष्ट्रपति ने संसद टीवी इंटर्नशिप कार्यक्रम के समापन समारोह में उभरते पत्रकारों से सत्य, निष्पक्षता और लोकहित बनाए रखने का आह्वान किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271823",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2252,7 +2282,7 @@
     "title": "प्रधानमंत्री नरेन्‍द्र मोदी के नेतृत्व में वस्‍त्र क्षेत्र अभूतपूर्व प्रगति और बदलाव का साक्षी बना : श्री गिरिराज सिंह",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271838",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2266,7 +2296,7 @@
     "title": "कृषि एवं किसान कल्याण विभाग ने बागवानी फसलों के क्षेत्रफल और उत्पादन के वर्ष 2025-26 के द्वितीय अग्रिम अनुमान जारी किये",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271773",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2280,7 +2310,7 @@
     "title": "भारत की अध्यक्षता में 13वें ब्रिक्स शहरीकरण फोरम का नई दिल्ली में शुभारंभ",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271817",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2294,21 +2324,7 @@
     "title": "उत्तर प्रदेश के मुख्यमंत्री ने प्रधानमंत्री से मुलाकात की",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271787",
     "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
-    "description": "",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "4a34acc00b5843bb711fd9e4edd6fd2c",
-    "title": "तमिलनाडु के मुख्यमंत्री ने प्रधानमंत्री से मुलाकात की",
-    "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2271784",
-    "source": "PIB Hyderabad",
-    "published": "Thu, 11 Jun 2026 16:08:01 +0530",
+    "published": "Thu, 11 Jun 2026 16:53:35 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
