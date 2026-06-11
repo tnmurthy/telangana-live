@@ -1,0 +1,23 @@
+[
+  {
+    "district": "Khammam",
+    "productName": "Chillies",
+    "description": "Khammam is well-known for its extensive cultivation of high-quality red chillies. The district's fertile soil and favorable climate contribute to the production of spicy and vibrant chillies that are exported widely.",
+    "artisanCount": 15000,
+    "imageUrl": "https://images.unsplash.com/photo-1596649299486-4cdea56fd59d?w=800&q=80"
+  },
+  {
+    "district": "Nalgonda",
+    "productName": "Sweet Orange",
+    "description": "Nalgonda has been identified for its Sweet Orange cultivation under the ODOP scheme. The region's agricultural conditions are highly suitable for this crop, yielding sweet and juicy citrus fruits.",
+    "artisanCount": 8000,
+    "imageUrl": "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=800&q=80"
+  },
+  {
+    "district": "Mahbubnagar",
+    "productName": "Mango (Banaganapalle)",
+    "description": "Famous for the Banaganapalle variety of Mangoes, Mahbubnagar produces some of the finest quality mangoes in the state. These mangoes are celebrated for their unique taste, golden color, and thin skin.",
+    "artisanCount": 12000,
+    "imageUrl": "https://images.unsplash.com/photo-1553279768-865429fa0078?w=800&q=80"
+  }
+]

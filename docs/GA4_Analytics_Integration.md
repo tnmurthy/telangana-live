@@ -33,14 +33,14 @@ Open your global layout file (`index.html`) and paste the unified tracking snipp
      crossorigin="anonymous"></script>
 
     <!-- Google Analytics 4 (GA4) Tracking Tag -->
-    <script async src="https://googletagmanager.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM7S4MKFS1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       // Tells GA4 to automatically initialize and log basic pageviews
-      gtag('config', 'G-YOUR_MEASUREMENT_ID', {
+      gtag('config', 'G-WM7S4MKFS1', {
         'anonymize_ip': true,
         'cookie_flags': 'SameSite=None;Secure'
       });
@@ -51,7 +51,7 @@ Open your global layout file (`index.html`) and paste the unified tracking snipp
 </body>
 </html>
 ```
-*Note: Make sure to change `G-YOUR_MEASUREMENT_ID` in both lines of the tracking script with your real measurement identifier code string.*
+*Note: The script above is pre-configured with the production Measurement ID: G-WM7S4MKFS1.*
 
 ---
 

@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { Icons } from '../components/Icons';
+import { IndianRupee, Cloud, TriangleAlert, TrainFront, Phone, Hospital } from 'lucide-react';
 import { partners } from '../data/partners';
 import PartnerCard from '../components/PartnerCard';
 import DailyRatesDashboard from '../components/DailyRatesDashboard';
@@ -13,50 +14,38 @@ import NewsCard from '../components/NewsCard';
 import newsData from '../data/news.json';
 import PowerTariffCard from '../components/PowerTariffCard';
 import ServicesDirectory from '../components/ServicesDirectory';
+import OdopWidget from '../components/OdopWidget';
 import NotFound from './NotFound';
 import { districtNewsSources } from '../data/districtNewsSources';
+import odopData from '../data/odopData.json';
+import districtsData from '../data/districts.json';
 
-const regionMetadata = {
-    hyderabad: {
-        title: 'Hyderabad Central',
-        subtitle: 'Heritage, Old City & Residual GHMC Focus',
-        icon: 'Heritage',
-        district: 'Hyderabad'
-    },
-    cyberabad: {
-        title: 'Cyberabad IT Corridor',
-        subtitle: 'CMC - Madhapur, Gachibowli & Hitech City Focus',
-        icon: 'AI',
-        district: 'Cyberabad'
-    },
-    malkajgiri: {
-        title: 'Malkajgiri Residential',
-        subtitle: 'MMC - East Hyderabad & Residential Focus',
-        icon: 'Building',
-        district: 'Malkajgiri'
-    },
-    warangal: {
-        title: 'Warangal Heritage City',
-        subtitle: 'Kakatiya Heritage, GWMC Civic & Tri-Cities Focus',
-        icon: 'Heritage',
-        district: 'Warangal'
-    },
-    karimnagar: {
-        title: 'Karimnagar Smart City',
-        subtitle: 'Granite Hub & Karimnagar Municipal Corporation Focus',
-        icon: 'Building',
-        district: 'Karimnagar'
-    }
+const BentoBox = ({ title, icon, children, color = "telangana-red" }) => {
+    return (
+        <div className={`backdrop-blur-xl bg-white/40 dark:bg-card/40 border border-white/20 dark:border-white/10 rounded-3xl p-6 md:p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:bg-white/60 dark:hover:bg-white/10 group relative overflow-hidden flex flex-col h-full`}>
+            {/* Ambient Animated Orb */}
+            <div className={`absolute -top-10 -right-10 w-40 h-40 bg-${color}/10 dark:bg-${color}/5 rounded-full blur-[40px] group-hover:bg-${color}/20 group-hover:scale-110 transition-all duration-700`}></div>
+            
+            <div className="relative z-10 flex items-center gap-3 mb-6">
+                {icon && <span className={`text-${color} group-hover:scale-110 transition-transform duration-300`}>{icon}</span>}
+                <h3 className="font-black text-xl tracking-tight text-text">{title}</h3>
+            </div>
+            
+            <div className="relative z-10 flex-grow animate-in fade-in duration-500">
+                {children}
+            </div>
+        </div>
+    );
 };
 
 export default function SubRegionPage() {
     const { region } = useParams();
 
-    if (region && !regionMetadata[region]) {
+    if (region && !districtsData[region]) {
         return <NotFound />;
     }
 
-    const meta = regionMetadata[region] || regionMetadata.hyderabad;
+    const meta = districtsData[region] || districtsData.hyderabad;
     const regionPartners = partners[region] || [];
 
     // dynamic Breadcrumb Schema
@@ -98,16 +87,7 @@ export default function SubRegionPage() {
 
     const regionNews = useMemo(() => {
         const district = meta.district.toLowerCase();
-        
-        // Define localized keywords for fallback filtering
-        const keywordsMap = {
-            hyderabad: ['hyderabad', 'charminar', 'mehdipatnam', 'secunderabad', 'old city', 'ghmc'],
-            cyberabad: ['cyberabad', 'hitech city', 'gachibowli', 'madhapur', 'kondapur', 'knowledge city', 'it corridor'],
-            malkajgiri: ['malkajgiri', 'alwal', 'kukatpally', 'kapra', 'uppal', 'quthbullapur', 'medchal'],
-            warangal: ['warangal', 'hanmakonda', 'kazipet', 'kakatiya', 'gwmc', 'tri-cities'],
-            karimnagar: ['karimnagar', 'smart city', 'granite']
-        };
-        const keywords = keywordsMap[district] || [district];
+        const keywords = meta.keywords || [district];
 
         // 1. Filter articles explicitly matching region name OR containing key keywords
         let matched = newsData.filter(item => {
@@ -130,12 +110,12 @@ export default function SubRegionPage() {
         }
 
         return matched.slice(0, 6);
-    }, [meta.district]);
+    }, [meta]);
 
     const localSources = districtNewsSources[meta.district] || [];
 
     return (
-        <div className="space-y-8 sm:space-y-10 animate-fade-in">
+        <div className="space-y-12 lg:space-y-16 animate-fade-in p-2 md:p-4 pb-24 max-w-7xl mx-auto">
             <Helmet>
                 <title>{meta.title} News & Local Updates - Telangana.live</title>
                 <meta name="description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
@@ -171,6 +151,11 @@ export default function SubRegionPage() {
                 </div>
             </div>
 
+            {/* Local Pride: ODOP Widget */}
+            {odopData && odopData[meta.district] && (
+                <OdopWidget data={odopData[meta.district]} />
+            )}
+
             {/* Partner Spotlight Section */}
             <section id="spotlight">
                 <div className="section-header">
@@ -192,25 +177,32 @@ export default function SubRegionPage() {
                 </div>
             </section>
 
-            {/* Localized Rates & Weather Wrapper */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2">
+            {/* Bento Grid: Local Utilities & Data */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+                <BentoBox title="Daily Rates & Fuel" icon={<IndianRupee className="w-6 h-6" />} color="telangana-gold">
                     <DailyRatesDashboard />
-                </div>
-                <div className="space-y-6">
+                </BentoBox>
+
+                <BentoBox title="Weather & Environment" icon={<Cloud className="w-6 h-6" />} color="telangana-blue">
                     <WeatherCard selectedDistrict={meta.district} />
+                </BentoBox>
+
+                <BentoBox title="Power & Tariffs" icon={<TriangleAlert className="w-6 h-6" />} color="telangana-red">
                     <PowerTariffCard />
-                </div>
+                </BentoBox>
+
+                <BentoBox title="Local Transport" icon={<TrainFront className="w-6 h-6" />} color="telangana-green">
+                    <MetroCard />
+                </BentoBox>
+
+                <BentoBox title="Healthcare Finder" icon={<Hospital className="w-6 h-6" />} color="telangana-red">
+                    <BasthiDawakhana />
+                </BentoBox>
+
+                <BentoBox title="Services Directory" icon={<Phone className="w-6 h-6" />} color="telangana-gold">
+                    <ServicesDirectory />
+                </BentoBox>
             </div>
-
-            {/* Local Transport focus */}
-            <MetroCard />
-
-            {/* Local Health Finder */}
-            <BasthiDawakhana />
-
-            {/* Services Directory */}
-            <ServicesDirectory />
 
             {/* Local News Feed */}
             <section id="local-news" className="space-y-6">

@@ -1,0 +1,23 @@
+[
+  {
+    "district": "Warangal",
+    "productName": "Warangal Durries",
+    "description": "Warangal Durries are beautiful, thick cotton rugs known for their rich colors and geometric patterns. These traditional handwoven carpets are a testament to the skill of local weavers and represent centuries of textile heritage.",
+    "artisanCount": 3500,
+    "imageUrl": "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    "district": "Karimnagar",
+    "productName": "Silver Filigree",
+    "description": "Karimnagar is renowned for its intricate Silver Filigree, an ancient art form involving delicate silver wires shaped into stunning decorative items and jewelry. This delicate craft showcases extraordinary precision and artistic vision.",
+    "artisanCount": 1500,
+    "imageUrl": "https://images.unsplash.com/photo-1599643478524-fb8245842825?q=80&w=2000&auto=format&fit=crop"
+  },
+  {
+    "district": "Nizamabad",
+    "productName": "Turmeric",
+    "description": "Nizamabad is one of the largest producers of high-quality turmeric in India, known for its distinct aroma and rich curcumin content. This golden spice is not only a culinary staple but also holds immense medicinal and cultural significance.",
+    "artisanCount": 12000,
+    "imageUrl": "https://images.unsplash.com/photo-1615486171448-4fdcf5aa3f38?q=80&w=2000&auto=format&fit=crop"
+  }
+]
