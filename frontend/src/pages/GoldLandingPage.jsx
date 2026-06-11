@@ -1,12 +1,36 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { goldRates as staticGoldRates } from '../data/goldRates';
 import { fetchGoldRates } from '../services/pricesService';
 import ShareWhatsApp from '../components/ShareWhatsApp';
 import DateTimeBar from '../components/DateTimeBar';
+import useJsonLd from '../hooks/useJsonLd';
 
 export default function GoldLandingPage() {
     const [goldRates, setGoldRates] = useState(staticGoldRates);
     const currentMonthYear = new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+
+    // Breadcrumb Schema
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://telangana.live/dashboard"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Gold Rates",
+                "item": "https://telangana.live/rates/gold"
+            }
+        ]
+    };
+
+    useJsonLd(breadcrumbSchema, 'breadcrumb-gold-rates');
 
     useEffect(() => {
         fetchGoldRates().then(data => {
@@ -26,6 +50,15 @@ export default function GoldLandingPage() {
 
     return (
         <div className="space-y-8 animate-fade-in">
+            <Helmet>
+                <title>Live Gold Rates in Hyderabad - 22K & 24K Gold Today | Telangana.live</title>
+                <meta name="description" content={`Check current gold rates in Hyderabad for 22K and 24K gold. Live silver prices, 7-day market history, and daily updates for ${currentMonthYear}.`} />
+                <link rel="canonical" href="https://telangana.live/rates/gold" />
+                <meta property="og:title" content="Live Gold Rates in Hyderabad - 22K & 24K Gold Today" />
+                <meta property="og:description" content={`Check current gold rates in Hyderabad for 22K and 24K gold. Live silver prices and daily updates for ${currentMonthYear}.`} />
+                <meta property="og:url" content="https://telangana.live/rates/gold" />
+                <meta name="twitter:title" content="Live Gold Rates in Hyderabad - 22K & 24K Gold Today" />
+            </Helmet>
             <div className="glass-card section-block relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 text-8xl opacity-10 pointer-events-none">✨</div>
                 <div className="relative z-10">

@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { newsService } from '../services/newsService';
 import NewsCard from '../components/NewsCard';
 import { Icons } from '../components/Icons';
@@ -8,6 +9,8 @@ import { SkeletonFeed } from '../components/SkeletonCard';
 import { useAppContext } from '../context/AppContext';
 import { useEmergency } from '../hooks/useEmergency';
 import { Link } from 'react-router-dom';
+import useJsonLd from '../hooks/useJsonLd';
+import LifeEventWizard from '../components/LifeEventWizard';
 
 const CATEGORIES = [
   { id: 'All', label: 'Briefing' },
@@ -45,6 +48,28 @@ export default function HomePage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [page, setPage] = useState(1);
   const sentinelRef = useRef(null);
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://telangana.live/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Dashboard",
+        "item": "https://telangana.live/dashboard"
+      }
+    ]
+  };
+
+  useJsonLd(breadcrumbSchema, 'breadcrumb-home');
 
   useEffect(() => {
     let isMounted = true;
@@ -131,6 +156,15 @@ export default function HomePage() {
 
   return (
     <div className="space-y-10 pb-20 max-w-5xl mx-auto px-4 mt-6">
+      <Helmet>
+        <title>Telangana.live - Real-Time Civic Intelligence Dashboard</title>
+        <meta name="description" content="Live dashboard for Hyderabad and Telangana. Real-time news, water schedules, power alerts, daily rates, and essential civic services." />
+        <link rel="canonical" href="https://telangana.live/dashboard" />
+        <meta property="og:title" content="Telangana.live - Real-Time Civic Intelligence Dashboard" />
+        <meta property="og:description" content="Live dashboard for Hyderabad and Telangana. Real-time news, water schedules, power alerts, and daily rates." />
+        <meta property="og:url" content="https://telangana.live/dashboard" />
+        <meta name="twitter:title" content="Telangana.live - Real-Time Civic Intelligence Dashboard" />
+      </Helmet>
       {/* Liquid Header section */}
       <section className="animate-liquid-in">
         <StoriesBar />
@@ -199,6 +233,11 @@ export default function HomePage() {
       </section>
 
       <DistrictOnboarding />
+
+      {/* Life Event Wizard (New Resident Setup) */}
+      <section className="animate-fade-in delay-200">
+        <LifeEventWizard />
+      </section>
 
       {/* Local District Briefing */}
       {activeCategory === 'All' && myDistrict && myDistrictNews.length > 0 && (

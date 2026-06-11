@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icons } from '../components/Icons';
+import { trackEvent } from '../hooks/usePageTracking';
 
 const SplashScreen = () => {
   return (
@@ -61,12 +62,14 @@ const SplashScreen = () => {
             <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 to="/dashboard"
+                onClick={() => trackEvent('cta_click', { label: 'Explore Dashboard', location: 'Splash' })}
                 className="px-7 py-3.5 bg-gradient-to-r from-telangana-green to-emerald-600 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-telangana-green/20 transform hover:-translate-y-0.5 transition-all duration-300 active:scale-95 text-sm"
               >
                 Explore Dashboard →
               </Link>
               <Link
                 to="/schemes"
+                onClick={() => trackEvent('cta_click', { label: 'Government Schemes', location: 'Splash' })}
                 className="px-7 py-3.5 bg-white/[0.05] text-white border border-white/[0.08] rounded-xl font-bold hover:bg-white/[0.08] hover:border-white/[0.12] transform hover:-translate-y-0.5 transition-all duration-300 active:scale-95 text-sm"
               >
                 Government Schemes

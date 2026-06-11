@@ -3,6 +3,7 @@ import { meesevaCategories, meesevaCentres } from '../data/meesevaData';
 import newsData from '../data/news.json';
 import { useAppContext } from '../context/AppContext';
 import { Icons } from '../components/Icons';
+import { trackEvent } from '../hooks/usePageTracking';
 
 // Custom inline SVGs for categories or UI elements not in standard Icons.jsx
 const CustomIcons = {
@@ -45,15 +46,15 @@ const getCategoryIcon = (iconName, className) => {
 
 export default function MeeSevaPage() {
   const { myDistrict } = useAppContext();
-  
+
   // States
   const [selectedCategory, setSelectedCategory] = useState('certificates');
   const [offeringsSearch, setOfferingsSearch] = useState('');
   const [expandedOffering, setExpandedOffering] = useState(null);
-  
+
   const [locatorDistrict, setLocatorDistrict] = useState(myDistrict || 'Hyderabad');
   const [locatorSearch, setLocatorSearch] = useState('');
-  
+
   const [trackingId, setTrackingId] = useState('');
   const [trackedStatus, setTrackedStatus] = useState(null);
   const [isTrackLoading, setIsTrackLoading] = useState(false);
@@ -65,6 +66,31 @@ export default function MeeSevaPage() {
     }
   }, [myDistrict]);
 
+  // Track category changes
+  const handleCategoryChange = (catId) => {
+    setSelectedCategory(catId);
+    trackEvent('meeseva_category_change', { category_id: catId });
+  };
+
+  // Track searches (debounced)
+  useEffect(() => {
+    if (offeringsSearch.length > 2) {
+      const timer = setTimeout(() => {
+        trackEvent('meeseva_offering_search', { search_term: offeringsSearch });
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [offeringsSearch]);
+
+  useEffect(() => {
+    if (locatorSearch.length > 2) {
+      const timer = setTimeout(() => {
+        trackEvent('meeseva_locator_search', { search_term: locatorSearch, district: locatorDistrict });
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [locatorSearch, locatorDistrict]);
+
   // Unique list of districts for centres locator
   const availableDistricts = useMemo(() => {
     return [...new Set(meesevaCentres.map(c => c.district))].sort();
@@ -74,9 +100,9 @@ export default function MeeSevaPage() {
   const filteredOfferings = useMemo(() => {
     const category = meesevaCategories.find(c => c.id === selectedCategory);
     if (!category) return [];
-    
+
     if (!offeringsSearch.trim()) return category.offerings;
-    
+
     const q = offeringsSearch.toLowerCase();
     return category.offerings.filter(o => 
       o.name.toLowerCase().includes(q) || 
@@ -87,7 +113,7 @@ export default function MeeSevaPage() {
   // Filtered MeeSeva centres
   const filteredCentres = useMemo(() => {
     let centres = meesevaCentres.filter(c => c.district.toLowerCase() === locatorDistrict.toLowerCase());
-    
+
     if (locatorSearch.trim()) {
       const q = locatorSearch.toLowerCase();
       centres = centres.filter(c => 
@@ -97,7 +123,6 @@ export default function MeeSevaPage() {
         c.pincode.includes(q)
       );
     }
-    
     return centres;
   }, [locatorDistrict, locatorSearch]);
 
@@ -115,6 +140,8 @@ export default function MeeSevaPage() {
     e.preventDefault();
     if (!trackingId.trim()) return;
 
+    trackEvent('meeseva_track_submit', { tracking_id: trackingId });
+
     setIsTrackLoading(true);
     setTrackedStatus(null);
 
@@ -125,7 +152,7 @@ export default function MeeSevaPage() {
       const idStr = trackingId.toUpperCase();
       const code = idStr.replace(/[^A-Z0-9]/g, '');
       const num = code.length > 0 ? code.charCodeAt(code.length - 1) % 4 : 2;
-      
+
       const stages = [
         { title: 'Application Submitted', date: 'May 22, 2026', desc: 'Received at MeeSeva counter & registered in portal.', status: 'completed' },
         { title: 'Documents Verified', date: 'May 24, 2026', desc: 'Mandal Revenue Inspector verified all submitted certificates.', status: num >= 1 ? 'completed' : 'active' },
@@ -140,6 +167,8 @@ export default function MeeSevaPage() {
         applicant: 'S. Ramakrishna Rao',
         service: 'Integrated Caste & Community Certificate'
       });
+
+      trackEvent('meeseva_track_success', { tracking_id: idStr, stage_index: num });
     }, 850);
   };
 
@@ -204,7 +233,7 @@ export default function MeeSevaPage() {
               <button
                 key={cat.id}
                 onClick={() => {
-                  setSelectedCategory(cat.id);
+                  handleCategoryChange(cat.id);
                   setExpandedOffering(null);
                 }}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${

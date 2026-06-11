@@ -251,6 +251,9 @@ export default function ArticleModal({ article, onClose }) {
       onClick={e => { if (e.target === backdropRef.current) onClose(); }}
     >
       <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="article-modal-title"
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 40, opacity: 0 }}
@@ -281,19 +284,22 @@ export default function ArticleModal({ article, onClose }) {
             <div className="flex items-center gap-1.5">
               {/* Font size controls */}
               <button onClick={() => setFontSize(f => Math.max(12, f - 1))}
+                aria-label="Decrease font size"
                 className="w-7 h-7 rounded-lg bg-white/[0.05] hover:bg-white/10 text-text-muted
                            hover:text-white transition-colors text-sm font-bold flex items-center justify-center">
-                A
+                <span aria-hidden="true">A</span>
               </button>
               <button onClick={() => setFontSize(f => Math.min(20, f + 1))}
+                aria-label="Increase font size"
                 className="w-7 h-7 rounded-lg bg-white/[0.05] hover:bg-white/10 text-text-muted
                            hover:text-white transition-colors text-base font-bold flex items-center justify-center">
-                A
+                <span aria-hidden="true">A</span>
               </button>
               <button onClick={onClose}
+                aria-label="Close article"
                 className="w-7 h-7 rounded-lg bg-white/[0.05] hover:bg-white/10 text-text-muted
                            hover:text-white transition-colors flex items-center justify-center">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -315,14 +321,14 @@ export default function ArticleModal({ article, onClose }) {
                 </div>
 
                 {/* Title */}
-                <h1 className="text-xl font-black text-white leading-tight" style={{ fontSize: `${fontSize + 5}px` }}>
+                <h1 id="article-modal-title" className="text-xl font-black text-white leading-tight" style={{ fontSize: `${fontSize + 5}px` }}>
                   {title}
                 </h1>
 
                 {/* AI Summary */}
                 {ai_summary && (
                   <div className="flex gap-2.5 p-3.5 rounded-xl bg-telangana-green/[0.06] border border-telangana-green/20">
-                    <svg className="w-4 h-4 text-telangana-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg aria-hidden="true" className="w-4 h-4 text-telangana-green flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
                     </svg>
                     <p className="text-sm text-text-secondary italic leading-relaxed" style={{ fontSize: `${fontSize - 1}px` }}>

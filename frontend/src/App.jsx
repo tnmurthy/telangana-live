@@ -17,6 +17,7 @@ import BreakingNewsBanner from './components/BreakingNewsBanner';
 import PulseCounter from './components/PulseCounter';
 import StickyAnchorAd from './components/StickyAnchorAd';
 import CookieConsent from './components/CookieConsent';
+import ProactiveAlerts from './components/ProactiveAlerts';
 
 // Lazy loading for production grade performance
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -110,6 +111,7 @@ function AppContent() {
   return (
     <div className="min-h-screen">
       <MainLayout isEmergencyActive={isEmergencyActive}>
+        <ProactiveAlerts />
         <ErrorBoundary>
           <Suspense fallback={<LoadingScreen />}>
             <Routes>

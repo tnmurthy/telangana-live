@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import { trackEvent } from '../hooks/usePageTracking';
 
 export default function StickyAnchorAd() {
     const [isVisible, setIsVisible] = useState(false);
@@ -20,6 +21,12 @@ export default function StickyAnchorAd() {
         if (!closedSession && !isCriticalRoute) {
             const timer = setTimeout(() => {
                 setIsVisible(true);
+                // Track Ad Impression
+                trackEvent('ad_impression', {
+                    ad_name: 'T-Fiber Broadband',
+                    ad_position: 'Sticky Anchor',
+                    page_path: location.pathname
+                });
             }, 2000);
             return () => clearTimeout(timer);
         }
@@ -28,6 +35,18 @@ export default function StickyAnchorAd() {
     const handleClose = () => {
         setIsVisible(false);
         sessionStorage.setItem('sticky_ad_closed', 'true');
+        trackEvent('ad_close', {
+            ad_name: 'T-Fiber Broadband',
+            ad_position: 'Sticky Anchor'
+        });
+    };
+
+    const handleAdClick = () => {
+        trackEvent('ad_click', {
+            ad_name: 'T-Fiber Broadband',
+            ad_position: 'Sticky Anchor',
+            destination_url: 'https://tfiber.telangana.gov.in'
+        });
     };
 
     const shouldShow = isVisible && !isCriticalRoute;
@@ -66,6 +85,7 @@ export default function StickyAnchorAd() {
                             href="https://tfiber.telangana.gov.in"
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={handleAdClick}
                             className="px-3 py-1.5 text-[10px] font-bold text-slate-950 bg-heritage-gold rounded-lg hover:bg-yellow-500 transition-all flex-shrink-0"
                         >
                             Apply ↗

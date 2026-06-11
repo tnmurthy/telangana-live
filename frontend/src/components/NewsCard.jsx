@@ -7,6 +7,8 @@ import ArticleModal from './ArticleModal';
 import { formatRelativeTime } from '../utils/timeUtils';
 import { useAppContext } from '../context/AppContext';
 
+import { trackEvent } from '../hooks/usePageTracking';
+
 const getCategoryCover = (category) => {
   const covers = {
     Govt: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=500&auto=format&fit=crop&q=80',
@@ -91,17 +93,34 @@ const NewsCard = ({ news, isSpotlight = false }) => {
   return (
     <>
       <article
+        tabIndex={0}
+        role="button"
+        aria-label={`Read article: ${title}`}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            recordRead();
+            setModalOpen(true);
+            trackEvent('article_view', {
+              article_id: id,
+              article_title: title,
+              article_category: category,
+              article_source: source,
+              article_region: region
+            });
+          }
+        }}
         onClick={() => {
           recordRead();
           setModalOpen(true);
-          // GTM Tracking Event
-          if (window.dataLayer) {
-            window.dataLayer.push({
-              event: 'article_view',
-              article_category: category,
-              article_source: source
-            });
-          }
+          // Unified Analytics Tracking
+          trackEvent('article_view', {
+            article_id: id,
+            article_title: title,
+            article_category: category,
+            article_source: source,
+            article_region: region
+          });
         }}
         className={`liquid-glass liquid-glass-hover group relative flex overflow-hidden cursor-pointer ${
           isSpotlight 
@@ -160,13 +179,16 @@ const NewsCard = ({ news, isSpotlight = false }) => {
             <div className="mt-2.5 mb-3 relative z-20">
               <button 
                 onClick={(e) => { e.stopPropagation(); setIsExpanded(!isExpanded); }}
+                aria-expanded={isExpanded}
+                aria-label={isExpanded ? "Hide full coverage" : "View full coverage"}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/5 hover:bg-emerald-500/10 border border-emerald-500/10 text-telangana-green text-[10px] font-black uppercase tracking-wider transition-all duration-300"
               >
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <svg aria-hidden="true" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5" />
                 </svg>
                 {isExpanded ? 'Hide' : 'View'} Full Coverage ({other_sources.length})
                 <svg 
+                  aria-hidden="true"
                   className={`w-2.5 h-2.5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
                   fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"
                 >
@@ -197,7 +219,14 @@ const NewsCard = ({ news, isSpotlight = false }) => {
                             href={src.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              trackEvent('view_other_coverage', {
+                                article_title: title,
+                                source: src.source,
+                                target_link: src.link
+                              });
+                            }}
                             className="text-xs text-white/80 hover:text-telangana-green hover:underline font-medium transition-all line-clamp-2"
                           >
                             {src.title}
