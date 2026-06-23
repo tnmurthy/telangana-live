@@ -1,0 +1,41 @@
+name: Test Agent
+
+on:
+  workflow_dispatch:   # manual only â€” re-enable push trigger once tests exist
+
+  
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r backend/requirements.txt
+
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Test imports
+      run: |
+        PYTHONPATH=backend python -c "from agents.content_monitor import ContentMonitor"
+        PYTHONPATH=backend python -c "from agents.content_generator import ContentGenerator"
+        PYTHONPATH=backend python -c "from agents.quality_checker import QualityChecker"
+        echo "All imports successful!"
+
+    - name: Run Python unit tests
+      run: python -m pytest tests/test_data_engine.py -v

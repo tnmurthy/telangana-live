@@ -1,0 +1,50 @@
+name: Hourly Weather Update
+
+on:
+  schedule:
+    - cron: '30 * * * *'
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Run Weather Scraper
+        env:
+          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
+        run: |
+          if [ -z "$OWM_API_KEY" ]; then
+            echo "OWM_API_KEY secret is not configured. Skipping weather update."
+            exit 0
+          fi
+          python backend/scripts/weather_scraper.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add frontend/src/data/weatherData.js
+          git commit -m "chore: update weather data [automated]" || echo "No changes to commit"
+          git pull --rebase origin master
+          git push

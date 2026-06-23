@@ -1,0 +1,39 @@
+name: Real-time Emergency Alerts Sync
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync-alerts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+        
+      - name: Sync emergency alerts
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python backend/scripts/emergency_alerts.py
+        
+      - name: Commit and push updated alerts
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add frontend/public/data/alerts.json
+          git commit -m "chore: sync real-time emergency alerts [automated]" || echo "No changes to commit"
+          git pull --rebase origin master
+          git push

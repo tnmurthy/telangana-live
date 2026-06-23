@@ -1,0 +1,49 @@
+name: Daily AI Pulse Update
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # 1:00 AM UTC (6:30 AM IST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  update-ai-pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Sync AI Pulse Briefing
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python backend/scripts/data_engine.py --task ai_pulse
+
+      - name: Sync AI Metrics (ELO & News)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python backend/scripts/sync_ai_metrics.py
+
+      - name: Commit and Push Updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add frontend/src/data/aiBriefingData.js
+          git commit -m "chore: update AI pulse data [automated]" || echo "No changes to commit"
+          git pull --rebase origin master
+          git push

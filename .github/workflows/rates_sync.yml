@@ -1,0 +1,45 @@
+name: Sync Market Rates
+
+# Runs every 12 hours: 1:00 AM UTC (6:30 AM IST) and 1:00 PM UTC (6:30 PM IST)
+# Aligns with Indian gold market morning open and end-of-day close.
+# Can also be triggered manually from the Actions tab.
+on:
+  schedule:
+    - cron: '0 1,13 * * *'
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # required to commit data files back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Sync gold & fuel rates
+        run: python backend/scripts/data_engine.py --finance-only
+
+      - name: Commit and push updated rate files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add frontend/src/data/goldRates.js frontend/src/data/fuelPrices.js frontend/src/data/pulses.js
+          git commit -m "chore: sync market rates (gold, fuel, pulses) [automated]" || echo "No changes to commit"
+          git pull --rebase origin master
+          git push

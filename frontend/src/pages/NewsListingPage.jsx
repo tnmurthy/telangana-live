@@ -1,0 +1,188 @@
+import React, { useState, useMemo, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import newsData from '../data/news.json';
+import NewsCard from '../components/NewsCard';
+import { Icons } from '../components/Icons';
+import ProgrammaticAd from '../components/ProgrammaticAd';
+import { trackEvent } from '../hooks/usePageTracking';
+import useJsonLd from '../hooks/useJsonLd';
+
+const NewsListingPage = () => {
+  const [filter, setFilter] = useState('All');
+  const [regionFilter, setRegionFilter] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Breadcrumb Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://telangana.live/dashboard"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Civic News",
+        "item": "https://telangana.live/news"
+      }
+    ]
+  };
+
+  useJsonLd(breadcrumbSchema, 'breadcrumb-news-listing');
+
+  // Track filter changes
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+    trackEvent('news_filter_change', {
+      category: newFilter,
+      region: regionFilter
+    });
+  };
+
+  const handleRegionChange = (newRegion) => {
+    setRegionFilter(newRegion);
+    trackEvent('news_region_change', {
+      category: filter,
+      region: newRegion
+    });
+  };
+
+  // Track search (debounced)
+  useEffect(() => {
+    if (searchQuery.length > 2) {
+      const timer = setTimeout(() => {
+        trackEvent('news_search', {
+          search_term: searchQuery,
+          results_count: filteredNews.length
+        });
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [searchQuery]);
+
+  const categories = useMemo(() => {
+    const cats = [...new Set(newsData.map(item => item.category).filter(Boolean))].sort();
+    return ['All', ...cats];
+  }, []);
+
+  const regions = useMemo(() => {
+    const regs = [...new Set(newsData.map(item => item.region).filter(Boolean))].sort();
+    return ['All', ...regs];
+  }, []);
+
+  const filteredNews = useMemo(() => {
+    return newsData.filter(item => {
+      const matchCategory = filter === 'All' || item.category === filter;
+      const matchRegion = regionFilter === 'All' || item.region === regionFilter;
+      const matchSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                          (item.description || '').toLowerCase().includes(searchQuery.toLowerCase());
+      return matchCategory && matchRegion && matchSearch;
+    });
+  }, [filter, regionFilter, searchQuery]);
+
+  return (
+    <div className="max-w-7xl mx-auto space-y-8 pb-20 animate-fade-in">
+      <Helmet>
+        <title>Telangana Civic News - Real-Time Updates & AI Summaries | Telangana.live</title>
+        <meta name="description" content="Latest civic news from Hyderabad and across Telangana. Local government updates, community reports, and AI-powered news summaries." />
+        <link rel="canonical" href="https://telangana.live/news" />
+        <meta property="og:title" content="Telangana Civic News - Real-Time Updates & AI Summaries" />
+        <meta property="og:description" content="Latest civic news from Hyderabad and across Telangana. Local government updates, community reports, and AI-powered news summaries." />
+        <meta property="og:url" content="https://telangana.live/news" />
+        <meta name="twitter:title" content="Telangana Civic News - Real-Time Updates & AI Summaries" />
+      </Helmet>
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/5 pb-8">
+        <div className="space-y-2">
+          <h1 className="text-4xl font-black tracking-tighter text-white uppercase italic">
+            Civic <span className="text-telangana-green">News</span>
+          </h1>
+          <p className="text-text-muted font-medium max-w-xl">
+            Real-time automated news aggregator with AI-powered summaries for Hyderabad and surrounding regions.
+          </p>
+        </div>
+
+        {/* Search Bar */}
+        <div className="relative w-full md:w-80 group">
+          <Icons.Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-text-muted transition-colors group-focus-within:text-telangana-green" />
+          <input 
+            type="text"
+            placeholder="Search news..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 pl-12 pr-4 text-sm text-white focus:outline-none focus:border-telangana-green/50 transition-all backdrop-blur-sm"
+          />
+        </div>
+      </div>
+
+      {/* Filter Chips */}
+      <div className="space-y-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="text-[10px] font-black uppercase text-text-muted tracking-widest mr-2">Regions</span>
+          {regions.map(r => (
+            <button
+              key={r}
+              onClick={() => handleRegionChange(r)}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all border ${
+                regionFilter === r 
+                ? 'bg-telangana-green text-white border-telangana-green shadow-lg shadow-telangana-green/20' 
+                : 'bg-white/5 text-text-muted border-white/10 hover:border-white/20'
+              }`}
+            >
+              {r}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="text-[10px] font-black uppercase text-text-muted tracking-widest mr-2">Categories</span>
+          {categories.map(c => (
+            <button
+              key={c}
+              onClick={() => handleFilterChange(c)}
+              className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all border ${
+                filter === c 
+                ? 'bg-white text-dark-bg border-white shadow-lg' 
+                : 'bg-white/5 text-text-muted border-white/10 hover:border-white/20'
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Results Grid */}
+      {filteredNews.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredNews.map((news, idx) => (
+            <React.Fragment key={idx}>
+              <NewsCard news={news} isSpotlight={idx === 0} />
+              {(idx + 1) % 5 === 0 && (
+                <ProgrammaticAd />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      ) : (
+        <div className="flex flex-col items-center justify-center py-20 px-4 text-center space-y-4 rounded-3xl bg-white/5 border border-dashed border-white/10">
+          <div className="p-4 rounded-full bg-white/5">
+            <Icons.Info className="w-8 h-8 text-text-muted" />
+          </div>
+          <div className="space-y-1">
+            <h3 className="text-white font-bold text-lg">No news found</h3>
+            <p className="text-text-muted text-sm max-w-xs">
+              Try adjusting your filters or search query to find relevant civic updates.
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default NewsListingPage;

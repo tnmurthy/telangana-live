@@ -1,0 +1,167 @@
+  {
+      "nodes": [
+        {
+          "parameters": {
+            "rule": {
+              "interval": [
+                {
+                  "field": "hours",
+                  "hoursInterval": 12
+                }
+              ]
+            }
+          },
+          "id": "e1f13b19-21cf-4187-8df7-1d22221b6d1f",
+          "name": "Schedule Trigger",
+          "type": "n8n-nodes-base.scheduleTrigger",
+          "typeVersion": 1.1,
+          "position": [
+            240,
+            300
+          ]
+        },
+        {
+          "parameters": {
+            "url": "https://telangana.live/data/news.json",
+            "sendHeaders": true,
+            "headerParameters": {
+              "parameters": [
+                {
+                  "name": "Accept",
+                  "value": "application/json"
+                }
+              ]
+            },
+            "options": {}
+          },
+          "id": "2d1b2f0a-1748-4389-bc3b-5f09623e80bb",
+          "name": "Fetch Latest News",
+          "type": "n8n-nodes-base.httpRequest",
+          "typeVersion": 4.1,
+          "position": [
+            460,
+            300
+          ]
+        },
+        {
+          "parameters": {
+            "modelId": {
+              "__rl": true,
+              "value": "gpt-4o",
+              "mode": "list",
+              "cachedResultName": "GPT-4o"
+            },
+            "messages": {
+              "values": [
+                {
+                  "content": "You are the social media manager for 'Telangana.live', a premium civic
+  intelligence portal. I will provide you with a local news update. Write a highly engaging, short
+  caption suitable for Twitter, Facebook, and Instagram. Keep it strictly under 280 characters. End
+  with a call-to-action to read more on telangana.live and include relevant local hashtags like
+  #Telangana #Hyderabad."
+                },
+                {
+                  "role": "user",
+                  "content": "Headline: {{$json.data[0].title}}\nDetails: {{$json.data[0].
+  description}}"
+                }
+              ]
+            },
+            "options": {}
+          },
+          "id": "3e9b1d12-1f48-4489-bc5b-9f09623e81bc",
+          "name": "OpenAI - AI Copywriter",
+          "type": "@n8n/n8n-nodes-langchain.openAi",
+          "typeVersion": 1,
+          "position": [
+            680,
+            300
+          ]
+        },
+        {
+          "parameters": {
+            "text": "={{ $json.message.content }}"
+          },
+          "id": "4a1b2c12-1f48-4489-bc5b-9f09623e82aa",
+          "name": "X (Twitter)",
+          "type": "n8n-nodes-base.twitter",
+          "typeVersion": 2,
+          "position": [
+            960,
+            140
+          ]
+        },
+        {
+          "parameters": {
+            "message": "={{ $json.message.content }}"
+          },
+          "id": "5b2b3d12-1f48-4489-bc5b-9f09623e83bb",
+          "name": "Facebook Page",
+          "type": "n8n-nodes-base.facebookGraphApi",
+          "typeVersion": 1,
+          "position": [
+            960,
+            300
+          ]
+        },
+        {
+          "parameters": {
+            "imageUrl": "https://telangana.live/og-image.jpg",
+            "caption": "={{ $json.message.content }}"
+          },
+          "id": "6c3b4e12-1f48-4489-bc5b-9f09623e84cc",
+          "name": "Instagram Business",
+          "type": "n8n-nodes-base.instagram",
+          "typeVersion": 1,
+          "position": [
+            960,
+            460
+          ]
+        }
+      ],
+      "connections": {
+        "Schedule Trigger": {
+          "main": [
+            [
+              {
+                "node": "Fetch Latest News",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "Fetch Latest News": {
+          "main": [
+            [
+              {
+                "node": "OpenAI - AI Copywriter",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        },
+        "OpenAI - AI Copywriter": {
+          "main": [
+            [
+              {
+                "node": "X (Twitter)",
+                "type": "main",
+                "index": 0
+              },
+              {
+                "node": "Facebook Page",
+                "type": "main",
+                "index": 0
+              },
+              {
+                "node": "Instagram Business",
+                "type": "main",
+                "index": 0
+              }
+            ]
+          ]
+        }
+      }
+    }
