@@ -17,7 +17,12 @@ const staticRoutes = [
   { url: '/jobs', changefreq: 'daily', priority: 0.8 },
   { url: '/classifieds', changefreq: 'always', priority: 0.8 },
   { url: '/ai-pulse', changefreq: 'always', priority: 0.7 },
-  { url: '/services', changefreq: 'weekly', priority: 0.8 }
+  { url: '/services', changefreq: 'weekly', priority: 0.8 },
+  { url: '/events', changefreq: 'weekly', priority: 0.7 },
+  { url: '/panchang', changefreq: 'daily', priority: 0.7 },
+  { url: '/budget', changefreq: 'weekly', priority: 0.7 },
+  { url: '/politicians', changefreq: 'weekly', priority: 0.7 },
+  { url: '/property-tax', changefreq: 'monthly', priority: 0.6 }
 ];
 
 function generateSitemap() {

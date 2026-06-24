@@ -1,11 +1,11 @@
-# Graph Report - .  (2026-06-11)
+# Graph Report - .  (2026-06-24)
 
 ## Corpus Check
-- 360 files · ~350,829 words
+- 420 files · ~379,659 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2383 nodes · 3177 edges · 354 communities detected
+- 2457 nodes · 3191 edges · 414 communities detected
 - Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 468 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
@@ -364,6 +364,66 @@
 - [[_COMMUNITY_Community 351|Community 351]]
 - [[_COMMUNITY_Community 352|Community 352]]
 - [[_COMMUNITY_Community 353|Community 353]]
+- [[_COMMUNITY_Community 354|Community 354]]
+- [[_COMMUNITY_Community 355|Community 355]]
+- [[_COMMUNITY_Community 356|Community 356]]
+- [[_COMMUNITY_Community 357|Community 357]]
+- [[_COMMUNITY_Community 358|Community 358]]
+- [[_COMMUNITY_Community 359|Community 359]]
+- [[_COMMUNITY_Community 360|Community 360]]
+- [[_COMMUNITY_Community 361|Community 361]]
+- [[_COMMUNITY_Community 362|Community 362]]
+- [[_COMMUNITY_Community 363|Community 363]]
+- [[_COMMUNITY_Community 364|Community 364]]
+- [[_COMMUNITY_Community 365|Community 365]]
+- [[_COMMUNITY_Community 366|Community 366]]
+- [[_COMMUNITY_Community 367|Community 367]]
+- [[_COMMUNITY_Community 368|Community 368]]
+- [[_COMMUNITY_Community 369|Community 369]]
+- [[_COMMUNITY_Community 370|Community 370]]
+- [[_COMMUNITY_Community 371|Community 371]]
+- [[_COMMUNITY_Community 372|Community 372]]
+- [[_COMMUNITY_Community 373|Community 373]]
+- [[_COMMUNITY_Community 374|Community 374]]
+- [[_COMMUNITY_Community 375|Community 375]]
+- [[_COMMUNITY_Community 376|Community 376]]
+- [[_COMMUNITY_Community 377|Community 377]]
+- [[_COMMUNITY_Community 378|Community 378]]
+- [[_COMMUNITY_Community 379|Community 379]]
+- [[_COMMUNITY_Community 380|Community 380]]
+- [[_COMMUNITY_Community 381|Community 381]]
+- [[_COMMUNITY_Community 382|Community 382]]
+- [[_COMMUNITY_Community 383|Community 383]]
+- [[_COMMUNITY_Community 384|Community 384]]
+- [[_COMMUNITY_Community 385|Community 385]]
+- [[_COMMUNITY_Community 386|Community 386]]
+- [[_COMMUNITY_Community 387|Community 387]]
+- [[_COMMUNITY_Community 388|Community 388]]
+- [[_COMMUNITY_Community 389|Community 389]]
+- [[_COMMUNITY_Community 390|Community 390]]
+- [[_COMMUNITY_Community 391|Community 391]]
+- [[_COMMUNITY_Community 392|Community 392]]
+- [[_COMMUNITY_Community 393|Community 393]]
+- [[_COMMUNITY_Community 394|Community 394]]
+- [[_COMMUNITY_Community 395|Community 395]]
+- [[_COMMUNITY_Community 396|Community 396]]
+- [[_COMMUNITY_Community 397|Community 397]]
+- [[_COMMUNITY_Community 398|Community 398]]
+- [[_COMMUNITY_Community 399|Community 399]]
+- [[_COMMUNITY_Community 400|Community 400]]
+- [[_COMMUNITY_Community 401|Community 401]]
+- [[_COMMUNITY_Community 402|Community 402]]
+- [[_COMMUNITY_Community 403|Community 403]]
+- [[_COMMUNITY_Community 404|Community 404]]
+- [[_COMMUNITY_Community 405|Community 405]]
+- [[_COMMUNITY_Community 406|Community 406]]
+- [[_COMMUNITY_Community 407|Community 407]]
+- [[_COMMUNITY_Community 408|Community 408]]
+- [[_COMMUNITY_Community 409|Community 409]]
+- [[_COMMUNITY_Community 410|Community 410]]
+- [[_COMMUNITY_Community 411|Community 411]]
+- [[_COMMUNITY_Community 412|Community 412]]
+- [[_COMMUNITY_Community 413|Community 413]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `NewsScraper` - 78 edges
@@ -540,12 +600,12 @@ Cohesion: 0.29
 Nodes (13): _make_graph(), Tests for graphify/benchmark.py., test_print_benchmark_no_crash(), test_query_bfs_expands_neighbors(), test_query_returns_positive_for_matching_question(), test_query_returns_zero_for_no_match(), test_run_benchmark_corpus_tokens_proportional(), test_run_benchmark_error_on_empty_graph() (+5 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.21
-Nodes (13): build_whisper_prompt(), download_audio(), _get_whisper(), _get_yt_dlp(), is_url(), _model_name(), Transcribe a video/audio file or URL to a .txt transcript.      If video_path, Transcribe a list of video/audio files or URLs, return paths to transcript .txt (+5 more)
-
-### Community 38 - "Community 38"
 Cohesion: 0.19
 Nodes (11): build(), build_from_json(), _normalize_id(), Normalize an ID string the same way extract._make_id does.      Used to reconc, Merge multiple extraction results into one graph., Build a NetworkX graph from an extraction dict.      directed=True produces a, Merge multiple extraction results into one graph.      directed=True produces, assert_valid() (+3 more)
+
+### Community 38 - "Community 38"
+Cohesion: 0.21
+Nodes (13): build_whisper_prompt(), download_audio(), _get_whisper(), _get_yt_dlp(), is_url(), _model_name(), Transcribe a video/audio file or URL to a .txt transcript.      If video_path, Transcribe a list of video/audio files or URLs, return paths to transcript .txt (+5 more)
 
 ### Community 39 - "Community 39"
 Cohesion: 0.2
@@ -736,36 +796,36 @@ Cohesion: 0.4
 Nodes (0): 
 
 ### Community 86 - "Community 86"
-Cohesion: 0.5
-Nodes (3): MyApp.Accounts.User, create(), validate()
-
-### Community 87 - "Community 87"
-Cohesion: 0.6
-Nodes (2): RateLimiter, Throttle
-
-### Community 88 - "Community 88"
-Cohesion: 0.6
-Nodes (2): ColorResolver, DefaultPalette
-
-### Community 89 - "Community 89"
 Cohesion: 0.4
 Nodes (0): 
 
+### Community 87 - "Community 87"
+Cohesion: 0.5
+Nodes (3): MyApp.Accounts.User, create(), validate()
+
+### Community 88 - "Community 88"
+Cohesion: 0.6
+Nodes (2): RateLimiter, Throttle
+
+### Community 89 - "Community 89"
+Cohesion: 0.6
+Nodes (2): ColorResolver, DefaultPalette
+
 ### Community 90 - "Community 90"
+Cohesion: 0.4
+Nodes (0): 
+
+### Community 91 - "Community 91"
 Cohesion: 0.5
 Nodes (1): ContentUpdater
 
-### Community 91 - "Community 91"
+### Community 92 - "Community 92"
 Cohesion: 0.67
 Nodes (3): answer_muhurat_query(), get_vikram_samvat(), Uses LLM to answer whether a specific task is auspicious today      based on cal
 
-### Community 92 - "Community 92"
+### Community 93 - "Community 93"
 Cohesion: 0.67
 Nodes (2): ArticleModal(), estimateReadTime()
-
-### Community 93 - "Community 93"
-Cohesion: 0.5
-Nodes (0): 
 
 ### Community 94 - "Community 94"
 Cohesion: 0.5
@@ -780,24 +840,24 @@ Cohesion: 0.5
 Nodes (0): 
 
 ### Community 97 - "Community 97"
-Cohesion: 0.67
-Nodes (3): generate(), Mirrors export.safe_name so community hub filenames and report wikilinks always, _safe_community_name()
-
-### Community 98 - "Community 98"
-Cohesion: 0.5
-Nodes (1): Transformer
-
-### Community 99 - "Community 99"
 Cohesion: 0.5
 Nodes (0): 
 
-### Community 100 - "Community 100"
+### Community 98 - "Community 98"
 Cohesion: 0.67
-Nodes (2): Performs a system diagnostic check.     Returns a status report of core systems, run_health_check()
+Nodes (3): generate(), Mirrors export.safe_name so community hub filenames and report wikilinks always, _safe_community_name()
+
+### Community 99 - "Community 99"
+Cohesion: 0.5
+Nodes (1): Transformer
+
+### Community 100 - "Community 100"
+Cohesion: 0.5
+Nodes (0): 
 
 ### Community 101 - "Community 101"
 Cohesion: 0.67
-Nodes (1): handler()
+Nodes (2): Performs a system diagnostic check.     Returns a status report of core systems, run_health_check()
 
 ### Community 102 - "Community 102"
 Cohesion: 0.67
@@ -809,35 +869,35 @@ Nodes (1): handler()
 
 ### Community 104 - "Community 104"
 Cohesion: 0.67
-Nodes (2): map_article_to_civic_entities(), Scans article text for matching keywords and returns a list of dictionaries:
+Nodes (1): handler()
 
 ### Community 105 - "Community 105"
 Cohesion: 0.67
-Nodes (2): Standard logger setup for the Telangana Live backend.     Includes both console, setup_logger()
+Nodes (2): map_article_to_civic_entities(), Scans article text for matching keywords and returns a list of dictionaries:
 
 ### Community 106 - "Community 106"
+Cohesion: 0.67
+Nodes (2): Standard logger setup for the Telangana Live backend.     Includes both console, setup_logger()
+
+### Community 107 - "Community 107"
 Cohesion: 1.0
 Nodes (2): fetch_latest_alerts(), main()
 
-### Community 107 - "Community 107"
-Cohesion: 0.67
-Nodes (0): 
-
 ### Community 108 - "Community 108"
 Cohesion: 0.67
-Nodes (2): Verifies if Supabase tables exist and provides instructions if not., verify_and_setup()
+Nodes (0): 
 
 ### Community 109 - "Community 109"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (2): Verifies if Supabase tables exist and provides instructions if not., verify_and_setup()
 
 ### Community 110 - "Community 110"
-Cohesion: 1.0
-Nodes (2): fetchPage(), main()
-
-### Community 111 - "Community 111"
 Cohesion: 0.67
 Nodes (0): 
+
+### Community 111 - "Community 111"
+Cohesion: 1.0
+Nodes (2): fetchPage(), main()
 
 ### Community 112 - "Community 112"
 Cohesion: 0.67
@@ -852,12 +912,12 @@ Cohesion: 0.67
 Nodes (0): 
 
 ### Community 115 - "Community 115"
-Cohesion: 1.0
-Nodes (2): generateWACaption(), ShareWhatsApp()
-
-### Community 116 - "Community 116"
 Cohesion: 0.67
 Nodes (0): 
+
+### Community 116 - "Community 116"
+Cohesion: 1.0
+Nodes (2): generateWACaption(), ShareWhatsApp()
 
 ### Community 117 - "Community 117"
 Cohesion: 0.67
@@ -909,11 +969,11 @@ Nodes (0):
 
 ### Community 129 - "Community 129"
 Cohesion: 0.67
-Nodes (1): graphify - extract · build · cluster · analyze · report.
+Nodes (0): 
 
 ### Community 130 - "Community 130"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (1): graphify - extract · build · cluster · analyze · report.
 
 ### Community 131 - "Community 131"
 Cohesion: 0.67
@@ -924,7 +984,7 @@ Cohesion: 0.67
 Nodes (0): 
 
 ### Community 133 - "Community 133"
-Cohesion: 1.0
+Cohesion: 0.67
 Nodes (0): 
 
 ### Community 134 - "Community 134"
@@ -1661,478 +1721,716 @@ Nodes (0):
 
 ### Community 317 - "Community 317"
 Cohesion: 1.0
-Nodes (1): Bridges data from V1 (legacy) tables to V2 (Pulse) schema.     This allows V2 f
+Nodes (0): 
 
 ### Community 318 - "Community 318"
 Cohesion: 1.0
-Nodes (1): Syncs from V1 'content' table to V2 'public.news
+Nodes (0): 
 
 ### Community 319 - "Community 319"
 Cohesion: 1.0
-Nodes (1): Syncs from V1 'citizen_reports' to V2 'public.citizen_reports
+Nodes (0): 
 
 ### Community 320 - "Community 320"
 Cohesion: 1.0
-Nodes (1): Syncs from V1 'power_alerts' to V2 'public.power_outages
+Nodes (0): 
 
 ### Community 321 - "Community 321"
 Cohesion: 1.0
-Nodes (1): Fetch officials for a specific area (Constituency, Mandal, etc.)         In a r
+Nodes (0): 
 
 ### Community 322 - "Community 322"
 Cohesion: 1.0
-Nodes (1): Search officials by name or party.
+Nodes (0): 
 
 ### Community 323 - "Community 323"
 Cohesion: 1.0
-Nodes (1): Scrapes and returns the latest gold rates for Hyderabad.
+Nodes (0): 
 
 ### Community 324 - "Community 324"
 Cohesion: 1.0
-Nodes (1): Scrapes and returns the latest fuel prices for Hyderabad.
+Nodes (0): 
 
 ### Community 325 - "Community 325"
 Cohesion: 1.0
-Nodes (1): Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.
+Nodes (0): 
 
 ### Community 326 - "Community 326"
 Cohesion: 1.0
-Nodes (1): Scrapes data and sends a summary message via the WhatsApp bot.
+Nodes (0): 
 
 ### Community 327 - "Community 327"
 Cohesion: 1.0
-Nodes (1): Extracts an image URL from an RSS feed entry checking various standard fields
+Nodes (0): 
 
 ### Community 328 - "Community 328"
 Cohesion: 1.0
-Nodes (1): Extracts civic entities from news text.     Returns a dict with 'domain_entities
+Nodes (0): 
 
 ### Community 329 - "Community 329"
 Cohesion: 1.0
-Nodes (1): Maps high-level domain entities to database type/ID keys.     Returns (entity_ty
+Nodes (0): 
 
 ### Community 330 - "Community 330"
 Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
+Nodes (0): 
 
 ### Community 331 - "Community 331"
 Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+Nodes (0): 
 
 ### Community 332 - "Community 332"
 Cohesion: 1.0
-Nodes (1): Maps high-level domain entities to database type/ID keys.     Returns (entity_ty
+Nodes (0): 
 
 ### Community 333 - "Community 333"
 Cohesion: 1.0
-Nodes (1): Generate text via the requested provider with automatic retry.          Returns
+Nodes (0): 
 
 ### Community 334 - "Community 334"
 Cohesion: 1.0
-Nodes (1): Call the z.ai OpenAI-compatible chat completions endpoint.
+Nodes (0): 
 
 ### Community 335 - "Community 335"
 Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
+Nodes (0): 
 
 ### Community 336 - "Community 336"
 Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
+Nodes (0): 
 
 ### Community 337 - "Community 337"
 Cohesion: 1.0
-Nodes (1): Generate text via the requested provider with automatic retry.          Returns
+Nodes (0): 
 
 ### Community 338 - "Community 338"
 Cohesion: 1.0
-Nodes (1): Call the z.ai OpenAI-compatible chat completions endpoint.
+Nodes (0): 
 
 ### Community 339 - "Community 339"
 Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+Nodes (0): 
 
 ### Community 340 - "Community 340"
 Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
+Nodes (0): 
 
 ### Community 341 - "Community 341"
 Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+Nodes (0): 
 
 ### Community 342 - "Community 342"
 Cohesion: 1.0
-Nodes (1): Generates new content for telangana.live
+Nodes (0): 
 
 ### Community 343 - "Community 343"
 Cohesion: 1.0
-Nodes (1): Generate new content and store in Supabase
+Nodes (0): 
 
 ### Community 344 - "Community 344"
 Cohesion: 1.0
-Nodes (1): Execute generation cycle.                  First tries to pull dynamic topics
+Nodes (0): 
 
 ### Community 345 - "Community 345"
 Cohesion: 1.0
-Nodes (1): Monitors telangana.live for content that needs updates
+Nodes (0): 
 
 ### Community 346 - "Community 346"
 Cohesion: 1.0
-Nodes (1): Use Claude to analyze content and identify what needs updates
+Nodes (0): 
 
 ### Community 347 - "Community 347"
 Cohesion: 1.0
-Nodes (1): Execute monitoring cycle
+Nodes (0): 
 
 ### Community 348 - "Community 348"
 Cohesion: 1.0
-Nodes (1): Updates existing content with new information
+Nodes (0): 
 
 ### Community 349 - "Community 349"
 Cohesion: 1.0
-Nodes (1): Update existing content with new information
+Nodes (0): 
 
 ### Community 350 - "Community 350"
 Cohesion: 1.0
-Nodes (1): Checks and improves content quality, then publishes it.
+Nodes (0): 
 
 ### Community 351 - "Community 351"
 Cohesion: 1.0
-Nodes (1): Check content quality, save improvements, and publish the article.
+Nodes (0): 
 
 ### Community 352 - "Community 352"
 Cohesion: 1.0
-Nodes (1): Quality-check all content that is still in 'active' (draft) status.
+Nodes (0): 
 
 ### Community 353 - "Community 353"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 354 - "Community 354"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 355 - "Community 355"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 356 - "Community 356"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 357 - "Community 357"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 358 - "Community 358"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 359 - "Community 359"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 360 - "Community 360"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 361 - "Community 361"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 362 - "Community 362"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 363 - "Community 363"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 364 - "Community 364"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 365 - "Community 365"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 366 - "Community 366"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 367 - "Community 367"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 368 - "Community 368"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 369 - "Community 369"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 370 - "Community 370"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 371 - "Community 371"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 372 - "Community 372"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 373 - "Community 373"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 374 - "Community 374"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 375 - "Community 375"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 376 - "Community 376"
+Cohesion: 1.0
+Nodes (0): 
+
+### Community 377 - "Community 377"
+Cohesion: 1.0
+Nodes (1): Bridges data from V1 (legacy) tables to V2 (Pulse) schema.     This allows V2 f
+
+### Community 378 - "Community 378"
+Cohesion: 1.0
+Nodes (1): Syncs from V1 'content' table to V2 'public.news
+
+### Community 379 - "Community 379"
+Cohesion: 1.0
+Nodes (1): Syncs from V1 'citizen_reports' to V2 'public.citizen_reports
+
+### Community 380 - "Community 380"
+Cohesion: 1.0
+Nodes (1): Syncs from V1 'power_alerts' to V2 'public.power_outages
+
+### Community 381 - "Community 381"
+Cohesion: 1.0
+Nodes (1): Fetch officials for a specific area (Constituency, Mandal, etc.)         In a r
+
+### Community 382 - "Community 382"
+Cohesion: 1.0
+Nodes (1): Search officials by name or party.
+
+### Community 383 - "Community 383"
+Cohesion: 1.0
+Nodes (1): Scrapes and returns the latest gold rates for Hyderabad.
+
+### Community 384 - "Community 384"
+Cohesion: 1.0
+Nodes (1): Scrapes and returns the latest fuel prices for Hyderabad.
+
+### Community 385 - "Community 385"
+Cohesion: 1.0
+Nodes (1): Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.
+
+### Community 386 - "Community 386"
+Cohesion: 1.0
+Nodes (1): Scrapes data and sends a summary message via the WhatsApp bot.
+
+### Community 387 - "Community 387"
+Cohesion: 1.0
+Nodes (1): Extracts an image URL from an RSS feed entry checking various standard fields
+
+### Community 388 - "Community 388"
+Cohesion: 1.0
+Nodes (1): Extracts civic entities from news text.     Returns a dict with 'domain_entities
+
+### Community 389 - "Community 389"
+Cohesion: 1.0
+Nodes (1): Maps high-level domain entities to database type/ID keys.     Returns (entity_ty
+
+### Community 390 - "Community 390"
+Cohesion: 1.0
+Nodes (1): Fetch, fact-check, and sync news to Supabase.
+
+### Community 391 - "Community 391"
+Cohesion: 1.0
+Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+
+### Community 392 - "Community 392"
+Cohesion: 1.0
+Nodes (1): Maps high-level domain entities to database type/ID keys.     Returns (entity_ty
+
+### Community 393 - "Community 393"
+Cohesion: 1.0
+Nodes (1): Generate text via the requested provider with automatic retry.          Returns
+
+### Community 394 - "Community 394"
+Cohesion: 1.0
+Nodes (1): Call the z.ai OpenAI-compatible chat completions endpoint.
+
+### Community 395 - "Community 395"
+Cohesion: 1.0
+Nodes (1): Fetch, fact-check, and sync news to Supabase.
+
+### Community 396 - "Community 396"
+Cohesion: 1.0
+Nodes (1): Fetch, fact-check, and sync news to Supabase.
+
+### Community 397 - "Community 397"
+Cohesion: 1.0
+Nodes (1): Generate text via the requested provider with automatic retry.          Returns
+
+### Community 398 - "Community 398"
+Cohesion: 1.0
+Nodes (1): Call the z.ai OpenAI-compatible chat completions endpoint.
+
+### Community 399 - "Community 399"
+Cohesion: 1.0
+Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+
+### Community 400 - "Community 400"
+Cohesion: 1.0
+Nodes (1): Fetch, fact-check, and sync news to Supabase.
+
+### Community 401 - "Community 401"
+Cohesion: 1.0
+Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+
+### Community 402 - "Community 402"
+Cohesion: 1.0
+Nodes (1): Generates new content for telangana.live
+
+### Community 403 - "Community 403"
+Cohesion: 1.0
+Nodes (1): Generate new content and store in Supabase
+
+### Community 404 - "Community 404"
+Cohesion: 1.0
+Nodes (1): Execute generation cycle.                  First tries to pull dynamic topics
+
+### Community 405 - "Community 405"
+Cohesion: 1.0
+Nodes (1): Monitors telangana.live for content that needs updates
+
+### Community 406 - "Community 406"
+Cohesion: 1.0
+Nodes (1): Use Claude to analyze content and identify what needs updates
+
+### Community 407 - "Community 407"
+Cohesion: 1.0
+Nodes (1): Execute monitoring cycle
+
+### Community 408 - "Community 408"
+Cohesion: 1.0
+Nodes (1): Updates existing content with new information
+
+### Community 409 - "Community 409"
+Cohesion: 1.0
+Nodes (1): Update existing content with new information
+
+### Community 410 - "Community 410"
+Cohesion: 1.0
+Nodes (1): Checks and improves content quality, then publishes it.
+
+### Community 411 - "Community 411"
+Cohesion: 1.0
+Nodes (1): Check content quality, save improvements, and publish the article.
+
+### Community 412 - "Community 412"
+Cohesion: 1.0
+Nodes (1): Quality-check all content that is still in 'active' (draft) status.
+
+### Community 413 - "Community 413"
 Cohesion: 1.0
 Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
 
 ## Knowledge Gaps
 - **462 isolated node(s):** `Scrapes and returns the latest gold rates for Hyderabad.`, `Scrapes and returns the latest fuel prices for Hyderabad.`, `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.`, `Scrapes data and sends a summary message via the WhatsApp bot.`, `Returns today's accurate Panchang data.` (+457 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 133`** (2 nodes): `test_api_server.py`, `test_api()`
+- **Thin community `Community 134`** (2 nodes): `clean_and_migrate()`, `migrate_content.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 134`** (2 nodes): `whatsapp.js`, `handleWhatsAppMessage()`
+- **Thin community `Community 135`** (2 nodes): `verify_structure.py`, `verify_structure()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 135`** (2 nodes): `BasthiDawakhana()`, `BasthiDawakhana.jsx`
+- **Thin community `Community 136`** (2 nodes): `test_api_server.py`, `test_api()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 136`** (2 nodes): `BottomNav()`, `BottomNav.jsx`
+- **Thin community `Community 137`** (2 nodes): `verify_engine.js`, `verify()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 137`** (2 nodes): `BreakingNewsBanner()`, `BreakingNewsBanner.jsx`
+- **Thin community `Community 138`** (2 nodes): `query.js`, `handler()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 138`** (2 nodes): `CitizenPoll()`, `CitizenPoll.jsx`
+- **Thin community `Community 139`** (2 nodes): `today.js`, `handler()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 139`** (2 nodes): `CookieConsent()`, `CookieConsent.jsx`
+- **Thin community `Community 140`** (2 nodes): `whatsapp.js`, `handleWhatsAppMessage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 140`** (2 nodes): `CrisisDashboard()`, `CrisisDashboard.jsx`
+- **Thin community `Community 141`** (2 nodes): `BasthiDawakhana()`, `BasthiDawakhana.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 141`** (2 nodes): `DailyShloka()`, `DailyShloka.jsx`
+- **Thin community `Community 142`** (2 nodes): `BottomNav()`, `BottomNav.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 142`** (2 nodes): `DistrictOnboarding()`, `DistrictOnboarding.jsx`
+- **Thin community `Community 143`** (2 nodes): `BreakingNewsBanner()`, `BreakingNewsBanner.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 143`** (2 nodes): `DistrictSelector()`, `DistrictSelector.jsx`
+- **Thin community `Community 144`** (2 nodes): `CitizenPoll()`, `CitizenPoll.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 144`** (2 nodes): `EmergencySimulator()`, `EmergencySimulator.jsx`
+- **Thin community `Community 145`** (2 nodes): `CookieConsent()`, `CookieConsent.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 145`** (2 nodes): `Features()`, `Features.tsx`
+- **Thin community `Community 146`** (2 nodes): `CrisisDashboard()`, `CrisisDashboard.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 146`** (2 nodes): `Footer()`, `Footer.jsx`
+- **Thin community `Community 147`** (2 nodes): `DailyShloka()`, `DailyShloka.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 147`** (2 nodes): `FuelPriceWidget.jsx`, `FuelPriceWidget()`
+- **Thin community `Community 148`** (2 nodes): `DistrictOnboarding()`, `DistrictOnboarding.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 148`** (2 nodes): `FuelTaxCard.jsx`, `FuelTaxCard()`
+- **Thin community `Community 149`** (2 nodes): `DistrictSelector()`, `DistrictSelector.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 149`** (2 nodes): `GrievanceDashboard.jsx`, `GrievanceDashboard()`
+- **Thin community `Community 150`** (2 nodes): `EmergencySimulator()`, `EmergencySimulator.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 150`** (2 nodes): `Header.jsx`, `Header()`
+- **Thin community `Community 151`** (2 nodes): `Features()`, `Features.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 151`** (2 nodes): `HeatwavePanel.jsx`, `HeatwavePanel()`
+- **Thin community `Community 152`** (2 nodes): `Footer()`, `Footer.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 152`** (2 nodes): `KnowYourWard.jsx`, `KnowYourWard()`
+- **Thin community `Community 153`** (2 nodes): `FuelPriceWidget.jsx`, `FuelPriceWidget()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 153`** (2 nodes): `MainLayout.jsx`, `MainLayout()`
+- **Thin community `Community 154`** (2 nodes): `FuelTaxCard.jsx`, `FuelTaxCard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 154`** (2 nodes): `Navigation.tsx`, `Navigation()`
+- **Thin community `Community 155`** (2 nodes): `GrievanceDashboard.jsx`, `GrievanceDashboard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 155`** (2 nodes): `NewsClusterModal.jsx`, `NewsClusterModal()`
+- **Thin community `Community 156`** (2 nodes): `Header.jsx`, `Header()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 156`** (2 nodes): `NewsTicker.jsx`, `NewsTicker()`
+- **Thin community `Community 157`** (2 nodes): `HeatwavePanel.jsx`, `HeatwavePanel()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 157`** (2 nodes): `OdopWidget.jsx`, `OdopWidget()`
+- **Thin community `Community 158`** (2 nodes): `KnowYourWard.jsx`, `KnowYourWard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 158`** (2 nodes): `PartnerCard.jsx`, `PartnerCard()`
+- **Thin community `Community 159`** (2 nodes): `LifeEventWizard.jsx`, `LifeEventWizard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 159`** (2 nodes): `PowerTariffCard.jsx`, `PowerTariffCard()`
+- **Thin community `Community 160`** (2 nodes): `MainLayout.jsx`, `MainLayout()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 160`** (2 nodes): `ProgrammaticAd.jsx`, `ProgrammaticAd()`
+- **Thin community `Community 161`** (2 nodes): `Navigation.tsx`, `Navigation()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 161`** (2 nodes): `PulseCounter.jsx`, `PulseCounter()`
+- **Thin community `Community 162`** (2 nodes): `NewsClusterModal.jsx`, `NewsClusterModal()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 162`** (2 nodes): `ReportForm.jsx`, `ReportForm()`
+- **Thin community `Community 163`** (2 nodes): `NewsTicker.jsx`, `NewsTicker()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 163`** (2 nodes): `StickyAnchorAd.jsx`, `StickyAnchorAd()`
+- **Thin community `Community 164`** (2 nodes): `OdopWidget.jsx`, `OdopWidget()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 164`** (2 nodes): `Turnstile.jsx`, `Turnstile()`
+- **Thin community `Community 165`** (2 nodes): `PartnerCard.jsx`, `PartnerCard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 165`** (2 nodes): `WeatherCard.jsx`, `WeatherCard()`
+- **Thin community `Community 166`** (2 nodes): `PowerTariffCard.jsx`, `PowerTariffCard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 166`** (2 nodes): `EmergencyProvider()`, `EmergencyProvider.jsx`
+- **Thin community `Community 167`** (2 nodes): `ProactiveAlerts.jsx`, `ProactiveAlerts()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 167`** (2 nodes): `parksData.js`, `getCrowdByHour()`
+- **Thin community `Community 168`** (2 nodes): `ProgrammaticAd.jsx`, `ProgrammaticAd()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 168`** (2 nodes): `reportingData.js`, `detectCorporation()`
+- **Thin community `Community 169`** (2 nodes): `PulseCounter.jsx`, `PulseCounter()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 169`** (2 nodes): `reservoirsData.js`, `getReservoirStatus()`
+- **Thin community `Community 170`** (2 nodes): `ReportForm.jsx`, `ReportForm()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 170`** (2 nodes): `shlokas.js`, `getDailyShloka()`
+- **Thin community `Community 171`** (2 nodes): `StickyAnchorAd.jsx`, `StickyAnchorAd()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 171`** (2 nodes): `wardData.js`, `searchWard()`
+- **Thin community `Community 172`** (2 nodes): `Turnstile.jsx`, `Turnstile()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 172`** (2 nodes): `weatherData.js`, `generateWeather()`
+- **Thin community `Community 173`** (2 nodes): `WeatherCard.jsx`, `WeatherCard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 173`** (2 nodes): `useEmergency.js`, `useEmergency()`
+- **Thin community `Community 174`** (2 nodes): `EmergencyProvider()`, `EmergencyProvider.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 174`** (2 nodes): `useJsonLd.js`, `useJsonLd()`
+- **Thin community `Community 175`** (2 nodes): `parksData.js`, `getCrowdByHour()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 175`** (2 nodes): `ContentAdminCockpit()`, `ContentAdminCockpit.jsx`
+- **Thin community `Community 176`** (2 nodes): `reportingData.js`, `detectCorporation()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 176`** (2 nodes): `DeepDivesPage()`, `DeepDivesPage.jsx`
+- **Thin community `Community 177`** (2 nodes): `reservoirsData.js`, `getReservoirStatus()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 177`** (2 nodes): `EmergencyContactsPage()`, `EmergencyContactsPage.jsx`
+- **Thin community `Community 178`** (2 nodes): `shlokas.js`, `getDailyShloka()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 178`** (2 nodes): `FuelLandingPage.jsx`, `FuelLandingPage()`
+- **Thin community `Community 179`** (2 nodes): `wardData.js`, `searchWard()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 179`** (2 nodes): `GoldLandingPage.jsx`, `GoldLandingPage()`
+- **Thin community `Community 180`** (2 nodes): `weatherData.js`, `generateWeather()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 180`** (2 nodes): `HealthLandingPage.jsx`, `HealthLandingPage()`
+- **Thin community `Community 181`** (2 nodes): `useEmergency.js`, `useEmergency()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 181`** (2 nodes): `NewsListingPage.jsx`, `NewsListingPage()`
+- **Thin community `Community 182`** (2 nodes): `useJsonLd.js`, `useJsonLd()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 182`** (2 nodes): `NewsPage.jsx`, `NewsPage()`
+- **Thin community `Community 183`** (2 nodes): `ContentAdminCockpit()`, `ContentAdminCockpit.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 183`** (2 nodes): `NotFound.jsx`, `NotFound()`
+- **Thin community `Community 184`** (2 nodes): `DeepDivesPage()`, `DeepDivesPage.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 184`** (2 nodes): `PanchangPage.jsx`, `PanchangPage()`
+- **Thin community `Community 185`** (2 nodes): `EmergencyContactsPage()`, `EmergencyContactsPage.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 185`** (2 nodes): `PrivacyPolicy.jsx`, `PrivacyPolicy()`
+- **Thin community `Community 186`** (2 nodes): `FuelLandingPage.jsx`, `FuelLandingPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 186`** (2 nodes): `PropertyTaxPage.jsx`, `PropertyTaxPage()`
+- **Thin community `Community 187`** (2 nodes): `GoldLandingPage.jsx`, `GoldLandingPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 187`** (2 nodes): `ReportingLandingPage.jsx`, `ReportingLandingPage()`
+- **Thin community `Community 188`** (2 nodes): `HealthLandingPage.jsx`, `HealthLandingPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 188`** (2 nodes): `SchemesPage.jsx`, `SchemesPage()`
+- **Thin community `Community 189`** (2 nodes): `NewsListingPage.jsx`, `NewsListingPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 189`** (2 nodes): `SplashScreen.jsx`, `SplashScreen()`
+- **Thin community `Community 190`** (2 nodes): `NewsPage.jsx`, `NewsPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 190`** (2 nodes): `TermsOfService.jsx`, `TermsOfService()`
+- **Thin community `Community 191`** (2 nodes): `NotFound.jsx`, `NotFound()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 191`** (2 nodes): `TransportLandingPage.jsx`, `TransportLandingPage()`
+- **Thin community `Community 192`** (2 nodes): `PanchangPage.jsx`, `PanchangPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 192`** (2 nodes): `WaterSupplyPage.jsx`, `WaterSupplyPage()`
+- **Thin community `Community 193`** (2 nodes): `PrivacyPolicy.jsx`, `PrivacyPolicy()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 193`** (2 nodes): `n8nService.js`, `sendToN8N()`
+- **Thin community `Community 194`** (2 nodes): `PropertyTaxPage.jsx`, `PropertyTaxPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 194`** (2 nodes): `transitService.js`, `fetchTransitStatus()`
+- **Thin community `Community 195`** (2 nodes): `ReportingLandingPage.jsx`, `ReportingLandingPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 195`** (2 nodes): `waterService.js`, `fetchWaterLevels()`
+- **Thin community `Community 196`** (2 nodes): `SchemesPage.jsx`, `SchemesPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 196`** (2 nodes): `weatherService.js`, `fetchWeather()`
+- **Thin community `Community 197`** (2 nodes): `ServicesDirectoryPage.jsx`, `ServicesDirectoryPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 197`** (2 nodes): `timeUtils.js`, `formatRelativeTime()`
+- **Thin community `Community 198`** (2 nodes): `SplashScreen.jsx`, `SplashScreen()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 198`** (2 nodes): `check()`, `check_fuel_sources.py`
+- **Thin community `Community 199`** (2 nodes): `SubRegionPage.jsx`, `SubRegionPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 199`** (2 nodes): `check()`, `check_sources.py`
+- **Thin community `Community 200`** (2 nodes): `TermsOfService.jsx`, `TermsOfService()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 200`** (2 nodes): `debug_live_chennai()`, `debug_chennai_history.py`
+- **Thin community `Community 201`** (2 nodes): `TransportLandingPage.jsx`, `TransportLandingPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 201`** (2 nodes): `scrape_history()`, `scrape_gold_history.py`
+- **Thin community `Community 202`** (2 nodes): `WaterSupplyPage.jsx`, `WaterSupplyPage()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 202`** (2 nodes): `scrape_history()`, `scrape_gold_history_v2.py`
+- **Thin community `Community 203`** (2 nodes): `n8nService.js`, `sendToN8N()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 203`** (2 nodes): `test_reproduction()`, `reproduce_gold_bug.py`
+- **Thin community `Community 204`** (2 nodes): `transitService.js`, `fetchTransitStatus()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 204`** (2 nodes): `verify_civic_gateway.py`, `test_civic_gateway()`
+- **Thin community `Community 205`** (2 nodes): `waterService.js`, `fetchWaterLevels()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 205`** (2 nodes): `makeJsonResponse()`, `redisService.test.js`
+- **Thin community `Community 206`** (2 nodes): `weatherService.js`, `fetchWeather()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 206`** (2 nodes): `parseURL()`, `rssParser.test.js`
+- **Thin community `Community 207`** (2 nodes): `timeUtils.js`, `formatRelativeTime()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 207`** (2 nodes): `weatherService.test.js`, `mockFetchWeatherAndAqi()`
+- **Thin community `Community 208`** (2 nodes): `check()`, `check_fuel_sources.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 208`** (1 nodes): `branch-cleanup.ps1`
+- **Thin community `Community 209`** (2 nodes): `check()`, `check_sources.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 209`** (1 nodes): `git-push.ps1`
+- **Thin community `Community 210`** (2 nodes): `debug_live_chennai()`, `debug_chennai_history.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 210`** (1 nodes): `restructure.ps1`
+- **Thin community `Community 211`** (2 nodes): `scrape_history()`, `scrape_gold_history.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 211`** (1 nodes): `test_ephem.py`
+- **Thin community `Community 212`** (2 nodes): `scrape_history()`, `scrape_gold_history_v2.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 212`** (1 nodes): `__init__.py`
+- **Thin community `Community 213`** (2 nodes): `test_reproduction()`, `reproduce_gold_bug.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 213`** (1 nodes): `__init__.py`
+- **Thin community `Community 214`** (2 nodes): `verify_civic_gateway.py`, `test_civic_gateway()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 214`** (1 nodes): `config.py`
+- **Thin community `Community 215`** (2 nodes): `runSearch()`, `markdownParser.test.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 215`** (1 nodes): `eslint.config.js`
+- **Thin community `Community 216`** (2 nodes): `makeJsonResponse()`, `redisService.test.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 216`** (1 nodes): `playwright.config.ts`
+- **Thin community `Community 217`** (2 nodes): `parseURL()`, `rssParser.test.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 217`** (1 nodes): `postcss.config.js`
+- **Thin community `Community 218`** (2 nodes): `weatherService.test.js`, `mockFetchWeatherAndAqi()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 218`** (1 nodes): `tailwind.config.js`
+- **Thin community `Community 219`** (1 nodes): `branch-cleanup.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 219`** (1 nodes): `vite.config.ts`
+- **Thin community `Community 220`** (1 nodes): `git-push.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 220`** (1 nodes): `vitest.config.ts`
+- **Thin community `Community 221`** (1 nodes): `restructure.ps1`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 221`** (1 nodes): `sw.js`
+- **Thin community `Community 222`** (1 nodes): `test_ephem.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 222`** (1 nodes): `Button.tsx`
+- **Thin community `Community 223`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 223`** (1 nodes): `CTA.tsx`
+- **Thin community `Community 224`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 224`** (1 nodes): `Footer.tsx`
+- **Thin community `Community 225`** (1 nodes): `config.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 225`** (1 nodes): `Hero.tsx`
+- **Thin community `Community 226`** (1 nodes): `eslint.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 226`** (1 nodes): `Icons.jsx`
+- **Thin community `Community 227`** (1 nodes): `playwright.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 227`** (1 nodes): `Pricing.tsx`
+- **Thin community `Community 228`** (1 nodes): `postcss.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 228`** (1 nodes): `EmergencyContext.js`
+- **Thin community `Community 229`** (1 nodes): `tailwind.config.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 229`** (1 nodes): `aiBriefingData.js`
+- **Thin community `Community 230`** (1 nodes): `vite.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 230`** (1 nodes): `alerts.js`
+- **Thin community `Community 231`** (1 nodes): `vitest.config.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 231`** (1 nodes): `budgetData.js`
+- **Thin community `Community 232`** (1 nodes): `sw.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 232`** (1 nodes): `calendarData.js`
+- **Thin community `Community 233`** (1 nodes): `Button.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 233`** (1 nodes): `districtCoords.js`
+- **Thin community `Community 234`** (1 nodes): `CTA.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 234`** (1 nodes): `districtNewsSources.js`
+- **Thin community `Community 235`** (1 nodes): `Footer.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 235`** (1 nodes): `districts.js`
+- **Thin community `Community 236`** (1 nodes): `Hero.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 236`** (1 nodes): `emergencyData.js`
+- **Thin community `Community 237`** (1 nodes): `Icons.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 237`** (1 nodes): `farmerData.js`
+- **Thin community `Community 238`** (1 nodes): `Pricing.tsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 238`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 239`** (1 nodes): `EmergencyContext.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 239`** (1 nodes): `goldRates.js`
+- **Thin community `Community 240`** (1 nodes): `aiBriefingData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 240`** (1 nodes): `jobsData.js`
+- **Thin community `Community 241`** (1 nodes): `alerts.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 241`** (1 nodes): `meesevaData.js`
+- **Thin community `Community 242`** (1 nodes): `budgetData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 242`** (1 nodes): `partners.js`
+- **Thin community `Community 243`** (1 nodes): `calendarData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 243`** (1 nodes): `pdsData.js`
+- **Thin community `Community 244`** (1 nodes): `districtCoords.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 244`** (1 nodes): `politiciansData.js`
+- **Thin community `Community 245`** (1 nodes): `districtNewsSources.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 245`** (1 nodes): `pollData.js`
+- **Thin community `Community 246`** (1 nodes): `districts.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 246`** (1 nodes): `propertyTaxData.js`
+- **Thin community `Community 247`** (1 nodes): `emergencyData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 247`** (1 nodes): `pulses.js`
+- **Thin community `Community 248`** (1 nodes): `farmerData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 248`** (1 nodes): `schemesData.js`
+- **Thin community `Community 249`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 249`** (1 nodes): `services.js`
+- **Thin community `Community 250`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 250`** (1 nodes): `transportData.js`
+- **Thin community `Community 251`** (1 nodes): `jobsData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 251`** (1 nodes): `waterSupplyData.js`
+- **Thin community `Community 252`** (1 nodes): `meesevaData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 252`** (1 nodes): `citizenReportsService.js`
+- **Thin community `Community 253`** (1 nodes): `partners.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 253`** (1 nodes): `classifiedsService.js`
+- **Thin community `Community 254`** (1 nodes): `pdsData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 254`** (1 nodes): `emergencyService.js`
+- **Thin community `Community 255`** (1 nodes): `politiciansData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 255`** (1 nodes): `powerAlertsService.js`
+- **Thin community `Community 256`** (1 nodes): `pollData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 256`** (1 nodes): `redisService.js`
+- **Thin community `Community 257`** (1 nodes): `propertyTaxData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 257`** (1 nodes): `supabaseClient.js`
+- **Thin community `Community 258`** (1 nodes): `pulses.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 258`** (1 nodes): `manifest.py`
+- **Thin community `Community 259`** (1 nodes): `schemesData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 259`** (1 nodes): `__init__.py`
+- **Thin community `Community 260`** (1 nodes): `services.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 260`** (1 nodes): `debug_gold.py`
+- **Thin community `Community 261`** (1 nodes): `transportData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 261`** (1 nodes): `debug_mint_rows.py`
+- **Thin community `Community 262`** (1 nodes): `waterSupplyData.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 262`** (1 nodes): `enterprise-briefing.spec.ts`
+- **Thin community `Community 263`** (1 nodes): `citizenReportsService.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 263`** (1 nodes): `extended.spec.ts`
+- **Thin community `Community 264`** (1 nodes): `classifiedsService.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 264`** (1 nodes): `homepage.spec.ts`
+- **Thin community `Community 265`** (1 nodes): `emergencyService.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 265`** (1 nodes): `smoke_test.spec.ts`
+- **Thin community `Community 266`** (1 nodes): `powerAlertsService.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 266`** (1 nodes): `__init__.py`
+- **Thin community `Community 267`** (1 nodes): `redisService.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 267`** (1 nodes): `timeUtils.test.js`
+- **Thin community `Community 268`** (1 nodes): `supabaseClient.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 268`** (1 nodes): `output.js`
+- **Thin community `Community 269`** (1 nodes): `manifest.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 269`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 270`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 270`** (1 nodes): `goldRates.js`
+- **Thin community `Community 271`** (1 nodes): `debug_gold.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 271`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 272`** (1 nodes): `debug_mint_rows.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 272`** (1 nodes): `goldRates.js`
+- **Thin community `Community 273`** (1 nodes): `enterprise-briefing.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 273`** (1 nodes): `output.js`
+- **Thin community `Community 274`** (1 nodes): `extended.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 274`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 275`** (1 nodes): `homepage.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 275`** (1 nodes): `goldRates.js`
+- **Thin community `Community 276`** (1 nodes): `smoke_test.spec.ts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 276`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 277`** (1 nodes): `__init__.py`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 277`** (1 nodes): `goldRates.js`
+- **Thin community `Community 278`** (1 nodes): `timeUtils.test.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 278`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 279`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 279`** (1 nodes): `goldRates.js`
+- **Thin community `Community 280`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 280`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 281`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 281`** (1 nodes): `goldRates.js`
+- **Thin community `Community 282`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 282`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 283`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 283`** (1 nodes): `goldRates.js`
+- **Thin community `Community 284`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 284`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 285`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 285`** (1 nodes): `goldRates.js`
+- **Thin community `Community 286`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 286`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 287`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 287`** (1 nodes): `goldRates.js`
+- **Thin community `Community 288`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 288`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 289`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 289`** (1 nodes): `goldRates.js`
+- **Thin community `Community 290`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 290`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 291`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 291`** (1 nodes): `goldRates.js`
+- **Thin community `Community 292`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 292`** (1 nodes): `fuelPrices.js`
+- **Thin community `Community 293`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 293`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 294`** (1 nodes): `output.js`
+- **Thin community `Community 294`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 295`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -2142,17 +2440,17 @@ Nodes (1): Generate a 2-line AI summary with simple exponential back-off on fail
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 298`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 299`** (1 nodes): `output.js`
+- **Thin community `Community 299`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 300`** (1 nodes): `output.js`
+- **Thin community `Community 300`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 301`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 302`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 303`** (1 nodes): `pulses.js`
+- **Thin community `Community 303`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 304`** (1 nodes): `pulses.js`
+- **Thin community `Community 304`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 305`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -2174,83 +2472,203 @@ Nodes (1): Generate a 2-line AI summary with simple exponential back-off on fail
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 314`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 315`** (1 nodes): `pulses.js`
+- **Thin community `Community 315`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 316`** (1 nodes): `test_output.js`
+- **Thin community `Community 316`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 317`** (1 nodes): `Bridges data from V1 (legacy) tables to V2 (Pulse) schema.     This allows V2 f`
+- **Thin community `Community 317`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 318`** (1 nodes): `Syncs from V1 'content' table to V2 'public.news`
+- **Thin community `Community 318`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 319`** (1 nodes): `Syncs from V1 'citizen_reports' to V2 'public.citizen_reports`
+- **Thin community `Community 319`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 320`** (1 nodes): `Syncs from V1 'power_alerts' to V2 'public.power_outages`
+- **Thin community `Community 320`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 321`** (1 nodes): `Fetch officials for a specific area (Constituency, Mandal, etc.)         In a r`
+- **Thin community `Community 321`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 322`** (1 nodes): `Search officials by name or party.`
+- **Thin community `Community 322`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 323`** (1 nodes): `Scrapes and returns the latest gold rates for Hyderabad.`
+- **Thin community `Community 323`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 324`** (1 nodes): `Scrapes and returns the latest fuel prices for Hyderabad.`
+- **Thin community `Community 324`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 325`** (1 nodes): `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.`
+- **Thin community `Community 325`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 326`** (1 nodes): `Scrapes data and sends a summary message via the WhatsApp bot.`
+- **Thin community `Community 326`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 327`** (1 nodes): `Extracts an image URL from an RSS feed entry checking various standard fields`
+- **Thin community `Community 327`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 328`** (1 nodes): `Extracts civic entities from news text.     Returns a dict with 'domain_entities`
+- **Thin community `Community 328`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 329`** (1 nodes): `Maps high-level domain entities to database type/ID keys.     Returns (entity_ty`
+- **Thin community `Community 329`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 330`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+- **Thin community `Community 330`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 331`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+- **Thin community `Community 331`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 332`** (1 nodes): `Maps high-level domain entities to database type/ID keys.     Returns (entity_ty`
+- **Thin community `Community 332`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 333`** (1 nodes): `Generate text via the requested provider with automatic retry.          Returns`
+- **Thin community `Community 333`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 334`** (1 nodes): `Call the z.ai OpenAI-compatible chat completions endpoint.`
+- **Thin community `Community 334`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 335`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+- **Thin community `Community 335`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 336`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+- **Thin community `Community 336`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 337`** (1 nodes): `Generate text via the requested provider with automatic retry.          Returns`
+- **Thin community `Community 337`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 338`** (1 nodes): `Call the z.ai OpenAI-compatible chat completions endpoint.`
+- **Thin community `Community 338`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 339`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+- **Thin community `Community 339`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 340`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+- **Thin community `Community 340`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 341`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+- **Thin community `Community 341`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 342`** (1 nodes): `Generates new content for telangana.live`
+- **Thin community `Community 342`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 343`** (1 nodes): `Generate new content and store in Supabase`
+- **Thin community `Community 343`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 344`** (1 nodes): `Execute generation cycle.                  First tries to pull dynamic topics`
+- **Thin community `Community 344`** (1 nodes): `output.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 345`** (1 nodes): `Monitors telangana.live for content that needs updates`
+- **Thin community `Community 345`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 346`** (1 nodes): `Use Claude to analyze content and identify what needs updates`
+- **Thin community `Community 346`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 347`** (1 nodes): `Execute monitoring cycle`
+- **Thin community `Community 347`** (1 nodes): `fuelPrices.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 348`** (1 nodes): `Updates existing content with new information`
+- **Thin community `Community 348`** (1 nodes): `goldRates.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 349`** (1 nodes): `Update existing content with new information`
+- **Thin community `Community 349`** (1 nodes): `pulses.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 350`** (1 nodes): `Checks and improves content quality, then publishes it.`
+- **Thin community `Community 350`** (1 nodes): `pulses.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 351`** (1 nodes): `Check content quality, save improvements, and publish the article.`
+- **Thin community `Community 351`** (1 nodes): `pulses.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 352`** (1 nodes): `Quality-check all content that is still in 'active' (draft) status.`
+- **Thin community `Community 352`** (1 nodes): `pulses.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 353`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+- **Thin community `Community 353`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 354`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 355`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 356`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 357`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 358`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 359`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 360`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 361`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 362`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 363`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 364`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 365`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 366`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 367`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 368`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 369`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 370`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 371`** (1 nodes): `fuelPrices.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 372`** (1 nodes): `goldRates.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 373`** (1 nodes): `pulses.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 374`** (1 nodes): `pulses.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 375`** (1 nodes): `test_output.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 376`** (1 nodes): `test_output.js`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 377`** (1 nodes): `Bridges data from V1 (legacy) tables to V2 (Pulse) schema.     This allows V2 f`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 378`** (1 nodes): `Syncs from V1 'content' table to V2 'public.news`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 379`** (1 nodes): `Syncs from V1 'citizen_reports' to V2 'public.citizen_reports`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 380`** (1 nodes): `Syncs from V1 'power_alerts' to V2 'public.power_outages`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 381`** (1 nodes): `Fetch officials for a specific area (Constituency, Mandal, etc.)         In a r`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 382`** (1 nodes): `Search officials by name or party.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 383`** (1 nodes): `Scrapes and returns the latest gold rates for Hyderabad.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 384`** (1 nodes): `Scrapes and returns the latest fuel prices for Hyderabad.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 385`** (1 nodes): `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 386`** (1 nodes): `Scrapes data and sends a summary message via the WhatsApp bot.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 387`** (1 nodes): `Extracts an image URL from an RSS feed entry checking various standard fields`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 388`** (1 nodes): `Extracts civic entities from news text.     Returns a dict with 'domain_entities`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 389`** (1 nodes): `Maps high-level domain entities to database type/ID keys.     Returns (entity_ty`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 390`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 391`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 392`** (1 nodes): `Maps high-level domain entities to database type/ID keys.     Returns (entity_ty`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 393`** (1 nodes): `Generate text via the requested provider with automatic retry.          Returns`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 394`** (1 nodes): `Call the z.ai OpenAI-compatible chat completions endpoint.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 395`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 396`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 397`** (1 nodes): `Generate text via the requested provider with automatic retry.          Returns`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 398`** (1 nodes): `Call the z.ai OpenAI-compatible chat completions endpoint.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 399`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 400`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 401`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 402`** (1 nodes): `Generates new content for telangana.live`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 403`** (1 nodes): `Generate new content and store in Supabase`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 404`** (1 nodes): `Execute generation cycle.                  First tries to pull dynamic topics`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 405`** (1 nodes): `Monitors telangana.live for content that needs updates`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 406`** (1 nodes): `Use Claude to analyze content and identify what needs updates`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 407`** (1 nodes): `Execute monitoring cycle`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 408`** (1 nodes): `Updates existing content with new information`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 409`** (1 nodes): `Update existing content with new information`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 410`** (1 nodes): `Checks and improves content quality, then publishes it.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 411`** (1 nodes): `Check content quality, save improvements, and publish the article.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 412`** (1 nodes): `Quality-check all content that is still in 'active' (draft) status.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 413`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions

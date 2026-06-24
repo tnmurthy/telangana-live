@@ -83,7 +83,7 @@ function ServiceCard({ service, onExpand, isExpanded }) {
     );
 }
 
-export default function ServicesDirectory() {
+export default function ServicesDirectory({ region }) {
     const [expanded, setExpanded] = useState(null);
     const [apiServices, setApiServices] = useState({});
     const [loading, setLoading] = useState(true);
@@ -93,7 +93,8 @@ export default function ServicesDirectory() {
         let isMounted = true;
         const fetchServices = async () => {
             setLoading(true);
-            const data = await civicServicesAPI.getServices(myDistrict);
+            const queryDistrict = region || myDistrict;
+            const data = await civicServicesAPI.getServices(queryDistrict);
             if (isMounted) {
                 setApiServices(data);
                 setLoading(false);
@@ -101,7 +102,7 @@ export default function ServicesDirectory() {
         };
         fetchServices();
         return () => { isMounted = false; };
-    }, [myDistrict]);
+    }, [myDistrict, region]);
 
     // Use dynamic API data if available, otherwise gracefully degrade to static mock data
     const activeServices = Object.keys(apiServices).length > 0 ? apiServices : staticServicesFallback;

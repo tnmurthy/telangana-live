@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { Icons } from '../components/Icons';
-import { IndianRupee, Cloud, TriangleAlert, TrainFront, Phone, Hospital } from 'lucide-react';
 import { partners } from '../data/partners';
 import PartnerCard from '../components/PartnerCard';
 import DailyRatesDashboard from '../components/DailyRatesDashboard';
@@ -19,24 +18,6 @@ import NotFound from './NotFound';
 import { districtNewsSources } from '../data/districtNewsSources';
 import odopData from '../data/odopData.json';
 import districtsData from '../data/districts.json';
-
-const BentoBox = ({ title, icon, children, color = "telangana-red" }) => {
-    return (
-        <div className={`backdrop-blur-xl bg-white/40 dark:bg-card/40 border border-white/20 dark:border-white/10 rounded-3xl p-6 md:p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:bg-white/60 dark:hover:bg-white/10 group relative overflow-hidden flex flex-col h-full`}>
-            {/* Ambient Animated Orb */}
-            <div className={`absolute -top-10 -right-10 w-40 h-40 bg-${color}/10 dark:bg-${color}/5 rounded-full blur-[40px] group-hover:bg-${color}/20 group-hover:scale-110 transition-all duration-700`}></div>
-            
-            <div className="relative z-10 flex items-center gap-3 mb-6">
-                {icon && <span className={`text-${color} group-hover:scale-110 transition-transform duration-300`}>{icon}</span>}
-                <h3 className="font-black text-xl tracking-tight text-text">{title}</h3>
-            </div>
-            
-            <div className="relative z-10 flex-grow animate-in fade-in duration-500">
-                {children}
-            </div>
-        </div>
-    );
-};
 
 export default function SubRegionPage() {
     const { region } = useParams();
@@ -177,31 +158,17 @@ export default function SubRegionPage() {
                 </div>
             </section>
 
-            {/* Bento Grid: Local Utilities & Data */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-                <BentoBox title="Daily Rates & Fuel" icon={<IndianRupee className="w-6 h-6" />} color="telangana-gold">
-                    <DailyRatesDashboard />
-                </BentoBox>
+            {/* Local Utilities & Data */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-8">
+                <DailyRatesDashboard />
+                <WeatherCard selectedDistrict={meta.district} />
+                <PowerTariffCard />
+            </div>
 
-                <BentoBox title="Weather & Environment" icon={<Cloud className="w-6 h-6" />} color="telangana-blue">
-                    <WeatherCard selectedDistrict={meta.district} />
-                </BentoBox>
-
-                <BentoBox title="Power & Tariffs" icon={<TriangleAlert className="w-6 h-6" />} color="telangana-red">
-                    <PowerTariffCard />
-                </BentoBox>
-
-                <BentoBox title="Local Transport" icon={<TrainFront className="w-6 h-6" />} color="telangana-green">
-                    <MetroCard />
-                </BentoBox>
-
-                <BentoBox title="Healthcare Finder" icon={<Hospital className="w-6 h-6" />} color="telangana-red">
-                    <BasthiDawakhana />
-                </BentoBox>
-
-                <BentoBox title="Services Directory" icon={<Phone className="w-6 h-6" />} color="telangana-gold">
-                    <ServicesDirectory />
-                </BentoBox>
+            <div className="space-y-6 lg:space-y-8 mb-12">
+                <MetroCard />
+                <BasthiDawakhana region={meta.district} />
+                <ServicesDirectory region={meta.district} />
             </div>
 
             {/* Local News Feed */}

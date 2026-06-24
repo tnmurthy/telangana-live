@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { basthiDawakhanas } from '../data/transportData';
 
-export default function BasthiDawakhana() {
+export default function BasthiDawakhana({ region }) {
     const [search, setSearch] = useState('');
-    const [selectedZone, setSelectedZone] = useState('all');
+    const defaultZone = ['hyderabad', 'cyberabad', 'malkajgiri'].includes(region?.toLowerCase()) ? region.toLowerCase() : 'all';
+    const [selectedZone, setSelectedZone] = useState(defaultZone);
 
     useEffect(() => {
         const itemListElement = basthiDawakhanas.map((d, index) => ({
