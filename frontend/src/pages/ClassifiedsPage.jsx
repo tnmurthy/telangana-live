@@ -4,16 +4,23 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { classifiedsService } from '../services/classifiedsService';
 import { Icons } from '../components/Icons';
+import ProgrammaticAd from '../components/ProgrammaticAd';
 
 // Custom Map Marker for Classifieds
-function createCategoryIcon(category) {
+function createCategoryIcon(item) {
+    const category = item.category;
+    const isFeatured = item.is_featured;
     const color = category === 'Vehicles' ? '#3b82f6' : 
                   category === 'Electronics' ? '#8b5cf6' : 
                   category === 'Furniture' ? '#f59e0b' : '#10b981';
                   
+    const borderStyle = isFeatured ? 'border: 2px solid #D4AF37; box-shadow: 0 0 10px rgba(212,175,55,0.7);' : 'border:3px solid white; box-shadow:0 4px 10px rgba(0,0,0,0.3);';
+    const bgStyle = isFeatured ? 'background: linear-gradient(135deg, #D4AF37, #F59E0B)' : `background:${color}`;
+    const pinText = isFeatured ? '★' : '₹';
+
     return L.divIcon({
         className: 'custom-pin',
-        html: `<div style="background:${color};width:24px;height:24px;border-radius:50%;border:3px solid white;box-shadow:0 4px 10px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;">₹</div>`,
+        html: `<div style="${bgStyle};width:24px;height:24px;border-radius:50%;${borderStyle}display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;">${pinText}</div>`,
         iconSize: [28, 28],
         iconAnchor: [14, 14],
     });
@@ -46,11 +53,18 @@ export default function ClassifiedsPage() {
     const [rawText, setRawText] = useState('');
     const [phone, setPhone] = useState('');
     const [submitting, setSubmitting] = useState(false);
+    const [isFeatured, setIsFeatured] = useState(false);
+    const [showPaymentModal, setShowPaymentModal] = useState(false);
 
     useEffect(() => {
         const fetchClassifieds = async () => {
             const data = await classifiedsService.getActiveClassifieds();
-            setClassifieds(data);
+            const sorted = [...data].sort((a, b) => {
+                if (a.is_featured && !b.is_featured) return -1;
+                if (!a.is_featured && b.is_featured) return 1;
+                return new Date(b.created_at || 0) - new Date(a.created_at || 0);
+            });
+            setClassifieds(sorted);
             setLoading(false);
         };
         fetchClassifieds();
@@ -58,6 +72,14 @@ export default function ClassifiedsPage() {
 
     const handlePostSubmit = async (e) => {
         e.preventDefault();
+        if (isFeatured) {
+            setShowPaymentModal(true);
+        } else {
+            await executePost(false);
+        }
+    };
+
+    const executePost = async (featured) => {
         setSubmitting(true);
         // Simulate OTP wait...
         await new Promise(r => setTimeout(r, 1000));
@@ -68,15 +90,25 @@ export default function ClassifiedsPage() {
             mapCenter[0] + (Math.random() - 0.5) * 0.02, // slight jitter for MVP
             mapCenter[1] + (Math.random() - 0.5) * 0.02,
             'Jubilee Hills',
-            phone
+            phone,
+            featured
         );
         
-        setClassifieds([newPost, ...classifieds]);
+        setClassifieds(prev => {
+            const updated = [newPost, ...prev];
+            return updated.sort((a, b) => {
+                if (a.is_featured && !b.is_featured) return -1;
+                if (!a.is_featured && b.is_featured) return 1;
+                return new Date(b.created_at || 0) - new Date(a.created_at || 0);
+            });
+        });
+        
         setShowPostForm(false);
         setRawText('');
         setPhone('');
+        setIsFeatured(false);
         setSubmitting(false);
-        alert('Item successfully processed by AI and posted!');
+        alert(featured ? 'Item successfully paid, processed by AI, and posted as Featured!' : 'Item successfully processed by AI and posted!');
     };
 
     return (
@@ -127,12 +159,30 @@ export default function ClassifiedsPage() {
                                 required
                             />
                         </div>
+                        {/* Featured booster option */}
+                        <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-3 hover:border-heritage-gold/30 transition-colors">
+                            <input 
+                                type="checkbox"
+                                id="boost_featured"
+                                checked={isFeatured}
+                                onChange={e => setIsFeatured(e.target.checked)}
+                                className="mt-1 w-4 h-4 rounded border-white/10 text-heritage-gold focus:ring-0 focus:ring-offset-0 bg-dark-surface cursor-pointer"
+                            />
+                            <div>
+                                <label htmlFor="boost_featured" className="block text-sm font-bold text-white cursor-pointer select-none">
+                                    ★ Boost Post (Featured Listing) — <span className="text-heritage-gold">₹49</span>
+                                </label>
+                                <span className="text-[11px] text-text-muted">Put your post at the top of the map and list for 30 days. Attract up to 10x more views and enquiries!</span>
+                            </div>
+                        </div>
                         <button 
                             type="submit" 
                             disabled={submitting}
-                            className="btn-liquid bg-telangana-green text-black w-full py-4 text-base disabled:opacity-50"
+                            className={`btn-liquid w-full py-4 text-base disabled:opacity-50 font-bold transition-all ${
+                                isFeatured ? 'bg-heritage-gold text-slate-950 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]' : 'bg-telangana-green text-black'
+                            }`}
                         >
-                            {submitting ? 'AI Processing...' : 'Generate & Post'}
+                            {submitting ? 'AI Processing...' : isFeatured ? 'Proceed to Payment & Post' : 'Generate & Post'}
                         </button>
                     </form>
                 </div>
@@ -161,7 +211,7 @@ export default function ClassifiedsPage() {
                                 <Marker 
                                     key={item.id} 
                                     position={[item.lat, item.lng]}
-                                    icon={createCategoryIcon(item.category)}
+                                    icon={createCategoryIcon(item)}
                                 >
                                     <Popup className="classifieds-popup">
                                         <div className="p-1">
@@ -216,45 +266,120 @@ export default function ClassifiedsPage() {
                     <div className="animate-pulse h-32 bg-white/5 rounded-xl"></div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        {classifieds.map(item => (
-                            <div key={item.id} className="glass-card overflow-hidden group hover:border-telangana-green/30 transition-colors">
-                                {item.image_url && (
-                                    <img 
-                                        src={item.image_url} 
-                                        alt={item.title} 
-                                        className="w-full h-48 object-cover"
-                                    />
-                                )}
-                                <div className="p-5">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <span className="text-xs font-bold uppercase tracking-wider text-telangana-green bg-telangana-green/10 px-2 py-1 rounded">
-                                            {item.category}
-                                        </span>
-                                        <span className="text-[10px] font-bold px-2 py-1 bg-red-500/10 text-red-400 border border-red-500/20 rounded-full flex items-center gap-1">
-                                            <Icons.Clock className="w-3 h-3" /> {getExpiryText(item.expires_at)}
-                                        </span>
+                        {classifieds.map((item, idx) => {
+                            const card = (
+                                <div key={item.id} className={`glass-card overflow-hidden group transition-all duration-300 relative ${
+                                    item.is_featured 
+                                        ? 'border-heritage-gold/40 shadow-[0_0_15px_rgba(212,175,55,0.15)] bg-heritage-gold/[0.015] hover:border-heritage-gold' 
+                                        : 'border-white/5 hover:border-telangana-green/30'
+                                }`}>
+                                    {item.image_url && (
+                                        <img 
+                                            src={item.image_url} 
+                                            alt={item.title} 
+                                            className="w-full h-48 object-cover"
+                                        />
+                                    )}
+                                    <div className="p-5">
+                                        <div className="flex justify-between items-center mb-2 flex-wrap gap-2">
+                                            <div className="flex items-center gap-1.5">
+                                                {item.is_featured && (
+                                                    <span className="text-[9px] px-1.5 py-0.5 rounded bg-heritage-gold/20 text-heritage-gold font-black uppercase tracking-wider border border-heritage-gold/30">
+                                                        ★ Featured
+                                                    </span>
+                                                )}
+                                                <span className="text-xs font-bold uppercase tracking-wider text-telangana-green bg-telangana-green/10 px-2 py-1 rounded">
+                                                    {item.category}
+                                                </span>
+                                            </div>
+                                            <span className="text-[10px] font-bold px-2 py-1 bg-red-500/10 text-red-400 border border-red-500/20 rounded-full flex items-center gap-1">
+                                                <Icons.Clock className="w-3 h-3" /> {getExpiryText(item.expires_at)}
+                                            </span>
+                                        </div>
+                                        <h4 className="font-bold text-lg mb-1 truncate">{item.title}</h4>
+                                        <p className="text-xl font-black text-white mb-3">
+                                            {item.price ? `₹${item.price.toLocaleString()}` : 'Contact Seller'}
+                                        </p>
+                                        <p className="text-sm text-text-secondary line-clamp-2 mb-4">
+                                            {item.description}
+                                        </p>
+                                        <a 
+                                            href={`https://wa.me/${item.whatsapp_number}?text=Hi, I saw your ${item.title} on Telangana.Live`}
+                                            target="_blank" 
+                                            rel="noreferrer"
+                                            className="btn-liquid bg-[#25D366] text-white w-full py-3 text-sm"
+                                        >
+                                            <Icons.Chat className="w-5 h-5" /> Chat on WhatsApp
+                                        </a>
                                     </div>
-                                    <h4 className="font-bold text-lg mb-1 truncate">{item.title}</h4>
-                                    <p className="text-xl font-black text-white mb-3">
-                                        {item.price ? `₹${item.price.toLocaleString()}` : 'Contact Seller'}
-                                    </p>
-                                    <p className="text-sm text-text-secondary line-clamp-2 mb-4">
-                                        {item.description}
-                                    </p>
-                                    <a 
-                                        href={`https://wa.me/${item.whatsapp_number}?text=Hi, I saw your ${item.title} on Telangana.Live`}
-                                        target="_blank" 
-                                        rel="noreferrer"
-                                        className="btn-liquid bg-[#25D366] text-white w-full py-3 text-sm"
-                                    >
-                                        <Icons.Chat className="w-5 h-5" /> Chat on WhatsApp
-                                    </a>
                                 </div>
-                            </div>
-                        ))}
+                            );
+
+                            if (idx === 2) {
+                                return (
+                                    <span key={`inline-ad-wrap-${item.id}`} style={{ display: 'contents' }}>
+                                        <ProgrammaticAd mode="sponsor" className="min-h-[280px]" />
+                                        {card}
+                                    </span>
+                                );
+                            }
+                            return card;
+                        })}
                     </div>
                 )}
             </div>
+
+            {/* Mock UPI Payment Modal */}
+            {showPaymentModal && (
+                <div className="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fade-in">
+                    <div className="glass-card max-w-sm w-full p-6 border border-heritage-gold/30 text-center space-y-6 bg-slate-950/95 shadow-2xl">
+                        <div className="flex justify-between items-center border-b border-white/10 pb-3">
+                            <h3 className="text-lg font-bold text-heritage-gold flex items-center gap-1.5">
+                                <span>★</span> Boost Classified Post
+                            </h3>
+                            <button 
+                                onClick={() => setShowPaymentModal(false)}
+                                className="text-text-muted hover:text-white"
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        
+                        <div className="space-y-2">
+                            <p className="text-xs text-text-muted uppercase tracking-wider">UPI Secure Gateway</p>
+                            <p className="text-3xl font-black text-white">₹49.00</p>
+                            <p className="text-xs text-text-secondary">Get 10x more leads. Features your post on the top of the map & list.</p>
+                        </div>
+                        
+                        {/* Fake QR Code */}
+                        <div className="bg-white p-4 rounded-xl inline-block shadow-inner mx-auto">
+                            <div className="w-40 h-40 flex flex-col items-center justify-center border-2 border-dashed border-slate-300 rounded text-slate-800 font-bold p-2 text-xs">
+                                <span className="text-2xl mb-1">📱</span>
+                                <span>Scan with BHIM UPI</span>
+                                <span className="font-mono text-[9px] mt-1 text-slate-500">telangana.live@upi</span>
+                            </div>
+                        </div>
+                        
+                        <div className="flex gap-3">
+                            <button 
+                                onClick={() => setShowPaymentModal(false)}
+                                className="flex-1 btn-liquid bg-white/5 border border-white/10 text-white text-xs py-3 rounded-xl"
+                            >
+                                Cancel
+                            </button>
+                            <button 
+                                onClick={() => {
+                                    setShowPaymentModal(false);
+                                    executePost(true);
+                                }}
+                                className="flex-1 btn-liquid bg-heritage-gold text-slate-950 text-xs py-3 font-bold rounded-xl"
+                            >
+                                Simulate Success
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

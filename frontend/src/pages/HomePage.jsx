@@ -11,6 +11,8 @@ import { useEmergency } from '../hooks/useEmergency';
 import { Link } from 'react-router-dom';
 import useJsonLd from '../hooks/useJsonLd';
 import LifeEventWizard from '../components/LifeEventWizard';
+import ProgrammaticAd from '../components/ProgrammaticAd';
+
 
 const CATEGORIES = [
   { id: 'All', label: 'Briefing' },
@@ -211,6 +213,11 @@ export default function HomePage() {
             </div>
           </Link>
         </div>
+      </section>
+
+      {/* Programmatic / Sponsorship Placement */}
+      <section className="animate-fade-in delay-150">
+        <ProgrammaticAd mode="sponsor" className="w-full !min-h-[140px]" />
       </section>
 
       {/* Floating Category Pill */}

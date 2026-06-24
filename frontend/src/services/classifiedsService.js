@@ -13,7 +13,8 @@ const MOCK_CLASSIFIEDS = [
         ward: 'Jubilee Hills',
         image_url: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&q=80&w=400',
         created_at: new Date().toISOString(),
-        expires_at: new Date(Date.now() + 72 * 3600000).toISOString()
+        expires_at: new Date(Date.now() + 72 * 3600000).toISOString(),
+        is_featured: true
     },
     {
         id: 'c-2',
@@ -64,7 +65,7 @@ export const classifiedsService = {
         }
     },
 
-    async postClassified(rawText, lat, lng, ward, whatsapp) {
+    async postClassified(rawText, lat, lng, ward, whatsapp, isFeatured = false) {
         // AI parsing simulation for MVP (In production, this hits our backend)
         const categoryMatch = rawText.toLowerCase().match(/(bike|car|enfield|scooter|vehicle)/) ? 'Vehicles' : 
                              rawText.toLowerCase().match(/(sofa|bed|chair|table)/) ? 'Furniture' : 
@@ -86,7 +87,8 @@ export const classifiedsService = {
             lng,
             ward,
             whatsapp_number: whatsapp,
-            status: 'active'
+            status: 'active',
+            is_featured: isFeatured
         };
 
         if (!supabase) {
