@@ -111,13 +111,13 @@ export default function NewsTicker() {
                   >
                     {item.message}
                   </a>
-                  <span className="text-text-muted/50 text-[10px] font-semibold flex-shrink-0">· {item.time}</span>
+                  <span className="text-text-muted text-[10px] font-semibold flex-shrink-0">· {item.time}</span>
                 </div>
               );
             })}
           </div>
         </div>
-
+ 
         {/* Mobile: plain scrolling */}
         <div className="md:hidden overflow-hidden flex-1 group">
           <div className="animate-ticker flex whitespace-nowrap py-2 gap-10">
@@ -125,14 +125,14 @@ export default function NewsTicker() {
               <span key={`m-${item.id}-${idx}`} className="text-[12px] text-text-secondary inline-flex items-center gap-2 font-medium">
                 <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${typeColors[item.type] || typeColors.default}`} />
                 <span className="max-w-[200px] truncate">{item.message}</span>
-                <span className="text-text-muted/50 text-[10px]">· {item.time}</span>
+                <span className="text-text-muted text-[10px]">· {item.time}</span>
               </span>
             ))}
           </div>
         </div>
-
+ 
         {/* Item counter */}
-        <div className="flex-shrink-0 px-3 text-[9px] text-text-muted/40 font-mono hidden sm:block">
+        <div className="flex-shrink-0 px-3 text-[9px] text-text-muted font-mono hidden sm:block">
           {visibleIdx + 1}/{tickerItems.length}
         </div>
       </div>

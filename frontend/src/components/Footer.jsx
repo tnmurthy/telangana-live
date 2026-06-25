@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-[11px] text-text-muted/50">
+          <p className="text-[11px] text-text-muted">
             © {year} Telangana.live — All rights reserved.
           </p>
         </div>

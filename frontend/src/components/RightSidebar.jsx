@@ -45,7 +45,7 @@ const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
       <div className="flex justify-between items-start mb-3">
         <div>
           <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.15em] mb-0.5">{selectedDistrict}</p>
-          <p className="text-[10px] text-text-muted/60 font-medium">Weather & AQI</p>
+          <p className="text-[10px] text-text-muted font-medium">Weather & AQI</p>
         </div>
         <div className="text-2xl group-hover:animate-float">☀️</div>
       </div>
@@ -151,7 +151,7 @@ const MandiWidget = () => {
             <span className="text-[9px] text-text-muted font-medium truncate">{item.name}</span>
             <div className="flex items-baseline gap-1">
               <span className="text-sm font-bold text-white">₹{item.price.toLocaleString('en-IN')}</span>
-              <span className="text-[8px] text-text-muted/60 font-medium">/q</span>
+              <span className="text-[8px] text-text-muted font-medium">/q</span>
             </div>
           </div>
         ))}
@@ -201,7 +201,7 @@ const TrendingWidget = () => {
             className="flex justify-between items-center group cursor-pointer"
           >
             <span className="text-xs text-telangana-green font-bold group-hover:underline underline-offset-2 transition-colors">{item.tag}</span>
-            <span className="text-[9px] text-text-muted/60 font-medium">{item.count}</span>
+            <span className="text-[9px] text-text-muted font-medium">{item.count}</span>
           </li>
         ))}
       </ul>

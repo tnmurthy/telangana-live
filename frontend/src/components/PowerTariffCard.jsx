@@ -2,7 +2,7 @@ import { powerTariff } from '../data/alerts';
 
 export default function PowerTariffCard() {
     return (
-        <div className="glass-card section-block animate-fade-in h-full">
+        <div className="glass-card section-block animate-fade-in h-full flex flex-col">
             <div className="flex items-start justify-between mb-4">
                 <div>
                     <h3 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight flex items-center gap-2">
@@ -13,7 +13,7 @@ export default function PowerTariffCard() {
                 <span className="date-badge">{powerTariff.lastUpdated}</span>
             </div>
 
-            <div className="overflow-x-auto scroll-x-mobile">
+            <div className="overflow-x-auto scroll-x-mobile flex-1">
                 <table className="w-full min-w-[340px] text-sm">
                     <thead>
                         <tr className="border-b border-white/[0.06]">

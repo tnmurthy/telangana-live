@@ -45,6 +45,7 @@ export default function EmergencySimulator() {
         onClick={() => setIsOpen(!isOpen)}
         className={`w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-all duration-500 pointer-events-auto
                    ${isEmergencyActive ? 'bg-red-600 animate-pulse' : 'bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10'}`}
+        aria-label="Toggle Emergency Simulator"
       >
         <Icons.Emergency className={`w-6 h-6 ${isEmergencyActive ? 'text-white' : 'text-text-muted'}`} />
       </button>

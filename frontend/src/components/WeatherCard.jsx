@@ -64,7 +64,7 @@ export default function WeatherCard({ selectedDistrict }) {
     }
 
     return (
-        <div className="glass-card section-block animate-fade-in h-full">
+        <div className="glass-card section-block animate-fade-in h-full flex flex-col">
             <div className="flex items-start justify-between mb-4">
                 <div>
                     <h3 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight">{selectedDistrict}</h3>
@@ -78,7 +78,8 @@ export default function WeatherCard({ selectedDistrict }) {
                 <span className="text-4xl sm:text-5xl drop-shadow-lg">{condIcons[weather.condition] || '🌤️'}</span>
             </div>
 
-            {/* Temperature */}
+            <div className="flex-1 flex flex-col justify-between">
+                {/* Temperature */}
             <div className="flex items-end gap-1 mb-1">
                 <span className="price-value text-4xl sm:text-5xl text-white">{weather.temp}°</span>
                 <span className="text-text-muted text-base mb-2 font-light">C</span>
@@ -145,6 +146,7 @@ export default function WeatherCard({ selectedDistrict }) {
                     </div>
                 </div>
             )}
+            </div>
         </div>
     );
 }

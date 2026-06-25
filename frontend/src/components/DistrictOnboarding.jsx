@@ -54,7 +54,11 @@ export default function DistrictOnboarding() {
             <h3 className="text-sm font-bold text-white">📍 Personalise Your Feed</h3>
             <p className="text-xs text-text-muted mt-0.5">Pick your district for local news at the top</p>
           </div>
-          <button onClick={dismissDistrictPrompt} className="p-1 text-text-muted hover:text-white transition-colors">
+          <button 
+            onClick={dismissDistrictPrompt} 
+            className="p-1 text-text-muted hover:text-white transition-colors"
+            aria-label="Dismiss personalization banner"
+          >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>

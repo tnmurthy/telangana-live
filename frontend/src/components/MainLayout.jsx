@@ -73,6 +73,7 @@ const MainLayout = ({ children }) => {
           <button 
             onClick={() => setShowTopAd(false)} 
             className="text-text-muted hover:text-white p-1 rounded hover:bg-white/10 transition-all"
+            aria-label="Close Advertisement"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -137,6 +138,7 @@ const MainLayout = ({ children }) => {
             <button 
               onClick={() => setShowBottomAd(false)} 
               className="text-text-muted hover:text-white p-1 rounded hover:bg-white/10 transition-all"
+              aria-label="Close Advertisement"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />

@@ -10,8 +10,9 @@ export default {
         'telangana-green': '#00a86b',
         'telangana-green-light': '#00c97f',
         'heritage-gold': '#d4a843',
-        'text-muted': '#6b7a70',
-        'text-secondary': '#9eada5',
+        'heritage-gold-light': '#ebd197',
+        'text-muted': '#8ca093',
+        'text-secondary': '#a8b7af',
         success: '#22c55e',
       },
       fontFamily: {
