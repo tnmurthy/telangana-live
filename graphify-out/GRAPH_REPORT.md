@@ -1,40 +1,40 @@
-# Graph Report - .  (2026-06-24)
+# Graph Report - C:\tt-ai-stack\01_projects\telangana-live  (2026-06-25)
 
 ## Corpus Check
-- 420 files · ~379,659 words
+- 658 files · ~547,107 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2457 nodes · 3191 edges · 414 communities detected
-- Extraction: 85% EXTRACTED · 15% INFERRED · 0% AMBIGUOUS · INFERRED: 468 edges (avg confidence: 0.5)
+- 2875 nodes · 4196 edges · 144 communities detected
+- Extraction: 71% EXTRACTED · 29% INFERRED · 0% AMBIGUOUS · INFERRED: 1199 edges (avg confidence: 0.71)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Community 0|Community 0]]
-- [[_COMMUNITY_Community 1|Community 1]]
-- [[_COMMUNITY_Community 2|Community 2]]
-- [[_COMMUNITY_Community 3|Community 3]]
-- [[_COMMUNITY_Community 4|Community 4]]
-- [[_COMMUNITY_Community 5|Community 5]]
-- [[_COMMUNITY_Community 6|Community 6]]
-- [[_COMMUNITY_Community 7|Community 7]]
-- [[_COMMUNITY_Community 8|Community 8]]
-- [[_COMMUNITY_Community 9|Community 9]]
-- [[_COMMUNITY_Community 10|Community 10]]
-- [[_COMMUNITY_Community 11|Community 11]]
-- [[_COMMUNITY_Community 12|Community 12]]
-- [[_COMMUNITY_Community 13|Community 13]]
-- [[_COMMUNITY_Community 14|Community 14]]
-- [[_COMMUNITY_Community 15|Community 15]]
-- [[_COMMUNITY_Community 16|Community 16]]
-- [[_COMMUNITY_Community 17|Community 17]]
-- [[_COMMUNITY_Community 18|Community 18]]
-- [[_COMMUNITY_Community 19|Community 19]]
-- [[_COMMUNITY_Community 20|Community 20]]
-- [[_COMMUNITY_Community 21|Community 21]]
-- [[_COMMUNITY_Community 22|Community 22]]
-- [[_COMMUNITY_Community 23|Community 23]]
-- [[_COMMUNITY_Community 24|Community 24]]
+- [[_COMMUNITY_Graphify Analysis Module|Graphify Analysis Module]]
+- [[_COMMUNITY_Graphify Benchmarking|Graphify Benchmarking]]
+- [[_COMMUNITY_HTTP Client Authentication|HTTP Client Authentication]]
+- [[_COMMUNITY_Telangana Live AI Agents|Telangana Live AI Agents]]
+- [[_COMMUNITY_Data Ingestion & WhatsApp Bot|Data Ingestion & WhatsApp Bot]]
+- [[_COMMUNITY_Project Documentation & Guidelines|Project Documentation & Guidelines]]
+- [[_COMMUNITY_CLI Hooks & Installers|CLI Hooks & Installers]]
+- [[_COMMUNITY_Civic Portal Backend Agents|Civic Portal Backend Agents]]
+- [[_COMMUNITY_Local Web Server|Local Web Server]]
+- [[_COMMUNITY_Graphify Core Pipeline Modules|Graphify Core Pipeline Modules]]
+- [[_COMMUNITY_Civic Services Data Scrapers & APIs|Civic Services Data Scrapers & APIs]]
+- [[_COMMUNITY_Frontend React Components & State|Frontend React Components & State]]
+- [[_COMMUNITY_File Classification & Detection|File Classification & Detection]]
+- [[_COMMUNITY_HTTP Ingestion & Query APIs|HTTP Ingestion & Query APIs]]
+- [[_COMMUNITY_Civic Performance Analysis|Civic Performance Analysis]]
+- [[_COMMUNITY_Playwright Testing & File Demos|Playwright Testing & File Demos]]
+- [[_COMMUNITY_MeeSeva Certificates & Permissions|MeeSeva Certificates & Permissions]]
+- [[_COMMUNITY_Deployment & Compliance Blueprints|Deployment & Compliance Blueprints]]
+- [[_COMMUNITY_Graphify Extraction Caching|Graphify Extraction Caching]]
+- [[_COMMUNITY_Whisper Video & Audio Transcription|Whisper Video & Audio Transcription]]
+- [[_COMMUNITY_Health & Life Event Services|Health & Life Event Services]]
+- [[_COMMUNITY_Frontend App Layout & Widgets|Frontend App Layout & Widgets]]
+- [[_COMMUNITY_Multilingual Translations & Skill Integrations|Multilingual Translations & Skill Integrations]]
+- [[_COMMUNITY_Data Sync Scrapers & Storage|Data Sync Scrapers & Storage]]
+- [[_COMMUNITY_Graphify Wiki Generator|Graphify Wiki Generator]]
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 27|Community 27]]
@@ -62,21 +62,14 @@
 - [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 50|Community 50]]
 - [[_COMMUNITY_Community 51|Community 51]]
-- [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
-- [[_COMMUNITY_Community 58|Community 58]]
 - [[_COMMUNITY_Community 59|Community 59]]
-- [[_COMMUNITY_Community 60|Community 60]]
-- [[_COMMUNITY_Community 61|Community 61]]
-- [[_COMMUNITY_Community 62|Community 62]]
-- [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
-- [[_COMMUNITY_Community 66|Community 66]]
 - [[_COMMUNITY_Community 67|Community 67]]
 - [[_COMMUNITY_Community 68|Community 68]]
 - [[_COMMUNITY_Community 69|Community 69]]
@@ -85,13 +78,9 @@
 - [[_COMMUNITY_Community 72|Community 72]]
 - [[_COMMUNITY_Community 73|Community 73]]
 - [[_COMMUNITY_Community 74|Community 74]]
-- [[_COMMUNITY_Community 75|Community 75]]
 - [[_COMMUNITY_Community 76|Community 76]]
 - [[_COMMUNITY_Community 77|Community 77]]
-- [[_COMMUNITY_Community 78|Community 78]]
-- [[_COMMUNITY_Community 79|Community 79]]
 - [[_COMMUNITY_Community 80|Community 80]]
-- [[_COMMUNITY_Community 81|Community 81]]
 - [[_COMMUNITY_Community 82|Community 82]]
 - [[_COMMUNITY_Community 83|Community 83]]
 - [[_COMMUNITY_Community 84|Community 84]]
@@ -104,102 +93,26 @@
 - [[_COMMUNITY_Community 91|Community 91]]
 - [[_COMMUNITY_Community 92|Community 92]]
 - [[_COMMUNITY_Community 93|Community 93]]
-- [[_COMMUNITY_Community 94|Community 94]]
 - [[_COMMUNITY_Community 95|Community 95]]
-- [[_COMMUNITY_Community 96|Community 96]]
 - [[_COMMUNITY_Community 97|Community 97]]
-- [[_COMMUNITY_Community 98|Community 98]]
-- [[_COMMUNITY_Community 99|Community 99]]
 - [[_COMMUNITY_Community 100|Community 100]]
-- [[_COMMUNITY_Community 101|Community 101]]
 - [[_COMMUNITY_Community 102|Community 102]]
-- [[_COMMUNITY_Community 103|Community 103]]
-- [[_COMMUNITY_Community 104|Community 104]]
-- [[_COMMUNITY_Community 105|Community 105]]
-- [[_COMMUNITY_Community 106|Community 106]]
-- [[_COMMUNITY_Community 107|Community 107]]
-- [[_COMMUNITY_Community 108|Community 108]]
-- [[_COMMUNITY_Community 109|Community 109]]
-- [[_COMMUNITY_Community 110|Community 110]]
 - [[_COMMUNITY_Community 111|Community 111]]
 - [[_COMMUNITY_Community 112|Community 112]]
 - [[_COMMUNITY_Community 113|Community 113]]
-- [[_COMMUNITY_Community 114|Community 114]]
-- [[_COMMUNITY_Community 115|Community 115]]
 - [[_COMMUNITY_Community 116|Community 116]]
 - [[_COMMUNITY_Community 117|Community 117]]
 - [[_COMMUNITY_Community 118|Community 118]]
 - [[_COMMUNITY_Community 119|Community 119]]
 - [[_COMMUNITY_Community 120|Community 120]]
-- [[_COMMUNITY_Community 121|Community 121]]
-- [[_COMMUNITY_Community 122|Community 122]]
 - [[_COMMUNITY_Community 123|Community 123]]
 - [[_COMMUNITY_Community 124|Community 124]]
 - [[_COMMUNITY_Community 125|Community 125]]
 - [[_COMMUNITY_Community 126|Community 126]]
-- [[_COMMUNITY_Community 127|Community 127]]
-- [[_COMMUNITY_Community 128|Community 128]]
-- [[_COMMUNITY_Community 129|Community 129]]
-- [[_COMMUNITY_Community 130|Community 130]]
-- [[_COMMUNITY_Community 131|Community 131]]
-- [[_COMMUNITY_Community 132|Community 132]]
-- [[_COMMUNITY_Community 133|Community 133]]
-- [[_COMMUNITY_Community 134|Community 134]]
-- [[_COMMUNITY_Community 135|Community 135]]
-- [[_COMMUNITY_Community 136|Community 136]]
-- [[_COMMUNITY_Community 137|Community 137]]
-- [[_COMMUNITY_Community 138|Community 138]]
-- [[_COMMUNITY_Community 139|Community 139]]
-- [[_COMMUNITY_Community 140|Community 140]]
-- [[_COMMUNITY_Community 141|Community 141]]
-- [[_COMMUNITY_Community 142|Community 142]]
-- [[_COMMUNITY_Community 143|Community 143]]
-- [[_COMMUNITY_Community 144|Community 144]]
-- [[_COMMUNITY_Community 145|Community 145]]
-- [[_COMMUNITY_Community 146|Community 146]]
-- [[_COMMUNITY_Community 147|Community 147]]
-- [[_COMMUNITY_Community 148|Community 148]]
-- [[_COMMUNITY_Community 149|Community 149]]
-- [[_COMMUNITY_Community 150|Community 150]]
-- [[_COMMUNITY_Community 151|Community 151]]
-- [[_COMMUNITY_Community 152|Community 152]]
-- [[_COMMUNITY_Community 153|Community 153]]
-- [[_COMMUNITY_Community 154|Community 154]]
-- [[_COMMUNITY_Community 155|Community 155]]
-- [[_COMMUNITY_Community 156|Community 156]]
-- [[_COMMUNITY_Community 157|Community 157]]
-- [[_COMMUNITY_Community 158|Community 158]]
-- [[_COMMUNITY_Community 159|Community 159]]
-- [[_COMMUNITY_Community 160|Community 160]]
-- [[_COMMUNITY_Community 161|Community 161]]
-- [[_COMMUNITY_Community 162|Community 162]]
-- [[_COMMUNITY_Community 163|Community 163]]
-- [[_COMMUNITY_Community 164|Community 164]]
-- [[_COMMUNITY_Community 165|Community 165]]
-- [[_COMMUNITY_Community 166|Community 166]]
-- [[_COMMUNITY_Community 167|Community 167]]
-- [[_COMMUNITY_Community 168|Community 168]]
-- [[_COMMUNITY_Community 169|Community 169]]
-- [[_COMMUNITY_Community 170|Community 170]]
-- [[_COMMUNITY_Community 171|Community 171]]
-- [[_COMMUNITY_Community 172|Community 172]]
 - [[_COMMUNITY_Community 173|Community 173]]
-- [[_COMMUNITY_Community 174|Community 174]]
 - [[_COMMUNITY_Community 175|Community 175]]
 - [[_COMMUNITY_Community 176|Community 176]]
-- [[_COMMUNITY_Community 177|Community 177]]
-- [[_COMMUNITY_Community 178|Community 178]]
-- [[_COMMUNITY_Community 179|Community 179]]
 - [[_COMMUNITY_Community 180|Community 180]]
-- [[_COMMUNITY_Community 181|Community 181]]
-- [[_COMMUNITY_Community 182|Community 182]]
-- [[_COMMUNITY_Community 183|Community 183]]
-- [[_COMMUNITY_Community 184|Community 184]]
-- [[_COMMUNITY_Community 185|Community 185]]
-- [[_COMMUNITY_Community 186|Community 186]]
-- [[_COMMUNITY_Community 187|Community 187]]
-- [[_COMMUNITY_Community 188|Community 188]]
-- [[_COMMUNITY_Community 189|Community 189]]
 - [[_COMMUNITY_Community 190|Community 190]]
 - [[_COMMUNITY_Community 191|Community 191]]
 - [[_COMMUNITY_Community 192|Community 192]]
@@ -217,11 +130,6 @@
 - [[_COMMUNITY_Community 204|Community 204]]
 - [[_COMMUNITY_Community 205|Community 205]]
 - [[_COMMUNITY_Community 206|Community 206]]
-- [[_COMMUNITY_Community 207|Community 207]]
-- [[_COMMUNITY_Community 208|Community 208]]
-- [[_COMMUNITY_Community 209|Community 209]]
-- [[_COMMUNITY_Community 210|Community 210]]
-- [[_COMMUNITY_Community 211|Community 211]]
 - [[_COMMUNITY_Community 212|Community 212]]
 - [[_COMMUNITY_Community 213|Community 213]]
 - [[_COMMUNITY_Community 214|Community 214]]
@@ -236,160 +144,7 @@
 - [[_COMMUNITY_Community 223|Community 223]]
 - [[_COMMUNITY_Community 224|Community 224]]
 - [[_COMMUNITY_Community 225|Community 225]]
-- [[_COMMUNITY_Community 226|Community 226]]
-- [[_COMMUNITY_Community 227|Community 227]]
 - [[_COMMUNITY_Community 228|Community 228]]
-- [[_COMMUNITY_Community 229|Community 229]]
-- [[_COMMUNITY_Community 230|Community 230]]
-- [[_COMMUNITY_Community 231|Community 231]]
-- [[_COMMUNITY_Community 232|Community 232]]
-- [[_COMMUNITY_Community 233|Community 233]]
-- [[_COMMUNITY_Community 234|Community 234]]
-- [[_COMMUNITY_Community 235|Community 235]]
-- [[_COMMUNITY_Community 236|Community 236]]
-- [[_COMMUNITY_Community 237|Community 237]]
-- [[_COMMUNITY_Community 238|Community 238]]
-- [[_COMMUNITY_Community 239|Community 239]]
-- [[_COMMUNITY_Community 240|Community 240]]
-- [[_COMMUNITY_Community 241|Community 241]]
-- [[_COMMUNITY_Community 242|Community 242]]
-- [[_COMMUNITY_Community 243|Community 243]]
-- [[_COMMUNITY_Community 244|Community 244]]
-- [[_COMMUNITY_Community 245|Community 245]]
-- [[_COMMUNITY_Community 246|Community 246]]
-- [[_COMMUNITY_Community 247|Community 247]]
-- [[_COMMUNITY_Community 248|Community 248]]
-- [[_COMMUNITY_Community 249|Community 249]]
-- [[_COMMUNITY_Community 250|Community 250]]
-- [[_COMMUNITY_Community 251|Community 251]]
-- [[_COMMUNITY_Community 252|Community 252]]
-- [[_COMMUNITY_Community 253|Community 253]]
-- [[_COMMUNITY_Community 254|Community 254]]
-- [[_COMMUNITY_Community 255|Community 255]]
-- [[_COMMUNITY_Community 256|Community 256]]
-- [[_COMMUNITY_Community 257|Community 257]]
-- [[_COMMUNITY_Community 258|Community 258]]
-- [[_COMMUNITY_Community 259|Community 259]]
-- [[_COMMUNITY_Community 260|Community 260]]
-- [[_COMMUNITY_Community 261|Community 261]]
-- [[_COMMUNITY_Community 262|Community 262]]
-- [[_COMMUNITY_Community 263|Community 263]]
-- [[_COMMUNITY_Community 264|Community 264]]
-- [[_COMMUNITY_Community 265|Community 265]]
-- [[_COMMUNITY_Community 266|Community 266]]
-- [[_COMMUNITY_Community 267|Community 267]]
-- [[_COMMUNITY_Community 268|Community 268]]
-- [[_COMMUNITY_Community 269|Community 269]]
-- [[_COMMUNITY_Community 270|Community 270]]
-- [[_COMMUNITY_Community 271|Community 271]]
-- [[_COMMUNITY_Community 272|Community 272]]
-- [[_COMMUNITY_Community 273|Community 273]]
-- [[_COMMUNITY_Community 274|Community 274]]
-- [[_COMMUNITY_Community 275|Community 275]]
-- [[_COMMUNITY_Community 276|Community 276]]
-- [[_COMMUNITY_Community 277|Community 277]]
-- [[_COMMUNITY_Community 278|Community 278]]
-- [[_COMMUNITY_Community 279|Community 279]]
-- [[_COMMUNITY_Community 280|Community 280]]
-- [[_COMMUNITY_Community 281|Community 281]]
-- [[_COMMUNITY_Community 282|Community 282]]
-- [[_COMMUNITY_Community 283|Community 283]]
-- [[_COMMUNITY_Community 284|Community 284]]
-- [[_COMMUNITY_Community 285|Community 285]]
-- [[_COMMUNITY_Community 286|Community 286]]
-- [[_COMMUNITY_Community 287|Community 287]]
-- [[_COMMUNITY_Community 288|Community 288]]
-- [[_COMMUNITY_Community 289|Community 289]]
-- [[_COMMUNITY_Community 290|Community 290]]
-- [[_COMMUNITY_Community 291|Community 291]]
-- [[_COMMUNITY_Community 292|Community 292]]
-- [[_COMMUNITY_Community 293|Community 293]]
-- [[_COMMUNITY_Community 294|Community 294]]
-- [[_COMMUNITY_Community 295|Community 295]]
-- [[_COMMUNITY_Community 296|Community 296]]
-- [[_COMMUNITY_Community 297|Community 297]]
-- [[_COMMUNITY_Community 298|Community 298]]
-- [[_COMMUNITY_Community 299|Community 299]]
-- [[_COMMUNITY_Community 300|Community 300]]
-- [[_COMMUNITY_Community 301|Community 301]]
-- [[_COMMUNITY_Community 302|Community 302]]
-- [[_COMMUNITY_Community 303|Community 303]]
-- [[_COMMUNITY_Community 304|Community 304]]
-- [[_COMMUNITY_Community 305|Community 305]]
-- [[_COMMUNITY_Community 306|Community 306]]
-- [[_COMMUNITY_Community 307|Community 307]]
-- [[_COMMUNITY_Community 308|Community 308]]
-- [[_COMMUNITY_Community 309|Community 309]]
-- [[_COMMUNITY_Community 310|Community 310]]
-- [[_COMMUNITY_Community 311|Community 311]]
-- [[_COMMUNITY_Community 312|Community 312]]
-- [[_COMMUNITY_Community 313|Community 313]]
-- [[_COMMUNITY_Community 314|Community 314]]
-- [[_COMMUNITY_Community 315|Community 315]]
-- [[_COMMUNITY_Community 316|Community 316]]
-- [[_COMMUNITY_Community 317|Community 317]]
-- [[_COMMUNITY_Community 318|Community 318]]
-- [[_COMMUNITY_Community 319|Community 319]]
-- [[_COMMUNITY_Community 320|Community 320]]
-- [[_COMMUNITY_Community 321|Community 321]]
-- [[_COMMUNITY_Community 322|Community 322]]
-- [[_COMMUNITY_Community 323|Community 323]]
-- [[_COMMUNITY_Community 324|Community 324]]
-- [[_COMMUNITY_Community 325|Community 325]]
-- [[_COMMUNITY_Community 326|Community 326]]
-- [[_COMMUNITY_Community 327|Community 327]]
-- [[_COMMUNITY_Community 328|Community 328]]
-- [[_COMMUNITY_Community 329|Community 329]]
-- [[_COMMUNITY_Community 330|Community 330]]
-- [[_COMMUNITY_Community 331|Community 331]]
-- [[_COMMUNITY_Community 332|Community 332]]
-- [[_COMMUNITY_Community 333|Community 333]]
-- [[_COMMUNITY_Community 334|Community 334]]
-- [[_COMMUNITY_Community 335|Community 335]]
-- [[_COMMUNITY_Community 336|Community 336]]
-- [[_COMMUNITY_Community 337|Community 337]]
-- [[_COMMUNITY_Community 338|Community 338]]
-- [[_COMMUNITY_Community 339|Community 339]]
-- [[_COMMUNITY_Community 340|Community 340]]
-- [[_COMMUNITY_Community 341|Community 341]]
-- [[_COMMUNITY_Community 342|Community 342]]
-- [[_COMMUNITY_Community 343|Community 343]]
-- [[_COMMUNITY_Community 344|Community 344]]
-- [[_COMMUNITY_Community 345|Community 345]]
-- [[_COMMUNITY_Community 346|Community 346]]
-- [[_COMMUNITY_Community 347|Community 347]]
-- [[_COMMUNITY_Community 348|Community 348]]
-- [[_COMMUNITY_Community 349|Community 349]]
-- [[_COMMUNITY_Community 350|Community 350]]
-- [[_COMMUNITY_Community 351|Community 351]]
-- [[_COMMUNITY_Community 352|Community 352]]
-- [[_COMMUNITY_Community 353|Community 353]]
-- [[_COMMUNITY_Community 354|Community 354]]
-- [[_COMMUNITY_Community 355|Community 355]]
-- [[_COMMUNITY_Community 356|Community 356]]
-- [[_COMMUNITY_Community 357|Community 357]]
-- [[_COMMUNITY_Community 358|Community 358]]
-- [[_COMMUNITY_Community 359|Community 359]]
-- [[_COMMUNITY_Community 360|Community 360]]
-- [[_COMMUNITY_Community 361|Community 361]]
-- [[_COMMUNITY_Community 362|Community 362]]
-- [[_COMMUNITY_Community 363|Community 363]]
-- [[_COMMUNITY_Community 364|Community 364]]
-- [[_COMMUNITY_Community 365|Community 365]]
-- [[_COMMUNITY_Community 366|Community 366]]
-- [[_COMMUNITY_Community 367|Community 367]]
-- [[_COMMUNITY_Community 368|Community 368]]
-- [[_COMMUNITY_Community 369|Community 369]]
-- [[_COMMUNITY_Community 370|Community 370]]
-- [[_COMMUNITY_Community 371|Community 371]]
-- [[_COMMUNITY_Community 372|Community 372]]
-- [[_COMMUNITY_Community 373|Community 373]]
-- [[_COMMUNITY_Community 374|Community 374]]
-- [[_COMMUNITY_Community 375|Community 375]]
-- [[_COMMUNITY_Community 376|Community 376]]
-- [[_COMMUNITY_Community 377|Community 377]]
-- [[_COMMUNITY_Community 378|Community 378]]
-- [[_COMMUNITY_Community 379|Community 379]]
 - [[_COMMUNITY_Community 380|Community 380]]
 - [[_COMMUNITY_Community 381|Community 381]]
 - [[_COMMUNITY_Community 382|Community 382]]
@@ -397,2294 +152,823 @@
 - [[_COMMUNITY_Community 384|Community 384]]
 - [[_COMMUNITY_Community 385|Community 385]]
 - [[_COMMUNITY_Community 386|Community 386]]
-- [[_COMMUNITY_Community 387|Community 387]]
-- [[_COMMUNITY_Community 388|Community 388]]
 - [[_COMMUNITY_Community 389|Community 389]]
 - [[_COMMUNITY_Community 390|Community 390]]
-- [[_COMMUNITY_Community 391|Community 391]]
-- [[_COMMUNITY_Community 392|Community 392]]
-- [[_COMMUNITY_Community 393|Community 393]]
-- [[_COMMUNITY_Community 394|Community 394]]
-- [[_COMMUNITY_Community 395|Community 395]]
-- [[_COMMUNITY_Community 396|Community 396]]
-- [[_COMMUNITY_Community 397|Community 397]]
-- [[_COMMUNITY_Community 398|Community 398]]
-- [[_COMMUNITY_Community 399|Community 399]]
-- [[_COMMUNITY_Community 400|Community 400]]
-- [[_COMMUNITY_Community 401|Community 401]]
-- [[_COMMUNITY_Community 402|Community 402]]
-- [[_COMMUNITY_Community 403|Community 403]]
-- [[_COMMUNITY_Community 404|Community 404]]
-- [[_COMMUNITY_Community 405|Community 405]]
-- [[_COMMUNITY_Community 406|Community 406]]
-- [[_COMMUNITY_Community 407|Community 407]]
-- [[_COMMUNITY_Community 408|Community 408]]
-- [[_COMMUNITY_Community 409|Community 409]]
-- [[_COMMUNITY_Community 410|Community 410]]
-- [[_COMMUNITY_Community 411|Community 411]]
-- [[_COMMUNITY_Community 412|Community 412]]
-- [[_COMMUNITY_Community 413|Community 413]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `NewsScraper` - 78 edges
-2. `Response` - 45 edges
-3. `Request` - 42 edges
-4. `_labels()` - 34 edges
-5. `ContentMonitor` - 29 edges
-6. `_make_id()` - 29 edges
-7. `ContentGenerator` - 28 edges
-8. `Client` - 27 edges
-9. `Cookies` - 27 edges
-10. `QualityChecker` - 26 edges
+1. `Request` - 41 edges
+2. `NewsScraper` - 40 edges
+3. `Response` - 40 edges
+4. `build_from_json()` - 39 edges
+5. `cluster()` - 38 edges
+6. `main()` - 34 edges
+7. `_labels()` - 34 edges
+8. `_make_id()` - 32 edges
+9. `graphify Skill` - 28 edges
+10. `detect()` - 27 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `ContentModel` --uses--> `Insert or update content in Supabase.`  [INFERRED]
-  backend\schemas.py → backend\database.py
-- `ContentModel` --uses--> `Log agent activity to Supabase.`  [INFERRED]
-  backend\schemas.py → backend\database.py
-- `ContentModel` --uses--> `Get recent activity logs.`  [INFERRED]
-  backend\schemas.py → backend\database.py
-- `ContentModel` --uses--> `Update existing content.`  [INFERRED]
-  backend\schemas.py → backend\database.py
-- `ContentModel` --uses--> `Mark content as published so the frontend can surface it.`  [INFERRED]
-  backend\schemas.py → backend\database.py
+- `SplashScreen React Component` --implements--> `WIP Splash Screen Mockup Image`  [INFERRED]
+  frontend/src/pages/SplashScreen.jsx → docs/assets/wip_splash_screen_mockup_1773252884870.png
+- `test_make_id_strips_dots_and_underscores()` --calls--> `_make_id()`  [INFERRED]
+  C:\tt-ai-stack\01_projects\telangana-live\graphify\tests\test_extract.py → C:\tt-ai-stack\01_projects\telangana-live\graphify\graphify\extract.py
+- `test_make_id_no_leading_trailing_underscores()` --calls--> `_make_id()`  [INFERRED]
+  C:\tt-ai-stack\01_projects\telangana-live\graphify\tests\test_extract.py → C:\tt-ai-stack\01_projects\telangana-live\graphify\graphify\extract.py
+- `Codex Session Start Protocol` --semantically_similar_to--> `Claude Code Session Start Protocol`  [INFERRED] [semantically similar]
+  AGENTS.md → CLAUDE.md
+- `Codex Session Start Protocol` --semantically_similar_to--> `Gemini Graphify and Civic Mandates`  [INFERRED] [semantically similar]
+  AGENTS.md → GEMINI.md
+
+## Hyperedges (group relationships)
+- **Online Utility Bills & Taxes Payment Flow** — electricity_bill_payment_electricity_bill_payment, water_bill_payment_water_bill_payment, property_tax_property_tax, traffic_challan_traffic_challan, rta_vehicle_tax_rta_vehicle_tax [INFERRED 0.90]
+- **AI Agent Behavior Protocols & Compliance Mandates** — agents_agents, claude_claude, gemini_gemini [EXTRACTED 1.00]
+- **Project Requirements & Architecture Milestones** — original_request_original_request, project_project, ultimate_context_ultimate_context [EXTRACTED 0.95]
+- **Citizen Grievance Redressal Flow** — prajavani_service, pg_portal_service, ghmc_complaints_service, road_civic_issues_service [INFERRED 0.90]
+- **Voter Identity and Roll Lifecycle** — voter_registration_service, check_voter_list_service, polling_booth_service, address_update_service [INFERRED 0.95]
+- **MeeSeva Certificate Procurement** — income_certificate_service, ews_certificate_service, family_membership_certificate_service, residence_certificate_service, death_certificate_service [INFERRED 0.95]
+- **Social Brand Icons** — icons_bluesky_icon, icons_discord_icon, icons_github_icon, icons_x_icon [INFERRED 0.90]
+- **Robots SEO Crawler Configuration** — robots_robots_txt, robots_user_agents_policy, robots_sitemap_reference [EXTRACTED 1.00]
+- **Indian State Performance & Governance Referendums** — 001_west_bengal_performance, 002_tamil_nadu_performance, 003_kerala_performance, 004_assam_performance [INFERRED 0.85]
+- **India Midstream Component Manufacturing Strategy** — 005_the_mine_is_not_the_story_the_magnet_is, 006_india_wants_less_china_its_factories_want_more, 002_tamil_nadu_performance [INFERRED 0.80]
+- **AI Data Newsroom Automation Pipeline** — statnostics_process_un_data_downloader, statnostics_process_un_data_analyzer, statnostics_process_verification_sops [EXTRACTED 0.95]
+- **Hero Section Landing Presentation** — hero_graphic, hero_hero_component, hero_layered_stack_concept [INFERRED 0.80]
+- **Electoral and Voter Services** — voter_registration_voter_registration, check_voter_list_check_voter_list, polling_booth_polling_booth, address_update_voter_id_address_update [INFERRED 0.95]
+- **Land and Property Transactions Flow** — property_registration_property_registration, mutation_patta_transfer_mutation_patta_transfer, encumbrance_certificate_encumbrance_certificate, land_records_dharani_land_records_dharani [INFERRED 0.90]
+- **Citizen Verification & Certificates Bundle** — birth_certificate_birth_certificate, death_certificate_death_certificate, caste_certificate_caste_certificate, ews_certificate_ews_certificate, income_certificate_income_certificate, residence_certificate_residence_certificate, family_membership_certificate_family_membership_certificate [INFERRED 0.90]
+- **Aasara Pension System** — aasara_pension_scheme, old_age_pension_scheme, widow_disability_pension_scheme [EXTRACTED 1.00]
+- **Public Grievance and Complaint Systems** — ghmc_complaints_service, pg_portal_service, prajavani_portal, road_civic_issues_service [INFERRED 0.90]
+- **Police Public Services and Safety Portal** — character_certificate_service, online_fir_service, tenant_verification_service, women_safety_service [INFERRED 0.95]
+- **Telangana Civic Health and Welfare Info Hub** — basthi_dawakhana_basthi_dawakhana, disability_certificate_disability_certificate, welfare_schemes_welfare_schemes [INFERRED 0.80]
+- **Hyper-local Classifieds Marketplace System** — classifiedspage_ClassifiedsPage, homepage_HomePage, classifiedsservice_classifiedsService [INFERRED 0.90]
+- **Graphify Knowledge Graph Construction Pipeline** — graphify_module_detect, graphify_module_extract, graphify_module_build, graphify_module_cluster, graphify_module_analyze, graphify_module_report, graphify_module_export [EXTRACTED 1.00]
+- **Land ownership verification and registration flow** — land_property_registration, land_mutation_patta_transfer, land_encumbrance_certificate [INFERRED 0.90]
+- **Citizen welfare and financial assistance schemes** — jobs_education_post_matric_scholarship, jobs_education_pre_matric_scholarship, ration_aasara_pension [INFERRED 0.80]
+- **Public safety and verification systems** — police_character_certificate, police_tenant_verification, police_online_fir [INFERRED 0.85]
+- **Hub and Spoke Graph Topology Pattern** — logo_icon_hub_node, logo_icon_satellite_nodes, logo_icon_amber_node [EXTRACTED 1.00]
+- **Graphify Brand and Layout Concept** — logo_text_brand_identity, logo_text_hub_and_spoke_layout, logo_text_god_node_representation [EXTRACTED 1.00]
+- **Multilingual README Documentation Translations** — readme_ar_sa_readme, readme_cs_cz_readme, readme_da_dk_readme, readme_de_de_readme, readme_el_gr_readme, readme_es_es_readme, readme_fi_fi_readme, readme_fr_fr_readme, readme_hi_in_readme, readme_hu_hu_readme, readme_id_id_readme, readme_it_it_readme, readme_ja_jp_readme, readme_ko_kr_readme, readme_nl_nl_readme, readme_no_no_readme, readme_pl_pl_readme, readme_pt_br_readme, readme_ro_ro_readme, readme_ru_ru_readme, readme_sv_se_readme, readme_th_th_readme [EXTRACTED 1.00]
+- **Three-Pass Extraction Consensus** — readme_ar_sa_three_pass, readme_cs_cz_three_pass, readme_da_dk_three_pass, readme_de_de_three_pass, readme_el_gr_three_pass, readme_es_es_three_pass, readme_fi_fi_three_pass, readme_fr_fr_three_pass, readme_hi_in_three_pass, readme_hu_hu_three_pass, readme_id_id_three_pass, readme_it_it_three_pass, readme_ja_jp_three_pass, readme_ko_kr_three_pass, readme_nl_nl_three_pass, readme_no_no_three_pass, readme_pl_pl_three_pass, readme_pt_br_three_pass, readme_ro_ro_three_pass, readme_ru_ru_three_pass, readme_sv_se_three_pass, readme_th_th_three_pass [INFERRED 0.90]
+- **Platforms using Sequential Semantic Extraction** — skill_aider_integration, skill_claw_integration [EXTRACTED 1.00]
+- **Ingestion Pipeline Core Design and Tradeoffs** — architecture_pipeline_flow, notes_keyword_extraction, notes_sqlite_migration, notes_validation_placement [INFERRED 0.85]
+- **Graphify Visualization and Integration Interfaces** — skill_obsidian_export, skill_html_export, skill_neo4j_export, skill_mcp_server [EXTRACTED 1.00]
+- **Graphify evaluations across benchmarks** — review_httpx_evaluation, review_karpathy_evaluation, review_mixed_corpus_evaluation [EXTRACTED 0.95]
+- **Transformer Paper Citations** — attention_notes_vaswani_citation, attention_notes_ba_layer_norm_citation, attention_notes_he_residual_citation [EXTRACTED 1.00]
+- **Google AdSense & Search Verification Stack** — adsense_onboarding_process, ad_engine_js, html_adsense_console_setup, seo_operations_runbook [EXTRACTED 1.00]
+- **Aasara State Pension Services** — old_age_pension_aasara, widow_disability_pension_aasara, tech_plan_schemes_finder [INFERRED 0.85]
+- **Next.js 2.0 Migration Core Architecture** — system_architecture_2_0, technical_implementation_plan_2_0, telangana_live_2_0_foundation [EXTRACTED 1.00]
+- **Content Maintenance Deployment Documentation** — archive_deployment_md, archive_quickstart_md, archive_project_summary_md [EXTRACTED 1.00]
+- **AI Content Agent Pipeline** — content_monitor_py, content_generator_py, content_updater_py, quality_checker_py [INFERRED 0.90]
+- **Core Civic Portal Screens** — screen_home_dashboard, screen_my_area, screen_water_schedule [EXTRACTED 0.95]
+- **Splash Screen Design Aesthetic** — wip_splash_screen_mockup_1773252884870_glassmorphism, wip_splash_screen_mockup_1773252884870_map_background, wip_splash_screen_mockup_1773252884870_inter_font, wip_splash_screen_mockup_1773252884870_image [EXTRACTED 1.00]
+- **Telangana Live Brand Identity** — wip_splash_screen_mockup_1773252884870_assembly_icon, wip_splash_screen_mockup_1773252884870_civic_intelligence, wip_splash_screen_mockup_1773252884870_image [EXTRACTED 1.00]
+- **Regional Portal Blueprints derived from telangana-live** — blueprint_tiruvannamalai_profile, blueprint_vijayawada_profile, blueprint_visakhapatnam_profile [EXTRACTED 1.00]
+- **Data Engine Scraper Job Tasks** — data_engine_flow_sync_gold, data_engine_flow_sync_fuel, data_engine_flow_sync_pulses, data_engine_flow_sync_weather, data_engine_flow_sync_rtc [EXTRACTED 1.00]
+- **Regional Portal Brand Color Schemes** — blueprint_tiruvannamalai_brand, blueprint_vijayawada_brand, blueprint_visakhapatnam_brand [EXTRACTED 1.00]
+- **CLI Sync Tasks** — prices_sync_gold, prices_sync_fuel, prices_sync_pulses, prices_sync_weather, prices_sync_rtc [INFERRED 0.90]
+- **Data Export and Consumption** — prices_write_local_js, prices_sync_upstash, prices_react_frontend, prices_serverless_backend [INFERRED 0.85]
+- **Web Scraping and Validation Pipeline** — prices_http_get_request, prices_beautifulsoup_parsing, prices_boundary_checks, prices_load_fallback_data [INFERRED 0.90]
+- **Google Marketing and Monetization Stack** — index_html_gtm, index_html_adsense, index_html_ga4, ads_txt_root, google_adsense_publisher [INFERRED 0.85]
+- **Civic Intelligence Data Tables** — supabase_schema_citizen_reports, supabase_schema_emergency_status, supabase_schema_power_alerts [EXTRACTED 0.95]
+- **Civic Identity and Branding Pattern** — favicon_kakatiya_kala_thoranam, favicon_goldGrad, favicon_glow, favicon_rationale_civic_symbol [INFERRED 0.85]
 
 ## Communities
 
-### Community 0 - "Community 0"
-Cohesion: 0.03
-Nodes (101): Auth, BasicAuth, BearerAuth, DigestAuth, NetRCAuth, Authentication handlers. Auth objects are callables that modify a request befor, Load credentials from ~/.netrc based on the request host., Base class for all authentication handlers. (+93 more)
-
-### Community 1 - "Community 1"
+### Community 0 - "Graphify Analysis Module"
 Cohesion: 0.02
-Nodes (94): clean_html(), get_ai_summary(), get_recent_news_for_entity(), http_get(), main(), _placeholder_briefing(), Strip all HTML tags and return plain text. Returns '' for None/empty., Generate a 2-line AI summary. Returns '' if model is None or on error. (+86 more)
+Nodes (224): _cross_community_surprises(), _cross_file_surprises(), _file_category(), god_nodes(), graph_diff(), _is_concept_node(), _is_file_node(), _node_community_map() (+216 more)
 
-### Community 2 - "Community 2"
-Cohesion: 0.03
-Nodes (52): _calls(), _labels(), Tests for language extractors: Java, C, C++, Ruby, C#, Kotlin, Scala, PHP, Swift, Methods on the same receiver type must share one canonical type node., Type node id should be scoped to directory, not file stem., _relations(), test_c_finds_functions(), test_c_finds_includes() (+44 more)
+### Community 1 - "Graphify Benchmarking"
+Cohesion: 0.02
+Nodes (166): _csharp_extra_walk(), extract_blade(), extract_c(), extract_cpp(), extract_csharp(), extract_dart(), extract_elixir(), _extract_generic() (+158 more)
 
-### Community 3 - "Community 3"
-Cohesion: 0.04
-Nodes (58): ContentGenerator, Generate new content and store in Supabase., Execute generation cycle.          First tries to pull dynamic topics from the S, ContentMonitor, Fetch and parse website content, Execute monitoring cycle., LLMProvider, Run a complete maintenance cycle (for testing/manual runs). (+50 more)
+### Community 2 - "HTTP Client Authentication"
+Cohesion: 0.02
+Nodes (163): _git_root(), _hooks_dir(), install(), _install_hook(), Walk up to find .git directory., Return the git hooks directory, respecting core.hooksPath if set (e.g. Husky)., Install a single git hook, appending if an existing hook is present., Remove graphify section from a git hook using start/end markers. (+155 more)
 
-### Community 4 - "Community 4"
-Cohesion: 0.04
-Nodes (86): _check_tree_sitter_version(), _csharp_extra_walk(), extract(), extract_blade(), extract_c(), extract_cpp(), extract_csharp(), extract_dart() (+78 more)
+### Community 3 - "Telangana Live AI Agents"
+Cohesion: 0.02
+Nodes (145): Codex Session Start Protocol, Claude Code Session Start Protocol, Gemini Graphify and Civic Mandates, Project Files Manifest and Job Flow, Google News Differential Analysis and Monetization, Original Requirements and Acceptance Criteria, 30-Day Growth and Outreach Strategy, Project Architecture and Milestones (+137 more)
 
-### Community 5 - "Community 5"
-Cohesion: 0.04
-Nodes (56): classify_file(), convert_office_file(), count_words(), detect(), detect_incremental(), docx_to_markdown(), extract_pdf_text(), FileType (+48 more)
-
-### Community 6 - "Community 6"
+### Community 4 - "Data Ingestion & WhatsApp Bot"
 Cohesion: 0.05
-Nodes (51): _agents_install(), _agents_uninstall(), _install(), Tests for graphify install --platform routing., Claude platform install writes CLAUDE.md; others do not., Installing twice does not duplicate the section., Installs into an existing AGENTS.md without overwriting other content., Uninstall keeps pre-existing content. (+43 more)
+Nodes (120): Auth, BasicAuth, BearerAuth, DigestAuth, NetRCAuth, Authentication handlers. Auth objects are callables that modify a request befor, Load credentials from ~/.netrc based on the request host., Base class for all authentication handlers. (+112 more)
 
-### Community 7 - "Community 7"
-Cohesion: 0.07
-Nodes (38): ask_panchang_query(), get_fuel_prices(), get_gold_rates(), get_mandi_prices(), get_today_panchang(), PanchangQuery, Scrapes and returns the latest gold rates for Hyderabad., Scrapes and returns the latest fuel prices for Hyderabad. (+30 more)
+### Community 5 - "Project Documentation & Guidelines"
+Cohesion: 0.03
+Nodes (90): ask_panchang_query(), get_fuel_prices(), get_gold_rates(), get_mandi_prices(), get_today_panchang(), PanchangQuery, Scrapes and returns the latest gold rates for Hyderabad., Scrapes and returns the latest fuel prices for Hyderabad. (+82 more)
 
-### Community 8 - "Community 8"
-Cohesion: 0.06
-Nodes (49): _agents_install(), _agents_uninstall(), _antigravity_install(), _antigravity_uninstall(), _check_skill_version(), claude_install(), claude_uninstall(), _cursor_install() (+41 more)
+### Community 6 - "CLI Hooks & Installers"
+Cohesion: 0.04
+Nodes (88): Graphify Architecture, Graphify Changelog, Graphify Output Interactive Graph, analyze.py Module, benchmark.py Module, build.py Module, cache.py Module, cluster.py Module (+80 more)
 
-### Community 9 - "Community 9"
-Cohesion: 0.07
-Nodes (19): Base, Server, LinearAlgebra, add(), area(), Circle, Color, Config (+11 more)
+### Community 7 - "Civic Portal Backend Agents"
+Cohesion: 0.03
+Nodes (27): AppContent(), EmergencyToggle(), useAppContext(), CrisisDashboard(), DistrictOnboarding(), EmergencySimulator(), FuelLandingPage(), GoldLandingPage() (+19 more)
 
-### Community 10 - "Community 10"
+### Community 8 - "Local Web Server"
+Cohesion: 0.05
+Nodes (70): classify_file(), convert_office_file(), count_words(), detect(), detect_incremental(), docx_to_markdown(), extract_pdf_text(), FileType (+62 more)
+
+### Community 9 - "Graphify Core Pipeline Modules"
+Cohesion: 0.05
+Nodes (67): handle_delete(), handle_enrich(), handle_get(), handle_list(), handle_search(), handle_upload(), API module - exposes the document pipeline over HTTP. Thin layer over parser, v, Accept a list of file paths, run the full pipeline on each,     and return a su (+59 more)
+
+### Community 10 - "Civic Services Data Scrapers & APIs"
+Cohesion: 0.05
+Nodes (56): Base, Server, LinearAlgebra, add(), area(), Analyzer, compute_score(), normalize() (+48 more)
+
+### Community 11 - "Frontend React Components & State"
+Cohesion: 0.04
+Nodes (59): West Bengal Performance Analysis, Banglar Yuva Sathi Scheme, Governing Through the Family Budget, Lakshmir Bhandar Scheme, Swasthya Sathi Scheme, West Bengal Finance Department, Tamil Nadu Performance Analysis, Tamil Nadu Electronics Components Manufacturing Scheme (+51 more)
+
+### Community 12 - "File Classification & Detection"
+Cohesion: 0.05
+Nodes (56): Bills & Taxes Category Index, Birth Certificate Registration Guide, Birth Registration 21-Day Rationale, Greater Hyderabad Municipal Corporation (GHMC), Gram Panchayat Services, MeeSeva Portal, Municipal Building Permissions Guide, Building Permissions Legal Compliance Rationale (+48 more)
+
+### Community 13 - "HTTP Ingestion & Query APIs"
 Cohesion: 0.1
-Nodes (33): _cross_community_surprises(), _cross_file_surprises(), _file_category(), god_nodes(), graph_diff(), _is_concept_node(), _is_file_node(), _node_community_map() (+25 more)
+Nodes (43): ContentGenerator, ContentMonitor, LLMProvider, Run a complete maintenance cycle (for testing/manual runs)., run_full_cycle(), NewsSyncAgent, PriceSyncAgent, QualityChecker (+35 more)
 
-### Community 11 - "Community 11"
+### Community 14 - "Civic Performance Analysis"
+Cohesion: 0.04
+Nodes (52): DNS Cache Flushing, DNS Propagation Verification, ad-engine.js Ad Injection Module, AntiGravity Mobile IDE, Hostinger-Vercel DNS Routing, Git-to-Vercel-to-Hostinger Pipeline, GitHub Repository, Hostinger Domain Manager (+44 more)
+
+### Community 15 - "Playwright Testing & File Demos"
 Cohesion: 0.07
-Nodes (18): After merging multiple files, no internal edges should be dangling., Call-graph pass must produce INFERRED calls edges., AST-resolved call edges are deterministic and should be EXTRACTED/1.0., Same input always produces same output., run_analysis() calls compute_score() - must appear as a calls edge., Analyzer.process() calls run_analysis() - cross class→function calls edge., Same caller→callee pair must appear only once even if called multiple times., All edge sources must reference a known node (targets may be external imports). (+10 more)
+Nodes (43): _body_content(), cache_dir(), cached_files(), check_semantic_cache(), clear_cache(), file_hash(), load_cached(), Return set of file paths that have a valid cache entry (hash still matches). (+35 more)
 
-### Community 12 - "Community 12"
-Cohesion: 0.08
-Nodes (13): CacheManager, createProcessor(), DataProcessor, Get-Data(), GraphifyDemo, IProcessor, Loggable, NetworkError (+5 more)
-
-### Community 13 - "Community 13"
+### Community 16 - "MeeSeva Certificates & Permissions"
 Cohesion: 0.07
-Nodes (25): Tests for graphify/cache.py., Non-.md files are still hashed by their full content., _body_content correctly strips YAML frontmatter., _body_content returns content unchanged when no frontmatter present., Same file gives same hash on repeated calls., Different file contents give different hashes., Save then load returns the same result dict., After file content changes, load_cached returns None. (+17 more)
+Nodes (42): collect_files(), extract_python(), Extract classes, functions, and imports from a .py file via tree-sitter AST., After merging multiple files, no internal edges should be dangling., Call-graph pass must produce INFERRED calls edges., AST-resolved call edges are deterministic and should be EXTRACTED/1.0., Same input always produces same output., run_analysis() calls compute_score() - must appear as a calls edge. (+34 more)
 
-### Community 14 - "Community 14"
-Cohesion: 0.11
-Nodes (23): make_graph(), _make_simple_graph(), Tests for analyze.py., Code↔paper edge should score higher than code↔code edge., Helper: build a small nx.Graph from node/edge specs., Multi-file graph: should find cross-file edges between real entities., Concept nodes (empty source_file) must not appear in surprises., Single-file graph: should return cross-community edges, not empty list. (+15 more)
-
-### Community 15 - "Community 15"
-Cohesion: 0.11
-Nodes (25): handle_delete(), handle_enrich(), handle_get(), handle_list(), handle_search(), handle_upload(), API module - exposes the document pipeline over HTTP. Thin layer over parser, v, Accept a list of file paths, run the full pipeline on each,     and return a su (+17 more)
-
-### Community 16 - "Community 16"
-Cohesion: 0.08
-Nodes (25): Tests for graphify claude install / uninstall commands., claude_install also writes .claude/settings.json with PreToolUse hook., Running claude_install twice does not duplicate the PreToolUse hook., Creates CLAUDE.md when none exists., claude_uninstall removes the PreToolUse hook from settings.json., Written section includes the three rules., Appends to an existing CLAUDE.md without clobbering it., Running install twice does not duplicate the section. (+17 more)
-
-### Community 17 - "Community 17"
-Cohesion: 0.12
-Nodes (17): _call_pairs(), _confidences(), _labels(), Tests for multi-language AST extraction: JS/TS, Go, Rust., test_go_emits_calls(), test_go_finds_constructor(), test_go_finds_methods(), test_go_finds_struct() (+9 more)
-
-### Community 18 - "Community 18"
-Cohesion: 0.1
-Nodes (24): attach_hyperedges(), _cypher_escape(), _html_script(), _html_styles(), _hyperedge_script(), prune_dangling_edges(), push_to_neo4j(), Store hyperedges in the graph's metadata dict. (+16 more)
-
-### Community 19 - "Community 19"
-Cohesion: 0.1
-Nodes (6): _make_mock_response(), Tests for graphify/security.py - URL validation, safe fetch, path guards, label, test_safe_fetch_raises_on_non_2xx(), test_safe_fetch_returns_bytes(), test_safe_fetch_text_decodes_utf8(), test_safe_fetch_text_replaces_bad_bytes()
-
-### Community 20 - "Community 20"
+### Community 17 - "Deployment & Compliance Blueprints"
 Cohesion: 0.09
-Nodes (21): Tests for graphify.transcribe — video/audio transcription support., ImportError propagates when faster_whisper is not installed., Empty input returns empty list without error., transcribe_all() returns cached paths for already-transcribed files., transcribe_all() warns and skips files that fail to transcribe., Empty god_nodes returns fallback prompt., GRAPHIFY_WHISPER_PROMPT env var short-circuits LLM call., Returns a topic-based prompt from god node labels — no LLM call. (+13 more)
+Nodes (40): _check_tree_sitter_version(), extract(), extract_go(), extract_js(), extract_rust(), Extract classes, functions, arrow functions, and imports from a .js/.ts/.tsx fil, Extract functions, methods, type declarations, and imports from a .go file., Extract functions, structs, enums, traits, impl methods, and use declarations fr (+32 more)
 
-### Community 21 - "Community 21"
-Cohesion: 0.16
-Nodes (21): _detect_url_type(), _download_binary(), _fetch_arxiv(), _fetch_html(), _fetch_tweet(), _fetch_webpage(), _html_to_markdown(), ingest() (+13 more)
+### Community 18 - "Graphify Extraction Caching"
+Cohesion: 0.08
+Nodes (34): Tests for graphify.transcribe — video/audio transcription support., ImportError propagates when faster_whisper is not installed., Empty input returns empty list without error., transcribe_all() returns cached paths for already-transcribed files., transcribe_all() warns and skips files that fail to transcribe., Empty god_nodes returns fallback prompt., GRAPHIFY_WHISPER_PROMPT env var short-circuits LLM call., Returns a topic-based prompt from god node labels — no LLM call. (+26 more)
 
-### Community 22 - "Community 22"
-Cohesion: 0.18
-Nodes (17): _make_graph(), Tests for serve.py - MCP graph query helpers (no mcp package required)., test_bfs_depth_1(), test_bfs_depth_2(), test_bfs_disconnected(), test_bfs_returns_edges(), test_communities_from_graph_basic(), test_communities_from_graph_isolated() (+9 more)
+### Community 19 - "Whisper Video & Audio Transcription"
+Cohesion: 0.08
+Nodes (34): Aarogyasri / PMJAY Health Insurance Service, Aarogyasri Health Care Trust, Basthi Dawakhana Network, Basthi Dawakhana - Urban Health Clinics Service, MeeSeva Portal, Documents & Certificates Index, Complaints & Grievances Index, Rationale for Death Certificate (+26 more)
 
-### Community 23 - "Community 23"
-Cohesion: 0.17
-Nodes (19): _make_graph(), Tests for graphify.wiki — Wikipedia-style article generation., God node with bad ID should not crash., Communities with more than 25 nodes show a truncation notice., test_article_navigation_footer(), test_community_article_has_audit_trail(), test_community_article_has_cross_links(), test_community_article_shows_cohesion() (+11 more)
+### Community 20 - "Health & Life Event Services"
+Cohesion: 0.06
+Nodes (33): Turkish Translation README, Ukrainian Translation README, Vietnamese Translation README, Simplified Chinese Translation README, Traditional Chinese Translation README, Attention and Transformer Architecture, Aider Skill Integration, Aider Sequential Extraction Rationale (+25 more)
 
-### Community 24 - "Community 24"
-Cohesion: 0.16
-Nodes (18): _body_content(), cache_dir(), cached_files(), check_semantic_cache(), clear_cache(), file_hash(), load_cached(), Return set of file paths that have a valid cache entry (hash still matches). (+10 more)
+### Community 21 - "Frontend App Layout & Widgets"
+Cohesion: 0.07
+Nodes (31): Boundary Checks & Normalization, Local and Redis Dual Storage Strategy Rationale, Load Fallback Data, Boundary Check Fallback Handling Rationale, BeautifulSoup HTML Parsing, HTTP GET Scraper Request with Retries, Fetch Correlated News via NewsAPI, sync_fuel Scraper Task (+23 more)
+
+### Community 22 - "Multilingual Translations & Skill Integrations"
+Cohesion: 0.09
+Nodes (23): Tests for watch.py - file watcher helpers (no watchdog required)., check_update returns True and is silent when needs_update flag is absent., check_update returns True and prints notification when flag exists., check_update never removes the needs_update flag (clearing is LLM's job)., test_check_update_does_not_clear_flag(), test_check_update_no_flag_returns_true(), test_check_update_with_flag_returns_true_and_prints(), test_notify_only_creates_flag() (+15 more)
+
+### Community 23 - "Data Sync Scrapers & Storage"
+Cohesion: 0.15
+Nodes (27): _make_graph(), Tests for graphify.wiki — Wikipedia-style article generation., God node with bad ID should not crash., Communities with more than 25 nodes show a truncation notice., test_article_navigation_footer(), test_community_article_has_audit_trail(), test_community_article_has_cross_links(), test_community_article_shows_cohesion() (+19 more)
+
+### Community 24 - "Graphify Wiki Generator"
+Cohesion: 0.1
+Nodes (16): CacheManager, Config, createProcessor(), DataProcessor, Get-Data(), GraphifyDemo, HttpClient, HttpClientFactory (+8 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.16
-Nodes (17): build_graph(), cluster(), cohesion_score(), _partition(), Leiden community detection on NetworkX graphs. Splits oversized communities. Ret, Run a second Leiden pass on a community subgraph to split it further., Context manager to suppress stdout/stderr during library calls.      graspolog, Ratio of actual intra-community edges to maximum possible. (+9 more)
+Cohesion: 0.19
+Nodes (22): _estimate_tokens(), print_benchmark(), _query_subgraph_tokens(), Token-reduction benchmark - measures how much context graphify saves vs naive fu, Print a human-readable benchmark report., Run BFS from best-matching nodes and return estimated tokens in the subgraph con, Measure token reduction: corpus tokens vs graphify query tokens.      Args:, run_benchmark() (+14 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.19
-Nodes (18): make_graph(), to_html accepts member_counts without raising., Node file paths in canvas must be vault-root-relative (just fname.md), not hardc, test_to_canvas_file_paths_relative_to_vault(), test_to_cypher_contains_merge_statements(), test_to_cypher_creates_file(), test_to_graphml_creates_file(), test_to_graphml_has_community_attribute() (+10 more)
+Cohesion: 0.24
+Nodes (18): Update existing content., Mark content as published so the frontend can surface it., Fetch recently published articles for the Stories bar., Fetch active content that has not yet been quality-checked., Fetch dynamic content topics queued by editors in Supabase.         Falls back, Lazily create the Supabase client so that missing env vars only         raise a, Create a new civic correlation record., Get all civic correlations for a given entity. (+10 more)
 
 ### Community 27 - "Community 27"
-Cohesion: 0.14
-Nodes (17): _make_extraction(), Tests for confidence_score on edges., Edges lacking confidence_score get sensible defaults in to_json., Report summary line should include avg confidence for INFERRED edges., Surprising connections section shows confidence score next to INFERRED edges., Return a minimal extraction dict with one edge of each confidence type., EXTRACTED edges must have confidence_score == 1.0., INFERRED edges must have confidence_score between 0.0 and 1.0. (+9 more)
+Cohesion: 0.16
+Nodes (17): _normalize_id(), Normalize an ID string the same way extract._make_id does.      Used to reconc, test_assert_valid_passes_silently(), test_assert_valid_raises_on_errors(), test_dangling_edge_source(), test_dangling_edge_target(), test_invalid_confidence(), test_invalid_file_type() (+9 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.19
-Nodes (16): _make_git_repo(), Tests for hooks.py - git hook install/uninstall., Hook script must skip shebang extraction for .exe binaries (Windows)., test_hook_skips_head_on_exe(), test_install_appends_to_existing_hook(), test_install_creates_hook(), test_install_creates_post_checkout_hook(), test_install_idempotent() (+8 more)
+Cohesion: 0.11
+Nodes (20): Rationale for Attention Over Recurrence, Ba et al. (2016) - Layer Normalization, He et al. (2016) - Deep Residual Learning, Transformer Architecture, Vaswani et al. (2017) - Attention Is All You Need, Karpathy Repos Graph Report, Karpathy Repos God Nodes, Karpathy Repos Benchmark Setup (+12 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.14
-Nodes (8): _make_report(), Tests for hyperedge support in graphify., Write graph.json then reload it - hyperedges must survive., test_hyperedges_roundtrip_via_json_file(), test_report_includes_hyperedge_node_list(), test_report_includes_hyperedges_section(), test_report_skips_hyperedges_section_when_empty(), test_report_skips_hyperedges_section_when_key_missing()
+Cohesion: 0.15
+Nodes (19): SHe Teams, Municipal Building Permissions, Encumbrance Certificate (EC), Land & Property Section, Mutation / Patta Transfer, Property Registration, Land Records - Dharani Portal, Character / Police Clearance Certificate (+11 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.18
-Nodes (16): _make_extraction_with_semantic_edge(), _make_graph_with_semantic_edge(), _make_report_with_semantic_surprise(), _make_two_edge_graph(), Tests for semantically_similar_to edge support., Two nodes in separate files connected by a semantically_similar_to edge., Non-semantic edges must not get the [semantically similar] tag., Graph with one semantically_similar_to edge and one references edge, both cross- (+8 more)
+Cohesion: 0.21
+Nodes (19): Argument Parser, BeautifulSoup HTML Parsing, Boundary Checks & Normalization, Construct JSON Payload, Cron Job / CLI, Data Extraction & Validation, Fetch Correlated News via NewsAPI, HTTP GET Request with Retries (+11 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.21
-Nodes (16): delete_record(), _ensure_storage(), list_records(), load_index(), load_record(), Storage module - persists documents to disk and maintains the search index. All, Load the full document index from disk., Persist the index to disk. (+8 more)
+Cohesion: 0.12
+Nodes (17): Design Summary (Archive), Design System Overview (Glassmorphism), Rationale: SOS countdown to prevent accidental dialing, Rationale: Horizontal rates ticker to save vertical space, Rationale: Category icons for accessibility across literacy levels, Emergency Directory (One-Tap Help), Home Dashboard (The Pulse), Jobs Board (Livelihood Hub) (+9 more)
 
 ### Community 32 - "Community 32"
-Cohesion: 0.17
-Nodes (13): _communities_from_graph(), _filter_blank_stdin(), _find_node(), _load_graph(), Return node IDs whose label or ID matches the search term (diacritic-insensitive, Filter blank lines from stdin before MCP reads it.      Some MCP clients (Clau, Start the MCP server. Requires pip install mcp., Reconstruct community dict from community property stored on nodes. (+5 more)
+Cohesion: 0.22
+Nodes (6): AI Agent Content Workflow, Deployment Guide (Archive), Project Index / Overview (Archive), Project Summary (Archive), Quick Start Guide (Archive), Deployment Options
 
 ### Community 33 - "Community 33"
-Cohesion: 0.12
-Nodes (7): Tests for watch.py - file watcher helpers (no watchdog required)., check_update returns True and is silent when needs_update flag is absent., check_update returns True and prints notification when flag exists., check_update never removes the needs_update flag (clearing is LLM's job)., test_check_update_does_not_clear_flag(), test_check_update_no_flag_returns_true(), test_check_update_with_flag_returns_true_and_prints()
+Cohesion: 0.17
+Nodes (15): Google AdSense ads.txt, Google AdSense Publisher ID, Google AdSense Integration, App Shell Loading State, Google Analytics 4 Integration, Google Tag Manager Integration, PWA Manifest Link, Vite Entry HTML (+7 more)
 
 ### Community 34 - "Community 34"
-Cohesion: 0.21
-Nodes (14): _git_root(), _hooks_dir(), install(), _install_hook(), Walk up to find .git directory., Return the git hooks directory, respecting core.hooksPath if set (e.g. Husky)., Install a single git hook, appending if an existing hook is present., Remove graphify section from a git hook using start/end markers. (+6 more)
+Cohesion: 0.15
+Nodes (14): ads.txt Authorized Seller, Google AdSense Onboarding Process, Privacy Policy Template, AdSense Verification Tag, GA4 Stream Integration, GA4 index.html Header Tag, Measurement ID G-WM7S4MKFS1, HTML/JS AdSense Setup (+6 more)
 
 ### Community 35 - "Community 35"
 Cohesion: 0.17
-Nodes (13): _build_opener(), _NoFileRedirectHandler, Fetch *url* and return decoded text (UTF-8, replacing bad bytes).      Wraps s, Resolve *path* and verify it stays inside *base*.      *base* defaults to the, Strip control characters and cap length.      Safe for embedding in JSON data, Raise ValueError if *url* is not http or https, or targets a private/internal IP, Redirect handler that re-validates every redirect target.      Prevents open-r, Fetch *url* and return raw bytes.      Protections applied:     - URL scheme (+5 more)
+Nodes (13): Basthi Dawakhana – Urban Health Clinics, GHMC Health Portal, Health Helpline 104, Aasara Disability Pension, Disability Certificate (SADAREM), Telangana SADAREM Portal, UDID Portal, BC Welfare Department (+5 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.29
-Nodes (13): _make_graph(), Tests for graphify/benchmark.py., test_print_benchmark_no_crash(), test_query_bfs_expands_neighbors(), test_query_returns_positive_for_matching_question(), test_query_returns_zero_for_no_match(), test_run_benchmark_corpus_tokens_proportional(), test_run_benchmark_error_on_empty_graph() (+5 more)
+Cohesion: 0.23
+Nodes (10): cluster_articles(), cosine_similarity(), get_embedding(), jaccard_similarity(), Generate a vector embedding using local Ollama nomic-embed-text., Compute cosine similarity between two float vectors., Fallback text similarity score (Jaccard word set intersection)., Cluster articles list using semantic embeddings or Jaccard fallback.     Updates (+2 more)
 
 ### Community 37 - "Community 37"
-Cohesion: 0.19
-Nodes (11): build(), build_from_json(), _normalize_id(), Normalize an ID string the same way extract._make_id does.      Used to reconc, Merge multiple extraction results into one graph., Build a NetworkX graph from an extraction dict.      directed=True produces a, Merge multiple extraction results into one graph.      directed=True produces, assert_valid() (+3 more)
+Cohesion: 0.27
+Nodes (11): Block Level Officer (BLO), Chief Electoral Officer (CEO) Telangana, Election Commission of India Voter Helpline Portal, Voter ID Address Update Guide, Voter ID Address Update Roll Integrity Rationale, Check Voter List Guide, Check Voter List Franchise Verification Rationale, Find Polling Booth Guide (+3 more)
 
 ### Community 38 - "Community 38"
-Cohesion: 0.21
-Nodes (13): build_whisper_prompt(), download_audio(), _get_whisper(), _get_yt_dlp(), is_url(), _model_name(), Transcribe a video/audio file or URL to a .txt transcript.      If video_path, Transcribe a list of video/audio files or URLs, return paths to transcript .txt (+5 more)
+Cohesion: 0.22
+Nodes (11): Court Case Status Check, Free Legal Aid Services, RTI, Courts & Legal Help Section, Lok Adalat - Alternate Dispute Resolution, RTI Application - Right to Information, eCourts Portal, National Legal Services Authority (NALSA), Telangana State RTI Portal (+3 more)
 
 ### Community 39 - "Community 39"
-Cohesion: 0.2
-Nodes (13): batch_parse(), parse_and_save(), parse_file(), parse_json(), parse_markdown(), parse_plaintext(), Parser module - reads raw input documents and converts them into a structured f, Read a file from disk and return a structured document. (+5 more)
-
-### Community 40 - "Community 40"
-Cohesion: 0.2
-Nodes (13): enrich_document(), extract_keywords(), find_cross_references(), normalize_text(), process_and_save(), Processor module - transforms validated documents into enriched records ready f, Lowercase, strip extra whitespace, remove control characters., Pull non-stopword tokens from text, deduplicated. (+5 more)
-
-### Community 41 - "Community 41"
-Cohesion: 0.23
-Nodes (9): make_graph(), Clustering should not emit ANSI escape codes or other output.      graspologic, Same as above but for stderr — ANSI codes can go to either stream., test_cluster_covers_all_nodes(), test_cluster_does_not_write_to_stderr(), test_cluster_does_not_write_to_stdout(), test_cluster_returns_dict(), test_cohesion_score_range() (+1 more)
-
-### Community 42 - "Community 42"
-Cohesion: 0.26
-Nodes (12): End-to-end pipeline test: detect → extract → build → cluster → analyze → report, Second run on unchanged corpus should produce identical node/edge counts., Run the full pipeline on the fixtures directory. Returns a dict of outputs., run_pipeline(), test_pipeline_all_nodes_have_community(), test_pipeline_detection_finds_code_and_docs(), test_pipeline_extraction_confidence_labels(), test_pipeline_graph_has_edges() (+4 more)
-
-### Community 43 - "Community 43"
-Cohesion: 0.24
-Nodes (11): check_update(), _has_non_code(), _notify_only(), Check for pending semantic update flag and notify the user if set.      Cron-s, Write a flag file and print a notification (fallback for non-code-only corpora)., Watch watch_path for new or modified files and auto-update the graph.      For, Re-run AST extraction + build + cluster + report for code files. No LLM needed., _rebuild_code() (+3 more)
-
-### Community 44 - "Community 44"
-Cohesion: 0.24
-Nodes (10): load_extraction(), Legacy 'source' key on nodes is renamed to 'source_file' before graph build., Legacy 'from'/'to' keys on edges are accepted alongside 'source'/'target'., test_ambiguous_edge_preserved(), test_build_from_json_edge_count(), test_build_from_json_node_count(), test_edges_have_confidence(), test_legacy_edge_from_to_canonicalized() (+2 more)
-
-### Community 45 - "Community 45"
-Cohesion: 0.27
-Nodes (11): Tests for rationale/docstring extraction in extract.py., # NOTE: must run before compile() or linker will fail, Trivial docstrings under 20 chars should not become rationale nodes., test_class_docstring_extracted(), test_function_docstring_extracted(), test_module_docstring_extracted(), test_rationale_comment_extracted(), test_rationale_confidence_is_extracted() (+3 more)
-
-### Community 46 - "Community 46"
-Cohesion: 0.17
-Nodes (0): 
-
-### Community 47 - "Community 47"
-Cohesion: 0.51
-Nodes (9): findPrice(), fromBankBazaar(), fromGoodReturns(), fromSpotPrice(), handler(), normSilver(), parseNum(), validGold() (+1 more)
-
-### Community 48 - "Community 48"
-Cohesion: 0.18
-Nodes (2): ErrorBoundary, WidgetErrorBoundary
-
-### Community 49 - "Community 49"
-Cohesion: 0.2
-Nodes (1): Tests for graphify.ingest.save_query_result
-
-### Community 50 - "Community 50"
-Cohesion: 0.38
-Nodes (9): make_inputs(), test_report_contains_ambiguous_section(), test_report_contains_communities(), test_report_contains_corpus_check(), test_report_contains_god_nodes(), test_report_contains_header(), test_report_contains_surprising_connections(), test_report_shows_raw_cohesion_scores() (+1 more)
-
-### Community 51 - "Community 51"
-Cohesion: 0.24
-Nodes (1): ApiClient
-
-### Community 52 - "Community 52"
-Cohesion: 0.31
-Nodes (8): cluster_articles(), cosine_similarity(), get_embedding(), jaccard_similarity(), Generate a vector embedding using local Ollama nomic-embed-text., Compute cosine similarity between two float vectors., Fallback text similarity score (Jaccard word set intersection)., Cluster articles list using semantic embeddings or Jaccard fallback.     Updates
-
-### Community 53 - "Community 53"
 Cohesion: 0.22
 Nodes (8): classify_article(), extract_entities(), extract_image_url(), map_domain_to_civic_schema(), Extracts civic entities from news text.     Returns a dict with 'domain_entitie, Maps high-level domain entities to database type/ID keys.     Returns (entity_t, Classifies a news article into a category and a region based on title and descri, Extracts an image URL from an RSS feed entry checking various standard fields
 
-### Community 54 - "Community 54"
+### Community 40 - "Community 40"
 Cohesion: 0.28
 Nodes (8): _aqi_label_and_color(), fetch_weather(), _owm_condition(), Weather scraper for Telangana districts using OpenWeatherMap API.  Fetches cur, Fetch current weather for all districts and return the weatherData dict., Write src/data/weatherData.js as an ES module., Map numeric AQI to label/color matching the frontend schema., write_weather_module()
 
-### Community 55 - "Community 55"
+### Community 41 - "Community 41"
+Cohesion: 0.31
+Nodes (9): Update Voter ID Address Service, Rationale for Checking Voter List, Check Your Name in the Voter List Service, Elections & Voting Index, Rationale for Checking Polling Booth, Find Your Polling Booth Service, Chief Electoral Officer, Telangana, Election Commission of India (+1 more)
+
+### Community 42 - "Community 42"
+Cohesion: 0.22
+Nodes (9): Character / Police Clearance Certificate Document, Character / Police Clearance Certificate Service, File an Online FIR / Police Complaint Document, Online FIR / Police Complaint Service, Telangana Police Department, Tenant & Servant Verification Document, Tenant & Servant Verification Service, Women Safety – SHe Teams & Helplines Document (+1 more)
+
+### Community 43 - "Community 43"
 Cohesion: 0.28
-Nodes (8): _estimate_tokens(), print_benchmark(), _query_subgraph_tokens(), Token-reduction benchmark - measures how much context graphify saves vs naive fu, Print a human-readable benchmark report., Run BFS from best-matching nodes and return estimated tokens in the subgraph con, Measure token reduction: corpus tokens vs graphify query tokens.      Args:, run_benchmark()
+Nodes (9): Aadhaar Seeding, Apply for a New Ration Card, Telangana Civil Supplies Portal, Fair Price Shop (FPS), MeeSeva Centres, Aadhaar Seeding for Update, Update Ration Card Details, Telangana Civil Supplies Portal (+1 more)
 
-### Community 56 - "Community 56"
+### Community 44 - "Community 44"
+Cohesion: 0.22
+Nodes (9): Aadhaar Bank Link, Aasara Old Age Pension, Ward / Village Secretariats, Telangana Social Welfare Portal, Aadhaar Bank Link, Aasara Widow & Disability Pension, SADAREM Disability Certificate, Ward / Village Secretariats (+1 more)
+
+### Community 45 - "Community 45"
+Cohesion: 0.29
+Nodes (3): getCategories(), getGuideBySlug(), ServiceDetailPage()
+
+### Community 46 - "Community 46"
 Cohesion: 0.36
-Nodes (8): _community_article(), _cross_community_links(), _god_node_article(), _index_md(), Return (community_label, edge_count) pairs for cross-community connections, sort, Generate a Wikipedia-style wiki from the graph.      Writes:       - index.md, _safe_filename(), to_wiki()
+Nodes (8): Aasara Social Security Scheme Document, Aasara Social Security Scheme, Ward / Village Secretariat, Telangana Social Welfare Department, Old Age Pension (Aasara) Document, Old Age Pension Scheme, Widow & Disability Pension Document, Widow & Disability Pension Scheme
 
-### Community 57 - "Community 57"
-Cohesion: 0.39
-Nodes (5): Analyzer, compute_score(), normalize(), Fixture: functions and methods that call each other - for call-graph extraction, run_analysis()
-
-### Community 58 - "Community 58"
-Cohesion: 0.36
-Nodes (1): NewsService
-
-### Community 59 - "Community 59"
-Cohesion: 0.5
-Nodes (6): fetchFuelPrices(), fetchGoldRates(), fetchPowerAlerts(), getCached(), getTaxBreakup(), setCache()
-
-### Community 60 - "Community 60"
+### Community 47 - "Community 47"
 Cohesion: 0.29
-Nodes (6): get_alerts(), get_news(), get_services(), Returns the latest aggregated news for Telangana, with optional district filteri, Returns real-time emergency alerts (power, water, weather)., Returns a registry of government services available in the specified district.
+Nodes (2): getReservoirStatus(), ReservoirCard()
 
-### Community 61 - "Community 61"
-Cohesion: 0.29
-Nodes (1): TestPanchang
-
-### Community 62 - "Community 62"
-Cohesion: 0.29
-Nodes (0): 
-
-### Community 63 - "Community 63"
+### Community 48 - "Community 48"
 Cohesion: 0.43
 Nodes (6): EventServiceProvider, NotifyAdmins, OrderPlaced, SendWelcomeEmail, ShipOrder, UserRegistered
 
-### Community 64 - "Community 64"
-Cohesion: 0.4
-Nodes (2): BusinessAnalyst, Fetch yesterday's page hits from Google Analytics 4.
+### Community 49 - "Community 49"
+Cohesion: 0.52
+Nodes (6): Bluesky Icon, Discord Icon, Documentation Icon, GitHub Icon, Social Icon, X Icon
 
-### Community 65 - "Community 65"
-Cohesion: 0.4
-Nodes (3): NewsFactChecker, Automated AI Fact Checking Pipeline for Civic News., Runs the content through an LLM to assess factual credibility,         detect se
+### Community 50 - "Community 50"
+Cohesion: 0.29
+Nodes (7): SplashScreen React Component, Telangana Legislative Assembly Branding Icon, Civic Intelligence Message, Glassmorphism Card Design Theme, WIP Splash Screen Mockup Image, Inter Typography Specification, Geospatial Dark Map Background
 
-### Community 66 - "Community 66"
-Cohesion: 0.4
-Nodes (2): Simulate/Scrape live transit data., TransitSyncAgent
-
-### Community 67 - "Community 67"
-Cohesion: 0.4
-Nodes (2): Simulate/Scrape live reservoir data., WaterSyncAgent
-
-### Community 68 - "Community 68"
-Cohesion: 0.47
-Nodes (5): build_summary(), main(), Formats the scraped data into a WhatsApp-friendly message., Sends the message via Meta WhatsApp Cloud API., send_whatsapp_message()
-
-### Community 69 - "Community 69"
+### Community 51 - "Community 51"
 Cohesion: 0.33
-Nodes (1): NewsCard()
+Nodes (7): Tiruvannamalai Repository Changes, Tiruvannamalai Tamil/English Summarization Rationale, Tiruvannamalai Supabase Database Schema, Vijayawada Repository Changes, Vijayawada Supabase Database Schema, Visakhapatnam Repository Changes, Visakhapatnam Supabase Database Schema
 
-### Community 70 - "Community 70"
-Cohesion: 0.33
-Nodes (0): 
-
-### Community 71 - "Community 71"
-Cohesion: 0.4
-Nodes (1): CivicServicesAPI
-
-### Community 72 - "Community 72"
-Cohesion: 0.33
-Nodes (1): RSSParser
-
-### Community 73 - "Community 73"
+### Community 53 - "Community 53"
 Cohesion: 0.33
 Nodes (5): Animal, -initWithName, -speak, Dog, -fetch
 
-### Community 74 - "Community 74"
-Cohesion: 0.47
-Nodes (2): build_graph(), Graph
-
-### Community 75 - "Community 75"
-Cohesion: 0.47
-Nodes (4): AppServiceProvider, CashierGateway, PaymentGateway, StripeGateway
-
-### Community 76 - "Community 76"
-Cohesion: 0.8
-Nodes (3): fetchFromRedis(), handler(), scrapeFromTSSPDCL()
-
-### Community 77 - "Community 77"
+### Community 54 - "Community 54"
 Cohesion: 0.4
-Nodes (0): 
+Nodes (6): Cross-Reference Decision Rationale, Module Responsibilities, Storage Design Decision Rationale, Cross-Reference Tuning Rationale, Keyword Extraction Tradeoffs, SQLite Migration Rationale
 
-### Community 78 - "Community 78"
+### Community 55 - "Community 55"
+Cohesion: 0.33
+Nodes (6): ads.txt, Google Search Console Verification, privacy-policy.html, Rationale: Custom headers for Google web scrapers, Vercel Production Deployment Guide, vercel.json
+
+### Community 56 - "Community 56"
 Cohesion: 0.4
-Nodes (0): 
+Nodes (6): Tiruvannamalai Brand Identity, Tiruvannamalai Brand Colors Selection Rationale, Vijayawada Brand Identity, Vijayawada Brand Colors Selection Rationale, Visakhapatnam Brand Identity, Visakhapatnam Brand Colors Selection Rationale
 
-### Community 79 - "Community 79"
+### Community 57 - "Community 57"
+Cohesion: 0.33
+Nodes (6): Tiruvannamalai Girivalam Tracker Feature, Tiruvannamalai Girivalam Tracker Purpose Rationale, Tiruvannamalai Pages & Routes Map, Visakhapatnam Beach Safety Alert Feature, Visakhapatnam Beach Safety Alert Feature Purpose Rationale, Visakhapatnam Pages & Routes Map
+
+### Community 59 - "Community 59"
 Cohesion: 0.7
 Nodes (4): DateTimeBar(), formatGregorian(), formatTime(), getVikramSamvatDate()
 
-### Community 80 - "Community 80"
+### Community 64 - "Community 64"
 Cohesion: 0.4
-Nodes (0): 
+Nodes (1): ApiClient
 
-### Community 81 - "Community 81"
-Cohesion: 0.4
-Nodes (0): 
-
-### Community 82 - "Community 82"
-Cohesion: 0.4
-Nodes (0): 
-
-### Community 83 - "Community 83"
-Cohesion: 0.4
-Nodes (0): 
-
-### Community 84 - "Community 84"
-Cohesion: 0.4
-Nodes (0): 
-
-### Community 85 - "Community 85"
-Cohesion: 0.4
-Nodes (0): 
-
-### Community 86 - "Community 86"
-Cohesion: 0.4
-Nodes (0): 
-
-### Community 87 - "Community 87"
-Cohesion: 0.5
-Nodes (3): MyApp.Accounts.User, create(), validate()
-
-### Community 88 - "Community 88"
+### Community 65 - "Community 65"
 Cohesion: 0.6
-Nodes (2): RateLimiter, Throttle
+Nodes (4): AppServiceProvider, CashierGateway, PaymentGateway, StripeGateway
 
-### Community 89 - "Community 89"
-Cohesion: 0.6
-Nodes (2): ColorResolver, DefaultPalette
-
-### Community 90 - "Community 90"
+### Community 67 - "Community 67"
 Cohesion: 0.4
-Nodes (0): 
+Nodes (5): Rich Aesthetics & Premium Design Mandate, Hero Isometric 3D Illustration, Hero Component, Isometric 3D Styling, Layered Architecture Visual Concept
 
-### Community 91 - "Community 91"
+### Community 68 - "Community 68"
+Cohesion: 0.4
+Nodes (5): Critical Civic Routes, ProgrammaticAd Component, T-Fiber Broadband Sponsor, T-Hub Hyderabad Sponsor, Telangana Tourism Sponsor
+
+### Community 69 - "Community 69"
 Cohesion: 0.5
-Nodes (1): ContentUpdater
+Nodes (5): Civil Supplies Department, Telangana, Apply for a New Ration Card Document, New Ration Card Application Service, Update Ration Card Details Document, Ration Card Update Service
 
-### Community 92 - "Community 92"
-Cohesion: 0.67
-Nodes (3): answer_muhurat_query(), get_vikram_samvat(), Uses LLM to answer whether a specific task is auspicious today      based on cal
+### Community 70 - "Community 70"
+Cohesion: 0.5
+Nodes (5): Free Legal Aid Services Document, Free Legal Aid Service, Telangana State Legal Services Authority (TSSLSA), Lok Adalat – Alternate Dispute Resolution Document, Lok Adalat Service
 
-### Community 93 - "Community 93"
+### Community 71 - "Community 71"
+Cohesion: 0.4
+Nodes (5): ClassifiedsPage, Rationale for UPI Mock Payment Modal and Boost Listing, classifiedsService, Rationale for AI Quick Post parsing simulation in MVP, HomePage
+
+### Community 72 - "Community 72"
+Cohesion: 0.4
+Nodes (5): Example Document Ingestion Pipeline README, HTTPX Corpus Benchmark, HTTPX Clustered Communities, HTTPX God Nodes Analysis, HTTPX Surprising Connections
+
+### Community 73 - "Community 73"
+Cohesion: 0.4
+Nodes (5): Glow Filter Definition, Gold Gradient Definition, Kakatiya Kala Thoranam Favicon Arch, Civic Emblem Symbol Choice, Premium Golden Glow Aesthetics Choice
+
+### Community 74 - "Community 74"
 Cohesion: 0.67
 Nodes (2): ArticleModal(), estimateReadTime()
 
-### Community 94 - "Community 94"
+### Community 76 - "Community 76"
 Cohesion: 0.5
-Nodes (0): 
+Nodes (2): ReportForm(), detectCorporation()
 
-### Community 95 - "Community 95"
+### Community 77 - "Community 77"
 Cohesion: 0.5
-Nodes (0): 
+Nodes (2): DailyShloka(), getDailyShloka()
 
-### Community 96 - "Community 96"
-Cohesion: 0.5
-Nodes (0): 
-
-### Community 97 - "Community 97"
-Cohesion: 0.5
-Nodes (0): 
-
-### Community 98 - "Community 98"
+### Community 80 - "Community 80"
 Cohesion: 0.67
-Nodes (3): generate(), Mirrors export.safe_name so community hub filenames and report wikilinks always, _safe_community_name()
+Nodes (3): MyApp.Accounts.User, create(), validate()
 
-### Community 99 - "Community 99"
+### Community 82 - "Community 82"
 Cohesion: 0.5
-Nodes (1): Transformer
+Nodes (2): Sitemap Reference, Search Engine Crawler Policy
 
-### Community 100 - "Community 100"
+### Community 83 - "Community 83"
 Cohesion: 0.5
-Nodes (0): 
+Nodes (3): Ladakh Anaemia Outlier, The Ladakh Surprising Outlier, PIB Press Release NFHS-5
 
-### Community 101 - "Community 101"
+### Community 84 - "Community 84"
+Cohesion: 0.5
+Nodes (4): Post-Matric Scholarship Document, Post-Matric Scholarship Scheme, Pre-Matric Scholarship Document, Pre-Matric Scholarship Scheme
+
+### Community 85 - "Community 85"
+Cohesion: 0.83
+Nodes (4): Post-Matric Scholarship, Pre-Matric Scholarship, National Scholarship Portal, Telangana ePass Portal
+
+### Community 86 - "Community 86"
+Cohesion: 0.83
+Nodes (4): Amber Accent Node, Central Hub Node (God-Node), Satellite Nodes, Graphify Logo Icon SVG
+
+### Community 87 - "Community 87"
+Cohesion: 0.5
+Nodes (4): Linear Design Decision Rationale, Pipeline Flow & Stages, API Layer Transaction Risk, Validation Step Placement Tradeoff
+
+### Community 88 - "Community 88"
+Cohesion: 0.67
+Nodes (2): NewsFactChecker, Automated AI Fact Checking Pipeline for Civic News.
+
+### Community 89 - "Community 89"
 Cohesion: 0.67
 Nodes (2): Performs a system diagnostic check.     Returns a status report of core systems, run_health_check()
 
-### Community 102 - "Community 102"
+### Community 90 - "Community 90"
 Cohesion: 0.67
 Nodes (1): handler()
 
-### Community 103 - "Community 103"
+### Community 91 - "Community 91"
 Cohesion: 0.67
 Nodes (1): handler()
 
-### Community 104 - "Community 104"
-Cohesion: 0.67
-Nodes (1): handler()
-
-### Community 105 - "Community 105"
+### Community 92 - "Community 92"
 Cohesion: 0.67
 Nodes (2): map_article_to_civic_entities(), Scans article text for matching keywords and returns a list of dictionaries:
 
-### Community 106 - "Community 106"
+### Community 93 - "Community 93"
 Cohesion: 0.67
 Nodes (2): Standard logger setup for the Telangana Live backend.     Includes both console, setup_logger()
 
-### Community 107 - "Community 107"
-Cohesion: 1.0
-Nodes (2): fetch_latest_alerts(), main()
-
-### Community 108 - "Community 108"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 109 - "Community 109"
+### Community 95 - "Community 95"
 Cohesion: 0.67
 Nodes (2): Verifies if Supabase tables exist and provides instructions if not., verify_and_setup()
 
-### Community 110 - "Community 110"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 111 - "Community 111"
+### Community 97 - "Community 97"
 Cohesion: 1.0
 Nodes (2): fetchPage(), main()
 
-### Community 112 - "Community 112"
+### Community 100 - "Community 100"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (2): ErrorBoundary, WidgetErrorBoundary
 
-### Community 113 - "Community 113"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 114 - "Community 114"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 115 - "Community 115"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 116 - "Community 116"
+### Community 102 - "Community 102"
 Cohesion: 1.0
 Nodes (2): generateWACaption(), ShareWhatsApp()
 
-### Community 117 - "Community 117"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 118 - "Community 118"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 119 - "Community 119"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 120 - "Community 120"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 121 - "Community 121"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 122 - "Community 122"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 123 - "Community 123"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 124 - "Community 124"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 125 - "Community 125"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 126 - "Community 126"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 127 - "Community 127"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 128 - "Community 128"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 129 - "Community 129"
-Cohesion: 0.67
-Nodes (0): 
-
-### Community 130 - "Community 130"
+### Community 111 - "Community 111"
 Cohesion: 0.67
 Nodes (1): graphify - extract · build · cluster · analyze · report.
 
-### Community 131 - "Community 131"
+### Community 112 - "Community 112"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (2): RateLimiter, Throttle
 
-### Community 132 - "Community 132"
+### Community 113 - "Community 113"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (2): ColorResolver, DefaultPalette
 
-### Community 133 - "Community 133"
+### Community 116 - "Community 116"
 Cohesion: 0.67
-Nodes (0): 
+Nodes (3): Skill Development & PMKVY, PMKVY Portal, TASK Telangana Portal
 
-### Community 134 - "Community 134"
-Cohesion: 1.0
-Nodes (0): 
+### Community 117 - "Community 117"
+Cohesion: 0.67
+Nodes (3): Ward & Village Secretariats, Aasara Social Security Scheme, Ration, Food & Pensions Section
 
-### Community 135 - "Community 135"
+### Community 118 - "Community 118"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (3): Graphify Brand Identity, God Node Representation in Logo, Hub and Spoke Graph Visualization
 
-### Community 136 - "Community 136"
+### Community 119 - "Community 119"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (3): Tiruvannamalai City Profile, Vijayawada City Profile, Visakhapatnam City Profile
 
-### Community 137 - "Community 137"
+### Community 120 - "Community 120"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (3): Enterprise Briefing Playwright Spec, @playwright/test package, Test Failure Output Log
 
-### Community 138 - "Community 138"
+### Community 123 - "Community 123"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): BusinessAnalyst
 
-### Community 139 - "Community 139"
+### Community 124 - "Community 124"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): ContentUpdater
 
-### Community 140 - "Community 140"
+### Community 125 - "Community 125"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): TransitSyncAgent
 
-### Community 141 - "Community 141"
+### Community 126 - "Community 126"
 Cohesion: 1.0
-Nodes (0): 
-
-### Community 142 - "Community 142"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 143 - "Community 143"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 144 - "Community 144"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 145 - "Community 145"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 146 - "Community 146"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 147 - "Community 147"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 148 - "Community 148"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 149 - "Community 149"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 150 - "Community 150"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 151 - "Community 151"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 152 - "Community 152"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 153 - "Community 153"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 154 - "Community 154"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 155 - "Community 155"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 156 - "Community 156"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 157 - "Community 157"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 158 - "Community 158"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 159 - "Community 159"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 160 - "Community 160"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 161 - "Community 161"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 162 - "Community 162"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 163 - "Community 163"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 164 - "Community 164"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 165 - "Community 165"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 166 - "Community 166"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 167 - "Community 167"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 168 - "Community 168"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 169 - "Community 169"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 170 - "Community 170"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 171 - "Community 171"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 172 - "Community 172"
-Cohesion: 1.0
-Nodes (0): 
+Nodes (1): WaterSyncAgent
 
 ### Community 173 - "Community 173"
 Cohesion: 1.0
-Nodes (0): 
-
-### Community 174 - "Community 174"
-Cohesion: 1.0
-Nodes (0): 
+Nodes (1): CivicServicesAPI
 
 ### Community 175 - "Community 175"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): NewsService
 
 ### Community 176 - "Community 176"
 Cohesion: 1.0
-Nodes (0): 
-
-### Community 177 - "Community 177"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 178 - "Community 178"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 179 - "Community 179"
-Cohesion: 1.0
-Nodes (0): 
+Nodes (1): RSSParser
 
 ### Community 180 - "Community 180"
 Cohesion: 1.0
-Nodes (0): 
-
-### Community 181 - "Community 181"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 182 - "Community 182"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 183 - "Community 183"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 184 - "Community 184"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 185 - "Community 185"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 186 - "Community 186"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 187 - "Community 187"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 188 - "Community 188"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 189 - "Community 189"
-Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Transformer
 
 ### Community 190 - "Community 190"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Once-Only Principle, Once-Only Principle Rationale
 
 ### Community 191 - "Community 191"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Life-Event Bundling, Life-Event Bundling Rationale
 
 ### Community 192 - "Community 192"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Geospatial & Hyper-Local Filtering, Geospatial & Hyper-Local Filtering Rationale
 
 ### Community 193 - "Community 193"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Semantic Clustering via Vector Embeddings, Semantic Clustering Rationale
 
 ### Community 194 - "Community 194"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Liquid Glass Visual System, Liquid Glass Design Choice Rationale
 
 ### Community 195 - "Community 195"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): CLS Prevention Technique for Ads, CLS Prevention Rationale
 
 ### Community 196 - "Community 196"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): React Logo, React JavaScript Library
 
 ### Community 197 - "Community 197"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Vite Logo Design Layout, Vite Logo SVG
 
 ### Community 198 - "Community 198"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Skill Development & PMKVY Document, Skill Development & PMKVY Program
 
 ### Community 199 - "Community 199"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): TSPSC Government Jobs Document, TSPSC Government Jobs Service
 
 ### Community 200 - "Community 200"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Court Case Status Check Document, Court Case Status Check Service
 
 ### Community 201 - "Community 201"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): RTI Application – Right to Information Document, RTI Application Service
 
 ### Community 202 - "Community 202"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Aarogyasri / PMJAY Health Insurance Document, Aarogyasri / PMJAY Health Insurance Scheme
 
 ### Community 203 - "Community 203"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): TSPSC Government Jobs, TSPSC Portal
 
 ### Community 204 - "Community 204"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Mixed Corpus Graph Report, Mixed Corpus Surprising Connections
 
 ### Community 205 - "Community 205"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Scaled Dot-Product Attention, Rationale for scaling in Dot-Product Attention
 
 ### Community 206 - "Community 206"
 Cohesion: 1.0
-Nodes (0): 
-
-### Community 207 - "Community 207"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 208 - "Community 208"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 209 - "Community 209"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 210 - "Community 210"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 211 - "Community 211"
-Cohesion: 1.0
-Nodes (0): 
+Nodes (2): Positional Encoding, Rationale for Positional Encodings
 
 ### Community 212 - "Community 212"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Fetch yesterday's page hits from Google Analytics 4.
 
 ### Community 213 - "Community 213"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Generate new content and store in Supabase.
 
 ### Community 214 - "Community 214"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Execute generation cycle.          First tries to pull dynamic topics from the S
 
 ### Community 215 - "Community 215"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Fetch and parse website content.
 
 ### Community 216 - "Community 216"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Execute monitoring cycle.
 
 ### Community 217 - "Community 217"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Runs the content through an LLM to assess factual credibility,         detect s
 
 ### Community 218 - "Community 218"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Fetch, fact-check, and sync news to Supabase.
 
 ### Community 219 - "Community 219"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Mock/Scrape gold rates for Hyderabad.
 
 ### Community 220 - "Community 220"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Mock/Scrape Fuel prices for Hyderabad.
 
 ### Community 221 - "Community 221"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Mock/Scrape Mandi prices for major Telangana commodities.
 
 ### Community 222 - "Community 222"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Check content quality, save improvements, and publish the article.
 
 ### Community 223 - "Community 223"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Quality-check all content that is still in 'active' (draft) status.
 
 ### Community 224 - "Community 224"
 Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Simulate/Scrape live transit data.
 
 ### Community 225 - "Community 225"
 Cohesion: 1.0
-Nodes (0): 
-
-### Community 226 - "Community 226"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 227 - "Community 227"
-Cohesion: 1.0
-Nodes (0): 
+Nodes (1): Simulate/Scrape live reservoir data.
 
 ### Community 228 - "Community 228"
 Cohesion: 1.0
-Nodes (0): 
-
-### Community 229 - "Community 229"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 230 - "Community 230"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 231 - "Community 231"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 232 - "Community 232"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 233 - "Community 233"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 234 - "Community 234"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 235 - "Community 235"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 236 - "Community 236"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 237 - "Community 237"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 238 - "Community 238"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 239 - "Community 239"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 240 - "Community 240"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 241 - "Community 241"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 242 - "Community 242"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 243 - "Community 243"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 244 - "Community 244"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 245 - "Community 245"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 246 - "Community 246"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 247 - "Community 247"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 248 - "Community 248"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 249 - "Community 249"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 250 - "Community 250"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 251 - "Community 251"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 252 - "Community 252"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 253 - "Community 253"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 254 - "Community 254"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 255 - "Community 255"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 256 - "Community 256"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 257 - "Community 257"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 258 - "Community 258"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 259 - "Community 259"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 260 - "Community 260"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 261 - "Community 261"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 262 - "Community 262"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 263 - "Community 263"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 264 - "Community 264"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 265 - "Community 265"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 266 - "Community 266"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 267 - "Community 267"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 268 - "Community 268"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 269 - "Community 269"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 270 - "Community 270"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 271 - "Community 271"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 272 - "Community 272"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 273 - "Community 273"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 274 - "Community 274"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 275 - "Community 275"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 276 - "Community 276"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 277 - "Community 277"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 278 - "Community 278"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 279 - "Community 279"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 280 - "Community 280"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 281 - "Community 281"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 282 - "Community 282"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 283 - "Community 283"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 284 - "Community 284"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 285 - "Community 285"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 286 - "Community 286"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 287 - "Community 287"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 288 - "Community 288"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 289 - "Community 289"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 290 - "Community 290"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 291 - "Community 291"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 292 - "Community 292"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 293 - "Community 293"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 294 - "Community 294"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 295 - "Community 295"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 296 - "Community 296"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 297 - "Community 297"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 298 - "Community 298"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 299 - "Community 299"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 300 - "Community 300"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 301 - "Community 301"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 302 - "Community 302"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 303 - "Community 303"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 304 - "Community 304"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 305 - "Community 305"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 306 - "Community 306"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 307 - "Community 307"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 308 - "Community 308"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 309 - "Community 309"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 310 - "Community 310"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 311 - "Community 311"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 312 - "Community 312"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 313 - "Community 313"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 314 - "Community 314"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 315 - "Community 315"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 316 - "Community 316"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 317 - "Community 317"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 318 - "Community 318"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 319 - "Community 319"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 320 - "Community 320"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 321 - "Community 321"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 322 - "Community 322"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 323 - "Community 323"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 324 - "Community 324"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 325 - "Community 325"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 326 - "Community 326"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 327 - "Community 327"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 328 - "Community 328"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 329 - "Community 329"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 330 - "Community 330"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 331 - "Community 331"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 332 - "Community 332"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 333 - "Community 333"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 334 - "Community 334"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 335 - "Community 335"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 336 - "Community 336"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 337 - "Community 337"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 338 - "Community 338"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 339 - "Community 339"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 340 - "Community 340"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 341 - "Community 341"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 342 - "Community 342"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 343 - "Community 343"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 344 - "Community 344"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 345 - "Community 345"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 346 - "Community 346"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 347 - "Community 347"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 348 - "Community 348"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 349 - "Community 349"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 350 - "Community 350"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 351 - "Community 351"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 352 - "Community 352"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 353 - "Community 353"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 354 - "Community 354"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 355 - "Community 355"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 356 - "Community 356"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 357 - "Community 357"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 358 - "Community 358"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 359 - "Community 359"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 360 - "Community 360"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 361 - "Community 361"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 362 - "Community 362"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 363 - "Community 363"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 364 - "Community 364"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 365 - "Community 365"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 366 - "Community 366"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 367 - "Community 367"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 368 - "Community 368"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 369 - "Community 369"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 370 - "Community 370"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 371 - "Community 371"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 372 - "Community 372"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 373 - "Community 373"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 374 - "Community 374"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 375 - "Community 375"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 376 - "Community 376"
-Cohesion: 1.0
-Nodes (0): 
-
-### Community 377 - "Community 377"
-Cohesion: 1.0
-Nodes (1): Bridges data from V1 (legacy) tables to V2 (Pulse) schema.     This allows V2 f
-
-### Community 378 - "Community 378"
-Cohesion: 1.0
-Nodes (1): Syncs from V1 'content' table to V2 'public.news
-
-### Community 379 - "Community 379"
-Cohesion: 1.0
-Nodes (1): Syncs from V1 'citizen_reports' to V2 'public.citizen_reports
+Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
 
 ### Community 380 - "Community 380"
 Cohesion: 1.0
-Nodes (1): Syncs from V1 'power_alerts' to V2 'public.power_outages
+Nodes (1): Ward / Village Secretariat
 
 ### Community 381 - "Community 381"
 Cohesion: 1.0
-Nodes (1): Fetch officials for a specific area (Constituency, Mandal, etc.)         In a r
+Nodes (1): Jobs, Education & Scholarships Index
 
 ### Community 382 - "Community 382"
 Cohesion: 1.0
-Nodes (1): Search officials by name or party.
+Nodes (1): Telangana State Public Service Commission
 
 ### Community 383 - "Community 383"
 Cohesion: 1.0
-Nodes (1): Scrapes and returns the latest gold rates for Hyderabad.
+Nodes (1): Telangana ePass Scholarship Portal
 
 ### Community 384 - "Community 384"
 Cohesion: 1.0
-Nodes (1): Scrapes and returns the latest fuel prices for Hyderabad.
+Nodes (1): Vite Logo Asset
 
 ### Community 385 - "Community 385"
 Cohesion: 1.0
-Nodes (1): Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.
+Nodes (1): Multi-Head Attention
 
 ### Community 386 - "Community 386"
 Cohesion: 1.0
-Nodes (1): Scrapes data and sends a summary message via the WhatsApp bot.
-
-### Community 387 - "Community 387"
-Cohesion: 1.0
-Nodes (1): Extracts an image URL from an RSS feed entry checking various standard fields
-
-### Community 388 - "Community 388"
-Cohesion: 1.0
-Nodes (1): Extracts civic entities from news text.     Returns a dict with 'domain_entities
+Nodes (1): Robots Sitemap Directive
 
 ### Community 389 - "Community 389"
 Cohesion: 1.0
-Nodes (1): Maps high-level domain entities to database type/ID keys.     Returns (entity_ty
+Nodes (1): Vijayawada Pages & Routes Map
 
 ### Community 390 - "Community 390"
 Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
+Nodes (1): Frontend README
 
-### Community 391 - "Community 391"
-Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
-
-### Community 392 - "Community 392"
-Cohesion: 1.0
-Nodes (1): Maps high-level domain entities to database type/ID keys.     Returns (entity_ty
-
-### Community 393 - "Community 393"
-Cohesion: 1.0
-Nodes (1): Generate text via the requested provider with automatic retry.          Returns
-
-### Community 394 - "Community 394"
-Cohesion: 1.0
-Nodes (1): Call the z.ai OpenAI-compatible chat completions endpoint.
-
-### Community 395 - "Community 395"
-Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
-
-### Community 396 - "Community 396"
-Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
-
-### Community 397 - "Community 397"
-Cohesion: 1.0
-Nodes (1): Generate text via the requested provider with automatic retry.          Returns
-
-### Community 398 - "Community 398"
-Cohesion: 1.0
-Nodes (1): Call the z.ai OpenAI-compatible chat completions endpoint.
-
-### Community 399 - "Community 399"
-Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
-
-### Community 400 - "Community 400"
-Cohesion: 1.0
-Nodes (1): Fetch, fact-check, and sync news to Supabase.
-
-### Community 401 - "Community 401"
-Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
-
-### Community 402 - "Community 402"
-Cohesion: 1.0
-Nodes (1): Generates new content for telangana.live
-
-### Community 403 - "Community 403"
-Cohesion: 1.0
-Nodes (1): Generate new content and store in Supabase
-
-### Community 404 - "Community 404"
-Cohesion: 1.0
-Nodes (1): Execute generation cycle.                  First tries to pull dynamic topics
-
-### Community 405 - "Community 405"
-Cohesion: 1.0
-Nodes (1): Monitors telangana.live for content that needs updates
-
-### Community 406 - "Community 406"
-Cohesion: 1.0
-Nodes (1): Use Claude to analyze content and identify what needs updates
-
-### Community 407 - "Community 407"
-Cohesion: 1.0
-Nodes (1): Execute monitoring cycle
-
-### Community 408 - "Community 408"
-Cohesion: 1.0
-Nodes (1): Updates existing content with new information
-
-### Community 409 - "Community 409"
-Cohesion: 1.0
-Nodes (1): Update existing content with new information
-
-### Community 410 - "Community 410"
-Cohesion: 1.0
-Nodes (1): Checks and improves content quality, then publishes it.
-
-### Community 411 - "Community 411"
-Cohesion: 1.0
-Nodes (1): Check content quality, save improvements, and publish the article.
-
-### Community 412 - "Community 412"
-Cohesion: 1.0
-Nodes (1): Quality-check all content that is still in 'active' (draft) status.
-
-### Community 413 - "Community 413"
-Cohesion: 1.0
-Nodes (1): Generate a 2-line AI summary with simple exponential back-off on failure.
+## Ambiguous Edges - Review These
+- `Income Certificate Service` → `Aarogyasri / PMJAY Health Insurance Service`  [AMBIGUOUS]
+  content/health/aarogyasri.md · relation: shares_data_with
+- `Voter ID Address Update Guide` → `Election Commission of India Voter Helpline Portal`  [AMBIGUOUS]
+  frontend/src/content/docs/10-elections-voting/address-update.md · relation: shares_data_with
 
 ## Knowledge Gaps
-- **462 isolated node(s):** `Scrapes and returns the latest gold rates for Hyderabad.`, `Scrapes and returns the latest fuel prices for Hyderabad.`, `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.`, `Scrapes data and sends a summary message via the WhatsApp bot.`, `Returns today's accurate Panchang data.` (+457 more)
+- **805 isolated node(s):** `PanchangQuery`, `Scrapes and returns the latest gold rates for Hyderabad.`, `Scrapes and returns the latest fuel prices for Hyderabad.`, `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.`, `Scrapes data and sends a summary message via the WhatsApp bot.` (+800 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 134`** (2 nodes): `clean_and_migrate()`, `migrate_content.py`
+- **Thin community `Community 47`** (7 nodes): `reservoirsData.js`, `ReservoirsPage.jsx`, `getReservoirStatus()`, `LevelBar()`, `ReservoirCard()`, `ReservoirsPage()`, `SummaryBar()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 135`** (2 nodes): `verify_structure.py`, `verify_structure()`
+- **Thin community `Community 64`** (5 nodes): `sample.php`, `sample.rb`, `ApiClient`, `parse_response()`, `parseResponse()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 136`** (2 nodes): `test_api_server.py`, `test_api()`
+- **Thin community `Community 74`** (4 nodes): `ArticleModal()`, `estimateReadTime()`, `renderCivicWidget()`, `ArticleModal.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 137`** (2 nodes): `verify_engine.js`, `verify()`
+- **Thin community `Community 76`** (4 nodes): `ReportForm.jsx`, `reportingData.js`, `ReportForm()`, `detectCorporation()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 138`** (2 nodes): `query.js`, `handler()`
+- **Thin community `Community 77`** (4 nodes): `DailyShloka()`, `DailyShloka.jsx`, `shlokas.js`, `getDailyShloka()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 139`** (2 nodes): `today.js`, `handler()`
+- **Thin community `Community 82`** (4 nodes): `robots.txt`, `Sitemap Reference`, `Search Engine Crawler Policy`, `sitemap.xml`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 140`** (2 nodes): `whatsapp.js`, `handleWhatsAppMessage()`
+- **Thin community `Community 88`** (3 nodes): `fact_checker.py`, `NewsFactChecker`, `Automated AI Fact Checking Pipeline for Civic News.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 141`** (2 nodes): `BasthiDawakhana()`, `BasthiDawakhana.jsx`
+- **Thin community `Community 89`** (3 nodes): `health.py`, `Performs a system diagnostic check.     Returns a status report of core systems`, `run_health_check()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 142`** (2 nodes): `BottomNav()`, `BottomNav.jsx`
+- **Thin community `Community 90`** (3 nodes): `mandi-prices.js`, `mandi-prices.js`, `handler()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 143`** (2 nodes): `BreakingNewsBanner()`, `BreakingNewsBanner.jsx`
+- **Thin community `Community 91`** (3 nodes): `weather.js`, `weather.js`, `handler()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 144`** (2 nodes): `CitizenPoll()`, `CitizenPoll.jsx`
+- **Thin community `Community 92`** (3 nodes): `correlation_engine.py`, `map_article_to_civic_entities()`, `Scans article text for matching keywords and returns a list of dictionaries:`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 145`** (2 nodes): `CookieConsent()`, `CookieConsent.jsx`
+- **Thin community `Community 93`** (3 nodes): `logger.py`, `Standard logger setup for the Telangana Live backend.     Includes both console`, `setup_logger()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 146`** (2 nodes): `CrisisDashboard()`, `CrisisDashboard.jsx`
+- **Thin community `Community 95`** (3 nodes): `setup_db.py`, `Verifies if Supabase tables exist and provides instructions if not.`, `verify_and_setup()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 147`** (2 nodes): `DailyShloka()`, `DailyShloka.jsx`
+- **Thin community `Community 97`** (3 nodes): `fetchPage()`, `main()`, `fetch_playwright.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 148`** (2 nodes): `DistrictOnboarding()`, `DistrictOnboarding.jsx`
+- **Thin community `Community 100`** (3 nodes): `ErrorBoundary`, `WidgetErrorBoundary`, `ErrorBoundary.jsx`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 149`** (2 nodes): `DistrictSelector()`, `DistrictSelector.jsx`
+- **Thin community `Community 102`** (3 nodes): `ShareWhatsApp.jsx`, `generateWACaption()`, `ShareWhatsApp()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 150`** (2 nodes): `EmergencySimulator()`, `EmergencySimulator.jsx`
+- **Thin community `Community 111`** (3 nodes): `__init__.py`, `__getattr__()`, `graphify - extract · build · cluster · analyze · report.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 151`** (2 nodes): `Features()`, `Features.tsx`
+- **Thin community `Community 112`** (3 nodes): `sample_php_config.php`, `RateLimiter`, `Throttle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 152`** (2 nodes): `Footer()`, `Footer.jsx`
+- **Thin community `Community 113`** (3 nodes): `sample_php_static_prop.php`, `ColorResolver`, `DefaultPalette`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 153`** (2 nodes): `FuelPriceWidget.jsx`, `FuelPriceWidget()`
+- **Thin community `Community 123`** (2 nodes): `business_analyst.py`, `BusinessAnalyst`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 154`** (2 nodes): `FuelTaxCard.jsx`, `FuelTaxCard()`
+- **Thin community `Community 124`** (2 nodes): `content_updater.py`, `ContentUpdater`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 155`** (2 nodes): `GrievanceDashboard.jsx`, `GrievanceDashboard()`
+- **Thin community `Community 125`** (2 nodes): `transit_sync_agent.py`, `TransitSyncAgent`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 156`** (2 nodes): `Header.jsx`, `Header()`
+- **Thin community `Community 126`** (2 nodes): `water_sync_agent.py`, `WaterSyncAgent`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 157`** (2 nodes): `HeatwavePanel.jsx`, `HeatwavePanel()`
+- **Thin community `Community 173`** (2 nodes): `CivicServicesAPI`, `civicServicesAPI.js`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 158`** (2 nodes): `KnowYourWard.jsx`, `KnowYourWard()`
+- **Thin community `Community 175`** (2 nodes): `newsService.js`, `NewsService`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 159`** (2 nodes): `LifeEventWizard.jsx`, `LifeEventWizard()`
+- **Thin community `Community 176`** (2 nodes): `rssParser.js`, `RSSParser`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 160`** (2 nodes): `MainLayout.jsx`, `MainLayout()`
+- **Thin community `Community 180`** (2 nodes): `sample.py`, `Transformer`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 161`** (2 nodes): `Navigation.tsx`, `Navigation()`
+- **Thin community `Community 190`** (2 nodes): `Once-Only Principle`, `Once-Only Principle Rationale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 162`** (2 nodes): `NewsClusterModal.jsx`, `NewsClusterModal()`
+- **Thin community `Community 191`** (2 nodes): `Life-Event Bundling`, `Life-Event Bundling Rationale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 163`** (2 nodes): `NewsTicker.jsx`, `NewsTicker()`
+- **Thin community `Community 192`** (2 nodes): `Geospatial & Hyper-Local Filtering`, `Geospatial & Hyper-Local Filtering Rationale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 164`** (2 nodes): `OdopWidget.jsx`, `OdopWidget()`
+- **Thin community `Community 193`** (2 nodes): `Semantic Clustering via Vector Embeddings`, `Semantic Clustering Rationale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 165`** (2 nodes): `PartnerCard.jsx`, `PartnerCard()`
+- **Thin community `Community 194`** (2 nodes): `Liquid Glass Visual System`, `Liquid Glass Design Choice Rationale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 166`** (2 nodes): `PowerTariffCard.jsx`, `PowerTariffCard()`
+- **Thin community `Community 195`** (2 nodes): `CLS Prevention Technique for Ads`, `CLS Prevention Rationale`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 167`** (2 nodes): `ProactiveAlerts.jsx`, `ProactiveAlerts()`
+- **Thin community `Community 196`** (2 nodes): `React Logo`, `React JavaScript Library`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 168`** (2 nodes): `ProgrammaticAd.jsx`, `ProgrammaticAd()`
+- **Thin community `Community 197`** (2 nodes): `Vite Logo Design Layout`, `Vite Logo SVG`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 169`** (2 nodes): `PulseCounter.jsx`, `PulseCounter()`
+- **Thin community `Community 198`** (2 nodes): `Skill Development & PMKVY Document`, `Skill Development & PMKVY Program`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 170`** (2 nodes): `ReportForm.jsx`, `ReportForm()`
+- **Thin community `Community 199`** (2 nodes): `TSPSC Government Jobs Document`, `TSPSC Government Jobs Service`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 171`** (2 nodes): `StickyAnchorAd.jsx`, `StickyAnchorAd()`
+- **Thin community `Community 200`** (2 nodes): `Court Case Status Check Document`, `Court Case Status Check Service`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 172`** (2 nodes): `Turnstile.jsx`, `Turnstile()`
+- **Thin community `Community 201`** (2 nodes): `RTI Application – Right to Information Document`, `RTI Application Service`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 173`** (2 nodes): `WeatherCard.jsx`, `WeatherCard()`
+- **Thin community `Community 202`** (2 nodes): `Aarogyasri / PMJAY Health Insurance Document`, `Aarogyasri / PMJAY Health Insurance Scheme`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 174`** (2 nodes): `EmergencyProvider()`, `EmergencyProvider.jsx`
+- **Thin community `Community 203`** (2 nodes): `TSPSC Government Jobs`, `TSPSC Portal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 175`** (2 nodes): `parksData.js`, `getCrowdByHour()`
+- **Thin community `Community 204`** (2 nodes): `Mixed Corpus Graph Report`, `Mixed Corpus Surprising Connections`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 176`** (2 nodes): `reportingData.js`, `detectCorporation()`
+- **Thin community `Community 205`** (2 nodes): `Scaled Dot-Product Attention`, `Rationale for scaling in Dot-Product Attention`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 177`** (2 nodes): `reservoirsData.js`, `getReservoirStatus()`
+- **Thin community `Community 206`** (2 nodes): `Positional Encoding`, `Rationale for Positional Encodings`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 178`** (2 nodes): `shlokas.js`, `getDailyShloka()`
+- **Thin community `Community 212`** (1 nodes): `Fetch yesterday's page hits from Google Analytics 4.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 179`** (2 nodes): `wardData.js`, `searchWard()`
+- **Thin community `Community 213`** (1 nodes): `Generate new content and store in Supabase.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 180`** (2 nodes): `weatherData.js`, `generateWeather()`
+- **Thin community `Community 214`** (1 nodes): `Execute generation cycle.          First tries to pull dynamic topics from the S`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 181`** (2 nodes): `useEmergency.js`, `useEmergency()`
+- **Thin community `Community 215`** (1 nodes): `Fetch and parse website content.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 182`** (2 nodes): `useJsonLd.js`, `useJsonLd()`
+- **Thin community `Community 216`** (1 nodes): `Execute monitoring cycle.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 183`** (2 nodes): `ContentAdminCockpit()`, `ContentAdminCockpit.jsx`
+- **Thin community `Community 217`** (1 nodes): `Runs the content through an LLM to assess factual credibility,         detect s`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 184`** (2 nodes): `DeepDivesPage()`, `DeepDivesPage.jsx`
+- **Thin community `Community 218`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 185`** (2 nodes): `EmergencyContactsPage()`, `EmergencyContactsPage.jsx`
+- **Thin community `Community 219`** (1 nodes): `Mock/Scrape gold rates for Hyderabad.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 186`** (2 nodes): `FuelLandingPage.jsx`, `FuelLandingPage()`
+- **Thin community `Community 220`** (1 nodes): `Mock/Scrape Fuel prices for Hyderabad.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 187`** (2 nodes): `GoldLandingPage.jsx`, `GoldLandingPage()`
+- **Thin community `Community 221`** (1 nodes): `Mock/Scrape Mandi prices for major Telangana commodities.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 188`** (2 nodes): `HealthLandingPage.jsx`, `HealthLandingPage()`
+- **Thin community `Community 222`** (1 nodes): `Check content quality, save improvements, and publish the article.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 189`** (2 nodes): `NewsListingPage.jsx`, `NewsListingPage()`
+- **Thin community `Community 223`** (1 nodes): `Quality-check all content that is still in 'active' (draft) status.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 190`** (2 nodes): `NewsPage.jsx`, `NewsPage()`
+- **Thin community `Community 224`** (1 nodes): `Simulate/Scrape live transit data.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 191`** (2 nodes): `NotFound.jsx`, `NotFound()`
+- **Thin community `Community 225`** (1 nodes): `Simulate/Scrape live reservoir data.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 192`** (2 nodes): `PanchangPage.jsx`, `PanchangPage()`
+- **Thin community `Community 228`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 193`** (2 nodes): `PrivacyPolicy.jsx`, `PrivacyPolicy()`
+- **Thin community `Community 380`** (1 nodes): `Ward / Village Secretariat`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 194`** (2 nodes): `PropertyTaxPage.jsx`, `PropertyTaxPage()`
+- **Thin community `Community 381`** (1 nodes): `Jobs, Education & Scholarships Index`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 195`** (2 nodes): `ReportingLandingPage.jsx`, `ReportingLandingPage()`
+- **Thin community `Community 382`** (1 nodes): `Telangana State Public Service Commission`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 196`** (2 nodes): `SchemesPage.jsx`, `SchemesPage()`
+- **Thin community `Community 383`** (1 nodes): `Telangana ePass Scholarship Portal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 197`** (2 nodes): `ServicesDirectoryPage.jsx`, `ServicesDirectoryPage()`
+- **Thin community `Community 384`** (1 nodes): `Vite Logo Asset`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 198`** (2 nodes): `SplashScreen.jsx`, `SplashScreen()`
+- **Thin community `Community 385`** (1 nodes): `Multi-Head Attention`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 199`** (2 nodes): `SubRegionPage.jsx`, `SubRegionPage()`
+- **Thin community `Community 386`** (1 nodes): `Robots Sitemap Directive`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 200`** (2 nodes): `TermsOfService.jsx`, `TermsOfService()`
+- **Thin community `Community 389`** (1 nodes): `Vijayawada Pages & Routes Map`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 201`** (2 nodes): `TransportLandingPage.jsx`, `TransportLandingPage()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 202`** (2 nodes): `WaterSupplyPage.jsx`, `WaterSupplyPage()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 203`** (2 nodes): `n8nService.js`, `sendToN8N()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 204`** (2 nodes): `transitService.js`, `fetchTransitStatus()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 205`** (2 nodes): `waterService.js`, `fetchWaterLevels()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 206`** (2 nodes): `weatherService.js`, `fetchWeather()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 207`** (2 nodes): `timeUtils.js`, `formatRelativeTime()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 208`** (2 nodes): `check()`, `check_fuel_sources.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 209`** (2 nodes): `check()`, `check_sources.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 210`** (2 nodes): `debug_live_chennai()`, `debug_chennai_history.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 211`** (2 nodes): `scrape_history()`, `scrape_gold_history.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 212`** (2 nodes): `scrape_history()`, `scrape_gold_history_v2.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 213`** (2 nodes): `test_reproduction()`, `reproduce_gold_bug.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 214`** (2 nodes): `verify_civic_gateway.py`, `test_civic_gateway()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 215`** (2 nodes): `runSearch()`, `markdownParser.test.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 216`** (2 nodes): `makeJsonResponse()`, `redisService.test.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 217`** (2 nodes): `parseURL()`, `rssParser.test.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 218`** (2 nodes): `weatherService.test.js`, `mockFetchWeatherAndAqi()`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 219`** (1 nodes): `branch-cleanup.ps1`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 220`** (1 nodes): `git-push.ps1`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 221`** (1 nodes): `restructure.ps1`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 222`** (1 nodes): `test_ephem.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 223`** (1 nodes): `__init__.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 224`** (1 nodes): `__init__.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 225`** (1 nodes): `config.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 226`** (1 nodes): `eslint.config.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 227`** (1 nodes): `playwright.config.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 228`** (1 nodes): `postcss.config.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 229`** (1 nodes): `tailwind.config.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 230`** (1 nodes): `vite.config.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 231`** (1 nodes): `vitest.config.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 232`** (1 nodes): `sw.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 233`** (1 nodes): `Button.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 234`** (1 nodes): `CTA.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 235`** (1 nodes): `Footer.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 236`** (1 nodes): `Hero.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 237`** (1 nodes): `Icons.jsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 238`** (1 nodes): `Pricing.tsx`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 239`** (1 nodes): `EmergencyContext.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 240`** (1 nodes): `aiBriefingData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 241`** (1 nodes): `alerts.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 242`** (1 nodes): `budgetData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 243`** (1 nodes): `calendarData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 244`** (1 nodes): `districtCoords.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 245`** (1 nodes): `districtNewsSources.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 246`** (1 nodes): `districts.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 247`** (1 nodes): `emergencyData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 248`** (1 nodes): `farmerData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 249`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 250`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 251`** (1 nodes): `jobsData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 252`** (1 nodes): `meesevaData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 253`** (1 nodes): `partners.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 254`** (1 nodes): `pdsData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 255`** (1 nodes): `politiciansData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 256`** (1 nodes): `pollData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 257`** (1 nodes): `propertyTaxData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 258`** (1 nodes): `pulses.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 259`** (1 nodes): `schemesData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 260`** (1 nodes): `services.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 261`** (1 nodes): `transportData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 262`** (1 nodes): `waterSupplyData.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 263`** (1 nodes): `citizenReportsService.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 264`** (1 nodes): `classifiedsService.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 265`** (1 nodes): `emergencyService.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 266`** (1 nodes): `powerAlertsService.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 267`** (1 nodes): `redisService.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 268`** (1 nodes): `supabaseClient.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 269`** (1 nodes): `manifest.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 270`** (1 nodes): `__init__.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 271`** (1 nodes): `debug_gold.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 272`** (1 nodes): `debug_mint_rows.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 273`** (1 nodes): `enterprise-briefing.spec.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 274`** (1 nodes): `extended.spec.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 275`** (1 nodes): `homepage.spec.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 276`** (1 nodes): `smoke_test.spec.ts`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 277`** (1 nodes): `__init__.py`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 278`** (1 nodes): `timeUtils.test.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 279`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 280`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 281`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 282`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 283`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 284`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 285`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 286`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 287`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 288`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 289`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 290`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 291`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 292`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 293`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 294`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 295`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 296`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 297`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 298`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 299`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 300`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 301`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 302`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 303`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 304`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 305`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 306`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 307`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 308`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 309`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 310`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 311`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 312`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 313`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 314`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 315`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 316`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 317`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 318`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 319`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 320`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 321`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 322`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 323`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 324`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 325`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 326`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 327`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 328`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 329`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 330`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 331`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 332`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 333`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 334`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 335`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 336`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 337`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 338`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 339`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 340`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 341`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 342`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 343`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 344`** (1 nodes): `output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 345`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 346`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 347`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 348`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 349`** (1 nodes): `pulses.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 350`** (1 nodes): `pulses.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 351`** (1 nodes): `pulses.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 352`** (1 nodes): `pulses.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 353`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 354`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 355`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 356`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 357`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 358`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 359`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 360`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 361`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 362`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 363`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 364`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 365`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 366`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 367`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 368`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 369`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 370`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 371`** (1 nodes): `fuelPrices.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 372`** (1 nodes): `goldRates.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 373`** (1 nodes): `pulses.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 374`** (1 nodes): `pulses.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 375`** (1 nodes): `test_output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 376`** (1 nodes): `test_output.js`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 377`** (1 nodes): `Bridges data from V1 (legacy) tables to V2 (Pulse) schema.     This allows V2 f`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 378`** (1 nodes): `Syncs from V1 'content' table to V2 'public.news`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 379`** (1 nodes): `Syncs from V1 'citizen_reports' to V2 'public.citizen_reports`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 380`** (1 nodes): `Syncs from V1 'power_alerts' to V2 'public.power_outages`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 381`** (1 nodes): `Fetch officials for a specific area (Constituency, Mandal, etc.)         In a r`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 382`** (1 nodes): `Search officials by name or party.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 383`** (1 nodes): `Scrapes and returns the latest gold rates for Hyderabad.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 384`** (1 nodes): `Scrapes and returns the latest fuel prices for Hyderabad.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 385`** (1 nodes): `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 386`** (1 nodes): `Scrapes data and sends a summary message via the WhatsApp bot.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 387`** (1 nodes): `Extracts an image URL from an RSS feed entry checking various standard fields`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 388`** (1 nodes): `Extracts civic entities from news text.     Returns a dict with 'domain_entities`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 389`** (1 nodes): `Maps high-level domain entities to database type/ID keys.     Returns (entity_ty`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 390`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 391`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 392`** (1 nodes): `Maps high-level domain entities to database type/ID keys.     Returns (entity_ty`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 393`** (1 nodes): `Generate text via the requested provider with automatic retry.          Returns`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 394`** (1 nodes): `Call the z.ai OpenAI-compatible chat completions endpoint.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 395`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 396`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 397`** (1 nodes): `Generate text via the requested provider with automatic retry.          Returns`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 398`** (1 nodes): `Call the z.ai OpenAI-compatible chat completions endpoint.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 399`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 400`** (1 nodes): `Fetch, fact-check, and sync news to Supabase.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 401`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 402`** (1 nodes): `Generates new content for telangana.live`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 403`** (1 nodes): `Generate new content and store in Supabase`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 404`** (1 nodes): `Execute generation cycle.                  First tries to pull dynamic topics`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 405`** (1 nodes): `Monitors telangana.live for content that needs updates`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 406`** (1 nodes): `Use Claude to analyze content and identify what needs updates`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 407`** (1 nodes): `Execute monitoring cycle`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 408`** (1 nodes): `Updates existing content with new information`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 409`** (1 nodes): `Update existing content with new information`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 410`** (1 nodes): `Checks and improves content quality, then publishes it.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 411`** (1 nodes): `Check content quality, save improvements, and publish the article.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 412`** (1 nodes): `Quality-check all content that is still in 'active' (draft) status.`
-  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 413`** (1 nodes): `Generate a 2-line AI summary with simple exponential back-off on failure.`
+- **Thin community `Community 390`** (1 nodes): `Frontend README`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ValidationError` connect `Community 15` to `Community 0`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Are the 72 inferred relationships involving `NewsScraper` (e.g. with `Alias used by tests — writes directly to the given path.` and `Reads news.json and returns a list of recent articles matching the entity_type a`) actually correct?**
-  _`NewsScraper` has 72 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 39 inferred relationships involving `Response` (e.g. with `Auth` and `BasicAuth`) actually correct?**
-  _`Response` has 39 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 39 inferred relationships involving `Request` (e.g. with `Auth` and `BasicAuth`) actually correct?**
-  _`Request` has 39 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 24 inferred relationships involving `ContentMonitor` (e.g. with `Run a complete maintenance cycle (for testing/manual runs).` and `Run a Python script in a subprocess with optional extra arguments, logging succe`) actually correct?**
-  _`ContentMonitor` has 24 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Scrapes and returns the latest gold rates for Hyderabad.`, `Scrapes and returns the latest fuel prices for Hyderabad.`, `Scrapes and returns the latest Mandi (Pulse) prices for Hyderabad.` to the rest of the system?**
-  _462 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.03 - nodes in this community are weakly interconnected._
+- **What is the exact relationship between `Income Certificate Service` and `Aarogyasri / PMJAY Health Insurance Service`?**
+  _Edge tagged AMBIGUOUS (relation: shares_data_with) - confidence is low._
+- **What is the exact relationship between `Voter ID Address Update Guide` and `Election Commission of India Voter Helpline Portal`?**
+  _Edge tagged AMBIGUOUS (relation: shares_data_with) - confidence is low._
+- **Why does `extract()` connect `Deployment & Compliance Blueprints` to `Graphify Analysis Module`, `Graphify Benchmarking`, `Civic Services Data Scrapers & APIs`, `Playwright Testing & File Demos`, `MeeSeva Certificates & Permissions`, `Multilingual Translations & Skill Integrations`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
+- **Why does `main()` connect `HTTP Client Authentication` to `Graphify Analysis Module`, `Community 25`, `Civic Services Data Scrapers & APIs`, `Multilingual Translations & Skill Integrations`?**
+  _High betweenness centrality (0.065) - this node is a cross-community bridge._
+- **Why does `_rebuild_code()` connect `Multilingual Translations & Skill Integrations` to `Graphify Analysis Module`, `Local Web Server`, `HTTP Client Authentication`, `Deployment & Compliance Blueprints`?**
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
+- **Are the 40 inferred relationships involving `Request` (e.g. with `safe_fetch()` and `Auth`) actually correct?**
+  _`Request` has 40 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 38 inferred relationships involving `NewsScraper` (e.g. with `sync_news()` and `Alias used by tests — writes directly to the given path.`) actually correct?**
+  _`NewsScraper` has 38 INFERRED edges - model-reasoned connections that need verification._
