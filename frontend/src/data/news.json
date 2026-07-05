@@ -1,5 +1,44 @@
 [
   {
+    "id": "d09cd8e2f2c69608481225225e39b38c",
+    "title": "Hyderabad Police seize 122 tonnes of adulterated food, book 185 cases in H-FAST’s first 100 days",
+    "link": "https://www.thehindu.com/news/cities/Hyderabad/hyderabad-police-seize-122-tonnes-of-adulterated-food-book-185-cases-in-h-fasts-first-100-days/article71182556.ece",
+    "source": "The Hindu - Hyderabad",
+    "published": "Sun, 05 Jul 2026 07:54:05 +0530",
+    "description": "Rajendranagar recorded the highest number of cases at 55, followed by Golconda (44), Secunderabad (35), Charminar (21), Shamshabad (13), Jubilee Hills (12) and Khairatabad (5)",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://th-i.thgim.com/public/incoming/7bxg6s/article71182554.ece/alternates/LANDSCAPE_1200/HFAST%20round%20up%20.jpeg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "metro_line",
+        "entity_id": "Blue Line",
+        "score": 0.75
+      },
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "a6d8a23f5dd7722fdc6c3a704928b980",
+    "title": "SIR: Political parties save the day as BLOs navigate unfamiliar territories to decide the electors’ fate",
+    "link": "https://www.thehindu.com/news/national/telangana/sir-political-parties-save-the-day-as-blos-navigate-unfamiliar-territories-to-decide-the-electors-fate/article71183482.ece",
+    "source": "The Hindu - Hyderabad",
+    "published": "Sat, 04 Jul 2026 23:48:34 +0530",
+    "description": "",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "815de49444782733e153fa461a1962c5",
     "title": "Woman dies after fall from 12th floor in Kondapur; police register case",
     "link": "https://www.thehindu.com/news/cities/Hyderabad/woman-dies-after-fall-from-12th-floor-in-kondapur-police-register-case/article71183449.ece",
@@ -28,6 +67,20 @@
     "correlated_civic_entities": []
   },
   {
+    "id": "44ba217011d6a0512dd16014483680e4",
+    "title": "Emotion and excitement at Midjil for Revanth as he goes down the memory lane",
+    "link": "https://www.thehindu.com/news/national/telangana/emotion-and-excitement-at-midjil-for-revanth-as-he-goes-down-the-memory-lane/article71183432.ece",
+    "source": "The Hindu - Hyderabad",
+    "published": "Sat, 04 Jul 2026 22:03:22 +0530",
+    "description": "Revanth marks 20 years in public life at Midjil, launches blistering attack on BRS",
+    "category": "Govt",
+    "region": "Telangana",
+    "image_url": "https://th-i.thgim.com/public/news/national/telangana/bq4jnh/article71183423.ece/alternates/LANDSCAPE_1200/Revanth%20at%20midjil%20.jpeg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "969fd8adde9a1146ceced1a231039077",
     "title": "Youngster arrested for pushing woman into well after robbery",
     "link": "https://www.thehindu.com/news/national/telangana/youngster-arrested-for-pushing-woman-into-well-after-robbery/article71183633.ece",
@@ -35,6 +88,20 @@
     "published": "Sat, 04 Jul 2026 22:00:37 +0530",
     "description": "",
     "category": "Safety",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "314d5cf0be7e02441b8f5e2bb4ea8a89",
+    "title": "85% enumeration forms distributed Statewide, city trails",
+    "link": "https://www.thehindu.com/news/national/telangana/85-enumeration-forms-distributed-statewide-city-trails/article71183579.ece",
+    "source": "The Hindu - Hyderabad",
+    "published": "Sat, 04 Jul 2026 22:00:32 +0530",
+    "description": "",
+    "category": "General",
     "region": "Telangana",
     "image_url": "",
     "ai_summary": "",
@@ -84,82 +151,6 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "f4dc30db383a273bcc3716d42f6e6afa",
-    "title": "Nurse stabbed to death by husband after domestic dispute in Uppal",
-    "link": "https://www.thehindu.com/news/cities/Hyderabad/nurse-stabbed-to-death-by-husband-after-domestic-dispute-in-uppal/article71183071.ece",
-    "source": "The Hindu - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:26:46 +0530",
-    "description": "",
-    "category": "General",
-    "region": "Malkajgiri",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "e094ef351320867b710bef42374b7b36",
-    "title": "National level Adivasi convention to be held in Bhadrachalam tomorrow",
-    "link": "https://www.thehindu.com/news/national/telangana/national-level-adivasi-convention-to-be-held-in-bhadrachalam-tomorrow/article71183175.ece",
-    "source": "The Hindu - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:17:32 +0530",
-    "description": "",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "b2072e611ffc136dbada1a0793a2acfb",
-    "title": "Hospital adopts Pulse Field Ablation to treat complex heart rhythm disorders",
-    "link": "https://www.thehindu.com/news/cities/Hyderabad/hospital-adopts-pulse-field-ablation-to-treat-complex-heart-rhythm-disorders/article71182720.ece",
-    "source": "The Hindu - Hyderabad",
-    "published": "Sat, 04 Jul 2026 19:27:51 +0530",
-    "description": "",
-    "category": "Health",
-    "region": "Telangana",
-    "image_url": "https://th-i.thgim.com/public/incoming/jkr2yf/article71182734.ece/alternates/LANDSCAPE_1200/IMG-20260704-WA0014.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "d09cd8e2f2c69608481225225e39b38c",
-    "title": "Hyderabad Police seize 122 tonnes of adulterated food, book 185 cases in H-FAST’s first 100 days",
-    "link": "https://www.thehindu.com/news/cities/Hyderabad/hyderabad-police-seize-122-tonnes-of-adulterated-food-book-185-cases-in-h-fasts-first-100-days/article71182556.ece",
-    "source": "The Hindu - Hyderabad",
-    "published": "Sat, 04 Jul 2026 19:23:45 +0530",
-    "description": "",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://th-i.thgim.com/public/incoming/7bxg6s/article71182554.ece/alternates/LANDSCAPE_1200/HFAST%20round%20up%20.jpeg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "a6d8a23f5dd7722fdc6c3a704928b980",
-    "title": "SIR: Political parties save the day as BLOs navigate unfamiliar territories to decide the electors’ fate",
-    "link": "https://www.thehindu.com/news/national/telangana/sir-political-parties-save-the-day-as-blos-navigate-unfamiliar-territories-to-decide-the-electors-fate/article71183482.ece",
-    "source": "The Hindu - Telangana",
-    "published": "Sat, 04 Jul 2026 23:48:34 +0530",
-    "description": "",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
     "id": "89f68b91563c38e76fc52a705928a9c4",
     "title": "Officials on alert with rise in dengue cases",
     "link": "https://www.thehindu.com/news/national/telangana/officials-on-alert-with-rise-in-dengue-cases/article71183621.ece",
@@ -169,20 +160,6 @@
     "category": "Health",
     "region": "Telangana",
     "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "44ba217011d6a0512dd16014483680e4",
-    "title": "Emotion and excitement at Midjil for Revanth as he goes down the memory lane",
-    "link": "https://www.thehindu.com/news/national/telangana/emotion-and-excitement-at-midjil-for-revanth-as-he-goes-down-the-memory-lane/article71183432.ece",
-    "source": "The Hindu - Telangana",
-    "published": "Sat, 04 Jul 2026 22:03:22 +0530",
-    "description": "Revanth marks 20 years in public life at Midjil, launches blistering attack on BRS",
-    "category": "Govt",
-    "region": "Telangana",
-    "image_url": "https://th-i.thgim.com/public/news/national/telangana/bq4jnh/article71183423.ece/alternates/LANDSCAPE_1200/Revanth%20at%20midjil%20.jpeg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -202,20 +179,6 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "314d5cf0be7e02441b8f5e2bb4ea8a89",
-    "title": "85% enumeration forms distributed Statewide, city trails",
-    "link": "https://www.thehindu.com/news/national/telangana/85-enumeration-forms-distributed-statewide-city-trails/article71183579.ece",
-    "source": "The Hindu - Telangana",
-    "published": "Sat, 04 Jul 2026 22:00:32 +0530",
-    "description": "",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
     "id": "44f83b2a9ee92caa8b676ead647fe006",
     "title": "An emotional homecoming as Revanth reunites with friends who launched his political journey",
     "link": "https://www.thehindu.com/news/national/telangana/revanth-launches-4708-crore-development-works-in-midjil-mandal/article71182848.ece",
@@ -225,6 +188,64 @@
     "category": "Govt",
     "region": "Telangana",
     "image_url": "https://th-i.thgim.com/public/news/national/telangana/ob4isj/article71183518.ece/alternates/LANDSCAPE_1200/CM%20with%20friends%20.jpeg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "c61ed1e762c957d70d68d4433a543968",
+    "title": "Search for two LeT terrorists enters second day in J&K’s Shopian",
+    "link": "https://telanganatoday.com/search-for-two-let-terrorists-enters-second-day-in-jks-shopian",
+    "source": "Telangana Today",
+    "published": "Sun, 05 Jul 2026 08:52:48 +0530",
+    "description": "A counter-terror operation entered its second day in Jammu and Kashmir's Shopian as security forces searched for two Lashkar-e-Taiba terrorists cornered in a dense orchard. Additional troops sealed escape routes, aiming to dismantle local militant networks and prevent further recruitment",
+    "category": "Safety",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/07/Indian-army-768x450.jpeg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "dc06c7e512786c63ac60245d0f04798e",
+    "title": "Four killed, 20 injured in two separate bus accidents in Telangana",
+    "link": "https://telanganatoday.com/4-killed-20-injured-in-two-separate-bus-accidents-in-telangana",
+    "source": "Telangana Today",
+    "published": "Sun, 05 Jul 2026 08:37:35 +0530",
+    "description": "Four people died and over 20 were injured in two separate road accidents in Telangana's Nalgonda and Gadwal districts. Both crashes involved private buses travelling from Hindupur to Hyderabad, with several passengers sustaining critical injuries and receiving emergency medical treatment",
+    "category": "Transit",
+    "region": "Nalgonda",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/07/Accidents.mp4",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      },
+      {
+        "entity_type": "district",
+        "entity_id": "Jogulamba Gadwal",
+        "score": 0.75
+      },
+      {
+        "entity_type": "district",
+        "entity_id": "Nalgonda",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "fcfa2475fa0ea144236b2212fe003ed4",
+    "title": "North Korean leader Kim observes weapons tests from new naval destroyer",
+    "link": "https://telanganatoday.com/north-korean-leader-kim-observes-weapons-tests-from-new-naval-destroyer",
+    "source": "Telangana Today",
+    "published": "Sun, 05 Jul 2026 08:25:28 +0530",
+    "description": "North Korean leader Kim Jong Un supervised weapons tests aboard the repaired 5,000-tonne destroyer Kang Kon, including a nuclear-capable cruise missile. He ordered the warship's deployment within two months, highlighting Pyongyang's accelerating efforts to build a nuclear-armed navy and expand maritime capabilities",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/02/N-Korea-768x450.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -328,43 +349,29 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "de81b063071c7ab144a5e23f1be6addd",
-    "title": "England defeat India in second T20 as Sooryavanshi debut headlines costly Bishnoi over",
-    "link": "https://telanganatoday.com/england-defeat-india-in-second-t20-as-sooryavanshi-debut-headlines-costly-bishnoi-over",
-    "source": "Telangana Today",
-    "published": "Sat, 04 Jul 2026 23:07:52 +0530",
-    "description": "England defeated India by four wickets in the second T20 International at Manchester, taking a 1-0 series lead. Jacob Bethell’s unbeaten 76 and a costly over from Ravi Bishnoi proved decisive after India posted 190 despite key contributions from Abhishek Sharma and Ishan Kishan",
-    "category": "General",
+    "id": "67d709115a096a887f3b769414c869c0",
+    "title": "Inquiry report against Justice Varma will be tabled this session: Om Birla",
+    "link": "https://timesofindia.indiatimes.com/india/inquiry-report-against-justice-varma-will-be-tabled-this-session-om-birla/articleshow/132189378.cms",
+    "source": "Times of India - Hyderabad",
+    "published": "2026-07-05T04:31:16+05:30",
+    "description": "<a href=\"https://timesofindia.indiatimes.com/india/inquiry-report-against-justice-varma-will-be-tabled-this-session-om-birla/articleshow/132189378.cms\"><img align=\"left\" border=\"0\" hspace=\"10\" src=\"https://timesofindia.indiatimes.com/photo/132189378.cms\" style=\"margin-top: 3px; margin-right: 5px;\" /></a>Lok Sabha Speaker Om Birla confirmed the report on corruption charges against Justice Yashwant Varma will be presented in the monsoon session, despite his resignation. The House will decide the n",
+    "category": "Weather",
     "region": "Telangana",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/07/Jacob-Bethell-800x450.jpg",
+    "image_url": "https://static.toiimg.com/photo/msid-132189377,imgsize-1635348.cms",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "c0063159691c2f20c95cc741c7ea4179",
-    "title": "Security forces launch operation after firing in Shopian’s Saidpora",
-    "link": "https://telanganatoday.com/security-forces-launch-operation-after-firing-in-shopians-saidpora",
-    "source": "Telangana Today",
-    "published": "Sat, 04 Jul 2026 22:57:24 +0530",
-    "description": "Gunshots were reported during a cordon and search operation in Shopian’s Saidpora area on Saturday evening. Security forces launched the operation after intelligence inputs about terrorist presence. Reinforcements were rushed, and searches are ongoing.",
-    "category": "Safety",
+    "id": "c8bcc4534f5bbbc58d4ce3a18ba25ae3",
+    "title": "Monsoon to continue in 'active phase' over central India: IMD",
+    "link": "https://timesofindia.indiatimes.com/india/monsoon-to-continue-in-active-phase-over-central-india-imd/articleshow/132189360.cms",
+    "source": "Times of India - Hyderabad",
+    "published": "2026-07-05T04:24:06+05:30",
+    "description": "<a href=\"https://timesofindia.indiatimes.com/india/monsoon-to-continue-in-active-phase-over-central-india-imd/articleshow/132189360.cms\"><img align=\"left\" border=\"0\" hspace=\"10\" src=\"https://timesofindia.indiatimes.com/photo/132189360.cms\" style=\"margin-top: 3px; margin-right: 5px;\" /></a>Good news for monsoon-hit India! A low-pressure system over the Bay of Bengal is set to boost rainfall across central and western regions for the next five days, significantly reducing the deficit. While this b",
+    "category": "Weather",
     "region": "Telangana",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/07/shopian-crpf-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "b2880398036f17c350722006304482c6",
-    "title": "Telangana Horticultural University develops protein-rich cowpea variety",
-    "link": "https://telanganatoday.com/telangana-horticultural-university-develops-protein-rich-cowpea-variety",
-    "source": "Telangana Today",
-    "published": "Sat, 04 Jul 2026 22:52:48 +0530",
-    "description": "The Sri Konda Laxman Telangana State Horticultural University has released its first vegetable variety since the formation of Telangana, a protein‑rich cowpea that matures in 50 to 55 days.",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/07/cowpea-768x450.jpg",
+    "image_url": "https://static.toiimg.com/photo/msid-132189358,imgsize-1098001.cms",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -482,60 +489,286 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "e2e53e8ac59a61e753eeadb6365ceb05",
-    "title": "AAI withdraws Srinagar airport closure for repairs, Omar Abdullah thanks govt",
-    "link": "https://timesofindia.indiatimes.com/india/aai-withdraws-srinagar-airport-closure-for-repairs-omar-abdullah-thanks-govt/articleshow/132186890.cms",
-    "source": "Times of India - Hyderabad",
-    "published": "2026-07-05T00:26:58+05:30",
-    "description": "<a href=\"https://timesofindia.indiatimes.com/india/aai-withdraws-srinagar-airport-closure-for-repairs-omar-abdullah-thanks-govt/articleshow/132186890.cms\"><img align=\"left\" border=\"0\" hspace=\"10\" src=\"https://timesofindia.indiatimes.com/photo/132186890.cms\" style=\"margin-top: 3px; margin-right: 5px;\" /></a>Srinagar airport's planned Monday-Tuesday closures and a full shutdown from October 1-16 have been withdrawn by AAI. The Indian Air Force had proposed these closures for runway repairs. Chief ",
+    "id": "ca90fe30af055c521154e685a3ebb7f2",
+    "title": "10 Injured, 5 Critical as Lorry Crashes into Private Travels Bus at Jogulamba Gadwal",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/10-injured-5-critical-as-lorry-crashes-into-private-travels-bus-at-jogulamba-gadwal-1968503",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 03:21:10 GMT",
+    "description": "The injured were shifted to the Kurnool Government Hospital for treatment.",
     "category": "Transit",
     "region": "Telangana",
-    "image_url": "https://static.toiimg.com/photo/msid-132186879,imgsize-913980.cms",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "e0fac14cb90dfff68c9aaf714fa86dee",
-    "title": "PoK 'infiltrator' saved by love, sent back home",
-    "link": "https://timesofindia.indiatimes.com/india/pok-infiltrator-saved-by-love-sent-back-home/articleshow/132186719.cms",
-    "source": "Times of India - Hyderabad",
-    "published": "2026-07-05T00:22:02+05:30",
-    "description": "<a href=\"https://timesofindia.indiatimes.com/india/pok-infiltrator-saved-by-love-sent-back-home/articleshow/132186719.cms\"><img align=\"left\" border=\"0\" hspace=\"10\" src=\"https://timesofindia.indiatimes.com/photo/132186719.cms\" style=\"margin-top: 3px; margin-right: 5px;\" /></a>A young man from Pakistan-occupied Kashmir, Zeeshan Mir, was repatriated home after crossing the Line of Control to meet his beloved, Iram Bano. Initially detained, Mir was eventually acquitted by an Uri court, which recogni",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "https://static.toiimg.com/photo/msid-132186715,imgsize-813589.cms",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "4b50bf2687cac48d728334b5cbb9318a",
-    "title": "FIFA World Cup 2026: Stopping Haaland No Mystery For Brazil, Says Ancelotti",
-    "link": "https://www.deccanchronicle.com/sports/fifa-world-cup-2026-stopping-haaland-no-mystery-for-brazil-says-ancelotti-1968493",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 22:53:55 GMT",
-    "description": "Haaland is in the running for the Golden Boot after scoring five goals in three appearances at the tournament and now faces a familiar opponent in Brazil's Gabriel Magalhaes",
-    "category": "Business",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "68757d58e141441604162324a31ac1b6",
-    "title": "HYDRAA Protected 1,970 sq. yds Parkland In Medchal",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/hydraa-protected-1970-sq-yds-parkland-in-medchal-1968492",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:45:07 GMT",
-    "description": "The layout, developed in the year 2000 across 13.31 acres in Survey No.s 873 and 882, consists of 256 plots, in which Plot No.s from 111 to 116 were earmarked as a park.",
-    "category": "General",
-    "region": "Malkajgiri",
     "image_url": "",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Jogulamba Gadwal",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "1e56f7ae1f1dacb6c4c37041d00b5141",
+    "title": "North Korea's Kim Oversees Latest Naval Weapons Tests",
+    "link": "https://www.deccanchronicle.com/world/asia/north-koreas-kim-oversees-latest-naval-weapons-tests-1968502",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 03:10:25 GMT",
+    "description": "During that commissioning ceremony, Kim vowed to equip his navy with nuclear weapons and develop new 10,000-tonne warships",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "277b343bf4bbd37ead75f5448d9d3d5c",
+    "title": "Nagole Flyover's Pillars Reflect the Dreams of Ambitious Children",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/nagole-flyovers-pillars-reflect-the-dreams-of-ambitious-children-1968501",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 02:57:00 GMT",
+    "description": "The artwork took nearly two months to complete. It is the result of the dedication and creativity of 20 talented art students who worked day and night.",
+    "category": "Transit",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "metro_line",
+        "entity_id": "Blue Line",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "8cfdf5b176441e88cbe4102c442a647d",
+    "title": "Mbappe: France Can Win Ugly Too After Paraguay Victory",
+    "link": "https://www.deccanchronicle.com/fifa-world-cup-2026/mbappe-france-can-win-ugly-too-after-paraguay-victory-1968500",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 02:21:07 GMT",
+    "description": "Mbappe's comments came after France were pushed to their limits by a disciplined Paraguay side in a fiery Round of 16 contest at Lincoln Financial Field",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "4458fdf9c27d5dfe2307a00ddb49fc1f",
+    "title": "Storms Disrupt America 250 Celebrations; Trump Says He will Still Speak in DC",
+    "link": "https://www.deccanchronicle.com/world/americas/storms-disrupt-america-250-celebrations-trump-says-he-will-still-speak-in-dc-1968499",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 02:02:25 GMT",
+    "description": "Elsewhere, severe weather prompted the cancellation of celebrations in Hartford, Connecticut, along with Harrisburg and Wilkes-Barre, Pennsylvania",
+    "category": "Weather",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "ae73314216c974e0424cf9fd934e1a4b",
+    "title": "Four Die as Private Bus Collides with Car in Nalgonda",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/four-die-as-private-bus-collides-with-car-in-nalgonda-1968498",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 01:55:49 GMT",
+    "description": "The Chityal police rushed to the spot and shifted the bodies of the deceased to the Nalgonda Area Hospital for post-mortem examination.",
+    "category": "Transit",
+    "region": "Nalgonda",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Nalgonda",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "7ff72ef3d43caf030935c4d417ecbcb9",
+    "title": "Iran Thanks Over 70 Countries for Attending Khamenei's Funeral",
+    "link": "https://www.deccanchronicle.com/west-asia/iran-thanks-over-70-countries-for-attending-khameneis-funeral-1968497",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 01:15:43 GMT",
+    "description": "The remarks came as Iran continued funeral ceremonies for Khamenei, with thousands of mourners gathering in Tehran to pay their final respects",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "a9e84b4f595ab714972d75f5b406ec25",
+    "title": "Iran Envoy Says Friendly Nations to Get Special Hormuz Fee Treatment",
+    "link": "https://www.deccanchronicle.com/west-asia/iran-envoy-says-friendly-nations-to-get-special-hormuz-fee-treatment-1968496",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 01:02:02 GMT",
+    "description": "Iran lifted its blockade of the Hormuz after it struck an initial deal with the US to end the Middle East war, and negotiations on a permanent settlement of the conflict are ongoing",
+    "category": "Health",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "83553271bddcda53633701638bff1633",
+    "title": "Venezuela Quake Death Toll Rises to Nearly 3,000",
+    "link": "https://www.deccanchronicle.com/world/venezuela-quake-death-toll-rises-to-nearly-3000-1968495",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sun, 05 Jul 2026 00:54:11 GMT",
+    "description": "Fatalities jumped by more than 300 from Friday to 2,954, following the June 24 disaster that has left thousands homeless in the streets and sheltering in camps",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "ff4aa13cb80567f0061002f743992326",
+    "title": "France's Kylian Mbappe Scores 19th Career World Cup Goal, 1 Behind Messi",
+    "link": "https://www.deccanchronicle.com/sports/frances-kylian-mbappe-scores-19th-career-world-cup-goal-1-behind-messi-1968494",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Sat, 04 Jul 2026 23:13:51 GMT",
+    "description": "Mbappe stutter-stepped on his way to his 19th goal in 19 World Cup appearances, beating Paraguay goalkeeper Orlando Gill in the 70th minute to break a scoreless tie",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "26922871ef1f7410cb07f8f14b13b5d2",
+    "title": "North Korea’s Kim Jong Un observes destroyer weapons Tests",
+    "link": "https://www.siasat.com/north-koreas-kim-jong-un-observes-destroyer-weapons-tests-3501565/",
+    "source": "Siasat Daily",
+    "published": "Sun, 05 Jul 2026 03:05:07 +0000",
+    "description": "<p>Seoul: North Korean leader Kim Jong Un supervised tests of a nuclear-capable cruise missile and other weapons aboard a new 5,000-tonne destroyer, the Kang Kon, repaired after being damaged in a failed launch ceremony last year, state media said Sunday, July 4, in the latest military display marking Kim&#8217;s push to build a nuclear-armed navy. &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>,",
+    "category": "General",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Untitled-design-2026-07-05T083110.131.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "6ca7124ca73bd30c13d6983ac3ba7ac6",
+    "title": "BJP’s ‘Samprokshanam’ bid sparks tension at Warangal temple",
+    "link": "https://www.siasat.com/bjps-samprokshanam-bid-sparks-tension-at-warangal-temple-3501566/",
+    "source": "Siasat Daily",
+    "published": "Sun, 05 Jul 2026 03:03:34 +0000",
+    "description": "<p>Hyderabad: The controversy surrounding the recent auction of Kakatiya Urban Development Authority (KUDA) lands took a political turn in Warangal on Saturday, July 4, with the Bharatiya Janata Party (BJP) organising a &#8220;Samprokshanam&#8221; (purification) ritual at the Bhadrakali Temple and accusing both the Congress and Bharat Rashtra Samithi (BRS) of using the shrine for political &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyd",
+    "category": "Govt",
+    "region": "Warangal",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Warangal-Bhadrakali-temple.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      },
+      {
+        "entity_type": "district",
+        "entity_id": "Warangal",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "9461de998626b08906f7c3b20037dfab",
+    "title": "SIR in Hyderabad: Submitted form online? Here’s what to do next",
+    "link": "https://www.siasat.com/sir-in-hyderabad-submitted-form-online-heres-what-to-do-next-3501563/",
+    "source": "Siasat Daily",
+    "published": "Sun, 05 Jul 2026 03:03:03 +0000",
+    "description": "<p>Hyderabad: In the ongoing Special Intensive Revision (SIR) in Hyderabad and other districts of Telangana, enumeration forms can be submitted either online or offline. Those who opt for the offline process need to collect the form from Booth Level Officers (BLOs). After filling out the form, the elector needs to submit it back to the &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"htt",
+    "category": "General",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/SIR-Hyderabad-June1.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "43a5c2ee0b4bf8f7dff113b191cce781",
+    "title": "Army traps two LeT terrorists in Kashmir; operation on",
+    "link": "https://www.siasat.com/army-traps-two-let-terrorists-in-kashmir-operation-on-3501561/",
+    "source": "Siasat Daily",
+    "published": "Sun, 05 Jul 2026 02:51:21 +0000",
+    "description": "<p>Srinagar: The Army on Saturday, July 4, launched a major counter-terrorist operation in Jammu and Kashmir&#8217;s Shopian district after two local terrorists belonging to the banned outfit Lashkar-e-Taiba were cornered in a dense orchard, officials said on Saturday. The operation was launched on Friday, July 3, afternoon after the two terrorists were spotted by an &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyder",
+    "category": "General",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Untitled-design-2026-07-05T081930.731.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "54c67b06a2716176b57481c2c26b3bce",
+    "title": "Kodangal targets status as India’s first Solar Model Mandal",
+    "link": "https://www.siasat.com/kodangal-targets-status-as-indias-first-solar-model-mandal-3501558/",
+    "source": "Siasat Daily",
+    "published": "Sun, 05 Jul 2026 02:30:49 +0000",
+    "description": "<p>Hyderabad: Kodangal mandal in Telangana, which falls within chief minister A Revanth Reddy&#8217;s Assembly constituency, is being developed as what officials describe as India&#8217;s first Solar Model Mandal under an initiative aimed at expanding rooftop solar power generation across the region. TGREDCO Vice Chairman and Managing Director Musharraf Faruqui reviewed the progress of the programme &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" ",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/Revanth-on-BJP-hitler-remark-Meenakshi-Natarajan.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "826fe7aa5dfe47a59404939acb1b26bf",
+    "title": "HYDRAA saves 1970-sq-yd park from encroachment in Medchal",
+    "link": "https://www.siasat.com/hydraa-saves-1970-sq-yd-park-from-encroachment-in-medchal-3501554/",
+    "source": "Siasat Daily",
+    "published": "Sun, 05 Jul 2026 02:13:30 +0000",
+    "description": "<p>Hyderabad: HYDRAA on Saturday, July 4, protected a 1,970-square-yard park in Medchal by removing encroachments and fencing the land, estimated to be worth around Rs 20 crore. The agency, which has been clearing encroachments on parks and open spaces to preserve green areas for residents, acted on a complaint filed by representatives of the Sai &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <",
+    "category": "General",
+    "region": "Malkajgiri",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/HYDRAA-park.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      },
       {
         "entity_type": "district",
         "entity_id": "Medchal-Malkajgiri",
@@ -544,178 +777,15 @@
     ]
   },
   {
-    "id": "540cc486b57b202261cf94a93d58e30f",
-    "title": "Lake Police Return Two Lost Phones Worth ₹2 Lakh",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/lake-police-return-two-lost-phones-worth-2-lakh-1968491",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:41:11 GMT",
-    "description": "Head constable Srinivas and home guard Srinivas found an iPhone 16 Pro and a Samsung Z Fold 6 while patrolling on the bund of Lower Manair Dam.",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "5b0174933971f3272da7661599769985",
-    "title": "AP Reviewing Its Cyber Security Framework To Safeguard Government Data",
-    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/ap-reviewing-its-cyber-security-framework-to-safeguard-government-data-1968490",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:23:16 GMT",
-    "description": "APTS managing director Mallavarapu Suryateja emphasised the importance of continuous capacity building and adoption of advanced technologies to improve cyber security standards.",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "b134f7bcda2e9bc472d224ef09f91e79",
-    "title": "Hyderabad Man Held For Cheating Investors In Adilabad",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/hyderabad-man-held-for-cheating-investors-in-adilabad-1968489",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:13:28 GMT",
-    "description": "Chandrashekar was the organiser of Unique SMCS. Jainad police registered a case against him based on a complaint lodged by Dandekar Anandrao of Belgaon in Jainad mandal: Reports",
-    "category": "Weather",
-    "region": "Adilabad",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Adilabad",
-        "score": 1.0
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "816b1ebdf29895f6cc8a190c2b787869",
-    "title": "97.7% Of Government Nursing Officers Support Revision Of Uniform Dress Code",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/977-of-government-nursing-officers-support-revision-of-uniform-dress-code-1968488",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:09:34 GMT",
-    "description": "The younger generation of nursing officers believed that they deserved a professional, comfortable and internationally accepted uniform comparable to those used in corporate hospitals.",
-    "category": "Business",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "c8a0f2955f33415d1855a72945c84839",
-    "title": "Dumping Construction And Demolition Waste Along Roads Will Invite Rs 1 lakh to Rs 10 Lakh Fines",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/dumping-construction-and-demolition-waste-along-roads-will-invite-rs-1-to-rs-10-lakh-fines-1968487",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:05:08 GMT",
-    "description": "Dr Srijana also said land acquisition under H-CITI would begin soon and landowners would be given transfer of development rights (TDRs) as compensation.",
-    "category": "Transit",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "218f060a045067bf1b1a9f31e8ada658",
-    "title": "Telangana: Student Robs Woman Labourer To Repay Gaming Debts",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/telangana-student-robs-woman-labourer-to-repay-gaming-debts-1968486",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 20:03:26 GMT",
-    "description": "Dinesh pushed the woman into an agricultural well to hide the crime. When she held on to a rope to stay afloat, he allegedly cut the rope and fled: Police",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "fcee2bf5e4ec7a8247f2fbf3b73c55c4",
-    "title": "Karnataka: Karwar Prison Inmates Create Market-Ready Handicrafts",
-    "link": "https://www.deccanchronicle.com/southern-states/karnataka/karnataka-karwar-prison-inmates-create-market-ready-handicrafts-1968485",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 19:58:32 GMT",
-    "description": "Skilled resource persons conduct training in handicrafts and other trades besides holding workshops on government welfare schemes, loan facilities and entrepreneurship: Reports",
-    "category": "Transit",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "9d23822e032982e2228af5d1be7bdf4e",
-    "title": "CMC Clears 32 Km Of Footpaths, Removes 697 Encroachments",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/cmc-clears-32-km-of-footpaths-removes-697-encroachments-1968484",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Sat, 04 Jul 2026 19:56:13 GMT",
-    "description": "The operation, taken up in compliance with High Court orders, focused on removing food stalls, street vendors, temporary sheds and other obstructions that had occupied pedestrian pathways.",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "f5652e755267414b65acf2932d4330a1",
-    "title": "Venezuela thanks India for Caracas quake relief mission",
-    "link": "https://www.siasat.com/venezuela-thanks-india-for-caracas-quake-relief-mission-3501485/",
+    "id": "1e23f8f61bb3087aaa207aa57be9c814",
+    "title": "Trump resumes America 250 celebration after weather disruption",
+    "link": "https://www.siasat.com/trump-resumes-america-250-celebration-after-weather-disruption-3501552/",
     "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 17:44:43 +0000",
-    "description": "<p>Caracas: Venezuela&#8217;s Foreign Minister Yvan Gil visited the Indian field hospital in Caracas and thanked New Delhi for its earthquake relief work. The field hospital, set up by the Indian Army at the International La Rinconada Racetrack, provides comprehensive care to those affected by the devastating earthquakes that took place in Venezuela last month, which &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyder",
-    "category": "Health",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/gil.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "060b4bbd54e1c5f478e160f00f930eac",
-    "title": "Telangana SIR: Hyderabad ranks second last in form distribution",
-    "link": "https://www.siasat.com/telangana-sir-hyderabad-ranks-second-last-in-form-distribution-3501467/",
-    "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 17:21:26 +0000",
-    "description": "<p>Hyderabad: With the first 10 days of door-to-door distribution of SIR enumeration forms completed in Telangana, over 90 per cent of voters have received their forms in most districts, according to the Election Commission data. The state capital of Hyderabad, on the other hand, achieved a distribution rate of only 62.73 per cent, with 29,71,175 &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/SIR-3.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "d12305ffe0eabd5f03f900274bbdd6c8",
-    "title": "Main Vaapas Ayunga feels like Mumbai rains on a parched landscape",
-    "link": "https://www.siasat.com/main-vaapas-ayunga-feels-like-mumbai-rains-on-a-parched-landscape-3501493/",
-    "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 16:52:35 +0000",
-    "description": "<p>My daughters warned that the film has too much violence. But perhaps they are yet to know how a journalist&#8217;s mind works. Fulfilling a curiosity is the karma of my tribe. Since Imtiaz Ali-directed “Main Vaapas Ayunga” (I will return) has created a fair amount of curiosity and I saw many friends pontificating on this &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"https://www.sia",
+    "published": "Sun, 05 Jul 2026 02:12:51 +0000",
+    "description": "<p>Washington: US President Donald Trump&#8217;s flagship America 250 celebration in Washington resumed on the night of Saturday, July 4, after a weather-related evacuation, with organisers announcing that the National Mall would reopen at 9.45 p.m. and the President would deliver his address at 11 p.m. despite severe storms that temporarily halted festivities. Freedom 250 announced &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad ",
     "category": "Weather",
     "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Main-Vaapas-Ayunga-film-.jpg",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/US-President-Donald-Trump.webp",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": [
@@ -727,372 +797,269 @@
     ]
   },
   {
-    "id": "b1c9db5692aab57ef716568b8188ce85",
-    "title": "Hyderabad Police book five for fake number plates across city",
-    "link": "https://www.siasat.com/hyderabad-police-book-five-for-fake-number-plates-across-city-3501491/",
+    "id": "d421a6b42dfd9d365ef650c44ea9badf",
+    "title": "FIFA WC: Morocco rout Canada to reach World Cup last eight",
+    "link": "https://www.siasat.com/fifa-wc-morocco-rout-canada-to-reach-world-cup-last-eight-3501549/",
     "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 16:20:14 +0000",
-    "description": "<p>Hyderabad:&#160;The Hyderabad Traffic Police have registered five criminal cases in the past week against vehicle owners using fake, tampered or unauthorised registration number plates, officials said on Friday, July 3, adding that the drive was launched following a rise in complaints from citizens. According to a press note issued by Joint Commissioner of Police (Traffic) &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City Ne",
+    "published": "Sun, 05 Jul 2026 01:58:21 +0000",
+    "description": "<p>Houston: Azzedine Ounahi scored twice to lead Morocco to a 3-0 win over Canada in the World Cup round of 16 Saturday to make the country the first African nation to reach the quarterfinals more than once. It&#8217;s Morocco&#8217;s second straight appearance in the quarterfinalsa after becoming the first African team to reach the semifinals &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a h",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Morocco-.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "2cbb2e035e38b6ea5a127ff88800d2a7",
+    "title": "Mbappe penalty sends France past Paraguay into quarterfinals",
+    "link": "https://www.siasat.com/mbappe-penalty-sends-france-past-paraguay-into-quarterfinals-3501540/",
+    "source": "Siasat Daily",
+    "published": "Sun, 05 Jul 2026 01:41:23 +0000",
+    "description": "<p>Philadelphia: Kylian Mbappe laughed and smiled — and scored, of course — when Paraguay tried to bait him and his French teammates into fouls and provoke fights, as hot heads became a recurring theme during one of the steamiest World Cup games on record. After the final whistle, Mbappe kept on walking and left Paraguayan &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"https://www.sias",
+    "category": "General",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Mbappe-1.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "d53f2044a5510d19cedd0107858c85f5",
+    "title": "The temple, the trust and the theft: Ram Mandir ‘scam’ explained",
+    "link": "https://www.siasat.com/the-temple-the-trust-and-the-theft-ram-mandir-scam-explained-3500584/",
+    "source": "Siasat Daily",
+    "published": "Sun, 05 Jul 2026 01:30:00 +0000",
+    "description": "<p>Ram Mandir, the Sangh Parivar&#8217;s most totemic project in Uttar Pradesh&#8217;s Ayodhya, one that received the Bharatiya Janata Party&#8217;s (BJP) direct and sustained public endorsement, is now under major scrutiny over allegations of theft of donations from the temple trust. The controversy has reignited long-running questions about the temple&#8217;s construction and the BJP&#8217;s decades-long politicisation &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Ram-Temple.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "a526dcb1b10543109ed66feed6a212e7",
+    "title": "Eluru | చర్లపల్లి-షాలీమార్‌ రైలు ఢీ కొని నలుగురు మృతి",
+    "link": "https://www.ntnews.com/andhrapradesh-news/four-killed-after-being-hit-by-the-charlapalli-shalimar-train-in-eluru-district-2441361",
+    "source": "Namasthe Telangana",
+    "published": "Sun, 05 Jul 2026 08:30:50 +0530",
+    "description": "Eluru &#124; చర్లపల్లి-షాలీమార్‌ రైలు(Charlapalli-Shalimar train) ఢీ నలుగురు దుర్మరణం చెందారు. ఈ విషాదకర సంఘటన ఏపీలోని ఏలూరు జిల్లా(Eluru district) ఉంగుటూరు మండలం చేబ్రోలు రైల్వే స్టేషన్‌ సమీపంలో చోటు చేసుకుంది.",
     "category": "Transit",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-05-at-15.00.46-1.jpeg",
+    "region": "Telangana",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/01/special-trains-1024x576.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "d9e36906e66ebf604f73933662c08db6",
+    "title": "Maa Inti Bangaram | సమంత కెరీర్‌లో మరో మైలురాయి.. ఉత్తర అమెరికాలోనూ 2 మిలియన్ డాలర్ల మార్క్ క్రాస్ చేసిన చిత్రం",
+    "link": "https://www.ntnews.com/cinema/maa-inti-bangaram-creates-another-record-2441356",
+    "source": "Namasthe Telangana",
+    "published": "Sun, 05 Jul 2026 08:20:58 +0530",
+    "description": "Maa Inti Bangaram &#124; స్టార్ హీరోయిన్ సమంత మరోసారి తన స్టార్‌డమ్ ఏంటో మ‌రోసారి చూపించింది.. సామ్ ప్రధాన పాత్రలో తెరకెక్కిన 'మా ఇంటి బంగారం' చిత్రం విడుదలైనప్పటి నుంచి అద్భుతమైన వసూళ్లతో దూసుకుపోతూ వరుస రికార్డులు సృష్టిస్తోంది. దర్శకురాలు నందిని రెడ్డి రూపొందించిన ఈ చిత్రం ఇప్పుడు టాలీవుడ్ చరిత్రలోనే అత్యధిక వసూళ్లు సాధించిన మహిళా ప్రధాన కథా చిత్రంగా నిలిచి అరుదైన ఘనతను సొంతం చేసుకుంది.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/06/maa-inti-1024x576.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "cb51ffe87b022ff4c0aba2f1523ffd5f",
+    "title": "Jogulamba Gadwal | లారీ, ప్రైవేట్‌ ట్రావెల్ బస్సు ఢీ.. 15 మందికి గాయాలు",
+    "link": "https://www.ntnews.com/telangana/15-injured-in-collision-between-lorry-and-private-travel-bus-in-gadwal-dist-2441346",
+    "source": "Namasthe Telangana",
+    "published": "Sun, 05 Jul 2026 08:06:13 +0530",
+    "description": "Jogulamba Gadwal &#124; జోగులాంబ గద్వాల జిల్లాలో ఘోర రోడ్డు ప్రమాదం చోటు చేసుకుంది. లారీ, ట్రావెల్ బస్సు ఢీకొన్న ఘటనలో 15 మంది గాయపడ్డారు.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/jogu-1024x576.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": [
       {
         "entity_type": "district",
-        "entity_id": "Hyderabad",
+        "entity_id": "Jogulamba Gadwal",
         "score": 1.0
       }
     ]
   },
   {
-    "id": "56a5480365ae3cb615ac1e5342365270",
-    "title": "Hyderabad is the third most expensive housing market in India",
-    "link": "https://www.siasat.com/hyderabad-is-the-third-most-expensive-housing-market-in-india-3501474/",
-    "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 16:08:23 +0000",
-    "description": "<p>Hyderabad:&#160;Hyderabad remains the third most expensive residential market among the country&#8217;s top eight cities, with households needing to spend 41 per cent of their income towards home loan EMIs, according to property consultant Knight Frank India&#8217;s Affordability Index for the first half of 2026. The index, which measures the proportion of household income that goes &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderab",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2024/12/Real-Estate-Hyderabad-Dec26.jpg",
+    "id": "5160d5c4a63585d30b227b7b5348eef9",
+    "title": "Ravi Bishnoi | ఆ ఒక్క ఓవరే భారత్‌ను ముంచేసింది.. బిష్ణోయ్ చెత్త రికార్డు, ఇంగ్లాండ్‌కు సునాయాస విజయం!",
+    "link": "https://www.ntnews.com/cinema/ravi-bishnoi-worst-record-2441353",
+    "source": "Namasthe Telangana",
+    "published": "Sun, 05 Jul 2026 08:05:32 +0530",
+    "description": "Ravi Bishnoi &#124; మాంచెస్టర్‌లోని ఓల్డ్ ట్రాఫోర్డ్ వేదికగా జరిగిన రెండో టీ20లో భారత్ గెలుపు దిశగా దూసుకెళ్తున్నట్లు కనిపించినా, ఒకే ఒక్క ఓవర్ మ్యాచ్ ఫలితాన్నే తారుమారు చేసింది. లెగ్ స్పిన్నర్ రవి బిష్ణోయ్ వేసిన 17వ ఓవర్‌లో పరుగుల వరద పారడంతో భారత్ చేతుల్లో ఉన్న మ్యాచ్ ఒక్కసారిగా ఇంగ్లాండ్ వైపు వెళ్లిపోయింది.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/bishnoi-1024x576.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "1af8655e5b1922fc79079f8479c907ab",
+    "title": "Srinivasa Mangapuram | ‘శ్రీనివాస మంగాపురం’పై భారీ అంచనాలు.. రిలీజ్‌కు ముందే ఘట్టమనేని ఫ్యామిలీకి స్పెషల్ షో",
+    "link": "https://www.ntnews.com/cinema/srinivasa-mangapuram-movie-news-viral-2441350",
+    "source": "Namasthe Telangana",
+    "published": "Sun, 05 Jul 2026 07:50:51 +0530",
+    "description": "Srinivasa Mangapuram &#124; ఘట్టమనేని కుటుంబం నుంచి మరో హీరో సినీ ప్రేక్షకులకు పరిచయం కాబోతున్న విష‌యం తెలిసిందే. ఘట్టమనేని జయకృష్ణ హీరోగా రూపొందుతున్న‌ శ్రీనివాస మంగాపురంపై రోజురోజుకూ ఆసక్తి పెరుగుతోంది. లెజెండరీ సూపర్ స్టార్ కృష్ణ మనవడు, దివంగత నటుడు ఘట్టమనేని రమేష్ బాబు కుమారుడైన జయకృష్ణ హీరోగా నటిస్తున్నఈ చిత్రాన్ని విభిన్న కథలను ఎంచుకుని తనకంటూ ప్రత్యేక గుర్తింపు తెచ్చుకున్న దర్శకుడు అజయ్ భూపతి ఈ చిత్రాన్ని తెరకెక్కిస్తున్నారు.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/sriniva-1024x576.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "99068bd457c08566dc9c7fef9a51dd1b",
+    "title": "Varanasi | ‘వారణాసి’లో శ్రీరాముడిగా మహేష్ బాబు… వైరల్ ఫొటో వెనుక అసలు నిజం ఇదే!",
+    "link": "https://www.ntnews.com/cinema/varanasi-photo-leaked-news-viral-2441348",
+    "source": "Namasthe Telangana",
+    "published": "Sun, 05 Jul 2026 07:33:04 +0530",
+    "description": "Varanasi &#124; సూపర్ స్టార్ మహేష్ బాబు హీరోగా, దర్శకధీరుడు ఎస్.ఎస్. రాజమౌళి తెరకెక్కిస్తున్న ప్రతిష్టాత్మక పాన్-వరల్డ్ చిత్రం 'వారణాసి' పై దేశవ్యాప్తంగా భారీ అంచనాలు నెలకొన్నాయి. ఈ సినిమాలో మహేష్ బాబు విభిన్న గెటప్స్‌లో కనిపించనున్నారనే వార్తలు ఇప్పటికే అభిమానుల్లో ఆసక్తిని పెంచాయి.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/06/varana-1024x576.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "b361fb3f9d789b9f15721f94042b50a4",
+    "title": "Road accident | నల్లగొండ జిల్లాలో ఘోర రోడ్డు ప్రమాదం.. నలుగురు మృతి",
+    "link": "https://www.ntnews.com/telangana/four-killed-in-collision-between-car-and-travel-bus-in-nalgonda-district-2441343",
+    "source": "Namasthe Telangana",
+    "published": "Sun, 05 Jul 2026 07:08:10 +0530",
+    "description": "Road accident &#124; నల్లగొండ(Nalgonda )జిల్లాలో ఘోర రోడ్డు ప్రమాదం(Road accident) చోటు చేసుకుంది. కారు, ట్రావెల్ బస్సు ఢీకొన్న ఘటనలో నలుగురు మృతి చెందారు.",
+    "category": "Transit",
+    "region": "Nalgonda",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/06/accident-3-1024x576.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": [
       {
         "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "7115582da451b0a06497b702e5585745",
-    "title": "Hyderabad’s 400-year-old Char Kaman set to get a facelift",
-    "link": "https://www.siasat.com/hyderabads-400-year-old-char-kaman-set-to-get-a-facelift-3501470/",
-    "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 15:28:24 +0000",
-    "description": "<p>Hyderabad: The iconic Char Kaman, the four grand ceremonial arches surrounding Gulzar Houz in Hyderabad&#8217;s Old City, is set to undergo restoration, marking a significant step towards preserving one of the city&#8217;s most treasured heritage landmarks. Built during the reign of the Qutb Shahi dynasty in the late 16th century, the four gateways – Machli &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad Ci",
-    "category": "General",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Char-Kaman-Hyderabad-Old-City.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "f7018b896bc7a134545f0dc11923760d",
-    "title": "Cyber fraud suspect held in Mangaluru for supplying mule accounts",
-    "link": "https://www.siasat.com/cyber-fraud-suspect-held-in-mangaluru-for-supplying-mule-accounts-3501430/",
-    "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 14:55:32 +0000",
-    "description": "<p>Mangaluru: The Dakshina Kannada District Cyber Crime Police have arrested a 32-year-old man for allegedly facilitating &#8216;digital arrest&#8216; cyber frauds by arranging bank accounts used to route illegally obtained money. The accused has been identified as Zubair, a resident of Kudthamugeru in the Kolnadu village of Bantwal taluk. He was arrested on July 3 and &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyd",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/mule-accounts.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
+        "entity_id": "Nalgonda",
         "score": 0.75
       }
     ]
   },
   {
-    "id": "2d9c55fc8f8d59c66636e55b2b03ac5c",
-    "title": "Hyderabad to see moderate rains on Saturday night, residents warned",
-    "link": "https://www.siasat.com/hyderabad-to-see-moderate-rains-on-saturday-night-residents-warned-3501438/",
-    "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 14:25:10 +0000",
-    "description": "<p>Hyderabad: Residents have been asked to plan their travels and avoid waterlogged areas as north Hyderabad is likely to see moderate rainfall during the night. Meanwhile, Medak, Sangareddy, Siddipet, and Rangareddy will experience heavy rainfall in the next hour. The rains will further spread to Hanmakonda, Jangaon, and Yadadri Bhuvanagiri during the night. Vikarabad, Mahabubnagar, &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad",
-    "category": "Weather",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/04/Untitled-design-2026-04-19T212952.406.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Jangaon",
-        "score": 0.75
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Medak",
-        "score": 0.75
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Rangareddy",
-        "score": 0.75
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Sangareddy",
-        "score": 0.75
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Siddipet",
-        "score": 0.75
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Vikarabad",
-        "score": 0.75
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Yadadri Bhuvanagiri",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "c4b56e24b82965947ecc1270e894752d",
-    "title": "Delhi court denies relief to Umar Khalid, Sharjeel Imam; cites SC order",
-    "link": "https://www.siasat.com/delhi-court-denies-relief-to-umar-khalid-sharjeel-imam-cites-sc-order-3501442/",
-    "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 14:25:04 +0000",
-    "description": "<p>New Delhi: A court here on Saturday, July 4, rejected the bail applications of student activists Umar Khalid and Sharjeel Imam in the larger-conspiracy case linked to the 2020 northeast Delhi riots, saying it had &#8220;no option but to follow&#8221; the Supreme Court&#8217;s January 5 order and, therefore, could neither entertain the pleas nor grant &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Umar-Khalid-and-Sharjeel-Imam-.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "07f8be4f07d6804c58e4c7bbd069f012",
-    "title": "Ali Khamenei: A look at Iran’s longest-serving Supreme Leader",
-    "link": "https://www.siasat.com/ali-khamenei-a-look-at-irans-longest-serving-supreme-leader-3501398/",
-    "source": "Siasat Daily",
-    "published": "Sat, 04 Jul 2026 14:17:00 +0000",
-    "description": "<p>Tehran: Sayyed Ayatollah Ali Khamenei, who served as Iran&#8217;s Supreme Leader for nearly 37 years, was one of the country&#8217;s most influential leaders. As the Islamic Republic&#8217;s highest political and religious authority, he oversaw key decisions on defence, foreign policy, the armed forces and the nuclear programme during decades marked by regional conflicts, international sanctions &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" t",
-    "category": "Govt",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/02/Untitled-design-2026-03-02T192210.893.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "be347e19518a46825c20e0346befddd4",
-    "title": "ఈ వారం రాశి ఫలాలు.. జూలై  05.7.2026 నుంచి 11.07.2026 వరకు",
-    "link": "https://www.ntnews.com/horoscope/weekly-horoscope-from-05-july-to-11-july-2439643",
+    "id": "a58e359bd27ab82a56d1ae4c9c16df71",
+    "title": "Fishermen | విశాఖ సముద్రంలో చేపల వేటకు వెళ్లి ఏడుగురు మత్స్యకారులు గల్లంతు",
+    "link": "https://www.ntnews.com/andhrapradesh-news/seven-fishermen-go-missing-while-fishing-in-visakhapatnam-sea-2441331",
     "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:44:55 +0530",
-    "description": "ఆర్థిక పరిస్థితి మెరుగవుతుంది. కార్యనిర్వహణలో సంయమనం అవసరం. పనిచేసే విధానంలో మార్పువల్ల అభివృద్ధి కలుగుతుంది. పాతబాకీలు వసూలు అవుతాయి. మానసికంగా ఉత్సాహంగా ఉంటారు. పిల్లల విషయంలో మంచి నిర్ణయాలు తీసుకుంటారు. గతంలో పెట్టిన పెట్టుబడులకు ప్రతిఫలాలు అందుతాయి. కొత్త ఉద్యోగంలో చేరతారు. అలంకార వస్తువులు కొనుగోలు చేస్తారు. ఆరోగ్యంగా ఉంటారు. శివారాధన శుభప్రదం.",
+    "published": "Sun, 05 Jul 2026 06:57:28 +0530",
+    "description": "Fishermen &#124; విశాఖపట్నం(Visakhapatnam) నుంచి బోటులో చేపల వేటకు సముద్రంలోకి వెళ్లిన ఏడుగురు మత్స్యకారులు(Seven fishermen) తుఫాను ప్రభావంతో గల్లంతయ్యారు.",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2025/02/Panchangam-1024x576.jpg",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2021/12/Fishingboat-1024x597.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "73c19d04d2d5c5434abe007613c545a1",
-    "title": "మేఘాల దారిలో పయనించేద్దాం!",
-    "link": "https://www.ntnews.com/sunday/best-places-to-visit-in-india-during-monsoon-2440716",
+    "id": "18209a051c3b4dd066210f650060f03f",
+    "title": "సందేహల సర్",
+    "link": "https://www.ntnews.com/nalgonda/from-the-distribution-of-forms-to-the-online-process-it-is-nothing-but-problems-2441316",
     "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:38:27 +0530",
-    "description": "నీలి మేఘాల మేలి ముసుగు కప్పుకొని, చినుకుల చిరుమువ్వల సవ్వడితో, మెరుపుల వెలుగులతో వానాకాలం వైభవంగా అడుగిడుతుంటే భారతదేశంలోని పచ్చని లోయలు... విచ్చుకునే పువ్వులు... ఘనమైన స్వాగతాన్ని పలుకుతుంటాయి.",
+    "published": "Sun, 05 Jul 2026 06:38:10 +0530",
+    "description": "గత నెల 25వ తేదీ నుంచి మొదలైన ఓటర్ల జాబితా ప్రత్యేక సమగ్ర సవరణ, ఎస్‌ఐఆర్‌ (సర్‌) విషయంలో జనాలకు సవాలక్ష సందేహాలు ఎదురవుతున్నాయి.",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/2_munnar-1024x576.jpg",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/40-1024x576.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "8b858a7084647c2efd6731922af9b9a1",
-    "title": "గ్రీకువీరులు.. మలానా గ్రామవాసులు!",
-    "link": "https://www.ntnews.com/sunday/malana-is-an-indian-village-in-the-state-of-himachal-pradesh-2440772",
+    "id": "8632040f345236c5036579a7f874e12d",
+    "title": "గందరగోళమే సర్",
+    "link": "https://www.ntnews.com/nizamabad/voter-list-revision-process-in-joint-nizamabad-district-2441323",
     "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:30:15 +0530",
-    "description": "దేశానికి రాజ్యాంగం, పార్లమెంట్‌, ఎగువ-దిగువ సభలు ఉండటం సహజమే! అయితే, ఓ పల్లెటూరికీ ఇలాంటి ప్రత్యేకతలుంటే?! అదే.. హిమాచల్‌ ప్రదేశ్‌లోని మలానా. ప్రపంచంలోనే అత్యంత పురాతన ప్రజాస్వామ్య గ్రామాల్లో ఒకటిగా గుర్తింపు పొందింది.",
+    "published": "Sun, 05 Jul 2026 06:33:56 +0530",
+    "description": "ఓటర్ల జాబితా ప్రత్యేక సమగ్ర సవరణ (స్పెషల్‌ ఇంటెన్సివ్‌ రివిజన్‌-సర్‌) కార్యక్రమం గందరగోళంగా మారింది. ఓటర్‌ జాబితాల ప్రక్షాళన కోసం చేపట్టిన ఈ ప్రక్రియ కాస్త అనేక సందేహాలకు, అంతులేని ప్రశ్నలకు, అంతకు మించి అయోమయానికి గురి చేస్తున్నది.",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/malana-1024x576.jpg",
+    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/12-6-1024x576.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "618397be55f61d39b80d79cd40745306",
-    "title": "కాంగ్రెస్‌ మాయ మాటలు నమ్మరు",
-    "link": "https://www.ntnews.com/warangal-rural/former-mla-redya-naik-said-that-no-one-would-believe-congress-party-deceptive-words-2440866",
-    "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:28:35 +0530",
-    "description": "కాంగ్రెస్‌ మాయ మాటలను ఎవరూ నమ్మరని మాజీ ఎమ్మెల్యే ధరంసోత్‌ రెడ్యానాయక్‌ అన్నారు. శనివారం మహబూబాబాద్‌ జిల్లా డోర్నకల్‌ శివారులోని మున్నేరు వాగు పక్కన నిర్మించిన గంగమ్మ తల్లి విగ్రహ ప్రతిష్ఠాపన వేడుకకు హాజరై, రూ. 57,524 విరాళంగా అందజేశారు.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/MLC-Thatha-Madhusudhan-1-1024x576.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "5860e5bfd00f1a63cfc65d4d6551b91f",
-    "title": "తనూజాత్మజ",
-    "link": "https://www.ntnews.com/sunday/sunday-special-story-tanujatmaja-2440754",
-    "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:25:14 +0530",
-    "description": "సామర్లకోట రైల్వే జంక్షన్‌. ‘ప్రయాణీకులకు విజ్ఞప్తి! రైలు నెం. 12737. కాకినాడ పోర్టు నుండి లింగంపల్లి వెళ్లే గౌతమీ ఎక్స్‌ప్రెస్‌ మరికొద్ది క్షణాలలో రెండవ నంబరు ప్లాట్‌ఫామ్‌ పైకి రానున్నది’.. అనౌన్స్‌మెంట్‌ వినిపించగానే.. తన భుజానికి ఉన్న బ్యాగ్‌ తీసి, భార్యకు అందించి.. కింది నుంచి సూట్‌కేస్‌ను చేతిలోకి తీసుకొని, ప్లాట్‌ఫామ్‌ మారడానికి ముందుకు నడిచాడు రామారావు.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/thanoojathmaja-1024x576.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "8171b224bb0686c700f6579961842c3b",
-    "title": "అది ఎవరు.. చావు కంటే నరకం!",
-    "link": "https://www.ntnews.com/sunday/room-number-the-mystery-25-crime-story-2440763",
-    "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:11:54 +0530",
-    "description": "రూమ్‌ నంబర్‌ 25 మిస్టరీని కనిపెట్టిన ఫోరెన్సిక్‌ ఇంచార్జీ జయ.. ఇన్‌స్పెక్టర్‌ రుద్ర ప్రాణాలు కాపాడింది. ఇంతలో కలుగజేసుకొన్న స్నేహిల్‌ తన సందేహాన్ని జయతో పంచుకొన్నాడు. ‘ఆంటీ.. మీరన్నట్టు.. మిషన్‌ డోలోకు సంబంధించి డోలో.. 8 దేశాల పేర్లు చెప్పాడు.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/crime-1024x576.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "e87089f084cfe4e173ce82714ff818a9",
-    "title": "సింగరేణికి జలగలా పట్టిన రేవంత్‌ సర్కారు",
-    "link": "https://www.ntnews.com/karimnagar/former-manthani-mla-putta-madhukar-lashes-out-2441141",
-    "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:06:14 +0530",
-    "description": "సింగరేణి సంస్థకు రేవత్‌ సర్కారు జలగలా పట్టిందని మంథని మాజీ ఎమ్మెల్యే పుట్ట మధూకర్‌ ధ్వజమెత్తారు. బకాయిల కోసం అధికారులు ఆరు రోజులుగా రోడ్డెక్కి నిరాహార దీక్షలు చేస్తుంటే కాంగ్రెస్‌ ప్రభుత్వం తమకేమీ పట్టనట్టు వ్యవహరించడం సరికాదని మండిపడ్డారు.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/putta-1024x576.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "e79a5dfc6bed73533d3c1d96de945b00",
-    "title": "సమన్వయంతో పనిచేయాలి",
-    "link": "https://www.ntnews.com/karimnagar/korukanti-chander-stated-that-the-role-of-blas-is-crucial-in-the-sur-initiative-2441117",
-    "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:03:14 +0530",
-    "description": "స్పెషల్‌ ఇంటెన్సివ్‌ రివిజన్‌ (ఎస్‌ఐఆర్‌) సర్వేలో బీఆర్‌ఎస్‌ శ్రేణులు బూత్‌ లెవెల్‌ ఏజెంట్ల (బీఎల్‌ఏ) సమన్వయంతో పని చేయాలని రామగుండం మాజీ ఎమ్మెల్యే, బీఆర్‌ఎస్‌ జిల్లా అధ్యక్షుడు కోరుకంటి చందర్‌ పేర్కొన్నారు.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/korukanti-1024x576.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "4976b16c434aae16b1c31a092b380c01",
-    "title": "మొలకెత్తని సోయా.. భూమిలోనే కుళ్లిపోతున్న నాసిరకం విత్తనాలు",
-    "link": "https://www.ntnews.com/adilabad/poor-soybean-seeds-rotting-in-the-ground-without-sprouting-2441124",
-    "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:02:01 +0530",
-    "description": "ఆదిలాబాద్‌ జిల్లాలో పత్తి తర్వాత అధికంగా సోయా సాగవుతుంది. ఏటా వానకాలంలో ఈ పంటను పండిస్తుండగా.. ఈ సీజన్‌ ఒక లక్ష ఎకరాల్లో సాగు చేసే అవకాశాలున్నాయి. కొంతకాలంగా ప్రభుత్వం సబ్సిడీ విత్తనాలు పంపిణీ చేయకపోవడంతో ప్రైవేటు వ్యాపారుల వద్ద కొనుగోలు చేస్తున్నారు.",
-    "category": "General",
-    "region": "Adilabad",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/farmer-1024x576.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "3955835da58ec85d41bafcc4d6eb2238",
-    "title": "అర్హుల పేర్లు మిస్‌ కావొద్దు",
-    "link": "https://www.ntnews.com/karimnagar/sunke-ravishankar-advised-remaining-vigilant-regarding-sir-2441110",
-    "source": "Namasthe Telangana",
-    "published": "Sun, 05 Jul 2026 03:01:09 +0530",
-    "description": "ప్రత్యేక ఓటరు జాబితా సవరణ (ఎస్‌ఐఆర్‌) ప్రక్రియపై ప్రతి బీఆర్‌ఎస్‌ కార్యకర్త అప్రమత్తంగా ఉండాలని, అర్హుల పేర్లు మిస్‌ కాకుండా చూడాలని చొప్పదండి మాజీ ఎమ్మెల్యే సుంకె రవిశంకర్‌ సూచించారు.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://d2e1hu1ktur9ur.cloudfront.net/wp-content/uploads/2026/07/sunke-1024x576.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "acdab8f1d8123486b84fec8c6a2681a3",
-    "title": "Traitors, join BJP and fight me: Mamata Banerjee's blistering attack on rebels",
-    "link": "https://www.indiatoday.in/india/story/mamata-banerjee-dares-tmc-rebels-to-join-bjp-vows-july-21-rally-ptag-2940697-2026-07-04?utm_source=rss",
+    "id": "b25f5d434424981cba00ad4ddbaa7499",
+    "title": "Can take them out with one shot: Trump on Iranian leaders at Khamenei funeral",
+    "link": "https://www.indiatoday.in/world/story/trump-on-ali-khamenei-funeral-says-can-take-remaining-iran-leadership-with-one-shot-2940836-2026-07-05?utm_source=rss",
     "source": "India Today",
-    "published": "Sat, 04 Jul 2026 22:58:40 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/india/story/mamata-banerjee-dares-tmc-rebels-to-join-bjp-vows-july-21-rally-ptag-2940697-2026-07-04\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/mamata-banerjee-040258462-16x9_0.jpg?VersionId=PA3q3zcSxK7fHo0FsMM26c6NlakMwYDf\" width=\"305\" /> </a> Traitors join BJP and fight me Mamata Banerjees blistering attack on rebels",
+    "published": "Sun, 05 Jul 2026 06:58:10 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/world/story/trump-on-ali-khamenei-funeral-says-can-take-remaining-iran-leadership-with-one-shot-2940836-2026-07-05\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/donald-trump-055437786-16x9_0.jpg?VersionId=hNisnKpAiuRum3WQ5qF_3p7.ZpnEHI9O\" width=\"305\" /> </a> Can take them out with one shot Trump on Iranian leaders at Khamenei funeral",
     "category": "Govt",
     "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/mamata-banerjee-040258462-16x9_0.jpg?VersionId=PA3q3zcSxK7fHo0FsMM26c6NlakMwYDf",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/donald-trump-055437786-16x9_0.jpg?VersionId=hNisnKpAiuRum3WQ5qF_3p7.ZpnEHI9O",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "cd4997969827c1a3dee45ae3bf3bb602",
-    "title": "2 terrorists killed in encounter with security forces in J&K's Shopian",
-    "link": "https://www.indiatoday.in/india/story/shopian-encounter-kashmir-zakir-ahmad-ganie-two-terrorists-lashkar-trapped-2940759-2026-07-04?utm_source=rss",
+    "id": "2cd82744ba4ca51db7818345a0e7beb4",
+    "title": "Never submit to tyranny: Amid war, Karbala message resonates at Khamenei funeral",
+    "link": "https://www.indiatoday.in/world/story/ayatollah-ali-khamenei-funeral-karbala-imam-hussain-shahadat-iran-2940838-2026-07-05?utm_source=rss",
     "source": "India Today",
-    "published": "Sat, 04 Jul 2026 21:49:14 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/india/story/shopian-encounter-kashmir-zakir-ahmad-ganie-two-terrorists-lashkar-trapped-2940759-2026-07-04\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/jammu-and-kashmir-encounter-041105732-16x9_0.jpeg?VersionId=oCc2KLdJzSXpkiu2xEq2wIRe8hNtJdnb\" width=\"305\" /> </a>  terrorists killed in encounter with security forces in JKs Shopian",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/jammu-and-kashmir-encounter-041105732-16x9_0.jpeg?VersionId=oCc2KLdJzSXpkiu2xEq2wIRe8hNtJdnb",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "32d4c87a5a000ea245daf682df773fad",
-    "title": "PAR 0-1 FRA Live: Mbappe gives France the lead from the spot",
-    "link": "https://www.indiatoday.in/sports/football/story/paraguay-vs-france-live-score-fifa-world-cup-2026-round-of-16-mbappe-dembele-olise-2940826-2026-07-05?utm_source=rss",
-    "source": "India Today",
-    "published": "Sun, 05 Jul 2026 01:38:45 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/sports/football/story/paraguay-vs-france-live-score-fifa-world-cup-2026-round-of-16-mbappe-dembele-olise-2940826-2026-07-05\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202607/paraguay-par-vs-france-fra-live-score-and-updates--fifa-world-cup-2026-043721805-16x9_0.jpg?VersionId=V4ZtxXxEMMToWKH1kXzVakwWELd5NjGj\" width=\"305\" /> </a> PAR  FRA Live Mbappe gives France the lead fro",
+    "published": "Sun, 05 Jul 2026 08:01:11 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/world/story/ayatollah-ali-khamenei-funeral-karbala-imam-hussain-shahadat-iran-2940838-2026-07-05\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/geeta-mohan-tehran-iran-051425835-16x9_0.jpeg?VersionId=5binXGv6pNzFIFvhd9jvFsfbJ6fio1pI\" width=\"305\" /> </a> Never submit to tyranny Amid war Karbala message resonates at Khamenei funeral",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202607/paraguay-par-vs-france-fra-live-score-and-updates--fifa-world-cup-2026-043721805-16x9_0.jpg?VersionId=V4ZtxXxEMMToWKH1kXzVakwWELd5NjGj",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/geeta-mohan-tehran-iran-051425835-16x9_0.jpeg?VersionId=5binXGv6pNzFIFvhd9jvFsfbJ6fio1pI",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "0f08e3a7d08cc7c82ebbe740314557d5",
-    "title": "Morocco shakes off first-half slumber, ends Canada's dream run to reach quarters",
-    "link": "https://www.indiatoday.in/sports/football/story/morocco-beat-canada-fifa-world-cup-match-report-round-of-16-ounahi-jesse-marsch-2940823-2026-07-05?utm_source=rss",
+    "id": "e93b773406c844107151ff5db3114625",
+    "title": "Crypto dispute surfaces in gangrape case involving Pakistan Deputy PM's relative",
+    "link": "https://www.indiatoday.in/world/story/lahore-gangrape-case-crypto-dispute-surfaces-pakistan-deputy-pm-ishaq-dar-relative-2940831-2026-07-05?utm_source=rss",
     "source": "India Today",
-    "published": "Sun, 05 Jul 2026 00:47:15 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/sports/football/story/morocco-beat-canada-fifa-world-cup-match-report-round-of-16-ounahi-jesse-marsch-2940823-2026-07-05\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/fifa-world-cup-2026--canada-vs-morocco-041639359-16x9_0.jpg?VersionId=k8F6kwWcIlm1zRKyfNv9Y2yLIFdd2aF3\" width=\"305\" /> </a> Morocco shakes off firsthalf slumber ends Canadas dream run to reach quarters",
-    "category": "Safety",
+    "published": "Sun, 05 Jul 2026 05:38:27 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/world/story/lahore-gangrape-case-crypto-dispute-surfaces-pakistan-deputy-pm-ishaq-dar-relative-2940831-2026-07-05\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/ishaq-dar-05072187-16x9_0.jpg?VersionId=iYAOAlou74M8PS.zR8wGamCUhEyGetDr\" width=\"305\" /> </a> Crypto dispute surfaces in gangrape case involving Pakistan Deputy PMs relative",
+    "category": "General",
     "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/fifa-world-cup-2026--canada-vs-morocco-041639359-16x9_0.jpg?VersionId=k8F6kwWcIlm1zRKyfNv9Y2yLIFdd2aF3",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/ishaq-dar-05072187-16x9_0.jpg?VersionId=iYAOAlou74M8PS.zR8wGamCUhEyGetDr",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "1863873be34d3b80186d568270ccbba1",
+    "title": "When will Delhi's air be pollution-free? Rekha Gupta answers",
+    "link": "https://www.indiatoday.in/india/story/delhi-ev-policy-petrol-two-wheelers-registration-ban-2028-rekha-gupta-pollution-2940736-2026-07-05?utm_source=rss",
+    "source": "India Today",
+    "published": "Sun, 05 Jul 2026 08:00:30 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/india/story/delhi-ev-policy-petrol-two-wheelers-registration-ban-2028-rekha-gupta-pollution-2940736-2026-07-05\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/along-with-the-change-in-the-wfh-policy--the-delhi-government-has-also-revised-office-timings-for-g-04133720-16x9.jpg?VersionId=AwDCyhnsEXbXN9w9F6kDDkFAPQrR2BM3\" width=\"305\" /> </a> When will Delhis air be pollutionfree Rek",
+    "category": "Govt",
+    "region": "Telangana",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/along-with-the-change-in-the-wfh-policy--the-delhi-government-has-also-revised-office-timings-for-g-04133720-16x9.jpg?VersionId=AwDCyhnsEXbXN9w9F6kDDkFAPQrR2BM3",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1107,6 +1074,34 @@
     "category": "Safety",
     "region": "Telangana",
     "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202605/punjab-civic-elections-294817348-16x9_0.png?VersionId=I61vHUc1zwU6lXy_p._Bt0yFBGoJ6q2a",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "cd74c17fa903e0c2683fe8d0543f584c",
+    "title": "Kylian Mbappe: If we have to get our hands dirty, we'll do it",
+    "link": "https://www.indiatoday.in/sports/football/story/kylian-mbappe-reaction-paraguay-vs-france-fifa-world-cup-round-of-16-2940834-2026-07-05?utm_source=rss",
+    "source": "India Today",
+    "published": "Sun, 05 Jul 2026 06:07:50 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/sports/football/story/kylian-mbappe-reaction-paraguay-vs-france-fifa-world-cup-round-of-16-2940834-2026-07-05\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/kylian-mbappe-053445320-16x9_0.png?VersionId=DkeTWHys.2oxQVbvz7EpNMmsgF0OsVdu\" width=\"305\" /> </a> Kylian Mbappe If we have to get our hands dirty well do it",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/kylian-mbappe-053445320-16x9_0.png?VersionId=DkeTWHys.2oxQVbvz7EpNMmsgF0OsVdu",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "2e3f6c6734fd9ead0ee44285d15575c7",
+    "title": "I'd rather be us than them: Jesse Marsch defiant despite Canada's World Cup exit",
+    "link": "https://www.indiatoday.in/sports/football/story/fifa-world-cup-2026-morocco-vs-canada-jesse-marsch-proud-despite-3-0-defeat-2940825-2026-07-05?utm_source=rss",
+    "source": "India Today",
+    "published": "Sun, 05 Jul 2026 01:34:20 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/sports/football/story/fifa-world-cup-2026-morocco-vs-canada-jesse-marsch-proud-despite-3-0-defeat-2940825-2026-07-05\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/jesse-marsch-040323658-16x9_0.jpg?VersionId=eOSTaA6SG5lLCQOVMdOtumCptDorJVVb\" width=\"305\" /> </a> Id rather be us than them Jesse Marsch defiant despite Canadas World Cup exit",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/jesse-marsch-040323658-16x9_0.jpg?VersionId=eOSTaA6SG5lLCQOVMdOtumCptDorJVVb",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1149,34 +1144,6 @@
     "category": "General",
     "region": "Telangana",
     "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/lionel-messi--argentina-vs-cabo-verde-040921989-16x9_0.jpg?VersionId=cBfol6MBQdW5g9vHKrAPhlbUmOw0sqnS",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "a4cd76866cbf2ca97cf0a77da23109fb",
-    "title": "Unbeaten Colombia edge Ghana 1-0, set up Switzerland clash in last 16",
-    "link": "https://www.indiatoday.in/sports/football/story/fifa-world-cup-colombia-beat-ghana-1-0-switzerland-round-of-16-2940355-2026-07-04?utm_source=rss",
-    "source": "India Today",
-    "published": "Sat, 04 Jul 2026 09:56:24 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/sports/football/story/fifa-world-cup-colombia-beat-ghana-1-0-switzerland-round-of-16-2940355-2026-07-04\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/jhon-arias-042605813-16x9_0.jpg?VersionId=yDhgMQ23IOvqwqcaUM0VVc9p2iLqLxXf\" width=\"305\" /> </a> Unbeaten Colombia edge Ghana  set up Switzerland clash in last",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/jhon-arias-042605813-16x9_0.jpg?VersionId=yDhgMQ23IOvqwqcaUM0VVc9p2iLqLxXf",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "bac916e51c2081f0d117b26060addf47",
-    "title": "Argentina are not perfect. Messi details problems after tough win vs Cape Verde",
-    "link": "https://www.indiatoday.in/sports/football/story/argentina-vs-cape-verde-lionel-messi-reaction-press-conference-2940333-2026-07-04?utm_source=rss",
-    "source": "India Today",
-    "published": "Sat, 04 Jul 2026 09:13:21 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/sports/football/story/argentina-vs-cape-verde-lionel-messi-reaction-press-conference-2940333-2026-07-04\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/lionel-messi-044243695-16x9_0.jpg?VersionId=WnzV3A5av_amajgUXLzxmhU8Ip5H7y_e\" width=\"305\" /> </a> Argentina are not perfect Messi details problems after tough win vs Cape Verde",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/lionel-messi-044243695-16x9_0.jpg?VersionId=WnzV3A5av_amajgUXLzxmhU8Ip5H7y_e",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1322,15 +1289,29 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "d4f328628132e7e4250afb63556ee2dc",
-    "title": "India lifts gas supply curbs as LNG shipments through Strait of Hormuz resume",
-    "link": "https://www.thehindubusinessline.com/markets/commodities/india-lifts-gas-supply-curbs-as-lng-shipments-through-strait-of-hormuz-resume/article71183913.ece",
+    "id": "2cfa9a174d20f8d272c568687cbf5a38",
+    "title": "BCIC appoints K Ravi as President at AGM as the organisation enters its 50th year",
+    "link": "https://www.thehindubusinessline.com/companies/bcic-appoints-k-ravi-as-president-at-agm-as-the-organisation-enters-its-50th-year/article71183758.ece",
     "source": "Business Line",
-    "published": "Sun, 05 Jul 2026 04:19:14 +0530",
-    "description": "The Centre’s latest move indicates easing energy supply concerns as LNG shipments resume through the Strait of Hormuz and fuel availability improves",
+    "published": "Sun, 05 Jul 2026 08:58:15 +0530",
+    "description": "A major highlight of the AGM was BCIC’s felicitation of four eminent personalities whose outstanding achievements have left an indelible mark on the nation",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/culuje/article71184060.ece/alternates/LANDSCAPE_1200/BL12_Think_LNG_tanker_ship.jpg",
+    "image_url": "https://bl-i.thgim.com/public/incoming/dm7zvj/article71161160.ece/alternates/LANDSCAPE_1200/IMG_Building_a_network_t_2_1_VPCHO6QN.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "6ce800cbd7cd7ed13c308160642f399e",
+    "title": "Trump offered over phone to help Putin find deal with Ukraine, Kremlin aide says",
+    "link": "https://www.thehindubusinessline.com/news/world/trump-offered-over-phone-to-help-putin-find-deal-with-ukraine-kremlin-aide-says/article71185056.ece",
+    "source": "Business Line",
+    "published": "Sun, 05 Jul 2026 08:49:21 +0530",
+    "description": "Ushakov said ‌Trump made the offer in the context of his\nparticipation next ‌week at the NATO summit in ‌Turkey.",
+    "category": "Weather",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/1rbaix/article71185060.ece/alternates/LANDSCAPE_1200/2026-06-23T172850Z_401895215_RC2V7GAH8TAH_RTRMADP_3_UKRAINE-CRISIS-RUSSIA-USA.JPG",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1340,11 +1321,39 @@
     "title": "Top IT stocks stare at great valuation reset",
     "link": "https://www.thehindubusinessline.com/portfolio/top-it-stocks-stare-at-great-valuation-reset/article71183668.ece",
     "source": "Business Line",
-    "published": "Sat, 04 Jul 2026 22:04:41 +0530",
+    "published": "Sun, 05 Jul 2026 08:35:14 +0530",
     "description": "While Indian IT valuation premium currently ranges from 40-80% over Accenture, the earnings growth outlook lacks the same optimism",
     "category": "Business",
     "region": "Telangana",
     "image_url": "https://bl-i.thgim.com/public/incoming/b0i7z1/article71183685.ece/alternates/LANDSCAPE_1200/IMG_Finance_business_man_2_1_OQDRQ0JD.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "fffb24966561a249e3701bf9e09d44c8",
+    "title": "Adani Group to build 2,000-bed hospital in West Bengal’s New Town",
+    "link": "https://www.thehindubusinessline.com/news/national/adani-group-to-build-2000-bed-hospital-in-west-bengals-new-town/article71184080.ece",
+    "source": "Business Line",
+    "published": "Sun, 05 Jul 2026 04:35:29 +0530",
+    "description": "The proposed hospital will have 1,000 free beds and 1,000 commercial beds.",
+    "category": "Health",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/lxzlso/article71184081.ece/alternates/LANDSCAPE_1200/PTI07_04_2026_000455B.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "d4f328628132e7e4250afb63556ee2dc",
+    "title": "India lifts gas supply curbs as LNG shipments through Strait of Hormuz resume",
+    "link": "https://www.thehindubusinessline.com/markets/commodities/india-lifts-gas-supply-curbs-as-lng-shipments-through-strait-of-hormuz-resume/article71183913.ece",
+    "source": "Business Line",
+    "published": "Sun, 05 Jul 2026 04:19:14 +0530",
+    "description": "The Centre’s latest move indicates easing energy supply concerns as LNG shipments resume through the Strait of Hormuz and fuel availability improves",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/culuje/article71184060.ece/alternates/LANDSCAPE_1200/BL12_Think_LNG_tanker_ship.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1415,48 +1424,6 @@
     "category": "Business",
     "region": "Telangana",
     "image_url": "https://bl-i.thgim.com/public/news/1fqw4k/article71042156.ece/alternates/LANDSCAPE_1200/movers%20and%20shakers.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "8273b430fb98773479c00abe41a1f3f5",
-    "title": "Bandu’s Blockbusters for July 5, 2026",
-    "link": "https://www.thehindubusinessline.com/portfolio/technical-analysis/guess-the-stock-that-will-give-the-best-return-by-july/article71182595.ece",
-    "source": "Business Line",
-    "published": "Sat, 04 Jul 2026 21:47:29 +0530",
-    "description": "Guess the stock that will give the best return by next Friday",
-    "category": "Transit",
-    "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/b0eqsg/article71066843.ece/alternates/LANDSCAPE_1200/IMG_Bandu_2_1_1GD25VL8.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "b51ba55ded9147696e73d7184f34230e",
-    "title": "This luxury hotel stock hasnt moved much from its IPO: Should you buy?",
-    "link": "https://www.thehindubusinessline.com/portfolio/stock-fundamental-analysis-india/this-luxury-hotel-stock-hasnt-moved-much-from-its-ipo-should-you-buy/article71178480.ece",
-    "source": "Business Line",
-    "published": "Sat, 04 Jul 2026 21:47:19 +0530",
-    "description": "IPO concerns have eased, but the re-rating case for this well-known hotel brand owner still needs stronger evidence",
-    "category": "Business",
-    "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/wap3bu/article71182600.ece/alternates/LANDSCAPE_1200/PO05_Leela_Ashtamudi.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "f662c83d1360aa7201a1d6c4f7a23592",
-    "title": "Debt Funds: A long-term portfolio essential",
-    "link": "https://www.thehindubusinessline.com/portfolio/mutual-funds/debt-funds-a-long-term-portfolio-essential/article71178181.ece",
-    "source": "Business Line",
-    "published": "Sat, 04 Jul 2026 21:47:09 +0530",
-    "description": "Balance your equity highs with the steady, reliable power of debt to secure long-term prosperity",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/ryqwwd/article71179959.ece/alternates/LANDSCAPE_1200/PO05_Time_opportunity.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -2166,7 +2133,7 @@
     "title": "प्रधानमंत्री ने गुजरात के साणंद में सीजी सेमी आउटसोर्स्ड सेमीकंडक्टर असेंबली एंड टेस्ट (ओएसएटी) सुविधा के उद्घाटन की कुछ झलकियां साझा कीं",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281179",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2180,7 +2147,7 @@
     "title": "प्रधानमंत्री ने अमेरिका की स्वतंत्रता की 250वीं वर्षगांठ पर अमेरिका के राष्ट्रपति को बधाई दी",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281173",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2194,7 +2161,7 @@
     "title": "गुजरात के साणंद में सीजी सेमी ओएसएटी सुविधा के उद्घाटन के दौरान प्रधानमंत्री के संबोधन का मूल पाठ",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281155",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2208,7 +2175,7 @@
     "title": "अकादमिक बैंक ऑफ क्रेडिट और APAAR",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281150",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2222,7 +2189,7 @@
     "title": "नारेबाज़ी और व्यवधान से कोई नेता नहीं बनता; तथ्य, तर्क और विचार ही नेतृत्व की पहचान हैं : लोक सभा अध्यक्ष",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281145",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2236,7 +2203,7 @@
     "title": "माउंट आबू में रिफॉर्म्स उत्सव और चिंतन शिविर 2026 का शुभारंभ",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281157",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2250,7 +2217,7 @@
     "title": "एपीईडीए ने जम्मू और कश्मीर से संयुक्त अरब अमीरात को अरेको चेरी और सेंट्रोज़ बेर की पहली निर्यात खेप भेजने में मदद की",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281151",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2264,7 +2231,7 @@
     "title": "ई20 एक साफ़ और हाई-परफ़ॉर्मेंस वाला ईंधन है, पुराने वाहनों पर कड़े परीक्षण के बाद ही इसे आगे बढ़ाया गया: उद्योग विशेषज्ञ",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281181",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2278,7 +2245,7 @@
     "title": "प्रधानमंत्री श्री नरेन्द्र मोदी ने गुजरात के साणंद में सीजी सेमी आउटसोर्स्ड सेमीकंडक्टर असेंबली एंड टेस्ट (ओएसएटी) सुविधा का उद्घाटन किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281156",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2292,7 +2259,7 @@
     "title": "प्रधानमंत्री श्री नरेन्द्र मोदी ने राजस्थान के बालोतरा में लगभग ₹1.06 लाख करोड़ की विकास परियोजनाओं को राष्ट्र को समर्पित किया, उनका उद्घाटन किया और उनकी आधारशिला रखी",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2281135",
     "source": "PIB Hyderabad",
-    "published": "Sat, 04 Jul 2026 23:00:03 +0530",
+    "published": "Sun, 05 Jul 2026 03:39:32 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
