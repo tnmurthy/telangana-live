@@ -129,18 +129,18 @@ The roadmap for the telangana.live civic helper portal consists of the following
   - Sub-pages written and complying with the UI template contract.
   - Structure verified successfully using `verify_structure.py`.
 
-### 🧹 Milestone 1.5: Repository Hygiene & Cleanup (Now)
+### ✅ Milestone 1.5: Repository Hygiene & Cleanup (Complete)
 * **Priority:** High — blocks clean collaboration and inflates repo size/noise for every future contributor (human or agent).
 * **Effort:** Small (~half a day)
 * **Owner:** Unassigned
-* **Dependencies:** None — self-contained, runs in parallel with closing out Milestone 1.
 * **Goal:** Remove dead weight and duplicated artifacts accumulated during the content restructure and various AI-assisted sessions.
-* **Success Criteria:**
-  - Duplicate root `content/` directory removed (superseded by `frontend/src/content/docs/`).
-  - `.vs/`, `graphify-out/`, and `frontend/test-results/` untracked from git.
-  - Scratch/debug files removed (`scratch/`, `test_ephem.py`, `tmp.tmpenv`, `TG-Live.txt`, `manifest.txt`, `cc2c211.patch`).
-  - `.gitignore` corruption fixed (garbled `.env` line, duplicate entries).
-  - Fate of `.agents/` versioned duplicates (`worker_verification_v2/v3/v4`, etc.) and `deployment/wrangler.toml` vs. Vercel-only deployment decided and documented.
+* **Outcome:**
+  - ✅ Duplicate root `content/` directory removed (superseded by `frontend/src/content/docs/`). — `cb3e291`
+  - ✅ `.vs/`, `graphify-out/`, and `frontend/test-results/` untracked from git; `.gitignore` corruption fixed. — `cb3e291`
+  - ✅ Scratch/debug files removed (`scratch/`, `test_ephem.py`, `tmp.tmpenv`, `TG-Live.txt`, `manifest.txt`, `cc2c211.patch`). — `cb3e291`
+  - ✅ `.agents/` session debris removed (24 files/dirs from a single orchestration run); `rules/`, `skills/`, `workflows/`, `team_roster.md` kept as persistent config. — `5176967`
+  - ✅ Dead code removed: orphaned landing-page component cluster (Button/CTA/Features/Hero/Navigation/Pricing), superseded `Footer.tsx`/`NewsPage.jsx`, unused backend agents (`business_analyst`, `content_updater`, `transit_sync_agent`, `water_sync_agent`). Verified with a clean prod build. — `4e8b8a4`
+  - ✅ `deployment/wrangler.toml` **kept** — retained as a Cloudflare Pages backup/alt deployment path alongside the primary Vercel setup.
 
 ### 🏁 Milestone 2: UI & PWA Integration
 * **Goal:** Load the Markdown pages into the React frontend and bundle them using MDX/frontmatter or a local Vite content parser.
