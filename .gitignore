@@ -12,10 +12,11 @@ dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Editor / IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
+.vs/
 .DS_Store
 *.suo
 *.ntvs*
@@ -26,15 +27,19 @@ dist-ssr
 .vercel
 
 # Playwright
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
 __pycache__
-. e n v  
- 
-.env
-graphify-out/cache/
 tmp_pytest/
+
+# Env / secrets
+.env
+.env.*
 ga_credentials.json
+
+# Generated analysis output
+graphify-out/

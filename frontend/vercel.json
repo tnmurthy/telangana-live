@@ -4,14 +4,32 @@
   "redirects": [
     {
       "source": "/(.*)",
+      "has": [{ "type": "host", "value": "telanganalive.shop" }],
+      "destination": "https://www.telanganalive.shop/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "telangana.live" }],
+      "destination": "https://www.telanganalive.shop/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.telangana.live" }],
+      "destination": "https://www.telanganalive.shop/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "telanganalive.in" }],
-      "destination": "https://telangana.live/$1",
+      "destination": "https://www.telanganalive.shop/$1",
       "permanent": true
     },
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "telanganalive.online" }],
-      "destination": "https://telangana.live/$1",
+      "destination": "https://www.telanganalive.shop/$1",
       "permanent": true
     }
   ],
