@@ -142,12 +142,13 @@ The roadmap for the telangana.live civic helper portal consists of the following
   - ✅ Dead code removed: orphaned landing-page component cluster (Button/CTA/Features/Hero/Navigation/Pricing), superseded `Footer.tsx`/`NewsPage.jsx`, unused backend agents (`business_analyst`, `content_updater`, `transit_sync_agent`, `water_sync_agent`). Verified with a clean prod build. — `4e8b8a4`
   - ✅ `deployment/wrangler.toml` **kept** — retained as a Cloudflare Pages backup/alt deployment path alongside the primary Vercel setup.
 
-### 🚧 Milestone 2: UI & PWA Integration (In Progress)
+### ✅ Milestone 2: UI & PWA Integration (Complete)
 * **Goal:** Load the Markdown pages into the React frontend and bundle them using MDX/frontmatter or a local Vite content parser.
-* **Success Criteria:** 
-  - ✅ **Dynamic documentation rendering** — Done. `frontend/src/utils/markdownParser.js` glob-loads all 46 markdown files at build time (`import.meta.glob`, eager), extracts H1 titles, groups by category. `ServiceDetailPage.jsx` renders guides via `react-markdown` + `rehype-raw`; `ServicesDirectoryPage.jsx` lists them via `getCategories()`. Verified against a clean production build and a passing `verify_structure.py` run. — `23c04e4` (fixed an unrelated encoding bug in the verification script along the way)
-  - ✅ **Search index functionality across all sub-pages** — Done. `SearchPage.jsx` previously only searched News, Government Schemes, and Services Directory — the 46 civic guide sub-pages were not searchable at all. Added a "Guides" section that searches guide title, category, and full markdown content (stripped to plain text), with a highlighted context snippet per result. Same lightweight substring-match approach as the rest of the page; no new search library needed at this corpus size. Verified with a clean production build. — `2f2048d`
-  - ⬜ Offline compatibility via service workers — not started.
+* **Outcome:**
+  - ✅ **Dynamic documentation rendering** — `frontend/src/utils/markdownParser.js` glob-loads all 46 markdown files at build time (`import.meta.glob`, eager), extracts H1 titles, groups by category. `ServiceDetailPage.jsx` renders guides via `react-markdown` + `rehype-raw`; `ServicesDirectoryPage.jsx` lists them via `getCategories()`. Verified against a clean production build and a passing `verify_structure.py` run. — `23c04e4` (fixed an unrelated encoding bug in the verification script along the way)
+  - ✅ **Search index functionality across all sub-pages** — `SearchPage.jsx` previously only searched News, Government Schemes, and Services Directory — the 46 civic guide sub-pages were not searchable at all. Added a "Guides" section that searches guide title, category, and full markdown content (stripped to plain text), with a highlighted context snippet per result. Same lightweight substring-match approach as the rest of the page; no new search library needed at this corpus size. — `2f2048d`
+  - ✅ **Offline compatibility via service workers** — Already implemented: `public/sw.js` is a network-first, cache-fallback service worker precaching the app shell, registered from `src/main.jsx` (gated on production builds). Fixed a real gap found during the audit: `manifest.json`'s icons all pointed to the default Vite placeholder logo instead of the site's actual branded icon — swapped to `/favicon.svg`. — `d14b9e4`
+  - **Known follow-up (not blocking):** the maskable icon entry reuses the same artwork without a dedicated 40%-safe-zone-padded variant, so some Android launchers may crop it slightly.
 
 ### 🏁 Milestone 3: Multilingual Support (English, Telugu, Urdu)
 * **Goal:** Expand content accessibility to cover the major languages spoken in Telangana.
