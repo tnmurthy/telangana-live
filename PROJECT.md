@@ -146,8 +146,8 @@ The roadmap for the telangana.live civic helper portal consists of the following
 * **Goal:** Load the Markdown pages into the React frontend and bundle them using MDX/frontmatter or a local Vite content parser.
 * **Success Criteria:** 
   - ✅ **Dynamic documentation rendering** — Done. `frontend/src/utils/markdownParser.js` glob-loads all 46 markdown files at build time (`import.meta.glob`, eager), extracts H1 titles, groups by category. `ServiceDetailPage.jsx` renders guides via `react-markdown` + `rehype-raw`; `ServicesDirectoryPage.jsx` lists them via `getCategories()`. Verified against a clean production build and a passing `verify_structure.py` run. — `23c04e4` (fixed an unrelated encoding bug in the verification script along the way)
+  - ✅ **Search index functionality across all sub-pages** — Done. `SearchPage.jsx` previously only searched News, Government Schemes, and Services Directory — the 46 civic guide sub-pages were not searchable at all. Added a "Guides" section that searches guide title, category, and full markdown content (stripped to plain text), with a highlighted context snippet per result. Same lightweight substring-match approach as the rest of the page; no new search library needed at this corpus size. Verified with a clean production build. — `2f2048d`
   - ⬜ Offline compatibility via service workers — not started.
-  - ⬜ Search index functionality across all sub-pages — not started.
 
 ### 🏁 Milestone 3: Multilingual Support (English, Telugu, Urdu)
 * **Goal:** Expand content accessibility to cover the major languages spoken in Telangana.
