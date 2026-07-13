@@ -41,6 +41,10 @@ def _weather_scraper_path():
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'scripts', 'weather_scraper.py')
 
 
+def _water_scraper_path():
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'scripts', 'water_scraper.py')
+
+
 # ── Tier 1 – ~1 hour: News & Weather ─────────────────────────────────────────
 
 def sync_news():
@@ -84,6 +88,7 @@ def morning_maintenance():
     for task in ('news', 'gold', 'fuel', 'pulses', 'ai_pulse'):
         _run_script(_data_engine_path(), '--task', task)
     _run_script(_weather_scraper_path())
+    _run_script(_water_scraper_path())
 
     monitor = ContentMonitor()
     result = monitor.run()
@@ -104,6 +109,7 @@ def evening_maintenance():
     for task in ('news', 'gold', 'fuel', 'pulses'):
         _run_script(_data_engine_path(), '--task', task)
     _run_script(_weather_scraper_path())
+    _run_script(_water_scraper_path())
 
     logger.info("Generating new content...")
     generator = ContentGenerator()

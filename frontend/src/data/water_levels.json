@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-24T18:07:43Z",
+  "lastUpdated": "2026-07-13T09:19:09Z",
   "reservoirs": [
     {
       "id": "nagarjuna-sagar",
@@ -12,12 +12,13 @@
         "Drinking"
       ],
       "fullLevelFt": 590.0,
-      "currentLevelFt": 542.5,
-      "fullCapacityTMC": 312.04,
-      "currentLevelTMC": 182.4,
-      "inflow": 4200,
-      "outflow": 6500,
+      "currentLevelFt": 570.4,
+      "fullCapacityTMC": 312.05,
+      "currentLevelTMC": 235.46,
+      "inflow": 46549,
+      "outflow": 20974,
       "inflowUnit": "cusecs",
+      "alertMessage": null,
       "correlated_news": []
     },
     {
@@ -27,16 +28,17 @@
       "district": "Nagarkurnool",
       "purpose": [
         "Hydroelectric",
-        "Irrigation"
+        "Irrigation",
+        "Drinking"
       ],
       "fullLevelFt": 885.0,
-      "currentLevelFt": 820.2,
+      "currentLevelFt": 851.0,
       "fullCapacityTMC": 215.81,
-      "currentLevelTMC": 45.6,
-      "inflow": 2100,
-      "outflow": 1500,
+      "currentLevelTMC": 129.58,
+      "inflow": 36416,
+      "outflow": 18351,
       "inflowUnit": "cusecs",
-      "alertMessage": "Low storage level. Power generation restricted.",
+      "alertMessage": null,
       "correlated_news": []
     },
     {
@@ -48,30 +50,89 @@
         "Irrigation",
         "Drinking"
       ],
-      "fullLevelFt": 1091.0,
-      "currentLevelFt": 1072.0,
+      "fullLevelFt": 1091.5,
+      "currentLevelFt": 1073.9,
       "fullCapacityTMC": 90.31,
-      "currentLevelTMC": 42.1,
-      "inflow": 1200,
-      "outflow": 500,
+      "currentLevelTMC": 52.08,
+      "inflow": 12071,
+      "outflow": 6631,
       "inflowUnit": "cusecs",
+      "alertMessage": null,
       "correlated_news": []
     },
     {
-      "id": "osman-sagar",
-      "name": "Osman Sagar",
-      "river": "Musi",
-      "district": "Rangareddy",
+      "id": "singur",
+      "name": "Singur Dam",
+      "river": "Manjeera",
+      "district": "Sangareddy",
       "purpose": [
-        "Drinking Water - GHMC"
+        "Drinking Water - GHMC",
+        "Irrigation"
       ],
-      "fullLevelFt": 1790.0,
-      "currentLevelFt": 1782.5,
-      "fullCapacityTMC": 3.9,
-      "currentLevelTMC": 2.1,
-      "inflow": 0,
-      "outflow": 25,
+      "fullLevelFt": 1598.0,
+      "currentLevelFt": 1595.4,
+      "fullCapacityTMC": 29.91,
+      "currentLevelTMC": 27.16,
+      "inflow": 5172,
+      "outflow": 2491,
       "inflowUnit": "cusecs",
+      "alertMessage": null,
+      "correlated_news": []
+    },
+    {
+      "id": "nizamsagar",
+      "name": "Nizam Sagar",
+      "river": "Manjeera",
+      "district": "Kamareddy",
+      "purpose": [
+        "Irrigation"
+      ],
+      "fullLevelFt": 1441.5,
+      "currentLevelFt": 1431.3,
+      "fullCapacityTMC": 21.62,
+      "currentLevelTMC": 16.31,
+      "inflow": 2391,
+      "outflow": 1340,
+      "inflowUnit": "cusecs",
+      "alertMessage": null,
+      "correlated_news": []
+    },
+    {
+      "id": "jurala",
+      "name": "Jurala Dam",
+      "river": "Krishna",
+      "district": "Jogulamba Gadwal",
+      "purpose": [
+        "Power Generation",
+        "Irrigation"
+      ],
+      "fullLevelFt": 318.0,
+      "currentLevelFt": 315.6,
+      "fullCapacityTMC": 10.17,
+      "currentLevelTMC": 7.08,
+      "inflow": 3417,
+      "outflow": 1807,
+      "inflowUnit": "cusecs",
+      "alertMessage": null,
+      "correlated_news": []
+    },
+    {
+      "id": "kaleshwaram",
+      "name": "Kaleshwaram Lift Irrigation",
+      "river": "Godavari",
+      "district": "Jayashankar Bhupalpally",
+      "purpose": [
+        "Irrigation",
+        "Drinking Water"
+      ],
+      "fullLevelFt": 162.0,
+      "currentLevelFt": 155.9,
+      "fullCapacityTMC": 16.0,
+      "currentLevelTMC": 11.54,
+      "inflow": 8446,
+      "outflow": 4000,
+      "inflowUnit": "cusecs",
+      "alertMessage": null,
       "correlated_news": []
     },
     {
@@ -83,12 +144,87 @@
         "Drinking Water - GHMC"
       ],
       "fullLevelFt": 1763.5,
-      "currentLevelFt": 1756.0,
+      "currentLevelFt": 1758.9,
       "fullCapacityTMC": 2.97,
-      "currentLevelTMC": 1.4,
-      "inflow": 0,
-      "outflow": 15,
+      "currentLevelTMC": 2.39,
+      "inflow": 1228,
+      "outflow": 680,
       "inflowUnit": "cusecs",
+      "alertMessage": null,
+      "correlated_news": []
+    },
+    {
+      "id": "osman-sagar",
+      "name": "Osman Sagar",
+      "river": "Musi",
+      "district": "Rangareddy",
+      "purpose": [
+        "Drinking Water - GHMC"
+      ],
+      "fullLevelFt": 1790.0,
+      "currentLevelFt": 1780.5,
+      "fullCapacityTMC": 3.9,
+      "currentLevelTMC": 2.42,
+      "inflow": 1826,
+      "outflow": 1016,
+      "inflowUnit": "cusecs",
+      "alertMessage": null,
+      "correlated_news": []
+    },
+    {
+      "id": "lower-manair",
+      "name": "Lower Manair Dam (LMD)",
+      "river": "Manair",
+      "district": "Karimnagar",
+      "purpose": [
+        "Irrigation",
+        "Drinking Water"
+      ],
+      "fullLevelFt": 960.0,
+      "currentLevelFt": 946.0,
+      "fullCapacityTMC": 27.64,
+      "currentLevelTMC": 19.02,
+      "inflow": 6312,
+      "outflow": 3300,
+      "inflowUnit": "cusecs",
+      "alertMessage": null,
+      "correlated_news": []
+    },
+    {
+      "id": "paleru",
+      "name": "Paleru Reservoir",
+      "river": "Paleru",
+      "district": "Khammam",
+      "purpose": [
+        "Irrigation"
+      ],
+      "fullLevelFt": 308.0,
+      "currentLevelFt": 302.2,
+      "fullCapacityTMC": 8.33,
+      "currentLevelTMC": 5.64,
+      "inflow": 1815,
+      "outflow": 1213,
+      "inflowUnit": "cusecs",
+      "alertMessage": null,
+      "correlated_news": []
+    },
+    {
+      "id": "dindi",
+      "name": "Dindi Reservoir",
+      "river": "Krishna",
+      "district": "Nalgonda",
+      "purpose": [
+        "Irrigation",
+        "Drinking Water"
+      ],
+      "fullLevelFt": 188.0,
+      "currentLevelFt": 185.6,
+      "fullCapacityTMC": 7.12,
+      "currentLevelTMC": 6.36,
+      "inflow": 1604,
+      "outflow": 811,
+      "inflowUnit": "cusecs",
+      "alertMessage": null,
       "correlated_news": []
     }
   ]
