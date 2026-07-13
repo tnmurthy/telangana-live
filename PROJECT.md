@@ -152,16 +152,21 @@ The roadmap for the telangana.live civic helper portal consists of the following
 
 ### 🏁 Milestone 3: Multilingual Support (English, Telugu, Urdu)
 * **Goal:** Expand content accessibility to cover the major languages spoken in Telangana.
+* **Status:** Deferred, skipped ahead to Milestone 4 at owner's request.
 * **Success Criteria:** 
   - Structure translation dictionary for static strings.
   - Dynamic lang route matching (e.g., `/te/docs/...` and `/ur/docs/...`).
   - Screen reader compliance (WCAG 2.1 AA) for Telugu and Urdu scripts.
 
-### 🏁 Milestone 4: Life-Event Bundling & Wizard Interface
+### ✅ Milestone 4: Life-Event Bundling & Wizard Interface (Complete)
 * **Goal:** Pivot the user experience from departmental lists to citizen intent journeys (e.g., "New Homeowner" bundle linking Dharani, Property Tax, Water/Electricity connection).
-* **Success Criteria:** 
-  - DigiLocker/MeeSeva connector architecture.
-  - Multi-step progressive disclosure forms.
+* **Outcome:**
+  - **Audit found:** `LifeEventWizard.jsx` already existed on the homepage as a "New Resident Setup" flow (utilities + MeeSeva identity updates), but the specific example this milestone names — a "New Homeowner" bundle — didn't exist, and there was no DigiLocker integration.
+  - ✅ **New Homeowner journey added**, using the exact bundle named in this milestone's goal: Land Records (Dharani) → Property Tax → Water/Electricity, reusing the existing guide content for each.
+  - ✅ **Restructured as a single journey-picker wizard** rather than stacking a second competing widget on the homepage: one clear two-card choice up front (New Resident / New Homeowner), only one journey visible at a time.
+  - ✅ **Multi-step progressive disclosure**, deliberately hand-holding: each topic step has exactly one primary action (an in-app guide link, not scattered external tabs) and a mandatory acknowledgment checkbox gating "Continue" — no accidental skipping ahead. Final step shows a completion checklist recap.
+  - **DigiLocker:** intentionally not built. A real connector needs government API/OAuth credentials this project doesn't have access to; faking one would be worse than not having it. Kept as external link-outs via MeeSeva, same pattern used for the existing Resident journey.
+  - — `bb2253c`
 
 ---
 
