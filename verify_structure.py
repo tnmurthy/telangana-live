@@ -4,6 +4,10 @@ import sys
 from pathlib import Path
 import re
 
+# Ensure emoji/unicode output works regardless of the terminal's default codepage (e.g. Windows cp1252)
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 # Central paths
 PROJECT_ROOT = Path(__file__).resolve().parent
 DOCS_DIR = PROJECT_ROOT / "frontend" / "src" / "content" / "docs"
