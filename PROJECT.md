@@ -142,12 +142,12 @@ The roadmap for the telangana.live civic helper portal consists of the following
   - ✅ Dead code removed: orphaned landing-page component cluster (Button/CTA/Features/Hero/Navigation/Pricing), superseded `Footer.tsx`/`NewsPage.jsx`, unused backend agents (`business_analyst`, `content_updater`, `transit_sync_agent`, `water_sync_agent`). Verified with a clean prod build. — `4e8b8a4`
   - ✅ `deployment/wrangler.toml` **kept** — retained as a Cloudflare Pages backup/alt deployment path alongside the primary Vercel setup.
 
-### 🏁 Milestone 2: UI & PWA Integration
+### 🚧 Milestone 2: UI & PWA Integration (In Progress)
 * **Goal:** Load the Markdown pages into the React frontend and bundle them using MDX/frontmatter or a local Vite content parser.
 * **Success Criteria:** 
-  - Dynamic documentation rendering.
-  - Offline compatibility via service workers.
-  - Search index functionality across all sub-pages.
+  - ✅ **Dynamic documentation rendering** — Done. `frontend/src/utils/markdownParser.js` glob-loads all 46 markdown files at build time (`import.meta.glob`, eager), extracts H1 titles, groups by category. `ServiceDetailPage.jsx` renders guides via `react-markdown` + `rehype-raw`; `ServicesDirectoryPage.jsx` lists them via `getCategories()`. Verified against a clean production build and a passing `verify_structure.py` run. — `23c04e4` (fixed an unrelated encoding bug in the verification script along the way)
+  - ⬜ Offline compatibility via service workers — not started.
+  - ⬜ Search index functionality across all sub-pages — not started.
 
 ### 🏁 Milestone 3: Multilingual Support (English, Telugu, Urdu)
 * **Goal:** Expand content accessibility to cover the major languages spoken in Telangana.
