@@ -13,7 +13,7 @@ class PriceSyncAgent:
     def __init__(self):
         self.now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
         self.city = "Hyderabad"
-        self.output_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend", "src", "src", "data", "prices.json")
+        self.output_file = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "frontend", "src", "data", "prices.json"))
 
     def _http_get(self, url):
         return requests.get(
@@ -29,8 +29,8 @@ class PriceSyncAgent:
         logger.info("Syncing gold rates...")
         # Hyderabad May 6th, 2026 approx rates
         rates = {
-            "24k": 78300.0, # per 10g
-            "22k": 71800.0
+            "24k": 157040.0, # per 10g
+            "22k": 143950.0
         }
         return rates
 

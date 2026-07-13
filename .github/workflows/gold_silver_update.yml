@@ -26,16 +26,18 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install requests beautifulsoup4
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
 
       - name: Sync Gold & Silver Prices
-        run: python scripts/data_engine.py --task gold
+        run: python backend/scripts/data_engine.py --task gold
 
       - name: Commit and Push Updates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-                  git add frontend/src/src/data/goldRates.js
+          git add frontend/src/data/goldRates.js
           git commit -m "chore: update gold and silver rates [automated]" || echo "No changes to commit"
           git pull --rebase origin master
           git push

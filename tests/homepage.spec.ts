@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Homepage — Compact Layout & Core Components', () => {
 
     test.beforeEach(async ({ page }) => {
-        await page.goto('/', { waitUntil: 'networkidle' });
+        await page.goto('/hyderabad', { waitUntil: 'networkidle' });
     });
 
     test('page loads with correct title', async ({ page }) => {
@@ -16,7 +16,7 @@ test.describe('Homepage — Compact Layout & Core Components', () => {
     });
 
     test('news ticker is visible', async ({ page }) => {
-        await expect(page.locator('.animate-ticker')).toBeVisible();
+        await expect(page.getByTestId('news-ticker')).toBeVisible();
     });
 
     test('daily rates card renders', async ({ page }) => {
@@ -33,9 +33,9 @@ test.describe('Homepage — Compact Layout & Core Components', () => {
     });
 
     test('fuel prices section renders', async ({ page }) => {
-        await expect(page.getByText('Fuel Prices', { exact: false }).first()).toBeVisible();
+        await expect(page.locator('main').getByText('Fuel Prices', { exact: false }).first()).toBeVisible();
         // Verify petrol entry exists
-        await expect(page.getByText('Petrol').first()).toBeVisible();
+        await expect(page.locator('main').getByText('Petrol').first()).toBeVisible();
     });
 
     test('power tariff card is visible', async ({ page }) => {
@@ -96,15 +96,15 @@ test.describe('Mobile — Bottom Navigation', () => {
 
     test('bottom nav is visible on mobile viewport', async ({ page }) => {
         await page.setViewportSize({ width: 375, height: 667 });
-        await page.goto('/', { waitUntil: 'networkidle' });
-        // Bottom nav contains "Home" and "Emergency"
+        await page.goto('/dashboard', { waitUntil: 'networkidle' });
+        // Bottom nav contains "Home" and "News"
         await expect(page.locator('nav.fixed >> text=Home')).toBeVisible();
-        await expect(page.locator('nav.fixed >> text=Emergency')).toBeVisible();
+        await expect(page.locator('nav.fixed >> text=News')).toBeVisible();
     });
 
     test('bottom nav has 4 navigation items', async ({ page }) => {
         await page.setViewportSize({ width: 375, height: 667 });
-        await page.goto('/', { waitUntil: 'networkidle' });
+        await page.goto('/dashboard', { waitUntil: 'networkidle' });
         // Count all links + buttons inside the fixed bottom nav
         const items = page.locator('nav.fixed >> :is(a, button)');
         await expect(items).toHaveCount(4);
@@ -112,7 +112,7 @@ test.describe('Mobile — Bottom Navigation', () => {
 
     test('no horizontal overflow on mobile', async ({ page }) => {
         await page.setViewportSize({ width: 375, height: 667 });
-        await page.goto('/', { waitUntil: 'networkidle' });
+        await page.goto('/dashboard', { waitUntil: 'networkidle' });
         const overflow = await page.evaluate(() => {
             return document.documentElement.scrollWidth > document.documentElement.clientWidth;
         });

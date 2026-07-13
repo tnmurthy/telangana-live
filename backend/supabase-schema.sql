@@ -37,12 +37,180 @@ ALTER TABLE content ENABLE ROW LEVEL SECURITY;
 ALTER TABLE activity_log ENABLE ROW LEVEL SECURITY;
 
 -- Create policies for public read access
+DROP POLICY IF EXISTS "Enable read access for all users" ON content;
 CREATE POLICY "Enable read access for all users" ON content
   FOR SELECT USING (status = 'active');
 
+DROP POLICY IF EXISTS "Enable read access for logs" ON activity_log;
 CREATE POLICY "Enable read access for logs" ON activity_log
   FOR SELECT USING (true);
 
 -- Grant permissions (optional)
 GRANT SELECT ON content TO anon;
 GRANT SELECT ON activity_log TO anon;
+
+-- ==============================================================================
+-- FRONTEND DATA TABLES
+-- ==============================================================================
+
+-- Create citizen_reports table
+CREATE TABLE IF NOT EXISTS citizen_reports (
+  id BIGSERIAL PRIMARY KEY,
+  category TEXT NOT NULL,
+  description TEXT NOT NULL,
+  lat NUMERIC,
+  lng NUMERIC,
+  ward TEXT,
+  corporation TEXT,
+  status TEXT DEFAULT 'pending_moderation',
+  photo_url TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create emergency_status table (Single row configuration)
+CREATE TABLE IF NOT EXISTS emergency_status (
+  id INTEGER PRIMARY KEY DEFAULT 1,
+  active BOOLEAN DEFAULT false,
+  type TEXT DEFAULT 'none',
+  severity TEXT DEFAULT 'low',
+  message TEXT,
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create power_alerts table
+CREATE TABLE IF NOT EXISTS power_alerts (
+  id BIGSERIAL PRIMARY KEY,
+  area TEXT NOT NULL,
+  from_time TEXT NOT NULL,
+  to_time TEXT NOT NULL,
+  reason TEXT,
+  source_url TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Enable RLS and create public read policies
+ALTER TABLE citizen_reports ENABLE ROW LEVEL SECURITY;
+ALTER TABLE emergency_status ENABLE ROW LEVEL SECURITY;
+ALTER TABLE power_alerts ENABLE ROW LEVEL SECURITY;
+
+-- Allow public read of approved reports
+DROP POLICY IF EXISTS "Enable read access for approved reports" ON citizen_reports;
+CREATE POLICY "Enable read access for approved reports" ON citizen_reports
+  FOR SELECT USING (status = 'approved');
+
+-- Allow public insert of new reports
+DROP POLICY IF EXISTS "Enable insert access for public" ON citizen_reports;
+CREATE POLICY "Enable insert access for public" ON citizen_reports
+  FOR INSERT WITH CHECK (true);
+
+-- Allow public read of emergency status and power alerts
+DROP POLICY IF EXISTS "Enable read access for emergency" ON emergency_status;
+CREATE POLICY "Enable read access for emergency" ON emergency_status FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Enable read access for power alerts" ON power_alerts;
+CREATE POLICY "Enable read access for power alerts" ON power_alerts FOR SELECT USING (true);
+
+-- Grant anon permissions
+GRANT SELECT, INSERT ON citizen_reports TO anon;
+GRANT SELECT ON emergency_status TO anon;
+GRANT SELECT ON power_alerts TO anon;
+
+-- ==============================================================================
+-- SMART CLASSIFIEDS TABLE
+-- ==============================================================================
+
+CREATE TABLE IF NOT EXISTS smart_classifieds (
+  id BIGSERIAL PRIMARY KEY,
+  category TEXT NOT NULL,
+  title TEXT NOT NULL,
+  price NUMERIC,
+  description TEXT,
+  whatsapp_number TEXT,
+  lat NUMERIC,
+  lng NUMERIC,
+  ward TEXT,
+  status TEXT DEFAULT 'active', -- active, sold, rejected
+  image_url TEXT,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  expires_at TIMESTAMP WITH TIME ZONE DEFAULT NOW() + INTERVAL '72 hours'
+);
+
+-- Enable RLS and create public read/insert policies
+ALTER TABLE smart_classifieds ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Enable read access for active classifieds" ON smart_classifieds;
+CREATE POLICY "Enable read access for active classifieds" ON smart_classifieds
+  FOR SELECT USING (status = 'active' AND expires_at > NOW());
+
+DROP POLICY IF EXISTS "Enable insert access for classifieds" ON smart_classifieds;
+CREATE POLICY "Enable insert access for classifieds" ON smart_classifieds
+  FOR INSERT WITH CHECK (true);
+
+GRANT SELECT, INSERT ON smart_classifieds TO anon;
+
+-- ==============================================================================
+-- DISTRICT NEWS SOURCES TABLE
+-- ==============================================================================
+
+CREATE TABLE IF NOT EXISTS district_news_sources (
+  id BIGSERIAL PRIMARY KEY,
+  district_name TEXT NOT NULL,
+  source_name TEXT NOT NULL,
+  source_type TEXT NOT NULL, -- 'RSS', 'Twitter', 'Scraper'
+  source_url TEXT,
+  language TEXT DEFAULT 'English', -- 'Telugu', 'Urdu', 'English'
+  is_active BOOLEAN DEFAULT true,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Enable RLS and create public read policies
+ALTER TABLE district_news_sources ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Enable read access for news sources" ON district_news_sources;
+CREATE POLICY "Enable read access for news sources" ON district_news_sources
+  FOR SELECT USING (is_active = true);
+
+GRANT SELECT ON district_news_sources TO anon;
+
+-- ==============================================================================
+-- AI PULSE METRICS TABLES (ELO & NEWS)
+-- ==============================================================================
+
+CREATE TABLE IF NOT EXISTS public.ai_models_leaderboard (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    model_name TEXT NOT NULL,
+    provider TEXT,
+    elo_score NUMERIC,
+    rank INTEGER,
+    source TEXT NOT NULL, -- e.g., 'lmsys', 'huggingface'
+    snapshot_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE(model_name, source, snapshot_date)
+);
+
+CREATE TABLE IF NOT EXISTS public.ai_daily_news (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    title TEXT NOT NULL,
+    url TEXT NOT NULL,
+    source TEXT NOT NULL, -- e.g., 'hacker_news', 'rss'
+    score INTEGER DEFAULT 0, -- useful for HN upvotes
+    published_at TIMESTAMPTZ,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE(url)
+);
+
+-- Enable RLS and create public read policies
+ALTER TABLE public.ai_models_leaderboard ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Enable read access for ai leaderboards" ON public.ai_models_leaderboard;
+CREATE POLICY "Enable read access for ai leaderboards" ON public.ai_models_leaderboard
+  FOR SELECT USING (true);
+GRANT SELECT ON public.ai_models_leaderboard TO anon;
+GRANT SELECT ON public.ai_models_leaderboard TO authenticated;
+
+ALTER TABLE public.ai_daily_news ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Enable read access for ai news" ON public.ai_daily_news;
+CREATE POLICY "Enable read access for ai news" ON public.ai_daily_news
+  FOR SELECT USING (true);
+GRANT SELECT ON public.ai_daily_news TO anon;
+GRANT SELECT ON public.ai_daily_news TO authenticated;
+

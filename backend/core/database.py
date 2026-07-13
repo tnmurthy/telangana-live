@@ -2,7 +2,7 @@ from supabase import create_client, Client
 from datetime import datetime
 from core.config import CONFIG
 import logging
-from schemas import ContentModel, ActivityLogModel
+from schemas import ContentModel, ActivityLogModel, CivicCorrelationModel
 
 logger = logging.getLogger(__name__)
 
@@ -27,24 +27,40 @@ class SupabaseDB:
             self._client = create_client(self.url, self.key)
         return self._client
 
-    def insert_content(self, title, category, content, source_url, generated_code, token_usage):
+    def insert_content(
+        self, title, category, content, source_url, generated_code, token_usage,
+        civic_tags=None, entities=None, district=None, vector_embedding=None
+    ):
         """Insert or update content in Supabase."""
         validated = ContentModel(
             title=title, category=category, content=content,
             source_url=source_url, generated_code=generated_code,
-            token_usage=token_usage or 0
+            token_usage=token_usage or 0,
+            civic_tags=civic_tags,
+            entities=entities,
+            district=district,
+            vector_embedding=vector_embedding
         )
         data = validated.model_dump()
 
         try:
             response = self.client.table('content').update(data).eq('title', title).execute()
-            if not response.data:
-                self.client.table('content').insert(data).execute()
-            logger.info(f"Content inserted/updated: {title}")
-            return True
+            if response.data:
+                row_id = response.data[0]['id']
+                logger.info(f"Content updated: {title} (ID: {row_id})")
+                return row_id
+
+            insert_response = self.client.table('content').insert(data).execute()
+            if insert_response.data:
+                row_id = insert_response.data[0]['id']
+                logger.info(f"Content inserted: {title} (ID: {row_id})")
+                return row_id
+
+            logger.warning(f"Content inserted/updated but no data returned for title: {title}")
+            return None
         except Exception as e:
             logger.error(f"Error inserting content: {str(e)}")
-            return False
+            return None
 
     def log_activity(self, agent, action, status, details, tokens_used):
         """Log agent activity to Supabase."""
@@ -162,6 +178,81 @@ class SupabaseDB:
         except Exception as e:
             logger.warning(f"topic_queue table not available ({e}); using default topics.")
             return []
+
+    def create_correlation(self, content_id: int, entity_type: str, entity_id: str, correlation_score: float = 1.0):
+        """Create a new civic correlation record."""
+        validated = CivicCorrelationModel(
+            content_id=content_id,
+            entity_type=entity_type,
+            entity_id=entity_id,
+            correlation_score=correlation_score
+        )
+        data = validated.model_dump()
+        try:
+            response = self.client.table('civic_correlations').insert(data).execute()
+            if response.data:
+                row_id = response.data[0]['id']
+                logger.info(f"Civic correlation created: {entity_type}/{entity_id} -> content {content_id} (ID: {row_id})")
+                return row_id
+            return None
+        except Exception as e:
+            logger.error(f"Error creating civic correlation: {str(e)}")
+            return None
+
+    def get_correlations_by_entity(self, entity_type: str, entity_id: str):
+        """Get all civic correlations for a given entity."""
+        try:
+             response = (
+                 self.client.table('civic_correlations')
+                 .select('*')
+                 .eq('entity_type', entity_type)
+                 .eq('entity_id', entity_id)
+                 .eq('is_active', True)
+                 .execute()
+             )
+             return response.data
+        except Exception as e:
+             logger.error(f"Error fetching correlations by entity: {str(e)}")
+             return []
+
+    def get_correlations_by_content(self, content_id: int):
+        """Get all civic correlations for a given content ID."""
+        try:
+             response = (
+                 self.client.table('civic_correlations')
+                 .select('*')
+                 .eq('content_id', content_id)
+                 .eq('is_active', True)
+                 .execute()
+             )
+             return response.data
+        except Exception as e:
+             logger.error(f"Error fetching correlations by content: {str(e)}")
+             return []
+
+    def get_content_by_id(self, content_id: int):
+        """Fetch content by ID."""
+        try:
+            response = self.client.table('content').select('*').eq('id', content_id).execute()
+            return response.data[0] if response.data else None
+        except Exception as e:
+            logger.error(f"Error fetching content by ID {content_id}: {str(e)}")
+            return None
+
+    def get_correlations_by_type(self, entity_type: str):
+        """Get all active civic correlations for a given entity type."""
+        try:
+             response = (
+                 self.client.table('civic_correlations')
+                 .select('*')
+                 .eq('entity_type', entity_type)
+                 .eq('is_active', True)
+                 .execute()
+             )
+             return response.data
+        except Exception as e:
+             logger.error(f"Error fetching correlations by type: {str(e)}")
+             return []
 
 
 db = SupabaseDB()

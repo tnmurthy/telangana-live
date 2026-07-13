@@ -58,11 +58,10 @@ def sync_weather():
 # ── Tier 2 – ~6 hours: Fuel, Commodities, AI Pulse ───────────────────────────
 
 def sync_secondary():
-    """Every 6 hours: refresh fuel prices, commodity prices, and AI pulse."""
-    logger.info("── 6-hour: syncing fuel / pulses / AI pulse ──")
+    """Every 6 hours: refresh fuel prices, commodity prices."""
+    logger.info("── 6-hour: syncing fuel / pulses ──")
     _run_script(_data_engine_path(), '--task', 'fuel')
     _run_script(_data_engine_path(), '--task', 'pulses')
-    _run_script(_data_engine_path(), '--task', 'ai_pulse')
 
 
 # ── Tier 3 – ~12 hours: Gold & Silver ────────────────────────────────────────
@@ -82,7 +81,7 @@ def morning_maintenance():
     logger.info("=" * 70)
 
     # Full data sync as part of morning cycle
-    for task in ('news', 'gold', 'fuel', 'pulses'):
+    for task in ('news', 'gold', 'fuel', 'pulses', 'ai_pulse'):
         _run_script(_data_engine_path(), '--task', task)
     _run_script(_weather_scraper_path())
 
@@ -125,16 +124,23 @@ def evening_maintenance():
 def run_scheduler():
     """Start the scheduler with tiered update frequencies."""
 
-    # ── Tier 1: every hour ────────────────────────────────────────────────────
-    schedule.every().hour.at(":00").do(sync_news)
+    # ── Tier 1: News & Weather ────────────────────────────────────────────────
+    news_interval = CONFIG.get('news_sync_interval_hours', 1)
+    if news_interval == 1:
+        schedule.every().hour.at(":00").do(sync_news)
+    else:
+        schedule.every(news_interval).hours.at(":00").do(sync_news)
+        
     schedule.every().hour.at(":30").do(sync_weather)
 
-    # ── Tier 2: every 6 hours ─────────────────────────────────────────────────
-    for hour in range(0, 24, 6):
+    # ── Tier 2: Fuel, Commodities, AI Pulse ───────────────────────────────────
+    sec_interval = CONFIG.get('secondary_sync_interval_hours', 3)
+    for hour in range(0, 24, sec_interval):
         schedule.every().day.at(f"{hour:02d}:15").do(sync_secondary)
 
-    # ── Tier 3: every 12 hours ────────────────────────────────────────────────
-    for hour in range(0, 24, 12):
+    # ── Tier 3: Gold & Silver ─────────────────────────────────────────────────
+    gold_interval = CONFIG.get('gold_sync_interval_hours', 12)
+    for hour in range(0, 24, gold_interval):
         schedule.every().day.at(f"{hour:02d}:45").do(sync_gold_silver)
 
     # ── AI content maintenance: twice daily ───────────────────────────────────
@@ -144,9 +150,9 @@ def run_scheduler():
     logger.info("\n" + "=" * 70)
     logger.info("TELANGANA.LIVE CONTENT AGENT SCHEDULER STARTED")
     logger.info("=" * 70)
-    logger.info("Tier 1 – every hour     : news (:00), weather (:30)")
-    logger.info("Tier 2 – every 6 hours  : fuel, commodities, AI pulse (:15)")
-    logger.info("Tier 3 – every 12 hours : gold & silver (:45)")
+    logger.info(f"Tier 1 – every {news_interval} hour(s)   : news (:00), weather (:30)")
+    logger.info(f"Tier 2 – every {sec_interval} hour(s)   : fuel, commodities (:15)")
+    logger.info(f"Tier 3 – every {gold_interval} hour(s)  : gold & silver (:45)")
     logger.info(f"Morning maintenance     : {CONFIG['schedule_morning']}")
     logger.info(f"Evening maintenance     : {CONFIG['schedule_evening']}")
     logger.info("=" * 70 + "\n")

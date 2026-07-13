@@ -4,11 +4,132 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Telangana Live - Civic Intelligence Portal</title>
+    <title>Telangana Live - Real-Time Civic Intelligence Portal</title>
+    <meta name="description" content="Real-time civic portal for Telangana and Hyderabad. Get live updates on breaking news, weather, fuel prices, gold rates, reservoir levels, and government schemes." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://telangana.live/" />
+    <meta property="og:title" content="Telangana Live - Civic Intelligence Portal" />
+    <meta property="og:description" content="Real-time civic portal for Telangana and Hyderabad. Get live updates on breaking news, weather, fuel prices, gold rates, and government schemes." />
+    <meta property="og:image" content="https://telangana.live/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://telangana.live/" />
+    <meta property="twitter:title" content="Telangana Live - Civic Intelligence Portal" />
+    <meta property="twitter:description" content="Real-time civic portal for Telangana and Hyderabad. Get live updates on breaking news, weather, fuel prices, gold rates, and government schemes." />
+    <meta property="twitter:image" content="https://telangana.live/og-image.png" />
+
+    <link rel="canonical" href="https://telangana.live/" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Telangana Live",
+      "url": "https://telangana.live/",
+      "description": "Real-time civic intelligence portal for Telangana state.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Telangana Live"
+      }
+    }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MGXMBXTW');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Google AdSense Verification -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9647354789964102"
+     crossorigin="anonymous"></script>
+    <!-- End Google AdSense Verification -->
+
+    <!-- Google Analytics 4 (GA4) Tracking Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM7S4MKFS1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WM7S4MKFS1', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure',
+        'send_page_view': false
+      });
+    </script>
+
+    <!-- Preconnect and DNS-prefetch resource hints for third-party ad networks -->
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin />
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
+    
+    <style>
+      /* Critical path CSS for instant theme rendering & FCP optimization */
+      html, body {
+        background-color: #030705;
+        color: #f5f5f7;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      .app-shell-loading {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #030705;
+      }
+      .app-shell-spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid rgba(0, 176, 116, 0.15);
+        border-top-color: #00b074;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 16px;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .app-shell-text {
+        color: rgba(245, 245, 247, 0.5);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-        <script type="module" src="/src/src/main.tsx"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGXMBXTW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root">
+      <!-- Instant dark Obsidian shell with spinner during React boot -->
+      <div class="app-shell-loading">
+        <div class="app-shell-spinner"></div>
+        <p class="app-shell-text">Calibrating 2026 Data...</p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-  

@@ -7,12 +7,16 @@ import time
 from datetime import datetime
 import sys
 
-_BACKEND_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_BACKEND_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, _BACKEND_DIR)
 try:
     from agents.fact_checker import fact_checker
 except ImportError:
     fact_checker = None
+
+from core.news_classifier import classify_article, extract_image_url
+from core.clustering import cluster_articles
+from core.correlation_engine import map_article_to_civic_entities
 
 
 # Load feeds from shared feeds.json (telangana + national only for scraper)
@@ -23,8 +27,8 @@ def _load_feeds():
         with open(_FEEDS_JSON, encoding="utf-8") as f:
             data = json.load(f)
         feeds = {}
-        # Prioritise telangana then national feeds for the news page
-        for category in ("telangana", "national"):
+        # Prioritise telangana and districts then national feeds for the news page
+        for category in ("telangana", "districts", "national"):
             for item in data.get(category, []):
                 feeds[item["source"]] = item["url"]
         return feeds
@@ -39,10 +43,10 @@ FEEDS = _load_feeds()
 
 # Resolve output path — write to the frontend data directory the React app reads
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
-_REPO_ROOT = os.path.dirname(_SCRIPTS_DIR)
-OUTPUT_FILE = os.path.join(_REPO_ROOT, "frontend", "src", "src", "data", "news.json")
+_REPO_ROOT = os.path.abspath(os.path.join(_SCRIPTS_DIR, "..", ".."))
+OUTPUT_FILE = os.path.abspath(os.path.join(_REPO_ROOT, "frontend", "src", "data", "news.json"))
 # Fallback: old location
-_LEGACY_FILE = os.path.join(_REPO_ROOT, "src", "data", "news.json")
+_LEGACY_FILE = OUTPUT_FILE
 
 
 try:
@@ -108,38 +112,25 @@ class NewsScraper:
                     if entry.link in seen_links:
                         continue
 
+                    desc = self.clean_html(entry.get("summary", ""))
+                    cat, reg = classify_article(entry.title, desc)
+                    img = extract_image_url(entry)
+
+                    correlated_entities = map_article_to_civic_entities(entry.title, desc)
+
                     item = {
                         "title": entry.title,
                         "link": entry.link,
                         "source": source,
                         "published": entry.get("published", datetime.now().strftime("%Y-%m-%d")),
-                        "description": self.clean_html(entry.get("summary", "")),
-                        "category": "General",
-                        "region": "Telangana",
+                        "description": desc,
+                        "category": cat,
+                        "region": reg,
+                        "image_url": img,
                         "ai_summary": "",
-                        "tags": []
+                        "tags": [],
+                        "correlated_civic_entities": correlated_entities
                     }
-
-                    low_title = entry.title.lower()
-                    if any(k in low_title for k in ["hyderabad", "ghmc", "banjara", "jubilee", "secunderabad"]):
-                        item["region"] = "Hyderabad"
-                    elif any(k in low_title for k in ["cyberabad", "hitec", "gachibowli", "kondapur", "madhapur"]):
-                        item["region"] = "Cyberabad"
-                    elif any(k in low_title for k in ["malkajgiri", "uppal", "alwal", "kapra"]):
-                        item["region"] = "Malkajgiri"
-
-                    if any(k in low_title for k in ["traffic", "metro", "rtc", "train", "road"]):
-                        item["category"] = "Transit"
-                    elif any(k in low_title for k in ["rain", "flood", "heat", "weather", "imd"]):
-                        item["category"] = "Weather"
-                    elif any(k in low_title for k in ["police", "crime", "robbery", "arrest"]):
-                        item["category"] = "Safety"
-                    elif any(k in low_title for k in ["school", "college", "exam", "result"]):
-                        item["category"] = "Education"
-                    elif any(k in low_title for k in ["gold", "silver", "stock", "market", "rupee"]):
-                        item["category"] = "Finance"
-                    elif any(k in low_title for k in ["hospital", "health", "covid", "dengue", "doctor"]):
-                        item["category"] = "Health"
 
                     # Step 1: Execute Fact Checking Pipeline
                     if fact_checker:
@@ -167,13 +158,17 @@ class NewsScraper:
             except Exception as e:
                 print(f"Error fetching from {source}: {e}")
 
-        return all_news[:50]
+        clustered = cluster_articles(all_news)
+        return clustered[:50]
 
 
 def run_scraper():
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     scraper = NewsScraper()
     news = scraper.scrape()
+    if not news:
+        print("  ⚠️ No news articles fetched (network or feeds offline). Skipping write to preserve existing data.")
+        return
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(news, f, indent=2, ensure_ascii=False)
     print(f"Successfully saved {len(news)} items to {OUTPUT_FILE}")

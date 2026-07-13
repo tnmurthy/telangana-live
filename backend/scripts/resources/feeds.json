@@ -6,18 +6,31 @@
     {"source": "Times of India - Hyderabad", "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms"},
     {"source": "Deccan Chronicle - Hyderabad", "url": "https://www.deccanchronicle.com/rss_feed/"},
     {"source": "Siasat Daily", "url": "https://www.siasat.com/feed/"},
-    {"source": "NTV Telangana", "url": "https://www.ntvtelugunews.com/rss/rss.xml"}
+    {"source": "Eenadu Telangana", "url": "https://www.eenadu.net/telangana/rss.xml"},
+    {"source": "Sakshi Telangana", "url": "https://www.sakshi.com/rss/telangana.xml"},
+    {"source": "Namasthe Telangana", "url": "https://www.ntnews.com/feed"},
+    {"source": "Hans India - Telangana", "url": "https://www.thehansindia.com/feeds/telangana.rss"}
+  ],
+  "districts": [
+    {"source": "Eenadu Warangal", "url": "https://www.eenadu.net/rss/telangana/warangal.xml"},
+    {"source": "Sakshi Warangal", "url": "https://www.sakshi.com/rss/warangal.xml"},
+    {"source": "Eenadu Karimnagar", "url": "https://www.eenadu.net/rss/karimnagar.xml"},
+    {"source": "Eenadu Nizamabad", "url": "https://www.eenadu.net/rss/nizamabad.xml"},
+    {"source": "Eenadu Khammam", "url": "https://www.eenadu.net/rss/khammam.xml"},
+    {"source": "Eenadu Nalgonda", "url": "https://www.eenadu.net/rss/nalgonda.xml"},
+    {"source": "Eenadu Mahbubnagar", "url": "https://www.eenadu.net/rss/mahbubnagar.xml"},
+    {"source": "Sakshi Hyderabad", "url": "https://www.sakshi.com/rss/hyderabad.xml"}
   ],
   "national": [
     {"source": "The Print", "url": "https://theprint.in/feed/"},
     {"source": "India Today", "url": "https://www.indiatoday.in/rss/home"},
-    {"source": "NDTV Top Stories", "url": "https://feeds.ndtv.com/ndtvnews-top-stories"},
-    {"source": "Scroll.in", "url": "https://scroll.in/rss"}
+    {"source": "News18 India", "url": "https://www.news18.com/rss/india.xml"},
+    {"source": "Financial Express", "url": "https://www.financialexpress.com/feed/"}
   ],
   "finance": [
     {"source": "Economic Times Markets", "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"},
     {"source": "Business Line", "url": "https://www.thehindubusinessline.com/feeder/default.rss"},
-    {"source": "Moneycontrol Economy", "url": "https://www.moneycontrol.com/rss/economy.xml"},
+    {"source": "Business Standard", "url": "https://www.business-standard.com/rss/home_page_top_stories.rss"},
     {"source": "SEBI Updates", "url": "https://www.sebi.gov.in/sebirss.xml"}
   ],
   "tech_ai": [

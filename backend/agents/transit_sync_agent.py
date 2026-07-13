@@ -10,7 +10,7 @@ class TransitSyncAgent:
         self.now = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
         self.output_file = os.path.join(
             os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 
-            "frontend", "src", "src", "data", "transit_status.json"
+            "frontend", "src", "data", "transit_status.json"
         )
 
     def sync_transit(self):
@@ -62,10 +62,26 @@ class TransitSyncAgent:
         logger.info("TransitSyncAgent cycle started.")
         data = self.sync_transit()
         
+        # Enrich transit status alerts with dynamic Supabase news correlations
+        try:
+            correlations = db.get_correlations_by_type("metro_line")
+            for corr in correlations:
+                article = db.get_content_by_id(corr["content_id"])
+                if article:
+                    data["alerts"].insert(0, {
+                        "type": "traffic",
+                        "title": f"Live Metro Alert ({corr['entity_id']})",
+                        "description": article["title"],
+                        "article_id": article["id"],
+                        "link": article["source_url"] or ""
+                    })
+        except Exception as e:
+            logger.warning(f"Failed to fetch transit alerts from DB: {e}")
+
         try:
             os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
             with open(self.output_file, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=2)
+                json.dump(data, f, indent=2, ensure_ascii=False)
             logger.info(f"Hybrid Sync: Updated {self.output_file}")
             
             # Log to DB

@@ -1,0 +1,18 @@
+{
+  "last_updated": "2026-06-07T12:10:32Z",
+  "gold": {
+    "24k": 157040.0,
+    "22k": 143950.0
+  },
+  "fuel": {
+    "petrol": 107.41,
+    "diesel": 95.64
+  },
+  "mandi": {
+    "Paddy (Common)": 2183,
+    "Cotton": 7020,
+    "Red Chillies": 18500,
+    "Maize": 2090
+  },
+  "city": "Hyderabad"
+}
