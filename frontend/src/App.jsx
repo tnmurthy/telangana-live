@@ -56,6 +56,7 @@ const StatnosticsPage = lazy(() => import('./pages/StatnosticsPage'));
 const DeepDivesPage = lazy(() => import('./pages/DeepDivesPage'));
 const ServicesDirectoryPage = lazy(() => import('./pages/ServicesDirectoryPage'));
 const ServiceDetailPage = lazy(() => import('./pages/ServiceDetailPage'));
+const GovernmentDirectoryPage = lazy(() => import('./pages/GovernmentDirectoryPage'));
 
 // Loading Fallback
 const LoadingScreen = () => (
@@ -153,6 +154,7 @@ function AppContent() {
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/services" element={<ServicesDirectoryPage />} />
               <Route path="/services/:category/:slug" element={<ServiceDetailPage />} />
+              <Route path="/government" element={<GovernmentDirectoryPage />} />
               <Route path="/:region" element={<SubRegionPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -1,0 +1,118 @@
+export const governmentDirectory = [
+  {
+    name: 'Agriculture & Co-operation',
+    category: 'Departments',
+    description: 'Crop support, farmer services and agricultural programmes.',
+    url: 'https://agri.telangana.gov.in',
+    tag: 'Farmers',
+  },
+  {
+    name: 'Consumer Affairs, Food & Civil Supplies',
+    category: 'Departments',
+    description: 'Ration cards, fair-price shops and food-security services.',
+    url: 'https://civilsupplies.telangana.gov.in',
+    tag: 'Households',
+  },
+  {
+    name: 'Health, Medical & Family Welfare',
+    category: 'Departments',
+    description: 'Public-health programmes, hospitals and family-welfare services.',
+    url: 'https://telangana.gov.in/departments/health-medical-family-welfare/',
+    tag: 'Health',
+  },
+  {
+    name: 'Municipal Administration & Urban Development',
+    category: 'Departments',
+    description: 'Urban local-body services, property and municipal administration.',
+    url: 'https://telangana.gov.in/departments/municipal-administration-urban-development/',
+    tag: 'Urban',
+  },
+  {
+    name: 'Panchayat Raj & Rural Development',
+    category: 'Departments',
+    description: 'Rural development, local governance and MGNREGA services.',
+    url: 'https://nrega.telangana.gov.in',
+    tag: 'Rural',
+  },
+  {
+    name: 'Revenue & Land Administration',
+    category: 'Departments',
+    description: 'Land records, revenue administration and public notices.',
+    url: 'https://ccla.telangana.gov.in',
+    tag: 'Land',
+  },
+  {
+    name: 'Transport, Roads & Buildings',
+    category: 'Departments',
+    description: 'Transport-related public services and state infrastructure.',
+    url: 'https://telangana.gov.in/departments/transport-roads-buildings/',
+    tag: 'Transport',
+  },
+  {
+    name: 'Women, Children & Disabled Welfare',
+    category: 'Departments',
+    description: 'Support programmes for women, children and persons with disabilities.',
+    url: 'https://telangana.gov.in/departments/women-development-child-welfare-disabled-welfare/',
+    tag: 'Welfare',
+  },
+  {
+    name: 'Rajiv Aarogyasri Health Care Trust',
+    category: 'State bodies',
+    description: 'Health-care scheme information and beneficiary support.',
+    url: 'https://rajivaarogyasri.telangana.gov.in',
+    tag: 'Health',
+  },
+  {
+    name: 'Chief Electoral Officer, Telangana',
+    category: 'State bodies',
+    description: 'Voter services, electoral-roll information and election notices.',
+    url: 'https://ceotelangana.nic.in',
+    tag: 'Elections',
+  },
+  {
+    name: 'Board of Intermediate Education',
+    category: 'State bodies',
+    description: 'Intermediate education notices, results and student services.',
+    url: 'https://tgbie.cgg.gov.in',
+    tag: 'Education',
+  },
+  {
+    name: 'Commissioner & Director of Municipal Administration',
+    category: 'State bodies',
+    description: 'State municipal-administration resources and e-municipal services.',
+    url: 'https://emunicipal.telangana.gov.in',
+    tag: 'Urban',
+  },
+  {
+    name: 'MeeSeva',
+    category: 'Citizen services',
+    description: 'Apply for and track Telangana government certificates and services.',
+    url: 'https://www.meeseva.telangana.gov.in/meeseva/login.htm',
+    tag: 'Apply online',
+  },
+  {
+    name: 'Government Order Register',
+    category: 'Citizen services',
+    description: 'Search and access Government Orders issued by Telangana.',
+    url: 'https://goir.telangana.gov.in',
+    tag: 'Records',
+  },
+  {
+    name: 'Birth & Death Registration',
+    category: 'Citizen services',
+    description: 'Civil registration information for births and deaths.',
+    url: 'https://ubdmis.telangana.gov.in',
+    tag: 'Certificates',
+  },
+  {
+    name: 'Aasara Pensions',
+    category: 'Citizen services',
+    description: 'Pension scheme information and beneficiary services.',
+    url: 'https://www.aasara.telangana.gov.in',
+    tag: 'Pensions',
+  },
+];
+
+export const governmentDirectoryCategories = ['All', 'Departments', 'State bodies', 'Citizen services'];
+
+export const districtDirectoryUrl = 'https://www.telangana.gov.in/district-web-directory/';
