@@ -15,6 +15,7 @@ import newsData from '../data/news.json';
 import PowerTariffCard from '../components/PowerTariffCard';
 import ServicesDirectory from '../components/ServicesDirectory';
 import OdopWidget from '../components/OdopWidget';
+import BloodBankAlerts from '../components/BloodBankAlerts';
 import NotFound from './NotFound';
 import { districtNewsSources } from '../data/districtNewsSources';
 import odopData from '../data/odopData.json';
@@ -197,6 +198,10 @@ export default function SubRegionPage() {
 
                 <BentoBox title="Healthcare Finder" icon={<Hospital className="w-6 h-6" />} color="telangana-red">
                     <BasthiDawakhana />
+                </BentoBox>
+
+                <BentoBox title="Blood Banks" icon={<TriangleAlert className="w-6 h-6" />} color="telangana-red">
+                    <BloodBankAlerts districtOverride={meta.district} />
                 </BentoBox>
 
                 <BentoBox title="Services Directory" icon={<Phone className="w-6 h-6" />} color="telangana-gold">

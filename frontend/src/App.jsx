@@ -27,6 +27,7 @@ const GoldLandingPage = lazy(() => import('./pages/GoldLandingPage'));
 const FuelLandingPage = lazy(() => import('./pages/FuelLandingPage'));
 const TransportLandingPage = lazy(() => import('./pages/TransportLandingPage'));
 const HealthLandingPage = lazy(() => import('./pages/HealthLandingPage'));
+const BloodBankPage = lazy(() => import('./pages/BloodBankPage'));
 const NewsListingPage = lazy(() => import('./pages/NewsListingPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const ContentAdminCockpit = lazy(() => import('./pages/ContentAdminCockpit'));
@@ -121,6 +122,7 @@ function AppContent() {
               <Route path="/rates/fuel" element={<FuelLandingPage />} />
               <Route path="/transport/metro" element={<TransportLandingPage />} />
               <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
+              <Route path="/health/blood-banks" element={<BloodBankPage />} />
               <Route path="/news" element={<NewsListingPage />} />
               <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
               <Route path="/ai-pulse" element={<AIPulsePage />} />

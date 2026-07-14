@@ -1,4 +1,5 @@
 import BasthiDawakhana from '../components/BasthiDawakhana';
+import BloodBankAlerts from '../components/BloodBankAlerts';
 
 export default function HealthLandingPage() {
     return (
@@ -13,6 +14,8 @@ export default function HealthLandingPage() {
 
             <BasthiDawakhana />
 
+            <BloodBankAlerts />
+
             <div className="glass-card section-block bg-telangana-green/5 border-telangana-green/20">
                 <h3 className="label-xs mb-4">🚑 24/7 Emergency Help</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -24,9 +27,9 @@ export default function HealthLandingPage() {
                         <span className="block text-2xl mb-2">📞</span>
                         <p className="text-xs font-bold text-white uppercase">104 Health Help</p>
                     </a>
-                    <a href="tel:181" className="bg-white/5 p-4 rounded-xl text-center hover:bg-white/10 transition-all border border-white/5">
-                        <span className="block text-2xl mb-2">🛡️</span>
-                        <p className="text-xs font-bold text-white uppercase">181 Safety Helpline</p>
+                    <a href="/health/blood-banks" className="bg-white/5 p-4 rounded-xl text-center hover:bg-white/10 transition-all border border-white/5">
+                        <span className="block text-2xl mb-2">🩸</span>
+                        <p className="text-xs font-bold text-white uppercase">Blood Banks</p>
                     </a>
                 </div>
             </div>
