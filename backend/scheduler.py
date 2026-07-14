@@ -7,7 +7,7 @@ import subprocess
 from agents.content_monitor import ContentMonitor
 from agents.content_generator import ContentGenerator
 from agents.quality_checker import QualityChecker
-from config import CONFIG
+from core.config import CONFIG
 
 # ── Ensure logs directory exists before the FileHandler is created ────────────
 os.makedirs('logs', exist_ok=True)
@@ -59,6 +59,13 @@ def sync_weather():
     _run_script(_weather_scraper_path())
 
 
+def sync_alerts():
+    """Every 2 hours: refresh the local civic alerts feed (floods, power/water
+    outages, road closures, strikes, weather warnings)."""
+    logger.info("── 2-hour: syncing local alerts ──")
+    _run_script(_data_engine_path(), '--task', 'alerts')
+
+
 # ── Tier 2 – ~6 hours: Fuel, Commodities, AI Pulse ───────────────────────────
 
 def sync_secondary():
@@ -85,7 +92,7 @@ def morning_maintenance():
     logger.info("=" * 70)
 
     # Full data sync as part of morning cycle
-    for task in ('news', 'gold', 'fuel', 'pulses', 'ai_pulse'):
+    for task in ('news', 'gold', 'fuel', 'pulses', 'ai_pulse', 'alerts'):
         _run_script(_data_engine_path(), '--task', task)
     _run_script(_weather_scraper_path())
     _run_script(_water_scraper_path())
@@ -106,7 +113,7 @@ def evening_maintenance():
     logger.info("EVENING MAINTENANCE CYCLE (6:00 PM)")
     logger.info("=" * 70)
 
-    for task in ('news', 'gold', 'fuel', 'pulses'):
+    for task in ('news', 'gold', 'fuel', 'pulses', 'alerts'):
         _run_script(_data_engine_path(), '--task', task)
     _run_script(_weather_scraper_path())
     _run_script(_water_scraper_path())
@@ -139,6 +146,11 @@ def run_scheduler():
         
     schedule.every().hour.at(":30").do(sync_weather)
 
+    # Alerts refresh independently on its own 2-hour cadence (configurable)
+    alerts_interval = CONFIG.get('alerts_sync_interval_hours', 2)
+    for hour in range(0, 24, alerts_interval):
+        schedule.every().day.at(f"{hour:02d}:10").do(sync_alerts)
+
     # ── Tier 2: Fuel, Commodities, AI Pulse ───────────────────────────────────
     sec_interval = CONFIG.get('secondary_sync_interval_hours', 3)
     for hour in range(0, 24, sec_interval):
@@ -157,6 +169,7 @@ def run_scheduler():
     logger.info("TELANGANA.LIVE CONTENT AGENT SCHEDULER STARTED")
     logger.info("=" * 70)
     logger.info(f"Tier 1 – every {news_interval} hour(s)   : news (:00), weather (:30)")
+    logger.info(f"Alerts – every {alerts_interval} hour(s)   : local alerts feed (:10)")
     logger.info(f"Tier 2 – every {sec_interval} hour(s)   : fuel, commodities (:15)")
     logger.info(f"Tier 3 – every {gold_interval} hour(s)  : gold & silver (:45)")
     logger.info(f"Morning maintenance     : {CONFIG['schedule_morning']}")

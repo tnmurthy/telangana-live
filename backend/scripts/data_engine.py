@@ -18,6 +18,7 @@ if sys.stdout.encoding != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
 import datetime
 import re
+import html
 import requests
 import feedparser
 from bs4 import BeautifulSoup
@@ -600,6 +601,23 @@ ALERT_TOPIC_QUERIES = [
 
 ALERT_EXPIRY_DAYS = 3
 
+# Google News RSS search is loose - a query for "Telangana flood warning" also
+# surfaces Kerala/Karnataka flood articles that merely mention Telangana in
+# passing. classify_article()'s region defaults to the generic "Telangana"
+# fallback when no specific district matches, which doesn't distinguish these.
+# Rather than change that shared fallback (News feature depends on it too),
+# require an explicit local keyword hit here before accepting a match.
+TELANGANA_RELEVANCE_KEYWORDS = [
+    "telangana", "hyderabad", "cyberabad", "secunderabad", "warangal",
+    "karimnagar", "khammam", "nizamabad", "malkajgiri", "rangareddy",
+    "medchal", "adilabad", "nalgonda", "mahbubnagar", "siddipet",
+    "ghmc", "hmda", "tsspdcl", "tgspdcl", "hmwssb", "revanth reddy",
+]
+
+
+def _is_telangana_relevant(text_lower):
+    return any(k in text_lower for k in TELANGANA_RELEVANCE_KEYWORDS)
+
 
 def _ai_confirm_alert(title, description, alert_type):
     """Best-effort AI sanity check for ambiguous alert types. Returns True/False.
@@ -682,11 +700,19 @@ def sync_alerts():
 
         for entry in feed.entries[:10]:
             title = entry.get("title", "").strip()
-            description = entry.get("summary", "").strip()
+            # Google News RSS appends " - Source Name" to titles; strip it before
+            # relevance/type matching so a Telangana-based outlet reporting on
+            # Kerala/Karnataka news does not falsely match on its own name.
+            headline_only = re.sub(r"\s+-\s+[^-]+$", "", title)
+            description_raw = entry.get("summary", "").strip()
+            description = html.unescape(re.sub(r"<[^>]+>", "", description_raw)).strip()
             if not title or title in existing_titles:
                 continue
 
-            text = f"{title} {description}".lower()
+            text = headline_only.lower()  # match on the clean headline only - description is RSS boilerplate, not reliable signal
+            if not _is_telangana_relevant(text):
+                continue
+
             matched = None
             for pattern in ALERT_PATTERNS:
                 if re.search(pattern["regex"], text, re.I):
