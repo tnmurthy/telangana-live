@@ -8,33 +8,48 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.npm-cache/
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# Editor / IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
+.vs/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+.gemini/
 
-.vercel
+.vercel/
 
 # Playwright
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
+# Python/runtime caches
 __pycache__
-. e n v  
- 
-.env
-graphify-out/cache/
+*.py[cod]
 tmp_pytest/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
 ga_credentials.json
+
+# Generated analysis output
+graphify-out/
+
+# Local scratch/temp artifacts
+scratch/
+*.tmpenv
+*.patch
