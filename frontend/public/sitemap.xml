@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://telangana.live/government</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://telangana.live/rates/fuel</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>

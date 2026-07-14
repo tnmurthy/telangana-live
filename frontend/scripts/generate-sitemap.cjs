@@ -22,6 +22,7 @@ const staticRoutes = [
   { url: '/panchang', changefreq: 'daily', priority: 0.7 },
   { url: '/budget', changefreq: 'weekly', priority: 0.7 },
   { url: '/politicians', changefreq: 'weekly', priority: 0.7 },
+  { url: '/government', changefreq: 'weekly', priority: 0.8 },
   { url: '/property-tax', changefreq: 'monthly', priority: 0.6 }
 ];
 

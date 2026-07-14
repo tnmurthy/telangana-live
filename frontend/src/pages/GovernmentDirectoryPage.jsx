@@ -1,14 +1,18 @@
 import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowUpRight, Building2, ExternalLink, Landmark, MapPinned, Search, ShieldCheck } from 'lucide-react';
-import { districtDirectoryUrl, governmentDirectory, governmentDirectoryCategories } from '../data/governmentDirectoryData';
-import { districts } from '../data/districts';
+import { Link } from 'react-router-dom';
+import { Building2, ExternalLink, Landmark, MapPinned, Search, ShieldCheck } from 'lucide-react';
+import { governmentDirectory, governmentDirectoryCategories } from '../data/governmentDirectoryData';
+import districtsData from '../data/districts.json';
 
 const categoryIcon = { Departments: Building2, 'State bodies': Landmark, 'Citizen services': ShieldCheck };
 
 export default function GovernmentDirectoryPage() {
   const [query, setQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
+  const districtEntries = useMemo(() => Object.entries(districtsData)
+    .map(([slug, meta]) => ({ slug, ...meta }))
+    .sort((a, b) => a.district.localeCompare(b.district)), []);
   const entries = useMemo(() => {
     const term = query.trim().toLowerCase();
     return governmentDirectory.filter((entry) => (activeCategory === 'All' || entry.category === activeCategory)
@@ -37,7 +41,37 @@ export default function GovernmentDirectoryPage() {
 
     <section aria-live="polite"><div className="mb-4 flex items-center justify-between"><h2 className="font-heading text-xl font-black text-white">{activeCategory === 'All' ? 'Official directory' : activeCategory}</h2><span className="text-xs text-text-muted">{entries.length} links</span></div>{entries.length ? <div className="grid gap-3 md:grid-cols-2">{entries.map((entry) => { const Icon = categoryIcon[entry.category]; return <a key={entry.name} href={entry.url} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition hover:-translate-y-0.5 hover:border-telangana-green/40 hover:bg-white/[0.05]"><div className="flex gap-4"><div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-telangana-green/10 text-telangana-green ring-1 ring-telangana-green/20"><Icon className="h-5 w-5" /></div><div className="min-w-0 flex-1"><div className="flex items-start justify-between gap-3"><h3 className="font-bold leading-snug text-white group-hover:text-telangana-green">{entry.name}</h3><ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-text-muted group-hover:text-telangana-green" /></div><p className="mt-1.5 text-sm leading-6 text-text-secondary">{entry.description}</p><span className="mt-3 inline-flex rounded-md bg-white/[0.06] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-text-muted">{entry.tag}</span></div></div></a>; })}</div> : <div className="rounded-2xl border border-dashed border-white/15 p-10 text-center text-sm text-text-muted">No official directory links match “{query}”.</div>}</section>
 
-    <section className="rounded-[24px] border border-white/[0.08] bg-gradient-to-br from-white/[0.045] to-transparent p-6 sm:p-7"><div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between"><div><div className="flex items-center gap-2 text-heritage-gold"><MapPinned className="h-5 w-5" /><h2 className="font-heading text-xl font-black">District web directory</h2></div><p className="mt-2 max-w-2xl text-sm leading-6 text-text-secondary">Locate the official district administration website for notices, collectorate contacts and local public services.</p></div><a href={districtDirectoryUrl} target="_blank" rel="noopener noreferrer" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-heritage-gold px-4 py-2.5 text-xs font-black text-[#1d1606] transition hover:bg-heritage-gold-light">Open official directory <ArrowUpRight className="h-4 w-4" /></a></div><div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">{districts.map((district) => <a key={district.name} href={districtDirectoryUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-white/[0.06] bg-black/10 px-3 py-2 text-xs text-text-secondary transition hover:border-telangana-green/35 hover:text-white">{district.name}</a>)}</div></section>
+    <section className="rounded-[24px] border border-white/[0.08] bg-gradient-to-br from-white/[0.045] to-transparent p-6 sm:p-7">
+      <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+        <div>
+          <div className="flex items-center gap-2 text-heritage-gold">
+            <MapPinned className="h-5 w-5" />
+            <h2 className="font-heading text-xl font-black">District pages</h2>
+          </div>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-text-secondary">
+            These are the existing district pages already used across Telangana.live for local news, services and district-specific context.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        {districtEntries.map((district) => (
+          <Link
+            key={district.slug}
+            to={`/${district.slug}`}
+            className="group rounded-xl border border-white/[0.06] bg-black/10 px-4 py-3 transition hover:-translate-y-0.5 hover:border-telangana-green/35 hover:bg-white/[0.04]"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-bold text-white group-hover:text-telangana-green">{district.title}</p>
+                <p className="mt-1 text-[11px] leading-5 text-text-muted">{district.subtitle}</p>
+              </div>
+              <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-text-muted group-hover:text-telangana-green" />
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
     <p className="border-l-2 border-heritage-gold/70 pl-3 text-xs leading-5 text-text-muted">Telangana.live is an independent civic guide. Transactions, applications and official records are handled on the linked government websites.</p>
   </main>;
 }
