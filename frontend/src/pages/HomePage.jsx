@@ -11,6 +11,7 @@ import { useEmergency } from '../hooks/useEmergency';
 import { Link } from 'react-router-dom';
 import useJsonLd from '../hooks/useJsonLd';
 import LifeEventWizard from '../components/LifeEventWizard';
+import AlertsBanner from '../components/AlertsBanner';
 import ProgrammaticAd from '../components/ProgrammaticAd';
 
 
@@ -171,6 +172,8 @@ export default function HomePage() {
       <section className="animate-liquid-in">
         <StoriesBar />
       </section>
+
+      <AlertsBanner />
 
       {/* Prominent Civic Action Hub */}
       <section className="animate-fade-in delay-100">
