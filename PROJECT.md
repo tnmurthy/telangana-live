@@ -141,6 +141,7 @@ The roadmap for the telangana.live civic helper portal consists of the following
   - ✅ `.agents/` session debris removed (24 files/dirs from a single orchestration run); `rules/`, `skills/`, `workflows/`, `team_roster.md` kept as persistent config. — `5176967`
   - ✅ Dead code removed: orphaned landing-page component cluster (Button/CTA/Features/Hero/Navigation/Pricing), superseded `Footer.tsx`/`NewsPage.jsx`, unused backend agents (`business_analyst`, `content_updater`, `transit_sync_agent`, `water_sync_agent`). Verified with a clean prod build. — `4e8b8a4`
   - ✅ `deployment/wrangler.toml` **kept** — retained as a Cloudflare Pages backup/alt deployment path alongside the primary Vercel setup.
+  - **Follow-up found later (2026-07-14):** a full nested duplicate clone (`telangana-live/telangana-live/`, ~278MB, its own `.git` on the `master` branch) was discovered sitting inside the repo — unrelated to this milestone's original scope, predating it. Confirmed safe (0 unpushed commits, `master` fully synced with `origin/master`) and removed, except `.pytest_cache` and `frontend/.npm-cache`, which are permission-locked and need an Administrator PowerShell session on the owner's machine to clear.
 
 ### ✅ Milestone 2: UI & PWA Integration (Complete)
 * **Goal:** Load the Markdown pages into the React frontend and bundle them using MDX/frontmatter or a local Vite content parser.
@@ -167,6 +168,18 @@ The roadmap for the telangana.live civic helper portal consists of the following
   - ✅ **Multi-step progressive disclosure**, deliberately hand-holding: each topic step has exactly one primary action (an in-app guide link, not scattered external tabs) and a mandatory acknowledgment checkbox gating "Continue" — no accidental skipping ahead. Final step shows a completion checklist recap.
   - **DigiLocker:** intentionally not built. A real connector needs government API/OAuth credentials this project doesn't have access to; faking one would be worse than not having it. Kept as external link-outs via MeeSeva, same pattern used for the existing Resident journey.
   - — `bb2253c`
+
+### ✅ Milestone 4.5: Local Alerts Feed (Complete)
+* **Goal:** Surface real-time civic disruptions (floods, power/water outages, road closures, bandhs, weather warnings) instead of requiring citizens to piece this together from general news.
+* **Origin:** Scoped by benchmarking against a comparable civic platform (`forthepeople`), which implements this as a per-district Google News RSS scan with regex-based type/severity classification.
+* **Outcome:**
+  - ✅ **Backend sync job** — `sync_alerts()` in `backend/scripts/data_engine.py`: regex-first classification against 8 alert types (flood, natural disaster, emergency, weather, strike, road closure, power outage, water supply) over 6 topic queries against Google News RSS. Regionally scoped state-wide rather than per-district (reuses `core.news_classifier.classify_article()`'s existing region inference instead of multiplying RSS queries per district). Auto-expires alerts after 3 days, dedupes by title. Writes `frontend/src/data/alerts.json`.
+  - ✅ **AI-filtering decision:** regex-first, cheap and reliable, matching the proven approach this was benchmarked against. An *optional* Ollama confidence pass runs only for the more ambiguous alert types (strike/road closure/power outage/water supply), and only while the provider keeps responding — alerts never depend on AI being available, mirroring the graceful-degradation pattern already used by `sync_ai_pulse()`.
+  - ✅ **Precision fixes found via live testing** (not theoretical): (1) out-of-state articles that merely mentioned "Telangana" in passing were leaking through via `classify_article()`'s generic region fallback — added an explicit local-keyword relevance filter scoped to this feature only, without touching the shared classifier. (2) Google News RSS appends the source name to both `title` and `description` fields, which was defeating the relevance filter (a Telangana outlet reporting on Kerala floods matched on its own name) — fixed by matching against the cleaned headline only. (3) stored `description` was raw unescaped HTML; now stripped and entity-decoded.
+  - ✅ **Scheduler wiring** — runs every 2 hours (`backend/scheduler.py`), configurable via `CONFIG['alerts_sync_interval_hours']`. Also included in the twice-daily full-refresh maintenance passes.
+  - ✅ **Frontend** — `AlertsPage.jsx` (`/alerts`): full list, filterable by severity, links out to source. `AlertsBanner.jsx`: homepage banner deliberately restrained to avoid banner fatigue — only critical/high severity, capped at 2 alerts, session-only dismiss (not persisted) so a real emergency can't be permanently hidden by a stale dismissal.
+  - **Unrelated bug fixed along the way:** `scheduler.py` had `from config import CONFIG`, but the module actually lives at `backend/core/config.py` — the entire scheduler couldn't start at all until this was corrected.
+  - — backend: pushed via merge `f758fda`; frontend: `e925e72`
 
 ---
 
