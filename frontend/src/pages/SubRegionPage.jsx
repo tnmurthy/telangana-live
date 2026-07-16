@@ -63,8 +63,40 @@ export default function SubRegionPage() {
         "identifier": meta.district
     };
 
+    const districtFaqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": `What does the ${meta.title} page cover?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `It covers local news, civic updates, public services, weather, rates and district-specific context for ${meta.district}.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `Can I find services for ${meta.district} here?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Yes. The page surfaces service directories, health, utilities and local support tools relevant to ${meta.district}.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `Is this the official district website?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Telangana.live is an independent civic guide that organizes local information and links to official sources."
+                }
+            }
+        ]
+    };
+
     useJsonLd(breadcrumbSchema, `breadcrumb-subregion-${region || 'hyderabad'}`);
     useJsonLd(localAreaSchema, `area-subregion-${region || 'hyderabad'}`);
+    useJsonLd(districtFaqSchema, `faq-subregion-${region || 'hyderabad'}`);
 
     const regionNews = useMemo(() => {
         const district = meta.district.toLowerCase();
@@ -123,14 +155,35 @@ export default function SubRegionPage() {
                     {Icons[meta.icon] && Icons[meta.icon]({ className: "w-32 h-32" })}
                 </div>
                 <div className="relative z-10">
-                    <h2 className="section-title text-3xl sm:text-4xl gold-text mb-2">
+                    <h1 className="section-title text-3xl sm:text-4xl gold-text mb-2">
                         {meta.title}
-                    </h2>
+                    </h1>
                     <p className="text-text-secondary font-medium italic">
                         {meta.subtitle}
                     </p>
                 </div>
             </div>
+
+            <section className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 sm:p-6">
+                <div className="grid gap-4 lg:grid-cols-[1.2fr_.8fr] lg:items-start">
+                    <div>
+                        <h2 className="text-xl font-black text-white">District overview</h2>
+                        <p className="mt-2 text-sm leading-7 text-text-secondary">
+                            {meta.title} brings together district news, civic services, local utilities and actionable public information for {meta.district}.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                        <div className="rounded-xl bg-white/[0.04] p-3">
+                            <strong className="block text-xl text-white">Local</strong>
+                            <span className="text-[10px] uppercase tracking-wider text-text-muted">News & services</span>
+                        </div>
+                        <div className="rounded-xl bg-white/[0.04] p-3">
+                            <strong className="block text-xl text-white">Official</strong>
+                            <span className="text-[10px] uppercase tracking-wider text-text-muted">Sources linked</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Local Pride: ODOP Widget */}
             {odopData && odopData[meta.district] && (
@@ -215,6 +268,23 @@ export default function SubRegionPage() {
                         </div>
                     </div>
                 )}
+            </section>
+
+            <section className="space-y-4">
+                <div>
+                    <h2 className="text-xl font-black text-white">District questions</h2>
+                    <p className="mt-1 text-sm text-text-secondary">Quick answers for readers landing directly on the district page.</p>
+                </div>
+                <div className="grid gap-3">
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
+                        <h3 className="font-bold text-white">Why is this page useful?</h3>
+                        <p className="mt-2 text-sm leading-6 text-text-secondary">It acts as the district-specific homepage for users who want news, utilities, and services without searching the whole site.</p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
+                        <h3 className="font-bold text-white">What kind of updates appear here?</h3>
+                        <p className="mt-2 text-sm leading-6 text-text-secondary">Local news, civic utility dashboards, district-linked services and support sources tied to {meta.district}.</p>
+                    </div>
+                </div>
             </section>
         </div>
     );

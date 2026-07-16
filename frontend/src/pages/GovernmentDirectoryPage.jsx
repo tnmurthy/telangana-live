@@ -1,15 +1,18 @@
 import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Building2, ExternalLink, Landmark, MapPinned, Search, ShieldCheck } from 'lucide-react';
-import { governmentDirectory, governmentDirectoryCategories } from '../data/governmentDirectoryData';
+import { Building2, ExternalLink, Landmark, MapPinned, PhoneCall, Search, ShieldCheck } from 'lucide-react';
+import { governmentDirectory, governmentDirectoryCategories, governmentHelplines } from '../data/governmentDirectoryData';
 import districtsData from '../data/districts.json';
+import useJsonLd from '../hooks/useJsonLd';
 
 const categoryIcon = { Departments: Building2, 'State bodies': Landmark, 'Citizen services': ShieldCheck };
 
 export default function GovernmentDirectoryPage() {
   const [query, setQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
+  const departmentEntries = useMemo(() => governmentDirectory.filter((entry) => entry.category === 'Departments'), []);
+  const helplineEntries = useMemo(() => governmentHelplines, []);
   const districtEntries = useMemo(() => Object.entries(districtsData)
     .map(([slug, meta]) => ({ slug, ...meta }))
     .sort((a, b) => a.district.localeCompare(b.district)), []);
@@ -18,6 +21,52 @@ export default function GovernmentDirectoryPage() {
     return governmentDirectory.filter((entry) => (activeCategory === 'All' || entry.category === activeCategory)
       && (!term || [entry.name, entry.description, entry.tag, entry.category].join(' ').toLowerCase().includes(term)));
   }, [activeCategory, query]);
+
+  const governmentSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Telangana Government Directory',
+    url: 'https://telangana.live/government',
+    description: 'A Telangana-focused directory of official departments, state bodies, citizen services, helplines and district pages.',
+    about: {
+      '@type': 'GovernmentOrganization',
+      name: 'Government of Telangana',
+    },
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is the Telangana Government Directory on Telangana.live?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'It is a curated starting point for official Telangana departments, state bodies, citizen services, helplines and district pages.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Are these official government links?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. The page links out to official Telangana government portals and existing district pages on Telangana.live.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I find district pages from here?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. The district section links directly to the existing district pages for Hyderabad and the other Telangana districts.',
+        },
+      },
+    ],
+  };
+
+  useJsonLd(governmentSchema, 'government-directory-schema');
+  useJsonLd(faqSchema, 'government-directory-faq-schema');
 
   return <main className="max-w-6xl mx-auto px-4 mt-6 pb-24 space-y-8 animate-fade-in">
     <Helmet>
@@ -40,6 +89,76 @@ export default function GovernmentDirectoryPage() {
     <section className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center"><label className="relative block"><Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search departments, services or topics..." className="w-full rounded-xl border border-white/10 bg-white/[0.035] py-3 pl-11 pr-4 text-sm text-white outline-none transition focus:border-telangana-green/60 focus:ring-1 focus:ring-telangana-green/30 placeholder:text-text-muted" /></label><div className="flex gap-2 overflow-x-auto pb-1 lg:justify-end">{governmentDirectoryCategories.map((category) => <button key={category} onClick={() => setActiveCategory(category)} className={`whitespace-nowrap rounded-full px-4 py-2 text-xs font-bold transition ${activeCategory === category ? 'bg-telangana-green text-[#062218]' : 'border border-white/10 bg-white/[0.025] text-text-secondary hover:border-white/25 hover:text-white'}`}>{category}</button>)}</div></section>
 
     <section aria-live="polite"><div className="mb-4 flex items-center justify-between"><h2 className="font-heading text-xl font-black text-white">{activeCategory === 'All' ? 'Official directory' : activeCategory}</h2><span className="text-xs text-text-muted">{entries.length} links</span></div>{entries.length ? <div className="grid gap-3 md:grid-cols-2">{entries.map((entry) => { const Icon = categoryIcon[entry.category]; return <a key={entry.name} href={entry.url} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition hover:-translate-y-0.5 hover:border-telangana-green/40 hover:bg-white/[0.05]"><div className="flex gap-4"><div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-telangana-green/10 text-telangana-green ring-1 ring-telangana-green/20"><Icon className="h-5 w-5" /></div><div className="min-w-0 flex-1"><div className="flex items-start justify-between gap-3"><h3 className="font-bold leading-snug text-white group-hover:text-telangana-green">{entry.name}</h3><ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-text-muted group-hover:text-telangana-green" /></div><p className="mt-1.5 text-sm leading-6 text-text-secondary">{entry.description}</p><span className="mt-3 inline-flex rounded-md bg-white/[0.06] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-text-muted">{entry.tag}</span></div></div></a>; })}</div> : <div className="rounded-2xl border border-dashed border-white/15 p-10 text-center text-sm text-text-muted">No official directory links match “{query}”.</div>}</section>
+
+    <section className="space-y-4">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="font-heading text-xl font-black text-white">Departments</h2>
+          <p className="mt-1 text-sm text-text-secondary">Core Telangana departments, grouped as a fast official-entry directory.</p>
+        </div>
+        <span className="text-xs text-text-muted">{departmentEntries.length} departments</span>
+      </div>
+      <div className="grid gap-3 md:grid-cols-2">
+        {departmentEntries.map((entry) => {
+          const Icon = categoryIcon.Departments;
+          return <a key={entry.name} href={entry.url} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition hover:-translate-y-0.5 hover:border-heritage-gold/40 hover:bg-white/[0.05]">
+            <div className="flex gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-heritage-gold/10 text-heritage-gold ring-1 ring-heritage-gold/20">
+                <Icon className="h-5 w-5" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="font-bold leading-snug text-white group-hover:text-heritage-gold">{entry.name}</h3>
+                  <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-text-muted group-hover:text-heritage-gold" />
+                </div>
+                <p className="mt-1.5 text-sm leading-6 text-text-secondary">{entry.description}</p>
+                <span className="mt-3 inline-flex rounded-md bg-white/[0.06] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-text-muted">{entry.tag}</span>
+              </div>
+            </div>
+          </a>;
+        })}
+      </div>
+    </section>
+
+    <section className="space-y-4">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="font-heading text-xl font-black text-white">Helplines, addresses and support contacts</h2>
+          <p className="mt-1 text-sm text-text-secondary">A compact directory of urgent numbers and official support entry points.</p>
+        </div>
+        <span className="text-xs text-text-muted">{helplineEntries.length} contacts</span>
+      </div>
+      <div className="grid gap-3 lg:grid-cols-2">
+        {helplineEntries.map((entry) => (
+          <a
+            key={entry.name}
+            href={entry.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition hover:-translate-y-0.5 hover:border-telangana-green/40 hover:bg-white/[0.05]"
+          >
+            <div className="flex gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-telangana-green/10 text-telangana-green ring-1 ring-telangana-green/20">
+                <PhoneCall className="h-5 w-5" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="font-bold leading-snug text-white group-hover:text-telangana-green">{entry.name}</h3>
+                  <ExternalLink className="mt-0.5 h-4 w-4 shrink-0 text-text-muted group-hover:text-telangana-green" />
+                </div>
+                <p className="mt-1.5 text-sm leading-6 text-text-secondary">{entry.description}</p>
+                <div className="mt-3 grid gap-2 text-xs text-text-secondary sm:grid-cols-2">
+                  <div><span className="text-text-muted">Number:</span> {entry.number}</div>
+                  <div><span className="text-text-muted">Office:</span> {entry.officeAddress}</div>
+                  <div className="sm:col-span-2"><span className="text-text-muted">Email:</span> {entry.email}</div>
+                </div>
+                <span className="mt-3 inline-flex rounded-md bg-white/[0.06] px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-text-muted">{entry.tag}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
 
     <section className="rounded-[24px] border border-white/[0.08] bg-gradient-to-br from-white/[0.045] to-transparent p-6 sm:p-7">
       <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
@@ -72,6 +191,28 @@ export default function GovernmentDirectoryPage() {
         ))}
       </div>
     </section>
+
+    <section className="space-y-4">
+      <div>
+        <h2 className="font-heading text-xl font-black text-white">Common questions</h2>
+        <p className="mt-1 text-sm text-text-secondary">Quick answers for people looking for the right Telangana government entry point.</p>
+      </div>
+      <div className="grid gap-3">
+        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
+          <h3 className="font-bold text-white">What does this directory cover?</h3>
+          <p className="mt-2 text-sm leading-6 text-text-secondary">It covers departments, state bodies, citizen services, urgent helplines and district pages so users can reach the official destination faster.</p>
+        </div>
+        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
+          <h3 className="font-bold text-white">Why are district pages included?</h3>
+          <p className="mt-2 text-sm leading-6 text-text-secondary">District pages are already the best internal destination for local news, services and area-specific context, so they are the simplest useful Telangana.gov-style layer to surface.</p>
+        </div>
+        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
+          <h3 className="font-bold text-white">Are phone numbers and emails all public?</h3>
+          <p className="mt-2 text-sm leading-6 text-text-secondary">Only the helplines and office details that are safe to present as public entry points are shown here. Where a public email is not clearly listed, the page says so explicitly.</p>
+        </div>
+      </div>
+    </section>
+
     <p className="border-l-2 border-heritage-gold/70 pl-3 text-xs leading-5 text-text-muted">Telangana.live is an independent civic guide. Transactions, applications and official records are handled on the linked government websites.</p>
   </main>;
 }

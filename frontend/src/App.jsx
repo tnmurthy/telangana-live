@@ -1,6 +1,8 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { EmergencyProvider } from './context/EmergencyProvider';
+import { LocaleProvider } from './context/LocaleContext';
+import { SUPPORTED_LOCALES } from './i18n/translations';
 import { useEmergency } from './hooks/useEmergency';
 import { usePageTracking } from './hooks/usePageTracking';
 import Header from './components/Header';
@@ -92,6 +94,54 @@ function EmergencyToggle() {
   );
 }
 
+// Every route below is defined ONCE here, then mounted both at its plain path
+// (default, English, no prefix) and again under each supported locale prefix
+// (/te/..., /ur/...) via the loop in <Routes> below. This keeps the route
+// table DRY instead of hand-duplicating ~35 <Route> elements per locale.
+// Locale itself is detected from the URL by <LocaleProvider> (pathname-based,
+// not a route param), so the exact same page component renders either way -
+// only the surrounding chrome (nav, footer, language switcher) changes
+// language for now. Content translation is a separate, later phase.
+const routeDefs = [
+  { path: '/dashboard', element: <HomePage /> },
+  { path: '/rates/gold', element: <GoldLandingPage /> },
+  { path: '/rates/fuel', element: <FuelLandingPage /> },
+  { path: '/transport/metro', element: <TransportLandingPage /> },
+  { path: '/health/basthi-dawakhana', element: <HealthLandingPage /> },
+  { path: '/news', element: <NewsListingPage /> },
+  { path: '/admin/cockpit', element: <ContentAdminCockpit /> },
+  { path: '/ai-pulse', element: <AIPulsePage /> },
+  { path: '/emergency-contacts', element: <EmergencyContactsPage /> },
+  { path: '/emergency', element: <EmergencyContactsPage /> },
+  { path: '/water-supply', element: <WaterSupplyPage /> },
+  { path: '/ration-pds', element: <RationPDSPage /> },
+  { path: '/jobs', element: <JobBoardPage /> },
+  { path: '/events', element: <CalendarPage /> },
+  { path: '/panchang', element: <PanchangPage /> },
+  { path: '/budget', element: <BudgetTrackerPage /> },
+  { path: '/politicians', element: <PoliticianTrackerPage /> },
+  { path: '/property-tax', element: <PropertyTaxPage /> },
+  { path: '/schemes', element: <SchemesPage /> },
+  { path: '/report', element: <ReportingLandingPage /> },
+  { path: '/search', element: <SearchPage /> },
+  { path: '/weather/forecast', element: <WeatherForecastPage /> },
+  { path: '/weather', element: <WeatherForecastPage /> },
+  { path: '/reservoirs', element: <ReservoirsPage /> },
+  { path: '/parks', element: <ParksPage /> },
+  { path: '/farmers', element: <FarmerPage /> },
+  { path: '/meeseva', element: <MeeSevaPage /> },
+  { path: '/classifieds', element: <ClassifiedsPage /> },
+  { path: '/hacks', element: <HackOfTheDayPage /> },
+  { path: '/insights', element: <StatnosticsPage /> },
+  { path: '/deep-dives', element: <DeepDivesPage /> },
+  { path: '/privacy', element: <PrivacyPolicy /> },
+  { path: '/terms', element: <TermsOfService /> },
+  { path: '/services', element: <ServicesDirectoryPage /> },
+  { path: '/services/:category/:slug', element: <ServiceDetailPage /> },
+  { path: '/alerts', element: <AlertsPage /> },
+  { path: '/government', element: <GovernmentDirectoryPage /> },
+];
+
 function AppContent() {
   const { isEmergencyActive } = useEmergency();
   const location = useLocation();
@@ -113,66 +163,45 @@ function AppContent() {
   const isSplash = location.pathname === '/';
 
   return (
-    <div className="min-h-screen">
-      <MainLayout isEmergencyActive={isEmergencyActive}>
-        <ProactiveAlerts />
-        <ErrorBoundary>
-          <Suspense fallback={<LoadingScreen />}>
-            <Routes>
-              <Route path="/" element={<SplashScreen />} />
-              <Route path="/dashboard" element={<HomePage />} />
-              <Route path="/rates/gold" element={<GoldLandingPage />} />
-              <Route path="/rates/fuel" element={<FuelLandingPage />} />
-              <Route path="/transport/metro" element={<TransportLandingPage />} />
-              <Route path="/health/basthi-dawakhana" element={<HealthLandingPage />} />
-              <Route path="/news" element={<NewsListingPage />} />
-              <Route path="/admin/cockpit" element={<ContentAdminCockpit />} />
-              <Route path="/ai-pulse" element={<AIPulsePage />} />
-              <Route path="/emergency-contacts" element={<EmergencyContactsPage />} />
-              <Route path="/emergency" element={<EmergencyContactsPage />} />
-              <Route path="/water-supply" element={<WaterSupplyPage />} />
-              <Route path="/ration-pds" element={<RationPDSPage />} />
-              <Route path="/jobs" element={<JobBoardPage />} />
-              <Route path="/events" element={<CalendarPage />} />
-              <Route path="/panchang" element={<PanchangPage />} />
-              <Route path="/budget" element={<BudgetTrackerPage />} />
-              <Route path="/politicians" element={<PoliticianTrackerPage />} />
-              <Route path="/property-tax" element={<PropertyTaxPage />} />
-              <Route path="/schemes" element={<SchemesPage />} />
-              <Route path="/report" element={<ReportingLandingPage />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/weather/forecast" element={<WeatherForecastPage />} />
-              <Route path="/weather" element={<WeatherForecastPage />} />
-              <Route path="/reservoirs" element={<ReservoirsPage />} />
-              <Route path="/parks" element={<ParksPage />} />
-              <Route path="/farmers" element={<FarmerPage />} />
-              <Route path="/meeseva" element={<MeeSevaPage />} />
-              <Route path="/classifieds" element={<ClassifiedsPage />} />
-              <Route path="/hacks" element={<HackOfTheDayPage />} />
-              <Route path="/insights" element={<StatnosticsPage />} />
-              <Route path="/deep-dives" element={<DeepDivesPage />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/terms" element={<TermsOfService />} />
-              <Route path="/services" element={<ServicesDirectoryPage />} />
-              <Route path="/services/:category/:slug" element={<ServiceDetailPage />} />
-              <Route path="/alerts" element={<AlertsPage />} />
-              <Route path="/government" element={<GovernmentDirectoryPage />} />
-              <Route path="/:region" element={<SubRegionPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </ErrorBoundary>
-      </MainLayout>
+    <LocaleProvider>
+      <div className="min-h-screen">
+        <MainLayout isEmergencyActive={isEmergencyActive}>
+          <ProactiveAlerts />
+          <ErrorBoundary>
+            <Suspense fallback={<LoadingScreen />}>
+              <Routes>
+                <Route path="/" element={<SplashScreen />} />
 
-      {!isSplash && <Footer />}
-      {!isSplash && <BottomNav />}
-      <div className="hidden lg:block">
-        {!isSplash && <EmergencyToggle />}
-        {!isSplash && <PulseCounter />}
-        {!isSplash && <StickyAnchorAd />}
+                {/* Default (English, unprefixed) routes */}
+                {routeDefs.map((r) => (
+                  <Route key={r.path} path={r.path} element={r.element} />
+                ))}
+
+                {/* Same routes again, once per supported locale prefix */}
+                {SUPPORTED_LOCALES.flatMap((lang) => [
+                  <Route key={`${lang}-root`} path={`/${lang}`} element={<HomePage />} />,
+                  ...routeDefs.map((r) => (
+                    <Route key={`${lang}-${r.path}`} path={`/${lang}${r.path}`} element={r.element} />
+                  )),
+                ])}
+
+                <Route path="/:region" element={<SubRegionPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </ErrorBoundary>
+        </MainLayout>
+
+        {!isSplash && <Footer />}
+        {!isSplash && <BottomNav />}
+        <div className="hidden lg:block">
+          {!isSplash && <EmergencyToggle />}
+          {!isSplash && <PulseCounter />}
+          {!isSplash && <StickyAnchorAd />}
+        </div>
+        <CookieConsent />
       </div>
-      <CookieConsent />
-    </div>
+    </LocaleProvider>
   );
 }
 
@@ -183,4 +212,3 @@ export default function App() {
     </EmergencyProvider>
   );
 }
-

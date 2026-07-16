@@ -2,12 +2,15 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { Icons } from './Icons';
 import { useAppContext } from '../context/AppContext';
+import { useLocale } from '../context/LocaleContext';
+import LanguageSwitcher from './LanguageSwitcher';
 import confetti from 'canvas-confetti';
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [searchFocused, setSearchFocused] = useState(false);
     const { searchQuery, setSearchQuery, theme, toggleTheme, streak } = useAppContext();
+    const { t, localizedPath } = useLocale();
     const inputRef = useRef(null);
     const navigate = useNavigate();
 
@@ -49,7 +52,7 @@ export default function Header() {
                         <button className="lg:hidden p-2 hover:bg-white/5 rounded-xl text-text-secondary transition-colors" aria-label="Menu">
                           <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
                         </button>
-                        <Link to="/dashboard" className="flex items-center gap-2.5 group">
+                        <Link to={localizedPath('/dashboard')} className="flex items-center gap-2.5 group">
                             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-telangana-green to-emerald-600 flex items-center justify-center shadow-lg shadow-telangana-green/20 group-hover:shadow-telangana-green/30 transition-all duration-300 group-hover:scale-105">
                               <svg className="w-5.5 h-5.5 text-heritage-gold filter drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.3)]" viewBox="0 0 512 512" fill="none" stroke="currentColor" strokeWidth={32} strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M 160 440 V 220" />
@@ -84,7 +87,7 @@ export default function Header() {
                                 type="text"
                                 value={searchQuery}
                                 onChange={handleSearch}
-                                placeholder="Search topics, locations, or news..."
+                                placeholder={t('common.searchPlaceholder')}
                                 onFocus={() => setSearchFocused(true)}
                                 onBlur={() => setSearchFocused(false)}
                                 className="w-full bg-transparent border-none py-2.5 px-3 text-sm text-white placeholder:text-text-muted/70 focus:ring-0 outline-none font-medium"
@@ -109,6 +112,8 @@ export default function Header() {
                                 <span className="text-[10px] font-bold text-heritage-gold">{streak.count}d</span>
                             </div>
                         )}
+
+                        <LanguageSwitcher />
 
                         {/* Theme toggle */}
                         <button
