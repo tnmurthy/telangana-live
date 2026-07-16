@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '30 * * * *'
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -46,5 +46,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add frontend/src/data/weatherData.js
           git commit -m "chore: update weather data [automated]" || echo "No changes to commit"
-          git pull --rebase origin master
+          git pull --rebase origin main
           git push

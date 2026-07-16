@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '45 */12 * * *'
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -39,5 +39,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add frontend/src/data/goldRates.js
           git commit -m "chore: update gold and silver rates [automated]" || echo "No changes to commit"
-          git pull --rebase origin master
+          git pull --rebase origin main
           git push

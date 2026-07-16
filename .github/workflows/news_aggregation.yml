@@ -5,7 +5,7 @@ on:
     - cron: '0 */2 * * *'
   workflow_dispatch:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 concurrency:
   group: news-aggregation-master
@@ -26,8 +26,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git fetch origin master
-          git reset --hard origin/master
+          git fetch origin main
+          git reset --hard origin/main
 
       - name: Set up Python
         uses: actions/setup-python@v5
