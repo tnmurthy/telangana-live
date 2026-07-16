@@ -7,6 +7,10 @@ on:
   push:
     branches: [ "master" ]
 
+concurrency:
+  group: news-aggregation-master
+  cancel-in-progress: false
+
 jobs:
   aggregate:
     runs-on: ubuntu-latest
@@ -15,6 +19,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync with latest master
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git fetch origin master
+          git reset --hard origin/master
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,5 +52,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add frontend/src/data/news.json
           git commit -m "chore: sync news feed [automated]" || echo "No changes to commit"
-          git pull --rebase origin master
           git push
