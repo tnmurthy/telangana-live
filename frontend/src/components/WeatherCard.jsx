@@ -6,7 +6,8 @@ const condIcons = {
     'Light Rain': '🌧️', 'Haze': '🌫️', 'Clear': '🌙', 'Thunderstorm': '⛈️',
 };
 
-export default function WeatherCard({ selectedDistrict }) {
+export default function WeatherCard({ selectedDistrict, variant = 'default' }) {
+    const isDistrict = variant === 'district';
     const [weather, setWeather] = useState(null);
     const [source, setSource] = useState('');
     const [loading, setLoading] = useState(true);
@@ -35,7 +36,7 @@ export default function WeatherCard({ selectedDistrict }) {
 
     if (loading) {
         return (
-            <div className="glass-card section-block animate-fade-in h-full flex items-center justify-center min-h-[280px]">
+            <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03]' : 'glass-card section-block'} animate-fade-in h-full flex items-center justify-center min-h-[280px]`}>
                 <div className="flex flex-col items-center gap-3">
                     <div className="w-9 h-9 border-2 border-heritage-gold/30 border-t-heritage-gold rounded-full animate-spin"></div>
                     <p className="text-xs text-text-muted">Loading weather...</p>
@@ -46,7 +47,7 @@ export default function WeatherCard({ selectedDistrict }) {
 
     if (!weather) {
         return (
-            <div className="glass-card section-block animate-fade-in h-full flex items-center justify-center min-h-[280px]">
+            <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03]' : 'glass-card section-block'} animate-fade-in h-full flex items-center justify-center min-h-[280px]`}>
                 <div className="flex flex-col items-center gap-3 text-center px-4">
                     <span className="text-4xl">🌫️</span>
                     <p className="text-sm font-bold text-white">Weather Unavailable</p>
@@ -64,7 +65,7 @@ export default function WeatherCard({ selectedDistrict }) {
     }
 
     return (
-        <div className="glass-card section-block animate-fade-in h-full flex flex-col">
+        <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-4' : 'glass-card section-block'} animate-fade-in h-full flex flex-col`}>
             <div className="flex items-start justify-between mb-4">
                 <div>
                     <h3 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight">{selectedDistrict}</h3>

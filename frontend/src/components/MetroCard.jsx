@@ -16,11 +16,12 @@ function CrowdMeter({ level, label, color }) {
     );
 }
 
-export default function MetroCard() {
+export default function MetroCard({ variant = 'default' }) {
+    const isDistrict = variant === 'district';
     const crowdColors = (level) => level < 50 ? '#22C55E' : level < 75 ? '#EAB308' : '#EF4444';
 
     return (
-        <section className="animate-fade-in">
+        <section className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5' : ''} animate-fade-in`}>
             <div className="section-header">
                 <div>
                     <h2 className="section-title flex items-center gap-2">
@@ -31,7 +32,7 @@ export default function MetroCard() {
             </div>
 
             {/* Metro Takeover Banner */}
-            <div className="glass-card p-4 mb-4 border-blue-500/15 flex items-center gap-3 bg-blue-500/5">
+            <div className={`${isDistrict ? 'rounded-2xl border border-blue-500/15 bg-blue-500/5 p-4 mb-4 flex items-center gap-3' : 'glass-card p-4 mb-4 border-blue-500/15 flex items-center gap-3 bg-blue-500/5'}`}>
                 <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0">
                     <Icons.Heritage className="w-6 h-6 text-blue-400" />
                 </div>
@@ -59,7 +60,7 @@ export default function MetroCard() {
                     ) || [];
 
                     return (
-                        <div key={line.name} className="glass-card p-4 hover-lift-blue flex flex-col justify-between">
+                        <div key={line.name} className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4' : 'glass-card p-4 hover-lift-blue'} flex flex-col justify-between`}>
                             <div>
                                 <div className="flex items-center justify-between mb-2">
                                     <div className="flex items-center gap-2">
@@ -97,7 +98,7 @@ export default function MetroCard() {
 
 
             {/* MMTS + Ladies Special */}
-            <div className="glass-card section-block">
+            <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5' : 'glass-card section-block'}`}>
                 <h3 className="label-xs mb-3 flex items-center gap-2">
                     <Icons.IT className="w-4 h-4" /> MMTS Schedule
                 </h3>

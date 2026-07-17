@@ -126,6 +126,27 @@ export default function SubRegionPage() {
     }, [meta]);
 
     const localSources = districtNewsSources[meta.district] || [];
+    const districtThemes = {
+        hyderabad: {
+            accent: 'from-telangana-green/20 via-emerald-500/10 to-transparent',
+            badge: 'bg-telangana-green/10 text-telangana-green border-telangana-green/20',
+            glow: 'shadow-[0_30px_80px_rgba(0,168,107,0.10)]',
+            ring: 'border-telangana-green/20',
+        },
+        cyberabad: {
+            accent: 'from-blue-500/20 via-cyan-500/10 to-transparent',
+            badge: 'bg-blue-500/10 text-cyan-300 border-blue-400/20',
+            glow: 'shadow-[0_30px_80px_rgba(59,130,246,0.10)]',
+            ring: 'border-blue-400/20',
+        },
+        warangal: {
+            accent: 'from-amber-500/20 via-yellow-500/10 to-transparent',
+            badge: 'bg-amber-500/10 text-amber-300 border-amber-400/20',
+            glow: 'shadow-[0_30px_80px_rgba(245,158,11,0.10)]',
+            ring: 'border-amber-400/20',
+        }
+    };
+    const theme = districtThemes[region] || districtThemes.hyderabad;
 
     return (
         <div className="space-y-12 lg:space-y-16 animate-fade-in p-2 md:p-4 pb-24 max-w-7xl mx-auto">
@@ -187,7 +208,7 @@ export default function SubRegionPage() {
 
             {/* Local Pride: ODOP Widget */}
             {odopData && odopData[meta.district] && (
-                <OdopWidget data={odopData[meta.district]} />
+                <OdopWidget data={odopData[meta.district]} variant="district" />
             )}
 
             {/* Partner Spotlight Section */}
@@ -206,13 +227,13 @@ export default function SubRegionPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {regionPartners.map(partner => (
-                        <PartnerCard key={partner.id} partner={partner} />
+                        <PartnerCard key={partner.id} partner={partner} variant="district" />
                     ))}
                 </div>
             </section>
 
             {/* Local Utilities & Data */}
-            <section className="rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] via-white/[0.03] to-telangana-green/[0.03] p-4 sm:p-5 lg:p-6 shadow-2xl shadow-black/10">
+            <section className={`rounded-3xl border ${theme.ring} bg-gradient-to-br from-white/[0.05] via-white/[0.03] to-white/[0.015] p-4 sm:p-5 lg:p-6 ${theme.glow}`}>
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-5">
                     <div>
                         <h2 className="text-2xl font-black text-white">Local utility snapshot</h2>
@@ -221,7 +242,7 @@ export default function SubRegionPage() {
                         </p>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] bg-telangana-green/10 text-telangana-green border border-telangana-green/20">
+                        <span className={`px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] border ${theme.badge}`}>
                             Live district view
                         </span>
                         <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] bg-heritage-gold/10 text-heritage-gold border border-heritage-gold/20">
@@ -230,23 +251,41 @@ export default function SubRegionPage() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5">
-                    <div className="rounded-3xl border border-white/[0.08] bg-[#0f1626]/80 p-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
-                        <DailyRatesDashboard />
+                <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-4 lg:gap-5">
+                    <div className={`rounded-3xl border ${theme.ring} bg-[#0d1422]/90 p-4 sm:p-5 lg:p-6`}>
+                        <div className={`mb-4 rounded-2xl bg-gradient-to-r ${theme.accent} p-4`}>
+                            <h3 className="text-lg font-black text-white">{meta.title} utility overview</h3>
+                            <p className="mt-1 text-sm text-text-secondary leading-6">
+                                Rates, weather and tariff cards are grouped here to keep the district page visually consistent and easier to scan.
+                            </p>
+                        </div>
+                        <div className="grid gap-4 sm:grid-cols-2">
+                            <div className={`rounded-2xl border ${theme.ring} bg-white/[0.02] p-3`}>
+                                <DailyRatesDashboard variant="district" />
+                            </div>
+                            <div className={`rounded-2xl border ${theme.ring} bg-white/[0.02] p-3`}>
+                                <WeatherCard selectedDistrict={meta.district} variant="district" />
+                            </div>
+                        </div>
                     </div>
-                    <div className="rounded-3xl border border-white/[0.08] bg-[#0f1626]/80 p-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
-                        <WeatherCard selectedDistrict={meta.district} />
-                    </div>
-                    <div className="rounded-3xl border border-white/[0.08] bg-[#0f1626]/80 p-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
-                        <PowerTariffCard />
+                    <div className={`rounded-3xl border ${theme.ring} bg-[#0d1422]/90 p-4 sm:p-5 lg:p-6`}>
+                        <div className={`mb-4 rounded-2xl bg-gradient-to-r ${theme.accent} p-4`}>
+                            <h3 className="text-lg font-black text-white">Power & civic utilities</h3>
+                            <p className="mt-1 text-sm text-text-secondary leading-6">
+                                Tariff context and related civic utility signals for {meta.district}.
+                            </p>
+                        </div>
+                        <div className={`rounded-2xl border ${theme.ring} bg-white/[0.02] p-3`}>
+                            <PowerTariffCard variant="district" />
+                        </div>
                     </div>
                 </div>
             </section>
 
             <div className="space-y-6 lg:space-y-8 mb-12">
-                <MetroCard />
-                <BasthiDawakhana region={meta.district} />
-                <ServicesDirectory region={meta.district} />
+                <MetroCard variant="district" />
+                <BasthiDawakhana region={meta.district} variant="district" />
+                <ServicesDirectory region={meta.district} variant="district" />
             </div>
 
             {/* Local News Feed */}
@@ -277,7 +316,7 @@ export default function SubRegionPage() {
                 {regionNews.length > 0 ? (
                     <div className="flex flex-col gap-6">
                         {regionNews.map((news, idx) => (
-                            <NewsCard key={news.link || idx} news={news} />
+                            <NewsCard key={news.link || idx} news={news} variant="district" />
                         ))}
                     </div>
                 ) : (

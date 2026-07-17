@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
-export default function PartnerCard({ partner }) {
+export default function PartnerCard({ partner, variant = 'default' }) {
+    const isDistrict = variant === 'district';
     // Mock DNA match percentage for the Pomelli aesthetic
     const [dnaMatch] = useState(() => Math.floor(Math.random() * 15) + 85);
 
     return (
-        <div className="glass-card overflow-hidden hover-lift flex flex-col h-full border border-white/[0.08] group relative">
+        <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden' : 'glass-card overflow-hidden hover-lift border border-white/[0.08]'} flex flex-col h-full group relative`}>
             {/* Premium Gradient Glow Backlight */}
-            <div className="absolute inset-0 bg-gradient-to-br from-heritage-gold/5 via-transparent to-telangana-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+            <div className={`absolute inset-0 bg-gradient-to-br ${isDistrict ? 'from-white/0 via-white/0 to-white/0' : 'from-heritage-gold/5 via-transparent to-telangana-green/5'} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
 
             {/* Image section with Premium Badging */}
             <div className="relative h-56 overflow-hidden">
@@ -32,7 +33,7 @@ export default function PartnerCard({ partner }) {
             </div>
 
             {/* Content section */}
-            <div className="p-6 flex flex-col flex-1 relative z-10">
+            <div className={`${isDistrict ? 'p-5' : 'p-6'} flex flex-col flex-1 relative z-10`}>
                 <div className="flex items-center gap-2 mb-3">
                     <span className="text-[10px] bg-white/10 px-2 py-1 rounded-md text-text-muted font-bold uppercase tracking-widest border border-white/5">
                         {partner.category}

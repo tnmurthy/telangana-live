@@ -4,10 +4,11 @@ import { services as staticServicesFallback } from '../data/services';
 import { Icons } from './Icons';
 import { useAppContext } from '../context/AppContext';
 
-function ServiceCard({ service, onExpand, isExpanded }) {
+function ServiceCard({ service, onExpand, isExpanded, variant = 'default' }) {
+    const isDistrict = variant === 'district';
     if (!service) return null;
     return (
-        <div className={`glass-card overflow-hidden transition-all duration-500 ${isExpanded ? 'ring-1 ring-deep-pink/20' : ''}`}>
+        <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03]' : 'glass-card'} overflow-hidden transition-all duration-500 ${isExpanded ? 'ring-1 ring-deep-pink/20' : ''}`}>
             <button onClick={onExpand} className="w-full p-5 sm:p-6 text-left group">
                 <div className="flex items-center gap-4 mb-3">
                     <div className="w-14 h-14 rounded-2xl bg-deep-pink/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-deep-pink/15 transition-all duration-500">
@@ -83,7 +84,8 @@ function ServiceCard({ service, onExpand, isExpanded }) {
     );
 }
 
-export default function ServicesDirectory({ region }) {
+export default function ServicesDirectory({ region, variant = 'default' }) {
+    const isDistrict = variant === 'district';
     const [expanded, setExpanded] = useState(null);
     const [apiServices, setApiServices] = useState({});
     const [loading, setLoading] = useState(true);
@@ -109,7 +111,7 @@ export default function ServicesDirectory({ region }) {
     const serviceKeys = Object.keys(activeServices);
 
     return (
-        <section id="services" className="animate-fade-in">
+        <section id="services" className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5' : ''} animate-fade-in`}>
             <div className="mb-6">
                 <h2 className="section-title">Services Directory</h2>
                 <p className="text-sm text-text-muted mt-1">Official registries and civic portals</p>
@@ -118,7 +120,7 @@ export default function ServicesDirectory({ region }) {
             {loading ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {[1, 2, 3].map(i => (
-                        <div key={i} className="glass-card h-32 animate-pulse flex items-center p-6 gap-4">
+                        <div key={i} className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03]' : 'glass-card'} h-32 animate-pulse flex items-center p-6 gap-4`}>
                             <div className="w-14 h-14 bg-white/5 rounded-2xl"></div>
                             <div className="flex-1 space-y-2">
                                 <div className="h-4 bg-white/10 rounded w-1/2"></div>
@@ -135,6 +137,7 @@ export default function ServicesDirectory({ region }) {
                             service={activeServices[key]} 
                             isExpanded={expanded === key}
                             onExpand={() => setExpanded(expanded === key ? null : key)} 
+                            variant={isDistrict ? 'district' : 'default'}
                         />
                     ))}
                 </div>

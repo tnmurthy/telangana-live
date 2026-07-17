@@ -30,7 +30,8 @@ const historyTabs = [
     { key: 'silver', label: 'Silver', field: 'silver', unit: '₹/g' },
 ];
 
-export default function DailyRatesDashboard() {
+export default function DailyRatesDashboard({ variant = 'default' }) {
+    const isDistrict = variant === 'district';
     const [goldRates, setGoldRates] = useState(staticGoldRates);
     const [fuelPrices, setFuelPrices] = useState(staticFuelPrices);
     const [activeTab, setActiveTab] = useState('gold22k');
@@ -95,7 +96,7 @@ export default function DailyRatesDashboard() {
     ];
 
     return (
-        <div className="glass-card section-block animate-fade-in h-full hover-lift-gold">
+        <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-4' : 'glass-card section-block'} animate-fade-in h-full hover-lift-gold`}>
             <div className="flex items-start justify-between mb-3">
                 <div>
                     <h3 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight flex items-center gap-2">

@@ -50,7 +50,8 @@ function ConfidenceBadge({ score = 78 }) {
 }
 
 /* ─── NewsCard (Liquid Glass Edition) ───────────────────────── */
-const NewsCard = ({ news, isSpotlight = false }) => {
+const NewsCard = ({ news, isSpotlight = false, variant = 'default' }) => {
+  const isDistrict = variant === 'district';
   const { id, title, link, source, published, description, region, category, ai_summary, image_url, credibility_score, other_sources } = news;
   const [speaking, setSpeaking] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -125,7 +126,9 @@ const NewsCard = ({ news, isSpotlight = false }) => {
         className={`liquid-glass liquid-glass-hover group relative flex overflow-hidden cursor-pointer ${
           isSpotlight 
             ? 'flex-col md:flex-row gap-6 p-5 sm:p-6 md:p-8 border border-white/10 col-span-full shadow-[0_0_30px_rgba(0,176,116,0.05)]' 
-            : 'flex-row justify-between items-start gap-4 p-4 sm:p-5'
+            : isDistrict
+              ? 'flex-row justify-between items-start gap-4 p-4 sm:p-5 border border-white/10 bg-white/[0.03]'
+              : 'flex-row justify-between items-start gap-4 p-4 sm:p-5'
         }`}
       >
         {/* Inner Gradient Glow */}

@@ -1,8 +1,9 @@
 import { powerTariff } from '../data/alerts';
 
-export default function PowerTariffCard() {
+export default function PowerTariffCard({ variant = 'default' }) {
+    const isDistrict = variant === 'district';
     return (
-        <div className="glass-card section-block animate-fade-in h-full flex flex-col">
+        <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-4' : 'glass-card section-block'} animate-fade-in h-full flex flex-col`}>
             <div className="flex items-start justify-between mb-4">
                 <div>
                     <h3 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight flex items-center gap-2">
