@@ -212,11 +212,36 @@ export default function SubRegionPage() {
             </section>
 
             {/* Local Utilities & Data */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-8">
-                <DailyRatesDashboard />
-                <WeatherCard selectedDistrict={meta.district} />
-                <PowerTariffCard />
-            </div>
+            <section className="rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.05] via-white/[0.03] to-telangana-green/[0.03] p-4 sm:p-5 lg:p-6 shadow-2xl shadow-black/10">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-5">
+                    <div>
+                        <h2 className="text-2xl font-black text-white">Local utility snapshot</h2>
+                        <p className="mt-1 text-sm text-text-secondary">
+                            Daily rates, weather and power data presented in a consistent district surface.
+                        </p>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] bg-telangana-green/10 text-telangana-green border border-telangana-green/20">
+                            Live district view
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.18em] bg-heritage-gold/10 text-heritage-gold border border-heritage-gold/20">
+                            Civic utilities
+                        </span>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5">
+                    <div className="rounded-3xl border border-white/[0.08] bg-[#0f1626]/80 p-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+                        <DailyRatesDashboard />
+                    </div>
+                    <div className="rounded-3xl border border-white/[0.08] bg-[#0f1626]/80 p-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+                        <WeatherCard selectedDistrict={meta.district} />
+                    </div>
+                    <div className="rounded-3xl border border-white/[0.08] bg-[#0f1626]/80 p-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.18)]">
+                        <PowerTariffCard />
+                    </div>
+                </div>
+            </section>
 
             <div className="space-y-6 lg:space-y-8 mb-12">
                 <MetroCard />
