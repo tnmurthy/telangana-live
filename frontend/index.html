@@ -133,17 +133,30 @@
     <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
     
     <style>
-      /* Critical path CSS for instant theme rendering & FCP optimization */
+      :root {
+        --page-bg: #030705;
+        --page-fg: #f5f5f7;
+        --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      }
+
       html, body {
-        background-color: #030705;
-        color: #f5f5f7;
+        background-color: var(--page-bg);
+        color: var(--page-fg);
         margin: 0;
         padding: 0;
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+        font-family: var(--font-system);
       }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+        scroll-behavior: smooth;
+      }
+
       #root {
         min-height: 100vh;
       }
+
       .app-shell-loading {
         min-height: 100vh;
         display: flex;
@@ -155,8 +168,8 @@
       .app-shell-spinner {
         width: 48px;
         height: 48px;
-        border: 4px solid rgba(0, 176, 116, 0.15);
-        border-top-color: #00b074;
+        border: 4px solid rgba(0, 168, 107, 0.15);
+        border-top-color: #00a86b;
         border-radius: 50%;
         animation: spin 1s linear infinite;
         margin-bottom: 16px;

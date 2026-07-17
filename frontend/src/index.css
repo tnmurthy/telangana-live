@@ -2,32 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Apple Liquid Glass Design System ─────────────────────── */
 :root {
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-glow: rgba(255, 255, 255, 0.05);
-  --accent-primary: #00a86b;
+  --accent-primary: rgba(0, 168, 107, 1);
   --accent-glow: rgba(0, 168, 107, 0.2);
+  --page-bg: #030705;
+  --page-fg: #f5f5f7;
+  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
 }
 
-* {
+html {
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background: var(--page-bg);
+  color: var(--page-fg);
+  font-family: var(--font-system);
 }
 
 body {
-  background-color: #030705; /* Deep Obsidian Black */
-  color: #f5f5f7; /* Apple Off-White */
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  line-height: inherit;
 }
 
-/* ─── Liquid Glass Components ─────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
 @layer components {
-  
   .liquid-glass {
     @apply rounded-[24px] border border-white/[0.1] bg-white/[0.05] backdrop-blur-[40px] 
            shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),_0_8px_32px_rgba(0,0,0,0.5)];
@@ -38,7 +59,6 @@ body {
     @apply hover:bg-white/[0.08] hover:border-white/[0.2] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.3),_0_12px_48px_rgba(0,0,0,0.6)];
   }
 
-  /* Fluid Buttons */
   .btn-liquid {
     @apply flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-[12px] font-bold 
            uppercase tracking-widest transition-all duration-500 active:scale-95;
@@ -48,7 +68,6 @@ body {
     @apply bg-white text-black hover:bg-white/90 shadow-[0_8px_16px_rgba(255,255,255,0.1)];
   }
 
-  /* Typography */
   .heading-liquid {
     @apply font-black tracking-tight text-white leading-tight;
   }
@@ -57,7 +76,6 @@ body {
     @apply text-white/50 font-medium;
   }
 
-  /* Leaflet Popups (Dark Mode) */
   .leaflet-popup-content-wrapper, .leaflet-popup-tip {
     @apply liquid-glass !important;
     background-color: rgba(0, 0, 0, 0.8) !important;
@@ -67,7 +85,6 @@ body {
     color: white !important;
   }
 
-  /* Gradients */
   .gradient-glass {
     background: radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent);
   }
@@ -78,7 +95,6 @@ body {
     animation: shimmer 3s infinite;
   }
 
-  /* Glass Card and Section Block styles */
   .glass-card {
     @apply rounded-[24px] border border-white/[0.08] bg-white/[0.03] backdrop-blur-[20px] 
            shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),_0_8px_32px_rgba(0,0,0,0.4)]
@@ -94,7 +110,6 @@ body {
   }
 }
 
-/* ─── Animations ─────────────────────────────────────────── */
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -109,31 +124,29 @@ body {
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ─── Custom Scrollbar ───────────────────────────────────── */
 .custom-scrollbar::-webkit-scrollbar { width: 3px; }
 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
 .custom-scrollbar::-webkit-scrollbar-thumb {
   @apply rounded-full bg-white/10;
 }
 
-/* ─── Emergency Theme Shifts ────────────────────────────── */
 :root.theme-emergency-heatwave {
-  --accent-primary: #ff5f00;
+  --accent-primary: rgba(255, 95, 0, 1);
   --accent-glow: rgba(255, 95, 0, 0.2);
-  --telangana-green: #ea580c;
-  --telangana-green-light: #fb923c;
+  --telangana-green: rgba(234, 88, 12, 1);
+  --telangana-green-light: rgba(251, 146, 60, 1);
 }
 
 :root.theme-emergency-flood {
-  --telangana-green: #0891b2;
-  --telangana-green-light: #22d3ee;
+  --telangana-green: rgba(8, 145, 178, 1);
+  --telangana-green-light: rgba(34, 211, 238, 1);
 }
 
 :root.theme-emergency-critical {
-  --accent-primary: #ff3b30; /* Apple Crisis Red */
+  --accent-primary: rgba(255, 59, 48, 1);
   --accent-glow: rgba(255, 59, 48, 0.2);
-  --telangana-green: #dc2626;
-  --telangana-green-light: #ef4444;
+  --telangana-green: rgba(220, 38, 38, 1);
+  --telangana-green-light: rgba(239, 68, 68, 1);
 }
 
 .emergency-pulse {
