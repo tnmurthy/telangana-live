@@ -1,0 +1,95 @@
+{
+  "lastUpdated": "2026-05-24T18:07:43Z",
+  "reservoirs": [
+    {
+      "id": "nagarjuna-sagar",
+      "name": "Nagarjuna Sagar",
+      "river": "Krishna",
+      "district": "Nalgonda",
+      "purpose": [
+        "Irrigation",
+        "Hydroelectric",
+        "Drinking"
+      ],
+      "fullLevelFt": 590.0,
+      "currentLevelFt": 542.5,
+      "fullCapacityTMC": 312.04,
+      "currentLevelTMC": 182.4,
+      "inflow": 4200,
+      "outflow": 6500,
+      "inflowUnit": "cusecs",
+      "correlated_news": []
+    },
+    {
+      "id": "srisailam",
+      "name": "Srisailam Dam",
+      "river": "Krishna",
+      "district": "Nagarkurnool",
+      "purpose": [
+        "Hydroelectric",
+        "Irrigation"
+      ],
+      "fullLevelFt": 885.0,
+      "currentLevelFt": 820.2,
+      "fullCapacityTMC": 215.81,
+      "currentLevelTMC": 45.6,
+      "inflow": 2100,
+      "outflow": 1500,
+      "inflowUnit": "cusecs",
+      "alertMessage": "Low storage level. Power generation restricted.",
+      "correlated_news": []
+    },
+    {
+      "id": "sriram-sagar",
+      "name": "Sriram Sagar (SRSP)",
+      "river": "Godavari",
+      "district": "Nizamabad",
+      "purpose": [
+        "Irrigation",
+        "Drinking"
+      ],
+      "fullLevelFt": 1091.0,
+      "currentLevelFt": 1072.0,
+      "fullCapacityTMC": 90.31,
+      "currentLevelTMC": 42.1,
+      "inflow": 1200,
+      "outflow": 500,
+      "inflowUnit": "cusecs",
+      "correlated_news": []
+    },
+    {
+      "id": "osman-sagar",
+      "name": "Osman Sagar",
+      "river": "Musi",
+      "district": "Rangareddy",
+      "purpose": [
+        "Drinking Water - GHMC"
+      ],
+      "fullLevelFt": 1790.0,
+      "currentLevelFt": 1782.5,
+      "fullCapacityTMC": 3.9,
+      "currentLevelTMC": 2.1,
+      "inflow": 0,
+      "outflow": 25,
+      "inflowUnit": "cusecs",
+      "correlated_news": []
+    },
+    {
+      "id": "himayat-sagar",
+      "name": "Himayat Sagar",
+      "river": "Esi",
+      "district": "Rangareddy",
+      "purpose": [
+        "Drinking Water - GHMC"
+      ],
+      "fullLevelFt": 1763.5,
+      "currentLevelFt": 1756.0,
+      "fullCapacityTMC": 2.97,
+      "currentLevelTMC": 1.4,
+      "inflow": 0,
+      "outflow": 15,
+      "inflowUnit": "cusecs",
+      "correlated_news": []
+    }
+  ]
+}

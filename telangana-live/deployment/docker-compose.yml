@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  telangana-live:
+    build: .
+    container_name: telangana-live-web
+    ports:
+      - "8080:80"
+    environment:
+      - VITE_N8N_WEBHOOK_URL=http://localhost:5678/webhook-test/
+    networks:
+      - n8n-net
+    restart: unless-stopped
+
+networks:
+  n8n-net:
+    external: true
+    name: n8n-vercel_n8n-net

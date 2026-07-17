@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "projectType": "mixed",
+  "targets": [
+    {
+      "name": "tests",
+      "type": "executable",
+      "enabled": true,
+      "buildCommand": "python3 -m unittest discover -s tests -p '*.py' -v > test-results.txt 2>&1",
+      "outputPath": "./test-results.txt",
+      "watchPaths": [
+        "*.py",
+        "src/**/*.py",
+        "tests/**/*.py",
+        "pyproject.toml",
+        "requirements.txt",
+        "setup.py"
+      ]
+    }
+  ]
+}

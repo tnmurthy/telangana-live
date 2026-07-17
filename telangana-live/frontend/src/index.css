@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Apple Liquid Glass Design System ─────────────────────── */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-glow: rgba(255, 255, 255, 0.05);
+  --accent-primary: #00a86b;
+  --accent-glow: rgba(0, 168, 107, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #030705; /* Deep Obsidian Black */
+  color: #f5f5f7; /* Apple Off-White */
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Liquid Glass Components ─────────────────────────────── */
+@layer components {
+  
+  .liquid-glass {
+    @apply rounded-[24px] border border-white/[0.1] bg-white/[0.05] backdrop-blur-[40px] 
+           shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),_0_8px_32px_rgba(0,0,0,0.5)];
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .liquid-glass-hover {
+    @apply hover:bg-white/[0.08] hover:border-white/[0.2] hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.3),_0_12px_48px_rgba(0,0,0,0.6)];
+  }
+
+  /* Fluid Buttons */
+  .btn-liquid {
+    @apply flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-[12px] font-bold 
+           uppercase tracking-widest transition-all duration-500 active:scale-95;
+  }
+
+  .btn-liquid-primary {
+    @apply bg-white text-black hover:bg-white/90 shadow-[0_8px_16px_rgba(255,255,255,0.1)];
+  }
+
+  /* Typography */
+  .heading-liquid {
+    @apply font-black tracking-tight text-white leading-tight;
+  }
+
+  .text-liquid-muted {
+    @apply text-white/50 font-medium;
+  }
+
+  /* Leaflet Popups (Dark Mode) */
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    @apply liquid-glass !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    color: white !important;
+  }
+  .leaflet-popup-close-button {
+    color: white !important;
+  }
+
+  /* Gradients */
+  .gradient-glass {
+    background: radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent);
+  }
+
+  .accent-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-liquid-in {
+  animation: liquid-in 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes liquid-in {
+  0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────── */
+.custom-scrollbar::-webkit-scrollbar { width: 3px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-white/10;
+}
+
+/* ─── Emergency Theme Shifts ────────────────────────────── */
+:root.theme-emergency-heatwave {
+  --accent-primary: #ff5f00;
+  --accent-glow: rgba(255, 95, 0, 0.2);
+  --telangana-green: #ea580c;
+  --telangana-green-light: #fb923c;
+}
+
+:root.theme-emergency-flood {
+  --telangana-green: #0891b2;
+  --telangana-green-light: #22d3ee;
+}
+
+:root.theme-emergency-critical {
+  --accent-primary: #ff3b30; /* Apple Crisis Red */
+  --accent-glow: rgba(255, 59, 48, 0.2);
+  --telangana-green: #dc2626;
+  --telangana-green-light: #ef4444;
+}
+
+.emergency-pulse {
+  animation: emergency-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes emergency-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.99); }
+}

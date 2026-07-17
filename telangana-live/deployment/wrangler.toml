@@ -1,0 +1,7 @@
+name = "telangana-live"
+compatibility_date = "2026-03-11"
+pages_build_output_dir = "dist"
+
+[vars]
+# Add transition flags or environment variables here
+ENVIRONMENT = "production"

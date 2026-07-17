@@ -1,0 +1,24 @@
+node_modules
+.git
+dist
+.vercel
+.gemini
+test-results
+tests
+playwright-report
+Dockerfile
+docker-compose.yml
+# nginx.conf is needed for the build
+.env
+.env.example
+README.md
+CHANGELOG.md
+SUMMARY.md
+task.md
+implementation_plan.md
+walkthrough.md
+n8n_walkthrough.md
+*.png
+*.jpg
+*.webp
+*.log

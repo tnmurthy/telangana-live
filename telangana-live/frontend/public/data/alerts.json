@@ -1,0 +1,23 @@
+[
+  {
+    "id": 101,
+    "type": "power",
+    "message": "Real-time: Power restoration in progress for Jubilee Hills Road No. 36",
+    "district": "Hyderabad",
+    "time": "15 mins ago"
+  },
+  {
+    "id": 102,
+    "type": "water",
+    "message": "Alert: HMWSSB reports 20% pressure drop in Gachibowli today",
+    "district": "Hyderabad",
+    "time": "30 mins ago"
+  },
+  {
+    "id": 103,
+    "type": "emergency",
+    "message": "Weather: IMD issues Yellow Alert for light rains in Hyderabad today",
+    "district": "Hyderabad",
+    "time": "1 hour ago"
+  }
+]
