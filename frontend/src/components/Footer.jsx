@@ -26,7 +26,11 @@ export default function Footer() {
 
           {/* Links */}
           <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-text-muted">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <Link to="/dashboard" className="hover:text-white transition-colors">Dashboard</Link>
+            <Link to="/government" className="hover:text-white transition-colors">Government</Link>
+            <Link to="/hyderabad" className="hover:text-white transition-colors">Hyderabad</Link>
+            <Link to="/warangal" className="hover:text-white transition-colors">Warangal</Link>
             <Link to="/news" className="hover:text-white transition-colors">News</Link>
             <Link to="/ai-pulse" className="hover:text-white transition-colors">AI Pulse</Link>
             <Link to="/rates/gold" className="hover:text-white transition-colors">Rates</Link>
