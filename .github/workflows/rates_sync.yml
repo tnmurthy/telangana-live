@@ -41,5 +41,6 @@ jobs:
           git config --local user.name "GitHub Action"
           git add frontend/src/data/goldRates.js frontend/src/data/fuelPrices.js frontend/src/data/pulses.js
           git commit -m "chore: sync market rates (gold, fuel, pulses) [automated]" || echo "No changes to commit"
-          git pull --rebase origin main
+          git fetch origin main
+          git reset --hard origin/main
           git push
