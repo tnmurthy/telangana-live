@@ -214,6 +214,20 @@
     "correlated_civic_entities": []
   },
   {
+    "id": "f33e3791f39fe6c49e0fe34f8bee1e2a",
+    "title": "Police restrictions fail to deter youth from attending Yuva Sangrama Sadassu",
+    "link": "https://telanganatoday.com/police-restrictions-fail-to-deter-youth-from-attending-yuva-sangrama-sadassu",
+    "source": "Telangana Today",
+    "published": "Sat, 18 Jul 2026 20:22:28 +0530",
+    "description": "Despite police restrictions at several junctions, youth and BRS workers reached the Yuva Sangrama Sadassu in Saroornagar in large numbers. Several BRS leaders were initially stopped or placed under house arrest before being allowed to attend the meeting following protests",
+    "category": "Safety",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/07/BRS-3-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "aef9bf2c188e999f21f2d6d32c5b5e02",
     "title": "Chennai Grand Masters 2026: Arjun Erigaisi beats Hans Niemann to claim India’s first win of the tournament",
     "link": "https://telanganatoday.com/chennai-grand-masters-2026-arjun-erigaisi-beats-hans-niemann-to-claim-indias-first-win-of-the-tournament",
@@ -344,31 +358,6 @@
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "3f433b53088a284bf3bc77d1443c3b2c",
-    "title": "JNTU-Hyderabad students demand Andhra professors’ removal from admin posts",
-    "link": "https://telanganatoday.com/jntu-hyderabad-students-demand-andhra-professors-removal-from-admin-posts",
-    "source": "Telangana Today",
-    "published": "Sat, 18 Jul 2026 19:54:32 +0530",
-    "description": "JNTU-Hyderabad students have written to Chief Minister A. Revanth Reddy alleging harassment by university administrators over hostel room disputes. The Students Protection Forum has demanded the removal of top officials and a state-wide university grievance cell",
-    "category": "Education",
-    "region": "Hyderabad",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/07/JNTU-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "metro_line",
-        "entity_id": "Red Line",
-        "score": 1.0
-      },
       {
         "entity_type": "district",
         "entity_id": "Hyderabad",
@@ -657,6 +646,26 @@
     "correlated_civic_entities": []
   },
   {
+    "id": "18e62612742baed4cabc22f4fa6c1a41",
+    "title": "Female influencer claims DU student repeatedly harassed her online",
+    "link": "https://www.siasat.com/female-influencer-claims-du-student-repeatedly-harassed-her-online-3508820/",
+    "source": "Siasat Daily",
+    "published": "Sat, 18 Jul 2026 14:55:31 +0000",
+    "description": "<p>A foreign influencer has claimed that a University of Delhi student named Debanik Mookerjea repeatedly posted harassing comments on her social media platforms and called for his expulsion. &#8220;University of Delhi, you ned to expel student Debanik Mookerjea immediately. I blocked him because he has been nonstop leaving disgusting, sexist and threatening comments on threads,&#8221; &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderab",
+    "category": "Education",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/online-abuse.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
     "id": "983f3d31d8aa4bddcc3f946a87f05df3",
     "title": "Blast at illegal firecracker unit in Ahmedabad, nine dead",
     "link": "https://www.siasat.com/blast-at-illegal-firecracker-unit-in-ahmedabad-nine-dead-3508917/",
@@ -826,26 +835,6 @@
     "category": "General",
     "region": "Hyderabad",
     "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/sata-farewell-indian-ambassador-suhel-ajaz-khan-riyadh-july-2026-1.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "a59673b8c47e9af5e31d60542dded91a",
-    "title": "Super El Niño can hit Telangana, but we are prepared: Uttam",
-    "link": "https://www.siasat.com/super-el-nino-can-hit-telangana-but-we-are-prepared-uttam-3508830/",
-    "source": "Siasat Daily",
-    "published": "Sat, 18 Jul 2026 13:13:06 +0000",
-    "description": "<p>Hyderabad: Irrigation Minister N Uttam Kumar Reddy on Saturday, July 18, warned of high chances of Telangana being affected by the Super El Niño, but assured the government is taking all steps to safeguard water resources. Speaking at a climate change symposium organised by non-profit platform Symposium in Hyderabad, Uttam said Telangana could no longer &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City N",
-    "category": "Weather",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Untitled-design-2026-07-18T183947.053.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": [
@@ -2121,7 +2110,7 @@
     "title": "श्री विवेक निशांत नाथ ने एनएमडीसी के निदेशक (वाणिज्य) का कार्यभार ग्रहण किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286146",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2135,7 +2124,7 @@
     "title": "एएलएमएम नीति में कोई बदलाव नहीं, केंद्र ने चुनिंदा सौर परियोजनाओं के लिए दिसंबर 2026 तक राहत अवधि बढ़ाई",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286166",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2149,7 +2138,7 @@
     "title": "केन्द्रीय गृह एवं सहकारिता मंत्री श्री अमित शाह 19 जुलाई को कोलकाता में विश्व के सबसे बड़े दही उत्पादन संयंत्र का भूमि पूजन करेंगे",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286137",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2163,7 +2152,7 @@
     "title": "प्रधानमंत्री ने गुजरात के अहमदाबाद में हुए हादसे के कारण हुई जनहानि पर शोक व्यक्त किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286158",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2177,7 +2166,7 @@
     "title": "केन्द्रीय गृह एवं सहकारिता मंत्री श्री अमित शाह ने आज पश्चिम बंगाल के सिलीगुड़ी में जूमागाछ बॉर्डर आउटपोस्ट पर सीमा सुरक्षा को और सुदृढ़ करने वाली स्वदेशी और अत्याधुनिक तकनीकों का अवलोकन किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286133",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2191,7 +2180,7 @@
     "title": "ایک لاکھ نوجوان قائدین تیار کرنے کا خواب ’مائی بھارت‘ کے توسط سے شرمندہ تعبیر ہو رہا ہے: ڈاکٹر منسکھ مانڈوِیا",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286153",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2205,7 +2194,7 @@
     "title": "विक्रम-1 की सफलता से भारत एक बड़ी ग्लोबल स्पेस पावर के तौर पर स्थापित, डॉ. जितेंद्र सिंह का कहना है कि यह ऐतिहासिक मिशन पीएम मोदी के अहम स्पेस सुधारों को सही साबित करता है",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286150",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2219,7 +2208,7 @@
     "title": "रेल मंत्री श्री अश्विनी वैष्णव ने रामनगर-देहरादून एक्सप्रेस को हरी झंडी दिखाकर रवाना किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286107",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2233,7 +2222,7 @@
     "title": "एपीईडीए ने जम्मू-कश्मीर से सिंगापुर को प्रीमियम अरेको चेरी और सेंटरोज़ प्लम की पहली खेप के निर्यात को सुगम बनाया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286101",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2247,7 +2236,7 @@
     "title": "एनएचए ने एबी पीएम-जेएवाई और एबीडीएम पर दो दिवसीय राष्ट्रीय समीक्षा बैठक का समापन किया; केंद्र और राज्य स्वास्थ्य सुधारों के अगले चरण के लिए रोडमैप तैयार कर रहे हैं",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2286099",
     "source": "PIB Hyderabad",
-    "published": "Sat, 18 Jul 2026 14:53:21 +0530",
+    "published": "Sat, 18 Jul 2026 14:56:16 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
