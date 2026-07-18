@@ -1,4 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+import { services as staticServicesFallback } from '../data/services';
+
+const API_URL = import.meta.env.VITE_API_URL || window.location.origin;
 
 class CivicServicesAPI {
     constructor() {
@@ -31,9 +33,8 @@ class CivicServicesAPI {
 
             return formattedData;
         } catch (error) {
-            console.error('Error fetching civic services:', error);
-            // Graceful degradation: return empty object if backend is down
-            return {};
+            console.warn('Civic services API unavailable, using static fallback:', error);
+            return staticServicesFallback;
         }
     }
 
