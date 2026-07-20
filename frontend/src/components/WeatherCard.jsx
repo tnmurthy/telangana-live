@@ -1,153 +1,39 @@
 import { useState, useEffect } from 'react';
 import { fetchWeather } from '../services/weatherService';
+import { AlertBox, AqiGauge, Card, CardHeader, StatChip } from './LocalPulse';
 
-const condIcons = {
-    'Sunny': '☀️', 'Partly Cloudy': '⛅', 'Cloudy': '☁️',
-    'Light Rain': '🌧️', 'Haze': '🌫️', 'Clear': '🌙', 'Thunderstorm': '⛈️',
-};
+const condIcons = { Sunny: '☀️', 'Partly Cloudy': '⛅', Cloudy: '☁️', 'Light Rain': '🌧️', Haze: '🌫️', Clear: '🌙', Thunderstorm: '⛈️' };
 
 export default function WeatherCard({ selectedDistrict, variant = 'default' }) {
-    const isDistrict = variant === 'district';
     const [weather, setWeather] = useState(null);
     const [source, setSource] = useState('');
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         let cancelled = false;
-
         async function loadWeather() {
             setLoading(true);
             try {
-                const { data, source } = await fetchWeather(selectedDistrict);
-                if (!cancelled) {
-                    setWeather(data);
-                    setSource(source);
-                    setLoading(false);
-                }
-            } catch (error) {
-                console.error('Failed to fetch weather:', error);
-                if (!cancelled) setLoading(false);
-            }
+                const result = await fetchWeather(selectedDistrict);
+                if (!cancelled) { setWeather(result.data); setSource(result.source); }
+            } catch (error) { console.error('Failed to fetch weather:', error); }
+            finally { if (!cancelled) setLoading(false); }
         }
-
         loadWeather();
         return () => { cancelled = true; };
     }, [selectedDistrict]);
 
-    if (loading) {
-        return (
-            <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03]' : 'glass-card section-block'} animate-fade-in h-full flex items-center justify-center min-h-[280px]`}>
-                <div className="flex flex-col items-center gap-3">
-                    <div className="w-9 h-9 border-2 border-heritage-gold/30 border-t-heritage-gold rounded-full animate-spin"></div>
-                    <p className="text-xs text-text-muted">Loading weather...</p>
-                </div>
-            </div>
-        );
-    }
+    const title = variant === 'district' ? 'Weather & Environment' : selectedDistrict;
+    const status = source === 'live' ? 'Live' : source === 'cache' ? 'Cached' : source === 'mock' ? 'Demo' : null;
+    if (loading) return <Card accent="sky" className="animate-fade-in h-full min-h-[280px] flex items-center justify-center"><p className="text-xs text-text-muted">Loading weather…</p></Card>;
+    if (!weather) return <Card accent="sky" className="animate-fade-in h-full min-h-[280px] flex items-center justify-center"><p className="text-sm text-text-secondary">Weather unavailable.</p></Card>;
+    const hasAdvisory = weather.temp > 40 || weather.condition.toLowerCase().includes('rain') || weather.condition.toLowerCase().includes('cloudy');
 
-    if (!weather) {
-        return (
-            <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03]' : 'glass-card section-block'} animate-fade-in h-full flex items-center justify-center min-h-[280px]`}>
-                <div className="flex flex-col items-center gap-3 text-center px-4">
-                    <span className="text-4xl">🌫️</span>
-                    <p className="text-sm font-bold text-white">Weather Unavailable</p>
-                    <p className="text-xs text-text-muted leading-relaxed">
-                        Live weather data could not be loaded.{' '}
-                        <span className="text-heritage-gold">Set <code className="font-mono">VITE_OWM_API_KEY</code></span> to enable real-time conditions.
-                    </p>
-                </div>
-            </div>
-        );
-    }
-
-    if (source === 'mock') {
-        // Show a subtle "demo data" badge but still render the card
-    }
-
-    return (
-        <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-4' : 'glass-card section-block'} animate-fade-in h-full flex flex-col`}>
-            <div className="flex items-start justify-between mb-4">
-                <div>
-                    <h3 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight">{selectedDistrict}</h3>
-                    <p className="section-subtitle flex items-center gap-1.5">
-                        Weather & AQI
-                        {source === 'live' && <span className="text-[9px] text-success bg-success/10 px-1.5 py-0.5 rounded-full font-semibold uppercase">Live</span>}
-                        {source === 'cache' && <span className="text-[9px] text-heritage-gold bg-heritage-gold/10 px-1.5 py-0.5 rounded-full font-semibold uppercase">Cached</span>}
-                        {source === 'mock' && <span className="text-[9px] text-text-muted bg-white/10 px-1.5 py-0.5 rounded-full font-semibold uppercase">Demo</span>}
-                    </p>
-                </div>
-                <span className="text-4xl sm:text-5xl drop-shadow-lg">{condIcons[weather.condition] || '🌤️'}</span>
-            </div>
-
-            <div className="flex-1 flex flex-col justify-between">
-                {/* Temperature */}
-            <div className="flex items-end gap-1 mb-1">
-                <span className="price-value text-4xl sm:text-5xl text-white">{weather.temp}°</span>
-                <span className="text-text-muted text-base mb-2 font-light">C</span>
-            </div>
-            <p className="text-sm text-text-secondary mb-4 font-medium">
-                {weather.conditionDesc || weather.condition} · Feels like {weather.feelsLike}°C
-            </p>
-
-            {/* Details */}
-            <div className="grid grid-cols-2 gap-2.5 mb-4">
-                <div className="detail-box">
-                    <p className="label-xs mb-1">💧 Humidity</p>
-                    <p className="text-sm font-bold text-white">{weather.humidity}%</p>
-                </div>
-                <div className="detail-box">
-                    <p className="label-xs mb-1">💨 Wind</p>
-                    <p className="text-sm font-bold text-white">{weather.windSpeed} km/h</p>
-                </div>
-            </div>
-
-            {/* AQI */}
-            <div className="detail-box">
-                <div className="flex items-center justify-between mb-2.5">
-                    <p className="label-xs">Air Quality Index</p>
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider"
-                        style={{ backgroundColor: weather.aqiColor + '18', color: weather.aqiColor }}>
-                        {weather.aqiLabel}
-                    </span>
-                </div>
-                <div className="flex items-center gap-3">
-                    <span className="price-value text-2xl" style={{ color: weather.aqiColor }}>{weather.aqi}</span>
-                    <div className="flex-1">
-                        <div className="h-2 bg-white/[0.05] rounded-full overflow-hidden">
-                            <div className="h-full rounded-full transition-all duration-700 ease-out"
-                                style={{ width: `${Math.min((weather.aqi / 500) * 100, 100)}%`, backgroundColor: weather.aqiColor }} />
-                        </div>
-                        <div className="flex justify-between mt-0.5">
-                            <span className="text-[8px] text-text-muted">0</span>
-                            <span className="text-[8px] text-text-muted">500</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Conditional Heatwave/Monsoon Advisory */}
-            {(weather.temp > 40 || weather.condition.toLowerCase().includes('rain') || weather.condition.toLowerCase().includes('cloudy')) && (
-                <div className="mt-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 flex gap-2">
-                    <span className="text-base flex-shrink-0 mt-0.5">
-                        {weather.temp > 40 ? '🥵' : '🌧️'}
-                    </span>
-                    <div className="min-w-0">
-                        <p className="text-[10px] font-bold text-white leading-snug">
-                            {weather.temp > 40 
-                                ? `Extreme heat alert: Local Basthi Dawakhaanas are open with free ORS and cooling relief.` 
-                                : `Heavy rain condition: Basthi Dawakhaanas are offering free diagnostics and seasonal advice.`
-                            }
-                        </p>
-                        <a 
-                            href="/health/basthi-dawakhana"
-                            className="text-[9px] font-bold text-heritage-gold hover:underline mt-1.5 inline-block"
-                        >
-                            Find Nearest Basthi Dawakhana ↗
-                        </a>
-                    </div>
-                </div>
-            )}
-            </div>
-        </div>
-    );
+    return <Card accent="sky" className="animate-fade-in h-full">
+        <CardHeader icon="☁" title={title} subtitle={selectedDistrict} status={status} />
+        <div className="local-pulse-weather-hero"><div><div className="local-pulse-temperature">{weather.temp}°</div><p className="local-pulse-condition">{weather.conditionDesc || weather.condition} · Feels like {weather.feelsLike}°C</p></div><span className="local-pulse-weather-icon" aria-hidden="true">{condIcons[weather.condition] || '🌤️'}</span></div>
+        <div className="local-pulse-stat-grid local-pulse-weather-stats"><StatChip label="Humidity" value={`${weather.humidity}%`} /><StatChip label="Wind" value={`${weather.windSpeed} km/h`} /></div>
+        <AqiGauge value={weather.aqi} label={weather.aqiLabel} color={weather.aqiColor} />
+        {hasAdvisory && <AlertBox icon={weather.temp > 40 ? '☀' : '☂'} lead={weather.temp > 40 ? 'Extreme heat alert.' : 'Rain health advisory.'} href="/health/basthi-dawakhana" linkLabel="Find nearest Basthi Dawakhana">{weather.temp > 40 ? ' Basthi Dawakhaanas offer free ORS and cooling relief.' : ' Basthi Dawakhaanas offer free diagnostics and seasonal advice.'}</AlertBox>}
+    </Card>;
 }

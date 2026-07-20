@@ -3,6 +3,9 @@ import { basthiDawakhanas } from '../data/transportData';
 
 export default function BasthiDawakhana({ region, variant = 'default' }) {
     const isDistrict = variant === 'district';
+    const shellClass = isDistrict
+        ? 'rounded-3xl border border-white/10 bg-[#0c1320]/95 p-4 sm:p-5 shadow-[0_20px_60px_rgba(0,0,0,0.22)]'
+        : '';
     const [search, setSearch] = useState('');
     const defaultZone = ['hyderabad', 'cyberabad', 'malkajgiri'].includes(region?.toLowerCase()) ? region.toLowerCase() : 'all';
     const [selectedZone, setSelectedZone] = useState(defaultZone);
@@ -61,7 +64,7 @@ export default function BasthiDawakhana({ region, variant = 'default' }) {
     ];
 
     return (
-        <section className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5' : ''} animate-fade-in`}>
+        <section className={`${shellClass} animate-fade-in`}>
             <div className="section-header">
                 <div>
                     <h2 className="section-title flex items-center gap-2">🏥 Basthi Dawakhana</h2>
@@ -94,7 +97,7 @@ export default function BasthiDawakhana({ region, variant = 'default' }) {
             {/* Results */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {filtered.map((d) => (
-                    <div key={d.name} className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4' : 'glass-card p-4 hover-lift-green'}`}>
+                    <div key={d.name} className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 shadow-sm' : 'glass-card p-4 hover-lift-green'}`}>
                         <div className="flex items-start justify-between mb-2">
                             <div>
                                 <h4 className="text-sm font-semibold text-white">{d.name}</h4>

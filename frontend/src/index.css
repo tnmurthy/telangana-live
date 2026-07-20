@@ -3,12 +3,30 @@
 @tailwind utilities;
 
 :root {
+  /* Local Pulse surface system */
+  --page-bg: #0A0B0D;
+  --surface: #15181D;
+  --surface-raised: #1B1F26;
+  --border: rgba(255, 255, 255, .08);
+  --border-strong: rgba(255, 255, 255, .14);
+  --text-primary: #F3F4F2;
+  --text-secondary: #9CA0A8;
+  --text-muted: #6B7078;
+  --amber: #F0B429;
+  --amber-text: #F7CC5F;
+  --sky: #38BDF8;
+  --sky-text: #7DD3FC;
+  --orange: #F97316;
+  --orange-text: #FDA35C;
+  --green: #34D399;
+  --red: #F87171;
+  --radius-card: 18px;
+  --radius-sm: 10px;
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-glow: rgba(255, 255, 255, 0.05);
   --accent-primary: rgba(0, 168, 107, 1);
   --accent-glow: rgba(0, 168, 107, 0.2);
-  --page-bg: #030705;
   --page-fg: #f5f5f7;
   --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;

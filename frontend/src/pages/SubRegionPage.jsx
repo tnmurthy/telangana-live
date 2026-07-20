@@ -251,34 +251,10 @@ export default function SubRegionPage() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-4 lg:gap-5">
-                    <div className={`rounded-3xl border ${theme.ring} bg-[#0d1422]/90 p-4 sm:p-5 lg:p-6`}>
-                        <div className={`mb-4 rounded-2xl bg-gradient-to-r ${theme.accent} p-4`}>
-                            <h3 className="text-lg font-black text-white">{meta.title} utility overview</h3>
-                            <p className="mt-1 text-sm text-text-secondary leading-6">
-                                Rates, weather and tariff cards are grouped here to keep the district page visually consistent and easier to scan.
-                            </p>
-                        </div>
-                        <div className="grid gap-4 sm:grid-cols-2">
-                            <div className={`rounded-2xl border ${theme.ring} bg-white/[0.02] p-3`}>
-                                <DailyRatesDashboard variant="district" />
-                            </div>
-                            <div className={`rounded-2xl border ${theme.ring} bg-white/[0.02] p-3`}>
-                                <WeatherCard selectedDistrict={meta.district} variant="district" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`rounded-3xl border ${theme.ring} bg-[#0d1422]/90 p-4 sm:p-5 lg:p-6`}>
-                        <div className={`mb-4 rounded-2xl bg-gradient-to-r ${theme.accent} p-4`}>
-                            <h3 className="text-lg font-black text-white">Power & civic utilities</h3>
-                            <p className="mt-1 text-sm text-text-secondary leading-6">
-                                Tariff context and related civic utility signals for {meta.district}.
-                            </p>
-                        </div>
-                        <div className={`rounded-2xl border ${theme.ring} bg-white/[0.02] p-3`}>
-                            <PowerTariffCard variant="district" />
-                        </div>
-                    </div>
+                <div className="local-pulse-grid">
+                    <DailyRatesDashboard variant="district" />
+                    <WeatherCard selectedDistrict={meta.district} variant="district" />
+                    <PowerTariffCard variant="district" />
                 </div>
             </section>
 

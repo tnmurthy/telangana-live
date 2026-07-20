@@ -6,9 +6,12 @@ import { useAppContext } from '../context/AppContext';
 
 function ServiceCard({ service, onExpand, isExpanded, variant = 'default' }) {
     const isDistrict = variant === 'district';
+    const shellClass = isDistrict
+        ? 'rounded-3xl border border-white/10 bg-[#0c1320]/95 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.22)]'
+        : 'glass-card overflow-hidden';
     if (!service) return null;
     return (
-        <div className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03]' : 'glass-card'} overflow-hidden transition-all duration-500 ${isExpanded ? 'ring-1 ring-deep-pink/20' : ''}`}>
+        <div className={`${shellClass} transition-all duration-500 ${isExpanded ? 'ring-1 ring-deep-pink/20' : ''}`}>
             <button onClick={onExpand} className="w-full p-5 sm:p-6 text-left group">
                 <div className="flex items-center gap-4 mb-3">
                     <div className="w-14 h-14 rounded-2xl bg-deep-pink/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-deep-pink/15 transition-all duration-500">
@@ -111,7 +114,7 @@ export default function ServicesDirectory({ region, variant = 'default' }) {
     const serviceKeys = Object.keys(activeServices);
 
     return (
-        <section id="services" className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5' : ''} animate-fade-in`}>
+        <section id="services" className={`${isDistrict ? 'rounded-3xl border border-white/10 bg-[#0c1320]/95 p-4 sm:p-5 shadow-[0_20px_60px_rgba(0,0,0,0.22)]' : ''} animate-fade-in`}>
             <div className="mb-6">
                 <h2 className="section-title">Services Directory</h2>
                 <p className="text-sm text-text-muted mt-1">Official registries and civic portals</p>

@@ -4,9 +4,12 @@ import { Sparkles, MapPin, ExternalLink, Users } from 'lucide-react';
 const OdopWidget = ({ data, variant = 'default' }) => {
     if (!data) return null;
     const isDistrict = variant === 'district';
+    const outerClass = isDistrict
+        ? 'rounded-3xl border border-white/10 bg-[#0c1320]/95 shadow-[0_20px_60px_rgba(0,0,0,0.22)]'
+        : 'rounded-3xl bg-gradient-to-br from-telangana-red/90 to-telangana-red p-[1px] shadow-lg';
 
     return (
-        <div className={`relative group overflow-hidden ${isDistrict ? 'rounded-3xl border border-white/10 bg-white/[0.03]' : 'rounded-3xl bg-gradient-to-br from-telangana-red/90 to-telangana-red p-[1px] shadow-lg'} animate-fade-in my-8`}>
+        <div className={`relative group overflow-hidden ${outerClass} animate-fade-in my-8`}>
             <div className="absolute inset-0 bg-black/10 z-0"></div>
             
             <div className={`relative z-10 h-full w-full overflow-hidden ${isDistrict ? 'bg-transparent rounded-3xl' : 'bg-white dark:bg-card rounded-[23px]'}`}>
@@ -29,17 +32,17 @@ const OdopWidget = ({ data, variant = 'default' }) => {
                     </div>
 
                     {/* Content Section */}
-                    <div className={`md:w-3/5 p-6 md:p-8 flex flex-col justify-center ${isDistrict ? 'bg-transparent' : 'bg-gradient-to-br from-white to-gray-50 dark:from-card dark:to-card/80'}`}>
+                    <div className={`md:w-3/5 p-5 sm:p-6 md:p-8 flex flex-col justify-center ${isDistrict ? 'bg-transparent' : 'bg-gradient-to-br from-white to-gray-50 dark:from-card dark:to-card/80'}`}>
                         <div className="flex items-center gap-2 text-telangana-red mb-3">
                             <MapPin className="w-5 h-5" />
                             <span className="font-bold tracking-widest uppercase text-sm">{data.district}</span>
                         </div>
                         
-                        <h3 className="text-3xl font-black text-text mb-4 leading-tight">
+                        <h3 className={`font-black mb-4 leading-tight ${isDistrict ? 'text-2xl sm:text-3xl text-white' : 'text-3xl text-text'}`}>
                             {data.productName}
                         </h3>
                         
-                        <p className="text-text-muted leading-relaxed mb-6 font-medium">
+                        <p className={`leading-relaxed mb-6 font-medium ${isDistrict ? 'text-text-secondary' : 'text-text-muted'}`}>
                             {data.description}
                         </p>
 

@@ -14,9 +14,23 @@ export default {
         'text-muted': '#8ca093',
         'text-secondary': '#a8b7af',
         success: '#22c55e',
+        surface: '#15181D',
+        'surface-raised': '#1B1F26',
+        amber: '#F0B429',
+        'amber-text': '#F7CC5F',
+        sky: '#38BDF8',
+        'sky-text': '#7DD3FC',
+        orange: '#F97316',
+        'orange-text': '#FDA35C',
+        pulsegreen: '#34D399',
+        red: '#F87171',
       },
       fontFamily: {
         heading: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        card: '18px',
+        sm: '10px',
       },
       keyframes: {
         ticker: {
