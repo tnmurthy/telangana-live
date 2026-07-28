@@ -13,6 +13,7 @@ import useJsonLd from '../hooks/useJsonLd';
 import LifeEventWizard from '../components/LifeEventWizard';
 import AlertsBanner from '../components/AlertsBanner';
 import ProgrammaticAd from '../components/ProgrammaticAd';
+import QuickActionTile from '../components/QuickActionTile';
 
 
 const CATEGORIES = [
@@ -307,6 +308,19 @@ export default function HomePage() {
       </section>
 
       <DistrictOnboarding />
+
+      <section className="space-y-3" aria-labelledby="quick-actions-heading">
+        <div>
+          <h2 id="quick-actions-heading" className="text-xl font-black text-white">Quick actions</h2>
+          <p className="mt-1 text-sm text-text-secondary">Go straight to the civic tools you use most.</p>
+        </div>
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <QuickActionTile to="/services" icon={<Icons.FileText />} label="Services Directory" description="Find civic guides" />
+          <QuickActionTile to="/meeseva" icon={<Icons.FileText />} label="MeeSeva Portal" description="Apply for services" />
+          <QuickActionTile to="/report" icon={<Icons.Emergency />} label="Report Issue" description="Raise a civic concern" />
+          <QuickActionTile to="/rates/gold" icon={<Icons.TrendingUp />} label="Market Rates" description="Check daily prices" />
+        </div>
+      </section>
 
       {/* Life Event Wizard (New Resident Setup) */}
       <section className="animate-fade-in delay-200">

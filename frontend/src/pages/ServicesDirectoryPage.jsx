@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
 import { getCategories } from '../utils/markdownParser';
+import ServiceCard from '../components/ServiceCard';
 import { 
   FileText, 
   CreditCard, 
@@ -13,7 +13,6 @@ import {
   Activity, 
   Award, 
   Search, 
-  ChevronRight,
   HelpCircle
 } from 'lucide-react';
 
@@ -142,20 +141,17 @@ export default function ServicesDirectoryPage() {
                     {description}
                   </p>
 
-                  <ul className="space-y-2 mb-6">
+                  <div className="grid gap-3 sm:grid-cols-2">
                     {cat.guides.map(guide => (
-                      <li key={guide.fileSlug}>
-                        <Link 
-                          to={`/services/${guide.categorySlug}/${guide.fileSlug}`}
-                          className="flex items-center justify-between p-2 rounded-lg bg-white/[0.01] hover:bg-white/[0.04] border border-white/[0.02] text-xs text-text-secondary hover:text-white font-medium transition-all group"
-                          aria-label={`Guide: ${guide.title}`}
-                        >
-                          <span className="truncate pr-2">{guide.title}</span>
-                          <ChevronRight className="w-3.5 h-3.5 text-text-muted group-hover:text-telangana-green transition-colors flex-shrink-0" />
-                        </Link>
-                      </li>
+                      <ServiceCard
+                        key={guide.fileSlug}
+                        title={guide.title}
+                        description={description}
+                        href={`/services/${guide.categorySlug}/${guide.fileSlug}`}
+                        destinationType="in-app"
+                      />
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
             );
