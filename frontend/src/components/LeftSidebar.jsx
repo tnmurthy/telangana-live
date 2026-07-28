@@ -76,7 +76,6 @@ const LeftSidebar = () => (
         <NavItem to="/ration-pds" icon={<Icons.Govt size="sm" />} label="Ration / PDS" />
         <NavItem to="/water-supply" icon={<Icons.WaterDrop size="sm" />} label="Water Schedule" />
         <NavItem to="/jobs" icon={<Icons.Briefcase size="sm" />} label="Jobs Board" />
-        <NavItem to="/classifieds" icon={<Icons.Building size="sm" />} label="Classifieds" />
         <NavItem to="/classifieds" icon={<Icons.Building size="sm" />} label="Hyper-Local Market" />
       </SidebarSection>
 

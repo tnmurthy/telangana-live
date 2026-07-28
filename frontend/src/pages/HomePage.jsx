@@ -219,27 +219,6 @@ export default function HomePage() {
 
       <AlertsBanner />
 
-      <section className="space-y-4 animate-fade-in delay-175">
-        <div>
-          <h2 className="text-xl font-black text-white">What the dashboard covers</h2>
-          <p className="mt-1 text-sm text-text-secondary">A single entry point for live Telangana information, practical civic tools and district context.</p>
-        </div>
-        <div className="grid gap-3 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
-            <h3 className="font-bold text-white">Live civic briefing</h3>
-            <p className="mt-2 text-sm leading-6 text-text-secondary">Breaking news, alerts, weather, rates and utility signals are grouped into one fast-loading feed.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
-            <h3 className="font-bold text-white">District-aware context</h3>
-            <p className="mt-2 text-sm leading-6 text-text-secondary">The page adapts to your district and links into the existing district pages for deeper local coverage.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
-            <h3 className="font-bold text-white">Civic actions</h3>
-            <p className="mt-2 text-sm leading-6 text-text-secondary">Citizen grievances, emergency flows and service shortcuts stay visible so users can act quickly.</p>
-          </div>
-        </div>
-      </section>
-
       {/* Prominent Civic Action Hub */}
       <section className="animate-fade-in delay-100">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -327,27 +306,6 @@ export default function HomePage() {
         <LifeEventWizard />
       </section>
 
-      <section className="space-y-4">
-        <div>
-          <h2 className="text-xl font-black text-white">Common questions</h2>
-          <p className="mt-1 text-sm text-text-secondary">Quick answers for people using the Telangana.live dashboard.</p>
-        </div>
-        <div className="grid gap-3">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
-            <h3 className="font-bold text-white">What should I use this page for?</h3>
-            <p className="mt-2 text-sm leading-6 text-text-secondary">Use it as the default civic home for Telangana: latest updates, local district context, emergency signals and quick service entry points.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
-            <h3 className="font-bold text-white">Where do I find my district feed?</h3>
-            <p className="mt-2 text-sm leading-6 text-text-secondary">Use the district onboarding and local briefing sections to jump into your district page and see the most relevant updates.</p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5">
-            <h3 className="font-bold text-white">Is this an official government site?</h3>
-            <p className="mt-2 text-sm leading-6 text-text-secondary">No. Telangana.live is an independent civic guide that points you to official portals and services.</p>
-          </div>
-        </div>
-      </section>
-
       {/* Local District Briefing */}
       {activeCategory === 'All' && myDistrict && myDistrictNews.length > 0 && (
         <FeedSection
@@ -375,6 +333,27 @@ export default function HomePage() {
           </div>
         )}
       </div>
+
+      <section className="space-y-4 animate-fade-in delay-175">
+        <div>
+          <h2 className="text-xl font-black text-white">What the dashboard covers</h2>
+          <p className="mt-1 text-sm text-text-secondary">A single entry point for live Telangana information, practical civic tools and district context.</p>
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 className="font-bold text-white">Live civic briefing</h3><p className="mt-2 text-sm leading-6 text-text-secondary">Breaking news, alerts, weather, rates and utility signals are grouped into one fast-loading feed.</p></div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 className="font-bold text-white">District-aware context</h3><p className="mt-2 text-sm leading-6 text-text-secondary">The page adapts to your district and links into the existing district pages for deeper local coverage.</p></div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 className="font-bold text-white">Civic actions</h3><p className="mt-2 text-sm leading-6 text-text-secondary">Citizen grievances, emergency flows and service shortcuts stay visible so users can act quickly.</p></div>
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        <div><h2 className="text-xl font-black text-white">Common questions</h2><p className="mt-1 text-sm text-text-secondary">Quick answers for people using the Telangana.live dashboard.</p></div>
+        <div className="grid gap-3">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 className="font-bold text-white">What should I use this page for?</h3><p className="mt-2 text-sm leading-6 text-text-secondary">Use it as the default civic home for Telangana: latest updates, local district context, emergency signals and quick service entry points.</p></div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 className="font-bold text-white">Where do I find my district feed?</h3><p className="mt-2 text-sm leading-6 text-text-secondary">Use the district onboarding and local briefing sections to jump into your district page and see the most relevant updates.</p></div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5"><h3 className="font-bold text-white">Is this an official government site?</h3><p className="mt-2 text-sm leading-6 text-text-secondary">No. Telangana.live is an independent civic guide that points you to official portals and services.</p></div>
+        </div>
+      </section>
     </div>
   );
 }
