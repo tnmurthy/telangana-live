@@ -28,12 +28,31 @@ except ImportError:
     except ImportError:
         genai = None
 
+    # Patch httpx for older client SDKs if httpx is present
+    try:
+        import httpx
+        for _cls in (httpx.Client, httpx.AsyncClient):
+            _orig = _cls.__init__
+            def _make_patched(orig):
+                def _patched(self, *args, **kwargs):
+                    if 'proxies' in kwargs:
+                        proxies = kwargs.pop('proxies')
+                        if proxies and not kwargs.get('proxy'):
+                            kwargs['proxy'] = next(iter(proxies.values())) if isinstance(proxies, dict) else proxies
+                    orig(self, *args, **kwargs)
+                return _patched
+            _cls.__init__ = _make_patched(_orig)
+    except ImportError:
+        pass
+
     class LLMProvider:
         DEFAULT_MODELS = {
             "anthropic": "claude-3-5-haiku-20241022",
-            "gemini": "gemini-1.5-flash",
-            "ollama": "qwen2.5-coder:7b",
-            "zai": "glm-4-plus",
+            "gemini":    "gemini-2.0-flash",
+            "ollama":    "qwen2.5-coder:7b",
+            "zai":       "glm-4-plus",
+            "moonshot":  "moonshot-v1-8k",
+            "groq":      "llama-3.1-8b-instant",
         }
 
         def __init__(self, config: Optional[Dict[str, Any]] = None):
@@ -69,6 +88,20 @@ except ImportError:
             else:
                 self.gemini_available = False
 
+            # Moonshot (Kimi) key
+            moonshot_key = (
+                self.config.get('moonshot_api_key')
+                or os.getenv('MOONSHOT_API_KEY')
+            )
+            self.moonshot_available = bool(moonshot_key)
+
+            # Groq key (free tier)
+            groq_key = (
+                self.config.get('groq_api_key')
+                or os.getenv('GROQ_API_KEY')
+            )
+            self.groq_available = bool(groq_key)
+
             # Ollama URL
             self.ollama_url = (
                 self.config.get('ollama_url')
@@ -78,22 +111,23 @@ except ImportError:
         def generate(
             self,
             prompt: str,
-            provider: str = "anthropic",
-            model: str = "claude-3-haiku-20240307",
+            provider: str = "gemini",
+            model: str = "gemini-2.0-flash",
             temperature: float = 0.7,
             max_tokens: int = 1500,
             retries: int = 2,
             system_prompt: Optional[str] = None,
         ) -> Dict[str, Any]:
+            """Generate text via the requested provider with retry and provider fallback."""
             configured_provider = self.config.get('llm_provider', provider)
-            default_priority = ["anthropic", "gemini", "zai", "ollama"]
+            default_priority = ["gemini", "groq", "moonshot", "anthropic", "zai", "ollama"]
 
+            # Build fallback chain: configured first, then requested, then rest
             provider_fallback_chain = []
             if configured_provider in default_priority:
                 provider_fallback_chain.append(configured_provider)
             if provider not in provider_fallback_chain and provider in default_priority:
                 provider_fallback_chain.append(provider)
-
             for p in default_priority:
                 if p not in provider_fallback_chain:
                     provider_fallback_chain.append(p)
@@ -101,39 +135,72 @@ except ImportError:
             last_error = None
 
             for p in provider_fallback_chain:
-                # Check availability of the provider
+                # ── Availability checks ───────────────────────────────────────
                 if p == "anthropic":
                     if not anthropic:
-                        logger.info("Skipping Anthropic fallback (anthropic package not installed).")
+                        logger.info("Skipping Anthropic (package not installed).")
                         continue
                     if not self.anthropic_client:
-                        logger.info("Skipping Anthropic fallback (no API key configured).")
+                        logger.info("Skipping Anthropic (no API key).")
                         continue
                 elif p == "gemini":
                     if not genai:
-                        logger.info("Skipping Gemini fallback (google-generativeai package not installed).")
+                        logger.info("Skipping Gemini (package not installed).")
                         continue
                     if not self.gemini_available:
-                        logger.info("Skipping Gemini fallback (no API key configured).")
+                        logger.info("Skipping Gemini (no API key).")
+                        continue
+                elif p == "moonshot":
+                    if not self.moonshot_available:
+                        logger.info("Skipping Moonshot (no API key).")
+                        continue
+                elif p == "groq":
+                    if not self.groq_available:
+                        logger.info("Skipping Groq (no API key).")
                         continue
                 elif p == "zai":
-                    zai_key = self.config.get('z_ai_api_key') or os.getenv('Z_AI_API_KEY')
-                    if not zai_key:
-                        logger.info("Skipping Z_AI fallback (no API key configured).")
+                    if not (self.config.get('z_ai_api_key') or os.getenv('Z_AI_API_KEY')):
+                        logger.info("Skipping ZAI (no API key).")
                         continue
 
-                # Determine the model name to use
-                if p == configured_provider:
-                    current_model = self.config.get('model', model)
-                elif p == provider:
-                    current_model = model
+                # ── Provider-aware model resolution ───────────────────────────
+                if p == "gemini":
+                    current_model = (
+                        self.config.get('gemini_model')
+                        or self.DEFAULT_MODELS['gemini']
+                    )
+                    if provider == "gemini" and model not in ("claude-3-haiku-20240307", "", None):
+                        current_model = model  # caller explicitly passed a gemini model
+                elif p == "moonshot":
+                    current_model = (
+                        self.config.get('moonshot_model')
+                        or self.DEFAULT_MODELS['moonshot']
+                    )
+                    if provider == "moonshot" and model not in ("claude-3-haiku-20240307", "", None):
+                        current_model = model
+                elif p == "groq":
+                    current_model = (
+                        self.config.get('groq_model')
+                        or self.DEFAULT_MODELS['groq']
+                    )
+                    if provider == "groq" and model not in ("claude-3-haiku-20240307", "", None):
+                        current_model = model
+                elif p == "anthropic":
+                    current_model = (
+                        self.config.get('model')
+                        or self.DEFAULT_MODELS['anthropic']
+                    )
+                    if provider == "anthropic" and model not in ("claude-3-haiku-20240307", "", None):
+                        current_model = model
+                elif p == "zai":
+                    current_model = (
+                        self.config.get('z_ai_model')
+                        or self.DEFAULT_MODELS['zai']
+                    )
+                    if provider == "zai" and model not in ("claude-3-haiku-20240307", "", None):
+                        current_model = model
                 else:
-                    if p == "anthropic":
-                        current_model = self.config.get('model') or self.DEFAULT_MODELS.get(p)
-                    elif p == "zai":
-                        current_model = self.config.get('z_ai_model') or self.DEFAULT_MODELS.get(p)
-                    else:
-                        current_model = self.DEFAULT_MODELS.get(p)
+                    current_model = self.DEFAULT_MODELS.get(p, model)
 
                 logger.info(f"Attempting LLM generation with provider={p!r}, model={current_model!r}")
 
@@ -147,6 +214,10 @@ except ImportError:
                             return self._call_ollama(prompt, current_model, temperature, system_prompt)
                         elif p == "zai":
                             return self._call_zai(prompt, current_model, max_tokens)
+                        elif p == "moonshot":
+                            return self._call_moonshot(prompt, current_model, temperature, max_tokens, system_prompt)
+                        elif p == "groq":
+                            return self._call_groq(prompt, current_model, temperature, max_tokens, system_prompt)
                         else:
                             raise ValueError(f"Unknown provider: {p!r}")
                     except Exception as exc:
@@ -155,9 +226,9 @@ except ImportError:
                         if attempt < retries:
                             time.sleep(2 ** attempt)
 
-                logger.error(f"Provider {p!r} exhausted all retries. Error: {last_error}. Falling back...")
+                logger.error(f"Provider {p!r} exhausted retries. Last error: {last_error}. Falling back...")
 
-            logger.error(f"All LLM providers in fallback chain failed. Last error: {last_error}")
+            logger.error(f"All LLM providers failed. Last error: {last_error}")
             return {"text": None, "tokens": 0, "error": f"All providers failed. Last error: {str(last_error)}"}
 
         def _call_anthropic(self, prompt, model, temperature, max_tokens, system_prompt):
@@ -183,7 +254,7 @@ except ImportError:
                 raise ValueError("Google Gemini API is not configured.")
             generation_config = genai.types.GenerationConfig(temperature=temperature)
             model_kwargs = {"model_name": model}
-            if system_prompt and "1.5" in model:
+            if system_prompt:
                 model_kwargs["system_instruction"] = system_prompt
             model_instance = genai.GenerativeModel(**model_kwargs)
             response = model_instance.generate_content(prompt, generation_config=generation_config)
@@ -198,7 +269,7 @@ except ImportError:
             }
             if system_prompt:
                 payload["system"] = system_prompt
-            response = requests.post(f"{self.ollama_url}/api/generate", json=payload, timeout=5)
+            response = requests.post(f"{self.ollama_url}/api/generate", json=payload, timeout=60)
             response.raise_for_status()
             data = response.json()
             tokens = data.get("prompt_eval_count", 0) + data.get("eval_count", 0)
@@ -212,17 +283,75 @@ except ImportError:
             )
             if not zai_key:
                 raise ValueError("Z_AI_API_KEY is missing.")
-            headers = {
-                'Authorization': f'Bearer {zai_key}',
-                'Content-Type': 'application/json',
-            }
+            headers = {'Authorization': f'Bearer {zai_key}', 'Content-Type': 'application/json'}
             payload = {
                 'model': model,
                 'messages': [{'role': 'user', 'content': prompt}],
                 'max_tokens': max_tokens,
             }
+            response = requests.post(f'{zai_base_url}/chat/completions', headers=headers, json=payload, timeout=60)
+            response.raise_for_status()
+            data = response.json()
+            text = data['choices'][0]['message']['content']
+            usage = data.get('usage', {})
+            tokens = usage.get('prompt_tokens', 0) + usage.get('completion_tokens', 0)
+            return {"text": text, "tokens": tokens}
+
+        def _call_moonshot(
+            self, prompt: str, model: str, temperature: float, max_tokens: int,
+            system_prompt: Optional[str] = None
+        ) -> Dict[str, Any]:
+            """Call Moonshot (Kimi) via its OpenAI-compatible Chat Completions API."""
+            moonshot_key = self.config.get('moonshot_api_key') or os.getenv('MOONSHOT_API_KEY')
+            moonshot_base_url = (
+                self.config.get('moonshot_base_url')
+                or os.getenv('MOONSHOT_BASE_URL', 'https://api.moonshot.cn/v1')
+            )
+            if not moonshot_key:
+                raise ValueError("MOONSHOT_API_KEY is missing.")
+            headers = {'Authorization': f'Bearer {moonshot_key}', 'Content-Type': 'application/json'}
+            messages = []
+            if system_prompt:
+                messages.append({'role': 'system', 'content': system_prompt})
+            messages.append({'role': 'user', 'content': prompt})
+            payload = {
+                'model': model,
+                'messages': messages,
+                'temperature': temperature,
+                'max_tokens': max_tokens,
+            }
             response = requests.post(
-                f'{zai_base_url}/chat/completions', headers=headers, json=payload, timeout=60
+                f'{moonshot_base_url}/chat/completions', headers=headers, json=payload, timeout=60
+            )
+            response.raise_for_status()
+            data = response.json()
+            text = data['choices'][0]['message']['content']
+            usage = data.get('usage', {})
+            tokens = usage.get('prompt_tokens', 0) + usage.get('completion_tokens', 0)
+            return {"text": text, "tokens": tokens}
+
+        def _call_groq(
+            self, prompt: str, model: str, temperature: float, max_tokens: int,
+            system_prompt: Optional[str] = None
+        ) -> Dict[str, Any]:
+            """Call Groq via its OpenAI-compatible API (free tier, no credit card)."""
+            groq_key = self.config.get('groq_api_key') or os.getenv('GROQ_API_KEY')
+            if not groq_key:
+                raise ValueError("GROQ_API_KEY is missing.")
+            headers = {'Authorization': f'Bearer {groq_key}', 'Content-Type': 'application/json'}
+            messages = []
+            if system_prompt:
+                messages.append({'role': 'system', 'content': system_prompt})
+            messages.append({'role': 'user', 'content': prompt})
+            payload = {
+                'model': model,
+                'messages': messages,
+                'temperature': temperature,
+                'max_tokens': max_tokens,
+            }
+            response = requests.post(
+                'https://api.groq.com/openai/v1/chat/completions',
+                headers=headers, json=payload, timeout=30
             )
             response.raise_for_status()
             data = response.json()
