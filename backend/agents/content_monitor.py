@@ -15,19 +15,22 @@ class ContentMonitor:
 
     def fetch_website(self):
         """Fetch and parse website content."""
-        try:
-            response = requests.get(CONFIG['site_url'], timeout=10)
-            response.raise_for_status()
-            soup = BeautifulSoup(response.content, 'html.parser')
+        urls_to_try = [CONFIG.get('site_url', 'https://telangana.live'), 'http://localhost:5173', 'http://localhost:3000']
+        for url in urls_to_try:
+            try:
+                response = requests.get(url, timeout=5)
+                response.raise_for_status()
+                soup = BeautifulSoup(response.content, 'html.parser')
 
-            for tag in soup(['script', 'style']):
-                tag.decompose()
+                for tag in soup(['script', 'style']):
+                    tag.decompose()
 
-            text = soup.get_text(separator='\n', strip=True)
-            return text[:8000]
-        except Exception as exc:
-            logger.error(f"Error fetching website: {exc}")
-            return None
+                text = soup.get_text(separator='\n', strip=True)
+                return text[:8000]
+            except Exception as exc:
+                logger.warning(f"Could not fetch website from {url}: {exc}")
+        logger.error("Error fetching website from all candidates.")
+        return None
 
     def analyze_for_updates(self, content):
         prompt = f"""

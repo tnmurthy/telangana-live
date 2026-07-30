@@ -44,9 +44,11 @@ def get_alerts(district: str = Query(None, description="Filter alerts by distric
     # For MVP, we fetch fresh alerts via AI if possible, or fall back to cached file
     try:
         alerts = fetch_latest_alerts()
-        if not alerts and os.path.exists(ALERTS_FILE):
-            with open(ALERTS_FILE, "r", encoding="utf-8") as f:
-                alerts = json.load(f)
+        if not alerts:
+            alerts_path = ALERTS_FILE if os.path.exists(ALERTS_FILE) else os.path.join(REO_ROOT, "frontend", "src", "data", "alerts.json")
+            if os.path.exists(alerts_path):
+                with open(alerts_path, "r", encoding="utf-8") as f:
+                    alerts = json.load(f)
         
         if district:
             alerts = [a for a in alerts if district.lower() in (a.get("district") or "").lower()]

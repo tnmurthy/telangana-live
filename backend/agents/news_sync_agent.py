@@ -31,9 +31,11 @@ class NewsSyncAgent:
             with open(self.feeds_file, encoding="utf-8") as f:
                 data = json.load(f)
             feeds = {}
-            for category in ("telangana", "national"):
-                for item in data.get(category, []):
-                    feeds[item["source"]] = item["url"]
+            if isinstance(data, dict):
+                for category, items in data.items():
+                    for item in items:
+                        if isinstance(item, dict) and "source" in item and "url" in item:
+                            feeds[item["source"]] = item["url"]
             return feeds
         except Exception as e:
             logger.warning(f"Could not load feeds.json: {e}. Using defaults.")

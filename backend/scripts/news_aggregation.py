@@ -30,7 +30,14 @@ def load_feeds():
     if not os.path.exists(FEEDS_FILE):
         return {"telangana": []}
     with open(FEEDS_FILE, "r") as f:
-        return json.load(f)
+        data = json.load(f)
+    # Combine all category feeds if structured as dict of categories
+    if isinstance(data, dict):
+        all_feeds = {}
+        for cat, feeds in data.items():
+            all_feeds[cat] = feeds
+        return all_feeds
+    return {"telangana": data}
 
 CATEGORIZED_FEEDS = load_feeds()
 

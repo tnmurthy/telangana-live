@@ -49,7 +49,8 @@ PATHS = {
     "news":   os.path.join(DATA_DIR, "news.json"),
     "ai":     os.path.join(DATA_DIR, "aiBriefingData.js"),
     "weather": os.path.join(DATA_DIR, "weatherData.js"),
-    "alerts": os.path.join(DATA_DIR, "alerts.json"),
+    "alerts":        os.path.join(DATA_DIR, "alerts.json"),
+    "alerts_public": os.path.abspath(os.path.join(DATA_DIR, "..", "public", "data", "alerts.json")),
 }
 
 
@@ -735,53 +736,6 @@ def sync_alerts():
             region = "Telangana"
             category = None
             if classify_article:
-                try:
-                    category, region = classify_article(title, description)
-                except Exception:
-                    pass
-
-            existing_titles.add(title)
-            new_alerts.append({
-                "id": re.sub(r"[^a-z0-9]+", "-", title.lower())[:80].strip("-"),
-                "type": matched["type"],
-                "severity": matched["severity"],
-                "title": title,
-                "description": description[:280],
-                "region": region,
-                "category": category,
-                "sourceLink": entry.get("link", ""),
-                "publishedAt": entry.get("published", NOW),
-                "createdAt": NOW,
-                "active": True,
-                "aiVerified": bool(matched["ai_check"] and llm and ai_checks_available),
-            })
-
-    all_alerts = new_alerts + kept
-    # Most severe, most recent first
-    severity_rank = {"critical": 0, "high": 1, "medium": 2, "low": 3}
-    all_alerts.sort(key=lambda a: (severity_rank.get(a["severity"], 9), a["createdAt"]), reverse=False)
-
-    with open(PATHS["alerts"], "w", encoding="utf-8") as f:
-        json.dump(all_alerts, f, indent=2, ensure_ascii=False)
-
-    print(f"  \u2705 Written: {PATHS['alerts']} ({len(new_alerts)} new, {len(kept)} carried over, {len(all_alerts)} total)")
-    return all_alerts
-
-
-# ── AI PULSE BRIEFING ─────────────────────────────────────────────────────────
-def sync_ai_pulse():
-    print("Syncing AI pulse briefing...")
-    api_key = os.environ.get("GOOGLE_API_KEY", "")
-    
-    import datetime
-    now_formatted = datetime.datetime.now().strftime("%B %d, %Y")
-    briefing = _placeholder_briefing()
-    briefing["updatedAt"] = NOW
-    briefing["date"] = now_formatted
-
-    # Fetch context from tech_ai RSS feeds
-    context_headlines = []
-    try:
         feeds_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources", "feeds.json")
         if os.path.exists(feeds_file):
             with open(feeds_file, "r") as f:

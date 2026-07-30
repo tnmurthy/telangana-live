@@ -25,7 +25,7 @@ def fetch_latest_alerts():
         ]
 
     genai.configure(api_key=GOOGLE_API_KEY)
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-2.0-flash')
     
     prompt = """
     Search for and summarize the absolute latest (today's) civic alerts for Telangana/Hyderabad.
@@ -61,13 +61,18 @@ def main():
     if not alerts:
         return
         
-    try:
-        os.makedirs(FRONTEND_PUBLIC_DIR, exist_ok=True)
-        with open(ALERTS_JSON_PATH, "w", encoding="utf-8") as f:
-            json.dump(alerts, f, indent=2, ensure_ascii=False)
-        print(f"✅ Written {len(alerts)} alerts to {ALERTS_JSON_PATH}")
-    except Exception as e:
-        print(f"⚠️ Failed to write alerts.json: {e}")
+    paths = [
+        ALERTS_JSON_PATH,
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "frontend", "src", "data", "alerts.json")
+    ]
+    for target in paths:
+        try:
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            with open(target, "w", encoding="utf-8") as f:
+                json.dump(alerts, f, indent=2, ensure_ascii=False)
+            print(f"✅ Written {len(alerts)} alerts to {target}")
+        except Exception as e:
+            print(f"⚠️ Failed to write alerts.json to {target}: {e}")
 
 if __name__ == "__main__":
     main()

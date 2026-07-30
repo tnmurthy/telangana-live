@@ -43,7 +43,7 @@ class NewsFactChecker:
         response = llm.generate(
             prompt=prompt,
             provider="gemini", # Best for structured reasoning on news at high speed
-            model="gemini-1.5-flash",
+            model="gemini-2.0-flash",
             temperature=0.1,
             max_tokens=250
         )

@@ -23,7 +23,7 @@ export default async function handler(req) {
 
         const prompt = `You are a Vedic Astrologer. A user asks: "${query}". Based on general astrological principles for today, evaluate if this is auspicious. Respond STRICTLY in JSON: {"decision": "Yes" | "No" | "Wait", "explanation": "Short 2-sentence explanation."}`;
 
-        const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GOOGLE_API_KEY}`, {
+        const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GOOGLE_API_KEY}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
