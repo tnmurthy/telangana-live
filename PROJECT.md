@@ -181,6 +181,16 @@ The roadmap for the telangana.live civic helper portal consists of the following
   - **Unrelated bug fixed along the way:** `scheduler.py` had `from config import CONFIG`, but the module actually lives at `backend/core/config.py` — the entire scheduler couldn't start at all until this was corrected.
   - — backend: pushed via merge `f758fda`; frontend: `e925e72`
 
+### ✅ Milestone 5: Enterprise CI/CD Pipeline & DevOps Architecture (Complete)
+* **Goal:** Deploy a robust, foolproof, automated CI/CD pipeline ensuring code quality, security compliance, static analysis, and zero-downtime deployments.
+* **Owner:** Senior DevOps Architect (`DevOps Automator` subagent)
+* **Outcome:**
+  - ✅ **Unified CI/CD Pipeline** — `.github/workflows/ci_cd_master.yml` created with parallelized security, frontend, backend, and E2E stages.
+  - ✅ **Security & Compliance Gates** — TruffleHog secrets scanning, Bandit Python SAST, `npm audit`, and Python `safety check`.
+  - ✅ **Frontend & Backend Quality Gates** — Vitest & Pytest unit tests with coverage, bundle size budget checks (`size-limit`), and ESLint/Ruff static analysis.
+  - ✅ **Automated Deployment & Rollbacks** — Zero-downtime Vercel deployments to Staging and Production with concurrency group auto-cancellation.
+  - ✅ **DevOps Documentation** — Complete architectural blueprint updated in `.Codex/ARCHITECTURE_MAP.md` and `ci_cd_architecture.md`.
+
 ---
 
 ## 4. Layout Compliance and Quality Assurance

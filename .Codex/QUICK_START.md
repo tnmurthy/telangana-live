@@ -22,6 +22,10 @@ cd backend && python tests/smoke_test.py
 
 # Run frontend smoke tests
 cd frontend && npm run test -- tests/smoke_test.spec.ts
+
+# CI/CD Master Pipeline (GitHub Actions)
+# Trigger manually or on PR/push to main or staging
+gh workflow run ci_cd_master.yml
 ```
 
 ## Key Environment Variables
