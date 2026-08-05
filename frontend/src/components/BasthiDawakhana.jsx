@@ -4,7 +4,7 @@ import { basthiDawakhanas } from '../data/transportData';
 export default function BasthiDawakhana({ region, variant = 'default' }) {
     const isDistrict = variant === 'district';
     const shellClass = isDistrict
-        ? 'rounded-3xl border border-white/10 bg-[#0c1320]/95 p-4 sm:p-5 shadow-[0_20px_60px_rgba(0,0,0,0.22)]'
+        ? 'rounded-3xl border border-white/10 bg-[#15181d] p-4 sm:p-5 shadow-xl'
         : '';
     const [search, setSearch] = useState('');
     const defaultZone = ['hyderabad', 'cyberabad', 'malkajgiri'].includes(region?.toLowerCase()) ? region.toLowerCase() : 'all';

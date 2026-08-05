@@ -21,7 +21,7 @@ export default function MetroCard({ variant = 'default' }) {
     const crowdColors = (level) => level < 50 ? '#22C55E' : level < 75 ? '#EAB308' : '#EF4444';
 
     return (
-        <section className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-white/[0.03] p-4 sm:p-5' : ''} animate-fade-in`}>
+        <section className={`${isDistrict ? 'rounded-2xl border border-white/10 bg-[#15181d] p-4 sm:p-5 shadow-md' : ''} animate-fade-in`}>
             <div className="section-header">
                 <div>
                     <h2 className="section-title flex items-center gap-2">

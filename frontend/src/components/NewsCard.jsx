@@ -123,13 +123,13 @@ const NewsCard = ({ news, isSpotlight = false, variant = 'default' }) => {
             article_region: region
           });
         }}
-        className={`liquid-glass liquid-glass-hover group relative flex overflow-hidden cursor-pointer ${
+        className={`${
           isSpotlight 
-            ? 'flex-col md:flex-row gap-6 p-5 sm:p-6 md:p-8 border border-white/10 col-span-full shadow-[0_0_30px_rgba(0,176,116,0.05)]' 
+            ? 'liquid-glass liquid-glass-hover flex-col md:flex-row gap-6 p-5 sm:p-6 md:p-8 border border-white/10 col-span-full shadow-[0_0_30px_rgba(0,176,116,0.05)]' 
             : isDistrict
-              ? 'flex-row justify-between items-start gap-4 p-4 sm:p-5 border border-white/10 bg-white/[0.03]'
-              : 'flex-row justify-between items-start gap-4 p-4 sm:p-5'
-        }`}
+              ? 'rounded-2xl border border-white/10 bg-[#15181d] shadow-md flex-row justify-between items-start gap-4 p-4 sm:p-5'
+              : 'liquid-glass liquid-glass-hover flex-row justify-between items-start gap-4 p-4 sm:p-5'
+        } group relative flex overflow-hidden cursor-pointer`}
       >
         {/* Inner Gradient Glow */}
         <div className="absolute inset-0 gradient-glass pointer-events-none" />
