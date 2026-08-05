@@ -67,13 +67,13 @@ jobs:
         run: npm ci
         
       - name: Lint Code
-        run: npm run lint || true
+        run: npm run lint
         
       - name: Type Check
-        run: npm run typecheck || true
+        run: npm run typecheck
         
       - name: Unit Tests
-        run: npm run test || true
+        run: npm run test
         
       - name: Production Build
         run: npm run build
@@ -111,10 +111,10 @@ jobs:
         run: bandit -r . -ll -ii -x ./tests
         
       - name: Lint via Ruff
-        run: ruff check . || true
+        run: ruff check .
         
       - name: Run Tests with Coverage
-        run: pytest --cov=. --cov-report=xml || true
+        run: pytest --cov=. --cov-report=xml
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
@@ -137,7 +137,7 @@ jobs:
       - name: Run Playwright Tests
         run: |
           cd frontend
-          npm run test:e2e || true
+          npm run test:e2e
 
   deploy-staging:
     name: "Deploy to Staging"
