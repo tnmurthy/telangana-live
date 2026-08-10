@@ -2,10 +2,16 @@ import os
 import json
 import feedparser
 import requests
+from typing import List, Dict, Optional
 from datetime import datetime
 from core.config import CONFIG
 from core.database import db
 from core.logger import logger
+from graph_rag import NewsGraphRAG
+
+# Global GraphRAG Singleton Instance
+news_graph_rag = NewsGraphRAG()
+
 from core.llm_provider import llm
 from agents.fact_checker import fact_checker
 from core.news_classifier import classify_article, extract_image_url, extract_entities, map_domain_to_civic_schema
@@ -152,10 +158,23 @@ class NewsSyncAgent:
         if articles_for_json:
             try:
                 os.makedirs(os.path.dirname(self.output_file), exist_ok=True)
-                clustered_news = cluster_articles(articles_for_json)
+                existing_articles = []
+                if os.path.exists(self.output_file):
+                    try:
+                        with open(self.output_file, "r", encoding="utf-8") as f:
+                            existing_articles = json.load(f)
+                    except Exception:
+                        existing_articles = []
+
+                # Deduplicate by link or title
+                existing_links = {a.get("link") or a.get("title") for a in existing_articles}
+                new_unique = [a for a in articles_for_json if (a.get("link") or a.get("title")) not in existing_links]
+                
+                merged_articles = new_unique + existing_articles
+                clustered_news = cluster_articles(merged_articles[:200])
                 with open(self.output_file, "w", encoding="utf-8") as f:
                     json.dump(clustered_news, f, indent=2, ensure_ascii=False)
-                logger.info(f"Hybrid Sync: Updated {self.output_file} with {len(articles_for_json)} items.")
+                logger.info(f"Hybrid Sync: Updated {self.output_file} with {len(new_unique)} new items (total {len(clustered_news)}).")
             except Exception as e:
                 logger.error(f"Hybrid Sync failed: {e}")
 
