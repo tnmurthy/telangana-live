@@ -7,7 +7,7 @@ import { useAppContext } from '../context/AppContext';
 function ServiceCard({ service, onExpand, isExpanded, variant = 'default' }) {
     const isDistrict = variant === 'district';
     const shellClass = isDistrict
-        ? 'rounded-3xl border border-white/10 bg-[#0c1320]/95 overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.22)]'
+        ? 'rounded-3xl border border-white/10 bg-[#15181d] overflow-hidden shadow-xl'
         : 'glass-card overflow-hidden';
     if (!service) return null;
     return (

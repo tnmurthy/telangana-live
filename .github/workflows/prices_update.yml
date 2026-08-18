@@ -3,9 +3,11 @@ name: Secondary Prices Update (6-hour)
 on:
   schedule:
     - cron: '15 */6 * * *'
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
+
+concurrency:
+  group: secondary-prices-update
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -19,6 +21,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -41,7 +45,11 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add frontend/src/data/fuelPrices.js frontend/src/data/pulses.js
-          git commit -m "chore: update fuel and commodity data [automated]" || echo "No changes to commit"
-          git fetch origin main
-          git reset --hard origin/main
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update fuel and commodity data [automated] [skip ci]"
+            git pull --rebase origin main || (git rebase --abort && exit 0)
+            git push origin main || echo "::warning::Push skipped due to concurrent commit."
+          else
+            echo "No changes to commit"
+          fi
+

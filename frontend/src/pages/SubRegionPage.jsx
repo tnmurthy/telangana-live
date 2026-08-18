@@ -171,7 +171,7 @@ export default function SubRegionPage() {
                 <link rel="canonical" href={`https://telangana.live/${region || 'hyderabad'}`} />
             </Helmet>
             {/* Region Header */}
-            <div className="glass-card section-block relative overflow-hidden">
+            <div className="rounded-3xl border border-white/10 bg-[#15181d] section-block relative overflow-hidden shadow-xl">
                 <div className="absolute top-0 right-0 p-8 text-white/5 pointer-events-none">
                     {Icons[meta.icon] && Icons[meta.icon]({ className: "w-32 h-32" })}
                 </div>
@@ -233,7 +233,7 @@ export default function SubRegionPage() {
             </section>
 
             {/* Local Utilities & Data */}
-            <section className={`rounded-3xl border ${theme.ring} bg-gradient-to-br from-white/[0.05] via-white/[0.03] to-white/[0.015] p-4 sm:p-5 lg:p-6 ${theme.glow}`}>
+            <section className={`rounded-3xl border ${theme.ring} bg-[#15181d] p-4 sm:p-5 lg:p-6 shadow-xl`}>
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between mb-5">
                     <div>
                         <h2 className="text-2xl font-black text-white">Local utility snapshot</h2>

@@ -4,10 +4,17 @@ on:
   schedule:
     # Run every 4 hours at minute 15
     - cron: '15 */4 * * *'
-  workflow_dispatch: # Allows manual trigger from GitHub UI
+  workflow_dispatch:
+
+concurrency:
+  group: automate-civic-data-engine
+  cancel-in-progress: false
 
 permissions:
   contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   scrape_and_deploy:
@@ -17,6 +24,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -45,5 +53,12 @@ jobs:
         run: |
           git config --global user.name "Data Engine Bot"
           git config --global user.email "bot@telangana.live"
-          git add frontend/src/data/*.js
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: Auto-update civic data [skip ci]" && git push)
+          git add frontend/src/data/goldRates.js frontend/src/data/fuelPrices.js frontend/src/data/pulses.js
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: Auto-update civic data [skip ci]"
+            git pull --rebase origin main || (git rebase --abort && exit 0)
+            git push origin main || echo "::warning::Push skipped due to concurrent commit."
+          else
+            echo "No changes to commit"
+          fi
+
