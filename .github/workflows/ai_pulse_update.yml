@@ -5,6 +5,10 @@ on:
     - cron: '0 1 * * *' # 1:00 AM UTC (6:30 AM IST)
   workflow_dispatch:
 
+concurrency:
+  group: daily-ai-pulse-update
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -17,6 +21,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,6 +37,8 @@ jobs:
       - name: Sync AI Pulse Briefing
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          Z_AI_API_KEY: ${{ secrets.Z_AI_API_KEY }}
         run: python backend/scripts/data_engine.py --task ai_pulse
 
       - name: Sync AI Metrics (ELO & News)
@@ -44,7 +52,11 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add frontend/src/data/aiBriefingData.js
-          git commit -m "chore: update AI pulse data [automated]" || echo "No changes to commit"
-          git fetch origin main
-          git reset --hard origin/main
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update AI pulse data [automated] [skip ci]"
+            git pull --rebase origin main || (git rebase --abort && exit 0)
+            git push origin main || echo "::warning::Push skipped due to concurrent commit."
+          else
+            echo "No changes to commit"
+          fi
+

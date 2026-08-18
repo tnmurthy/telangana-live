@@ -550,21 +550,34 @@ def sync_pulses():
 
 
 def sync_news():
-    """Scrape news via NewsScraper and save to PATHS['news']."""
+    """Scrape news via NewsScraper and merge into PATHS['news']."""
     print("Syncing news articles...")
     try:
         from news_scraper import NewsScraper
         scraper = NewsScraper()
         articles = scraper.scrape(limit=50)
         if not articles:
-            print("  \u26a0\ufe0f No news articles fetched (network or feeds offline). Skipping write to preserve existing data.")
+            print("  ⚠️ No news articles fetched (network or feeds offline). Skipping write to preserve existing data.")
             return
         os.makedirs(os.path.dirname(PATHS["news"]), exist_ok=True)
+
+        existing = []
+        if os.path.exists(PATHS["news"]):
+            try:
+                with open(PATHS["news"], "r", encoding="utf-8") as f:
+                    existing = json.load(f)
+            except Exception:
+                existing = []
+
+        existing_links = {a.get("link") or a.get("title") for a in existing}
+        new_unique = [a for a in articles if (a.get("link") or a.get("title")) not in existing_links]
+        merged = new_unique + existing
+
         with open(PATHS["news"], "w", encoding="utf-8") as f:
-            json.dump(articles, f, indent=2, ensure_ascii=False)
-        print(f"  \u2705 Written: {PATHS['news']} ({len(articles)} articles)")
+            json.dump(merged[:200], f, indent=2, ensure_ascii=False)
+        print(f"  ✅ Written: {PATHS['news']} ({len(new_unique)} new articles added, total {len(merged[:200])})")
     except Exception as e:
-        print(f"  \u26a0\ufe0f News sync failed: {e}")
+        print(f"  ⚠️ News sync failed: {e}")
 
 
 # ── LOCAL ALERTS FEED ──────────────────────────────────────────────────────────
@@ -736,6 +749,40 @@ def sync_alerts():
             region = "Telangana"
             category = None
             if classify_article:
+                category, region = classify_article(title, description)
+
+            new_alerts.append({
+                "id": f"alert-{len(kept) + len(new_alerts) + 1}",
+                "title": title,
+                "description": description,
+                "type": matched["type"],
+                "severity": matched["severity"],
+                "district": region if region else "Telangana",
+                "createdAt": NOW,
+                "link": entry.get("link", ""),
+                "source": entry.get("source", {}).get("title", "Google News RSS") if isinstance(entry.get("source"), dict) else "Google News RSS"
+            })
+
+    all_alerts = kept + new_alerts
+    with open(PATHS["alerts"], "w", encoding="utf-8") as f:
+        json.dump(all_alerts, f, indent=2, ensure_ascii=False)
+    
+    if os.path.exists(os.path.dirname(PATHS["alerts_public"])):
+        with open(PATHS["alerts_public"], "w", encoding="utf-8") as f:
+            json.dump(all_alerts, f, indent=2, ensure_ascii=False)
+
+    print(f"  ✅ Synced {len(new_alerts)} new alerts (Total active: {len(all_alerts)})")
+    return all_alerts
+
+
+# ── AI PULSE / BRIEFING ───────────────────────────────────────────────────────
+def sync_ai_pulse():
+    print("Syncing AI Pulse briefing...")
+    now_formatted = datetime.datetime.now().strftime("%B %d, %Y")
+    briefing = _placeholder_briefing()
+
+    context_headlines = []
+    try:
         feeds_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources", "feeds.json")
         if os.path.exists(feeds_file):
             with open(feeds_file, "r") as f:
@@ -746,7 +793,7 @@ def sync_alerts():
                     for entry in f_parsed.entries[:5]:
                         context_headlines.append(entry.get("title", ""))
     except Exception as e:
-        print(f"  \u26a0\ufe0f Failed to fetch feed context: {e}")
+        print(f"  ⚠️ Failed to fetch feed context: {e}")
 
     if llm:
         try:

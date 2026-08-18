@@ -3,9 +3,11 @@ name: Hourly Weather Update
 on:
   schedule:
     - cron: '30 * * * *'
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
+
+concurrency:
+  group: hourly-weather-update
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -19,6 +21,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,22 +34,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
 
-      - name: Run Weather Scraper
+      - name: Run Weather Scraper (OWM + Open-Meteo Fallback)
         env:
           OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
-        run: |
-          if [ -z "$OWM_API_KEY" ]; then
-            echo "OWM_API_KEY secret is not configured. Skipping weather update."
-            exit 0
-          fi
-          python backend/scripts/weather_scraper.py
+        run: python backend/scripts/weather_scraper.py
 
       - name: Commit and Push Updates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add frontend/src/data/weatherData.js
-          git commit -m "chore: update weather data [automated]" || echo "No changes to commit"
-          git fetch origin main
-          git reset --hard origin/main
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: update weather data [automated] [skip ci]"
+            git pull --rebase origin main || (git rebase --abort && exit 0)
+            git push origin main || echo "::warning::Push skipped due to concurrent commit."
+          else
+            echo "No changes to commit"
+          fi
+
