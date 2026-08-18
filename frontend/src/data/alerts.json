@@ -1,23 +1,23 @@
 [
   {
-    "id": 101,
-    "type": "power",
-    "message": "Real-time: Power restoration in progress for Jubilee Hills Road No. 36",
-    "district": "Hyderabad",
-    "time": "15 mins ago"
-  },
-  {
-    "id": 102,
-    "type": "water",
-    "message": "Alert: HMWSSB reports 20% pressure drop in Gachibowli today",
-    "district": "Hyderabad",
-    "time": "30 mins ago"
-  },
-  {
-    "id": 103,
+    "id": 201,
     "type": "emergency",
-    "message": "Weather: IMD issues Yellow Alert for light rains in Hyderabad today",
-    "district": "Hyderabad",
-    "time": "1 hour ago"
+    "message": "Flood bout in July fails to help hydel generation in Telangana",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "water",
+    "message": "Drinking Water, Irrigation Needs-Govt Gears Up For Balancing Act",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "water",
+    "message": "CMWSSB MD Inspects KK Nagar,Ashok Nagar Facilities",
+    "district": "Telangana",
+    "time": "Recent"
   }
 ]
