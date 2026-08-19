@@ -2,14 +2,14 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Flood bout in July fails to help hydel generation in Telangana",
+    "message": "UP flood situation under watch: 173 villages affected, over 4,800 shifted to safer areas",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "UP flood situation under watch: 173 villages affected, over 4,800 shifted to safer areas",
+    "type": "power",
+    "message": "Market wrap:  HCL Tech, Sun Pharma, Power Grid, Bajaj Finance top gainers and losers on Nifty and Sensex on Wednesday",
     "district": "Telangana",
     "time": "Recent"
   }
