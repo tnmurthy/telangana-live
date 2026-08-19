@@ -8,22 +8,15 @@
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "Andhra govt allays fears over data centres affecting water supply to Vizag",
+    "type": "emergency",
+    "message": "Odisha flood: ₹1,000 crore relief package announced for affected districts",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "E. coli in Nampally water, 3 Hyderabad railway stations flagged",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "power",
-    "message": "HG Infra Engineering shares jump over 8% after receiving LoI from REC",
+    "message": "Stock Market LIVE: Power Grid, Bajaj Finance drive 300-pts decline in Sensex; Nifty near 24,050",
     "district": "Telangana",
     "time": "Recent"
   }
