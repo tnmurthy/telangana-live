@@ -1,16 +1,23 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "UP flood situation under watch: 173 villages affected, over 4,800 shifted to safer areas",
+    "type": "water",
+    "message": "Minister asks Irrigation officials to make judicious use of water available in projects",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Market wrap:  HCL Tech, Sun Pharma, Power Grid, Bajaj Finance top gainers and losers on Nifty and Sensex on Wednesday",
-    "district": "Telangana",
+    "type": "water",
+    "message": "Godavari Water Project Works Expedited; Completion Targeted By October 2027",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "water",
+    "message": "Bengaluru: Water row turns fatal, lorry cleaner kills colleague",
+    "district": "Hyderabad",
     "time": "Recent"
   }
 ]
