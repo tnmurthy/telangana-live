@@ -8,9 +8,9 @@
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Karimnagar: Free Power for Ganesh Pandals, Says Bandi Sanjay",
-    "district": "Karimnagar",
+    "type": "water",
+    "message": "Andhra govt allays fears over data centres affecting water supply to Vizag",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
@@ -18,6 +18,13 @@
     "type": "water",
     "message": "E. coli in Nampally water, 3 Hyderabad railway stations flagged",
     "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "power",
+    "message": "HG Infra Engineering shares jump over 8% after receiving LoI from REC",
+    "district": "Telangana",
     "time": "Recent"
   }
 ]
