@@ -1,13 +1,6 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Electricity supply | రైతులకు కోతల్లేని క‌రెంట్ ఇవ్వాల‌ని బీఆర్ఎస్ ఆధ్వ‌ర్యంలో భారీ ధ‌ర్నా",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "emergency",
     "message": "The floodgates are open after another Chinese company lands a reusable rocket",
     "district": "Telangana",
