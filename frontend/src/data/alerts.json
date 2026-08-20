@@ -1,27 +1,20 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Snakebite, Floodwater And Bamboo Rafts: Odisha’s Flood-Hit Villages Struggle To Stay Afloat",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "power",
     "message": "Core sector output growth eases to 5.4% in July",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 203,
+    "id": 202,
     "type": "water",
-    "message": "Mankind Pharma signs China pact to market insulin analogues in India",
+    "message": "SC retains 1978 industry test for old disputes, leaves new labour code open",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 204,
+    "id": 203,
     "type": "emergency",
     "message": "The floodgates are open after another Chinese company lands a reusable rocket",
     "district": "Telangana",
