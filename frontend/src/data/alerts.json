@@ -1,6 +1,13 @@
 [
   {
     "id": 201,
+    "type": "water",
+    "message": "Mankind Pharma signs China pact to market insulin analogues in India",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
     "type": "emergency",
     "message": "The floodgates are open after another Chinese company lands a reusable rocket",
     "district": "Telangana",
