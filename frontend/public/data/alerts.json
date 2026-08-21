@@ -1,36 +1,8 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "Traffic curbs in Tellapur as storm water drain works begin",
-    "district": "Cyberabad",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "water",
-    "message": "FIR booked over alleged misuse of HMWSSB name and logo in Hyderabad",
-    "district": "Cyberabad",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
     "type": "emergency",
     "message": "‘Received no help’: Odisha man’s body kept on rooftop for 18 hours amid floods",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "water",
-    "message": "PNGRB authorises 1,800 km of new LPG pipelines with ₹7,000 crore investment",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
-    "type": "water",
-    "message": "Welspun Corp bags record $1.8 billion pipe supply order for US facility",
     "district": "Telangana",
     "time": "Recent"
   }
