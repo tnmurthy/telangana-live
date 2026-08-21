@@ -1,20 +1,13 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Sensex today | Stock Market Live: Sensex rises 100 pts after flattish opening, Nifty trades around 24,260; Power Grid Corp, Kotak Mahindra Bank top gainers",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "Odisha flood situation eases as water level falls in rivers",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Binance Donates INR 3.3 Crore to Goonj's Rahat Initiative for Assam Flood Relief",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
     "type": "water",
     "message": "Welspun Corp bags record $1.8 billion pipe supply order for US facility",
     "district": "Telangana",
