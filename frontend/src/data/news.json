@@ -1,5 +1,19 @@
 [
   {
+    "id": "7b4aec24bb9bc4ed257ff6b3ecd77087",
+    "title": "CM Revanth invites University of Oxford to offer education programmes in Telangana",
+    "link": "https://www.thehindu.com/news/national/telangana/revanth-invites-oxford-to-offer-education-programmes-in-telangana/article71374853.ece",
+    "source": "The Hindu - Hyderabad",
+    "published": "Fri, 21 Aug 2026 23:30:43 +0530",
+    "description": "",
+    "category": "Education",
+    "region": "Telangana",
+    "image_url": "https://th-i.thgim.com/public/news/national/telangana/99an9a/article71374850.ece/alternates/LANDSCAPE_1200/CM%20Oxford%20.jpeg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "b23554c60f887eccf25d14dd62551bf3",
     "title": "Ponguleti asks officials to expedite land resurvey",
     "link": "https://www.thehindu.com/news/national/telangana/ponguleti-asks-officials-to-expedite-land-resurvey/article71374752.ece",
@@ -144,18 +158,29 @@
     ]
   },
   {
-    "id": "4e57ac8e8943ed3f33b4c95a5a81a2cc",
-    "title": "BJP seeks action against pvt medical colleges over excess fee collection",
-    "link": "https://www.thehindu.com/news/national/telangana/bjp-seeks-action-against-pvt-medical-colleges-over-excess-fee-collection/article71373508.ece",
-    "source": "The Hindu - Hyderabad",
-    "published": "Fri, 21 Aug 2026 20:11:58 +0530",
+    "id": "2a6f2dcb492f8153a22e216bb2d99ec1",
+    "title": "Land auction fetches ₹264 crore per acre in Hyderabad’s Raidurg",
+    "link": "https://www.thehindu.com/news/national/telangana/tgiic-auction-fetches-264-crore-per-acre/article71374509.ece",
+    "source": "The Hindu - Telangana",
+    "published": "Fri, 21 Aug 2026 23:33:57 +0530",
     "description": "",
-    "category": "Education",
-    "region": "Telangana",
+    "category": "Safety",
+    "region": "Hyderabad",
     "image_url": "",
     "ai_summary": "",
     "tags": [],
-    "correlated_civic_entities": []
+    "correlated_civic_entities": [
+      {
+        "entity_type": "metro_line",
+        "entity_id": "Blue Line",
+        "score": 1.0
+      },
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
   },
   {
     "id": "1175b064bc65f45c3a3164a4b72b631f",
@@ -200,26 +225,6 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "2a6f2dcb492f8153a22e216bb2d99ec1",
-    "title": "TGIIC auction fetches ₹264 crore per acre in Raidurg",
-    "link": "https://www.thehindu.com/news/national/telangana/tgiic-auction-fetches-264-crore-per-acre/article71374509.ece",
-    "source": "The Hindu - Telangana",
-    "published": "Fri, 21 Aug 2026 21:24:49 +0530",
-    "description": "",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "metro_line",
-        "entity_id": "Blue Line",
-        "score": 1.0
-      }
-    ]
-  },
-  {
     "id": "d04894876765882c00d4c2d811390550",
     "title": "BRS blames Congress Govt. for AP diverting huge Krishna water",
     "link": "https://www.thehindu.com/news/national/telangana/brs-blames-congress-govt-for-ap-diverting-huge-krishna-water/article71374517.ece",
@@ -248,6 +253,138 @@
     "correlated_civic_entities": []
   },
   {
+    "id": "516e29d944b75dd11737a970dee3835d",
+    "title": "Opinion: Counting the uncounted—why India’s migration survey matters",
+    "link": "https://telanganatoday.com/opinion-counting-the-uncounted-why-indias-migration-survey-matters",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 18:34:26 +0000",
+    "description": "The new migration survey must do more than count people on the move; it must become a foundation for policy reform",
+    "category": "Govt",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/VIEW-21-WEB-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "a5cab0e105ac1c956da514431ec764c6",
+    "title": "Editorial: US Ambassador plays a straight bat on Kashmir",
+    "link": "https://telanganatoday.com/editorial-us-ambassador-plays-a-straight-bat-on-kashmir",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 18:12:52 +0000",
+    "description": "Sergio Gor’s remarks describing Jammu and Kashmir as an important part of India marks a notable departure from Washington’s traditionally cautious Kashmir position",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/EDIR-21-REV-800x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "737e84afec938536add341ece30cd432",
+    "title": "Telangana HC declines interim relief in adulterated spices case",
+    "link": "https://telanganatoday.com/telangana-hc-declines-interim-relief-in-adulterated-spices-case",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 18:11:09 +0000",
+    "description": "The Telangana High Court on Friday refused to grant interim relief in a case concerning the manufacture and sale of adulterated spices. Justice J. Sreenivas Rao directed the police to continue the investigation, rejecting arguments that law enforcement lacked authority to register food adulteration cases.",
+    "category": "Safety",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/adulterated-spices-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "35b0c5e63f54fc6dcc661c119d094540",
+    "title": "Telangana HC clears decks for advocate enrolment, sets aside interim stay",
+    "link": "https://telanganatoday.com/telangana-hc-clears-decks-for-advocate-enrolment-sets-aside-interim-stay",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 17:56:33 +0000",
+    "description": "The Telangana High Court has directed the Bar Council of Telangana to resume the advocate enrolment process, overturning an interim stay that had stalled proceedings. The Division Bench, led by Chief Justice Aparesh Kumar Singh, ruled in favour of a law graduate’s appeal.",
+    "category": "Safety",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/HighCourt-4-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "2add0de3e06074a13eba9cbdcb31371d",
+    "title": "Revanth Reddy invites Oxford University to set up centre in Hyderabad",
+    "link": "https://telanganatoday.com/revanth-reddy-invites-oxford-university-to-set-up-centre-in-hyderabad",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 17:50:56 +0000",
+    "description": "Telangana Chief Minister Revanth Reddy has invited Oxford University to establish an executive education and research centre in Hyderabad. During his visit to Oxford, he held discussions with senior professors and extended an invitation to participate in the Telangana Rising Global Summit scheduled for December 2026.",
+    "category": "Education",
+    "region": "Hyderabad",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/Revanth-Oxford-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "22ba6c84ed2a49b978665b48286a16bd",
+    "title": "Anti-reservation protest erupts at Jantar Mantar, Delhi police detain several protesters",
+    "link": "https://telanganatoday.com/anti-reservation-protest-erupts-at-jantar-mantar-delhi-police-detain-several-protesters",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 17:42:45 +0000",
+    "description": "Delhi Police detained several protesters at Jantar Mantar during an anti-reservation demonstration on Friday. The protest, mobilised via social media under the banner of \"Reservation Hatao Andolan,\" demanded that economic criteria replace caste in determining eligibility for government support.",
+    "category": "Safety",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/UGC-protest-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "5c3f75d531127f81e3fcc65db71c3b33",
+    "title": "KTR questions Rahul Gandhi’s silence over police action against students in Telangana",
+    "link": "https://telanganatoday.com/ktr-questions-rahul-gandhis-silence-over-police-action-against-students-in-telangana",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 17:26:37 +0000",
+    "description": "BRS working president KT Rama Rao criticised Congress leader Rahul Gandhi for not speaking against police action on protesting students in Telangana, while voicing solidarity with Delhi students. He accused the Congress of double standards, saying Gandhi’s credibility would suffer unless he condemned the use of force against students in the state.",
+    "category": "Safety",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/KTR-Rahul-Gandhi-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "5e897e1fa34f34a55e3082e48c901d95",
+    "title": "Telangana HC reserves verdict on pleas against Speaker’s ruling in Danam Nagender case",
+    "link": "https://telanganatoday.com/telangana-hc-reserves-verdict-on-pleas-against-speakers-ruling-in-danam-nagender-case",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 17:19:45 +0000",
+    "description": "The Telangana High Court has reserved judgment on writ petitions challenging the Speaker’s ruling that Khairatabad MLA Danam Nagender had not defected from the BRS despite contesting the Lok Sabha polls on a Congress ticket.",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/Danam-nagender-file-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "a7a955aadd4cdd4d549f00213089a1bc",
+    "title": "Khavda Hill shocker: Parents’ desperate bid to save son ends in triple tragedy",
+    "link": "https://telanganatoday.com/khavda-hill-shocker-parents-desperate-bid-to-save-son-ends-in-triple-tragedy",
+    "source": "Telangana Today",
+    "published": "Fri, 21 Aug 2026 16:46:05 +0000",
+    "description": "In Maharashtra’s Chhatrapati Sambhajinagar district, a tragic incident unfolded at Khavda Hill where an 18-year-old boy, threatening to end his life, fell from a cliff along with his parents who were desperately trying to save him.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/Maharashtra-suicide-768x450.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "167b36c9fe83b18ac33adc27b626ba7d",
     "title": "Central Bank of India holds mega outreach in Hyderabad",
     "link": "https://telanganatoday.com/central-bank-of-india-holds-mega-outreach-in-hyderabad",
@@ -268,182 +405,18 @@
     ]
   },
   {
-    "id": "47dfad211011fa6719f684f63550f7a1",
-    "title": "Congress MLAs face flak over silence on Konda Surekha remarks",
-    "link": "https://telanganatoday.com/congress-mlas-face-flak-over-silence-on-konda-surekha-remarks",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 16:10:20 +0000",
-    "description": "Congress MLAs in Telangana have criticised Forest Minister Konda Surekha for her repeated use of intemperate language, a move triggered by her daughter Sushmita’s public attack on Chief Minister Revanth Reddy.",
+    "id": "281f3d03ada14b37c178e11acf837cfd",
+    "title": "BJP calls Rahul’s ‘dharna drama’ a ploy to divert attention from Vande row",
+    "link": "https://timesofindia.indiatimes.com/india/bjp-calls-rahuls-dharna-drama-a-ploy-to-divert-attention-from-vande-row/articleshow/133410995.cms",
+    "source": "Times of India - Hyderabad",
+    "published": "2026-08-21T23:12:00+05:30",
+    "description": "<a href=\"https://timesofindia.indiatimes.com/india/bjp-calls-rahuls-dharna-drama-a-ploy-to-divert-attention-from-vande-row/articleshow/133410995.cms\"><img align=\"left\" border=\"0\" hspace=\"10\" src=\"https://timesofindia.indiatimes.com/photo/133410995.cms\" style=\"margin-top: 3px; margin-right: 5px;\" /></a>",
     "category": "Govt",
     "region": "Telangana",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/Gandhi-Bhavan-1-768x450.jpg",
+    "image_url": "https://static.toiimg.com/photo/msid-117622046,imgsize-378116.cms",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
-  },
-  {
-    "id": "690c5a0b4c56c7900d1896e4ed2722db",
-    "title": "Warangal Congress row: Konda Surekha says she will soon clear the air",
-    "link": "https://telanganatoday.com/warangal-congress-row-konda-surekha-says-she-will-soon-clear-the-air",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 15:55:20 +0000",
-    "description": "Endowments Minister Konda Surekha has said she will make a detailed statement only after Chief Minister A Revanth Reddy returns from his foreign trip. She noted that she had already conveyed her views to the party’s disciplinary committee.",
-    "category": "Govt",
-    "region": "Warangal",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/Konda-Surekha-3-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Warangal",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "93429437c9652aaee09e045dfa298553",
-    "title": "Khammam MPs urge SCR to rename Bhadrachalam Road station as Kothagudem rly station",
-    "link": "https://telanganatoday.com/khammam-mps-urge-scr-to-rename-bhadrachalam-road-station-as-kothagudem-rly-station",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 15:36:23 +0000",
-    "description": "Khammam MPs have urged South Central Railways to rename Bhadrachalam Road railway station at Kothagudem as Kothagudem railway station, citing its status as district headquarters. They also sought new train services and a railway line to Bhadrachalam.",
-    "category": "Transit",
-    "region": "Khammam",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/BDCR-Kothagudem-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Bhadradri Kothagudem",
-        "score": 1.0
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Khammam",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "28473439d730494e598575fb6df0e4e6",
-    "title": "R Upender Reddy assumes charge as MD of Hyderabad Growth Corridor Limited",
-    "link": "https://telanganatoday.com/r-upender-reddy-assumes-charge-as-md-of-hyderabad-growth-corridor-limited",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 15:24:40 +0000",
-    "description": "R Upender Reddy assumed charge as the new managing director of Hyderabad Growth Corridor Limited on Friday. He reviewed ongoing projects and key issues with senior officials, visited project sites and directed officials to ensure quality and timely completion.",
-    "category": "General",
-    "region": "Hyderabad",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "10a12b6867da69cc7ad2674f54918a46",
-    "title": "Casey Kaufhold to make Archery Premier League debut as Hyderabad hosts star-studded season 2",
-    "link": "https://telanganatoday.com/olympic-bronze-medallist-casey-kaufhold-to-make-apl-debut-as-hyderabad-hosts-archery-premier-league-season-2",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 15:22:04 +0000",
-    "description": "Olympic bronze medallist Casey Kaufhold will headline a star-studded international field at the second edition of the Archery Premier League in Hyderabad from October 8. The tournament will feature 48 athletes, including Olympic and world champions from across the globe.",
-    "category": "General",
-    "region": "Hyderabad",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/Casey-Kaufhold-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "51fecb0f275bde6403c10404ee2465af",
-    "title": "Traffic curbs in Tellapur as storm water drain works begin",
-    "link": "https://telanganatoday.com/traffic-curbs-in-tellapur-as-storm-water-drain-works-begin",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 15:18:59 +0000",
-    "description": "Cyberabad Traffic Police will enforce diversions in Tellapur for 25 days from August 22 to facilitate storm water drain construction with an RCC pipeline. One side of the road between SBI Bank and MM Wine Mart will remain closed to enable the smooth functioning of construction work.",
-    "category": "Transit",
-    "region": "Cyberabad",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/Traffic-Advisory-2-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "289fddb7c6fa4250c0effa36cd02ae8a",
-    "title": "Jwala Gutta calls revamped Khelo India Scheme a gamechanger for Indian sports",
-    "link": "https://telanganatoday.com/jwala-gutta-calls-revamped-khelo-india-scheme-a-gamechanger-for-indian-sports",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 15:17:50 +0000",
-    "description": "Badminton star Jwala Gutta said the revamped Khelo India Scheme could transform Indian sports by strengthening grassroots development and sustainability. Officials highlighted increased funding, expanded athlete support and Telangana’s growing network of Khelo India Centres during a media briefing in Hyderabad",
-    "category": "Govt",
-    "region": "Hyderabad",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/Khelo-India-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "2c043c2b8de8a7fb7f0a84b688098d1d",
-    "title": "BRS demands cancellation of PM Ekta Mall tender, seeks CBI and CAG probe",
-    "link": "https://telanganatoday.com/brs-demands-cancellation-of-pm-ekta-mall-tender-seeks-cbi-and-cag-probe",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 15:17:01 +0000",
-    "description": "BRS MLC Dasoju Sravan has demanded cancellation of the PM Ekta Mall tender in Hyderabad and sought probes by the CBI, CAG and Lokpal. He alleged project expansion, increased costs, lack of approvals and irregularities benefiting private developers.",
-    "category": "Govt",
-    "region": "Hyderabad",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/dasoju-sravan-1-1-2-1-2-2-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "33bcfb0f492266bb8b402399c1e760d7",
-    "title": "FIR booked over alleged misuse of HMWSSB name and logo in Hyderabad",
-    "link": "https://telanganatoday.com/fir-booked-over-alleged-misuse-of-hmwssb-name-and-logo-in-hyderabad",
-    "source": "Telangana Today",
-    "published": "Fri, 21 Aug 2026 15:15:14 +0000",
-    "description": "An FIR has been registered at Madhapur Police Station after a vehicle allegedly used the HMWSSB name and logo while offering sludge and septage cleaning services. The Water Board warned the public against unauthorised use of its official identity and urged caution.",
-    "category": "Safety",
-    "region": "Cyberabad",
-    "image_url": "https://media.telanganatoday.com/wp-content/uploads/2026/08/HMWSSB-1-1-768x450.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "metro_line",
-        "entity_id": "Blue Line",
-        "score": 0.75
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
   },
   {
     "id": "57f17ce629429ff854d90458041f6804",
@@ -489,7 +462,7 @@
   },
   {
     "id": "d125b6588eea083860338d4dcf4a7f04",
-    "title": "Crowd-funded anti-bribery portal shuts after amassing 2 lakh users in 48 hrs",
+    "title": "Crowd-funded anti-bribery portal shuts after amassing 2 lakh users in 48 hours",
     "link": "https://timesofindia.indiatimes.com/india/crowd-funded-anti-bribery-portal-shuts-after-amassing-2-lakh-users-in-48-hrs/articleshow/133407389.cms",
     "source": "Times of India - Hyderabad",
     "published": "2026-08-21T20:17:32+05:30",
@@ -572,27 +545,13 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "83b840803fa67ebbdd2800f49d724eea",
-    "title": "'His personal views': Punjab Congress distances itself from Deepender Hooda over Sajjan Kumar tribute row",
-    "link": "https://timesofindia.indiatimes.com/india/his-personal-views-punjab-congress-distances-itself-from-deepender-hooda-over-sajjan-kumar-tribute-row/articleshow/133405142.cms",
-    "source": "Times of India - Hyderabad",
-    "published": "2026-08-21T18:31:14+05:30",
-    "description": "<a href=\"https://timesofindia.indiatimes.com/india/his-personal-views-punjab-congress-distances-itself-from-deepender-hooda-over-sajjan-kumar-tribute-row/articleshow/133405142.cms\"><img align=\"left\" border=\"0\" hspace=\"10\" src=\"https://timesofindia.indiatimes.com/photo/133405142.cms\" style=\"margin-top: 3px; margin-right: 5px;\" /></a>Punjab Congress leaders distanced the party from Deepender Singh Hooda's remarks. Hooda described Sajjan Kumar, a 1984 riots convict, as a nationwide role model. The ",
-    "category": "Govt",
-    "region": "Telangana",
-    "image_url": "https://static.toiimg.com/photo/msid-133405294,imgsize-765511.cms",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "7c6dc1a02480d6adcaceafe66c2c69dc",
-    "title": "Sheela Reddy Takes Over As In-Charge VC Of CUAP",
-    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/sheela-reddy-takes-over-as-in-charge-vc-of-cuap-1981150",
+    "id": "c1f060be9d8a8e53870f1f8fa007877d",
+    "title": "Jupally Cleans Unhygienic Toilet During Surprise Inspection, Pulls Up Officials",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/jupally-cleans-unhygienic-toilet-during-surprise-inspection-pulls-up-officials-1981199",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:35:20 GMT",
-    "description": "Prof. C. Sheela Reddy has taken charge as in-charge vice-chancellor of Central University of Andhra Pradesh after Prof. S.A. Kori completed his term.",
-    "category": "Education",
+    "published": "Fri, 21 Aug 2026 18:37:45 GMT",
+    "description": "Tourism Minister Jupally Krishna Rao cleaned an unhygienic toilet during a surprise inspection of a revenue office and reprimanded officials over delayed grievances.",
+    "category": "Govt",
     "region": "Telangana",
     "image_url": "",
     "ai_summary": "",
@@ -600,12 +559,12 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "c35afa2d5584a1364800b814cbebca7d",
-    "title": "Raut Accuses Shah Of Undermining Maharashtra’s Cooperative Sector",
-    "link": "https://www.deccanchronicle.com/nation/raut-accuses-shah-of-undermining-maharashtras-cooperative-sector-1981149",
+    "id": "f4d49ee970966dde518099586c2f6e5b",
+    "title": "Migrated Tigers Creating Panic Among Farmers",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/migrated-tigers-creating-panic-among-farmers-1981198",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:33:19 GMT",
-    "description": "Raut questioned the inauguration of the NUCFDC office in Mumbai on August 8: Reports",
+    "published": "Fri, 21 Aug 2026 18:37:19 GMT",
+    "description": "Agricultural operations affected in border villages across two districts",
     "category": "General",
     "region": "Telangana",
     "image_url": "",
@@ -614,13 +573,13 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "faebcf67e02c59ad9675f35bf4b66494",
-    "title": "Chevella Traffic Police Holds Road Safety Drive for School Children",
-    "link": "https://www.deccanchronicle.com/nation/in-other-news/chevella-traffic-police-conducts-road-safety-awareness-programme-for-school-children-1981148",
+    "id": "50d1d70111108bdd8d0d7b7deba6f991",
+    "title": "DC Edit | On Water, Southern States Refuse To See Eye To Eye",
+    "link": "https://www.deccanchronicle.com/opinion/dc-comment/dc-edit-on-water-southern-states-refuse-to-see-eye-to-eye-1981197",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:30:32 GMT",
-    "description": "During the programme, the students were educated about different types of roads, traffic signals, road signs, traffic rules and safe road practices.",
-    "category": "Transit",
+    "published": "Fri, 21 Aug 2026 18:35:07 GMT",
+    "description": "he issues that were raised at the conclave of chief ministers, lieutenant governors and administrators of the southern states and Union Territories were caused by the same bad blood that had engendered riots, agitations, protracted legal battles and even violence in the past several decades, indicating that no one, particularly politicians, learns from experience",
+    "category": "Govt",
     "region": "Telangana",
     "image_url": "",
     "ai_summary": "",
@@ -628,12 +587,68 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "f3a7aed4b8f4841f3402fc9a4cbffa48",
-    "title": "CM, Others Condole Death Of Veteran Actress Sowcar Janaki",
-    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/cm-others-condole-death-of-veteran-actress-sowcar-janaki-1981147",
+    "id": "775d69de7d494a24de1b8f9e704a9225",
+    "title": "Govt Urges Farmers to Use Groundwater Sparingly",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/govt-urges-farmers-to-use-groundwater-sparingly-1981195",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:29:34 GMT",
-    "description": "Education minister Nara Lokesh said Janaki had entertained generations of audiences with her versatile performances and secured an indelible place in the hearts of Telugu filmgoers. Her services to the film industry would remain memorable, he said",
+    "published": "Fri, 21 Aug 2026 18:34:13 GMT",
+    "description": "On Friday, the government directed officials of various departments, including those from agriculture and panchayat raj, to educate farmers on careful and judicious use of groundwater for the rest of the crop season.",
+    "category": "Govt",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "4d35d59b94401df1635b27aa3759fa90",
+    "title": "Island Near Kadam Project Emerges as Tourism Spot",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/island-near-kadam-project-emerges-as-tourism-spot-1981194",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Fri, 21 Aug 2026 18:32:05 GMT",
+    "description": "Ropeway, boating and cottages are among proposed attractions at the scenic backwater spot",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "efad743a70b47cd73358fcb4cca4fc07",
+    "title": "Orders Issued to Two Jewelers for Rings Given by Govt",
+    "link": "https://www.deccanchronicle.com/southern-states/tamil-nadu/orders-issued-to-two-jewelers-for-rings-given-by-govt-1981193",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Fri, 21 Aug 2026 18:29:49 GMT",
+    "description": "Kalyan Jewelers then agreed for a comparable rate.",
+    "category": "Govt",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "8188e0383ecf3a613d149c1573bb1396",
+    "title": "Fisherman Not Traced, Search Called Off",
+    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/fisherman-not-traced-search-called-off-1981192",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Fri, 21 Aug 2026 18:27:22 GMT",
+    "description": "The search for 45-year-old fisherman Volisetti Appanna, who fell overboard off Visakhapatnam, was called off after Coast Guard and Navy teams failed to trace him.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "ef27705eec128e584446d81bf1e28cda",
+    "title": "Telangana Teacher Bhavani Bompelly Selected For National Teachers Award 2026",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/telangana-teacher-bhavani-bompelly-selected-for-national-teachers-award-2026-1981191",
+    "source": "Deccan Chronicle - Hyderabad",
+    "published": "Fri, 21 Aug 2026 18:26:44 GMT",
+    "description": "The Union department of school education and literacy selected 48 teachers through a three-stage process at the district, state and national levels.",
     "category": "Education",
     "region": "Telangana",
     "image_url": "",
@@ -642,55 +657,13 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "e462604ea800b433354f53d819dcc7a9",
-    "title": "Industry-academia-govt Must Bridge Skills Gap: Gupta",
-    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/industry-academia-government-must-bridge-skills-gap-gupta-1981146",
+    "id": "44cf4b53e6d1db9a1e11c24207006bbd",
+    "title": "Special Intensive Revision of Electoral Roll Underway in Hyderabad; Claims and Objections Open",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/special-intensive-revision-of-electoral-roll-underway-in-hyderabad-claims-and-objections-open-1981190",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:28:06 GMT",
-    "description": "AP higher education commissioner stresses skills, lifelong learning and industry partnerships",
-    "category": "Education",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "65173721fc52184c8004019f8e5f46b3",
-    "title": "Political Patronage Key For Granite Quarrying And Transportation In Chittoor District",
-    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/political-patronage-key-for-granite-quarrying-and-transportation-in-chittoor-district-1981145",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:27:53 GMT",
-    "description": "Political influence is allegedly shaping granite quarrying and transport in Chittoor, with unauthorised operations and invoice manipulation causing revenue losses to AP.",
-    "category": "Transit",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "1250cd97e16d3e13324adfb7a46e8198",
-    "title": "New Delhi: SC Trims Law Practice Requirement",
-    "link": "https://www.deccanchronicle.com/nation/new-delhi-sc-trims-law-practice-requirement-1981144",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:24:57 GMT",
-    "description": "It continued to support the principle that candidates should have exposure to the legal profession before entering the judiciary: Supreme Court",
-    "category": "Safety",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "1f2e59e38efbc4148b98308fd5c02a91",
-    "title": "Malabar Gold & Diamonds Brings Nature’s Finest Gemstones to Hyderabad",
-    "link": "https://www.deccanchronicle.com/lifestyle/malabar-gold-diamonds-brings-natures-finest-gemstones-to-hyderabad-with-nayraa-1981143",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:23:25 GMT",
-    "description": "Inspired by traditional Chillai and Pachi craftsmanship, Nayraa combines gold, natural precious gemstones and contemporary design to offer a fresh take on traditional gemstone jewellery.",
-    "category": "Business",
+    "published": "Fri, 21 Aug 2026 18:24:55 GMT",
+    "description": "The Hyderabad District Election Authority stated that applications can be submitted to the local electoral registration officer, assistant electoral registration officer or the booth level officer (BLO) or submitted online through the ECI voters’ services portal and ECINET mobile app.",
+    "category": "Govt",
     "region": "Hyderabad",
     "image_url": "",
     "ai_summary": "",
@@ -704,13 +677,13 @@
     ]
   },
   {
-    "id": "a3f4b49fe47dcfa4ea920ad991a742ec",
-    "title": "Telangana: Additional Ambulances To Be Deployed On NH 65 To Meet 10-Minute Rule",
-    "link": "https://www.deccanchronicle.com/southern-states/telangana/telangana-additional-ambulances-to-be-deployed-on-nh-65-to-meet-10-minute-rule-1981142",
+    "id": "901c0e719235f5444e3a43e912e3ce47",
+    "title": "TRSMA Opposes Private School-Only Complaint Portal, Demands Common Grievance System for Telangana",
+    "link": "https://www.deccanchronicle.com/southern-states/telangana/trsma-opposes-private-school-only-complaint-portal-demands-common-grievance-system-for-telangana-1981189",
     "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:18:54 GMT",
-    "description": "There is a proposal to increase the number of ambulances by two to three: Reports",
-    "category": "General",
+    "published": "Fri, 21 Aug 2026 18:23:26 GMT",
+    "description": "The association said the department should strengthen these existing channels rather than create a separate portal exclusively for private schools.",
+    "category": "Education",
     "region": "Telangana",
     "image_url": "",
     "ai_summary": "",
@@ -718,18 +691,144 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "5c11a3172f39979acdd63314e882e873",
-    "title": "JS Forms Panel for Local Polls Ahead of Pawan Kalyan’s Trip to Kerala for Therapy",
-    "link": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/js-forms-panel-for-local-polls-ahead-of-pawan-kalyans-trip-to-kerala-for-therapy-1981141",
-    "source": "Deccan Chronicle - Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:12:57 GMT",
-    "description": "The committee will frame the procedures to be followed by Jana Sena in the local body elections.",
-    "category": "Govt",
-    "region": "Telangana",
-    "image_url": "",
+    "id": "0b4526d14360d7d16c789dc60950c942",
+    "title": "Bigger protest in Rajasthan if ‘goons’ not held in 48 hrs: CJP",
+    "link": "https://www.siasat.com/bigger-protest-in-rajasthan-if-goons-not-held-in-48-hrs-cjp-3528772/",
+    "source": "Siasat Daily",
+    "published": "Fri, 21 Aug 2026 18:18:53 +0000",
+    "description": "<p>Jaipur: A Cockroach Janta Party (CJP) team that had gone to inspect a government school in a Rajasthan village on Friday, August 21, was attacked and forcibly pushed back allegedly by locals, resulting in a scuffle with the youth group warning of a bigger protest in the state if the attackers are not arrested within &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"https://www.siasat.c",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/CJP-2.jpg",
     "ai_summary": "",
     "tags": [],
-    "correlated_civic_entities": []
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "51a2061f20c6e7d182d24d542ab3ddbf",
+    "title": "Laddu Yadav gets notice over Aug 15 programme at Begum Bazar",
+    "link": "https://www.siasat.com/laddu-yadav-gets-notice-over-aug-15-programme-at-begum-bazar-3528750/",
+    "source": "Siasat Daily",
+    "published": "Fri, 21 Aug 2026 17:59:40 +0000",
+    "description": "<p>Hyderabad: Bharatiya Janata Yuva Morcha&#8217;s (BJYM) state vice president and Bhagat Singh Yuva Sena&#8217;s president Sai Ram Yadav, also known as Laddu Yadav, was served a notice by Afzalgunj Police on Friday, August 21, for organising an Independence Day programme without permission. The programme was held at Begum Bazar Chatri and was attended by actor &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad C",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/laddu-1.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "b5745ab47502b44dca9253f69309d0cb",
+    "title": "Gulf states hosting US bases ‘supported’ attack: Iran official",
+    "link": "https://www.siasat.com/gulf-states-hosting-us-bases-supported-attack-iran-official-3528763/",
+    "source": "Siasat Daily",
+    "published": "Fri, 21 Aug 2026 17:52:02 +0000",
+    "description": "<p>New Delhi: Gulf countries hosting American bases not only &#8220;provided logistical help but fully supported&#8221; the US in carrying out a military attack on Iran, a top official of the judiciary in Iran alleged on Friday, August 21, and claimed that if they had not played such a role, Tehran could have &#8220;won the battle &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"https://",
+    "category": "General",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/us-military-base-kuwait.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "e4cba9a260dde82ffb13bf45e0267321",
+    "title": "Hyderabad: Pedestrian check reveals man with 30 gm brown sugar",
+    "link": "https://www.siasat.com/hyderabad-pedestrian-check-reveals-man-with-30-gm-brown-sugar-3528758/",
+    "source": "Siasat Daily",
+    "published": "Fri, 21 Aug 2026 17:19:35 +0000",
+    "description": "<p>Hyderabad: The Excise and Prohibition Department officials seized 30.5 grams of brown sugar from a 28-year-old man during vehicle and pedestrian checks on Matangi Road in the Patancheru area on Friday, August 21. According to Shamshabad Excise Superintendent Radhakrishna Reddy, the suspect was identified as Jessie Moddeen, a native of West Bengal. He had reportedly &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyde",
+    "category": "Transit",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/Brownsugar.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "66664ad24b07a833237cca103cbf0bfa",
+    "title": "Hyderabad: Pressure to repair bike drives man to jump off terrace",
+    "link": "https://www.siasat.com/hyderabad-pressure-to-repair-bike-drives-man-to-jump-off-terrace-3528735/",
+    "source": "Siasat Daily",
+    "published": "Fri, 21 Aug 2026 17:05:26 +0000",
+    "description": "<p>Hyderabad: A 24-year-old man died after jumping from the 7th floor of a building in Masab Tank, police said on Friday, August 21. The deceased was allegedly pressured to repair a damaged bike of one of the accused, which pushed him to take the extreme step. According to the police, the deceased, Mir Sofiyan Ali, &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"https://www.siasat.com/t",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/Sofiyan-.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "id": "7daa556f2cb8ab0731c7eae8abe450dd",
+    "title": "EAGLE Force seizes Rs 6 cr assets in interstate drug racket",
+    "link": "https://www.siasat.com/eagle-force-seizes-rs-6-cr-assets-in-interstate-drug-racket-3528753/",
+    "source": "Siasat Daily",
+    "published": "Fri, 21 Aug 2026 17:01:18 +0000",
+    "description": "<p>Hyderabad: The Telangana EAGLE Force has forfeited movable and immovable properties with an estimated prevailing market value of Rs 6 crore, allegedly acquired from the proceeds of illegal Alprazolam trafficking, in a major financial crackdown on an interstate drug network operating across Telangana, Maharashtra and Karnataka. The properties, identified during a detailed financial investigation conducted &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyde",
+    "category": "Transit",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/EAGLE.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
+  },
+  {
+    "id": "e5903a755c78c594ba2df10f6e6bcfaf",
+    "title": "‘Camerajeevi’ drama to stay in headlines: BJP on Rahul’s dharna",
+    "link": "https://www.siasat.com/camerajeevi-drama-to-stay-in-headlines-bjp-on-rahuls-dharna-3528747/",
+    "source": "Siasat Daily",
+    "published": "Fri, 21 Aug 2026 16:42:17 +0000",
+    "description": "<p>New Delhi: The BJP on Friday, August 21, termed Rahul Gandhi&#8217;s dharna at a police station here a &#8220;camerajeevi&#8221; drama to stay in headlines and alleged that it was aimed at diverting public attention from the &#8220;embarrassment&#8221; faced by his party over its stand on the Vande Mataram issue. The ruling party accused the Leader &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</",
+    "category": "Safety",
+    "region": "Hyderabad",
+    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Untitled-design-2026-07-23T082456.310.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": [
+      {
+        "entity_type": "district",
+        "entity_id": "Hyderabad",
+        "score": 0.75
+      }
+    ]
   },
   {
     "id": "355258222e2fd873104914d9f848c5a5",
@@ -786,151 +885,6 @@
     "category": "General",
     "region": "Hyderabad",
     "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/Kareena.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "7d20ff608d4c4ef13da90fb58802fa47",
-    "title": "China calls for US-Iran dialogue, opposes US sanctions on Tehran",
-    "link": "https://www.siasat.com/china-calls-for-us-iran-dialogue-opposes-us-sanctions-on-tehran-3528698/",
-    "source": "Siasat Daily",
-    "published": "Fri, 21 Aug 2026 15:36:56 +0000",
-    "description": "<p>China on Friday, August 21, asserted that the United States&#8217; imposition of &#8220;sanctions and pressure&#8221; would not help resolve conflict in the region. China&#8217;s observation comes in the wake of Washington&#8217;s open call to governments to join efforts to isolate Iran. Nearing the six-month mark of the Iran war and facing diminishing stockpiles of key weapons, &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad C",
-    "category": "Business",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/Chinese-foreign-affairs-spokesperson.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "206105c4bb2360f236c3126c9df31447",
-    "title": "Bengaluru: Kumaraswamy urges motorists to skip NICE Road toll",
-    "link": "https://www.siasat.com/bengaluru-kumaraswamy-urges-motorists-to-skip-nice-road-toll-3528724/",
-    "source": "Siasat Daily",
-    "published": "Fri, 21 Aug 2026 15:17:37 +0000",
-    "description": "<p>Bengaluru: Union Minister HD Kumaraswamy has once again urged motorists not to pay toll charges on the NICE Road, saying they should not be intimidated even if police cases are registered against them. Speaking to reporters in Bengaluru on Friday, August 21, Kumaraswamy alleged that the NICE company was collecting toll illegally and questioned the &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a",
-    "category": "Transit",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/HDKumara.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "3fc429c00862583e9ea1db526939b693",
-    "title": "Bengaluru: Police, I-T dept seize Rs 10.3 cr, probe money trail",
-    "link": "https://www.siasat.com/bengaluru-police-i-t-dept-seize-rs-10-3-cr-probe-money-trail-3528718/",
-    "source": "Siasat Daily",
-    "published": "Fri, 21 Aug 2026 15:05:52 +0000",
-    "description": "<p>Bengaluru: A joint operation by the Income Tax Department and Electronic City police has led to the seizure of more than Rs 10 crore in cash allegedly being transported from Bengaluru towards Tamil Nadu. The operation took place on the night of August 18 after Income Tax officials received information that a large quantity of &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a href=\"https://ww",
-    "category": "Transit",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/bng-Cash.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "b71d92264ef4116089fac3e4c9596e65",
-    "title": "Leopard sighting near houses triggers panic in Karnataka village",
-    "link": "https://www.siasat.com/leopard-sighting-near-houses-triggers-panic-in-karnataka-village-3528714/",
-    "source": "Siasat Daily",
-    "published": "Fri, 21 Aug 2026 14:51:22 +0000",
-    "description": "<p>Chikkamagaluru: A leopard was spotted moving freely through Huligere village in the Kadur taluk of Chikkamagaluru district, triggering fear among residents. The animal’s movements were captured on mobile phone cameras by villagers. In one of the photographs, the leopard was seen passing very close to an elderly woman who was standing in the courtyard of &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City N",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/leopard.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 0.75
-      }
-    ]
-  },
-  {
-    "id": "e7817ad374d76618367d91c06d10ea7d",
-    "title": "Raidurg plot fetches Rs 264 cr per acre, highest yet in Hyderabad",
-    "link": "https://www.siasat.com/raidurg-plot-fetches-rs-264-cr-per-acre-highest-yet-in-hyderabad-3528691/",
-    "source": "Siasat Daily",
-    "published": "Fri, 21 Aug 2026 14:42:52 +0000",
-    "description": "<p>Hyderabad: The Telangana Industrial Infrastructure Corporation (TGIIC) has achieved remarkable results through its e-auction of Plot No. P1 in Raidurg, generating Rs 1,386 crore from 5.25 acres of prime multi-use land. Plot No. P1 was auctioned against a reserve price of Rs 175 crore per acre and achieved a final realisation of Rs 264 crore &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad City News\">Hyderabad City News</a>, <a h",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/auction-1.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "metro_line",
-        "entity_id": "Blue Line",
-        "score": 1.0
-      },
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "d2ae8ce6acfc028e593bb1c7be93d6a5",
-    "title": "2 arrested for supplying steroids to gym-goers in Hyderabad",
-    "link": "https://www.siasat.com/2-arrested-for-supplying-steroids-to-gym-goers-in-hyderabad-3528664/",
-    "source": "Siasat Daily",
-    "published": "Fri, 21 Aug 2026 14:39:06 +0000",
-    "description": "<p>Hyderabad: The Hyderabad Police arrested two individuals on Friday, August 21, for allegedly selling Mephentermine Sulphate injections without a prescription to gym-goers and promising them muscle enhancement for bodybuilding. The officials seized Rs 45,000 worth of steroids from the accused and apprehended two alleged users as well. Accused Gowtham Singh (24), a resident of Mangalhat, &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyde",
-    "category": "Safety",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/Four-held-for-illegally-procuring-selling-and-consuming-Mephentermine-Sulphate-Injection.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": [
-      {
-        "entity_type": "district",
-        "entity_id": "Hyderabad",
-        "score": 1.0
-      }
-    ]
-  },
-  {
-    "id": "4d3f5842219cfb114f011d6cdf3b0316",
-    "title": "Popular Bollywood actor gets married at 53, details inside",
-    "link": "https://www.siasat.com/arjun-rampal-gabriella-demetriades-get-married-in-goa-3528690/",
-    "source": "Siasat Daily",
-    "published": "Fri, 21 Aug 2026 14:37:23 +0000",
-    "description": "<p>Mumbai: After nearly eight years together and two children, Bollywood actor Arjun Rampal and his longtime partner Gabriella Demetriades have reportedly made their relationship official. The couple registered their marriage at the Sub-Registrar’s Office in Mapusa, North Goa, on Friday, according to reports. The legal formalities were reportedly completed in the presence of a few &#8230;</p>\n<hr />\n<p>Get the latest updates in <a href=\"https://www.siasat.com/news/hyderabad/\" title=\"Hyderabad Ci",
-    "category": "General",
-    "region": "Hyderabad",
-    "image_url": "https://cdn.siasat.com/wp-content/uploads/2026/08/ARJUUN.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": [
@@ -1082,6 +1036,34 @@
     "correlated_civic_entities": []
   },
   {
+    "id": "06517989912ac8a50d05252a92c3613a",
+    "title": "What Sergio Gor's maiden Ladakh visit reveals: The meeting that didn't happen",
+    "link": "https://www.indiatoday.in/india/story/sergio-gor-ladakh-visit-dalai-lama-meeting-cancelled-amid-india-china-sensitivities-2977050-2026-08-21?utm_source=rss",
+    "source": "India Today",
+    "published": "Fri, 21 Aug 2026 22:44:04 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/india/story/sergio-gor-ladakh-visit-dalai-lama-meeting-cancelled-amid-india-china-sensitivities-2977050-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/sergio-gor-india-tough-rough-neighbours-diplomatic-ties-trade-deal-305638472-original-sixteen-to-nine.jpg?VersionId=Z2.qi8XrpQ2jnNB_t5KwYYxwR8BdSD5M\" width=\"305\" /> </a> What Sergio Gors maiden Ladakh visit reveals The ",
+    "category": "Business",
+    "region": "Telangana",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/sergio-gor-india-tough-rough-neighbours-diplomatic-ties-trade-deal-305638472-original-sixteen-to-nine.jpg?VersionId=Z2.qi8XrpQ2jnNB_t5KwYYxwR8BdSD5M",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "81dd2660321f0813e435897304158c11",
+    "title": "Teen attempts suicide over iPhone demand, parents try to save him; all 3 die",
+    "link": "https://www.indiatoday.in/cities/other-cities/story/sambhajinagar-hill-tragedy-teen-parents-die-khavdya-hills-rescue-2976707-2026-08-21?utm_source=rss",
+    "source": "India Today",
+    "published": "Fri, 21 Aug 2026 17:19:29 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/cities/other-cities/story/sambhajinagar-hill-tragedy-teen-parents-die-khavdya-hills-rescue-2976707-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/teen-tries-to-jump-off-sambhajinagar-cliff--parents-try-to-save-him-all-3-die-214807180-16x9_0.jpg?VersionId=mDGDnvigmmyevJE5kj_oFEQs1hMtZ65u\" width=\"305\" /> </a> Teen attempts suicide over iPhone demand parents try to save ",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/teen-tries-to-jump-off-sambhajinagar-cliff--parents-try-to-save-him-all-3-die-214807180-16x9_0.jpg?VersionId=mDGDnvigmmyevJE5kj_oFEQs1hMtZ65u",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "666a1038cb4fa752fed93a6b7dd37973",
     "title": "Thousands storm Jantar Mantar over caste quota, UGC norms",
     "link": "https://www.indiatoday.in/india/story/jantar-mantar-protest-caste-reservation-ugc-norms-ajeet-bharti-savarn-harsh-dubey-delhi-police-2976807-2026-08-21?utm_source=rss",
@@ -1096,15 +1078,29 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "10b2fc4a0771a261bc785cb848fe8aea",
-    "title": "Cops file FIR on pellet gun victim's complaint after Rahul Gandhi's dharna",
-    "link": "https://www.indiatoday.in/india/story/delhi-police-fir-sahil-lochab-pellet-injuries-rahul-gandhi-dharna-2976782-2026-08-21?utm_source=rss",
+    "id": "143c2496227e55b7691903e730165616",
+    "title": "Lausanne Diamond League 2026 Live: Neeraj throws 83.54 m in first attempt",
+    "link": "https://www.indiatoday.in/sports/athletics/story/neeraj-chopra-lausanne-diamond-league-2026-live-score-javelin-throw-pathirage-2976896-2026-08-21?utm_source=rss",
     "source": "India Today",
-    "published": "Fri, 21 Aug 2026 18:07:27 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/india/story/delhi-police-fir-sahil-lochab-pellet-injuries-rahul-gandhi-dharna-2976782-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/rahul-gandhi-at-the-parliament-street-police-station-212417838-16x9_1.jpeg?VersionId=LdwVDu59lWuo7bc.TuEdp21ggftAWEjr\" width=\"305\" /> </a> Cops file FIR on pellet gun victims complaint after Rahul Gandhis dharna",
+    "published": "Fri, 21 Aug 2026 19:44:37 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/sports/athletics/story/neeraj-chopra-lausanne-diamond-league-2026-live-score-javelin-throw-pathirage-2976896-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202608/neeraj-chopra-211418682-16x9_0.jpg?VersionId=d7RZOyH5V3qyNhU7nxIDnx.gS4iF4LPg\" width=\"305\" /> </a> Lausanne Diamond League  Live Neeraj throws  m in first attempt",
     "category": "Safety",
     "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/rahul-gandhi-at-the-parliament-street-police-station-212417838-16x9_1.jpeg?VersionId=LdwVDu59lWuo7bc.TuEdp21ggftAWEjr",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202608/neeraj-chopra-211418682-16x9_0.jpg?VersionId=d7RZOyH5V3qyNhU7nxIDnx.gS4iF4LPg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "b61cb981afbb5ad0d9af54012a82d44c",
+    "title": "BJP paid for making Samrat Choudhary CM: Prashant Kishor jabs BJP after Bankipur win",
+    "link": "https://www.indiatoday.in/elections/assembly/video/prashant-kishor-exclusive-jan-suraaj-party-chief-bjp-paid-for-making-samrat-choudhary-cm-of-bihar-2963384-2026-08-04?utm_source=rss",
+    "source": "India Today",
+    "published": "Tue, 04 Aug 2026 18:25:03 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/elections/assembly/video/prashant-kishor-exclusive-jan-suraaj-party-chief-bjp-paid-for-making-samrat-choudhary-cm-of-bihar-2963384-2026-08-04\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/video/202608/prashant-kishor-exclusive-044138941-16x9_0.png?VersionId=Uqzoc7zgQ4DCBxDvFbEBUmZzbN.5shYf\" width=\"305\" /> </a> BJP paid for making Samrat Choudhary CM Prashant Kishor jabs BJP after Bankipur w",
+    "category": "Govt",
+    "region": "Telangana",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/video/202608/prashant-kishor-exclusive-044138941-16x9_0.png?VersionId=Uqzoc7zgQ4DCBxDvFbEBUmZzbN.5shYf",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1144,71 +1140,29 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "b61cb981afbb5ad0d9af54012a82d44c",
-    "title": "BJP paid for making Samrat Choudhary CM: Prashant Kishor jabs BJP after Bankipur win",
-    "link": "https://www.indiatoday.in/elections/assembly/video/prashant-kishor-exclusive-jan-suraaj-party-chief-bjp-paid-for-making-samrat-choudhary-cm-of-bihar-2963384-2026-08-04?utm_source=rss",
+    "id": "4ce16c25b3570c6f4a5dcc0609e0164c",
+    "title": "How Rahul Gandhi's 6-hour vigil for pellet victim bore fruit",
+    "link": "https://www.indiatoday.in/india/story/india-today-beat-report-rahul-gandhi-six-hour-vigil-pellet-victim-sahil-lochav-bore-fruit-filing-fir-2977068-2026-08-21?utm_source=rss",
     "source": "India Today",
-    "published": "Tue, 04 Aug 2026 18:25:03 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/elections/assembly/video/prashant-kishor-exclusive-jan-suraaj-party-chief-bjp-paid-for-making-samrat-choudhary-cm-of-bihar-2963384-2026-08-04\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/video/202608/prashant-kishor-exclusive-044138941-16x9_0.png?VersionId=Uqzoc7zgQ4DCBxDvFbEBUmZzbN.5shYf\" width=\"305\" /> </a> BJP paid for making Samrat Choudhary CM Prashant Kishor jabs BJP after Bankipur w",
-    "category": "Govt",
+    "published": "Fri, 21 Aug 2026 23:40:06 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/india/story/india-today-beat-report-rahul-gandhi-six-hour-vigil-pellet-victim-sahil-lochav-bore-fruit-filing-fir-2977068-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/rahul-gandhi-protest-214851595-16x9_0.jpg?VersionId=T.1jBFBcd5VIORn4pPeUMd0IWidYeamh\" width=\"305\" /> </a> How Rahul Gandhis hour vigil for pellet victim bore fruit",
+    "category": "Safety",
     "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/video/202608/prashant-kishor-exclusive-044138941-16x9_0.png?VersionId=Uqzoc7zgQ4DCBxDvFbEBUmZzbN.5shYf",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/rahul-gandhi-protest-214851595-16x9_0.jpg?VersionId=T.1jBFBcd5VIORn4pPeUMd0IWidYeamh",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "7e1c1eff6303047f405a4a546ee7aff9",
-    "title": "Arjun Rampal marries longtime partner Gabriella Demetriades in Goa",
-    "link": "https://www.indiatoday.in/movies/celebrities/story/actor-arjun-rampal-marries-long-time-partner-gabriella-demetriades-in-goa-2976800-2026-08-21?utm_source=rss",
+    "id": "a282184ecbd7e5d5400b302bb40d2c8a",
+    "title": "3rd-year nursing student found hanging at Sir Ganga Ram Hospital hostel in Delhi",
+    "link": "https://www.indiatoday.in/cities/delhi/story/sir-ganga-ram-hospital-hostel-death-delhi-police-probe-nursing-student-death-2977061-2026-08-21?utm_source=rss",
     "source": "India Today",
-    "published": "Fri, 21 Aug 2026 18:12:58 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/movies/celebrities/story/actor-arjun-rampal-marries-long-time-partner-gabriella-demetriades-in-goa-2976800-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/arjun-rampal--gabriella-demetriades-214947481-16x9_0.jpeg?VersionId=hbimkuhL0csdnIiW2.oWEQfl5wifSHKW\" width=\"305\" /> </a> Arjun Rampal marries longtime partner Gabriella Demetriades in Goa",
-    "category": "General",
+    "published": "Fri, 21 Aug 2026 22:58:18 +0530",
+    "description": "<a href=\"https://www.indiatoday.in/cities/delhi/story/sir-ganga-ram-hospital-hostel-death-delhi-police-probe-nursing-student-death-2977061-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/suicide-161115500-16x9.jpg?VersionId=HttXlorR70bf8OJYSM7mlZY_tnmL8ZeP\" width=\"305\" /> </a> rdyear nursing student found hanging at Sir Ganga Ram Hospital hostel in Delhi",
+    "category": "Safety",
     "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/arjun-rampal--gabriella-demetriades-214947481-16x9_0.jpeg?VersionId=hbimkuhL0csdnIiW2.oWEQfl5wifSHKW",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "8b44123a2da09e5156a72ede8603c273",
-    "title": "Jannik Sinner pulls out of US Open after failing to recover from knee injury",
-    "link": "https://www.indiatoday.in/sports/tennis/story/jannik-sinner-us-open-withdrawal-right-knee-injury-2976926-2026-08-21?utm_source=rss",
-    "source": "India Today",
-    "published": "Fri, 21 Aug 2026 20:22:46 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/sports/tennis/story/jannik-sinner-us-open-withdrawal-right-knee-injury-2976926-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/jannik-sinner-050101249-16x9_1.jpg?VersionId=lJmSuWymqRtwdqdk9.k2HcH6Y5AAFPP5\" width=\"305\" /> </a> Jannik Sinner pulls out of US Open after failing to recover from knee injury",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/jannik-sinner-050101249-16x9_1.jpg?VersionId=lJmSuWymqRtwdqdk9.k2HcH6Y5AAFPP5",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "dd3dd8635ebb33a7f6eb6a2f52653006",
-    "title": "Can Sonia Gandhi throw Parliament's law in dustbin? Smriti Irani on Vande Mataram",
-    "link": "https://www.indiatoday.in/india/story/can-sonia-gandhi-throw-parliaments-law-in-dustbin-smriti-irani-hits-out-at-congress-over-vande-mataram-row-2976747-2026-08-21?utm_source=rss",
-    "source": "India Today",
-    "published": "Fri, 21 Aug 2026 17:40:21 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/india/story/can-sonia-gandhi-throw-parliaments-law-in-dustbin-smriti-irani-hits-out-at-congress-over-vande-mataram-row-2976747-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/smriti-irani-slams-sonia-gandhi-over-vande-mataram-row-212202926-16x9_0.jpeg?VersionId=6sfZzAZs37Lln58.475oTd4uPAkqAJtX\" width=\"305\" /> </a> Can Sonia Gandhi throw Parliaments law in dustbin Smrit",
-    "category": "Govt",
-    "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/smriti-irani-slams-sonia-gandhi-over-vande-mataram-row-212202926-16x9_0.jpeg?VersionId=6sfZzAZs37Lln58.475oTd4uPAkqAJtX",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "81dd2660321f0813e435897304158c11",
-    "title": "Teen attempts suicide after row over smartphone, parents try to save him; all 3 die",
-    "link": "https://www.indiatoday.in/cities/other-cities/story/sambhajinagar-hill-tragedy-teen-parents-die-khavdya-hills-rescue-2976707-2026-08-21?utm_source=rss",
-    "source": "India Today",
-    "published": "Fri, 21 Aug 2026 17:19:29 +0530",
-    "description": "<a href=\"https://www.indiatoday.in/cities/other-cities/story/sambhajinagar-hill-tragedy-teen-parents-die-khavdya-hills-rescue-2976707-2026-08-21\"> <img align=\"left\" alt=\"\" border=\"0\" height=\"180\" hspace=\"2\" src=\"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/teen-tries-to-jump-off-sambhajinagar-cliff--parents-try-to-save-him-all-3-die-214807180-16x9_0.jpg?VersionId=mDGDnvigmmyevJE5kj_oFEQs1hMtZ65u\" width=\"305\" /> </a> Teen attempts suicide after row over smartphone parents try t",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/teen-tries-to-jump-off-sambhajinagar-cliff--parents-try-to-save-him-all-3-die-214807180-16x9_0.jpg?VersionId=mDGDnvigmmyevJE5kj_oFEQs1hMtZ65u",
+    "image_url": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202608/suicide-161115500-16x9.jpg?VersionId=HttXlorR70bf8OJYSM7mlZY_tnmL8ZeP",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1368,15 +1322,85 @@
     "correlated_civic_entities": []
   },
   {
+    "id": "2ead66d9739a3c24217e1bf381e4785d",
+    "title": "Trump administration starts process to transfer $725 million to UN",
+    "link": "https://www.thehindubusinessline.com/news/world/trump-administration-starts-process-to-transfer-725-million-to-un/article71375120.ece",
+    "source": "Business Line",
+    "published": "Fri, 21 Aug 2026 22:45:33 +0530",
+    "description": "The proposed payment could ease immediate pressure on the cash-strapped global body, which has warned of severe funding constraints and cuts.",
+    "category": "Transit",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/yeoj38/article71375149.ece/alternates/LANDSCAPE_1200/2025-02-10T174657Z_111204102_RC2SRCARMC5L_RTRMADP_3_YEMEN-SECURITY-UN.JPG",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "32ac4f78e5101e0f850ea521af4b88b0",
     "title": "Joyalukkas, Kalyan bag TN govt order to gift gold rings to 4.41 lakh newborns",
     "link": "https://www.thehindubusinessline.com/markets/gold/joyalukkas-bags-a-golden-tn-govt-order-to-gift-rings-to-441-lakh-newborns/article71374723.ece",
     "source": "Business Line",
-    "published": "Fri, 21 Aug 2026 22:01:54 +0530",
+    "published": "Fri, 21 Aug 2026 22:39:06 +0530",
     "description": "The Kerala jeweler pipped others for the ₹755 crore order by bidding on a razor-thin margin",
     "category": "Business",
     "region": "Telangana",
     "image_url": "https://bl-i.thgim.com/public/news/ae7m7h/article71374715.ece/alternates/LANDSCAPE_1200/bl22_Golden_ring_pic.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "f3d315948985a6fb439710d4d122b23c",
+    "title": "China’s Chang’e-7 lunar mission to search for water at Moon’s south pole",
+    "link": "https://www.thehindubusinessline.com/news/science/chinas-change-7-lunar-mission-to-search-for-water-at-moons-south-pole/article71375074.ece",
+    "source": "Business Line",
+    "published": "Fri, 21 Aug 2026 22:24:46 +0530",
+    "description": "The mission will test advanced robotic technologies while gathering data that could shape China’s plans for a permanent lunar research outpost",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/fctcyx/article71375090.ece/alternates/LANDSCAPE_1200/2026-04-08T230133Z_1113889316_RC2WI7ALRNZH_RTRMADP_3_SPACE-MOON-ARTEMIS-CHINA.JPG",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "81f4d2094315f7082d8d8d368762500d",
+    "title": "Colgate bets on veteran Manish Anandani to power its next growth engine",
+    "link": "https://www.thehindubusinessline.com/companies/colgate-bets-on-veteran-manish-anandani-to-power-its-next-growth-engine/article71373784.ece",
+    "source": "Business Line",
+    "published": "Fri, 21 Aug 2026 22:22:04 +0530",
+    "description": "Faces twin challenge of mass-market defence and premium growth",
+    "category": "Business",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/e3h160/article71373858.ece/alternates/LANDSCAPE_1200/Manish%20Anandani1.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "f0248da2ab00237d4a0df6e60d68534d",
+    "title": "Iran warns of ‘devastating’ response as US plans toughest sanctions",
+    "link": "https://www.thehindubusinessline.com/news/world/iran-warns-of-devastating-response-as-us-plans-toughest-sanctions/article71375057.ece",
+    "source": "Business Line",
+    "published": "Fri, 21 Aug 2026 22:17:40 +0530",
+    "description": "Washington’s planned measures come as tensions threaten shipping routes, crude supplies and diplomatic efforts to end the conflict involving Tehran",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/t39z78/article71375068.ece/alternates/LANDSCAPE_1200/2022-11-10T081705Z_373717873_RC2VIX94623T_RTRMADP_3_IRAN-MISSILES-HYPERSONIC.JPG",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "e8a41bfc5ede5d3439ab737cf1bfa07a",
+    "title": "IRDAI bars Edelweiss Life, Pramerica Life from opening new offices for six months",
+    "link": "https://www.thehindubusinessline.com/money-and-banking//article71373815.ece",
+    "source": "Business Line",
+    "published": "Fri, 21 Aug 2026 22:05:59 +0530",
+    "description": "The Authority will continue to take appropriate supervisory and enforcement action wherever regulatory non-compliance is observed",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://bl-i.thgim.com/public/incoming/6e8oqj/article71374026.ece/alternates/LANDSCAPE_1200/IRDAI-mandates-GC6GBCMQ4.4.jpg.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1438,141 +1462,85 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "147b2d3b66c8dc7ccec8e7063707ba0a",
-    "title": "Bank of Baroda raises $400 million through 5-year senior unsecured notes",
-    "link": "https://www.thehindubusinessline.com/money-and-banking/bank-of-baroda-raises-400-million-through-5-year-senior-unsecured-notes/article71374814.ece",
-    "source": "Business Line",
-    "published": "Fri, 21 Aug 2026 21:36:14 +0530",
-    "description": "The fundraising expands Bank of Baroda’s overseas debt portfolio, following a similar $300-million issue earlier, under its broader medium-term programme",
-    "category": "Transit",
+    "id": "9492f1bca4329ead5c7e27e0b7c81523",
+    "title": "Fujifilm expands key chip material output to capture AI demand",
+    "link": "https://www.business-standard.com/companies/news/fujifilm-expands-key-chip-material-output-to-capture-ai-demand-126082101488_1.html",
+    "source": "Business Standard",
+    "published": "Fri, 21 Aug 2026 23:16:38 +0530",
+    "description": "The Tokyo-based company spent ¥7 billion ($44 million) on the expansion project after forecasting the market will grow rapidly going forward.",
+    "category": "Weather",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/cuhox5/article71374927.ece/alternates/LANDSCAPE_1200/2026-07-27T101526Z_462571261_RC2YM1APSHS3_RTRMADP_3_INDIA-BANK-OF-BARODA-CYBERATTACK.JPG",
+    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/article/2017-11/15/full/1510758124-8655.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "d59533d231eb40b1f23f3c058ff4b523",
-    "title": "Retail F&O gets younger as trading outpaces equity wealth",
-    "link": "https://www.thehindubusinessline.com/markets/retail-fo-gets-younger-as-trading-outpaces-equity-wealth/article71374411.ece",
-    "source": "Business Line",
-    "published": "Fri, 21 Aug 2026 21:34:46 +0530",
-    "description": "Under-40 traders account for 78% of individual F&amp;O participants, but 30-something traders bear the bulk of losses",
-    "category": "Business",
-    "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/26t3d0/article71374791.ece/alternates/LANDSCAPE_1200/2024-07-23T110838Z_488280966_RC2V09AIMRVV_RTRMADP_3_INDIA-BUDGET.JPG",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "243e2d4ee01dd22fcef5cb2bc38023e1",
-    "title": "India rules out sugar import from Pakistan despite duty-free window",
-    "link": "https://www.thehindubusinessline.com/economy/india-rules-out-sugar-import-from-pakistan-despite-duty-free-window/article71374378.ece",
-    "source": "Business Line",
-    "published": "Fri, 21 Aug 2026 21:21:58 +0530",
-    "description": "MEA indicates no plans to make exception to Pakistan import ban",
+    "id": "e94210fe20b61d878cea7af3ccc0c18c",
+    "title": "Symbiotec Pharmalab raises ₹526 cr from anchor investors; IPO opens Aug 24",
+    "link": "https://www.business-standard.com/companies/news/symbiotec-pharmalab-raises-526-cr-from-anchor-investors-ipo-opens-aug-24-126082101346_1.html",
+    "source": "Business Standard",
+    "published": "Fri, 21 Aug 2026 21:58:27 +0530",
+    "description": "Pharma and biotech company Symbiotec Pharmalab Ltd on Friday raised Rs 526 crore from anchor investors days before the opening of its initial public offering (IPO).",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/qlswba/article70876422.ece/alternates/LANDSCAPE_1200/IMG_bl04_sugar_india_2_1_BB8B90O0.jpg",
+    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/article/2026-08/21/full/1787325668-9218.png",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "b70d301fadd91bc20c324ec3a067d8fa",
-    "title": "PNGRB authorises 1,800 km of new LPG pipelines with ₹7,000 crore investment",
-    "link": "https://www.thehindubusinessline.com/markets/commodities/pngrb-authorises-1800-km-of-new-lpg-pipelines-with-7000-crore-investment/article71374330.ece",
-    "source": "Business Line",
-    "published": "Fri, 21 Aug 2026 21:21:30 +0530",
-    "description": "This will expand the common carrier pipeline network to roughly 9,500 km",
+    "id": "86d34f999a3a4c205b12ae6ef3e0a2ae",
+    "title": "Online Instruments India gets Sebi approval to float IPO worth ₹750 cr",
+    "link": "https://www.business-standard.com/companies/news/online-instruments-india-gets-sebi-approval-to-float-ipo-worth-750-cr-126082101184_1.html",
+    "source": "Business Standard",
+    "published": "Fri, 21 Aug 2026 21:57:59 +0530",
+    "description": "Online Instruments has secured Sebi's approval to raise funds through an initial public offering, an update with the market regulator showed on Friday.",
     "category": "Business",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/rlvhwi/article71374800.ece/alternates/LANDSCAPE_1200/Under-recovery-G44GCHH5J.3.jpg.jpg",
+    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/article/2026-07/26/full/1785088695-7224.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "1e758393958664d6d08319df0bf8c43a",
-    "title": "Crypto investor sentiment remains damp despite uptick in Bitcoin pricing",
-    "link": "https://www.thehindubusinessline.com/money-and-banking/cryptocurrency/crypto-investor-sentiment-remains-damp-despite-uptick-in-bitcoin-pricing/article71374632.ece",
-    "source": "Business Line",
-    "published": "Fri, 21 Aug 2026 21:17:00 +0530",
-    "description": "Investors in the 18–25 year age group recorded the highest selling activity in Q2, as per data collacted by CoinSwitch",
-    "category": "Govt",
+    "id": "89bcc6894bd2f4abc4cdbc6212c91e54",
+    "title": "CBI files supplementary chargesheet in RCom ₹1,200 crore loan case",
+    "link": "https://www.business-standard.com/companies/news/cbi-files-supplementary-chargesheet-in-rcom-1-200-crore-loan-case-126082101204_1.html",
+    "source": "Business Standard",
+    "published": "Fri, 21 Aug 2026 21:56:29 +0530",
+    "description": "The CBI has filed a supplementary chargesheet in the Reliance Communications Ltd (RCom) case in connection with an alleged Rs 1,200-crore loan fraud, officials said on Friday.",
+    "category": "Safety",
     "region": "Telangana",
-    "image_url": "https://bl-i.thgim.com/public/incoming/6d9kuf/article71374796.ece/alternates/LANDSCAPE_1200/2026-07-01T070532Z_1378868067_RC22PGAE5QKF_RTRMADP_3_CRYPTO-BITCOIN-CITIGROUP.JPG",
+    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/article/2023-04/14/full/1681469013-3796.png",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
     "id": "e264a90786207246ea1a814472e8bf2b",
-    "title": "Govt asks Google to remove Firebase accounts impersonating banks' websites",
+    "title": "Home ministry asks Google to remove fake bank pages on Firebase",
     "link": "https://www.business-standard.com/industry/news/govt-asks-google-to-remove-firebase-accounts-impersonating-banks-websites-126082101300_1.html",
     "source": "Business Standard",
-    "published": "Fri, 21 Aug 2026 20:11:08 +0530",
-    "description": "I4C notices said websites and databases were impersonating Android apps of major banks and using offers of reward-point redemption and credit limit upgrades to defraud users",
-    "category": "Safety",
+    "published": "Fri, 21 Aug 2026 23:24:40 +0530",
+    "description": "The Firebase notices come amid a broader regulatory push to curb digital-payment fraud. The RBI's fraud-prevention measures broadly cover three areas",
+    "category": "Transit",
     "region": "Telangana",
-    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/hp/home-page/2026-08/21/9343/full/1787305028-0994.JPG",
+    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/hp/home-page/2026-08/21/9343/full/1787334807-0853.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
   },
   {
-    "id": "72b10a41bf14eebff32c8718984f828e",
-    "title": "Delhi logs over 1,700 swine flu cases this year amid influenza surge",
-    "link": "https://www.business-standard.com/india-news/delhi-logs-over-1-700-swine-flu-cases-this-year-amid-influenza-surge-126082100770_1.html",
+    "id": "dd06be5746421160481b4037b4980091",
+    "title": "Easing of 10% rule on Chinese stake attracts FDI worth ₹4,896 crore",
+    "link": "https://www.business-standard.com/economy/news/press-note-3-easing-brings-4-896-cr-fdi-into-india-across-29-projects-126082101272_1.html",
     "source": "Business Standard",
-    "published": "Fri, 21 Aug 2026 19:43:30 +0530",
-    "description": "Delhi has registered more than 1,700 cases of swine flu this year, health department officials said on Friday, as the national capital sees a surge in seasonal influenza cases during monsoon.\nOn the day, Delhi Health Minister Pankaj Kumar Singh and ...",
-    "category": "Weather",
+    "published": "Fri, 21 Aug 2026 22:48:39 +0530",
+    "description": "Investments span sectors including information technology, artificial intelligence, manufacturing, pharmaceuticals, data centres and transport services, government says",
+    "category": "Transit",
     "region": "Telangana",
-    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/hp/home-page/2026-08/21/9343/full/1726679749-13.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "81b26614870c6d54eba77ddb12208712",
-    "title": "SBI acquires Pune property for ₹414 crore for Maharashtra Circle office",
-    "link": "https://www.business-standard.com/companies/news/sbi-acquires-pune-property-for-414-crore-for-maharashtra-circle-office-126082101146_1.html",
-    "source": "Business Standard",
-    "published": "Fri, 21 Aug 2026 18:45:46 +0530",
-    "description": "The acquisition at Kharadi Knowledge Park includes leasehold rights to an 8,581-square-metre land parcel, ownership of a 15-storey building and 200 parking spaces",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/misc/2026-08/07/full/challa-sreenivasulu-setty-chairman-sbi-at-the-q1-fy27-results-press-conference-in-mumbai-on-friday-07th-august-2026-kamlesh-pednekar-1786111839-90814830.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "5cea5b20a14f0e1546026ea3e1ae32ec",
-    "title": "Religare takeover: SAT dismisses Danny Gaekwad's plea on exemptions",
-    "link": "https://www.business-standard.com/markets/news/religare-takeover-sat-dismisses-danny-gaekwad-s-plea-on-exemptions-126082101051_1.html",
-    "source": "Business Standard",
-    "published": "Fri, 21 Aug 2026 20:05:16 +0530",
-    "description": "SAT has rejected Danny Gaekwad's bid to make a competing open offer for Religare, saying he missed the 15-day deadline under Sebi's takeover rules",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/hp/home-page/2026-08/21/9343/full/1739121653-8861.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "fd7a494621e1f851a60c7695d342e909",
-    "title": "Canada's Fairfax may get 2 years to consolidate holdings for IDBI Bank deal",
-    "link": "https://www.business-standard.com/companies/news/canada-s-fairfax-may-get-2-years-to-consolidate-holdings-for-idbi-bank-deal-126082100381_1.html",
-    "source": "Business Standard",
-    "published": "Fri, 21 Aug 2026 12:53:27 +0530",
-    "description": "A long-delayed sale of a majority stake in IDBI Bank, held by the federal government and ‌state insurer Life Insurance Corp of India, is in its final stages",
-    "category": "Govt",
-    "region": "Telangana",
-    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/article/2025-12/05/full/1764900964-3805.jpg",
+    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/hp/home-page/2026-08/21/9343/full/1787332633-1741.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -1606,20 +1574,6 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "18364ce5a59c9c26e3efef89d28f09f8",
-    "title": "Welspun Corp bags record $1.8 billion pipe supply order for US facility",
-    "link": "https://www.business-standard.com/companies/news/welspun-corp-bags-record-1-8-billion-pipe-supply-order-for-us-facility-126082100265_1.html",
-    "source": "Business Standard",
-    "published": "Fri, 21 Aug 2026 11:10:26 +0530",
-    "description": "The order highlights strong demand for pipes used in energy and infrastructure projects, while geopolitical tensions have spurred investment in new pipeline networks",
-    "category": "Business",
-    "region": "Telangana",
-    "image_url": "",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
     "id": "8d9453975546c83c1fb617743f790849",
     "title": "Delhi wants to stay open longer: What MPD-2047's 24-hour city vision means",
     "link": "https://www.business-standard.com/india-news/master-plan-for-delhi-2047-city-economy-transport-nightlife-urban-planning-126082100278_1.html",
@@ -1634,15 +1588,15 @@
     "correlated_civic_entities": []
   },
   {
-    "id": "20863b63a840844ce55d7c438b006868",
-    "title": "Prabha Narasimhan moves to APac role; Manish Anandani to lead Colgate India",
-    "link": "https://www.business-standard.com/companies/people/colgate-palmolive-india-manish-anandani-md-ceo-prabha-narasimhan-126082100287_1.html",
+    "id": "8c9c9fd5e64cbd81d093f65d8aca5edd",
+    "title": "MPD-2047 proposes 41-62 acres for Delhi's semiconductor, drone, AI hubs",
+    "link": "https://www.business-standard.com/india-news/mpd-2047-proposes-41-62-acres-for-delhi-s-semiconductor-drone-ai-hubs-126082100193_1.html",
     "source": "Business Standard",
-    "published": "Fri, 21 Aug 2026 19:22:20 +0530",
-    "description": "Manish Anandani will take over as managing director and chief executive officer of Colgate-Palmolive India from September 28",
+    "published": "Fri, 21 Aug 2026 10:00:37 +0530",
+    "description": "Delhi's IT department has sought 41-62 acres for four technology projects under MPD-2047, including semiconductor and electronics, drone innovation, a digital hub, and AI-enabled data infrastructure",
     "category": "General",
     "region": "Telangana",
-    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/article/2026-08/21/full/1787320312-5677.jpg",
+    "image_url": "https://bsmedia.business-standard.com/_media/bs/img/hp/home-page/2026-08/21/10939/full/1746979997-2373.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -2068,6 +2022,48 @@
     "correlated_civic_entities": []
   },
   {
+    "id": "1f6b0a924fda8bb7af2a4ef612ca1af3",
+    "title": "Chinese regulators tell Tesla to fix nearly 3 million cars",
+    "link": "https://arstechnica.com/cars/2026/08/chinese-regulators-tell-tesla-to-fix-nearly-3-million-cars/",
+    "source": "Ars Technica",
+    "published": "Fri, 21 Aug 2026 18:07:15 +0000",
+    "description": "Chinese safety regulators have cracked down on doors that don't open in a crash.",
+    "category": "Safety",
+    "region": "Telangana",
+    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2290777035-1152x648.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "02e578e5a4d51cd270cb0646b53806d4",
+    "title": "Fighter jets help destroy Russian drone boat near European offshore gas platform",
+    "link": "https://arstechnica.com/gadgets/2026/08/explosive-russian-drone-boat-destroyed-near-european-offshore-gas-site/",
+    "source": "Ars Technica",
+    "published": "Fri, 21 Aug 2026 16:48:59 +0000",
+    "description": "Romania blew up drone boat to protect lives of several hundred rig workers.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/Russian-drone-boat-1152x648.jpeg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
+    "id": "558a07bd5da7e422ebe7f43c689c268c",
+    "title": "Personalized pricing is “abhorrent,” but FTC limits may increase costs, critics say",
+    "link": "https://arstechnica.com/tech-policy/2026/08/critics-ftc-limits-on-personalized-pricing-may-increase-costs-kill-discounts/",
+    "source": "Ars Technica",
+    "published": "Fri, 21 Aug 2026 16:38:25 +0000",
+    "description": "Some Americans fear the FTC may be thinking about personalized pricing all wrong.",
+    "category": "General",
+    "region": "Telangana",
+    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2278328918-1024x648.jpg",
+    "ai_summary": "",
+    "tags": [],
+    "correlated_civic_entities": []
+  },
+  {
     "id": "ee651d00c0ca5afd000eadc4aea0f7f5",
     "title": "Waymo doubles spending on lobbying in robotaxi battle with Uber",
     "link": "https://arstechnica.com/cars/2026/08/waymo-doubles-spending-on-lobbying-in-robotaxi-battle-with-uber/",
@@ -2161,48 +2157,6 @@
     "category": "Safety",
     "region": "Telangana",
     "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-2273992483-1024x648.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "5fe6d2e100b7beec2584ad7e42bf97be",
-    "title": "Genesis joins the giant electric SUV club with new GV90",
-    "link": "https://arstechnica.com/cars/2026/08/genesis-joins-the-giant-electric-suv-club-with-new-gv90/",
-    "source": "Ars Technica",
-    "published": "Thu, 20 Aug 2026 14:35:58 +0000",
-    "description": "A retractable screen, a huge heads-up display, and an optional 4-seat VIP interior.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/Original-6723-photo-3-gv90-exterior-1152x648.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "25757546dd302f78849000f5c1dbf8b2",
-    "title": "SpaceX’s orbital data centers would create a new category of e-waste",
-    "link": "https://arstechnica.com/science/2026/08/spacexs-orbital-data-centers-would-create-a-new-category-of-e-waste/",
-    "source": "Ars Technica",
-    "published": "Thu, 20 Aug 2026 13:59:50 +0000",
-    "description": "The yeetcycling math resembles asteroid mining in reverse.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/yeetcycling-1152x648.jpg",
-    "ai_summary": "",
-    "tags": [],
-    "correlated_civic_entities": []
-  },
-  {
-    "id": "8d5a0479e95e34492f993058c25e08c4",
-    "title": "Reverse-lookup service exposed millions of photos of people’s faces",
-    "link": "https://arstechnica.com/gadgets/2026/08/reverse-lookup-service-exposed-millions-of-photos-of-peoples-faces/",
-    "source": "Ars Technica",
-    "published": "Thu, 20 Aug 2026 13:29:54 +0000",
-    "description": "People-search tool ClarityCheck left database containing more than 9M image files exposed.",
-    "category": "General",
-    "region": "Telangana",
-    "image_url": "https://cdn.arstechnica.net/wp-content/uploads/2026/08/GettyImages-1047996096-1152x648.jpg",
     "ai_summary": "",
     "tags": [],
     "correlated_civic_entities": []
@@ -2352,7 +2306,7 @@
     "title": "इकोनॉमिक टाइम्स वर्ल्ड लीडर्स फोरम 2026 में प्रधानमंत्री के संबोधन का मूल पाठ",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302207",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2366,7 +2320,7 @@
     "title": "संचार मंत्री श्री ज्योतिरादित्य एम. सिंधिया ने पुणे में आयोजित 12वीं ब्रिक्स संचार मंत्रियों की बैठक अध्यक्षता की और सतत सूचना एवं संचार प्रौद्योगिकी अवसंरचना और डिजिटल समावेशिता पर जोर दिया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302185",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2380,7 +2334,7 @@
     "title": "केन्द्रीय गृह एवं सहकारिता मंत्री श्री अमित शाह ने आज पश्चिम बंगाल के सिलिगुड़ी में तीन नए कानूनों पर प्रदर्शनी का उद्घाटन किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302115",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2394,7 +2348,7 @@
     "title": "सरकार ने वैश्विक प्रतिस्पर्धात्मकता बढ़ाने और घरेलू स्तर पर मूल्य संवर्धन को बढ़ावा देने के लिए 62,500 करोड़ रुपये की मोबाइल फोन विनिर्माण योजना की घोषणा की",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302183",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2408,7 +2362,7 @@
     "title": "केन्द्रीय मंत्री राम मोहन नायडू ने मैसूर में आयोजित नागर विमानन सलाहकार समिति की बैठक की अध्यक्षता की",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302171",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2422,7 +2376,7 @@
     "title": "केंद्रीय मंत्री श्रीमती अन्नपूर्णा देवी ने की मिशन शक्ति पर महिला एवं बाल विकास मंत्रालय की परामर्श समिति की बैठक की अध्यक्षता",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302153",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2436,7 +2390,7 @@
     "title": "देहरादून में भारत-नेपाल संयुक्त कार्य समूह की 14वीं बैठक आयोजित",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302106",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2450,7 +2404,7 @@
     "title": "भारतीय प्रतिस्पर्धा आयोग ने प्रतिस्पर्धा-विरोधी आचरण में लिप्त होने के लिए एग्रो इनपुट डीलर्स एसोसिएशन और एग्रो इनपुट वेलफेयर एसोसिएशन पर मौद्रिक और गैर-मौद्रिक प्रतिबंध लगाए",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302116",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2464,7 +2418,7 @@
     "title": "भारतीय प्रतिस्पर्धा आयोग ने हिमाचल प्रदेश निविदा 2013 के अंतर्गत टायरों की खरीद के संबंध में प्रतिस्पर्धा-विरोधी आचरण में लिप्त होने के कारण रेखा एजेंसीज और एसएस मार्केटिंग पर जुर्माना लगाया है",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302111",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
@@ -2478,7 +2432,7 @@
     "title": "ब्रिक्स पर्यटन मंत्रियों ने जयपुर घोषणापत्र को पारित किया",
     "link": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2302146",
     "source": "PIB Hyderabad",
-    "published": "Fri, 21 Aug 2026 16:36:44 +0530",
+    "published": "Fri, 21 Aug 2026 18:38:45 +0530",
     "description": "",
     "category": "General",
     "region": "Telangana",
