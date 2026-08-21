@@ -2,7 +2,28 @@
   {
     "id": 201,
     "type": "water",
-    "message": "SC retains 1978 industry test for old disputes, leaves new labour code open",
+    "message": "Ramanathapuram Villagers Block Road Against PWD Land Encroachment",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "power",
+    "message": "Sensex today | Stock Market Live: Sensex rises 100 pts after flattish opening, Nifty trades around 24,260; Power Grid Corp, Kotak Mahindra Bank top gainers",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "power",
+    "message": "IndiGo website crashes for second time this week, blocks some bookings",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "water",
+    "message": "Welspun Corp bags record $1.8 billion pipe supply order for US facility",
     "district": "Telangana",
     "time": "Recent"
   }
