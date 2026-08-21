@@ -1,13 +1,20 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Market wrap:  Kotak Mahindra Bank, Power Grid, Maruti Suzuki, Trent top gainers and losers on Nifty and Sensex on Friday",
+    "type": "emergency",
+    "message": "‘Received no help’: Odisha man’s body kept on rooftop for 18 hours amid floods",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
+    "type": "emergency",
+    "message": "Elephant Joymoti Rescued From Nagaland Flood, Airlifted to Vantara",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "water",
     "message": "Welspun Corp bags record $1.8 billion pipe supply order for US facility",
     "district": "Telangana",
