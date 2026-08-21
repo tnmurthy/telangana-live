@@ -1,27 +1,20 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "Ramanathapuram Villagers Block Road Against PWD Land Encroachment",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "power",
     "message": "Sensex today | Stock Market Live: Sensex rises 100 pts after flattish opening, Nifty trades around 24,260; Power Grid Corp, Kotak Mahindra Bank top gainers",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 203,
-    "type": "power",
-    "message": "IndiGo website crashes for second time this week, blocks some bookings",
+    "id": 202,
+    "type": "emergency",
+    "message": "Binance Donates INR 3.3 Crore to Goonj's Rahat Initiative for Assam Flood Relief",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 204,
+    "id": 203,
     "type": "water",
     "message": "Welspun Corp bags record $1.8 billion pipe supply order for US facility",
     "district": "Telangana",
