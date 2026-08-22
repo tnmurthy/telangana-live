@@ -12,5 +12,12 @@
     "message": "SC orders refund of fine paid by Art of Living for damage to Yamuna floodplains",
     "district": "Telangana",
     "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "emergency",
+    "message": "SC overturns NGT order against Art of Living, orders ₹5 crore refund",
+    "district": "Telangana",
+    "time": "Recent"
   }
 ]
