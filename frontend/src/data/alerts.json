@@ -1,9 +1,16 @@
 [
   {
     "id": 201,
+    "type": "water",
+    "message": "Traffic diversions on Nallagandla-Tellapur road for drain works",
+    "district": "Cyberabad",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
     "type": "emergency",
-    "message": "Moderate to Heavy Rains Likely in Telangana During Evening to Next Day Morning",
-    "district": "Adilabad",
+    "message": "SC orders refund of fine paid by Art of Living for damage to Yamuna floodplains",
+    "district": "Telangana",
     "time": "Recent"
   }
 ]
