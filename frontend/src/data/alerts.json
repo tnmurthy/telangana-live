@@ -1,20 +1,13 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "PNGRB approves 1,800 km of new LPG pipelines",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "emergency",
     "message": "SC orders refund of fine paid by Art of Living for damage to Yamuna floodplains",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 203,
+    "id": 202,
     "type": "emergency",
     "message": "SC overturns NGT order against Art of Living, orders ₹5 crore refund",
     "district": "Telangana",
