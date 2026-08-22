@@ -1,9 +1,9 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "TN 2031 Power Roadmap for 50% Renewable Energy",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "Moderate to Heavy Rains Likely in Telangana During Evening to Next Day Morning",
+    "district": "Adilabad",
     "time": "Recent"
   }
 ]
