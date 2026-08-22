@@ -1,20 +1,13 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Heavy rainfall forecast in five Telangana districts on August 23",
+    "type": "power",
+    "message": "Andhra approves green AI data centre in Visakhapatnam with investment of over ₹30,000 cr",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "The US energy infrastructure opportunity is structural, not one-off’: Welspun MD & CEO",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
     "type": "emergency",
     "message": "SC overturns NGT order against Art of Living, orders ₹5 crore refund",
     "district": "Telangana",
