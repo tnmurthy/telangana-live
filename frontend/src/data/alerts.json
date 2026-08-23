@@ -1,6 +1,13 @@
 [
   {
     "id": 201,
+    "type": "water",
+    "message": "CM Yadav Orders House-To-House Survey In Ken-Betwa Project-Hit Villages",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
     "type": "emergency",
     "message": "SC overturns NGT order against Art of Living, orders ₹5 crore refund",
     "district": "Telangana",
