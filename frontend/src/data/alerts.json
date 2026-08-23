@@ -2,28 +2,7 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Kerala HC Pulls Up MVD Over Modified SUV Used in Flood Rescue",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "water",
-    "message": "Monsoon boosts water levels in Karnataka’s major reservoirs",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "power",
-    "message": "Karnataka: 3 women killed, 8 injured in Yadgir road accident",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "emergency",
-    "message": "Andhra Pradesh weather alert: Heavy rain, winds forecast for northern Andhra",
+    "message": "Heavy rainfall forecast in five Telangana districts on August 24",
     "district": "Telangana",
     "time": "Recent"
   }
