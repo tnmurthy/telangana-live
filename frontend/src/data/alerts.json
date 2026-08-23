@@ -1,15 +1,8 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "Gopalpur Industrial Park Emerges As Eastern India’s Green Industrial Hub",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "emergency",
-    "message": "Rains forecast next week, Telangana govt issues health advisory",
+    "type": "power",
+    "message": "Power Expo Traces 120 Years Of Hyderabad’s Electricity",
     "district": "Hyderabad",
     "time": "Recent"
   }
