@@ -1,8 +1,15 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Power Expo Traces 120 Years Of Hyderabad’s Electricity",
+    "type": "emergency",
+    "message": "Guinea landfill collapse claims 30 lives amid torrential rains",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "emergency",
+    "message": "Heavy Rain, Thunderstorms Forecast Across Telangana; Yellow Alert Issued",
     "district": "Hyderabad",
     "time": "Recent"
   }
