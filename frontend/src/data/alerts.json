@@ -1,9 +1,16 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Heavy rainfall forecast in five Telangana districts on August 24",
+    "type": "water",
+    "message": "Gopalpur Industrial Park Emerges As Eastern India’s Green Industrial Hub",
     "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "emergency",
+    "message": "Rains forecast next week, Telangana govt issues health advisory",
+    "district": "Hyderabad",
     "time": "Recent"
   }
 ]
