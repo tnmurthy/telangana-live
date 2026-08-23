@@ -2,12 +2,19 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Heavy to Very Heavy Rains to Lash North, East Telangana",
+    "message": "Hyderabad: Stampede-like situation at ‘Toxic’ pre-release event in Gundlapochampally",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
+    "type": "emergency",
+    "message": "Heavy monsoon rains likely till Aug 25 as IMD Hyderabad issues alert",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "emergency",
     "message": "SC overturns NGT order against Art of Living, orders ₹5 crore refund",
     "district": "Telangana",
