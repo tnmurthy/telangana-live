@@ -1,16 +1,9 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Guinea landfill collapse claims 30 lives amid torrential rains",
+    "type": "power",
+    "message": "20 stocks to watch: Lenskart, Natco Pharma, Power Grid, GHCL, Sigachi",
     "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "emergency",
-    "message": "Telangana Districts Face Heavy Rain, Hyderabad Gets Showers",
-    "district": "Hyderabad",
     "time": "Recent"
   }
 ]
