@@ -1,8 +1,22 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "20 stocks to watch: Lenskart, Natco Pharma, Power Grid, GHCL, Sigachi",
+    "type": "emergency",
+    "message": "15 Flights Diverted As Heavy Rain, Thunderstorm Lash Delhi",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "emergency",
+    "message": "Global Market: AI debt boom tests investor appetite as tech bond issuance surges",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "water",
+    "message": "Sanlayan Technologies posts first full-year profit as revenue grows six-fold to ₹139.6 crore",
     "district": "Telangana",
     "time": "Recent"
   }
