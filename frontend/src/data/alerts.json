@@ -2,29 +2,15 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Rain Likely to Play Spoilsport During Key Onam Days",
+    "message": "Heavy rain triggers waterlogging, traffic chaos in Delhi-NCR; flights diverted",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Delhi Rains Flood City Roads, Disrupt Daily Life",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "power",
-    "message": "Smart electricity meters introduced to support Adani: Kavitha",
+    "message": "Telangana rains to continue for next few days",
     "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "emergency",
-    "message": "Heavy rain slams Delhi-NCR: What's behind the sudden monsoon rain surge?",
-    "district": "Telangana",
     "time": "Recent"
   }
 ]
