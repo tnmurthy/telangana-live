@@ -2,21 +2,28 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "15 Flights Diverted As Heavy Rain, Thunderstorm Lash Delhi",
+    "message": "Rain Likely to Play Spoilsport During Key Onam Days",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Global Market: AI debt boom tests investor appetite as tech bond issuance surges",
+    "message": "Delhi Rains Flood City Roads, Disrupt Daily Life",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "Sanlayan Technologies posts first full-year profit as revenue grows six-fold to ₹139.6 crore",
+    "type": "power",
+    "message": "Smart electricity meters introduced to support Adani: Kavitha",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "emergency",
+    "message": "Heavy rain slams Delhi-NCR: What's behind the sudden monsoon rain surge?",
     "district": "Telangana",
     "time": "Recent"
   }
