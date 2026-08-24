@@ -1,16 +1,9 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Heavy rain triggers waterlogging, traffic chaos in Delhi-NCR; flights diverted",
+    "type": "power",
+    "message": "Facing heat over power tariff hike, J&amp;K CM Omar Abdullah says he promised free electricity, not static rates",
     "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "emergency",
-    "message": "Telangana rains to continue for next few days",
-    "district": "Hyderabad",
     "time": "Recent"
   }
 ]
