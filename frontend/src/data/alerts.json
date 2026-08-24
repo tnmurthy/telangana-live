@@ -9,22 +9,8 @@
   {
     "id": 202,
     "type": "emergency",
-    "message": "Heavy Rain, Thunderstorms Forecast Across Telangana; Yellow Alert Issued",
+    "message": "Telangana Districts Face Heavy Rain, Hyderabad Gets Showers",
     "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "water",
-    "message": "IPO rush continues: 10 issues to raise over Rs 3,500 crore this week",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "power",
-    "message": "Stocks in news: Reliance Industries, Bank of Baroda, Power Grid, NATCO Pharma and JSW Infra",
-    "district": "Telangana",
     "time": "Recent"
   }
 ]
