@@ -1,8 +1,15 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Facing heat over power tariff hike, J&amp;K CM Omar Abdullah says he promised free electricity, not static rates",
+    "type": "emergency",
+    "message": "Delhi Faces Heavy Rain, Waterlogging; Over 10 Flights Cancelled",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "emergency",
+    "message": "Roads waterlogged as heavy rain pounds Delhi; 16 flights cancelled, 123 delayed",
     "district": "Telangana",
     "time": "Recent"
   }
