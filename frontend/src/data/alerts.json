@@ -2,28 +2,35 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Nepal Flood: కొండ‌చ‌రియ‌లు విరిగిప‌డ్డాయా.. గ్లేసియ‌ల్ లేక్ బ‌స్ట్ అయ్యిందా?.. వీడియో",
+    "message": "Nepal flash flood unlikely to pose major threat to UP; 105 Indians among missing tourists",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Over 100 Indians missing in Nepal flash floods; Bihar, UP border areas on alert",
+    "message": "Nepal floods: PM Modi speaks to Balen Shah, offers support",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "Why Gurugram drowns in rains, but Noida doesn't. 3 key factors",
+    "message": "133 Indians missing in Nepal flash flood; 22 killed; Bihar, UP borders on alert",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
     "type": "emergency",
-    "message": "4 killed after flash flood sweeps through Nepal districts near Tibet border",
+    "message": "Live: PM Modi speaks to Nepal's Balen Shah; India to send relief supplies tonight",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "emergency",
+    "message": "Why Gurugram drowns in rains, but Noida doesn't. 3 key factors",
     "district": "Telangana",
     "time": "Recent"
   }
