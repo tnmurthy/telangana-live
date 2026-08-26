@@ -1,8 +1,22 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Hydel project shutdown triggers power crisis in J&amp;K",
+    "type": "emergency",
+    "message": "Nepal flood | నేపాల్‌లో ఆకస్మిక వరద బీభత్సం.. కొట్టుకుపోయిన ఊరు.. వైరల్ వీడియో",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "emergency",
+    "message": "8 killed in Nepal as flash floods wash away villages, rescue ops underway",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "water",
+    "message": "Indiabulls signs agreement for ₹3,700-crore residential project on Dwarka Expressway",
     "district": "Telangana",
     "time": "Recent"
   }
