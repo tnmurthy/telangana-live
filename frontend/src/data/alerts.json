@@ -8,29 +8,29 @@
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Nepal floods: MEA sets up control room; nearly 200 Indians missing",
+    "type": "power",
+    "message": "And then there were seven in the silent hills",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "22 Telangana residents missing in Nepal flash floods",
-    "district": "Hyderabad",
+    "message": "Nepal floods: Death toll rises to 469, 977 remain out of contact",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "water",
-    "message": "Hyderabad water board to use AI dashboard to track defaulters",
-    "district": "Hyderabad",
+    "type": "emergency",
+    "message": "UK offers £5 million and emergency responders to flood-hit Nepal",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 205,
     "type": "emergency",
-    "message": "Nepal toll nears 400 as another flood threatens, 290 Indians untraceable",
+    "message": "Nepal floods swept ​bodies 200km downstream, 3 found in UP",
     "district": "Telangana",
     "time": "Recent"
   }
