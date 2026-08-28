@@ -2,35 +2,35 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Telangana helpline for Nepal flood victims",
+    "message": "Telangana man on Kailash–Manasarovar Yatra safe; officials follow up details of 22 more",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "NDRF deploys nine teams in Bihar; remains on standby: IG Narendra Bundela on Nepal flood crisis",
+    "message": "Nepal floods: MEA sets up control room; nearly 200 Indians missing",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "Nepal flash floods: World leaders assure support as hundreds of foreigners remain missing",
-    "district": "Telangana",
+    "message": "22 Telangana residents missing in Nepal flash floods",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "emergency",
-    "message": "Nepal floods: India steps in with emergency helplines for stranded nationals",
-    "district": "Telangana",
+    "type": "water",
+    "message": "Hyderabad water board to use AI dashboard to track defaulters",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 205,
     "type": "emergency",
-    "message": "Indian Scientists: Climate Change & Construction Cause Nepal Floods",
+    "message": "Nepal toll nears 400 as another flood threatens, 290 Indians untraceable",
     "district": "Telangana",
     "time": "Recent"
   }
