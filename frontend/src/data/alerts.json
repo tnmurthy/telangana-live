@@ -1,36 +1,36 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Nepal President Ram Chandra Paudel thanks India for 'generous support and solidarity' after floods",
+    "type": "water",
+    "message": "MP High Court moved for public disclosure of Indore water deaths report",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Nothing but ruins: Rescuers reach border office where Sadhguru team was stuck",
+    "message": "God saved us by five feet: Tamil Nadu pilgrims recount narrow escape in Nepal",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "Bridges swept away, villages cut off: Devastating aftermath of Nepal floods",
+    "message": "‘Every Penny for Relief’: Vishal Mishra announces benefit shows in flood-hit regions",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
     "type": "emergency",
-    "message": "Saw death in front of our eyes: Indian-origin couple survives monster Nepal floods",
+    "message": "‘No threat to UP from Nepal floods’: State Jal Shakti minister says authorities remain on alert",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 205,
     "type": "emergency",
-    "message": "Nepal flood horror reaches UP as 10 bodies recovered from Gandak river",
+    "message": "Nepal floods: MEA says 88 Indians rescued, 287 still missing; forensic teams dispatched",
     "district": "Telangana",
     "time": "Recent"
   }
