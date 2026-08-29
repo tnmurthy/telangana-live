@@ -2,35 +2,35 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Australia-based techie with Hyderabad roots feared missing in Nepal flash floods",
-    "district": "Hyderabad",
+    "message": "Nepal President Ram Chandra Paudel thanks India for 'generous support and solidarity' after floods",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Flash floods put focus on India's glacial lakes",
+    "message": "Nothing but ruins: Rescuers reach border office where Sadhguru team was stuck",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "Nepal floods: Spooked by visuals &amp; reports, tourists cancel bookings, tour operators hit",
+    "message": "Bridges swept away, villages cut off: Devastating aftermath of Nepal floods",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "power",
-    "message": "Power Cut in Barkatpura, Chikkadpally and Other Areas Today",
+    "type": "emergency",
+    "message": "Saw death in front of our eyes: Indian-origin couple survives monster Nepal floods",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 205,
-    "type": "power",
-    "message": "Holiday Firm Told to Pay Rs 95,000 to Consumer for Sloppy Service",
+    "type": "emergency",
+    "message": "Nepal flood horror reaches UP as 10 bodies recovered from Gandak river",
     "district": "Telangana",
     "time": "Recent"
   }
