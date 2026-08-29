@@ -1,36 +1,36 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "MP High Court moved for public disclosure of Indore water deaths report",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "emergency",
-    "message": "God saved us by five feet: Tamil Nadu pilgrims recount narrow escape in Nepal",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "emergency",
-    "message": "‘Every Penny for Relief’: Vishal Mishra announces benefit shows in flood-hit regions",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "emergency",
     "message": "‘No threat to UP from Nepal floods’: State Jal Shakti minister says authorities remain on alert",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 205,
+    "id": 202,
     "type": "emergency",
-    "message": "Nepal floods: MEA says 88 Indians rescued, 287 still missing; forensic teams dispatched",
+    "message": "Video: Trishuli river tears through Nepal village, washes away roads, hydro projects",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "emergency",
+    "message": "Jumped off bus, climbed 500 steps: How Indian-origin couple survived Nepal floods",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "emergency",
+    "message": "Video: Buried under debris for 3 days, 6-year-old survives Nepal flood devastation",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "power",
+    "message": "Govt allows RE projects to store, sell curtailed power via battery systems",
     "district": "Telangana",
     "time": "Recent"
   }
