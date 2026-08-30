@@ -2,36 +2,36 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Odisha-Origin UK Millionaire Family Goes Missing in Nepal Floods",
+    "message": "Rescue teams intensify efforts to reach 537 workers missing in Nepal floods",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Nepal Floods: Toll Rises to 675 as Rescuers Race to Find Thousands Missing",
+    "type": "power",
+    "message": "Nepal seeks to advance electricity import arrangement due to floods",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "Nepal Issues Fresh Bhote Koshi River Flood Warning",
+    "message": "Nepal floods revive Bihar’s annual nightmare: Why the state faces flooding every year",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "emergency",
-    "message": "Nepal toll crosses 700; rising rivers, dwindling supplies add to survivors' woes",
+    "type": "water",
+    "message": "Judicial Panel Links 24 Indore Water Deaths To Sewage Contamination",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 205,
     "type": "emergency",
-    "message": "TikTok video gives Indian-origin woman clue on mother missing after Nepal floods",
-    "district": "Telangana",
+    "message": "India provides 68.5 tonnes of relief to flood-hit Nepal",
+    "district": "Hyderabad",
     "time": "Recent"
   }
 ]
