@@ -20,9 +20,9 @@ export default function PulseCounter() {
       <button
         onClick={() => setIsClusterOpen(true)}
         className="fixed bottom-20 right-4 z-50 flex items-center gap-2 rounded-full
-                   bg-dark-bg-secondary/90 border border-telangana-green/20 backdrop-blur-md
-                   px-3 py-1.5 shadow-xl shadow-black/30 cursor-pointer select-none
-                   hover:border-telangana-green/50 hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none"
+                   bg-slate-900 border border-telangana-green/40
+                   px-3 py-1.5 shadow-xl shadow-black/40 cursor-pointer select-none
+                   hover:border-telangana-green hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none"
         title="Stories published today (Click to view clusters)"
         aria-label="View live news clusters"
       >

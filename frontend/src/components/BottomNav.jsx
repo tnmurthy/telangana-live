@@ -47,7 +47,7 @@ export default function BottomNav() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 260, damping: 22, delay: 0.1 }}
-            className="fixed bottom-0 left-0 right-0 bg-dark-bg/90 backdrop-blur-2xl border-t border-white/[0.06] z-50 md:hidden safe-bottom"
+            className="fixed bottom-0 left-0 right-0 bg-dark-bg border-t border-white/[0.1] z-50 md:hidden safe-bottom shadow-lg shadow-black/50"
         >
             <div className="grid grid-cols-5 max-w-lg mx-auto">
                 {items.map((item) => (

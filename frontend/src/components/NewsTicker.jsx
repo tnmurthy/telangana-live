@@ -65,7 +65,7 @@ export default function NewsTicker() {
   };
 
   return (
-    <div data-testid="news-ticker" className="bg-dark-bg-secondary/40 backdrop-blur-sm border-b border-white/[0.03] overflow-hidden">
+    <div data-testid="news-ticker" className="bg-dark-bg-secondary border-b border-white/[0.06] overflow-hidden">
       <div className="max-w-[1440px] mx-auto flex items-center h-9">
         {/* LIVE Badge */}
         <div className="flex-shrink-0 flex items-center gap-2 px-4 h-full bg-red-500/[0.06] border-r border-white/[0.05]">

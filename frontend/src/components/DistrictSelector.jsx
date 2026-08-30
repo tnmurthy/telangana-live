@@ -46,7 +46,7 @@ export default function DistrictSelector({ selectedDistrict, onSelect }) {
             {/* Dropdown */}
             <div className={`absolute top-full left-0 right-0 mt-2 z-40 transition-all duration-300 ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
                 }`}>
-                <div className="bg-card-bg-solid/95 backdrop-blur-2xl border border-white/[0.08] rounded-2xl shadow-2xl shadow-black/40 max-h-80 overflow-hidden">
+                <div className="bg-slate-900 border border-white/[0.12] rounded-2xl shadow-2xl shadow-black/60 max-h-80 overflow-hidden">
                     {/* Search */}
                     <div className="p-3 border-b border-white/[0.05]">
                         <input

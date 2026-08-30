@@ -269,7 +269,7 @@ export default function HomePage() {
 
       {/* Floating Category Pill */}
       <section className="sticky top-[100px] z-40 py-4 pointer-events-none">
-        <div className="liquid-glass border-white/5 bg-black/40 backdrop-blur-2xl px-2 py-1.5 inline-flex gap-1.5 pointer-events-auto mx-auto shadow-2xl">
+        <div className="border border-white/10 bg-slate-900 px-2 py-1.5 inline-flex gap-1.5 pointer-events-auto mx-auto rounded-2xl shadow-xl shadow-black/50">
           {CATEGORIES.map(cat => (
             <button
               key={cat.id}

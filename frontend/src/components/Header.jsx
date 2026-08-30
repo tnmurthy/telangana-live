@@ -39,10 +39,10 @@ export default function Header() {
     }, [setSearchQuery]);
 
     return (
-        <header className={`sticky top-0 z-[60] transition-all duration-500 ${
+        <header className={`sticky top-0 z-[60] transition-all duration-300 ${
             scrolled
-            ? 'bg-dark-bg/85 backdrop-blur-2xl shadow-lg shadow-black/20 border-b border-white/[0.04] py-1.5'
-            : 'bg-dark-bg/95 backdrop-blur-xl py-2.5'
+            ? 'bg-dark-bg shadow-md shadow-black/40 border-b border-white/[0.08] py-1.5'
+            : 'bg-dark-bg border-b border-white/[0.06] py-2.5'
         }`}>
             <div className="max-w-[1440px] mx-auto px-3 sm:px-5 lg:px-6">
                 <div className="flex items-center gap-4 lg:gap-6 justify-between h-12 lg:h-14">

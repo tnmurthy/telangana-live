@@ -67,7 +67,7 @@ export default function DateTimeBar() {
     const time = formatTime(now);
 
     return (
-        <div className="bg-dark-bg-secondary/50 backdrop-blur-sm border-b border-white/[0.04]">
+        <div className="bg-dark-bg-secondary border-b border-white/[0.06]">
             <div className="max-w-[1440px] mx-auto px-3 sm:px-5 lg:px-6 py-1.5 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-4">
                 {/* Gregorian */}
                 <div className="flex items-center gap-3 text-xs">
