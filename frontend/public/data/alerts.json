@@ -2,21 +2,35 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Wish we went later: Sadhguru on tragic timing of missing Isha Foundation pilgrims",
+    "message": "Indian rescue teams step up search for people trapped in Nepal hydropower tunnels",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Earthmovers dig through debris for Nepal flood survivors as rescue ops enter day 5",
+    "message": "Sadhguru pledges Rs 1 crore for Nepal flood relief, seeks joint Himalayan response",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "The Download: the Kids issue arrives, and Bill Gates reveals his AI fears",
+    "message": "16-Year-Old Girl Gang-Raped In Bus After Asking For Lift, 2 Held",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "emergency",
+    "message": "Grand Canyon flood: 20 missing, 60 rescued; videos show damage",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "emergency",
+    "message": "Nepal saw the risk, sought early warning from China. Disaster struck weeks later",
     "district": "Telangana",
     "time": "Recent"
   }
