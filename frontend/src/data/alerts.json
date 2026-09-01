@@ -1,8 +1,15 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "India’s tea output drops 10% in July to 164 m kgs on heavy rains, floods",
+    "type": "power",
+    "message": "Denmark Team Explores Power Grid Solutions for Amaravati",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "power",
+    "message": "TBCB projects lift Power Grid’s order pipeline to ₹1.75 lakh crore",
     "district": "Telangana",
     "time": "Recent"
   }
