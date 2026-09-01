@@ -1,8 +1,8 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Nepal floods: Tunnel workers recount desperate escapes as hundreds remain trapped",
+    "type": "water",
+    "message": "Relief, restoration work intensify in flood-hit Chitrakoot as Mandakini recedes",
     "district": "Telangana",
     "time": "Recent"
   },
@@ -15,6 +15,13 @@
   },
   {
     "id": 203,
+    "type": "power",
+    "message": "India looks for 'sustainable way' to stay in Chabahar amid US sanctions",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
     "type": "emergency",
     "message": "The Download: the Kids issue arrives, and Bill Gates reveals his AI fears",
     "district": "Telangana",
