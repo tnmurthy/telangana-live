@@ -1,22 +1,8 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "Nepal Flood Camps Face Sanitation, Menstrual Hygiene Crisis",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "emergency",
-    "message": "How did Nepal's green house withstand monster flood? Owner lives to tell the tale",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "emergency",
-    "message": "The Download: the Kids issue arrives, and Bill Gates reveals his AI fears",
+    "message": "India’s tea output drops 10% in July to 164 m kgs on heavy rains, floods",
     "district": "Telangana",
     "time": "Recent"
   }
