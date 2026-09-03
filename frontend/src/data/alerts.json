@@ -1,16 +1,23 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Kimi Antonelli ready to help George Russell in Monza qualifying after grid penalty",
+    "type": "emergency",
+    "message": "India sends 21.5 tonnes of relief supplies to flood-hit Nepal",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Nepalis pin hopes on 'wall of the missing' in hunt for relatives after deadly flood",
+    "message": "India dispatches two more aircraft with relief assistance for Nepal, supporting flood-affected communities",
     "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "water",
+    "message": "Hyderabad police hold coordination meeting ahead of Ganesh Chaturthi",
+    "district": "Hyderabad",
     "time": "Recent"
   }
 ]
