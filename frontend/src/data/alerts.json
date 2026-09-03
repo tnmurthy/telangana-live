@@ -1,36 +1,15 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Bihar flood situation worsens as eight major rivers flow above danger mark",
+    "type": "power",
+    "message": "Kimi Antonelli ready to help George Russell in Monza qualifying after grid penalty",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "PM Modi takes stock of flood situation in Varanasi as water crosses warning mark",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "emergency",
-    "message": "Death toll rises to 1,252 in Nepal amid threats of fresh floods",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "emergency",
-    "message": "Assam facing fresh spell of flooding, more than 25,000 affected",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
-    "type": "emergency",
-    "message": "Earthquake of magnitude 5 strikes Tibet days after monster flash floods",
+    "message": "Nepalis pin hopes on 'wall of the missing' in hunt for relatives after deadly flood",
     "district": "Telangana",
     "time": "Recent"
   }
