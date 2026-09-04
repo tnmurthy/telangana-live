@@ -1,22 +1,36 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "CM Asks Officials To Ensure Water Supply For Drinking, Cultivation",
+    "type": "emergency",
+    "message": "Centre offers DNA profiling help to identify Nepal flood victims",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "Hyderabad police hold coordination meeting ahead of Ganesh Chaturthi",
+    "type": "emergency",
+    "message": "Hyderabad traffic advisory: Diversions announced for Janmashtami",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 203,
+    "type": "emergency",
+    "message": "India to provide DNA profiling to identify Nepal flood victims",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
     "type": "power",
-    "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
+    "message": "OpenAI commits $1 billion to cyberdefense effort amid AI safety scrutiny",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "power",
+    "message": "Stocks in focus: IEX, PowerGrid, RVNL, APSEZ, Bharat Forge, HEG, brokerage stocks,Cipla among dozen stocks will be in focus",
     "district": "Telangana",
     "time": "Recent"
   }
