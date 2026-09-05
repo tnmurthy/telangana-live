@@ -1,27 +1,6 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "HMWSSB, CMC identify major sewage inlets into Durgam Cheruvu during inspection",
-    "district": "Cyberabad",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "emergency",
-    "message": "Nepal floods show the risk; China's mega-dam raises bigger questions for India",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "emergency",
-    "message": "Evening newswrap: Terrorist behind IAF convoy attack killed; Putin orders 3-day pause in Kyiv strikes &amp; more",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "power",
     "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
