@@ -2,35 +2,35 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Ponguleti Srinivas Reddy blames previous BRS government for ‘Polavaram backwater threat’ to flood- prone areas in Bhadrachalam",
+    "message": "Ganga rises above 'highest flood mark' in Patna; several low-lying areas face inundation risk",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "US military joins Nepal flood relief as death toll crosses 1,300",
-    "district": "Telangana",
+    "message": "Death toll due to flash floods in Nepal rises to 1344",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "Three Indians, including child, rescued in Nepal floods",
+    "message": "Nepal floods: Death toll surges to 1,344 as rescue efforts continue; around 4,900 still missing",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "power",
-    "message": "SPML Infra's proprietary 104.4 kWh BESS battery pack clears key global certification tests",
+    "type": "emergency",
+    "message": "Indian tunnel rescue team makes progress at flood-hit Chilime hydropower site",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 205,
-    "type": "water",
-    "message": "IPO pipeline gathers pace as four firms eye ₹3,362 crore next week",
+    "type": "emergency",
+    "message": "Ganga water level breaches 'highest flood mark' at Patna's Gandhi Ghat amid heavy rain",
     "district": "Telangana",
     "time": "Recent"
   }
