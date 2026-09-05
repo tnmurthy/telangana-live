@@ -2,35 +2,28 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Ganga rises above 'highest flood mark' in Patna; several low-lying areas face inundation risk",
+    "message": "45-Days-Old Baby Found Alive During Nepal Flood Rescue",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Death toll due to flash floods in Nepal rises to 1344",
-    "district": "Hyderabad",
+    "message": "Landslides | నేపాల్‌లో విరిగిప‌డ్డ కొండ‌చ‌రియ‌లు.. మ‌ళ్లీ వ‌ర‌ద‌లు ముంచెత్తే ప్రమాదం..!",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "Nepal floods: Death toll surges to 1,344 as rescue efforts continue; around 4,900 still missing",
+    "message": "Another worker rescued from tunnel, woman found in rubble 11 days after Nepal floods",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "emergency",
-    "message": "Indian tunnel rescue team makes progress at flood-hit Chilime hydropower site",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
-    "type": "emergency",
-    "message": "Ganga water level breaches 'highest flood mark' at Patna's Gandhi Ghat amid heavy rain",
+    "type": "power",
+    "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
     "time": "Recent"
   }
