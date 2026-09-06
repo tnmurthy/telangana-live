@@ -1,27 +1,20 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "KCR calls for another water war, to lead people’s movement against neglect of irrigation projects",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "emergency",
     "message": "The annual Delhi Yamuna flood threat- why September matters?",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 203,
+    "id": 202,
     "type": "power",
     "message": "MCX electricity futures clock record Rs 245 crore turnover as OI touches all-time high",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 204,
+    "id": 203,
     "type": "power",
     "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
