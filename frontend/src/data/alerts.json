@@ -2,19 +2,26 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Ganga Rises in Patna, Flood-Like Conditions Hit Low-Lying Areas",
+    "message": "West Bengal likely to witness heavy rain, thunderstorms till September 9",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Nepal: 11 days on, search for dead continues, hopes for life dwindle",
-    "district": "Hyderabad",
+    "message": "19 lakh lives impacted as Ganga breaches flood mark in Patna",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
+    "type": "power",
+    "message": "MCX electricity futures clock record Rs 245 crore turnover as OI touches all-time high",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
     "type": "power",
     "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
