@@ -1,34 +1,27 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "HMWSSB plans alternatives if scanty rainfall hits Singur water supplies",
+    "type": "emergency",
+    "message": "Tejashwi Yadav urges Centre to declare Bihar floods a national disaster",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "No leave for TGSPDCL staff during Ganesh Chaturthi in Hyderabad",
-    "district": "Hyderabad",
+    "type": "water",
+    "message": "IISc’s FSID targets 300 deep-tech start-ups by 2030, bets on patient capital to build companies",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "emergency",
-    "message": "Singapore sees wave of anti-Indian posts amid Nepal floods, PM's office steps in",
+    "type": "power",
+    "message": "Power tariffs and building norms top reforms agenda: West Bengal FM",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "power",
-    "message": "No irrational valuation rush in deeptech, says Piper Serica Director",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
     "type": "power",
     "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
