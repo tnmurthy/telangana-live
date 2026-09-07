@@ -2,12 +2,19 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Gyirong post wiped out: Nepal flood jolts China-Nepal BRI rail plan",
-    "district": "Telangana",
+    "message": "Floods: Homes lost, hungry babies: Nepal’s mothers struggle",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
+    "type": "emergency",
+    "message": "Singapore sees wave of anti-Indian posts amid Nepal floods, PM's office steps in",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "power",
     "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
