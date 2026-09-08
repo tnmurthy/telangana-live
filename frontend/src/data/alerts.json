@@ -1,36 +1,15 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Tejashwi Yadav urges Centre to declare Bihar floods a national disaster",
+    "type": "power",
+    "message": "Power tariffs and building norms top reforms agenda: West Bengal FM",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "CM Lashes Out Against DMK",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
     "type": "power",
-    "message": "Southern Region Powergrid Are Kabaddi Champs",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "water",
-    "message": "IISc’s FSID targets 300 deep-tech start-ups by 2030, bets on patient capital to build companies",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
-    "type": "power",
-    "message": "Power tariffs and building norms top reforms agenda: West Bengal FM",
+    "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
     "time": "Recent"
   }
