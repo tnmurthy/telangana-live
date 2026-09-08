@@ -1,13 +1,6 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Nepal’s Mustang hit by 5.3-magnitude quake, tremors felt in nearby districts",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "power",
     "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
