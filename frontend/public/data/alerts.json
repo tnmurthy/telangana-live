@@ -1,6 +1,13 @@
 [
   {
     "id": 201,
+    "type": "emergency",
+    "message": "IPO flood breaks 30-year record as 6 issues hit stock market on same day",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
     "type": "power",
     "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
