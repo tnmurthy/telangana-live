@@ -2,12 +2,19 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "IPO flood breaks 30-year record as 6 issues hit stock market on same day",
+    "message": "Telangana slips into rainfall deficit as monsoon stalls in September",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
+    "type": "emergency",
+    "message": "Nepal Police warns against ‘false’ claims over flood relief",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "power",
     "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
     "district": "Telangana",
