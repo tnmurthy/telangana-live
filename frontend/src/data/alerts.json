@@ -1,22 +1,22 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Telangana slips into rainfall deficit as monsoon stalls in September",
+    "type": "power",
+    "message": "Indian exports surge in August as Jazan Refinery outage opens up EU diesel market",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Nepal Police warns against ‘false’ claims over flood relief",
-    "district": "Hyderabad",
+    "type": "power",
+    "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "power",
-    "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
+    "message": "Batteries just broke another record in the US",
     "district": "Telangana",
     "time": "Recent"
   }
