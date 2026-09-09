@@ -2,20 +2,6 @@
   {
     "id": 201,
     "type": "power",
-    "message": "Indian exports surge in August as Jazan Refinery outage opens up EU diesel market",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "power",
-    "message": "Nobody Is Saying Why OpenAI and Anthropic Had Outages Today",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "power",
     "message": "Batteries just broke another record in the US",
     "district": "Telangana",
     "time": "Recent"
