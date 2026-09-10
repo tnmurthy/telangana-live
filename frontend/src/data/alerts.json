@@ -1,13 +1,20 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Creating a multi-layered security grid in Delhi, one Brics at a time",
+    "type": "water",
+    "message": "Dilip Buildcon shares rally 12% on bagging Rs 1,800 crore LPG pipeline project",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
+    "type": "emergency",
+    "message": "Nepal floods death toll climbs to 1,377; search operations continue for more than 5,000 missing",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "power",
     "message": "Batteries just broke another record in the US",
     "district": "Telangana",
