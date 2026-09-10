@@ -1,20 +1,34 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "Dilip Buildcon shares rally 12% on bagging Rs 1,800 crore LPG pipeline project",
+    "type": "emergency",
+    "message": "Nepal floods: Rs 72,331 crore needed for reconstruction and recovery",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Nepal floods death toll climbs to 1,377; search operations continue for more than 5,000 missing",
+    "type": "water",
+    "message": "Sumadhura Group to invest Rs 17,000 cr on realty projects, land acquisition",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
+    "type": "power",
+    "message": "Powering AI is an architecture problem",
+    "district": "Cyberabad",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "power",
+    "message": "Can the US battery market untangle from China?",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
     "type": "power",
     "message": "Batteries just broke another record in the US",
     "district": "Telangana",
