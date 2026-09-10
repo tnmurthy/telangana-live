@@ -1,20 +1,34 @@
 [
   {
     "id": 201,
+    "type": "water",
+    "message": "Hyd City Sailors Come Up With Rich Haul",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "emergency",
+    "message": "Drones deliver food and remove bodies after Nepal’s flood disaster",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "power",
     "message": "Powering AI is an architecture problem",
     "district": "Cyberabad",
     "time": "Recent"
   },
   {
-    "id": 202,
+    "id": 204,
     "type": "power",
     "message": "Can the US battery market untangle from China?",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 203,
+    "id": 205,
     "type": "power",
     "message": "Batteries just broke another record in the US",
     "district": "Telangana",
