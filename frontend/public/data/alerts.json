@@ -2,28 +2,35 @@
   {
     "id": 201,
     "type": "power",
-    "message": "Telangana Assembly Monsoon Session LIVE Sept 11: IT Minister responds to concerns over electricity requirement at data centres",
+    "message": "Telangana Assembly Monsoon Session Sept 11 highlights: IT Minister responds to concerns over electricity requirement at data centres",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "power",
-    "message": "Powering AI is an architecture problem",
-    "district": "Cyberabad",
+    "message": "CPI(M), Rythu Sangham protest in Khammam over power cuts",
+    "district": "Khammam",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "power",
-    "message": "Can the US battery market untangle from China?",
-    "district": "Telangana",
+    "type": "water",
+    "message": "Former Choppadandi MLA demands water through Kakatiya canal",
+    "district": "Warangal",
     "time": "Recent"
   },
   {
     "id": 204,
     "type": "power",
-    "message": "Batteries just broke another record in the US",
+    "message": "Powering AI is an architecture problem",
+    "district": "Cyberabad",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "power",
+    "message": "Can the US battery market untangle from China?",
     "district": "Telangana",
     "time": "Recent"
   }
