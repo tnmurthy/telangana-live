@@ -2,29 +2,36 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "China’s drone supremacy shows in airlifting bodies and food after Nepal flood disaster",
+    "message": "Nepal’s flash floods death toll rises to 1,385",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "power",
-    "message": "Powering AI is an architecture problem",
-    "district": "Cyberabad",
+    "message": "Telangana Govt Aims for Green Power Revolution: Bhatti",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "power",
-    "message": "Can the US battery market untangle from China?",
+    "type": "emergency",
+    "message": "Nepal’s flash floods death toll rises to 1,385",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "power",
-    "message": "Batteries just broke another record in the US",
+    "type": "emergency",
+    "message": "China’s drone supremacy shows in airlifting bodies and food after Nepal flood disaster",
     "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "power",
+    "message": "Powering AI is an architecture problem",
+    "district": "Cyberabad",
     "time": "Recent"
   }
 ]
