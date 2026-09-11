@@ -8,27 +8,20 @@
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "CPI(M), Rythu Sangham protest in Khammam over power cuts",
-    "district": "Khammam",
+    "type": "water",
+    "message": "Putin's Aurus, Xi's Hongqi: Inside the super-secure armoured cars at BRICS Summit",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "Former Choppadandi MLA demands water through Kakatiya canal",
-    "district": "Warangal",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "power",
     "message": "Powering AI is an architecture problem",
     "district": "Cyberabad",
     "time": "Recent"
   },
   {
-    "id": 205,
+    "id": 204,
     "type": "power",
     "message": "Can the US battery market untangle from China?",
     "district": "Telangana",
