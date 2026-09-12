@@ -1,23 +1,23 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Khammam: Farmers lay siege to substation at Kandukur over power cuts",
-    "district": "Khammam",
+    "type": "emergency",
+    "message": "Heavy rains lash several parts of Telangana on September 12, Mancherial records 135.5 mm",
+    "district": "Mancherial",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "Iraq probes Saudi pipeline attack as regional tensions escalate",
-    "district": "Hyderabad",
+    "type": "emergency",
+    "message": "Gujarat earthquake, Nepal floods &amp; more: What is it about the date 26?",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "power",
-    "message": "Adani's Jharkhand plant unit supplying power to Bangladesh trips amid Dhaka's woes",
-    "district": "Telangana",
+    "message": "Nizamabad: Farmers Protest Against Power Cuts",
+    "district": "Nizamabad",
     "time": "Recent"
   },
   {
