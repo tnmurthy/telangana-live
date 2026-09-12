@@ -1,37 +1,37 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Telangana Assembly Monsoon Session Sept 11 highlights: IT Minister responds to concerns over electricity requirement at data centres",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "Telangana monsoon gains momentum, several districts record heavy rainfall",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Anna Nagar Residents for Additional Diversion Channel to Check Otteri Nullah Flooding",
-    "district": "Telangana",
+    "type": "water",
+    "message": "Saudi Arabia under pressure as Iran, allies threaten key routes",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "Saudi Arabia shuts major East-West oil pipeline after attack",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "water",
     "message": "Saudi suspends key oil pipeline, only route bypassing Hormuz after attacks",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 205,
+    "id": 204,
     "type": "power",
     "message": "Powering AI is an architecture problem",
     "district": "Cyberabad",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "power",
+    "message": "Can the US battery market untangle from China?",
+    "district": "Telangana",
     "time": "Recent"
   }
 ]
