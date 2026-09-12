@@ -8,23 +8,30 @@
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "Putin's Aurus, Xi's Hongqi: Inside the super-secure armoured cars at BRICS Summit",
+    "type": "emergency",
+    "message": "Anna Nagar Residents for Additional Diversion Channel to Check Otteri Nullah Flooding",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "power",
-    "message": "Powering AI is an architecture problem",
-    "district": "Cyberabad",
+    "type": "water",
+    "message": "Saudi Arabia shuts major East-West oil pipeline after attack",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "power",
-    "message": "Can the US battery market untangle from China?",
+    "type": "water",
+    "message": "Saudi suspends key oil pipeline, only route bypassing Hormuz after attacks",
     "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "power",
+    "message": "Powering AI is an architecture problem",
+    "district": "Cyberabad",
     "time": "Recent"
   }
 ]
