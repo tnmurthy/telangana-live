@@ -1,37 +1,37 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Telangana monsoon gains momentum, several districts record heavy rainfall",
-    "district": "Hyderabad",
+    "type": "power",
+    "message": "Khammam: Farmers lay siege to substation at Kandukur over power cuts",
+    "district": "Khammam",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "water",
-    "message": "Saudi Arabia under pressure as Iran, allies threaten key routes",
+    "message": "Iraq probes Saudi pipeline attack as regional tensions escalate",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "Saudi suspends key oil pipeline, only route bypassing Hormuz after attacks",
+    "type": "power",
+    "message": "Adani's Jharkhand plant unit supplying power to Bangladesh trips amid Dhaka's woes",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
-    "type": "power",
-    "message": "Powering AI is an architecture problem",
-    "district": "Cyberabad",
+    "type": "water",
+    "message": "Trump says Iran probably responsible for attack on Saudi pipeline",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 205,
     "type": "power",
-    "message": "Can the US battery market untangle from China?",
-    "district": "Telangana",
+    "message": "Powering AI is an architecture problem",
+    "district": "Cyberabad",
     "time": "Recent"
   }
 ]
