@@ -1,37 +1,23 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Heavy rains lash several parts of Telangana on September 12, Mancherial records 135.5 mm",
-    "district": "Mancherial",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "emergency",
-    "message": "Gujarat earthquake, Nepal floods &amp; more: What is it about the date 26?",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "power",
-    "message": "Nizamabad: Farmers Protest Against Power Cuts",
-    "district": "Nizamabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "water",
     "message": "Trump says Iran probably responsible for attack on Saudi pipeline",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 205,
+    "id": 202,
     "type": "power",
     "message": "Powering AI is an architecture problem",
     "district": "Cyberabad",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "power",
+    "message": "Can the US battery market untangle from China?",
+    "district": "Telangana",
     "time": "Recent"
   }
 ]
