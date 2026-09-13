@@ -1,29 +1,29 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Two die in Andhra Pradesh’s Palnadu as heavy rains lash state",
+    "type": "water",
+    "message": "JAC demands ₹50 lakh ex-gratia, jobs for kin of deceased HMWSSB outsourcing employees",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "power",
-    "message": "Telangana farmers protest power disruptions, low voltage and crop losses",
-    "district": "Mahbubnagar",
+    "message": "Vijay Flags Off Ajith Kumar’s Race at Silverstone; Trisha Krishnan Joins From Grandstands",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "SML Ltd weighing IPO within 2 to 3 years, eyes new chemical entity pipeline",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "Nepal flash floods death toll reaches 1,388",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 204,
     "type": "water",
-    "message": "Iraq says attack on Saudi Arabia's pipeline originated from its territory",
+    "message": "SML Ltd weighing IPO within 2 to 3 years, eyes new chemical entity pipeline",
     "district": "Telangana",
     "time": "Recent"
   },
