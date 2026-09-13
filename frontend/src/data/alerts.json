@@ -1,27 +1,34 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Heavy Rain Inundates Low-Lying Areas in Godavari Districts",
+    "type": "power",
+    "message": "Godavari: 14,000 Ganesh Pandals Get Permission for Vinayaka Chaturthi",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
+    "type": "emergency",
+    "message": "Watch: Worshippers brave heavy rain at Grand Mosque in Makkah",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "water",
     "message": "SML Ltd weighing IPO within 2 to 3 years, eyes new chemical entity pipeline",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 203,
+    "id": 204,
     "type": "power",
     "message": "Powering AI is an architecture problem",
     "district": "Cyberabad",
     "time": "Recent"
   },
   {
-    "id": 204,
+    "id": 205,
     "type": "power",
     "message": "Can the US battery market untangle from China?",
     "district": "Telangana",
