@@ -2,22 +2,36 @@
   {
     "id": 201,
     "type": "water",
-    "message": "Trump says Iran probably responsible for attack on Saudi pipeline",
+    "message": "Iraq says Saudi pipeline attack originated from its territory",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Powering AI is an architecture problem",
-    "district": "Cyberabad",
+    "type": "emergency",
+    "message": "Hyderabad Rains: Avoid Flooded Roads, Traffic Police Issues Travel Advisory",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "power",
-    "message": "Can the US battery market untangle from China?",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "Rain Intensifies Across Telangana, Commuters Advised Caution",
+    "district": "Warangal",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "water",
+    "message": "Iraq says Saudi pipeline attack originated from its territory",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
+    "type": "emergency",
+    "message": "Nepal flood: US approves additional USD 1 million",
+    "district": "Hyderabad",
     "time": "Recent"
   }
 ]
