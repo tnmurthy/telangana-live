@@ -1,22 +1,22 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Godavari: 14,000 Ganesh Pandals Get Permission for Vinayaka Chaturthi",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "emergency",
     "message": "Watch: Worshippers brave heavy rain at Grand Mosque in Makkah",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
+    "id": 202,
+    "type": "water",
+    "message": "Oil Price Today (September 14): Crude oil jumps 3% to near $108/barrel as Middle East tensions escalate. What are analysts warning?",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
     "id": 203,
     "type": "water",
-    "message": "SML Ltd weighing IPO within 2 to 3 years, eyes new chemical entity pipeline",
+    "message": "Oil prices jump more than 2% after new strikes on Saudi, Strait of Hormuz",
     "district": "Telangana",
     "time": "Recent"
   },
