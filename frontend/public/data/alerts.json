@@ -2,36 +2,36 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Hyderabad: Heavy downpour results in underpass near Bible House submerged",
+    "message": "HYDRAA tackles waterlogging after heavy rain in Secunderabad",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Hyderabad: Khairatabad Ganesh draws huge crowds despite heavy rains",
-    "district": "Hyderabad",
+    "message": "Nearly 50 lakh hit by floods in Bihar as swollen rivers breach danger marks",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "power",
-    "message": "Meta Restricts Viral AI Video of VD Satheesan Dancing Amid Keralam Power Cuts",
+    "message": "India Approves Electricity Supply To Nepal After Flash Flood",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
     "type": "power",
-    "message": "Global Market: Samsung, SK Hynix reject $18.7 billion upfront power payment proposal",
-    "district": "Telangana",
+    "message": "Powering AI is an architecture problem",
+    "district": "Cyberabad",
     "time": "Recent"
   },
   {
     "id": 205,
     "type": "power",
-    "message": "Powering AI is an architecture problem",
-    "district": "Cyberabad",
+    "message": "Can the US battery market untangle from China?",
+    "district": "Telangana",
     "time": "Recent"
   }
 ]
