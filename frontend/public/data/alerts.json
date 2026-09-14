@@ -2,36 +2,36 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Watch: Worshippers brave heavy rain at Grand Mosque in Makkah",
+    "message": "Hyderabad: Heavy downpour results in underpass near Bible House submerged",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "Oil Price Today (September 14): Crude oil jumps 3% to near $108/barrel as Middle East tensions escalate. What are analysts warning?",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "Hyderabad: Khairatabad Ganesh draws huge crowds despite heavy rains",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "Oil prices jump more than 2% after new strikes on Saudi, Strait of Hormuz",
+    "type": "power",
+    "message": "Meta Restricts Viral AI Video of VD Satheesan Dancing Amid Keralam Power Cuts",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
     "type": "power",
-    "message": "Powering AI is an architecture problem",
-    "district": "Cyberabad",
+    "message": "Global Market: Samsung, SK Hynix reject $18.7 billion upfront power payment proposal",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 205,
     "type": "power",
-    "message": "Can the US battery market untangle from China?",
-    "district": "Telangana",
+    "message": "Powering AI is an architecture problem",
+    "district": "Cyberabad",
     "time": "Recent"
   }
 ]
