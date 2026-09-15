@@ -2,28 +2,14 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Nepal finance minister heads to India for flood reconstruction talks as losses mount",
+    "message": "Nepal finance minister Swarnim Wagle arriving in Delhi tomorrow for talks on post-flood aid",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "Delhi, 5 states sign agreement for Kishau multi-purpose project; to augment drinking water supply for national capital",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "emergency",
-    "message": "Nepal finance min heads to India for flood repair talks as losses mount",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "emergency",
-    "message": "AI bots \"Timmy,\" \"Ren,\" and \"Jackie\" are flooding social media with slop",
+    "type": "power",
+    "message": "Oil jumps over $3 as Saudi export halt, Libya outages stoke supply fears",
     "district": "Telangana",
     "time": "Recent"
   }
