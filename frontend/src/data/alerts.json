@@ -1,23 +1,23 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Power cuts | కరెంట్‌ కోతలతో రైతుల గగ్గోలు .. ఊట్కూర్‌ చెక్‌పోస్టు వద్ద రైతుల ధర్నా",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "IMD forecasts thunderstorms, rain across Telangana from September 17 to 22",
+    "district": "Khammam",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "AI bots \"Timmy,\" \"Ren,\" and \"Jackie\" are flooding social media with slop",
+    "type": "water",
+    "message": "Valmiki Leela Capital eyes Rs 3,000 crore IPO pipeline over 18 months",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "power",
-    "message": "Powering AI is an architecture problem",
-    "district": "Cyberabad",
+    "type": "emergency",
+    "message": "AI bots \"Timmy,\" \"Ren,\" and \"Jackie\" are flooding social media with slop",
+    "district": "Telangana",
     "time": "Recent"
   }
 ]
