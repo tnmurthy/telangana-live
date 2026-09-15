@@ -1,34 +1,20 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "HYDRAA tackles waterlogging after heavy rain in Secunderabad",
-    "district": "Hyderabad",
+    "type": "power",
+    "message": "Power cuts | కరెంట్‌ కోతలతో రైతుల గగ్గోలు .. ఊట్కూర్‌ చెక్‌పోస్టు వద్ద రైతుల ధర్నా",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "After rains, HYDRAA inspects waterlogged areas in Secunderabad",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
     "type": "emergency",
     "message": "AI bots \"Timmy,\" \"Ren,\" and \"Jackie\" are flooding social media with slop",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 204,
-    "type": "power",
-    "message": "A new solar cell could generate electricity underwater",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
+    "id": 203,
     "type": "power",
     "message": "Powering AI is an architecture problem",
     "district": "Cyberabad",
