@@ -15,13 +15,20 @@
   },
   {
     "id": 203,
+    "type": "emergency",
+    "message": "AI bots \"Timmy,\" \"Ren,\" and \"Jackie\" are flooding social media with slop",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
     "type": "power",
     "message": "A new solar cell could generate electricity underwater",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 204,
+    "id": 205,
     "type": "power",
     "message": "Powering AI is an architecture problem",
     "district": "Cyberabad",
