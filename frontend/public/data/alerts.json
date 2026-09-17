@@ -1,36 +1,15 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "IIT-M Researchers Unveil Coastal Vulnerability Maps for Chennai, Karaikal",
+    "type": "power",
+    "message": "Nurses use torches as energy crisis grips Bangladesh, and India can't help easily",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Minister Reviews Monsoon Readiness in Alandur, Adyar Zones",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "water",
-    "message": "Water bills to rise by 5 pc annually as HMWSSB looks to recover revenue",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "power",
-    "message": "Jharkhand power plant shut after Bangladesh PM skipped Brics meet, alleges BNP leader",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
-    "type": "power",
-    "message": "Zhou Jianjun from Huawei: Building a Grid-Interactive AIDC Solution to Maximize Tokens Per Watt",
+    "message": "Making the Most of Every Ray, Powering the Unpowered: 2026 Global Low-Carbon Industry Forum Explores Pathways to Bridge the Electricity Gap",
     "district": "Telangana",
     "time": "Recent"
   }
