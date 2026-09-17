@@ -1,15 +1,15 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Nurses use torches as energy crisis grips Bangladesh, and India can't help easily",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "Cyberabad Traffic Police advise WFH, online classes in view of heavy rain forecast, Ganesh immersions",
+    "district": "Cyberabad",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Making the Most of Every Ray, Powering the Unpowered: 2026 Global Low-Carbon Industry Forum Explores Pathways to Bridge the Electricity Gap",
+    "type": "water",
+    "message": "Coforge confident of growth outlook, deal pipeline at record: JM Financial",
     "district": "Telangana",
     "time": "Recent"
   }
