@@ -8,6 +8,13 @@
   },
   {
     "id": 202,
+    "type": "emergency",
+    "message": "Delhi-NCR weather: Light to moderate rain likely on Friday",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "water",
     "message": "Coforge confident of growth outlook, deal pipeline at record: JM Financial",
     "district": "Telangana",
