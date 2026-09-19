@@ -1,22 +1,15 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Three electricity employees killed as car rams into lorry in Karimnagar",
-    "district": "Karimnagar",
+    "type": "emergency",
+    "message": "Nitin Nabin donates 3 month's salary for flood relief in Bihar",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Andhra Pradesh: IMD Forecasts Heavy Rain In Ap From Sept. 19 to 24",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "water",
-    "message": "Saudi Aramco halts crude supplies to Indian refiners after pipeline attack",
+    "message": "Heavy Rains Likely In West, South Telangana From September 19-24",
     "district": "Telangana",
     "time": "Recent"
   }
