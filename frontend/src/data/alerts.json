@@ -2,26 +2,33 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "India Dispatches 11 More Tonnes of Flood Relief Aid to Nepal",
-    "district": "Telangana",
+    "message": "Hyderabad roads waterlogged, traffic hit as heavy rain coincides with Ganesh immersion rush",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "True to IMD forecast, heavy rains lash parts of Hyderabad",
-    "district": "Nizamabad",
+    "type": "water",
+    "message": "HMWSSB tanker operators call off strike after assurance on higher rates",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "water",
-    "message": "Hyderabad: Jubilee Hills woman fined Rs 20,000 for wasting water",
-    "district": "Hyderabad",
+    "message": "Naidu Wants Drought-Hit Mandals Identified By October 1",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
+    "type": "emergency",
+    "message": "‘Image-building’: Prashant Kishor on BJP chief’s salary donation",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 205,
     "type": "power",
     "message": "Crude Oil Above $100: Can Saudi Arabia’s export disruption trigger a new global energy shock?",
     "district": "Telangana",
