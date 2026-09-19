@@ -8,27 +8,13 @@
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Tirupati: Narasingapuram Panchayat Gets ISO 41001 Certification",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "power",
-    "message": "Traffic Police Request Hyderabad Growth Corridor Limited to Provide U-Turn Prior to My Home Avatar Junction",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "emergency",
     "message": "‘Image-building’: Prashant Kishor on BJP chief’s salary donation",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
-    "id": 205,
+    "id": 203,
     "type": "power",
     "message": "Crude Oil Above $100: Can Saudi Arabia’s export disruption trigger a new global energy shock?",
     "district": "Telangana",
