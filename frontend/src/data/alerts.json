@@ -2,14 +2,21 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Nitin Nabin donates 3 month's salary for flood relief in Bihar",
+    "message": "India Sends 11 Tonnes of Relief Supplies to Flood-Hit Nepal",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Heavy Rains Likely In West, South Telangana From September 19-24",
+    "type": "water",
+    "message": "List of 5 upcoming new Pakistani dramas you should watch out for",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "power",
+    "message": "Crude Oil Above $100: Can Saudi Arabia’s export disruption trigger a new global energy shock?",
     "district": "Telangana",
     "time": "Recent"
   }
