@@ -2,28 +2,14 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Hyderabad roads waterlogged, traffic hit as heavy rain coincides with Ganesh immersion rush",
-    "district": "Hyderabad",
+    "message": "‘People dying, yet crores spent on PM Modi’s birthday’: Tejashwi on Bihar floods",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Khairatabad Ganesh pandal draws huge crowds, traffic gridlocked",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
     "type": "emergency",
-    "message": "Telangana gets heavy rain warning amid dry September",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "emergency",
-    "message": "50 lakh hit by Bihar floods; Tejashwi seeks Rs 15,000 aid per family",
+    "message": "Keralam weather update: IMD predicts heavy rains from Sep 20-24",
     "district": "Telangana",
     "time": "Recent"
   }
