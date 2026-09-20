@@ -8,15 +8,22 @@
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "India and Nepal explore strategic bilateral ties, global role at RIS seminar",
-    "district": "Telangana",
+    "type": "power",
+    "message": "Khairatabad Ganesh pandal draws huge crowds, traffic gridlocked",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "Hormuz oil shipments hit six-month high, US commander says",
+    "type": "emergency",
+    "message": "Telangana gets heavy rain warning amid dry September",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "emergency",
+    "message": "50 lakh hit by Bihar floods; Tejashwi seeks Rs 15,000 aid per family",
     "district": "Telangana",
     "time": "Recent"
   }
