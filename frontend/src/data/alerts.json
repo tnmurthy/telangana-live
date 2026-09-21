@@ -1,15 +1,22 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Hot Till Afternoon, Thunderstorms Likely In Several Districts",
+    "type": "water",
+    "message": "Tamil Nadu delta sees mixed kuruvai paddy yields as heat, water shortage hit crop",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Keralam flash flood: 1 dead, 7 feared swept away in Pookkottumpadam",
+    "type": "water",
+    "message": "Indian Oil to invest $256 mn for Kochi-Thoothukudi natural gas pipeline",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "power",
+    "message": "Nearly 40% of coal power plants running critically low on fuel: Govt data",
     "district": "Telangana",
     "time": "Recent"
   }
