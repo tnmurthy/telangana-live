@@ -2,27 +2,6 @@
   {
     "id": 201,
     "type": "water",
-    "message": "HMWSSB intensifies inspections, imposes heavy penalties for water wastage",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "water",
-    "message": "HMWSSB fines two for illegal motor, water wastage in Hyderabad",
-    "district": "Malkajgiri",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "water",
-    "message": "Indian Oil board approves Kochi-Kanyakumari-Thoothukudi gas pipeline",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "water",
     "message": "IOCL to invest ₹2,449 cr in Kochi-Kanyakumari-Thoothukudi gas pipeline",
     "district": "Telangana",
     "time": "Recent"
