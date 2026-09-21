@@ -1,22 +1,15 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "Villagers damage Mission Bagiratha pipeline as protest",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "water",
-    "message": "IPO pipeline stays strong with 72 firms seeking to raise ₹1.70 lakh crore",
+    "type": "emergency",
+    "message": "Hot Till Afternoon, Thunderstorms Likely In Several Districts",
     "district": "Telangana",
     "time": "Recent"
   },
   {
-    "id": 203,
+    "id": 202,
     "type": "emergency",
-    "message": "Keralam weather update: IMD predicts heavy rains from Sep 20-24",
+    "message": "Keralam flash flood: 1 dead, 7 feared swept away in Pookkottumpadam",
     "district": "Telangana",
     "time": "Recent"
   }
