@@ -1,37 +1,23 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "South Asian experts call for regional action on Himalayan disasters",
+    "type": "water",
+    "message": "Villagers damage Mission Bagiratha pipeline as protest",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "water",
-    "message": "Telangana Today Impact: HMWSSB resolves sewage leak issue in Shaikpet",
+    "message": "IPO pipeline stays strong with 72 firms seeking to raise ₹1.70 lakh crore",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "‘People dying, yet crores spent on PM Modi’s birthday’: Tejashwi on Bihar floods",
+    "message": "Keralam weather update: IMD predicts heavy rains from Sep 20-24",
     "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "power",
-    "message": "Harish Rao Dares Cong MLAs To Visit Sub-Station at Night, Get Feedback From Farmers",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
-    "type": "emergency",
-    "message": "Nepal flood toll crosses 1,450; over 6,000 still missing",
-    "district": "Hyderabad",
     "time": "Recent"
   }
 ]
