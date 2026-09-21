@@ -2,21 +2,28 @@
   {
     "id": 201,
     "type": "water",
-    "message": "Tamil Nadu delta sees mixed kuruvai paddy yields as heat, water shortage hit crop",
-    "district": "Telangana",
+    "message": "HMWSSB intensifies inspections, imposes heavy penalties for water wastage",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "water",
-    "message": "Indian Oil to invest $256 mn for Kochi-Thoothukudi natural gas pipeline",
-    "district": "Telangana",
+    "message": "HMWSSB fines two for illegal motor, water wastage in Hyderabad",
+    "district": "Malkajgiri",
     "time": "Recent"
   },
   {
     "id": 203,
-    "type": "power",
-    "message": "Nearly 40% of coal power plants running critically low on fuel: Govt data",
+    "type": "water",
+    "message": "Indian Oil board approves Kochi-Kanyakumari-Thoothukudi gas pipeline",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "water",
+    "message": "IOCL to invest ₹2,449 cr in Kochi-Kanyakumari-Thoothukudi gas pipeline",
     "district": "Telangana",
     "time": "Recent"
   }
