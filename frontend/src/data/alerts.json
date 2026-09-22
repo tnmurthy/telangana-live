@@ -1,37 +1,16 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Heavy to very heavy rainfall forecast for Telangana on September 23 and 24; red alert in eight districts on Wednesday",
-    "district": "Hyderabad",
+    "type": "water",
+    "message": "Farmers facing severe hardship due to water shortage, says BJP chief Ramchander Rao",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "water",
-    "message": "BRS pressure forces Congress government to seek Karnataka water release",
-    "district": "Mahbubnagar",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
     "type": "emergency",
-    "message": "Heavy Rains Lash Hyderabad: CM Revanth Reddy Directs Civic Machinery to Stay on High Alert",
+    "message": "Heavy rain, gusty winds disrupt traffic across Hyderabad",
     "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "emergency",
-    "message": "Heavy rains lash Hyderabad, red alert for many Telangana dists",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 205,
-    "type": "emergency",
-    "message": "Heavy Rainfall | వారం రోజుల‌పాటు వాన‌లు.. తెలంగాణ, ఏపీ స‌హా ఏడు రాష్ట్రాల‌కు భారీ వ‌ర్ష సూచ‌న‌",
-    "district": "Telangana",
     "time": "Recent"
   }
 ]
