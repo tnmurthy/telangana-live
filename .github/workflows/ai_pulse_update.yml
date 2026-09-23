@@ -60,3 +60,17 @@ jobs:
             echo "No changes to commit"
           fi
 
+      # Data commits carry [skip ci], so no workflow is triggered by the push and
+      # the site is never rebuilt. Poke the Vercel deploy hook directly instead.
+      - name: Trigger Vercel deploy
+        if: success()
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK_URL" ]; then
+            echo "::warning::VERCEL_DEPLOY_HOOK_URL not set - site will not rebuild."
+            exit 0
+          fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" -X POST "$VERCEL_DEPLOY_HOOK_URL")
+          echo "Deploy hook responded $code"
+          [ "$code" -ge 200 ] && [ "$code" -lt 300 ] || echo "::warning::Deploy hook returned $code"
