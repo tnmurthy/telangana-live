@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { EmergencyProvider } from './context/EmergencyProvider';
 import { useEmergency } from './hooks/useEmergency';
 import { usePageTracking } from './hooks/usePageTracking';
@@ -174,6 +175,7 @@ export default function App() {
   return (
     <EmergencyProvider>
       <AppContent />
+      <Analytics />
     </EmergencyProvider>
   );
 }
