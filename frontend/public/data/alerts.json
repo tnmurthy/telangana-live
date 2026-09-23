@@ -1,15 +1,15 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "Bridge collapses across Palavaagu stream in Kothagudem, no casualties reported",
-    "district": "Bhadradri Kothagudem",
+    "type": "water",
+    "message": "Vande Bharat Coach Develops Hot Axle At Vijayawada Station",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Deep Depression To Cross Coast Near Kalingapatnam Tonight; Heavy Rain Alert Continues",
+    "type": "water",
+    "message": "GVMC Clears 33 Fallen Trees, Steps Up Rain Emergency Response",
     "district": "Telangana",
     "time": "Recent"
   },
