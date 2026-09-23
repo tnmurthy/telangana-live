@@ -2,21 +2,21 @@
   {
     "id": 201,
     "type": "emergency",
+    "message": "Red alert in five Telangana districts on September 24",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "emergency",
     "message": "Heavy to very heavy rainfall forecast for Telangana on September 23 and 24; red alert in eight districts on Wednesday",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
-    "id": 202,
-    "type": "water",
-    "message": "Maha drought: CM Fadnavis meets farmers in Latur, assures unlimited relief funds",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
     "id": 203,
-    "type": "emergency",
-    "message": "Heavy Rain Alert: AP Government Releases Emergency Contact Numbers",
+    "type": "power",
+    "message": "AT&T Is Automating Away Jobs—and Its Old Telecom Empire",
     "district": "Telangana",
     "time": "Recent"
   }
