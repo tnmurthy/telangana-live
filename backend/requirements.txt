@@ -7,4 +7,5 @@ schedule==1.2.0
 python-dateutil==2.8.2
 feedparser==6.0.11
 google-generativeai==0.8.3
+typesafe-sdk==0.7.1
 pytest==8.3.5

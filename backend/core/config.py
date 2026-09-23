@@ -30,6 +30,9 @@ CONFIG = {
     'z_ai_base_url': os.getenv('Z_AI_BASE_URL', 'https://open.z.ai/v1'),
     'z_ai_model': os.getenv('Z_AI_MODEL', 'glm-4-plus'),
 
+    # TypeSafe — System One judgments for civic alert triage
+    'typesafe_api_key': os.getenv('TYPESAFE_API_KEY'),
+
     # ── Database ───────────────────────────────────────────────────────────────
     'supabase_url': os.getenv('SUPABASE_URL'),
     'supabase_key': os.getenv('SUPABASE_KEY'),
