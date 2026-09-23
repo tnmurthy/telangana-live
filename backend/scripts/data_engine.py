@@ -585,25 +585,6 @@ def sync_news():
 # as an OPTIONAL confidence check for the more ambiguous alert types, and only
 # if the LLM provider is actually available — alerts must never depend on AI
 # being online, matching the graceful-degradation pattern used by sync_ai_pulse().
-ALERT_PATTERNS = [
-    {"type": "flood",             "severity": "critical", "ai_check": False,
-     "regex": r"\bflood(ing|ed)?\b|flash flood|water ?log(ging|ged)?|inundat"},
-    {"type": "natural_disaster",  "severity": "critical", "ai_check": False,
-     "regex": r"land ?slide|earth ?quake|cyclone.*(landfall|warning)"},
-    {"type": "emergency",         "severity": "critical", "ai_check": False,
-     "regex": r"fire accident|building collaps|blast\b|explosion|gas leak"},
-    {"type": "weather",           "severity": "high",     "ai_check": False,
-     "regex": r"heavy rain(fall)?|imd.*(red|orange) alert|rainfall warning|thunderstorm warning"},
-    {"type": "strike",            "severity": "high",     "ai_check": True,
-     "regex": r"\bbandh\b|\bstrike\b|rasta roko|shutdown call|rail roko"},
-    {"type": "road_closure",      "severity": "medium",   "ai_check": True,
-     "regex": r"road (block|clos)|highway clos|traffic diversion|route diversion|flyover clos"},
-    {"type": "power_outage",      "severity": "medium",   "ai_check": True,
-     "regex": r"power cut|power outage|electricity (failure|shutdown)|tsspdcl.*(outage|shutdown|maintenance)|tgspdcl.*(outage|shutdown|maintenance)"},
-    {"type": "water_supply",      "severity": "medium",   "ai_check": True,
-     "regex": r"water supply.*(cut|disrupt|suspend)|water shortage|hmwssb.*(shutdown|maintenance)"},
-]
-
 ALERT_TOPIC_QUERIES = [
     "Telangana flood warning",
     "Hyderabad road closed traffic diversion",
@@ -615,52 +596,13 @@ ALERT_TOPIC_QUERIES = [
 
 ALERT_EXPIRY_DAYS = 3
 
-# Google News RSS search is loose - a query for "Telangana flood warning" also
-# surfaces Kerala/Karnataka flood articles that merely mention Telangana in
-# passing. classify_article()'s region defaults to the generic "Telangana"
-# fallback when no specific district matches, which doesn't distinguish these.
-# Rather than change that shared fallback (News feature depends on it too),
-# require an explicit local keyword hit here before accepting a match.
-TELANGANA_RELEVANCE_KEYWORDS = [
-    "telangana", "hyderabad", "cyberabad", "secunderabad", "warangal",
-    "karimnagar", "khammam", "nizamabad", "malkajgiri", "rangareddy",
-    "medchal", "adilabad", "nalgonda", "mahbubnagar", "siddipet",
-    "ghmc", "hmda", "tsspdcl", "tgspdcl", "hmwssb", "revanth reddy",
-]
-
-
-def _is_telangana_relevant(text_lower):
-    return any(k in text_lower for k in TELANGANA_RELEVANCE_KEYWORDS)
-
-
-def _ai_confirm_alert(title, description, alert_type):
-    """Best-effort AI sanity check for ambiguous alert types. Returns True/False.
-    Never raises, never blocks — if the LLM is unavailable or errors, callers
-    should treat this as 'unknown' and fall back to trusting the regex match."""
-    if not llm:
-        return None
-    try:
-        prompt = (
-            f"A headline was regex-matched as a possible '{alert_type}' civic alert for "
-            f"Telangana, India. Headline: \"{title}\". Description: \"{description}\".\n"
-            "Is this headline ACTUALLY reporting a real, current local disruption of that type "
-            "(not sports, not a generic policy article, not an old/historical reference)? "
-            "Reply with exactly one word: YES or NO."
-        )
-        resp = llm.generate(
-            prompt=prompt,
-            provider="ollama",
-            model="phi4-mini:latest",
-            system_prompt="You are a strict binary classifier. Reply with exactly one word: YES or NO.",
-        )
-        text = (resp.get("text") or "").strip().upper()
-        if text.startswith("YES"):
-            return True
-        if text.startswith("NO"):
-            return False
-        return None
-    except Exception:
-        return None
+# Alert typing, geographic scoping, currency and severity are judged together by
+# core.alert_triage (one TypeSafe request per headline). Thresholds and severity
+# bands live there; see tools/calibrate_alert_triage.py to retune them.
+try:
+    from core.alert_triage import triage_headline
+except ImportError:
+    triage_headline = None
 
 
 def _load_existing_alerts():
@@ -701,8 +643,7 @@ def sync_alerts():
             continue
 
     new_alerts = []
-    ai_checks_used = 0
-    ai_checks_available = True
+    rejected = 0
 
     for query in ALERT_TOPIC_QUERIES:
         try:
@@ -714,49 +655,34 @@ def sync_alerts():
 
         for entry in feed.entries[:10]:
             title = entry.get("title", "").strip()
-            # Google News RSS appends " - Source Name" to titles; strip it before
-            # relevance/type matching so a Telangana-based outlet reporting on
-            # Kerala/Karnataka news does not falsely match on its own name.
+            # Google News RSS appends " - Source Name" to titles; strip it so the
+            # outlet's own name can't be read as part of the reported event.
             headline_only = re.sub(r"\s+-\s+[^-]+$", "", title)
             description_raw = entry.get("summary", "").strip()
             description = html.unescape(re.sub(r"<[^>]+>", "", description_raw)).strip()
             if not title or title in existing_titles:
                 continue
 
-            text = headline_only.lower()  # match on the clean headline only - description is RSS boilerplate, not reliable signal
-            if not _is_telangana_relevant(text):
+            if not triage_headline:
                 continue
 
-            matched = None
-            for pattern in ALERT_PATTERNS:
-                if re.search(pattern["regex"], text, re.I):
-                    matched = pattern
-                    break
-            if not matched:
+            # One request answers all four: which disruption type (or none),
+            # whether it is in Telangana, whether it is current, how severe.
+            verdict = triage_headline(headline_only, description)
+            if not verdict.accepted:
+                rejected += 1
                 continue
-
-            # Optional AI confidence pass for ambiguous types only, and only while
-            # the provider keeps responding. If it starts failing mid-run, stop
-            # calling it for the rest of this sync rather than retrying repeatedly.
-            if matched["ai_check"] and llm and ai_checks_available and ai_checks_used < 15:
-                ai_checks_used += 1
-                verdict = _ai_confirm_alert(title, description, matched["type"])
-                if verdict is False:
-                    continue  # AI actively disagreed — skip this one
-                if verdict is None:
-                    ai_checks_available = False  # provider seems unavailable, stop trying
 
             region = "Telangana"
-            category = None
             if classify_article:
-                category, region = classify_article(title, description)
+                _, region = classify_article(title, description)
 
             new_alerts.append({
                 "id": f"alert-{len(kept) + len(new_alerts) + 1}",
                 "title": title,
                 "description": description,
-                "type": matched["type"],
-                "severity": matched["severity"],
+                "type": verdict.alert_type,
+                "severity": verdict.severity,
                 "district": region if region else "Telangana",
                 "createdAt": NOW,
                 "link": entry.get("link", ""),
@@ -771,7 +697,7 @@ def sync_alerts():
         with open(PATHS["alerts_public"], "w", encoding="utf-8") as f:
             json.dump(all_alerts, f, indent=2, ensure_ascii=False)
 
-    print(f"  ✅ Synced {len(new_alerts)} new alerts (Total active: {len(all_alerts)})")
+    print(f"  ✅ Synced {len(new_alerts)} new alerts, rejected {rejected} (Total active: {len(all_alerts)})")
     return all_alerts
 
 
