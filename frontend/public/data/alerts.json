@@ -1,20 +1,27 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "Mudasarlova Reservoir Receives Fresh Inflows Following Rains",
+    "type": "power",
+    "message": "Draft National Electricity Policy moved for inter-ministerial consultation",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "emergency",
-    "message": "Heavy rains? No problem! 630kg Ganesh laddu auction held via Zoom",
-    "district": "Hyderabad",
+    "message": "Ganesh Idol Immersions Continue Despite Rains In Kakinada",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
+    "type": "water",
+    "message": "Oracle invokes force majeure over New Mexico data centre Project Jupiter",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
     "type": "power",
     "message": "AT&T Is Automating Away Jobs—and Its Old Telecom Empire",
     "district": "Telangana",
