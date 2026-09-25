@@ -2,26 +2,12 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Heavy Rain Lashes Warangal, Mahabubabad Districts",
-    "district": "Warangal",
+    "message": "Nepal seeks grants, not loans, for flood recovery after deadly glacier disaster",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "Ganesh Idol Immersions Continue Despite Rains In Kakinada",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "water",
-    "message": "Oracle invokes force majeure over New Mexico data centre Project Jupiter",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "power",
     "message": "AT&T Is Automating Away Jobs—and Its Old Telecom Empire",
     "district": "Telangana",
