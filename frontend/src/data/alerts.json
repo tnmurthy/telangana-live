@@ -2,8 +2,8 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Heavy Rain Disrupts Life In Southern Odisha; Landslides, Road Blockades Hit Several Districts",
-    "district": "Telangana",
+    "message": "Weather Hits Flights to Hyd",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
@@ -15,13 +15,6 @@
   },
   {
     "id": 203,
-    "type": "water",
-    "message": "Sundaram Home Finance aims to double emerging biz disbursements in Central TN",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
     "type": "power",
     "message": "AT&T Is Automating Away Jobs—and Its Old Telecom Empire",
     "district": "Telangana",
