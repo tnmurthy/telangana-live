@@ -2,19 +2,26 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Heavy Rain Inundates Crops, Disrupts Traffic in East Godavari",
+    "message": "Heavy Rain Disrupts Life In Southern Odisha; Landslides, Road Blockades Hit Several Districts",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Jefferies’ Chris Wood calls energy India’s best structural growth story; names Hitachi Energy as picks-and-shovels play",
+    "type": "emergency",
+    "message": "Ask Nepal, Bangladesh, India: Balen Shah talks of a broken system in UN speech",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
+    "type": "water",
+    "message": "Sundaram Home Finance aims to double emerging biz disbursements in Central TN",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
     "type": "power",
     "message": "AT&T Is Automating Away Jobs—and Its Old Telecom Empire",
     "district": "Telangana",
