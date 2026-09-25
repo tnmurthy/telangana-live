@@ -2,12 +2,19 @@
   {
     "id": 201,
     "type": "emergency",
-    "message": "Nepal seeks grants, not loans, for flood recovery after deadly glacier disaster",
+    "message": "Heavy Rain Inundates Crops, Disrupts Traffic in East Godavari",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
+    "type": "power",
+    "message": "Jefferies’ Chris Wood calls energy India’s best structural growth story; names Hitachi Energy as picks-and-shovels play",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "power",
     "message": "AT&T Is Automating Away Jobs—and Its Old Telecom Empire",
     "district": "Telangana",
