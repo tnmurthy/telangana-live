@@ -1,29 +1,15 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "PR&RD Minister directs officials to prepare for summer drinking water needs",
-    "district": "Telangana",
+    "type": "emergency",
+    "message": "PM District Residents Seek Solution For Damaged 93-Year Kotipamu Bridge",
+    "district": "Hyderabad",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "emergency",
-    "message": "'Joined Samajwadi Party?' Ravi Kishan bristles at BJP corporator over Gorakhpur flooding query",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "emergency",
-    "message": "56 Killed In Rain, Storm-Related Incidents Across Uttar Pradesh",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "emergency",
-    "message": "Floods, landslides kill 56 in India and 14 in Nepal",
+    "type": "power",
+    "message": "Govt directs company-run power plants to supply surplus electricity in market",
     "district": "Telangana",
     "time": "Recent"
   }
