@@ -5,5 +5,26 @@
     "message": "PR&RD Minister directs officials to prepare for summer drinking water needs",
     "district": "Telangana",
     "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "power",
+    "message": "Holiday Rush, By-poll Campaign Gridlock Clog Chennai-Tiruchy NH",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "emergency",
+    "message": "70K people evacuated as rain-induced floods hit Odisha",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "emergency",
+    "message": "Odisha floods: 70,000 evacuated as 13 districts face flash floods, waterlogging",
+    "district": "Telangana",
+    "time": "Recent"
   }
 ]
