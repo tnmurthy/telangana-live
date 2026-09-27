@@ -8,22 +8,22 @@
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Holiday Rush, By-poll Campaign Gridlock Clog Chennai-Tiruchy NH",
+    "type": "emergency",
+    "message": "'Joined Samajwadi Party?' Ravi Kishan bristles at BJP corporator over Gorakhpur flooding query",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 203,
     "type": "emergency",
-    "message": "70K people evacuated as rain-induced floods hit Odisha",
-    "district": "Hyderabad",
+    "message": "56 Killed In Rain, Storm-Related Incidents Across Uttar Pradesh",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 204,
     "type": "emergency",
-    "message": "Odisha floods: 70,000 evacuated as 13 districts face flash floods, waterlogging",
+    "message": "Floods, landslides kill 56 in India and 14 in Nepal",
     "district": "Telangana",
     "time": "Recent"
   }
