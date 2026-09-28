@@ -1,15 +1,15 @@
 [
   {
     "id": 201,
-    "type": "emergency",
-    "message": "PM District Residents Seek Solution For Damaged 93-Year Kotipamu Bridge",
-    "district": "Hyderabad",
+    "type": "water",
+    "message": "India’s IPO pipeline hits Rs 3.86 lakh crore, 3.5 times funds raised in 2026: Report",
+    "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
-    "type": "power",
-    "message": "Govt directs company-run power plants to supply surplus electricity in market",
+    "type": "water",
+    "message": "NMDC commissions ₹5,427 cr integrated iron ore project in Chhattisgarh",
     "district": "Telangana",
     "time": "Recent"
   }
