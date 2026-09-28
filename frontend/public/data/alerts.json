@@ -1,20 +1,13 @@
 [
   {
     "id": 201,
-    "type": "power",
-    "message": "Rs 20k cr dues pending: SC suggests recovering e-traffic challans by linking them to electricity bills",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "water",
     "message": "Saudi Arabia restarts oil exports through East-West pipeline",
     "district": "Hyderabad",
     "time": "Recent"
   },
   {
-    "id": 203,
+    "id": 202,
     "type": "emergency",
     "message": "AI Agents Are About to Flood the Workforce. No One’s Ready for It",
     "district": "Telangana",
