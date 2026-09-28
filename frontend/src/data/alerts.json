@@ -1,15 +1,22 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "India’s IPO pipeline hits Rs 3.86 lakh crore, 3.5 times funds raised in 2026: Report",
+    "type": "power",
+    "message": "Rs 20k cr dues pending: SC suggests recovering e-traffic challans by linking them to electricity bills",
     "district": "Telangana",
     "time": "Recent"
   },
   {
     "id": 202,
     "type": "water",
-    "message": "NMDC commissions ₹5,427 cr integrated iron ore project in Chhattisgarh",
+    "message": "Saudi Arabia restarts oil exports through East-West pipeline",
+    "district": "Hyderabad",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
+    "type": "emergency",
+    "message": "AI Agents Are About to Flood the Workforce. No One’s Ready for It",
     "district": "Telangana",
     "time": "Recent"
   }
