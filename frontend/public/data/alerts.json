@@ -1,13 +1,6 @@
 [
   {
     "id": 201,
-    "type": "water",
-    "message": "Saudi Arabia restarts oil exports through East-West pipeline",
-    "district": "Hyderabad",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
     "type": "emergency",
     "message": "AI Agents Are About to Flood the Workforce. No One’s Ready for It",
     "district": "Telangana",
