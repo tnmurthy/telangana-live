@@ -33,11 +33,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
 
-      - name: Sync emergency alerts (AI + News + Fallback)
+      - name: Sync civic alerts (Google News RSS + TypeSafe triage)
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          Z_AI_API_KEY: ${{ secrets.Z_AI_API_KEY }}
+          # Without this the triage falls back to the old regex matcher and
+          # labels every verdict source="regex".
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
         run: python backend/scripts/emergency_alerts.py
 
       - name: Commit and push updated alerts

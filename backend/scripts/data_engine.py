@@ -50,7 +50,8 @@ PATHS = {
     "ai":     os.path.join(DATA_DIR, "aiBriefingData.js"),
     "weather": os.path.join(DATA_DIR, "weatherData.js"),
     "alerts":        os.path.join(DATA_DIR, "alerts.json"),
-    "alerts_public": os.path.abspath(os.path.join(DATA_DIR, "..", "public", "data", "alerts.json")),
+    # DATA_DIR is frontend/src/data, so the public dir is two levels up, not one.
+    "alerts_public": os.path.abspath(os.path.join(DATA_DIR, "..", "..", "public", "data", "alerts.json")),
 }
 
 
@@ -604,6 +605,8 @@ try:
 except ImportError:
     triage_headline = None
 
+from core.alert_feed import build_alert_record, is_fresh, partition_existing
+
 
 def _load_existing_alerts():
     if not os.path.exists(PATHS["alerts"]):
@@ -628,22 +631,13 @@ def sync_alerts():
     """
     print("Syncing local alerts feed...")
 
-    existing = _load_existing_alerts()
-    existing_titles = {a["title"] for a in existing}
-    now_dt = datetime.datetime.utcnow()
-
-    # Drop expired alerts (older than ALERT_EXPIRY_DAYS)
-    kept = []
-    for a in existing:
-        try:
-            created = datetime.datetime.strptime(a["createdAt"], "%Y-%m-%dT%H:%M:%SZ")
-            if (now_dt - created).days < ALERT_EXPIRY_DAYS:
-                kept.append(a)
-        except Exception:
-            continue
+    now_dt = datetime.datetime.now(datetime.timezone.utc)
+    kept, existing_titles = partition_existing(
+        _load_existing_alerts(), now=now_dt, expiry_days=ALERT_EXPIRY_DAYS)
 
     new_alerts = []
     rejected = 0
+    stale = 0
 
     for query in ALERT_TOPIC_QUERIES:
         try:
@@ -662,6 +656,14 @@ def sync_alerts():
             description = html.unescape(re.sub(r"<[^>]+>", "", description_raw)).strip()
             if not title or title in existing_titles:
                 continue
+            existing_titles.add(title)  # the same story often answers several queries
+
+            # Google News search returns articles years old; drop them before
+            # spending a triage call. The headline alone can't tell their age.
+            if not is_fresh(entry.get("published_parsed"), now=now_dt,
+                            max_age_days=ALERT_EXPIRY_DAYS):
+                stale += 1
+                continue
 
             if not triage_headline:
                 continue
@@ -673,31 +675,36 @@ def sync_alerts():
                 rejected += 1
                 continue
 
-            region = "Telangana"
+            region = None
             if classify_article:
                 _, region = classify_article(title, description)
 
-            new_alerts.append({
-                "id": f"alert-{len(kept) + len(new_alerts) + 1}",
-                "title": title,
-                "description": description,
-                "type": verdict.alert_type,
-                "severity": verdict.severity,
-                "district": region if region else "Telangana",
-                "createdAt": NOW,
-                "link": entry.get("link", ""),
-                "source": entry.get("source", {}).get("title", "Google News RSS") if isinstance(entry.get("source"), dict) else "Google News RSS"
-            })
+            source = entry.get("source")
+            new_alerts.append(build_alert_record(
+                title=title,
+                description=description,
+                alert_type=verdict.alert_type,
+                severity=verdict.severity,
+                district=region,
+                link=entry.get("link", ""),
+                source=source.get("title", "Google News RSS") if isinstance(source, dict) else "Google News RSS",
+                published=entry.get("published_parsed"),
+                now=now_dt,
+            ))
 
     all_alerts = kept + new_alerts
     with open(PATHS["alerts"], "w", encoding="utf-8") as f:
         json.dump(all_alerts, f, indent=2, ensure_ascii=False)
-    
+
     if os.path.exists(os.path.dirname(PATHS["alerts_public"])):
         with open(PATHS["alerts_public"], "w", encoding="utf-8") as f:
             json.dump(all_alerts, f, indent=2, ensure_ascii=False)
+    else:
+        # BreakingNewsBanner fetches this copy at runtime; skipping it silently
+        # is how the public feed went unwritten before.
+        print(f"  ⚠️ Public alerts dir missing, not written: {os.path.dirname(PATHS['alerts_public'])}")
 
-    print(f"  ✅ Synced {len(new_alerts)} new alerts, rejected {rejected} (Total active: {len(all_alerts)})")
+    print(f"  ✅ Synced {len(new_alerts)} new alerts, rejected {rejected}, stale {stale} (Total active: {len(all_alerts)})")
     return all_alerts
 
 

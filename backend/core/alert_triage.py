@@ -63,7 +63,9 @@ ALERT_TYPES = (
     "water_supply",
 )
 
-SEVERITY_BANDS = ("minor", "moderate", "high", "critical")
+# Must match FRONTEND_SEVERITIES in core/alert_feed.py and SEVERITY_ORDER in
+# frontend/src/pages/AlertsPage.jsx.
+SEVERITY_BANDS = ("low", "medium", "high", "critical")
 
 
 # ── Thresholds ────────────────────────────────────────────────────────────────
@@ -124,12 +126,18 @@ ALERT_TYPE_CRITERIA = {
               "or an anniversary of a past event.",
 }
 
+# Levels are defined by impact on people, not geographic scope. The first
+# version keyed Critical on "city-wide or state-wide", so every statewide
+# weather forecast scored critical (20 of 39 alerts in the first live run).
 SEVERITY_CRITERIA = [
-    "Minor — confined to a single street, building or junction, and short-lived.",
-    "Moderate — affects one neighbourhood or locality, or a scheduled outage of "
-    "a few hours.",
-    "High — affects an entire district or a major corridor, or lasts all day.",
-    "Critical — city-wide or state-wide, or there is a threat to life.",
+    "Low — a routine forecast or advisory, or a minor disruption confined to a "
+    "single street, building or junction.",
+    "Medium — a disruption affecting one neighbourhood or locality, a scheduled "
+    "outage of a few hours, or a yellow or orange weather warning.",
+    "High — a disruption across a whole district or a major road corridor that "
+    "lasts all day, or an IMD red alert.",
+    "Critical — lives are at risk or people are being rescued or evacuated, for "
+    "example homes flooding, a building collapse or a major fire.",
 ]
 
 
@@ -282,13 +290,13 @@ _FALLBACK_PATTERNS = [
      r"heavy rain(fall)?|imd.*(red|orange) alert|rainfall warning|thunderstorm warning"),
     ("strike", "high",
      r"\bbandh\b|\bstrike\b|rasta roko|shutdown call|rail roko"),
-    ("road_closure", "moderate",
+    ("road_closure", "medium",
      r"road (block|clos)|highway clos|traffic diversion|route diversion|flyover clos"),
-    ("power_outage", "moderate",
+    ("power_outage", "medium",
      r"power cut|power outage|electricity (failure|shutdown)|"
      r"ts spdcl.*(outage|shutdown|maintenance)|tsspdcl.*(outage|shutdown|maintenance)|"
      r"tgspdcl.*(outage|shutdown|maintenance)"),
-    ("water_supply", "moderate",
+    ("water_supply", "medium",
      r"water supply.*(cut|disrupt|suspend)|water shortage|hmwssb.*(shutdown|maintenance)"),
 ]
 

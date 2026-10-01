@@ -111,7 +111,7 @@ class TestQuestionSet:
             verdict = triage_headline("Waterlogging on one lane of NH-44", "")
 
         assert verdict.alert_type == "flood"
-        assert verdict.severity == "minor"
+        assert verdict.severity == "low"
 
 
 # ---------------------------------------------------------------------------
@@ -181,9 +181,9 @@ class TestSeverityBands:
     @pytest.mark.parametrize(
         "score,expected",
         [
-            (0.0, "minor"),
-            (0.4, "minor"),
-            (1.0, "moderate"),
+            (0.0, "low"),
+            (0.4, "low"),
+            (1.0, "medium"),
             (1.6, "high"),
             (2.4, "high"),
             (3.0, "critical"),
@@ -194,7 +194,7 @@ class TestSeverityBands:
         assert severity_for_score(score) == expected
 
     def test_out_of_range_scores_are_clamped(self):
-        assert severity_for_score(-5.0) == "minor"
+        assert severity_for_score(-5.0) == "low"
         assert severity_for_score(99.0) == "critical"
 
 

@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { alerts } from '../data/alerts';
 
-const BREAKING_TYPES = new Set(['power', 'water', 'emergency']);
+// Severity, not type, decides what is "breaking" — matches AlertsBanner.
+// The feed's types are fine-grained (flood, power_outage, road_closure, ...).
+const BREAKING_SEVERITIES = new Set(['critical', 'high']);
 
 export default function BreakingNewsBanner() {
   const [breakingAlerts, setBreakingAlerts] = useState([]);
@@ -16,7 +18,7 @@ export default function BreakingNewsBanner() {
         const resp = await fetch('/data/alerts.json');
         if (resp.ok) {
           const data = await resp.json();
-          const filtered = data.filter(a => BREAKING_TYPES.has(a.type));
+          const filtered = data.filter(a => BREAKING_SEVERITIES.has(a.severity));
           setBreakingAlerts(filtered);
           if (filtered.length > 0) {
             setItem(filtered[0]);

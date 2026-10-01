@@ -1,30 +1,18 @@
 [
   {
-    "id": 201,
-    "type": "water",
-    "message": "IndianOil brings packaged water to the pump in a non-fuel revenue push",
+    "id": "alert-7483730da8c3",
+    "type": "weather",
+    "severity": "high",
+    "title": "Weather today, September 28: Heavy rain alert for Uttarakhand, Karnataka; Telangana, Andhra Pradesh face t - The Economic Times",
+    "message": "Weather today, September 28: Heavy rain alert for Uttarakhand, Karnataka; Telangana, Andhra Pradesh face t - The Economic Times",
+    "description": "Weather today, September 28: Heavy rain alert for Uttarakhand, Karnataka; Telangana, Andhra Pradesh face t  The Economic Times",
     "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 202,
-    "type": "power",
-    "message": "Adani Green Energy expands BESS capacity, achieves 70% of FY27 target",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 203,
-    "type": "emergency",
-    "message": "AI Agents Are About to Flood the Workforce. No One’s Ready for It",
-    "district": "Telangana",
-    "time": "Recent"
-  },
-  {
-    "id": 204,
-    "type": "power",
-    "message": "How smaller, distributed batteries could help the grid",
-    "district": "Telangana",
-    "time": "Recent"
+    "region": "Telangana",
+    "createdAt": "2026-10-01T17:18:47Z",
+    "publishedAt": "2026-09-29T07:00:00Z",
+    "time": "29 Sep, 12:30 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMisgJBVV95cUxORlBjTVctanlhWUVRelY3T2dpOV9DY0ZqamR6VVdNQ0swYnpiaUN1TWduc2pSLU9FYXYtSVBlR1AtRG1DODYzcWh2Q2Z0YjZIbzloN2owSVNhZ240QkQwbkFEQVdQeTY2eHBVbzZYOWE2cnlvX1BmQlhGd0xickJJeUkyay1kQUVpVm9CcHJ5eVlpbUk4NVdMUGp1WHNuSmFGYXVzcVNGV09WTUVaVU9Kb3RYVGRJZHNFWkg2azFyWnpEYnFROEJUdGtZaVVBUG9wLXliV2lwYi1nRi0xQkl3RTlxZkNnZEhsMk9nZzJ3UC1lWHpHZUw2Zlh3cFNFc2dyNF9LblQ2YXRhUWRZdWRmRVpkYy1GSDZHLV9MTU4tQTdISmQ1WElMVmJqYTh2MVpSZmfSAbcCQVVfeXFMUHFwNkNvNnF6d190WjlwLUMtbUZrZTVaalI1Q3o5VjZHd0FzNHF2c1JIWnJaam9Ra2tmMkZZNndjOG16VElpaGNPVFFvdUJtVGhwelY2eXlpQW1Ielk0MlhGb3p2bVYyTWR5c0xjTUJkSHZZUWF2M216M1VVZUFnc1dfVmY3TVpaUU54N0x1Z1k0cDJoemFwbDNIbjNSdWxudlkxa1BzT0RCQ2lRYlB3d3B2aE80SzJMVmZrUXpkT3JuanVaUEYwNGNEbTIzcmlwcjdoWmZHQ1I1dUZHM3Rod1pxS2hxRlJJQ01tczctYXlOVEFUbWhyX2NrdW5IcHRCMVpFTUl1bkw2SnBiOHdBVGNNTUxpajFKc2pUdkthRGZzRno2d1ZUeVo4WnlucEM4cG5DMWxSSmM?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMisgJBVV95cUxORlBjTVctanlhWUVRelY3T2dpOV9DY0ZqamR6VVdNQ0swYnpiaUN1TWduc2pSLU9FYXYtSVBlR1AtRG1DODYzcWh2Q2Z0YjZIbzloN2owSVNhZ240QkQwbkFEQVdQeTY2eHBVbzZYOWE2cnlvX1BmQlhGd0xickJJeUkyay1kQUVpVm9CcHJ5eVlpbUk4NVdMUGp1WHNuSmFGYXVzcVNGV09WTUVaVU9Kb3RYVGRJZHNFWkg2azFyWnpEYnFROEJUdGtZaVVBUG9wLXliV2lwYi1nRi0xQkl3RTlxZkNnZEhsMk9nZzJ3UC1lWHpHZUw2Zlh3cFNFc2dyNF9LblQ2YXRhUWRZdWRmRVpkYy1GSDZHLV9MTU4tQTdISmQ1WElMVmJqYTh2MVpSZmfSAbcCQVVfeXFMUHFwNkNvNnF6d190WjlwLUMtbUZrZTVaalI1Q3o5VjZHd0FzNHF2c1JIWnJaam9Ra2tmMkZZNndjOG16VElpaGNPVFFvdUJtVGhwelY2eXlpQW1Ielk0MlhGb3p2bVYyTWR5c0xjTUJkSHZZUWF2M216M1VVZUFnc1dfVmY3TVpaUU54N0x1Z1k0cDJoemFwbDNIbjNSdWxudlkxa1BzT0RCQ2lRYlB3d3B2aE80SzJMVmZrUXpkT3JuanVaUEYwNGNEbTIzcmlwcjdoWmZHQ1I1dUZHM3Rod1pxS2hxRlJJQ01tczctYXlOVEFUbWhyX2NrdW5IcHRCMVpFTUl1bkw2SnBiOHdBVGNNTUxpajFKc2pUdkthRGZzRno2d1ZUeVo4WnlucEM4cG5DMWxSSmM?oc=5",
+    "source": "The Economic Times"
   }
 ]
