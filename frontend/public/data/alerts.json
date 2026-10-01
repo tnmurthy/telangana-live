@@ -1,8 +1,29 @@
 [
   {
     "id": 201,
+    "type": "water",
+    "message": "IndianOil brings packaged water to the pump in a non-fuel revenue push",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 202,
+    "type": "power",
+    "message": "Adani Green Energy expands BESS capacity, achieves 70% of FY27 target",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 203,
     "type": "emergency",
     "message": "AI Agents Are About to Flood the Workforce. No One’s Ready for It",
+    "district": "Telangana",
+    "time": "Recent"
+  },
+  {
+    "id": 204,
+    "type": "power",
+    "message": "How smaller, distributed batteries could help the grid",
     "district": "Telangana",
     "time": "Recent"
   }
