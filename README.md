@@ -170,23 +170,76 @@ telangana-live/
 └── README.md                    # This file
 ```
 
-## 🔄 Data Flow
+## 🗺️ System Context Map
+
+_Verified against the repo, workflows and Vercel on 2026-10-02._
+
+### How data reaches the site
 
 ```
-RSS Sources (Nijam, Organiser, etc.)
-    ↓
-Backend RSS Parser (feedparser)
-    ↓
-Normalization Engine (data_engine.py)
-    ↓
-AI Fact-Checking (Claude/Gemini)
-    ↓
-Supabase Database
-    ↓
-Frontend (React components)
-    ↓
-User Interface (News Feed, Maps, Dashboards)
+ SOURCES                 GITHUB ACTIONS (cron)               REPO (main)                      VERCEL                    SITE
+ ───────                 ─────────────────────               ───────────                      ──────                    ────
+ Google News RSS ──┐
+ OWM / Open-Meteo ─┤     scheduled sync jobs                 frontend/src/data/*.js|json ┐    deploy hook ─► build
+ gold/fuel sites ──┼──►  python backend/scripts/* ──commit─► frontend/public/data/*.json ├──► vite build + prerender ─► www.telangana.live
+ eNAM mandi ───────┤     [skip ci] + POST deploy hook        (bundled at build time)     ┘    (113 static pages)
+ TypeSafe API ─────┘
 ```
+
+Data files are bundled into the build, so **new data only appears after a rebuild**. Sync commits carry `[skip ci]`, so each sync job calls the Vercel deploy hook itself.
+
+### Scheduled jobs
+
+| Workflow | Cron (UTC) | Runs | Writes |
+|---|---|---|---|
+| `emergency_alerts_sync` | every 15 min | `emergency_alerts.py` → `data_engine.sync_alerts()` | `alerts.json` (src + public) |
+| `weather_update` | hourly at :30 | `weather_scraper.py` | `weatherData.js` |
+| `news_aggregation` | every 2 h | `news_aggregation.py` | `news.json` |
+| `scraper` | every 4 h | `data_engine` gold + fuel | `goldRates.js`, `fuelPrices.js` |
+| `prices_update` | every 6 h | `data_engine` fuel + pulses | `fuelPrices.js`, `pulses.js` |
+| `gold_silver_update` | every 12 h | `data_engine --task gold` | `goldRates.js` |
+| `rates_sync` | 01:00, 13:00 | `data_engine --finance-only` | gold, fuel, pulses |
+| `ai_pulse_update` | daily 01:00 | `data_engine --task ai_pulse`, `sync_ai_metrics.py` | `aiBriefingData.js` |
+| `daily_pulse` | daily 02:30 | `whatsapp_bot.py` | WhatsApp message |
+
+On push: `ci_cd_master` (secret scan → lint, typecheck, build → deploy jobs), plus `ci`, `node.js`, `webpack` and `test`.
+
+### Backend map
+
+```
+backend/
+├── core/
+│   ├── alert_triage.py      TypeSafe judgments per headline: Choice(type), Noul(in Telangana),
+│   │                        Noul(current), Score(severity). Regex fallback without a key.
+│   ├── alert_feed.py        the one alerts.json schema; freshness and expiry rules
+│   ├── news_classifier.py   keyword category / region tagging
+│   └── correlation_engine.py, clustering.py, llm_provider.py, config.py
+├── scripts/
+│   ├── data_engine.py       hub: gold, fuel, pulses, news, alerts, ai_pulse
+│   ├── emergency_alerts.py  entry point for the alerts job; fetch_latest_alerts() for the API
+│   └── news_scraper.py, news_aggregation.py, weather_scraper.py, whatsapp_bot.py
+└── api/civic_gateway.py     FastAPI: /news, /alerts, /services
+tools/calibrate_alert_triage.py   re-derive alert thresholds against labelled headlines
+```
+
+### Alert feed consumers
+
+| Component | Reads | How |
+|---|---|---|
+| `AlertsPage`, `AlertsBanner` | `src/data/alerts.json` | imported at build time |
+| `BreakingNewsBanner` | `/data/alerts.json` | fetched at runtime every 5 min; shows `critical` / `high` |
+| `NewsTicker` | `src/data/alerts.js` | separate static file |
+
+Every `alerts.json` record carries the fields all of these read; see `backend/core/alert_feed.py`.
+
+### Required secrets (GitHub Actions)
+
+| Secret | Used by | Status |
+|---|---|---|
+| `VERCEL_DEPLOY_HOOK_URL` | every sync job | set |
+| `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` | sync jobs | set |
+| `TYPESAFE_API_KEY` | `emergency_alerts_sync` | **missing**: alert triage falls back to regex |
+| `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` | `ci_cd_master` deploy jobs | **missing** |
 
 ## 🧪 Testing
 
@@ -228,6 +281,17 @@ See [docs/README.md](./docs/README.md) for the complete schema specification.
 ## 🚨 Known Issues & Roadmap
 
 ### Current Issues
+
+Verified 2026-10-02, highest impact first:
+
+- **Vercel Production Branch is `master`, but all work and data syncs land on `main`.** Builds from `main` arrive as previews. Until the setting is switched, production is updated by fast-forwarding `master` to a commit carrying `main`'s tree.
+- **`TYPESAFE_API_KEY` is not set in GitHub secrets**, so scheduled alert triage runs on the regex fallback.
+- **The deploy hook fires even when a sync had nothing to commit**, so the 15-minute alerts job alone triggers about 96 builds a day.
+- **Gold is scraped by three overlapping jobs** (`scraper`, `gold_silver_update`, `rates_sync`), and the primary source currently returns no fresh data ("Stale Mode").
+- **`classify_article()` matches keywords as substrings**, so for example "business" matches "bus" and is filed under Transit.
+- **Tests**: 7 pre-existing failures in `tests/test_data_engine.py`, and the network-bound tests take more than an hour. Frontend `npm test` finds no test files, because its config looks for `tests/unit/` under `frontend/`.
+
+Previously reported, not re-verified:
 
 - Double `src` path bug in Python sync agents (data outputs to wrong directory)
 - AI Pulse page schema mismatch causing render crashes
@@ -281,11 +345,11 @@ black backend/
 
 ### Vercel (Frontend)
 
-The frontend is automatically deployed to Vercel on every push to `master`:
+Production serves the Vercel project's **Production Branch**, currently `master` (see Current Issues). Development happens on `main`.
 
-```bash
-vercel deploy --prod
-```
+- **Data refreshes**: each sync job POSTs `VERCEL_DEPLOY_HOOK_URL` after committing.
+- **Routing**: prerendered routes are served as static files. All other routes fall back to the SPA via a rewrite to `/` in `vercel.json`. A rewrite to `/index.html` does not resolve under `cleanUrls: true`.
+- **Check what's live** with the newest production deployment's commit ref and SHA, not just that a build ran.
 
 ### Supabase (Database)
 
