@@ -284,6 +284,8 @@ See [docs/README.md](./docs/README.md) for the complete schema specification.
 
 _Verified 2026-10-02. Priority reflects impact on a trustworthy, monetisable civic portal: **P0** = users see wrong or invented information; **P1** = data quality on indexed pages; **P2** = cost and efficiency; **P3** = engineering hygiene._
 
+**Update, 2 Oct (later):** TL-03 and TL-12 fixed and live; TL-08 partly fixed; TL-16 added. The rules behind these fixes are in [docs/DATA_STANDARDS.md](docs/DATA_STANDARDS.md), shared with vizag-live.
+
 #### Where the issues live
 
 ```
@@ -305,21 +307,23 @@ backend/
 tests/test_data_engine.py      ⚠ TL-11 7 failing tests; network-bound tests take more than an hour
 
 frontend/
-├── src/data/alerts.js         ⚠ TL-03 6 hard-coded "live" alerts ("2 hours ago"), unchanged since 23 Jun
+├── src/data/alerts.js         ✅ TL-03 static "live" alerts removed (tariff reference data kept)
 ├── src/components/
-│   ├── NewsTicker.jsx         ⚠ TL-03 shows alerts.js as current
-│   ├── PowerTariffCard.jsx    ⚠ TL-03 reads alerts.js
+│   ├── NewsTicker.jsx         ✅ TL-03 live feed only; news shows its real publish time
+│   ├── PowerTariffCard.jsx    ✅ reads tariff reference data only (not affected)
 │   ├── BreakingNewsBanner.jsx ✅ severity-based, reads live feed
 │   ├── FuelPriceWidget.jsx    ⚠ TL-06 no stale indicator
 │   └── DailyRatesDashboard.jsx ⚠ TL-06 no stale indicator
 ├── src/pages/GoldLandingPage.jsx ⚠ TL-06 no stale indicator
+├── src/services/powerAlertsService.js ✅ TL-03 reads /data/alerts.json; no invented fallback
 ├── src/App.tsx, src/main.tsx  ⚠ TL-14 dead files (entry is main.jsx → App.jsx)
-└── vitest.config.ts           ⚠ TL-12 include path finds no tests
+└── vitest.config.ts           ✅ TL-12 runs the repo-root tests (8 files, 95 tests)
 
 infrastructure/
 ├── Vercel project settings    ⚠ TL-01 Production Branch is master; work lands on main
 ├── GitHub secrets             ⚠ TL-02 TYPESAFE_API_KEY missing · TL-13 VERCEL_* missing
-├── .github/workflows/*.yml    ⚠ TL-08 deploy hook fires with nothing committed
+│                              ⚠ TL-16 VERCEL_DEPLOY_HOOK_URL returns 404 → syncs rebuild nothing
+├── .github/workflows/*.yml    ◐ TL-08 hook gated on a push, but syncs write the run time so most runs push
 │                              ⚠ TL-09 gold scraped by three overlapping jobs
 │                              ⚠ TL-13 Bandit SAST step failing in ci_cd_master
 └── vercel.json                ✅ SPA fallback fixed (rewrite to /, not /index.html)
@@ -331,16 +335,17 @@ infrastructure/
 |---|---|---|---|---|
 | TL-01 | Live site deploys from `master`; all work and data syncs land on `main` | Site goes stale between manual syncs; fixes don't reach users | **P0** | Switch Vercel Production Branch to `main` (admin access) |
 | TL-02 | TypeSafe key missing in GitHub | Alerts are filtered by old keyword rules: weaker quality | **P0** | Approve adding the secret |
-| TL-03 | Ticker shows 6 invented "live" alerts | Residents see fake recent outages; trust and AdSense policy risk | **P0** | Approve removing static alerts (empty ticker when nothing is live) |
+| TL-16 | Deploy hook returns 404 | Data syncs no longer rebuild the site; it only updates on manual syncs | **P0** | Create a deploy hook for `main` and share its URL (I will set the secret) |
+| TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | P1 | Confirm acceptable price sources |
 | TL-06 | Rate cards don't show staleness | A 3-day-old price looks current | P1 | Set the stale threshold per rate (e.g. gold 12 h, fuel 24 h) |
 | TL-07 | Fake-news check silently switches off on errors | Unverified articles published as checked | P1 | — |
-| TL-08 | Rebuild triggered even when nothing changed | About 96 unnecessary builds a day (cost, build queue) | P2 | — |
+| TL-08 | Rebuild triggered even when nothing changed | Gate added; but every sync writes the run time, so most runs still push and rebuild | ◐ Partly fixed | — |
 | TL-09 | Gold fetched by three overlapping jobs | Wasted runs, conflicting writes | P2 | Choose one refresh cadence |
 | TL-10 | AI summaries can attach to the wrong article | Misleading summaries | P2 | — |
 | TL-11 | Backend test suite red and slow | Regressions go unnoticed | P3 | — |
-| TL-12 | Frontend tests never run | Same | P3 | — |
+| TL-12 | Frontend tests never ran | Fixed 2 Oct: 95 tests now run on every `npm test` | ✅ Fixed | — |
 | TL-13 | CI deploy jobs lack secrets; security scan step failing | Pipeline can't gate production | P3 | Decide: gated CI deploys vs deploy hook |
 | TL-14 | Dead entry files | Confusion for contributors | P3 | — |
 | TL-15 | Duplicated entity keyword tables | Two lists drift apart | P3 | — |
@@ -351,16 +356,17 @@ infrastructure/
 |---|---|---|---|---|
 | TL-01 | Infra | Vercel settings | Newest production deployment's commit ref is `main`; `/dashboard` data under 1 h old without manual steps | S |
 | TL-02 | Infra | GitHub secrets | Alerts job runs with `source="typesafe"` for every verdict; no regex fallback in logs | S |
-| TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `PowerTariffCard.jsx` | Ticker reads `/data/alerts.json`; no relative-time strings stored in data; explicit empty state | M |
+| TL-16 | Infra | Vercel deploy hooks, `VERCEL_DEPLOY_HOOK_URL` | Hook returns 2xx; a sync that pushed produces a new production deployment | S |
+| TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | Fresh gold price daily, or an explicit `stale` flag; value selected from parsed candidates, never by fixed column index | M |
 | TL-06 | Frontend + Backend | `FuelPriceWidget.jsx`, `DailyRatesDashboard.jsx`, `GoldLandingPage.jsx`; rate writers in `data_engine.py` | Every card shows source and "as of" time; stale badge past the PO threshold | M |
 | TL-07 | Backend | `agents/fact_checker.py` | No default pass on failure; failures logged and counted; typed judgments | M |
-| TL-08 | Infra | 8 sync workflows | Deploy hook called only after a successful push; daily builds ≈ daily data commits | S |
+| TL-08 | Infra | 8 sync workflows; rate/weather writers | ◐ Hook runs only after a push (done). Remaining: writers skip unchanged values, so an unchanged run commits nothing | S |
 | TL-09 | Infra | `scraper.yml`, `gold_silver_update.yml`, `rates_sync.yml` | One job per dataset; cadence documented in the context map | S |
 | TL-10 | Backend | `scripts/news_scraper.py` | Count mismatch discards the batch; test covers 19-of-20 replies | S |
 | TL-11 | Backend | `tests/test_data_engine.py` | Suite green; network tests marked `integration` and skipped by default (< 2 min) | M |
-| TL-12 | Frontend | `vitest.config.ts` | `npm test` discovers and runs `tests/unit/*` | S |
+| TL-12 | Frontend | `vitest.config.ts` | ✅ Done: `test.dir` is the repo root; 8 files, 95 tests | S |
 | TL-13 | Infra | `ci_cd_master.yml` | Pipeline green end to end, or deploy jobs removed in favour of the hook | S–M |
 | TL-14 | Frontend | `src/App.tsx`, `src/main.tsx` | Removed; build output unchanged | S |
 | TL-15 | Backend | `core/correlation_engine.py`, `core/news_classifier.py` | One entity table, imported by both | M |
@@ -423,7 +429,7 @@ black backend/
 
 Production serves the Vercel project's **Production Branch**, currently `master` (see Remediation Backlog, TL-01). Development happens on `main`.
 
-- **Data refreshes**: each sync job POSTs `VERCEL_DEPLOY_HOOK_URL` after committing.
+- **Data refreshes**: each sync job POSTs `VERCEL_DEPLOY_HOOK_URL` after it pushes a commit. The hook currently returns 404 (TL-16).
 - **Routing**: prerendered routes are served as static files. All other routes fall back to the SPA via a rewrite to `/` in `vercel.json`. A rewrite to `/index.html` does not resolve under `cleanUrls: true`.
 - **Check what's live** with the newest production deployment's commit ref and SHA, not just that a build ran.
 
