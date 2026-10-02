@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { alerts } from '../data/alerts';
 
 // Severity, not type, decides what is "breaking" — matches AlertsBanner.
 // The feed's types are fine-grained (flood, power_outage, road_closure, ...).
