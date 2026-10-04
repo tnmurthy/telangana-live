@@ -337,6 +337,10 @@ infrastructure/
 | TL-02 | TypeSafe key missing in GitHub | Alerts are filtered by old keyword rules: weaker quality | **P0** | Approve adding the secret |
 | TL-16 | Deploy hook returned 404 | Fixed 4 Oct: hook no longer needed — Vercel's Git integration deploys every push to `main`, data commits included; hook step removed from 8 workflows | ✅ Fixed | Delete the unused `VERCEL_DEPLOY_HOOK_URL` secret (optional) |
 | TL-17 | AI Pulse page was a fixed placeholder | Fixed 4 Oct: rebuilt as Tech & AI Pulse (digital safety, government & AI, jobs & skills) on sourced, dated local news | ✅ Fixed | Set the `TYPESAFE_API_KEY` secret (TL-02) so the scheduled run uses judgment, not the keyword fallback |
+| TL-18 | Database paused; citizen reports, classifieds and the emergency banner could not load | Fixed 4 Oct: moved to the `telangana` schema of the shared "Talia" Supabase project, with RLS | ⚠ Needs 2 clicks | Click Save under Supabase → Data API → Exposed schemas; add Talia's service key as the `SUPABASE_SERVICE_ROLE_KEY` GitHub secret |
+| TL-19 | Grievance dashboard shows 8 invented reports | Same sample data the report map used to show; presented as real | P1 | Wire it to approved reports, or hide it |
+| TL-20 | Redis token is public | `VITE_UPSTASH_REDIS_REST_TOKEN` is compiled into the site's JavaScript | P1 | Rotate the token; move Redis calls server-side |
+| TL-21 | Paid "featured listing" removed | It showed a placeholder UPI QR (`telangana.live@upi`) and a "Simulate Success" button | P2 | Decide whether to offer paid listings; if yes, integrate a real payment provider |
 | TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | P1 | Confirm acceptable price sources |
@@ -359,6 +363,10 @@ infrastructure/
 | TL-02 | Infra | GitHub secrets | Alerts job runs with `source="typesafe"` for every verdict; no regex fallback in logs | S |
 | TL-16 | Infra | `.github/workflows/*` | ✅ Done: hook steps removed; data commits deploy through the Git integration | S |
 | TL-17 | Backend + Frontend | `scripts/tech_pulse.py` (shared with vizag), `pages/TechPulsePage.jsx`, `ai_pulse_update.yml` | ✅ Done: every item links to a dated source; 14-day window; empty sections say so; 25 + 4 tests | M |
+| TL-18 | Infra + Backend + Frontend | `supabase/migrations/20261004_telangana_schema.sql`, `services/*`, `core/database.py` | ✅ Code live; anon reads only public rows; inserts don't read back. Pending: exposed schema, service-key secret | M |
+| TL-19 | Frontend | `components/GrievanceDashboard.jsx`, `data/reportingData.js` | No `mockReports` import; counts come from `citizen_reports` | S |
+| TL-20 | Infra + Frontend | Vercel env, `services/redisService.js` | No `VITE_`-prefixed secret in the bundle; old token revoked | S–M |
+| TL-21 | Frontend | `pages/ClassifiedsPage.jsx` | Featuring only after a verified payment webhook sets `is_featured` | M |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | Fresh gold price daily, or an explicit `stale` flag; value selected from parsed candidates, never by fixed column index | M |
