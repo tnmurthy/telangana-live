@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-04T11:36:34Z",
+  "generatedAt": "2026-10-04T16:56:49Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -26,23 +26,23 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-0d248ff1156f",
+        "id": "tp-0283edd7c356",
         "category": "safety",
-        "title": "Nearly 60% of Telangana’s cyber fraud losses linked to investment scams: TGCSB",
-        "source": "newsmeter.in",
-        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQV2NxcjNyRm41dmluU0h5blVJWmxmS2pJTmV0SDFTUXhhMUVLU2NwdmV1eS04UldIMHRlUVFHdGtqcGhMb252UGNZaVluMjk4dmF6V0hNdDZNdVc4YkV6a2VhcmVuS2F1b2Izd2RpOU5Oc2o3WVNZR1dBbFNrcGloNHZQWlNhWTE0eTc0N3pjTnZ5aEtJRzd4ejN1YTlzOEZUWGZIdFdQbkdITG5uWmRTNWZZTQ?oc=5",
-        "publishedAt": "2026-09-30T10:24:00Z",
-        "time": "30 Sep, 3:54 PM IST",
+        "title": "Pause before you pay: thousands join cyber safety march to promote safer online habits in Hyderabad",
+        "source": "The Hindu",
+        "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQdGFMa3BFZVFQbDBvUUdrRFlPb18ySXZlUDVSLVY1WlFNYmprdG15RjI2QUVQRkNqUW9RVVZsLTNfYVlOTnVyclhDeWZqYy1YTVAtaWkwOGZmN1FKMHRDdVlrYThIUFBSVTI5UHlqdzAtcU8yN3NzN01lOEltb2pMNnltbFBid3JrdjlHVm91MEpBajVWWVhlS1o3WF9nR3JOVmhzOWcxSVFCazVDYno2bmFnV2JGc2V1UmlNYXh4UFJyWmRFRVIwa3BhVlhXOXFJWXZCOC1BbGNWc1lWdVhVWUlUSHBZODVhanhZYTV3d2s0SFlZX3Nad1haTdIBggJBVV95cUxOOHJmcGR2X3R2RmY0LXc3eTlhbmdpRHdzZVc3MkhwZ3J6ZGdqNER3NnEwWVJsSkRQTzdHRUVLUnlhdDFKV0IydmVZaXpnS3ZnXzdjRkc4RkVFS1FtWFl1RU9zS2REQlpDZENNcnEwZWp3WXZzRHVlRHhVNXBTTjliY1l0ZU5BS0ZnNlUxMDZOaGhGcmdCMlR6a0h6Z1V3OU9GX08xU1ZteFQyZjl6M0lJLS1wNEhVSHJIUTVwREtqakttX2Q4aDR4eW5ZSF9CVjZBU0ZxOENCa3hqekdIcTN2YTJOdk5vSFdBYXd1R3J3dThwdmp6SEZ1RnVhMEc5QzNMcEE?oc=5",
+        "publishedAt": "2026-10-01T15:44:08Z",
+        "time": "1 Oct, 9:14 PM IST",
         "method": "typesafe"
       },
       {
-        "id": "tp-94421e0226de",
+        "id": "tp-0d248ff1156f",
         "category": "safety",
-        "title": "TGCSB to hold 2-km night walk in Hyderabad against cyber fraud",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSUdtTU9zc1dmNHU0OE1OR0VabFlTWnJjeC16WFZaVE9tU2xSckFmWkhyakhGSmVHWWNhRWxyeDdMZHpzRW9xNUtGOE9XU1Z2clZ5X3Q2WGtHYThqYWZoazRYbHZjaEtwa1Y4TkZzTUpaNEJwN3J6UF8xQXpKTFFhaUd3UjlvMThJVHRtWkxBeHloQQ?oc=5",
-        "publishedAt": "2026-09-28T15:50:35Z",
-        "time": "28 Sep, 9:20 PM IST",
+        "title": "Nearly 60% of Telangana’s cyber fraud losses linked to investment scams: TGCSB",
+        "source": "NewsMeter",
+        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQV2NxcjNyRm41dmluU0h5blVJWmxmS2pJTmV0SDFTUXhhMUVLU2NwdmV1eS04UldIMHRlUVFHdGtqcGhMb252UGNZaVluMjk4dmF6V0hNdDZNdVc4YkV6a2VhcmVuS2F1b2Izd2RpOU5Oc2o3WVNZR1dBbFNrcGloNHZQWlNhWTE0eTc0N3pjTnZ5aEtJRzd4ejN1YTlzOEZUWGZIdFdQbkdITG5uWmRTNWZZTQ?oc=5",
+        "publishedAt": "2026-09-30T10:24:00Z",
+        "time": "30 Sep, 3:54 PM IST",
         "method": "typesafe"
       }
     ],
