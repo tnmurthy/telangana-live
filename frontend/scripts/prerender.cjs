@@ -122,6 +122,15 @@ Understand how to purchase and recharge smart cards, buy single-journey tokens, 
 
 Our directory outlines available services, including free doctor consultations, diagnostic tests, immunizations, and essential medicines. Use this helper guide to find healthcare in your neighborhood, helping you treat basic illnesses and access preventative care easily.`
   },
+  '/ai-pulse': {
+    title: 'Tech & AI Pulse - Telangana - Telangana.live',
+    description: 'Sourced local news on AI scams and digital safety, government technology programmes, and tech jobs and skilling in Telangana.',
+    h1: 'Tech & AI Pulse',
+    h2s: ['Digital safety', 'Government & AI', 'Jobs & skills'],
+    content: `Technology news that matters to people in Telangana, gathered from news outlets and sorted into three sections: AI scams, cyber fraud and police advisories; state technology programmes, policy and investment; and tech hiring, layoffs and skilling programmes.
+
+Every story links to the outlet that reported it and shows when it was published. Only stories from the last two weeks are shown, so a section can be empty when there is no recent local news.`
+  },
   '/water-supply': {
     title: 'Telangana Water Supply Schedule & Tanker Booking - Telangana.live',
     description: 'Track municipal water supply timings, water board reservoir storage, and book drinking water tankers online.',
