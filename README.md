@@ -341,19 +341,22 @@ infrastructure/
 | TL-19 | Grievance dashboard shows 8 invented reports | Same sample data the report map used to show; presented as real | P1 | Wire it to approved reports, or hide it |
 | TL-20 | Redis token was public | Fixed 4 Oct: the browser no longer uses Redis, so no token ships; the leaked token's database (`tough-rat-69556`) no longer exists | ✅ Fixed | Optional: delete the unused `VITE_UPSTASH_*` Vercel variables |
 | TL-21 | Paid "featured listing" removed | It showed a placeholder UPI QR (`telangana.live@upi`) and a "Simulate Success" button | P2 | Decide whether to offer paid listings; if yes, integrate a real payment provider |
+| TL-22 | Fuel tax breakup is invented | Every price is split as fixed 55% base / 22% excise / 15% VAT; real excise is a fixed ₹ per litre | P1 | Use published central excise and Telangana VAT rates, or hide the breakup |
+| TL-23 | News cards showed an invented "AI confidence" | Fixed 5 Oct: was 75 + title length % 20 whenever no score existed (every article) | ✅ Fixed | — |
+| TL-24 | Fuel and gold fell back to built-in prices | Fixed 5 Oct: fixed 107.41 / 97.82 / 803 / 72.8 and 15704 / 14395 / 290 were published as today's prices whenever a page failed | ✅ Fixed | — |
 | TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
-| TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | P1 | Confirm acceptable price sources |
+| TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ◐ Partly fixed | 5 Oct: no more invented gold prices (stale runs keep the last real reading with its own date; no fixed fallback). Still needed: confirm acceptable sources |
 | TL-06 | Rate cards don't show staleness | A 3-day-old price looks current | P1 | Set the stale threshold per rate (e.g. gold 12 h, fuel 24 h) |
-| TL-07 | Fake-news check silently switches off on errors | Unverified articles published as checked | P1 | — |
-| TL-08 | Rebuild triggered even when nothing changed | Gate added; but every sync writes the run time, so most runs still push and rebuild | ◐ Partly fixed | — |
+| TL-07 | Fake-news check silently switches off on errors | Unverified articles published as checked | ✅ Fixed | 5 Oct: unchecked articles are published as unchecked with no score; failures logged |
+| TL-08 | Rebuild triggered even when nothing changed | Gate added; but every sync writes the run time, so most runs still push and rebuild | ✅ Fixed | 5 Oct: data files are not rewritten when only timestamps changed, so quiet runs commit and deploy nothing |
 | TL-09 | Gold fetched by three overlapping jobs | Wasted runs, conflicting writes | P2 | Choose one refresh cadence |
-| TL-10 | AI summaries can attach to the wrong article | Misleading summaries | P2 | — |
-| TL-11 | Backend test suite red and slow | Regressions go unnoticed | P3 | — |
+| TL-10 | AI summaries can attach to the wrong article | Misleading summaries | ✅ Fixed | 5 Oct: summaries placed by their number; a batch not numbered 1..N is discarded |
+| TL-11 | Backend test suite red and slow | Regressions go unnoticed | ✅ Fixed | 5 Oct: 172 tests pass in about 40 s (was 8 failing, minutes to hours) |
 | TL-12 | Frontend tests never ran | Fixed 2 Oct: 95 tests now run on every `npm test` | ✅ Fixed | — |
 | TL-13 | CI deploy jobs lack secrets; security scan step failing | Pipeline can't gate production | P3 | Decide: delete the never-working deploy jobs (Vercel now deploys every push to main) |
-| TL-14 | Dead entry files | Confusion for contributors | P3 | — |
-| TL-15 | Duplicated entity keyword tables | Two lists drift apart | P3 | — |
+| TL-14 | Dead entry files | Confusion for contributors | ✅ Fixed | 5 Oct: removed; build output identical |
+| TL-15 | Duplicated entity keyword tables | Two lists drift apart | ✅ Fixed | 5 Oct: one table in core/correlation_engine.py; classifier derives from it |
 
 #### For the Business Analyst — scope and acceptance criteria
 
@@ -367,19 +370,22 @@ infrastructure/
 | TL-19 | Frontend | `components/GrievanceDashboard.jsx`, `data/reportingData.js` | No `mockReports` import; counts come from `citizen_reports` | S |
 | TL-20 | Frontend | `services/pricesService.js`, `waterService.js` | ✅ Done: browser Redis client removed; `noBrowserSecrets.test.js` guards it | S |
 | TL-21 | Frontend | `pages/ClassifiedsPage.jsx` | Featuring only after a verified payment webhook sets `is_featured` | M |
+| TL-22 | Backend + Frontend | `scripts/data_engine.py` `_tax_breakup`, `FuelTaxCard` | Breakup computed from published duty and VAT rates with their source, or not shown | S–M |
+| TL-23 | Frontend | `NewsCard.jsx`, `ArticleModal.jsx` | ✅ Done: `tests/unit/noInventedScores.test.js` | S |
+| TL-24 | Backend | `sync_gold`, `sync_fuel` | ✅ Done: `staleFields`; previous file kept when petrol and diesel are unread | S |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
-| TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | Fresh gold price daily, or an explicit `stale` flag; value selected from parsed candidates, never by fixed column index | M |
+| TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ◐ No invented values (tests in `TestSyncFinanceHistoryTracking`); sources still to confirm | M |
 | TL-06 | Frontend + Backend | `FuelPriceWidget.jsx`, `DailyRatesDashboard.jsx`, `GoldLandingPage.jsx`; rate writers in `data_engine.py` | Every card shows source and "as of" time; stale badge past the PO threshold | M |
-| TL-07 | Backend | `agents/fact_checker.py` | No default pass on failure; failures logged and counted; typed judgments | M |
-| TL-08 | Infra | 8 sync workflows; rate/weather writers | ◐ Hook runs only after a push (done). Remaining: writers skip unchanged values, so an unchanged run commits nothing | S |
+| TL-07 | Backend | `agents/fact_checker.py` | ✅ Done: `FactCheckVerdict`; `tests/test_fact_checker.py` | M |
+| TL-08 | Infra | 8 sync workflows; rate/weather writers | ✅ Done: `write_js` / `write_js_module` skip unchanged data; `TestWritesSkipUnchangedData` | S |
 | TL-09 | Infra | `scraper.yml`, `gold_silver_update.yml`, `rates_sync.yml` | One job per dataset; cadence documented in the context map | S |
-| TL-10 | Backend | `scripts/news_scraper.py` | Count mismatch discards the batch; test covers 19-of-20 replies | S |
-| TL-11 | Backend | `tests/test_data_engine.py` | Suite green; network tests marked `integration` and skipped by default (< 2 min) | M |
+| TL-10 | Backend | `scripts/news_scraper.py` | ✅ Done: `tests/test_news_summaries.py` covers 19-of-20 replies | S |
+| TL-11 | Backend | `tests/test_data_engine.py` | ✅ Done: model and fact checker stubbed by an autouse fixture; dependency stubs only when missing | M |
 | TL-12 | Frontend | `vitest.config.ts` | ✅ Done: `test.dir` is the repo root; 8 files, 95 tests | S |
 | TL-13 | Infra | `ci_cd_master.yml` | Pipeline green end to end, or deploy jobs removed in favour of the hook | S–M |
-| TL-14 | Frontend | `src/App.tsx`, `src/main.tsx` | Removed; build output unchanged | S |
-| TL-15 | Backend | `core/correlation_engine.py`, `core/news_classifier.py` | One entity table, imported by both | M |
+| TL-14 | Frontend | `src/App.tsx`, `src/main.tsx` | ✅ Done | S |
+| TL-15 | Backend | `core/correlation_engine.py`, `core/news_classifier.py` | ✅ Done: `tests/test_civic_entities.py` | M |
 
 Effort: **S** under half a day · **M** one to two days.
 
