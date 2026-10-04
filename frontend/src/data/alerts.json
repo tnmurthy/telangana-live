@@ -46,5 +46,21 @@
     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQjVDQ0xNLV8tTWctYUo1WXAwUkxWeWpTMFJTU05ZMmoxdzktaUhFTEFUSGZITlVUdGhFRmI2Vzhrb1N0SDQ1Q19UU2NJUEJNbFdKVDdlSVNDSGwzcFZqemdqOERxZHpJZ1ZDUmVCRW9RNVJtTHdKRm1IZmI4VVVqemtoMjJJQ3JaeVZzTWM5aw?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQjVDQ0xNLV8tTWctYUo1WXAwUkxWeWpTMFJTU05ZMmoxdzktaUhFTEFUSGZITlVUdGhFRmI2Vzhrb1N0SDQ1Q19UU2NJUEJNbFdKVDdlSVNDSGwzcFZqemdqOERxZHpJZ1ZDUmVCRW9RNVJtTHdKRm1IZmI4VVVqemtoMjJJQ3JaeVZzTWM5aw?oc=5",
     "source": "Telangana Today"
+  },
+  {
+    "id": "alert-b4a5dcf93425",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Supply To Be Disrupted For 36 Hours - INDToday",
+    "message": "Hyderabad Water Supply To Be Disrupted For 36 Hours - INDToday",
+    "description": "Hyderabad Water Supply To Be Disrupted For 36 Hours  INDToday",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-04T17:03:29Z",
+    "publishedAt": "2026-10-04T10:48:34Z",
+    "time": "4 Oct, 4:18 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
+    "source": "INDToday"
   }
 ]
