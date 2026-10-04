@@ -1,6 +1,6 @@
 import re
 
-# Rule-based dictionary mapping civic entities to keywords
+# The one civic-entity keyword table (core/news_classifier.py derives from it).
 ENTITY_MAPPING_RULES = {
     "metro_line": {
         "Red Line": ["red line", "miyapur", "lb nagar", "ameerpet", "jntu", "kphb", "mgbs", "dilsukhnagar"],
@@ -15,17 +15,17 @@ ENTITY_MAPPING_RULES = {
         "himayat-sagar": ["himayat sagar", "himayatsagar", "esi river"]
     },
     "gold_rate": {
-        "gold": ["gold rate", "gold price", "sovereign", "jewellery market", "gold bullion", "24k gold", "22k gold"],
+        "gold": ["gold rate", "gold price", "sovereign", "jewellery market", "gold bullion", "24k gold", "22k gold", "gold jewellery"],
         "silver": ["silver price", "silver rate", "bullion rate"]
     },
     "fuel_price": {
-        "fuel": ["petrol price", "diesel price", "fuel price", "fuel hike", "petrol bunk", "fuel tax"]
+        "fuel": ["petrol price", "diesel price", "fuel price", "fuel hike", "petrol bunk", "fuel tax", "petrol", "diesel"]
     },
     "mandi_price": {
         "Paddy (Common)": ["paddy price", "rice market", "paddy rate", "common paddy", "paddy procurement"],
-        "Cotton": ["cotton price", "cotton mandi", "cotton rate", "kapas"],
-        "Red Chillies": ["red chillies", "chilli mandi", "chilli rate", "mirchi price", "chili price"],
-        "Maize": ["maize price", "corn rate", "maize mandi", "maize crop", "corn price", "makka"]
+        "Cotton": ["cotton price", "cotton mandi", "cotton rate", "kapas", "cotton procurement"],
+        "Red Chillies": ["red chillies", "chilli mandi", "chilli rate", "mirchi price", "chili price", "chilli price", "chillies rate"],
+        "Maize": ["maize price", "corn rate", "maize mandi", "maize crop", "corn price", "makka", "maize rate"]
     },
     "basthi_dawakhana": {
         "Basthi Dawakhana Kushaiguda": ["basthi dawakhana kushaiguda", "kushaiguda dawakhana", "kushaiguda basti dawakhana"],
