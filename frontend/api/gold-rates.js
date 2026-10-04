@@ -3,18 +3,12 @@
 //   1. GoodReturns.in   – most accurate for local Hyderabad retail prices
 //   2. metals.live + frankfurter.app – global spot price converted to INR (approximate)
 //   3. BankBazaar.com   – alternative Indian market source
-// Falls back to static FALLBACK only when all three sources fail.
+// Returns only rates a source stated. With no 22k/24k rate it answers 503 and
+// the site uses the synced data file. It used to fill gaps with April
+// prices stamped as current (docs/DATA_STANDARDS.md, rule 1).
 
 export const config = { runtime: 'edge' };
 
-const FALLBACK = {
-  gold22k:    { price: 14000, unit: 'per gram',    change: null },  // Updated Apr 9, 2026
-  gold24k:    { price: 15300, unit: 'per gram',    change: null },  // Updated Apr 9, 2026
-  silver:     { price: 93.50, unit: 'per gram',     change: null },
-  gold10g22k: { price: 140000, unit: 'per 10 grams', change: null },  // Updated Apr 9, 2026
-  gold10g24k: { price: 153000, unit: 'per 10 grams', change: null },  // Updated Apr 9, 2026  lastUpdated: new Date().toISOString(),
-  source: 'fallback',
-};
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 const parseNum   = (str) => str ? parseFloat(str.replace(/,/g, '')) : null;
@@ -148,30 +142,33 @@ export default async function handler(_req) {
     }
   }
 
-  // Fill any remaining gaps with FALLBACK values
-  const gold22k = collected.gold22k ?? FALLBACK.gold22k.price;
-  const gold24k = collected.gold24k ?? FALLBACK.gold24k.price;
-  const silver  = collected.silver  ?? FALLBACK.silver.price;
+  const { gold22k, gold24k, silver } = collected;
+  if (!gold22k || !gold24k) {
+    return new Response(JSON.stringify({ error: 'no source returned 22k and 24k rates', source: 'unavailable' }), {
+      status: 503,
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 's-maxage=300, stale-while-revalidate=60',
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
+  }
 
   const data = {
     gold22k:    { price: gold22k,      unit: 'per gram',     change: null },
     gold24k:    { price: gold24k,      unit: 'per gram',     change: null },
-    silver:     { price: silver,       unit: 'per gram',     change: null },
     gold10g22k: { price: gold22k * 10, unit: 'per 10 grams', change: null },
     gold10g24k: { price: gold24k * 10, unit: 'per 10 grams', change: null },
     lastUpdated: new Date().toISOString(),
-    source: collected.source ?? 'fallback',
+    source: collected.source,
   };
+  if (silver) data.silver = { price: silver, unit: 'per gram', change: null };
 
-  // Use a shorter cache TTL when we had to fall back so the next request retries sooner
-  const isFullFallback = collected.source === null;
   return new Response(JSON.stringify(data), {
     status: 200,
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': isFullFallback
-        ? 's-maxage=300, stale-while-revalidate=60'
-        : 's-maxage=3600, stale-while-revalidate=600',
+      'Cache-Control': 's-maxage=3600, stale-while-revalidate=600',
       'Access-Control-Allow-Origin': '*',
     },
   });

@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import transitStatus from '../data/transit_status.json';
 import { metroData, basthiDawakhanas } from '../data/transportData';
 import waterLevels from '../data/water_levels.json';
-import prices from '../data/prices.json';
 import { weatherData } from '../data/weatherData';
 import { goldRates } from '../data/goldRates';
 import { fuelPrices } from '../data/fuelPrices';
@@ -135,24 +134,8 @@ function renderCivicWidget(entity_type, entity_id) {
     );
   }
 
-  if (entity_type === 'mandi_price') {
-    if (!prices?.mandi) return null;
-    const price = prices.mandi[entity_id];
-    if (price === undefined) return null;
-    return (
-      <div key={`${entity_type}-${entity_id}`} className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-amber-500/20 transition-colors">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-xs font-bold text-white">🌾 Mandi Price: {entity_id}</span>
-          <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 font-semibold border border-amber-500/20 uppercase tracking-wider">Mandi</span>
-        </div>
-        <div className="p-2 rounded bg-white/[0.02] border border-amber-500/10 text-center">
-          <span className="text-amber-500 font-bold block text-[8px] uppercase">Market Rate</span>
-          <span className="text-white font-extrabold text-sm">₹{price.toLocaleString('en-IN')}<span className="text-[9px] font-normal text-text-muted"> / quintal</span></span>
-        </div>
-      </div>
-    );
-  }
-
+  // No mandi card: the only bundled mandi prices were from June, shown as
+  // the current market rate.
   if (entity_type === 'district') {
     const weather = weatherData[entity_id];
     if (!weather) return null;

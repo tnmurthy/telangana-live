@@ -1,196 +1,127 @@
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { describe, it, expect, afterEach, vi } from 'vitest';
 
-vi.mock('../../src/data/prices.json', () => ({
-  default: {}
+// Prices shown on the site must be real and dated. The service used to read
+// data/prices.json first (last updated 7 Jun 2026, written by nothing), so
+// fuel, gold and mandi showed June prices as today's; behind that sat fixed
+// numbers (petrol 102.68, gold 15704, ...). Now: the live API when it returns
+// real data, else the synced data files (refreshed by the scheduled jobs),
+// never constants.
+
+vi.mock('../../frontend/src/data/fuelPrices', () => ({
+    fuelPrices: {
+        date: '2026-10-04',
+        updatedAt: '2026-10-04T17:13:51Z',
+        petrol: { price: 116.15, unit: 'per litre', change: 0 },
+        diesel: { price: 103.9, unit: 'per litre', change: 0 },
+        lpgHousehold: { price: 905, unit: 'per cylinder (14.2kg)', change: 0 },
+        cngVehicle: { price: 96, unit: 'per kg', change: 0 },
+        staleFields: [],
+    },
+}));
+vi.mock('../../frontend/src/data/goldRates', () => ({
+    goldRates: {
+        date: '2026-10-03',
+        isStale: true,
+        gold22k: { price: 14400, unit: 'per gram', change: 0 },
+        gold24k: { price: 15700, unit: 'per gram', change: 0 },
+        silver: { price: 290, unit: 'per gram', change: 0 },
+    },
 }));
 
-// ── Helpers ────────────────────────────────────────────────────────────────
-
-function mockFetchSuccess(payload) {
-  global.fetch = vi.fn().mockResolvedValue({
-    ok: true,
-    json: () => Promise.resolve(payload),
-  });
+function respond(ok, body, status = 200) {
+    global.fetch = vi.fn().mockResolvedValue({ ok, status, json: () => Promise.resolve(body) });
 }
 
-function mockFetchFailure(status = 500) {
-  global.fetch = vi.fn().mockResolvedValue({
-    ok: false,
-    status,
-    json: () => Promise.resolve({}),
-  });
+async function load() {
+    vi.resetModules();
+    return import('../../frontend/src/services/pricesService.js');
 }
 
-function mockFetchThrows(message = 'Network error') {
-  global.fetch = vi.fn().mockRejectedValue(new Error(message));
-}
-
-// Helpers to load a fresh module instance (bypassing the module-level memCache)
-async function loadService() {
-  vi.resetModules();
-  return import('../../src/services/pricesService.js');
-}
-
-afterEach(() => {
-  vi.restoreAllMocks();
-});
-
-// ═══════════════════════════════════════════════════════════════════════════
-// fetchFuelPrices
-// ═══════════════════════════════════════════════════════════════════════════
+afterEach(() => vi.restoreAllMocks());
 
 describe('fetchFuelPrices', () => {
-  it('calls the Vercel API when there is no local data', async () => {
-    const { fetchFuelPrices } = await loadService();
-    const apiPayload = { petrol: { price: 108 }, diesel: { price: 90 } };
-    mockFetchSuccess(apiPayload);
+    it('uses the live API when it returns real prices', async () => {
+        respond(true, { petrol: { price: 117 }, diesel: { price: 104 }, source: 'live' });
+        const { fetchFuelPrices } = await load();
+        const data = await fetchFuelPrices();
+        expect(data.petrol.price).toBe(117);
+        expect(global.fetch).toHaveBeenCalledWith(expect.stringContaining('/api/fuel-prices?city=hyderabad'), expect.anything());
+    });
 
-    const result = await fetchFuelPrices('hyderabad');
-    expect(result.petrol.price).toBe(108);
-    expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining('/api/fuel-prices?city=hyderabad'),
-      expect.any(Object)
-    );
-  });
+    it('falls back to the synced file, with its own date, when the API is unavailable', async () => {
+        respond(false, { error: 'unavailable' }, 503);
+        const { fetchFuelPrices } = await load();
+        const data = await fetchFuelPrices();
+        expect(data.petrol.price).toBe(116.15);
+        expect(data.lpg.price).toBe(905);
+        expect(data.lastUpdated).toBe('2026-10-04T17:13:51Z');
+        expect(data.source).toBe('synced-file');
+    });
 
-  it('falls back to static data when API returns a non-OK status', async () => {
-    const { fetchFuelPrices } = await loadService();
-    mockFetchFailure(503);
-
-    const result = await fetchFuelPrices('hyderabad');
-    expect(result.source).toBe('static-fallback');
-    expect(typeof result.petrol.price).toBe('number');
-    expect(typeof result.diesel.price).toBe('number');
-    expect(typeof result.lpg.price).toBe('number');
-    expect(typeof result.cng.price).toBe('number');
-  });
-
-  it('falls back to static data when fetch throws', async () => {
-    const { fetchFuelPrices } = await loadService();
-    mockFetchThrows();
-
-    const result = await fetchFuelPrices('hyderabad');
-    expect(result.source).toBe('static-fallback');
-    expect(result.lastUpdated).toBeDefined();
-  });
-
-  it('uses default city "hyderabad" when none provided', async () => {
-    const { fetchFuelPrices } = await loadService();
-    mockFetchSuccess({ petrol: { price: 107 } });
-
-    await fetchFuelPrices();
-    expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining('city=hyderabad'),
-      expect.any(Object)
-    );
-  });
-
-  it('static-fallback includes all four fuel types', async () => {
-    const { fetchFuelPrices } = await loadService();
-    mockFetchThrows();
-
-    const result = await fetchFuelPrices('hyderabad');
-    expect(result).toHaveProperty('petrol');
-    expect(result).toHaveProperty('diesel');
-    expect(result).toHaveProperty('lpg');
-    expect(result).toHaveProperty('cng');
-  });
+    it('falls back to the synced file when the request throws', async () => {
+        global.fetch = vi.fn().mockRejectedValue(new Error('offline'));
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
+        const { fetchFuelPrices } = await load();
+        expect((await fetchFuelPrices()).diesel.price).toBe(103.9);
+    });
 });
-
-// ═══════════════════════════════════════════════════════════════════════════
-// fetchGoldRates
-// ═══════════════════════════════════════════════════════════════════════════
 
 describe('fetchGoldRates', () => {
-  it('calls the Vercel API when there is no local data', async () => {
-    const { fetchGoldRates } = await loadService();
-    const apiPayload = { gold22k: { price: 7300 }, silver: { price: 95 } };
-    mockFetchSuccess(apiPayload);
+    it('uses the live API when it returns real rates', async () => {
+        respond(true, { gold22k: { price: 14500 }, gold24k: { price: 15810 }, source: 'goodreturns' });
+        const { fetchGoldRates } = await load();
+        expect((await fetchGoldRates()).gold24k.price).toBe(15810);
+    });
 
-    const result = await fetchGoldRates();
-    expect(result.gold22k.price).toBe(7300);
-    expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining('/api/gold-rates'),
-      expect.any(Object)
-    );
-  });
-
-  it('falls back to static data when API fails', async () => {
-    const { fetchGoldRates } = await loadService();
-    mockFetchFailure(500);
-
-    const result = await fetchGoldRates();
-    expect(result.source).toBe('static-fallback');
-    expect(result.gold22k.price).toBeGreaterThan(0);
-    expect(result.gold24k.price).toBeGreaterThan(0);
-    expect(result.silver.price).toBeGreaterThan(0);
-  });
-
-  it('static fallback computes 10g prices correctly', async () => {
-    const { fetchGoldRates } = await loadService();
-    mockFetchThrows();
-
-    const result = await fetchGoldRates();
-    expect(result.gold10g22k.price).toBe(result.gold22k.price * 10);
-    expect(result.gold10g24k.price).toBe(result.gold24k.price * 10);
-  });
-
-  it('static fallback includes lastUpdated timestamp', async () => {
-    const { fetchGoldRates } = await loadService();
-    mockFetchThrows();
-
-    const result = await fetchGoldRates();
-    expect(result.lastUpdated).toBeDefined();
-    expect(() => new Date(result.lastUpdated)).not.toThrow();
-  });
+    it('falls back to the synced file and keeps its stale flag and date', async () => {
+        respond(false, {}, 503);
+        const { fetchGoldRates } = await load();
+        const data = await fetchGoldRates();
+        expect(data.gold22k.price).toBe(14400);
+        expect(data.gold10g24k.price).toBe(157000);
+        expect(data.isStale).toBe(true);
+        expect(data.date).toBe('2026-10-03');
+    });
 });
 
-// ═══════════════════════════════════════════════════════════════════════════
-// fetchPowerAlerts
-// ═══════════════════════════════════════════════════════════════════════════
+describe('fetchMandiPrices', () => {
+    it('returns the live market data', async () => {
+        respond(true, { date: '2026-10-04', commodities: [{ name: 'Maize', modalPrice: 2100, unit: 'Quintal' }] });
+        const { fetchMandiPrices } = await load();
+        expect(await fetchMandiPrices()).toEqual({
+            items: [{ name: 'Maize', price: 2100, unit: 'per quintal', change: 0 }],
+            lastUpdated: '2026-10-04',
+        });
+    });
+
+    it('returns nothing, not June prices, when the API is unavailable', async () => {
+        respond(false, {}, 503);
+        const { fetchMandiPrices } = await load();
+        expect(await fetchMandiPrices()).toEqual({ items: [] });
+    });
+});
 
 describe('fetchPowerAlerts', () => {
-  it('returns an array of alerts from the API', async () => {
-    const { fetchPowerAlerts } = await loadService();
-    const alerts = [{ id: 1, area: 'Banjara Hills', start: '10:00', end: '14:00' }];
-    mockFetchSuccess({ alerts });
+    it('returns the alerts array from the API', async () => {
+        respond(true, { alerts: [{ id: 1 }] });
+        const { fetchPowerAlerts } = await load();
+        expect(await fetchPowerAlerts()).toEqual([{ id: 1 }]);
+    });
 
-    const result = await fetchPowerAlerts('hyderabad');
-    expect(result).toEqual(alerts);
-  });
+    it('returns an empty array on failure', async () => {
+        respond(false, {}, 500);
+        vi.spyOn(console, 'warn').mockImplementation(() => {});
+        const { fetchPowerAlerts } = await load();
+        expect(await fetchPowerAlerts()).toEqual([]);
+    });
+});
 
-  it('uses "all" zone by default', async () => {
-    const { fetchPowerAlerts } = await loadService();
-    mockFetchSuccess({ alerts: [] });
-
-    await fetchPowerAlerts();
-    expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining('zone=all'),
-      expect.any(Object)
-    );
-  });
-
-  it('returns empty array when API returns a non-OK status', async () => {
-    const { fetchPowerAlerts } = await loadService();
-    mockFetchFailure(503);
-
-    const result = await fetchPowerAlerts('all');
-    expect(result).toEqual([]);
-  });
-
-  it('returns empty array when fetch throws', async () => {
-    const { fetchPowerAlerts } = await loadService();
-    mockFetchThrows();
-
-    const result = await fetchPowerAlerts('all');
-    expect(result).toEqual([]);
-  });
-
-  it('returns empty array when API response has no alerts property', async () => {
-    const { fetchPowerAlerts } = await loadService();
-    mockFetchSuccess({});
-
-    const result = await fetchPowerAlerts('all');
-    expect(result).toEqual([]);
-  });
+describe('no stale or invented price sources', () => {
+    it('pricesService no longer imports prices.json or contains fixed prices', async () => {
+        const { readFileSync } = await import('node:fs');
+        const { join } = await import('node:path');
+        const src = readFileSync(join(__dirname, '..', '..', 'frontend', 'src', 'services', 'pricesService.js'), 'utf8');
+        expect(src).not.toMatch(/prices\.json/);
+        expect(src).not.toMatch(/102\.68|88\.73|15704|14395|157040|143950|93\.50/);
+    });
 });

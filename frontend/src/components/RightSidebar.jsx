@@ -143,7 +143,7 @@ const MandiWidget = () => {
     <div className="widget-card hover-lift-green">
       <div className="flex justify-between items-center pb-3 mb-3 border-b border-white/[0.06]">
         <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted">Mandi Prices</h4>
-        <span className="text-[9px] text-telangana-green font-bold px-2 py-0.5 rounded bg-telangana-green/10">Agriculture</span>
+        <span className="text-[9px] text-telangana-green font-bold px-2 py-0.5 rounded bg-telangana-green/10">{mandi.lastUpdated || 'Agriculture'}</span>
       </div>
       <div className="grid grid-cols-2 gap-y-3.5 gap-x-4">
         {mandi.items.map(item => (
@@ -161,28 +161,32 @@ const MandiWidget = () => {
 };
 
 
-const TransportWidget = () => (
-  <div className="widget-card hover-lift-green relative overflow-hidden">
-    <div className="absolute top-0 left-0 w-0.5 h-full bg-gradient-to-b from-telangana-green via-telangana-green/50 to-transparent"></div>
-    <div className="flex items-center gap-2 mb-2.5 pl-2">
-      <Icons.Bus className="w-4 h-4 text-telangana-green" />
-      <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted">Metro Phase 2</h4>
-    </div>
-    <p className="text-[13px] text-text-secondary leading-relaxed pl-2">
-       L.B. Nagar → Hayathnagar: <span className="text-white font-semibold">Soil testing in progress.</span>
-    </p>
-  </div>
-);
+// Links to the transport page. It used to state "Metro Phase 2: L.B. Nagar ->
+// Hayathnagar: Soil testing in progress." with no source or date.
+const TransportWidget = () => {
+  const navigate = useNavigate();
+  return (
+    <button onClick={() => navigate('/transport/metro')} className="widget-card hover-lift-green relative overflow-hidden w-full text-left">
+      <div className="absolute top-0 left-0 w-0.5 h-full bg-gradient-to-b from-telangana-green via-telangana-green/50 to-transparent"></div>
+      <div className="flex items-center gap-2 pl-2">
+        <Icons.Bus className="w-4 h-4 text-telangana-green" />
+        <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted">Metro &amp; bus timings →</h4>
+      </div>
+    </button>
+  );
+};
 
 
 const TrendingWidget = () => {
   const { setSearchQuery } = useAppContext();
   const navigate = useNavigate();
 
+  // Search shortcuts. These used to be shown as "Trending in TG" with invented
+  // post counts (12K, 8.4K, 5.1K).
   const trendingItems = [
-    { tag: '#HydMetro', count: '12K posts', query: 'Metro' },
-    { tag: '#RTCFreeBus', count: '8.4K posts', query: 'Bus' },
-    { tag: '#GHMCUpdates', count: '5.1K posts', query: 'GHMC' },
+    { tag: 'Metro', query: 'Metro' },
+    { tag: 'RTC free bus', query: 'Bus' },
+    { tag: 'GHMC', query: 'GHMC' },
   ];
 
   const handleHashtagClick = (query) => {
@@ -192,7 +196,7 @@ const TrendingWidget = () => {
 
   return (
     <div className="widget-card">
-      <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted mb-3">Trending in TG</h4>
+      <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted mb-3">Quick searches</h4>
       <ul className="space-y-2">
         {trendingItems.map(item => (
           <li 
@@ -201,7 +205,6 @@ const TrendingWidget = () => {
             className="flex justify-between items-center group cursor-pointer"
           >
             <span className="text-xs text-telangana-green font-bold group-hover:underline underline-offset-2 transition-colors">{item.tag}</span>
-            <span className="text-[9px] text-text-muted font-medium">{item.count}</span>
           </li>
         ))}
       </ul>

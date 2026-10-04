@@ -1,13 +1,19 @@
 // src/services/pricesService.js
-// Fetches live fuel prices & gold rates from Vercel API routes
-// Falls back to static data if API unavailable
+// Fuel, gold and mandi prices for the site.
+//
+// Order: the live API route when it returns real prices, else the synced data
+// files (fuelPrices.js / goldRates.js, refreshed by the scheduled data jobs and
+// carrying their own date). There are no built-in prices. This service used to
+// read a data file last written on 7 Jun 2026 first, so the site showed June
+// prices as today's, and fell back to hard-coded numbers behind that.
+// See docs/DATA_STANDARDS.md, rule 1.
 
-import { fuelPrices as staticFuel } from '../data/fuelPrices';
-import { goldRates as staticGold } from '../data/goldRates';
-import hybridPrices from '../data/prices.json';
+import { fuelPrices as syncedFuel } from '../data/fuelPrices';
+import { goldRates as syncedGold } from '../data/goldRates';
 
 const API_BASE = import.meta.env.VITE_API_BASE || '';
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
+const TIMEOUT_MS = 8000;
 
 const memCache = new Map();
 
@@ -21,136 +27,77 @@ function setCache(key, data) {
   memCache.set(key, { data, ts: Date.now() });
 }
 
-function getTaxBreakup(price) {
-  const base = parseFloat((price * 0.55).toFixed(2));
-  const excise = parseFloat((price * 0.22).toFixed(2));
-  const vat = parseFloat((price * 0.15).toFixed(2));
-  const dealer = parseFloat((price - base - excise - vat).toFixed(2));
-  return { basePrice: base, exciseDuty: excise, vatPercent: vat, dealerCommission: dealer };
+/** JSON from an API route, or null when it is unavailable or failed. */
+async function fetchJson(path) {
+  try {
+    const res = await fetch(`${API_BASE}${path}`, { signal: AbortSignal.timeout(TIMEOUT_MS) });
+    if (!res.ok) throw new Error(`API returned ${res.status}`);
+    return await res.json();
+  } catch (err) {
+    console.warn(`${path} unavailable:`, err.message);
+    return null;
+  }
+}
+
+function price(item, unit) {
+  return { price: item?.price ?? null, unit, change: item?.change ?? 0 };
 }
 
 /**
- * Fetch live fuel prices for a city.
+ * Fuel prices for a city.
  * @param {string} city - e.g. 'hyderabad'
- * @returns {Promise<object>} fuel price data
  */
 export async function fetchFuelPrices(city = 'hyderabad') {
-  const key = `tg:rates:fuel:${city}`;
-  
-  // 1. Try Hybrid Local Data (Python Agent Pushed)
-  if (hybridPrices?.fuel) {
-    const petrolPrice = hybridPrices.fuel.petrol;
-    const dieselPrice = hybridPrices.fuel.diesel;
-    return {
-      petrol: { 
-        price: petrolPrice, 
-        unit: 'per litre', 
-        change: 0,
-        taxBreakup: getTaxBreakup(petrolPrice)
-      },
-      diesel: { 
-        price: dieselPrice, 
-        unit: 'per litre', 
-        change: 0,
-        taxBreakup: getTaxBreakup(dieselPrice)
-      },
-      source: 'local-hybrid',
-      lastUpdated: hybridPrices.last_updated
-    };
-  }
-
-  // 3. Try MemCache
   const memKey = `fuel-${city}`;
   const cached = getCached(memKey);
   if (cached) return cached;
 
-  try {
-    // 4. Try Vercel API (Legacy Scraper)
-    const res = await fetch(`${API_BASE}/api/fuel-prices?city=${city}`, {
-      signal: AbortSignal.timeout(8000)
-    });
-    if (!res.ok) throw new Error(`API returned ${res.status}`);
-    const data = await res.json();
-    setCache(memKey, data);
-    return data;
-  } catch (err) {
-    console.warn('fetchFuelPrices fallback:', err.message);
-    // 5. Return static data
-    const petrolPrice = staticFuel.petrol?.price || 102.68;
-    const dieselPrice = staticFuel.diesel?.price || 88.73;
-    return {
-      petrol: { 
-        price: petrolPrice, 
-        unit: 'per litre', 
-        change: 0,
-        taxBreakup: staticFuel.petrol?.taxBreakup || getTaxBreakup(petrolPrice)
-      },
-      diesel: { 
-        price: dieselPrice, 
-        unit: 'per litre', 
-        change: 0,
-        taxBreakup: staticFuel.diesel?.taxBreakup || getTaxBreakup(dieselPrice)
-      },
-      lpg:    { price: staticFuel.lpgHousehold?.price || 803.00, unit: 'per cylinder', change: 0 },
-      cng:    { price: staticFuel.cngVehicle?.price   || 72.80,  unit: 'per kg', change: 0 },
-      source: 'static-fallback',
-      lastUpdated: new Date().toISOString()
-    };
+  const live = await fetchJson(`/api/fuel-prices?city=${city}`);
+  if (live?.petrol?.price && live?.diesel?.price) {
+    setCache(memKey, live);
+    return live;
   }
+
+  return {
+    petrol: { ...price(syncedFuel.petrol, 'per litre'), taxBreakup: syncedFuel.petrol?.taxBreakup },
+    diesel: { ...price(syncedFuel.diesel, 'per litre'), taxBreakup: syncedFuel.diesel?.taxBreakup },
+    lpg: price(syncedFuel.lpgHousehold, 'per cylinder'),
+    cng: price(syncedFuel.cngVehicle, 'per kg'),
+    staleFields: syncedFuel.staleFields || [],
+    source: 'synced-file',
+    date: syncedFuel.date,
+    lastUpdated: syncedFuel.updatedAt,
+  };
 }
 
-/**
- * Fetch live gold & silver rates for Hyderabad.
- * @returns {Promise<object>} gold rate data
- */
+/** Gold and silver rates for Hyderabad. */
 export async function fetchGoldRates() {
-  const key = 'tg:rates:gold';
-
-  // 1. Try Hybrid Local Data
-  if (hybridPrices?.gold) {
-    const gold24k = hybridPrices.gold['24k'] || 157040;
-    const gold22k = hybridPrices.gold['22k'] || 143950;
-    return {
-      gold24k: { price: gold24k / 10, unit: 'per gram', change: 0 },
-      gold22k: { price: gold22k / 10, unit: 'per gram', change: 0 },
-      gold10g24k: { price: gold24k, unit: 'per 10 grams', change: 0 },
-      gold10g22k: { price: gold22k, unit: 'per 10 grams', change: 0 },
-      silver: { price: staticGold.silver?.price || 93.50, unit: 'per gram', change: 0 },
-      source: 'local-hybrid',
-      lastUpdated: hybridPrices.last_updated
-    };
-  }
-
-  // 3. Try MemCache
   const memKey = 'gold-hyderabad';
   const cached = getCached(memKey);
   if (cached) return cached;
 
-  try {
-    // 4. Try Vercel API
-    const res = await fetch(`${API_BASE}/api/gold-rates`, {
-      signal: AbortSignal.timeout(8000)
-    });
-    if (!res.ok) throw new Error(`API returned ${res.status}`);
-    const data = await res.json();
-    setCache(memKey, data);
-    return data;
-  } catch (err) {
-    console.warn('fetchGoldRates fallback:', err.message);
-    return {
-      gold22k:    { price: staticGold.gold22k?.price    || 14395,  unit: 'per gram', change: staticGold.gold22k?.change    ?? 0 },
-      gold24k:    { price: staticGold.gold24k?.price    || 15704,  unit: 'per gram', change: staticGold.gold24k?.change    ?? 0 },
-      silver:     { price: staticGold.silver?.price     || 290.0, unit: 'per gram', change: staticGold.silver?.change     ?? 0 },
-      gold10g22k: { price: (staticGold.gold22k?.price || 14395) * 10,  unit: 'per 10 grams', change: (staticGold.gold22k?.change ?? 0) * 10 },
-      gold10g24k: { price: (staticGold.gold24k?.price || 15704) * 10,  unit: 'per 10 grams', change: (staticGold.gold24k?.change ?? 0) * 10 },
-      source: 'static-fallback',
-      lastUpdated: new Date().toISOString()
-    };
+  const live = await fetchJson('/api/gold-rates');
+  if (live?.gold22k?.price && live?.gold24k?.price) {
+    setCache(memKey, live);
+    return live;
   }
+
+  const per10g = (item) => (item?.price ? { price: item.price * 10, unit: 'per 10 grams', change: (item.change ?? 0) * 10 } : null);
+  return {
+    gold22k: price(syncedGold.gold22k, 'per gram'),
+    gold24k: price(syncedGold.gold24k, 'per gram'),
+    silver: price(syncedGold.silver, 'per gram'),
+    gold10g22k: per10g(syncedGold.gold22k),
+    gold10g24k: per10g(syncedGold.gold24k),
+    isStale: Boolean(syncedGold.isStale),
+    source: 'synced-file',
+    date: syncedGold.date,
+    lastUpdated: syncedGold.updatedAt,
+  };
 }
 
 /**
- * Fetch power alerts (TSSPDCL outages) from API or Redis cache.
+ * Power alerts (TSSPDCL outages).
  * @param {string} zone - 'hyderabad', 'all'
  * @returns {Promise<Array>} list of alert objects
  */
@@ -159,35 +106,24 @@ export async function fetchPowerAlerts(zone = 'all') {
   const cached = getCached(key);
   if (cached) return cached;
 
-  try {
-    const res = await fetch(`${API_BASE}/api/power-alerts?zone=${zone}`, {
-      signal: AbortSignal.timeout(10000)
-    });
-    if (!res.ok) throw new Error(`API returned ${res.status}`);
-    const data = await res.json();
-    setCache(key, data.alerts || []);
-    return data.alerts || [];
-  } catch (err) {
-    console.warn('fetchPowerAlerts fallback:', err.message);
-    return [];
-  }
+  const data = await fetchJson(`/api/power-alerts?zone=${zone}`);
+  const alerts = data?.alerts || [];
+  if (data) setCache(key, alerts);
+  return alerts;
 }
 
 /**
- * Fetch Mandi prices for major crops.
- * @returns {Promise<object>} mandi price data
+ * Today's mandi prices from the live API. No current source exists in the
+ * bundle, so on failure this returns no items rather than old prices.
  */
 export async function fetchMandiPrices() {
-  if (hybridPrices?.mandi) {
-    return {
-      items: Object.entries(hybridPrices.mandi).map(([name, price]) => ({
-        name,
-        price,
-        unit: 'per quintal',
-        change: 0
-      })),
-      lastUpdated: hybridPrices.last_updated
-    };
-  }
-  return { items: [] };
+  const data = await fetchJson('/api/mandi-prices');
+  const commodities = Array.isArray(data?.commodities) ? data.commodities : [];
+  if (commodities.length === 0) return { items: [] };
+  return {
+    items: commodities
+      .filter((c) => typeof c.modalPrice === 'number')
+      .map((c) => ({ name: c.name, price: c.modalPrice, unit: 'per quintal', change: 0 })),
+    lastUpdated: data.date,
+  };
 }

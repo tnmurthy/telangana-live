@@ -24,20 +24,15 @@ const KEY_COMMODITIES = [
   'Chilli'
 ];
 
-// FALLBACK data when API fails (sample data for Hyderabad)
-const FALLBACK = {
-  market: 'Hyderabad',
-  date: new Date().toISOString().split('T')[0],
-  commodities: [
-    { name: 'Rice', minPrice: 2800, maxPrice: 3200, modalPrice: 3000, unit: 'Quintal' },
-    { name: 'Tomato', minPrice: 1500, maxPrice: 2000, modalPrice: 1800, unit: 'Quintal' },
-    { name: 'Onion', minPrice: 1200, maxPrice: 1600, modalPrice: 1400, unit: 'Quintal' },
-    { name: 'Potato', minPrice: 1800, maxPrice: 2200, modalPrice: 2000, unit: 'Quintal' },
-    { name: 'Chilli', minPrice: 8000, maxPrice: 12000, modalPrice: 10000, unit: 'Quintal' }
-  ],
-  lastUpdated: new Date().toISOString(),
-  source: 'fallback'
-};
+// No sample data: when the API has nothing, answer 503 so the site shows no
+// mandi prices. It used to return a fixed sample list (Rice 2800-3200, ...)
+// dated today (docs/DATA_STANDARDS.md, rule 1).
+function unavailable(reason) {
+  return new Response(JSON.stringify({ error: reason, source: 'unavailable', commodities: [] }), {
+    status: 503,
+    headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, s-maxage=600' }
+  });
+}
 
 export default async function handler(req) {
   try {
@@ -105,11 +100,8 @@ export default async function handler(req) {
 
     // Validate data has content
     if (processedData.commodities.length === 0) {
-      console.warn('No commodity data found, using fallback');
-      return new Response(JSON.stringify(FALLBACK), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' }
-      });
+      console.warn('No commodity data found');
+      return unavailable('no commodity data for this market today');
     }
 
     return new Response(JSON.stringify(processedData), {
@@ -122,12 +114,6 @@ export default async function handler(req) {
 
   } catch (error) {
     console.error('Mandi prices API error:', error);
-    return new Response(JSON.stringify({ 
-      ...FALLBACK, 
-      error: error.message 
-    }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    return unavailable(error.message);
   }
 }
