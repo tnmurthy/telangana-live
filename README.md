@@ -333,9 +333,9 @@ infrastructure/
 
 | ID | Issue | Impact on users and the business | Priority | Needed from PO |
 |---|---|---|---|---|
-| TL-01 | Live site deploys from `master`; all work and data syncs land on `main` | Site goes stale between manual syncs; fixes don't reach users | **P0** | Switch Vercel Production Branch to `main` (admin access) |
+| TL-01 | Live site deployed from `master` while work landed on `main` | Fixed 4 Oct: Vercel Production Branch is now `main`; every push deploys; `master` retired | ✅ Fixed | — |
 | TL-02 | TypeSafe key missing in GitHub | Alerts are filtered by old keyword rules: weaker quality | **P0** | Approve adding the secret |
-| TL-16 | Deploy hook returns 404 | Data syncs no longer rebuild the site; it only updates on manual syncs | **P0** | Create a deploy hook for `main` and share its URL (I will set the secret) |
+| TL-16 | Deploy hook returned 404 | Fixed 4 Oct: hook no longer needed — Vercel's Git integration deploys every push to `main`, data commits included; hook step removed from 8 workflows | ✅ Fixed | Delete the unused `VERCEL_DEPLOY_HOOK_URL` secret (optional) |
 | TL-17 | AI Pulse page was a fixed placeholder | Fixed 4 Oct: rebuilt as Tech & AI Pulse (digital safety, government & AI, jobs & skills) on sourced, dated local news | ✅ Fixed | Set the `TYPESAFE_API_KEY` secret (TL-02) so the scheduled run uses judgment, not the keyword fallback |
 | TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
@@ -355,9 +355,9 @@ infrastructure/
 
 | ID | Layer | Files | Acceptance criteria | Effort |
 |---|---|---|---|---|
-| TL-01 | Infra | Vercel settings | Newest production deployment's commit ref is `main`; `/dashboard` data under 1 h old without manual steps | S |
+| TL-01 | Infra | Vercel settings | ✅ Done: production deployments come from `main` | S |
 | TL-02 | Infra | GitHub secrets | Alerts job runs with `source="typesafe"` for every verdict; no regex fallback in logs | S |
-| TL-16 | Infra | Vercel deploy hooks, `VERCEL_DEPLOY_HOOK_URL` | Hook returns 2xx; a sync that pushed produces a new production deployment | S |
+| TL-16 | Infra | `.github/workflows/*` | ✅ Done: hook steps removed; data commits deploy through the Git integration | S |
 | TL-17 | Backend + Frontend | `scripts/tech_pulse.py` (shared with vizag), `pages/TechPulsePage.jsx`, `ai_pulse_update.yml` | ✅ Done: every item links to a dated source; 14-day window; empty sections say so; 25 + 4 tests | M |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
