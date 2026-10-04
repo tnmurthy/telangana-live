@@ -62,5 +62,37 @@
     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
     "source": "INDToday"
+  },
+  {
+    "id": "alert-cdd8c0e3a6b9",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Water supply to be hit in parts of Hyderabad on October 5-6 - telanganatoday.com",
+    "message": "Water supply to be hit in parts of Hyderabad on October 5-6 - telanganatoday.com",
+    "description": "Water supply to be hit in parts of Hyderabad on October 5-6  telanganatoday.com",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-04T20:11:56Z",
+    "publishedAt": "2026-10-03T16:54:30Z",
+    "time": "3 Oct, 10:24 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQjVDQ0xNLV8tTWctYUo1WXAwUkxWeWpTMFJTU05ZMmoxdzktaUhFTEFUSGZITlVUdGhFRmI2Vzhrb1N0SDQ1Q19UU2NJUEJNbFdKVDdlSVNDSGwzcFZqemdqOERxZHpJZ1ZDUmVCRW9RNVJtTHdKRm1IZmI4VVVqemtoMjJJQ3JaeVZzTWM5aw?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQjVDQ0xNLV8tTWctYUo1WXAwUkxWeWpTMFJTU05ZMmoxdzktaUhFTEFUSGZITlVUdGhFRmI2Vzhrb1N0SDQ1Q19UU2NJUEJNbFdKVDdlSVNDSGwzcFZqemdqOERxZHpJZ1ZDUmVCRW9RNVJtTHdKRm1IZmI4VVVqemtoMjJJQ3JaeVZzTWM5aw?oc=5",
+    "source": "telanganatoday.com"
+  },
+  {
+    "id": "alert-2f327c238148",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "36-hour water disruption in Hyderabad from Monday; check affected areas - NewsMeter",
+    "message": "36-hour water disruption in Hyderabad from Monday; check affected areas - NewsMeter",
+    "description": "36-hour water disruption in Hyderabad from Monday; check affected areas  NewsMeter",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-04T20:11:56Z",
+    "publishedAt": "2026-10-04T11:10:16Z",
+    "time": "4 Oct, 4:40 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
+    "source": "NewsMeter"
   }
 ]
