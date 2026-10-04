@@ -1,10 +1,17 @@
+import os
+
 from supabase import create_client, Client
+from supabase.lib.client_options import ClientOptions
 from datetime import datetime
 from core.config import CONFIG
 import logging
 from schemas import ContentModel, ActivityLogModel, CivicCorrelationModel
 
 logger = logging.getLogger(__name__)
+
+# Tables live in this schema of a Supabase project shared with other apps
+# (supabase/migrations/20261004_telangana_schema.sql).
+SUPABASE_SCHEMA = os.environ.get("SUPABASE_SCHEMA", "telangana")
 
 
 class SupabaseDB:
@@ -24,7 +31,9 @@ class SupabaseDB:
                     "SUPABASE_URL and SUPABASE_KEY must be set in the environment "
                     "before any database operations are performed."
                 )
-            self._client = create_client(self.url, self.key)
+            self._client = create_client(
+                self.url, self.key, options=ClientOptions(schema=SUPABASE_SCHEMA)
+            )
         return self._client
 
     def insert_content(

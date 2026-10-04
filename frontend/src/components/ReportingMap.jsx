@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { reportCategories, mockReports, statusSteps, detectCorporation } from '../data/reportingData';
+import { reportCategories, statusSteps, detectCorporation } from '../data/reportingData';
 import ReportForm from './ReportForm';
 import { n8nService } from '../services/n8nService';
 import { citizenReportsService } from '../services/citizenReportsService';
@@ -53,25 +53,23 @@ function StatusBar({ status }) {
 }
 
 export default function ReportingMap() {
-    const [reports, setReports] = useState(mockReports);
+    // Only real, approved reports. The map used to start with 8 invented ones.
+    const [reports, setReports] = useState([]);
     const [clickedPos, setClickedPos] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [filterCategory, setFilterCategory] = useState('all');
     const [trackingId, setTrackingId] = useState(null);
+    const [submitError, setSubmitError] = useState(false);
     const [submitting, setSubmitting] = useState(false);
 
     // Fetch live reports from Supabase on mount
     useEffect(() => {
         const fetchLiveReports = async () => {
             const liveReports = await citizenReportsService.getApprovedReports();
-            if (liveReports.length > 0) {
-                // Merge with mock for demo, or replace? Let's merge for now
-                setReports(prev => {
-                    const existingIds = new Set(prev.map(r => r.id));
-                    const newReports = liveReports.filter(r => !existingIds.has(r.id));
-                    return [...newReports, ...prev];
-                });
-            }
+            setReports(prev => {
+                const existingIds = new Set(prev.map(r => r.id));
+                return [...liveReports.filter(r => !existingIds.has(r.id)), ...prev];
+            });
         };
 
         fetchLiveReports();
@@ -100,6 +98,7 @@ export default function ReportingMap() {
         setClickedPos(latlng);
         setShowForm(true);
         setTrackingId(null);
+        setSubmitError(false);
     }, []);
 
     const handleSubmit = useCallback(async (report) => {
@@ -117,10 +116,14 @@ export default function ReportingMap() {
                 citizenReportsService.submitReport(fullReport),
                 n8nService.sendReport(fullReport),
             ]);
-            setTrackingId(saved.id);
+            if (saved) {
+                setTrackingId(saved.id);
+            } else {
+                setSubmitError(true);
+            }
         } catch (err) {
             console.error('Report submission error:', err);
-            setTrackingId(`LOCAL-${Date.now()}`);
+            setSubmitError(true);
         } finally {
             setSubmitting(false);
             setShowForm(false);
@@ -224,6 +227,12 @@ export default function ReportingMap() {
             )}
 
             {/* Tracking ID toast */}
+            {submitError && (
+                <div role="alert" className="glass-card p-4 border border-red-500/30 bg-red-500/5">
+                    <p className="text-sm font-bold text-white">Your report could not be submitted.</p>
+                    <p className="text-[11px] text-text-secondary mt-0.5">Nothing was saved. Please try again in a few minutes.</p>
+                </div>
+            )}
             {trackingId && (
                 <div className="glass-card p-4 border border-success/30 bg-success/5 flex items-start gap-3">
                     <span className="text-2xl">✅</span>

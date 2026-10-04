@@ -18,6 +18,8 @@ if sys.stdout.encoding != 'utf-8':
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY", "")
+# Tables live in this schema of a shared Supabase project.
+SUPABASE_SCHEMA = os.environ.get("SUPABASE_SCHEMA", "telangana")
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 
 # Output path for frontend static data
@@ -97,6 +99,7 @@ else:
             "apikey": SUPABASE_KEY,
             "Authorization": f"Bearer {SUPABASE_KEY}",
             "Content-Type": "application/json",
+            "Content-Profile": SUPABASE_SCHEMA,
             "Prefer": "resolution=merge-duplicates",
         }
         resp = requests.post(

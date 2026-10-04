@@ -1,55 +1,11 @@
 import { supabase } from './supabaseClient';
 
-const MOCK_CLASSIFIEDS = [
-    {
-        id: 'c-1',
-        category: 'Electronics',
-        title: 'Sony PlayStation 5 (Used 3 months)',
-        price: 38000,
-        description: 'Selling my PS5 Disc Edition. Excellent condition, comes with 1 controller and Spider-Man 2.',
-        whatsapp_number: '919876543210',
-        lat: 17.4326, // Jubilee Hills approx
-        lng: 78.4072,
-        ward: 'Jubilee Hills',
-        image_url: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&q=80&w=400',
-        created_at: new Date().toISOString(),
-        expires_at: new Date(Date.now() + 72 * 3600000).toISOString(),
-        is_featured: true
-    },
-    {
-        id: 'c-2',
-        category: 'Vehicles',
-        title: 'Royal Enfield Classic 350',
-        price: 120000,
-        description: '2019 Model, 15000 kms run. Single owner, insurance active till Dec.',
-        whatsapp_number: '919876543211',
-        lat: 17.4474, // Madhapur approx
-        lng: 78.3762,
-        ward: 'Madhapur',
-        image_url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=400',
-        created_at: new Date(Date.now() - 86400000).toISOString(),
-        expires_at: new Date(Date.now() + 48 * 3600000).toISOString()
-    },
-    {
-        id: 'c-3',
-        category: 'Furniture',
-        title: 'IKEA 3-Seater Sofa',
-        price: 15000,
-        description: 'Grey color, very clean. Selling because moving out of city.',
-        whatsapp_number: '919876543212',
-        lat: 17.4401, // Banjara Hills approx
-        lng: 78.4483,
-        ward: 'Banjara Hills',
-        image_url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=400',
-        created_at: new Date(Date.now() - 40000000).toISOString(),
-        expires_at: new Date(Date.now() + 12 * 3600000).toISOString()
-    }
-];
+// Listings come only from the database. The old fallback showed three
+// invented listings with made-up WhatsApp numbers whenever the list was
+// empty or failed to load (docs/DATA_STANDARDS.md, rule 1).
 
 export const classifiedsService = {
     async getActiveClassifieds() {
-        if (!supabase) return MOCK_CLASSIFIEDS;
-        
         try {
             const { data, error } = await supabase
                 .from('smart_classifieds')
@@ -58,14 +14,14 @@ export const classifiedsService = {
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
-            return data && data.length > 0 ? data : MOCK_CLASSIFIEDS;
+            return data || [];
         } catch (error) {
             console.error('Error fetching classifieds:', error);
-            return MOCK_CLASSIFIEDS;
+            return [];
         }
     },
 
-    async postClassified(rawText, lat, lng, ward, whatsapp, isFeatured = false) {
+    async postClassified(rawText, lat, lng, ward, whatsapp) {
         // AI parsing simulation for MVP (In production, this hits our backend)
         const categoryMatch = rawText.toLowerCase().match(/(bike|car|enfield|scooter|vehicle)/) ? 'Vehicles' : 
                              rawText.toLowerCase().match(/(sofa|bed|chair|table)/) ? 'Furniture' : 
@@ -88,26 +44,25 @@ export const classifiedsService = {
             ward,
             whatsapp_number: whatsapp,
             status: 'active',
-            is_featured: isFeatured
+            // Featuring is a paid upgrade; the public key may not set it
+            // (RLS policy "post unfeatured classified").
+            is_featured: false
         };
 
-        if (!supabase) {
-            console.log('Mock inserting classified:', payload);
-            return { id: `MOCK-${Date.now()}`, ...payload };
-        }
-
-        try {
-            const { data, error } = await supabase
-                .from('smart_classifieds')
-                .insert([payload])
-                .select()
-                .single();
-
-            if (error) throw error;
-            return data;
-        } catch (error) {
+        // The public key cannot read rows back under RLS, so the row the page
+        // shows is built here. Returns null when the listing was not saved.
+        const now = new Date();
+        const row = {
+            id: crypto.randomUUID(),
+            ...payload,
+            created_at: now.toISOString(),
+            expires_at: new Date(now.getTime() + 7 * 86400000).toISOString(),
+        };
+        const { error } = await supabase.from('smart_classifieds').insert([row]);
+        if (error) {
             console.error('Error posting classified:', error);
-            return { id: `ERROR-${Date.now()}`, ...payload };
+            return null;
         }
+        return row;
     }
 };

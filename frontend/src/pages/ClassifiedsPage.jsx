@@ -53,8 +53,7 @@ export default function ClassifiedsPage() {
     const [rawText, setRawText] = useState('');
     const [phone, setPhone] = useState('');
     const [submitting, setSubmitting] = useState(false);
-    const [isFeatured, setIsFeatured] = useState(false);
-    const [showPaymentModal, setShowPaymentModal] = useState(false);
+    const [postError, setPostError] = useState(false);
 
     useEffect(() => {
         const fetchClassifieds = async () => {
@@ -72,15 +71,16 @@ export default function ClassifiedsPage() {
 
     const handlePostSubmit = async (e) => {
         e.preventDefault();
-        if (isFeatured) {
-            setShowPaymentModal(true);
-        } else {
-            await executePost(false);
-        }
+        await executePost();
     };
 
-    const executePost = async (featured) => {
+    // The paid "featured" option was removed on 2026-10-04: it showed a
+    // placeholder UPI QR (telangana.live@upi) with a "Simulate Success" button,
+    // so a visitor could pay without the payment being checked or the listing
+    // being featured. Restore it only with a real payment integration.
+    const executePost = async () => {
         setSubmitting(true);
+        setPostError(false);
         // Simulate OTP wait...
         await new Promise(r => setTimeout(r, 1000));
         
@@ -90,10 +90,15 @@ export default function ClassifiedsPage() {
             mapCenter[0] + (Math.random() - 0.5) * 0.02, // slight jitter for MVP
             mapCenter[1] + (Math.random() - 0.5) * 0.02,
             'Jubilee Hills',
-            phone,
-            featured
+            phone
         );
-        
+
+        if (!newPost) {
+            setPostError(true);
+            setSubmitting(false);
+            return;
+        }
+
         setClassifieds(prev => {
             const updated = [newPost, ...prev];
             return updated.sort((a, b) => {
@@ -106,7 +111,6 @@ export default function ClassifiedsPage() {
         setShowPostForm(false);
         setRawText('');
         setPhone('');
-        setIsFeatured(false);
         setSubmitting(false);
         alert(featured ? 'Item successfully paid, processed by AI, and posted as Featured!' : 'Item successfully processed by AI and posted!');
     };
@@ -138,6 +142,9 @@ export default function ClassifiedsPage() {
                     </h3>
                     <p className="text-sm text-text-muted mb-4">Just describe what you are selling. Our AI will automatically categorize it and set the price.</p>
                     <form onSubmit={handlePostSubmit} className="space-y-4">
+                        {postError && (
+                            <p role="alert" className="text-sm text-red-300">Your listing could not be posted. Nothing was saved; please try again.</p>
+                        )}
                         <div>
                             <label className="block text-sm font-semibold mb-2">What are you selling?</label>
                             <textarea 
@@ -159,30 +166,14 @@ export default function ClassifiedsPage() {
                                 required
                             />
                         </div>
-                        {/* Featured booster option */}
-                        <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-start gap-3 hover:border-heritage-gold/30 transition-colors">
-                            <input 
-                                type="checkbox"
-                                id="boost_featured"
-                                checked={isFeatured}
-                                onChange={e => setIsFeatured(e.target.checked)}
-                                className="mt-1 w-4 h-4 rounded border-white/10 text-heritage-gold focus:ring-0 focus:ring-offset-0 bg-dark-surface cursor-pointer"
-                            />
-                            <div>
-                                <label htmlFor="boost_featured" className="block text-sm font-bold text-white cursor-pointer select-none">
-                                    ★ Boost Post (Featured Listing) — <span className="text-heritage-gold">₹49</span>
-                                </label>
-                                <span className="text-[11px] text-text-muted">Put your post at the top of the map and list for 30 days. Attract up to 10x more views and enquiries!</span>
-                            </div>
-                        </div>
                         <button 
                             type="submit" 
                             disabled={submitting}
                             className={`btn-liquid w-full py-4 text-base disabled:opacity-50 font-bold transition-all ${
-                                isFeatured ? 'bg-heritage-gold text-slate-950 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]' : 'bg-telangana-green text-black'
+                                'bg-telangana-green text-black'
                             }`}
                         >
-                            {submitting ? 'AI Processing...' : isFeatured ? 'Proceed to Payment & Post' : 'Generate & Post'}
+                            {submitting ? 'Posting...' : 'Post listing'}
                         </button>
                     </form>
                 </div>
@@ -330,56 +321,6 @@ export default function ClassifiedsPage() {
             </div>
 
             {/* Mock UPI Payment Modal */}
-            {showPaymentModal && (
-                <div className="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center z-50 p-4 animate-fade-in">
-                    <div className="glass-card max-w-sm w-full p-6 border border-heritage-gold/30 text-center space-y-6 bg-slate-950/95 shadow-2xl">
-                        <div className="flex justify-between items-center border-b border-white/10 pb-3">
-                            <h3 className="text-lg font-bold text-heritage-gold flex items-center gap-1.5">
-                                <span>★</span> Boost Classified Post
-                            </h3>
-                            <button 
-                                onClick={() => setShowPaymentModal(false)}
-                                className="text-text-muted hover:text-white"
-                            >
-                                ✕
-                            </button>
-                        </div>
-                        
-                        <div className="space-y-2">
-                            <p className="text-xs text-text-muted uppercase tracking-wider">UPI Secure Gateway</p>
-                            <p className="text-3xl font-black text-white">₹49.00</p>
-                            <p className="text-xs text-text-secondary">Get 10x more leads. Features your post on the top of the map & list.</p>
-                        </div>
-                        
-                        {/* Fake QR Code */}
-                        <div className="bg-white p-4 rounded-xl inline-block shadow-inner mx-auto">
-                            <div className="w-40 h-40 flex flex-col items-center justify-center border-2 border-dashed border-slate-300 rounded text-slate-800 font-bold p-2 text-xs">
-                                <span className="text-2xl mb-1">📱</span>
-                                <span>Scan with BHIM UPI</span>
-                                <span className="font-mono text-[9px] mt-1 text-slate-500">telangana.live@upi</span>
-                            </div>
-                        </div>
-                        
-                        <div className="flex gap-3">
-                            <button 
-                                onClick={() => setShowPaymentModal(false)}
-                                className="flex-1 btn-liquid bg-white/5 border border-white/10 text-white text-xs py-3 rounded-xl"
-                            >
-                                Cancel
-                            </button>
-                            <button 
-                                onClick={() => {
-                                    setShowPaymentModal(false);
-                                    executePost(true);
-                                }}
-                                className="flex-1 btn-liquid bg-heritage-gold text-slate-950 text-xs py-3 font-bold rounded-xl"
-                            >
-                                Simulate Success
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
         </div>
     );
 }

@@ -1,5 +1,8 @@
-import { supabase } from './supabaseClient';
+import { supabase, SUPABASE_SCHEMA } from './supabaseClient';
 
+// Under RLS the public key can insert a pending report but cannot read it
+// back (only approved reports are public), so the id is made here and the
+// insert does not request the row.
 export const citizenReportsService = {
   /**
    * Fetch only approved reports for the public map
@@ -21,56 +24,44 @@ export const citizenReportsService = {
   },
 
   /**
-   * Submit a new citizen report; returns the created row (with tracking id).
+   * Submit a new citizen report. Returns { id, status } on success and null
+   * on failure: never a made-up tracking id for a report that was not saved.
    */
   async submitReport(reportData) {
-    if (!supabase) {
-      // Offline / no credentials – return a local mock tracking id
-      return { id: `LOCAL-${Date.now()}`, status: 'pending_moderation' };
-    }
-    try {
-      const payload = {
-        category: reportData.category,
-        description: reportData.description,
-        lat: reportData.lat,
-        lng: reportData.lng,
-        ward: reportData.ward,
-        corporation: reportData.corporation,
-        status: 'pending_moderation',
-        photo_url: reportData.photo || null,
-        created_at: new Date().toISOString(),
-      };
-      const { data, error } = await supabase
-        .from('citizen_reports')
-        .insert([payload])
-        .select()
-        .single();
-
-      if (error) throw error;
-      return data;
-    } catch (error) {
+    const id = crypto.randomUUID();
+    const payload = {
+      id,
+      category: reportData.category,
+      description: reportData.description,
+      lat: reportData.lat,
+      lng: reportData.lng,
+      ward: reportData.ward,
+      corporation: reportData.corporation,
+      status: 'pending_moderation',
+      photo_url: reportData.photo || null,
+    };
+    const { error } = await supabase.from('citizen_reports').insert([payload]);
+    if (error) {
       console.error('Error submitting citizen report:', error);
-      // Graceful degradation: still give the user a local id
-      return { id: `LOCAL-${Date.now()}`, status: 'pending_moderation' };
+      return null;
     }
+    return { id, status: 'pending_moderation' };
   },
 
   /**
    * Subscribe to new approved reports (Realtime)
    */
   subscribeToReports(onNewReport) {
-    // Realtime updates are unavailable when Supabase credentials are not configured
-    if (!supabase) return null;
     return supabase
-      .channel('public:citizen_reports')
+      .channel('telangana:citizen_reports')
       .on(
         'postgres_changes',
-        { event: 'INSERT', schema: 'public', table: 'citizen_reports', filter: 'status=eq.approved' },
+        { event: 'INSERT', schema: SUPABASE_SCHEMA, table: 'citizen_reports', filter: 'status=eq.approved' },
         (payload) => onNewReport(payload.new)
       )
       .on(
         'postgres_changes',
-        { event: 'UPDATE', schema: 'public', table: 'citizen_reports', filter: 'status=eq.approved' },
+        { event: 'UPDATE', schema: SUPABASE_SCHEMA, table: 'citizen_reports', filter: 'status=eq.approved' },
         (payload) => onNewReport(payload.new)
       )
       .subscribe();

@@ -1,4 +1,4 @@
-import { supabase } from './supabaseClient';
+import { supabase, SUPABASE_SCHEMA } from './supabaseClient';
 
 /**
  * Emergency Service
@@ -29,13 +29,11 @@ export const emergencyService = {
      * @param {function} onUpdate - Callback function when status changes
      */
     subscribe(onUpdate) {
-        // Realtime updates are unavailable when Supabase credentials are not configured
-        if (!supabase) return null;
         return supabase
             .channel('emergency-changes')
             .on(
                 'postgres_changes',
-                { event: 'UPDATE', schema: 'public', table: 'emergency_status' },
+                { event: 'UPDATE', schema: SUPABASE_SCHEMA, table: 'emergency_status' },
                 (payload) => {
                     onUpdate(payload.new);
                 }
