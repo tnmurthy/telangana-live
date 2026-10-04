@@ -334,10 +334,10 @@ infrastructure/
 | ID | Issue | Impact on users and the business | Priority | Needed from PO |
 |---|---|---|---|---|
 | TL-01 | Live site deployed from `master` while work landed on `main` | Fixed 4 Oct: Vercel Production Branch is now `main`; every push deploys; `master` retired | ✅ Fixed | — |
-| TL-02 | TypeSafe key missing in GitHub | Alerts are filtered by old keyword rules: weaker quality | **P0** | Approve adding the secret |
+| TL-02 | TypeSafe key missing in GitHub | Alerts are filtered by old keyword rules: weaker quality | ✅ Fixed | Set 4 Oct in both repos; CI runs confirmed calling TypeSafe |
 | TL-16 | Deploy hook returned 404 | Fixed 4 Oct: hook no longer needed — Vercel's Git integration deploys every push to `main`, data commits included; hook step removed from 8 workflows | ✅ Fixed | Delete the unused `VERCEL_DEPLOY_HOOK_URL` secret (optional) |
 | TL-17 | AI Pulse page was a fixed placeholder | Fixed 4 Oct: rebuilt as Tech & AI Pulse (digital safety, government & AI, jobs & skills) on sourced, dated local news | ✅ Fixed | Set the `TYPESAFE_API_KEY` secret (TL-02) so the scheduled run uses judgment, not the keyword fallback |
-| TL-18 | Database paused; citizen reports, classifieds and the emergency banner could not load | Fixed 4 Oct: moved to the `telangana` schema of the shared "Talia" Supabase project, with RLS | ⚠ Needs 2 clicks | Click Save under Supabase → Data API → Exposed schemas; add Talia's service key as the `SUPABASE_SERVICE_ROLE_KEY` GitHub secret |
+| TL-18 | Database paused; citizen reports, classifieds and the emergency banner could not load | Fixed 4 Oct: moved to the `telangana` schema of the shared "Talia" Supabase project, with RLS | ✅ Fixed | 4 Oct: schemas exposed; service key set; news job saved 159 articles |
 | TL-19 | Grievance dashboard shows 8 invented reports | Same sample data the report map used to show; presented as real | P1 | Wire it to approved reports, or hide it |
 | TL-20 | Redis token was public | Fixed 4 Oct: the browser no longer uses Redis, so no token ships; the leaked token's database (`tough-rat-69556`) no longer exists | ✅ Fixed | Optional: delete the unused `VITE_UPSTASH_*` Vercel variables |
 | TL-21 | Paid "featured listing" removed | It showed a placeholder UPI QR (`telangana.live@upi`) and a "Simulate Success" button | P2 | Decide whether to offer paid listings; if yes, integrate a real payment provider |
@@ -351,7 +351,7 @@ infrastructure/
 | TL-10 | AI summaries can attach to the wrong article | Misleading summaries | P2 | — |
 | TL-11 | Backend test suite red and slow | Regressions go unnoticed | P3 | — |
 | TL-12 | Frontend tests never ran | Fixed 2 Oct: 95 tests now run on every `npm test` | ✅ Fixed | — |
-| TL-13 | CI deploy jobs lack secrets; security scan step failing | Pipeline can't gate production | P3 | Decide: gated CI deploys vs deploy hook |
+| TL-13 | CI deploy jobs lack secrets; security scan step failing | Pipeline can't gate production | P3 | Decide: delete the never-working deploy jobs (Vercel now deploys every push to main) |
 | TL-14 | Dead entry files | Confusion for contributors | P3 | — |
 | TL-15 | Duplicated entity keyword tables | Two lists drift apart | P3 | — |
 
