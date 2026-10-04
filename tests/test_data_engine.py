@@ -1068,3 +1068,33 @@ class TestSyncNews:
             mock_scraper.scrape.assert_called_once_with(limit=50)
         finally:
             data_engine.PATHS["news"] = original_path
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# TL-08: an unchanged run writes nothing (so it commits and deploys nothing)
+# ═══════════════════════════════════════════════════════════════════════════
+
+class TestWritesSkipUnchangedData:
+    def _write(self, path, data, now):
+        with patch.object(data_engine, "NOW", now):
+            return data_engine.write_js_module(str(path), "rates", data)
+
+    def test_only_timestamp_changed_is_not_written(self, tmp_path):
+        path = tmp_path / "rates.js"
+        assert self._write(path, {"updatedAt": "2026-10-04T06:00:00Z", "gold": 1}, "2026-10-04T06:00:00Z") is True
+        before = path.read_text(encoding="utf-8")
+        assert self._write(path, {"updatedAt": "2026-10-04T12:00:00Z", "gold": 1}, "2026-10-04T12:00:00Z") is False
+        assert path.read_text(encoding="utf-8") == before
+
+    def test_changed_value_is_written(self, tmp_path):
+        path = tmp_path / "rates.js"
+        self._write(path, {"updatedAt": "a", "gold": 1}, "2026-10-04T06:00:00Z")
+        assert self._write(path, {"updatedAt": "b", "gold": 2}, "2026-10-04T12:00:00Z") is True
+        assert '"gold": 2' in path.read_text(encoding="utf-8")
+
+    def test_write_js_skips_unchanged_data_too(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(data_engine, "DATA_DIR", str(tmp_path))
+        with patch.object(data_engine, "NOW", "2026-10-04T06:00:00Z"):
+            assert data_engine.write_js("x.js", "x", {"lastUpdated": "t1", "v": [1, 2]}) is True
+        with patch.object(data_engine, "NOW", "2026-10-04T07:00:00Z"):
+            assert data_engine.write_js("x.js", "x", {"lastUpdated": "t2", "v": [1, 2]}) is False
