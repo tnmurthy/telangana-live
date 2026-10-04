@@ -1,8 +1,17 @@
 import { useState, useEffect } from 'react';
-import { alerts as staticAlerts } from '../data/alerts';
 import newsData from '../data/news.json';
 import { powerAlertsService } from '../services/powerAlertsService';
 import { useEmergency } from '../hooks/useEmergency';
+
+// Absolute publish time in IST, e.g. "2 Oct, 8:25 am". Blank if unparseable,
+// rather than a blanket "Live" that is never checked.
+function publishedLabel(published) {
+  const d = new Date(published);
+  if (Number.isNaN(d.getTime())) return '';
+  return d.toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit',
+  });
+}
 
 export default function NewsTicker() {
   const [dynamicAlerts, setDynamicAlerts] = useState([]);
@@ -22,7 +31,7 @@ export default function NewsTicker() {
   const latestNews = newsData.slice(0, 8).map(item => ({
     id: item.link,
     message: `${item.region}: ${item.title}`,
-    time: 'Live',
+    time: publishedLabel(item.published),
     type: 'news',
     link: item.link,
   }));
@@ -36,7 +45,6 @@ export default function NewsTicker() {
       link: '/dashboard',
     }] : []),
     ...dynamicAlerts,
-    ...staticAlerts,
     ...latestNews,
   ];
 

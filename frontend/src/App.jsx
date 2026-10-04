@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { EmergencyProvider } from './context/EmergencyProvider';
 import { LocaleProvider } from './context/LocaleContext';
 import { SUPPORTED_LOCALES } from './i18n/translations';
@@ -33,7 +34,7 @@ const HealthLandingPage = lazy(() => import('./pages/HealthLandingPage'));
 const NewsListingPage = lazy(() => import('./pages/NewsListingPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const ContentAdminCockpit = lazy(() => import('./pages/ContentAdminCockpit'));
-const AIPulsePage = lazy(() => import('./pages/AIPulsePage'));
+const TechPulsePage = lazy(() => import('./pages/TechPulsePage'));
 const EmergencyContactsPage = lazy(() => import('./pages/EmergencyContactsPage'));
 const WaterSupplyPage = lazy(() => import('./pages/WaterSupplyPage'));
 const RationPDSPage = lazy(() => import('./pages/RationPDSPage'));
@@ -111,7 +112,8 @@ const routeDefs = [
   { path: '/health/basthi-dawakhana', element: <HealthLandingPage /> },
   { path: '/news', element: <NewsListingPage /> },
   { path: '/admin/cockpit', element: <ContentAdminCockpit /> },
-  { path: '/ai-pulse', element: <AIPulsePage /> },
+  // Hidden until rebuilt on real sources (TL-17); the URL stays valid.
+  { path: '/ai-pulse', element: <TechPulsePage /> },
   { path: '/emergency-contacts', element: <EmergencyContactsPage /> },
   { path: '/emergency', element: <EmergencyContactsPage /> },
   { path: '/water-supply', element: <WaterSupplyPage /> },
@@ -211,6 +213,7 @@ export default function App() {
   return (
     <EmergencyProvider>
       <AppContent />
+      <Analytics />
     </EmergencyProvider>
   );
 }

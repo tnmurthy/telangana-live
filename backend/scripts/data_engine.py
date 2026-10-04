@@ -712,7 +712,8 @@ def sync_alerts():
 def sync_ai_pulse():
     print("Syncing AI Pulse briefing...")
     now_formatted = datetime.datetime.now().strftime("%B %d, %Y")
-    briefing = _placeholder_briefing()
+    placeholder = _placeholder_briefing()
+    briefing = placeholder
 
     context_headlines = []
     try:
@@ -846,6 +847,12 @@ def sync_ai_pulse():
     else:
         print("  ℹ️ LLMProvider not available — using placeholder content")
 
+    # Never publish the placeholder: it presented 2024 models and invented
+    # scores as "today's" briefing whenever the LLM was unavailable, which in
+    # GitHub Actions is always (TL-17, docs/DATA_STANDARDS.md rule 1).
+    if briefing is placeholder:
+        print("  ⚠️ No generated briefing; leaving aiBriefingData.js unchanged.")
+        return briefing
     write_js("aiBriefingData.js", "aiBriefingData", briefing)
 
 
