@@ -33,7 +33,7 @@ const HealthLandingPage = lazy(() => import('./pages/HealthLandingPage'));
 const NewsListingPage = lazy(() => import('./pages/NewsListingPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const ContentAdminCockpit = lazy(() => import('./pages/ContentAdminCockpit'));
-const AIPulsePage = lazy(() => import('./pages/AIPulsePage'));
+const AIPulseRebuildingPage = lazy(() => import('./pages/AIPulseRebuildingPage'));
 const EmergencyContactsPage = lazy(() => import('./pages/EmergencyContactsPage'));
 const WaterSupplyPage = lazy(() => import('./pages/WaterSupplyPage'));
 const RationPDSPage = lazy(() => import('./pages/RationPDSPage'));
@@ -111,7 +111,8 @@ const routeDefs = [
   { path: '/health/basthi-dawakhana', element: <HealthLandingPage /> },
   { path: '/news', element: <NewsListingPage /> },
   { path: '/admin/cockpit', element: <ContentAdminCockpit /> },
-  { path: '/ai-pulse', element: <AIPulsePage /> },
+  // Hidden until rebuilt on real sources (TL-17); the URL stays valid.
+  { path: '/ai-pulse', element: <AIPulseRebuildingPage /> },
   { path: '/emergency-contacts', element: <EmergencyContactsPage /> },
   { path: '/emergency', element: <EmergencyContactsPage /> },
   { path: '/water-supply', element: <WaterSupplyPage /> },

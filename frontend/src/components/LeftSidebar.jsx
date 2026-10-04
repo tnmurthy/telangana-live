@@ -87,7 +87,6 @@ const LeftSidebar = () => (
       </SidebarSection>
 
       <SidebarSection title="More" collapsible defaultOpen={false}>
-        <NavItem to="/ai-pulse" icon={<Icons.AI size="sm" />} label="AI Pulse" />
         <NavItem to="/events" icon={<Icons.FileText size="sm" />} label="Holidays" />
         <NavItem to="/emergency-contacts" icon={<Icons.Emergency size="sm" />} label="Emergency Contacts" />
       </SidebarSection>

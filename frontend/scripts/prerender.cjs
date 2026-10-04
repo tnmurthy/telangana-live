@@ -122,15 +122,6 @@ Understand how to purchase and recharge smart cards, buy single-journey tokens, 
 
 Our directory outlines available services, including free doctor consultations, diagnostic tests, immunizations, and essential medicines. Use this helper guide to find healthcare in your neighborhood, helping you treat basic illnesses and access preventative care easily.`
   },
-  '/ai-pulse': {
-    title: 'Telangana AI Pulse - Civic Insights & Summaries - Telangana.live',
-    description: 'Read automated AI summaries of regional news, public sentiment, civic issues, and local policy changes in Telangana.',
-    h1: 'Telangana Live AI-Driven Civic Pulse',
-    h2s: ['AI-Summarized Public Reports', 'Community Sentiment Analysis', 'Sector-wise Civic Health Bulletins'],
-    content: `Access automated, AI-generated civic summaries and policy impact reports on the Telangana AI Pulse. Our data engine scans regional news feeds, municipal complaints, and press releases to generate concise, readable briefings. This allows citizens to catch up on important local issues quickly.
-
-We evaluate sector-wise progress in public transport, water supply, power grid stability, agriculture, and municipal health. Sentiment tracking highlights critical issues receiving community attention, helping you understand where local developmental efforts are succeeding or require improvement.`
-  },
   '/water-supply': {
     title: 'Telangana Water Supply Schedule & Tanker Booking - Telangana.live',
     description: 'Track municipal water supply timings, water board reservoir storage, and book drinking water tankers online.',
