@@ -24,6 +24,25 @@ export const citizenReportsService = {
   },
 
   /**
+   * Published reports for the grievance dashboard: approved (open) and
+   * resolved. Returns [] on failure, never sample data.
+   */
+  async getPublishedReports() {
+    try {
+      const { data, error } = await supabase
+        .from('citizen_reports')
+        .select('id, category, description, ward, corporation, status, created_at')
+        .in('status', ['approved', 'resolved'])
+        .order('created_at', { ascending: false });
+      if (error) throw error;
+      return data || [];
+    } catch (error) {
+      console.error('Error fetching published citizen reports:', error);
+      return [];
+    }
+  },
+
+  /**
    * Submit a new citizen report. Returns { id, status } on success and null
    * on failure: never a made-up tracking id for a report that was not saved.
    */

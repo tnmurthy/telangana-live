@@ -16,3 +16,14 @@ describe('news confidence badge', () => {
         });
     }
 });
+
+// TL-19: the grievance dashboard and report map showed 8 invented reports
+// ("Pothole near Gachibowli flyover", ...) as real civic data.
+describe('citizen report sample data', () => {
+    it('no invented reports remain in the site code', () => {
+        const data = readFileSync(join(__dirname, '..', '..', 'frontend', 'src', 'data', 'reportingData.js'), 'utf8');
+        const dashboard = readFileSync(join(COMPONENTS, 'GrievanceDashboard.jsx'), 'utf8');
+        expect(data).not.toMatch(/mockReports/);
+        expect(dashboard).not.toMatch(/mockReports/);
+    });
+});

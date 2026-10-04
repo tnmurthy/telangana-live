@@ -56,17 +56,6 @@ export function detectCorporation(lat, lng) {
 }
 
 // Mock existing reports for demo
-export const mockReports = [
-    { id: 1, lat: 17.4435, lng: 78.3772, category: 'roads', description: 'Pothole near Gachibowli flyover', status: 'assigned', corporation: 'CMC', date: '2026-03-08', ward: 142 },
-    { id: 2, lat: 17.4512, lng: 78.3815, category: 'power', description: 'Street light not working near Cyber Towers', status: 'reported', corporation: 'CMC', date: '2026-03-09', ward: 145 },
-    { id: 3, lat: 17.3850, lng: 78.4867, category: 'water', description: 'Water pipeline leak at Sultan Bazaar', status: 'resolved', corporation: 'GHMC', date: '2026-03-07', ward: 78 },
-    { id: 4, lat: 17.4432, lng: 78.5543, category: 'sanitation', description: 'Garbage overflow at Malkajgiri bus stop', status: 'assigned', corporation: 'MMC', date: '2026-03-09', ward: 230 },
-    { id: 5, lat: 17.3616, lng: 78.4747, category: 'roads', description: 'Broken footpath near Charminar', status: 'reported', corporation: 'GHMC', date: '2026-03-09', ward: 32 },
-    { id: 6, lat: 17.4600, lng: 78.3600, category: 'water', description: 'Sewage overflow in Kondapur Colony', status: 'reported', corporation: 'CMC', date: '2026-03-10', ward: 150 },
-    { id: 7, lat: 17.4480, lng: 78.5700, category: 'power', description: 'Transformer sparking in AS Rao Nagar', status: 'assigned', corporation: 'MMC', date: '2026-03-08', ward: 245 },
-    { id: 8, lat: 17.3950, lng: 78.4500, category: 'sanitation', description: 'Open dumping near Nampally railway station', status: 'resolved', corporation: 'GHMC', date: '2026-03-06', ward: 65 },
-];
-
 export const statusSteps = [
     { key: 'reported', label: 'Reported', icon: '📝' },
     { key: 'assigned', label: 'Assigned', icon: '👷' },

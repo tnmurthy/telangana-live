@@ -13,6 +13,7 @@ function chain(table) {
     const q = {
         select: (...a) => { calls.push([table, 'select', ...a]); return q; },
         eq: (...a) => { calls.push([table, 'eq', ...a]); return q; },
+        in: (...a) => { calls.push([table, 'in', ...a]); return q; },
         order: (...a) => { calls.push([table, 'order', ...a]); return Promise.resolve(selectResult); },
         insert: (rows) => { calls.push([table, 'insert', rows]); return Promise.resolve(insertResult); },
     };
@@ -70,6 +71,20 @@ describe('citizen reports', () => {
         citizenReportsService.subscribeToReports(() => {});
         expect(channelCalls.every(f => f.schema === 'telangana')).toBe(true);
         expect(channelCalls.length).toBeGreaterThan(0);
+    });
+});
+
+describe('grievance dashboard data', () => {
+    it('reads only published reports: approved or resolved', async () => {
+        selectResult = { data: [{ id: 'r1', status: 'approved' }], error: null };
+        const rows = await citizenReportsService.getPublishedReports();
+        expect(rows).toEqual([{ id: 'r1', status: 'approved' }]);
+        expect(calls).toContainEqual(['citizen_reports', 'in', 'status', ['approved', 'resolved']]);
+    });
+
+    it('returns nothing, not sample reports, when the query fails', async () => {
+        selectResult = { data: null, error: { message: 'down' } };
+        await expect(citizenReportsService.getPublishedReports()).resolves.toEqual([]);
     });
 });
 

@@ -1,23 +1,47 @@
-import { useState } from 'react';
-import { mockReports, reportCategories, statusSteps } from '../data/reportingData';
-import { trifurcationBoundaries } from '../data/reportingData';
+import { useEffect, useState } from 'react';
+import { reportCategories, trifurcationBoundaries } from '../data/reportingData';
+import { citizenReportsService } from '../services/citizenReportsService';
+
+// Published citizen reports only (approved = open, resolved). It used to show
+// 8 invented reports with an invented reported/assigned/resolved lifecycle;
+// reports have no "assigned" stage, so none is shown (TL-19).
+
+const STATUS_META = {
+    approved: { label: 'Open', color: '#FBBF24' },
+    resolved: { label: 'Resolved', color: '#22C55E' },
+};
+
+function formatDate(iso) {
+    if (!iso) return '';
+    const d = new Date(iso);
+    return Number.isNaN(d.getTime()) ? '' : d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+}
 
 export default function GrievanceDashboard() {
+    const [reports, setReports] = useState(null);
     const [filterCorp, setFilterCorp] = useState('all');
     const corps = Object.entries(trifurcationBoundaries);
 
+    useEffect(() => {
+        let active = true;
+        citizenReportsService.getPublishedReports().then((rows) => {
+            if (active) setReports(rows);
+        });
+        return () => { active = false; };
+    }, []);
+
+    const loading = reports === null;
+    const all = reports || [];
     const filtered = filterCorp === 'all'
-        ? mockReports
-        : mockReports.filter(r => r.corporation === trifurcationBoundaries[filterCorp]?.shortName);
+        ? all
+        : all.filter((r) => r.corporation === trifurcationBoundaries[filterCorp]?.shortName);
 
     const stats = {
         total: filtered.length,
-        reported: filtered.filter(r => r.status === 'reported').length,
-        assigned: filtered.filter(r => r.status === 'assigned').length,
-        resolved: filtered.filter(r => r.status === 'resolved').length,
+        open: filtered.filter((r) => r.status === 'approved').length,
+        resolved: filtered.filter((r) => r.status === 'resolved').length,
     };
-
-    const catLookup = Object.fromEntries(reportCategories.map(c => [c.id, c]));
+    const catLookup = Object.fromEntries(reportCategories.map((c) => [c.id, c]));
 
     return (
         <div className="space-y-6">
@@ -43,16 +67,15 @@ export default function GrievanceDashboard() {
             </div>
 
             {/* Stats Cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="grid grid-cols-3 gap-3">
                 {[
-                    { label: 'Total Reports', val: stats.total, icon: '📊', color: 'text-white' },
-                    { label: 'Pending', val: stats.reported, icon: '📝', color: 'text-amber-400' },
-                    { label: 'Assigned', val: stats.assigned, icon: '👷', color: 'text-blue-400' },
+                    { label: 'Published Reports', val: stats.total, icon: '📊', color: 'text-white' },
+                    { label: 'Open', val: stats.open, icon: '📝', color: 'text-amber-400' },
                     { label: 'Resolved', val: stats.resolved, icon: '✅', color: 'text-success' },
-                ].map(s => (
+                ].map((s) => (
                     <div key={s.label} className="glass-card p-4 text-center">
                         <span className="text-2xl">{s.icon}</span>
-                        <p className={`text-3xl font-black mt-2 ${s.color}`}>{s.val}</p>
+                        <p className={`text-3xl font-black mt-2 ${s.color}`}>{loading ? '—' : s.val}</p>
                         <p className="text-[10px] text-text-muted uppercase tracking-widest font-bold mt-1">{s.label}</p>
                     </div>
                 ))}
@@ -62,41 +85,47 @@ export default function GrievanceDashboard() {
             <div className="glass-card section-block">
                 <h3 className="label-xs mb-4 flex items-center justify-between">
                     <span>📋 Accountability Tracker</span>
-                    <span className="text-success text-[10px]">Resolution Rate: {stats.total > 0 ? Math.round((stats.resolved / stats.total) * 100) : 0}%</span>
+                    {stats.total > 0 && (
+                        <span className="text-success text-[10px]">
+                            Resolution Rate: {Math.round((stats.resolved / stats.total) * 100)}%
+                        </span>
+                    )}
                 </h3>
-                <div className="space-y-3 max-h-80 overflow-y-auto">
-                    {filtered.map(report => {
-                        const cat = catLookup[report.category];
-                        const stepIdx = statusSteps.findIndex(s => s.key === report.status);
-                        const progress = ((stepIdx + 1) / statusSteps.length) * 100;
 
-                        return (
-                            <div key={report.id} className="detail-box">
-                                <div className="flex items-start gap-3 mb-3">
-                                    <div className="w-8 h-8 rounded-lg flex items-center justify-center text-sm flex-shrink-0" style={{ backgroundColor: `${cat?.color}20` }}>
-                                        {cat?.icon}
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                        <p className="text-sm text-white font-bold truncate">{report.description}</p>
-                                        <p className="text-[10px] text-text-muted">🏛️ {report.corporation} · Ward {report.ward} · {report.date}</p>
+                {loading && <p className="text-sm text-text-muted">Loading reports…</p>}
+                {!loading && filtered.length === 0 && (
+                    <p className="text-sm text-text-muted">
+                        No published citizen reports {filterCorp === 'all' ? 'yet' : 'for this corporation yet'}.
+                        Reports appear here after moderation; drop a pin on the map above to file one.
+                    </p>
+                )}
+
+                {filtered.length > 0 && (
+                    <div className="space-y-3 max-h-80 overflow-y-auto">
+                        {filtered.map((report) => {
+                            const cat = catLookup[report.category];
+                            const status = STATUS_META[report.status] || STATUS_META.approved;
+                            return (
+                                <div key={report.id} className="detail-box">
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-8 h-8 rounded-lg flex items-center justify-center text-sm flex-shrink-0" style={{ backgroundColor: `${cat?.color || '#ffffff'}20` }}>
+                                            {cat?.icon || '📍'}
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <p className="text-sm text-white font-bold truncate">{report.description}</p>
+                                            <p className="text-[10px] text-text-muted">
+                                                🏛️ {report.corporation || '—'}{report.ward ? ` · Ward ${report.ward}` : ''} · {formatDate(report.created_at)}
+                                            </p>
+                                        </div>
+                                        <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: status.color }}>
+                                            {status.label}
+                                        </span>
                                     </div>
                                 </div>
-                                {/* Progress Bar */}
-                                <div className="flex items-center gap-2">
-                                    <div className="flex-1 h-1.5 bg-white/5 rounded-full overflow-hidden">
-                                        <div
-                                            className={`h-full rounded-full transition-all duration-700 ${report.status === 'resolved' ? 'bg-success' : report.status === 'assigned' ? 'bg-blue-400' : 'bg-amber-400'}`}
-                                            style={{ width: `${progress}%` }}
-                                        ></div>
-                                    </div>
-                                    <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: report.status === 'resolved' ? '#22C55E' : report.status === 'assigned' ? '#60A5FA' : '#FBBF24' }}>
-                                        {report.status}
-                                    </span>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
+                            );
+                        })}
+                    </div>
+                )}
             </div>
 
             {/* Official Portal Deep Links */}
