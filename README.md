@@ -284,7 +284,7 @@ See [docs/README.md](./docs/README.md) for the complete schema specification.
 
 _Verified 2026-10-02. Priority reflects impact on a trustworthy, monetisable civic portal: **P0** = users see wrong or invented information; **P1** = data quality on indexed pages; **P2** = cost and efficiency; **P3** = engineering hygiene._
 
-**Update, 2 Oct (later):** TL-03 and TL-12 fixed and live; TL-08 partly fixed; TL-16 added. The rules behind these fixes are in [docs/DATA_STANDARDS.md](docs/DATA_STANDARDS.md), shared with vizag-live.
+**Update, 2 Oct (later):** TL-03 and TL-12 fixed and live; TL-08 partly fixed; TL-16 and TL-17 added. The rules behind these fixes are in [docs/DATA_STANDARDS.md](docs/DATA_STANDARDS.md), shared with vizag-live.
 
 #### Where the issues live
 
@@ -336,6 +336,7 @@ infrastructure/
 | TL-01 | Live site deploys from `master`; all work and data syncs land on `main` | Site goes stale between manual syncs; fixes don't reach users | **P0** | Switch Vercel Production Branch to `main` (admin access) |
 | TL-02 | TypeSafe key missing in GitHub | Alerts are filtered by old keyword rules: weaker quality | **P0** | Approve adding the secret |
 | TL-16 | Deploy hook returns 404 | Data syncs no longer rebuild the site; it only updates on manual syncs | **P0** | Create a deploy hook for `main` and share its URL (I will set the secret) |
+| TL-17 | AI Pulse page is a fixed placeholder | Shows 2024 models (Claude 3.5 Sonnet, GPT-4o, Gemini 1.5 Pro) and invented benchmark scores as today's briefing; only the date changes daily | **P0** | Choose: real sources (see suggestions) or hide the page |
 | TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | P1 | Confirm acceptable price sources |
@@ -357,6 +358,7 @@ infrastructure/
 | TL-01 | Infra | Vercel settings | Newest production deployment's commit ref is `main`; `/dashboard` data under 1 h old without manual steps | S |
 | TL-02 | Infra | GitHub secrets | Alerts job runs with `source="typesafe"` for every verdict; no regex fallback in logs | S |
 | TL-16 | Infra | Vercel deploy hooks, `VERCEL_DEPLOY_HOOK_URL` | Hook returns 2xx; a sync that pushed produces a new production deployment | S |
+| TL-17 | Backend + Frontend | `data_engine.sync_ai_pulse`, `_placeholder_briefing`, `pages/AIPulsePage.jsx` | No placeholder content published; every item links to a dated source; page shows "not available" when the generator has no sources | M |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | Fresh gold price daily, or an explicit `stale` flag; value selected from parsed candidates, never by fixed column index | M |
