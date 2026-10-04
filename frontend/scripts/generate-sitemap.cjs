@@ -16,6 +16,7 @@ const staticRoutes = [
   { url: '/transport/metro', changefreq: 'hourly', priority: 0.7 },
   { url: '/jobs', changefreq: 'daily', priority: 0.8 },
   { url: '/classifieds', changefreq: 'always', priority: 0.8 },
+  { url: '/ai-pulse', changefreq: 'daily', priority: 0.7 },
   { url: '/services', changefreq: 'weekly', priority: 0.8 },
   { url: '/events', changefreq: 'weekly', priority: 0.7 },
   { url: '/panchang', changefreq: 'daily', priority: 0.7 },
