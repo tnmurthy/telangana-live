@@ -28,13 +28,6 @@ function mockFetchThrows(message = 'Network error') {
 // Helpers to load a fresh module instance (bypassing the module-level memCache)
 async function loadService() {
   vi.resetModules();
-  // Provide a fresh redisService mock so redis always returns null
-  vi.doMock('../../src/services/redisService.js', () => ({
-    redisService: {
-      get: vi.fn().mockResolvedValue(null),
-      set: vi.fn().mockResolvedValue(true),
-    },
-  }));
   return import('../../src/services/pricesService.js');
 }
 
@@ -47,22 +40,7 @@ afterEach(() => {
 // ═══════════════════════════════════════════════════════════════════════════
 
 describe('fetchFuelPrices', () => {
-  it('returns Redis-cached data when available', async () => {
-    vi.resetModules();
-    vi.doMock('../../src/services/redisService.js', () => ({
-      redisService: {
-        get: vi.fn().mockResolvedValue({ petrol: { price: 100 }, source: 'existing' }),
-        set: vi.fn().mockResolvedValue(true),
-      },
-    }));
-    const { fetchFuelPrices } = await import('../../src/services/pricesService.js');
-
-    const result = await fetchFuelPrices('hyderabad');
-    expect(result.source).toBe('redis');
-    expect(result.petrol.price).toBe(100);
-  });
-
-  it('calls the Vercel API when Redis returns null', async () => {
+  it('calls the Vercel API when there is no local data', async () => {
     const { fetchFuelPrices } = await loadService();
     const apiPayload = { petrol: { price: 108 }, diesel: { price: 90 } };
     mockFetchSuccess(apiPayload);
@@ -124,22 +102,7 @@ describe('fetchFuelPrices', () => {
 // ═══════════════════════════════════════════════════════════════════════════
 
 describe('fetchGoldRates', () => {
-  it('returns Redis-cached data when available', async () => {
-    vi.resetModules();
-    vi.doMock('../../src/services/redisService.js', () => ({
-      redisService: {
-        get: vi.fn().mockResolvedValue({ gold22k: { price: 7200 }, source: 'existing' }),
-        set: vi.fn().mockResolvedValue(true),
-      },
-    }));
-    const { fetchGoldRates } = await import('../../src/services/pricesService.js');
-
-    const result = await fetchGoldRates();
-    expect(result.source).toBe('redis');
-    expect(result.gold22k.price).toBe(7200);
-  });
-
-  it('calls the Vercel API when Redis returns null', async () => {
+  it('calls the Vercel API when there is no local data', async () => {
     const { fetchGoldRates } = await loadService();
     const apiPayload = { gold22k: { price: 7300 }, silver: { price: 95 } };
     mockFetchSuccess(apiPayload);

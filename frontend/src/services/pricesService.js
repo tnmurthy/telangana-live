@@ -5,7 +5,6 @@
 import { fuelPrices as staticFuel } from '../data/fuelPrices';
 import { goldRates as staticGold } from '../data/goldRates';
 import hybridPrices from '../data/prices.json';
-import { redisService } from './redisService';
 
 const API_BASE = import.meta.env.VITE_API_BASE || '';
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
@@ -58,14 +57,6 @@ export async function fetchFuelPrices(city = 'hyderabad') {
       source: 'local-hybrid',
       lastUpdated: hybridPrices.last_updated
     };
-  }
-
-  // 2. Try Redis
-  try {
-    const redisData = await redisService.get(key);
-    if (redisData) return { ...redisData, source: 'redis' };
-  } catch (err) {
-    console.warn('Redis fetch error for fuel:', err.message);
   }
 
   // 3. Try MemCache
@@ -128,14 +119,6 @@ export async function fetchGoldRates() {
       source: 'local-hybrid',
       lastUpdated: hybridPrices.last_updated
     };
-  }
-
-  // 2. Try Redis
-  try {
-    const redisData = await redisService.get(key);
-    if (redisData) return { ...redisData, source: 'redis' };
-  } catch (err) {
-    console.warn('Redis fetch error for gold:', err.message);
   }
 
   // 3. Try MemCache
