@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { EmergencyProvider } from './context/EmergencyProvider';
 import { LocaleProvider } from './context/LocaleContext';
 import { SUPPORTED_LOCALES } from './i18n/translations';
@@ -212,6 +213,7 @@ export default function App() {
   return (
     <EmergencyProvider>
       <AppContent />
+      <Analytics />
     </EmergencyProvider>
   );
 }
