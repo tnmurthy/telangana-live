@@ -329,17 +329,8 @@ def sync_gold():
         silver = sum(item["silver"] for item in valid_today) / len(valid_today)
         print(f"  ✅ Consensus reached from {len(valid_today)} sources.")
     else:
-        print("  ⚠️ No fresh data found today. Using last known good values (Stale Mode).")
+        print("  ⚠️ No fresh data found today. Keeping the last real reading (Stale Mode).")
         is_stale = True
-        # Try to load from local history first
-        try:
-            with open(PATHS["gold"], encoding="utf-8") as f:
-                existing = json.loads(re.search(r"= (\{[\s\S]*\});", f.read()).group(1))
-                latest = existing["history"][-1]
-                gold24, gold22, silver = latest["gold24k"], latest["gold22k"], latest["silver"]
-        except:
-            # Absolute fallback
-            gold24, gold22, silver = 15704.0, 14395.0, 290.0
 
     # 4. History Management
     # Deduplicate and sort all history entries
@@ -357,11 +348,20 @@ def sync_gold():
                         unique_history[entry["date"]] = entry
     except: pass
 
-    # Add today if not present (using our consensus/stale values)
-    if today_str not in unique_history:
+    # Only a validated reading for today becomes today's history entry. A
+    # stale run used to copy the last price in as "today" (change 0), and with
+    # no history at all it published fixed 15704 / 14395 / 290 as real rates.
+    if valid_today:
         unique_history[today_str] = {"date": today_str, "gold22k": gold22, "gold24k": gold24, "silver": silver}
-    
+    if not unique_history:
+        print("  ⚠️ No gold reading available at all; leaving goldRates unchanged.")
+        return None
+
     sorted_history = sorted(unique_history.values(), key=lambda x: x["date"])[-10:]
+    if is_stale:
+        latest = sorted_history[-1]
+        gold24, gold22, silver = latest["gold24k"], latest["gold22k"], latest["silver"]
+        today_str = latest["date"]  # the date the shown price was observed
 
     # 5. Calculate Changes
     prev = sorted_history[-2] if len(sorted_history) >= 2 else sorted_history[-1]
@@ -389,62 +389,76 @@ def sync_gold():
 
 
 # ── FUEL ──────────────────────────────────────────────────────────────────────
-def sync_fuel():
-    print("Syncing fuel prices...")
+def _read_intro_price(url):
+    """The first bold number in goodreturns' intro block, if plausible."""
+    resp = http_get(url)
+    if resp.status_code != 200:
+        return None
+    intro = BeautifulSoup(resp.text, "html.parser").find("div", id="gr_intro_content")
+    if not (intro and intro.find("b")):
+        return None
+    val = float(intro.find("b").get_text(strip=True).replace(",", ""))
+    return val if 50 < val < 200 else None
 
-    # Fallback values match test expectations
-    petrol_price = 107.41
-    diesel_price = 97.82
-    lpg_price = 803.00
-    cng_price = 72.8
 
+def _read_labelled_price(url, label):
+    """"<label> Price ... ₹ <n>" anywhere on the page."""
+    resp = http_get(url)
+    if resp.status_code != 200:
+        return None
+    text = BeautifulSoup(resp.text, "html.parser").get_text()
+    m = re.search(label + r" Price[^\d]{0,80}₹\s*([\d,.]+)", text, re.I)
+    return float(m.group(1).replace(",", "")) if m else None
+
+
+def _previous_fuel():
     try:
-        petrol_url = "https://www.goodreturns.in/petrol-price-in-hyderabad.html"
-        p_resp = http_get(petrol_url)
-        if p_resp.status_code == 200:
-            p_soup = BeautifulSoup(p_resp.text, "html.parser")
-            # Look for the strong/b tag in the intro content
-            intro = p_soup.find("div", id="gr_intro_content")
-            if intro and intro.find("b"):
-                val = float(intro.find("b").get_text(strip=True).replace(",", ""))
-                if 50 < val < 200: petrol_price = val
+        with open(PATHS["fuel"], encoding="utf-8") as f:
+            return json.loads(re.search(r"= (\{[\s\S]*\});", f.read()).group(1))
+    except Exception:
+        return {}
 
-        diesel_url = "https://www.goodreturns.in/diesel-price-in-hyderabad.html"
-        d_resp = http_get(diesel_url)
-        if d_resp.status_code == 200:
-            d_soup = BeautifulSoup(d_resp.text, "html.parser")
-            intro = d_soup.find("div", id="gr_intro_content")
-            if intro and intro.find("b"):
-                val = float(intro.find("b").get_text(strip=True).replace(",", ""))
-                if 50 < val < 200: diesel_price = val
 
-        # LPG (14.2kg Domestic)
+def sync_fuel():
+    """Publish only prices read this run.
+
+    A price that could not be read carries the previous file's real value and
+    is listed in staleFields. If petrol and diesel both fail, the previous file
+    is kept untouched (with its own date). There are no built-in fallback
+    prices: it used to publish fixed 107.41 / 97.82 / 803 / 72.8 as today's.
+    """
+    print("Syncing fuel prices...")
+    base = "https://www.goodreturns.in"
+    readers = {
+        "petrol": lambda: _read_intro_price(f"{base}/petrol-price-in-hyderabad.html"),
+        "diesel": lambda: _read_intro_price(f"{base}/diesel-price-in-hyderabad.html"),
+        "lpgHousehold": lambda: _read_labelled_price(f"{base}/lpg-price-in-hyderabad.html", "LPG"),
+        "cngVehicle": lambda: _read_labelled_price(f"{base}/cng-price-in-hyderabad.html", "CNG"),
+    }
+    scraped = {}
+    for key, read in readers.items():
         try:
-            lpg_url = "https://www.goodreturns.in/lpg-price-in-hyderabad.html"
-            lpg_resp = http_get(lpg_url)
-            if lpg_resp.status_code == 200:
-                lpg_soup = BeautifulSoup(lpg_resp.text, "html.parser")
-                # Look for the price in a table cell or a prominent div
-                lpg_text = lpg_soup.get_text()
-                m_lpg = re.search(r"LPG Price[^\d]{0,80}₹\s*([\d,.]+)", lpg_text, re.I)
-                if m_lpg:
-                    lpg_price = float(m_lpg.group(1).replace(",", ""))
-        except: pass
+            scraped[key] = read()
+        except Exception as e:
+            print(f"  ⚠️ {key} price not read ({e})")
+            scraped[key] = None
 
-        # CNG
-        try:
-            cng_url = "https://www.goodreturns.in/cng-price-in-hyderabad.html"
-            cng_resp = http_get(cng_url)
-            if cng_resp.status_code == 200:
-                cng_soup = BeautifulSoup(cng_resp.text, "html.parser")
-                cng_text = cng_soup.get_text()
-                m_cng = re.search(r"CNG Price[^\d]{0,80}₹\s*([\d,.]+)", cng_text, re.I)
-                if m_cng:
-                    cng_price = float(m_cng.group(1).replace(",", ""))
-        except: pass
+    if scraped["petrol"] is None and scraped["diesel"] is None:
+        print("  ⚠️ Petrol and diesel not read; keeping the previous fuel file.")
+        return None
 
-    except Exception as e:
-        print(f"  ⚠️ Fuel scrape failed ({e}), using fallback values")
+    previous = _previous_fuel()
+    prices, stale = {}, []
+    for key, value in scraped.items():
+        if value is None:
+            value = (previous.get(key) or {}).get("price")
+            if value is None:
+                print(f"  ⚠️ No {key} price this run or before; fuel file not written.")
+                return None
+            stale.append(key)
+        prices[key] = value
+    petrol_price, diesel_price = prices["petrol"], prices["diesel"]
+    lpg_price, cng_price = prices["lpgHousehold"], prices["cngVehicle"]
 
     def _tax_breakup(price):
         base = round(price * 0.55, 2)
@@ -473,7 +487,9 @@ def sync_fuel():
         "diesel": {"price": diesel_price, "unit": "per litre", "change": 0, "taxBreakup": _tax_breakup(diesel_price)},
         "lpgHousehold": {"price": lpg_price, "unit": "per cylinder (14.2kg)", "change": 0, "label": "LPG Domestic"},
         "cngVehicle": {"price": cng_price, "unit": "per kg", "change": 0, "label": "CNG Vehicle"},
-        "news_alerts": get_recent_news_for_entity("fuel_price", "fuel")
+        "news_alerts": get_recent_news_for_entity("fuel_price", "fuel"),
+        # Prices not read this run; their values are the previous real ones.
+        "staleFields": stale,
     }
 
     write_js_module(PATHS["fuel"], "fuelPrices", frontend_fuel)

@@ -76,14 +76,14 @@ class NewsSyncAgent:
                     published_date = entry.get("published", datetime.now().isoformat())
 
                     # 2. Fact Checking (Fault Tolerant)
-                    verification = {}
-                    try:
-                        logger.info(f"Fact-checking: {title[:40]}...")
-                        verification = fact_checker.check_news_item(title, description)
-                    except Exception as e:
-                        logger.warning(f"Fact-check failed for {title[:20]}: {e}. Proceeding anyway.")
-                    
-                    if verification.get("is_fake_news_flag", False):
+                    # Unchecked articles are counted and published without a
+                    # score; they are never reported as checked (TL-07).
+                    logger.info(f"Fact-checking: {title[:40]}...")
+                    verification = fact_checker.check_news_item(title, description)
+                    if not verification.checked:
+                        logger.warning(f"Fact-check unavailable for {title[:30]}: {verification.error}")
+
+                    if verification.is_fake:
                         logger.warning(f"REJECTED FAKE NEWS: {title[:30]}")
                         continue
 
@@ -117,7 +117,7 @@ class NewsSyncAgent:
                             generated_code=json.dumps({
                                 "summary": summary,
                                 "source": source,
-                                "credibility": verification.get("credibility_score", 85)
+                                "credibility": verification.credibility_score,  # None when unchecked
                             }),
                             token_usage=0,
                             civic_tags=entities.get("domain_entities", []),

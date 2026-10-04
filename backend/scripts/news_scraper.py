@@ -131,18 +131,31 @@ def _batch_summarize(articles: list[dict], batch_size: int = 20) -> list[str]:
 
 
 def _parse_numbered_list(text: str, expected: int) -> list[str]:
-    """Extract numbered items from LLM response; pad / truncate to `expected`."""
-    lines = []
+    """Map the model's numbered replies onto articles 1..expected.
+
+    Each summary is placed by the number the model gave it. If the numbers are
+    not exactly 1..expected (one skipped, repeated or extra), the whole batch
+    is discarded: when the model skips an article it often renumbers the rest,
+    so position can't be trusted either, and no summary beats another
+    article's summary (TL-10).
+    """
+    by_number: dict[int, str] = {}
+    duplicate = False
     for line in text.splitlines():
-        stripped = line.strip()
-        # Match "1. ..." or "1) ..."
-        if re.match(r"^\d+[\.\)]\s+", stripped):
-            content = re.sub(r"^\d+[\.\)]\s+", "", stripped)
-            lines.append(content)
-    # Pad with empty strings if LLM returned fewer than expected
-    while len(lines) < expected:
-        lines.append("")
-    return lines[:expected]
+        match = re.match(r"^(\d+)[\.\)]\s+(.*)$", line.strip())
+        if not match:
+            continue
+        n = int(match.group(1))
+        duplicate = duplicate or n in by_number
+        by_number[n] = match.group(2).strip()
+
+    if duplicate or set(by_number) != set(range(1, expected + 1)):
+        logger.warning(
+            "Summary batch discarded: expected items 1..%d, got %s",
+            expected, sorted(by_number) or "none",
+        )
+        return [""] * expected
+    return [by_number[n] for n in range(1, expected + 1)]
 
 
 # ── Concurrent fact-checking ──────────────────────────────────────────────────
@@ -152,19 +165,22 @@ def _fact_check_article(item: dict) -> dict | None:
     Run fact-checking on a single article dict.
     Returns the enriched dict, or None if the article is rejected as fake news.
     """
+    # An article that was not checked is published as unchecked: no score is
+    # attached (it used to get a made-up 85 and "not fake"). TL-07.
     if not fact_checker:
+        item["fact_checked"] = False
         return item
-    try:
-        verification = fact_checker.check_news_item(item["title"], item["description"])
-        if verification.get("is_fake_news_flag", False):
-            logger.info("REJECTED fake news: %s", item["title"][:60])
-            return None
-        item["credibility_score"] = verification.get("credibility_score", 85)
-        item["civic_action_required"] = verification.get("civic_action_required", False)
-        if item["civic_action_required"]:
-            logger.info("Civic action flagged: %s", item["title"][:60])
-    except Exception as e:
-        logger.warning("Fact-check error for '%s': %s", item["title"][:40], e)
+    verdict = fact_checker.check_news_item(item["title"], item["description"])
+    item["fact_checked"] = verdict.checked
+    if not verdict.checked:
+        return item
+    if verdict.is_fake:
+        logger.info("REJECTED fake news: %s", item["title"][:60])
+        return None
+    item["credibility_score"] = verdict.credibility_score
+    item["civic_action_required"] = verdict.civic_action_required
+    if verdict.civic_action_required:
+        logger.info("Civic action flagged: %s", item["title"][:60])
     return item
 
 

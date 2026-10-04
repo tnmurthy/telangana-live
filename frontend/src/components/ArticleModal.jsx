@@ -239,7 +239,8 @@ export default function ArticleModal({ article, onClose }) {
   if (!article) return null;
   const { title, source, published, description, ai_summary, link, category, region, credibility_score } = article;
   const readTime = estimateReadTime((description || '') + ' ' + (ai_summary || ''));
-  const aiConfidence = credibility_score || Math.min(98, 75 + (title.length % 20));
+  // Only a measured score is shown; there is no stand-in when none exists.
+  const aiConfidence = typeof credibility_score === 'number' ? credibility_score : null;
 
   const modalContent = (
     <motion.div

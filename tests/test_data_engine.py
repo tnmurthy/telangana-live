@@ -4,8 +4,10 @@ Run with:  pytest tests/
 """
 import json
 import os
+import pytest
 import sys
 import re
+from types import SimpleNamespace
 from unittest.mock import MagicMock, patch
 
 # Ensure repo root and backend are importable
@@ -26,6 +28,29 @@ def _make_entry(title, link, summary=""):
 
 
 # ---------------------------------------------------------------------------
+# Keep every test offline (TL-11)
+# ---------------------------------------------------------------------------
+# NewsScraper.scrape() batches AI summaries through core.llm_provider.llm and
+# fact-checks through agents.fact_checker. Unstubbed, 60-article tests made
+# live model calls with retries and the suite took minutes to hours.
+
+@pytest.fixture(autouse=True)
+def _offline_models(monkeypatch):
+    import importlib
+    llm_stub = MagicMock()
+    llm_stub.gemini_available = False
+    llm_stub.generate.return_value = {"text": ""}
+    for name in ("scripts.news_scraper", "news_scraper"):
+        try:
+            module = importlib.import_module(name)
+        except ImportError:
+            continue
+        monkeypatch.setattr(module, "llm", llm_stub, raising=False)
+        monkeypatch.setattr(module, "fact_checker", fact_checker_stub, raising=False)
+    yield
+
+
+# ---------------------------------------------------------------------------
 # news_scraper tests
 # ---------------------------------------------------------------------------
 
@@ -38,9 +63,9 @@ class TestNewsScraper:
 
     def test_clean_html(self):
         scraper = self._get_scraper()
-        assert scraper.clean_html("<b>Hello</b> <i>World</i>") == "Hello World"
-        assert scraper.clean_html("") == ""
-        assert scraper.clean_html(None) == ""
+        assert _clean_html("<b>Hello</b> <i>World</i>") == "Hello World"
+        assert _clean_html("") == ""
+        assert _clean_html(None) == ""
 
     def test_region_detection_hyderabad(self):
         scraper = self._get_scraper()
@@ -185,7 +210,7 @@ import os
 import re
 import sys
 import tempfile
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -198,6 +223,16 @@ sys.path.insert(0, _REPO_ROOT)
 sys.path.insert(0, os.path.join(_REPO_ROOT, "backend"))
 
 # ── Stub optional heavy dependencies before importing the modules ──────────
+
+def _stub_if_missing(name, stub):
+    """Stub a dependency only when it cannot be imported. Unconditional stubs
+    leaked into other test files in the same run (e.g. a MagicMock
+    `supabase` broke core.database imports in test_database_schema.py)."""
+    import importlib
+    try:
+        importlib.import_module(name)
+    except Exception:
+        sys.modules.setdefault(name, stub)
 
 # Stub feedparser so data_engine / news_scraper can be imported without it
 feedparser_stub = MagicMock()
@@ -213,7 +248,7 @@ sys.modules.setdefault("google.generativeai", genai_stub)
 sys.modules.setdefault("anthropic", MagicMock())
 
 # Stub supabase
-sys.modules.setdefault("supabase", MagicMock())
+_stub_if_missing("supabase", MagicMock())
 
 # Stub schedule
 sys.modules.setdefault("schedule", MagicMock())
@@ -224,17 +259,16 @@ sys.modules.setdefault("dateutil.parser", MagicMock())
 
 # Stub agents.fact_checker
 fact_checker_stub = MagicMock()
-fact_checker_stub.check_news_item.return_value = {
-    "is_fake_news_flag": False,
-    "credibility_score": 85,
-    "civic_action_required": False,
-    "reasoning": "Mocked verification"
-}
-sys.modules.setdefault("agents.fact_checker", MagicMock(fact_checker=fact_checker_stub))
+# Same shape as agents.fact_checker.FactCheckVerdict (a checked, genuine article).
+fact_checker_stub.check_news_item.return_value = SimpleNamespace(
+    checked=True, is_fake=False, credibility_score=85,
+    civic_action_required=False, reasoning="Mocked verification", error=None,
+)
+_stub_if_missing("agents.fact_checker", MagicMock(fact_checker=fact_checker_stub))
 
 # ── Now import the modules under test ─────────────────────────────────────
 import data_engine
-from news_scraper import NewsScraper
+from news_scraper import NewsScraper, _clean_html
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -367,7 +401,8 @@ class TestSyncPulses:
         try:
             data_engine.sync_pulses()
             content = open(data_engine.PATHS["pulses"], encoding="utf-8").read()
-            today = datetime.now().strftime("%Y-%m-%d")
+            # The engine stamps UTC; local time can already be tomorrow (IST).
+            today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
             assert today in content
         finally:
             data_engine.PATHS["pulses"] = original_path
@@ -382,20 +417,20 @@ class TestNewsScraperCleanHtml:
         self.scraper = NewsScraper()
 
     def test_strips_tags(self):
-        assert self.scraper.clean_html("<p>Hello</p>") == "Hello"
+        assert _clean_html("<p>Hello</p>") == "Hello"
 
     def test_returns_empty_for_none(self):
-        assert self.scraper.clean_html(None) == ""
+        assert _clean_html(None) == ""
 
     def test_returns_empty_for_empty_string(self):
-        assert self.scraper.clean_html("") == ""
+        assert _clean_html("") == ""
 
     def test_strips_nested_tags(self):
-        result = self.scraper.clean_html("<div><p><b>Nested</b> text</p></div>")
+        result = _clean_html("<div><p><b>Nested</b> text</p></div>")
         assert result == "Nested text"
 
     def test_preserves_plain_text(self):
-        assert self.scraper.clean_html("Plain text") == "Plain text"
+        assert _clean_html("Plain text") == "Plain text"
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -567,11 +602,11 @@ class TestGetAiSummary:
 # data_engine — sync_finance (gold & fuel parsing)
 # ═══════════════════════════════════════════════════════════════════════════
 
-def _make_mock_response(text):
+def _make_mock_response(text, status=200):
     """Return a mock requests.Response whose .text attribute is *text*."""
     mock_resp = MagicMock()
     mock_resp.text = text
-    mock_resp.status_code = 200
+    mock_resp.status_code = status
     return mock_resp
 
 
@@ -589,6 +624,8 @@ _GOLD_HTML = """
 </table>
 </body></html>
 """
+
+_DIESEL_HTML = '<html><body><div id="gr_intro_content"><b>97.82</b></div></body></html>'
 
 _FUEL_HTML = """
 <html><body>
@@ -698,9 +735,17 @@ class TestSyncFinanceFuelParsing:
         data_engine.PATHS["fuel"] = str(tmp_path / "fuelPrices.js")
         try:
             with patch.object(data_engine, "requests") as mock_req:
+                # gold: livechennai, livemint; fuel: petrol, diesel, lpg, cng.
+                # (Two responses used to starve the fuel scraper, so these tests
+                # only passed through the hard-coded fallback prices.)
                 mock_req.get.side_effect = [
                     _make_mock_response(_GOLD_HTML),
-                    _make_mock_response(fuel_html),
+                    _make_mock_response("<html></html>"),
+                ] + [
+                    _make_mock_response(fuel_html),     # petrol page
+                    _make_mock_response(_DIESEL_HTML),  # diesel page: its own price first
+                    _make_mock_response(fuel_html),     # lpg page
+                    _make_mock_response(fuel_html),     # cng page
                 ]
                 data_engine.sync_finance()
         finally:
@@ -773,8 +818,11 @@ class TestSyncFinanceFallbacks:
         # This tests that sync_finance does not raise an unhandled exception
         # (files may or may not exist depending on which block ran)
 
-    def test_gold_uses_fallback_when_regex_finds_no_match(self, tmp_path):
-        """When HTML contains no recognisable price pattern, default prices are used."""
+    def test_gold_writes_nothing_when_no_price_is_found(self, tmp_path):
+        """No recognisable price and no history: nothing is published.
+
+        It used to publish fixed 14395 / 15704 / 290 as today's rates.
+        """
         gold_path, fuel_path = self._paths(tmp_path)
         original_gold = data_engine.PATHS["gold"]
         original_fuel = data_engine.PATHS["fuel"]
@@ -791,15 +839,13 @@ class TestSyncFinanceFallbacks:
             data_engine.PATHS["gold"] = original_gold
             data_engine.PATHS["fuel"] = original_fuel
 
-        content = open(gold_path, encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        # Fallback values defined in data_engine.py
-        assert data["gold22k"]["price"] == 14395
-        assert data["gold24k"]["price"] == 15704
-        assert data["silver"]["price"] == 290.00
+        assert not os.path.exists(gold_path)
 
-    def test_fuel_uses_fallback_when_regex_finds_no_match(self, tmp_path):
+    def test_fuel_writes_nothing_when_no_price_is_found(self, tmp_path):
+        """No price on any page and no earlier file: nothing is published.
+
+        It used to publish fixed 107.41 / 97.82 / 803 / 72.8 as today's prices.
+        """
         gold_path, fuel_path = self._paths(tmp_path)
         original_gold = data_engine.PATHS["gold"]
         original_fuel = data_engine.PATHS["fuel"]
@@ -807,138 +853,160 @@ class TestSyncFinanceFallbacks:
         data_engine.PATHS["fuel"] = fuel_path
         try:
             with patch.object(data_engine, "requests") as mock_req:
-                mock_req.get.side_effect = [
-                    _make_mock_response(_GOLD_HTML),
-                    _make_mock_response("<html>No prices here</html>"),
-                ]
+                mock_req.get.return_value = _make_mock_response("<html>No prices here</html>")
                 data_engine.sync_finance()
         finally:
             data_engine.PATHS["gold"] = original_gold
             data_engine.PATHS["fuel"] = original_fuel
 
-        content = open(fuel_path, encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        assert data["petrol"]["price"] == 107.41
-        assert data["diesel"]["price"] == 97.82
+        assert not os.path.exists(fuel_path)
+
+class TestSyncFuelNoInventedPrices:
+    """sync_fuel publishes only scraped prices; a price it could not read this
+    run carries the previous real value and is listed in staleFields."""
+
+    PAGES = {
+        "petrol": '<div id="gr_intro_content"><b>108.50</b></div>',
+        "diesel": '<div id="gr_intro_content"><b>98.10</b></div>',
+        "lpg": "LPG Price: ₹ 905.00",
+        "cng": "CNG Price: ₹ 74.5",
+    }
+
+    def _run(self, tmp_path, pages, previous=None):
+        fuel_path = str(tmp_path / "fuelPrices.js")
+        if previous is not None:
+            data_engine.write_js_module(fuel_path, "fuelPrices", previous)
+
+        def fake_get(url):
+            for key, html in pages.items():
+                if f"/{key}-price" in url:
+                    return _make_mock_response(f"<html><body>{html}</body></html>")
+            return _make_mock_response("<html></html>", status=404)
+
+        original = data_engine.PATHS["fuel"]
+        data_engine.PATHS["fuel"] = fuel_path
+        try:
+            with patch.object(data_engine, "http_get", side_effect=fake_get), \
+                 patch.object(data_engine, "sync_to_redis"), \
+                 patch.object(data_engine, "get_recent_news_for_entity", return_value=[]):
+                result = data_engine.sync_fuel()
+        finally:
+            data_engine.PATHS["fuel"] = original
+        if not os.path.exists(fuel_path):
+            return result, None
+        return result, json.loads(re.search(r"= (\{[\s\S]*\});", open(fuel_path, encoding="utf-8").read()).group(1))
+
+    def _previous(self):
+        return {
+            "updatedAt": "2026-10-01T06:00:00Z", "date": "2026-10-01", "city": "Hyderabad",
+            "petrol": {"price": 107.0}, "diesel": {"price": 97.0},
+            "lpgHousehold": {"price": 900.0, "label": "LPG Domestic"},
+            "cngVehicle": {"price": 74.0, "label": "CNG Vehicle"},
+        }
+
+    def test_all_prices_scraped(self, tmp_path):
+        _, data = self._run(tmp_path, self.PAGES)
+        assert (data["petrol"]["price"], data["diesel"]["price"]) == (108.5, 98.1)
+        assert (data["lpgHousehold"]["price"], data["cngVehicle"]["price"]) == (905.0, 74.5)
+        assert data["staleFields"] == []
+
+    def test_unread_price_carries_previous_real_value_and_is_marked(self, tmp_path):
+        pages = {k: v for k, v in self.PAGES.items() if k != "lpg"}
+        _, data = self._run(tmp_path, pages, previous=self._previous())
+        assert data["lpgHousehold"]["price"] == 900.0
+        assert data["staleFields"] == ["lpgHousehold"]
+
+    def test_petrol_and_diesel_unread_keeps_the_previous_file(self, tmp_path):
+        pages = {k: v for k, v in self.PAGES.items() if k in ("lpg", "cng")}
+        result, data = self._run(tmp_path, pages, previous=self._previous())
+        assert result is None
+        assert data["date"] == "2026-10-01" and data["petrol"]["price"] == 107.0
+
+    def test_unread_price_with_no_previous_value_writes_nothing(self, tmp_path):
+        pages = {k: v for k, v in self.PAGES.items() if k != "cng"}
+        result, data = self._run(tmp_path, pages)
+        assert result is None and data is None
 
 
 class TestSyncFinanceHistoryTracking:
-    """sync_finance maintains, deduplicates, and caps the gold price history."""
+    """sync_gold keeps a dated price history and never invents a reading.
+
+    The scrapers are stubbed directly: the old tests fed requests a mocked
+    page the current multi-source scrapers cannot parse, so they exercised
+    stale mode by accident and failed.
+    """
+
+    TODAY = data_engine.NOW[:10]
+
+    def _day(self, offset):
+        base = datetime.strptime(self.TODAY, "%Y-%m-%d")
+        return (base + timedelta(days=offset)).strftime("%Y-%m-%d")
+
+    def _entry(self, date, g22=14400.0, g24=15700.0, silver=290.0):
+        return {"date": date, "gold22k": g22, "gold24k": g24, "silver": silver}
 
     def _write_gold_file(self, path, history):
-        """Pre-seed a goldRates.js with an existing history array."""
-        data = {
-            "city": "Hyderabad",
-            "date": "2026-04-05",
-            "gold22k": {"price": 7100, "change": 0, "unit": "₹/gram"},
-            "gold24k": {"price": 7750, "change": 0, "unit": "₹/gram"},
-            "silver": {"price": 95.0, "change": 0, "unit": "₹/gram"},
-            "history": history,
-        }
+        data = {"city": "Hyderabad", "date": history[-1]["date"] if history else None,
+                "history": history}
         data_engine.write_js_module(path, "goldRates", data)
 
-    def _run_finance_sync(self, tmp_path):
-        with patch.object(data_engine, "requests") as mock_req:
-            mock_req.get.side_effect = [
-                _make_mock_response(_GOLD_HTML),
-                _make_mock_response(_FUEL_HTML),
-            ]
-            data_engine.sync_finance()
-
-    def test_new_entry_appended_to_history(self, tmp_path):
+    def _run(self, tmp_path, history, chennai=None, mint=None):
         gold_path = str(tmp_path / "goldRates.js")
-        fuel_path = str(tmp_path / "fuelPrices.js")
-        existing_history = [{"date": "2026-04-05", "gold22k": 7100, "gold24k": 7750, "silver": 95.0}]
-        self._write_gold_file(gold_path, existing_history)
-
-        original_gold = data_engine.PATHS["gold"]
-        original_fuel = data_engine.PATHS["fuel"]
+        if history is not None:
+            self._write_gold_file(gold_path, history)
+        original = data_engine.PATHS["gold"]
         data_engine.PATHS["gold"] = gold_path
-        data_engine.PATHS["fuel"] = fuel_path
         try:
-            self._run_finance_sync(tmp_path)
+            with patch.object(data_engine, "_scrape_live_chennai", return_value=chennai or []), \
+                 patch.object(data_engine, "_scrape_live_mint", return_value=mint or []), \
+                 patch.object(data_engine, "sync_to_redis"), \
+                 patch.object(data_engine, "get_recent_news_for_entity", return_value=[]):
+                result = data_engine.sync_gold()
         finally:
-            data_engine.PATHS["gold"] = original_gold
-            data_engine.PATHS["fuel"] = original_fuel
-
+            data_engine.PATHS["gold"] = original
+        if not os.path.exists(gold_path):
+            return result, None
         content = open(gold_path, encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        assert len(data["history"]) == 2
+        return result, json.loads(re.search(r"= (\{[\s\S]*\});", content).group(1))
 
-    def test_same_date_entry_deduplicated(self, tmp_path):
-        gold_path = str(tmp_path / "goldRates.js")
-        fuel_path = str(tmp_path / "fuelPrices.js")
-        today = datetime.now().strftime("%Y-%m-%d")
-        existing_history = [{"date": today, "gold22k": 7000, "gold24k": 7600, "silver": 90.0}]
-        self._write_gold_file(gold_path, existing_history)
-
-        original_gold = data_engine.PATHS["gold"]
-        original_fuel = data_engine.PATHS["fuel"]
-        data_engine.PATHS["gold"] = gold_path
-        data_engine.PATHS["fuel"] = fuel_path
-        try:
-            self._run_finance_sync(tmp_path)
-        finally:
-            data_engine.PATHS["gold"] = original_gold
-            data_engine.PATHS["fuel"] = original_fuel
-
-        content = open(gold_path, encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        today_entries = [h for h in data["history"] if h["date"] == today]
-        assert len(today_entries) == 1
-
-    def test_history_capped_at_seven_days(self, tmp_path):
-        gold_path = str(tmp_path / "goldRates.js")
-        fuel_path = str(tmp_path / "fuelPrices.js")
-        # Pre-seed with 7 older entries
-        existing_history = [
-            {"date": f"2026-03-{30 - i:02d}", "gold22k": 7000, "gold24k": 7600, "silver": 90.0}
-            for i in range(7)
-        ]
-        self._write_gold_file(gold_path, existing_history)
-
-        original_gold = data_engine.PATHS["gold"]
-        original_fuel = data_engine.PATHS["fuel"]
-        data_engine.PATHS["gold"] = gold_path
-        data_engine.PATHS["fuel"] = fuel_path
-        try:
-            self._run_finance_sync(tmp_path)
-        finally:
-            data_engine.PATHS["gold"] = original_gold
-            data_engine.PATHS["fuel"] = original_fuel
-
-        content = open(gold_path, encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        assert len(data["history"]) <= 7
+    def test_fresh_reading_is_appended_to_history(self, tmp_path):
+        _, data = self._run(tmp_path, [self._entry(self._day(-1))],
+                            chennai=[self._entry(self.TODAY, 14500, 15800, 291)])
+        assert [h["date"] for h in data["history"]] == [self._day(-1), self.TODAY]
+        assert data["isStale"] is False
 
     def test_day_over_day_change_computed(self, tmp_path):
-        gold_path = str(tmp_path / "goldRates.js")
-        fuel_path = str(tmp_path / "fuelPrices.js")
-        yesterday = "2026-04-05"
-        existing_history = [{"date": yesterday, "gold22k": 7080, "gold24k": 7720, "silver": 94.0}]
-        self._write_gold_file(gold_path, existing_history)
+        _, data = self._run(tmp_path, [self._entry(self._day(-1), 14400, 15700, 290)],
+                            chennai=[self._entry(self.TODAY, 14500, 15810, 291)])
+        assert data["gold22k"]["change"] == 100
+        assert data["gold24k"]["change"] == 110
 
-        original_gold = data_engine.PATHS["gold"]
-        original_fuel = data_engine.PATHS["fuel"]
-        data_engine.PATHS["gold"] = gold_path
-        data_engine.PATHS["fuel"] = fuel_path
-        try:
-            self._run_finance_sync(tmp_path)
-        finally:
-            data_engine.PATHS["gold"] = original_gold
-            data_engine.PATHS["fuel"] = original_fuel
+    def test_same_date_entry_deduplicated(self, tmp_path):
+        _, data = self._run(tmp_path, [self._entry(self.TODAY, 14000, 15300)],
+                            chennai=[self._entry(self.TODAY, 14500, 15800)])
+        assert len([h for h in data["history"] if h["date"] == self.TODAY]) == 1
 
-        content = open(gold_path, encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        # 7180 (today) - 7080 (yesterday) = 100
-        assert data["gold22k"]["change"] == round(data["gold22k"]["price"] - 7080, 2)
-        # 7830 (today) - 7720 (yesterday) = 110
-        assert data["gold24k"]["change"] == round(data["gold24k"]["price"] - 7720, 2)
+    def test_history_capped_at_seven_days(self, tmp_path):
+        history = [self._entry(self._day(-i)) for i in range(12, 0, -1)]
+        _, data = self._run(tmp_path, history, chennai=[self._entry(self.TODAY)])
+        assert len(data["history"]) <= 7
+
+    def test_stale_run_does_not_record_a_price_for_today(self, tmp_path):
+        # No source has today's price: keep the last real reading, dated as
+        # it was, instead of copying it into history as "today" with change 0.
+        history = [self._entry(self._day(-2), 14300, 15600), self._entry(self._day(-1), 14400, 15700)]
+        _, data = self._run(tmp_path, history)
+        assert data["isStale"] is True
+        assert [h["date"] for h in data["history"]] == [self._day(-2), self._day(-1)]
+        assert data["date"] == self._day(-1)
+        assert data["gold22k"]["price"] == 14400
+        assert data["gold22k"]["change"] == 100
+
+    def test_no_sources_and_no_history_writes_nothing(self, tmp_path):
+        # Used to publish fixed 15704 / 14395 / 290 as if they were today's rates.
+        result, data = self._run(tmp_path, None)
+        assert result is None
+        assert data is None
 
 
 # ═══════════════════════════════════════════════════════════════════════════
