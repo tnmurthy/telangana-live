@@ -131,6 +131,15 @@ Our directory outlines available services, including free doctor consultations, 
 
 Every story links to the outlet that reported it and shows when it was published. Only stories from the last two weeks are shown, so a section can be empty when there is no recent local news.`
   },
+  '/advertise': {
+    title: 'Advertise on Telangana.live',
+    description: 'Reach Telangana residents who check Telangana.live for power, water, rates and local news. Sponsor a banner, sidebar card or area page.',
+    h1: 'Advertise on Telangana.live',
+    h2s: ['Top banner', 'Sidebar card', 'Area page spotlight'],
+    content: `People across Telangana use Telangana.live to check power and water updates, gold and fuel rates, weather and local news. Local businesses can sponsor a desktop top banner, a sidebar card beside the daily rates, or a spotlight on the page for the district or locality they serve.
+
+Every paid placement is labelled Sponsored, current visitor figures are shared before payment, and no ads run on emergency pages. Send an enquiry from this page and we will reply.`
+  },
   '/water-supply': {
     title: 'Telangana Water Supply Schedule & Tanker Booking - Telangana.live',
     description: 'Track municipal water supply timings, water board reservoir storage, and book drinking water tankers online.',

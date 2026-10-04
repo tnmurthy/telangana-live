@@ -34,6 +34,7 @@ const NewsListingPage = lazy(() => import('./pages/NewsListingPage'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const ContentAdminCockpit = lazy(() => import('./pages/ContentAdminCockpit'));
 const TechPulsePage = lazy(() => import('./pages/TechPulsePage'));
+const AdvertisePage = lazy(() => import('./pages/AdvertisePage'));
 const EmergencyContactsPage = lazy(() => import('./pages/EmergencyContactsPage'));
 const WaterSupplyPage = lazy(() => import('./pages/WaterSupplyPage'));
 const RationPDSPage = lazy(() => import('./pages/RationPDSPage'));
@@ -113,6 +114,7 @@ const routeDefs = [
   { path: '/admin/cockpit', element: <ContentAdminCockpit /> },
   // Hidden until rebuilt on real sources (TL-17); the URL stays valid.
   { path: '/ai-pulse', element: <TechPulsePage /> },
+  { path: '/advertise', element: <AdvertisePage /> },
   { path: '/emergency-contacts', element: <EmergencyContactsPage /> },
   { path: '/emergency', element: <EmergencyContactsPage /> },
   { path: '/water-supply', element: <WaterSupplyPage /> },

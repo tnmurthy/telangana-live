@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Icons } from '../components/Icons';
 import { partners } from '../data/partners';
 import PartnerCard from '../components/PartnerCard';
@@ -220,16 +220,26 @@ export default function SubRegionPage() {
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                             </span> Partner Spotlight
                         </h3>
-                        <p className="section-subtitle">Local businesses & services in {meta.title}</p>
+                        <p className="section-subtitle">Feature your business on the {meta.title} page</p>
                     </div>
-                    <span className="date-badge">Sponsored</span>
+
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {regionPartners.map(partner => (
-                        <PartnerCard key={partner.id} partner={partner} variant="district" />
-                    ))}
-                </div>
+                {regionPartners.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {regionPartners.map(partner => (
+                            <PartnerCard key={partner.id} partner={partner} variant="district" />
+                        ))}
+                    </div>
+                ) : (
+                    <Link to="/advertise" className="glass-card p-6 flex items-center justify-between gap-4 border border-dashed border-heritage-gold/30 hover:border-heritage-gold/60 transition-colors">
+                        <div>
+                            <p className="text-white font-bold">Your business here</p>
+                            <p className="text-sm text-text-secondary mt-1">Reach people checking local updates for {meta.title}. Clearly labelled as sponsored.</p>
+                        </div>
+                        <span className="text-heritage-gold font-bold text-sm whitespace-nowrap">See slots →</span>
+                    </Link>
+                )}
             </section>
 
             {/* Local Utilities & Data */}

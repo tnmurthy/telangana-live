@@ -5,7 +5,7 @@ import LeftSidebar from './LeftSidebar';
 import RightSidebar from './RightSidebar';
 import DateTimeBar from './DateTimeBar';
 import NewsTicker from './NewsTicker';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 import CrisisDashboard from './CrisisDashboard';
 import HeatwavePanel from './HeatwavePanel';
@@ -61,7 +61,7 @@ const MainLayout = ({ children }) => {
         <div className="hidden md:flex items-center justify-between px-6 py-2.5 bg-slate-950/80 border-b border-white/10 backdrop-blur-md text-xs z-[100] relative">
           <div className="flex items-center gap-3">
             <span className="px-1.5 py-0.5 rounded bg-heritage-gold/20 text-heritage-gold font-bold uppercase tracking-wider border border-heritage-gold/30">
-              Sponsored
+              Featured service
             </span>
             <span className="text-text-secondary">
               High-speed fiber broadband across Telangana. Get connected with <strong className="text-white">T-Fiber Broadband</strong> today starting at ₹399/mo.
@@ -69,6 +69,9 @@ const MainLayout = ({ children }) => {
             <a href="https://tfiber.telangana.gov.in" target="_blank" rel="noopener noreferrer" className="text-heritage-gold hover:underline font-bold ml-2">
               Apply Now &rarr;
             </a>
+            <Link to="/advertise" className="text-text-muted hover:text-white underline-offset-2 hover:underline ml-3">
+              Advertise here
+            </Link>
           </div>
           <button 
             onClick={() => setShowTopAd(false)} 
@@ -123,7 +126,7 @@ const MainLayout = ({ children }) => {
           <div className="flex-1 mr-3">
             <div className="flex items-center gap-1.5 mb-1">
               <span className="text-[8px] px-1 py-0.2 rounded bg-heritage-gold/20 text-heritage-gold font-bold uppercase border border-heritage-gold/30">
-                Partner
+                Featured
               </span>
               <span className="text-[10px] font-bold text-white">T-Hub Hyderabad</span>
             </div>

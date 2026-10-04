@@ -25,8 +25,19 @@ const SPONSORS = [
         link: "https://tourism.telangana.gov.in",
         image: "🕌",
         color: "from-amber-500 to-orange-600"
+    },
+    {
+        title: "Advertise on Telangana.live",
+        description: "Reach residents in the area you serve with a clearly labelled sponsored card.",
+        cta: "See slots",
+        link: "/advertise",
+        internal: true,
+        image: "📣",
+        color: "from-emerald-600 to-teal-500"
     }
 ];
+// These are house promotions for public services, not paid placements; they
+// used to be labelled "Sponsored Partner".
 
 export default function ProgrammaticAd({ className = "", mode = "sponsor", adSlot = "8472910394" }) {
     const [loading, setLoading] = useState(true);
@@ -109,7 +120,7 @@ export default function ProgrammaticAd({ className = "", mode = "sponsor", adSlo
                     <>
                         <div className="flex items-center justify-between mb-3">
                             <span className="text-[9px] px-2 py-0.5 rounded bg-heritage-gold/10 text-heritage-gold font-bold uppercase tracking-wider border border-heritage-gold/20">
-                                Sponsored Partner
+                                {ad.internal ? 'Advertise' : 'Featured service'}
                             </span>
                             <span className="text-[18px] p-1.5 rounded-lg bg-white/5 border border-white/10">{ad.image}</span>
                         </div>
@@ -127,7 +138,7 @@ export default function ProgrammaticAd({ className = "", mode = "sponsor", adSlo
                         <div className="mt-auto">
                             <a
                                 href={ad.link}
-                                target="_blank"
+                                target={ad.internal ? undefined : "_blank"}
                                 rel="noopener noreferrer"
                                 className={`w-full inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold text-slate-950 bg-gradient-to-r ${ad.color || 'from-heritage-gold to-yellow-500'} rounded-xl hover:shadow-[0_0_15px_rgba(212,175,55,0.2)] transition-all duration-300`}
                             >
