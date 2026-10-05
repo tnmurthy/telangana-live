@@ -21,13 +21,13 @@ const NewsListingPage = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://telangana.live/dashboard"
+        "item": "https://www.telangana.live/dashboard"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Civic News",
-        "item": "https://telangana.live/news"
+        "item": "https://www.telangana.live/news"
       }
     ]
   };
@@ -89,10 +89,10 @@ const NewsListingPage = () => {
       <Helmet>
         <title>Telangana Civic News - Real-Time Updates & AI Summaries | Telangana.live</title>
         <meta name="description" content="Latest civic news from Hyderabad and across Telangana. Local government updates, community reports, and AI-powered news summaries." />
-        <link rel="canonical" href="https://telangana.live/news" />
+        <link rel="canonical" href="https://www.telangana.live/news" />
         <meta property="og:title" content="Telangana Civic News - Real-Time Updates & AI Summaries" />
         <meta property="og:description" content="Latest civic news from Hyderabad and across Telangana. Local government updates, community reports, and AI-powered news summaries." />
-        <meta property="og:url" content="https://telangana.live/news" />
+        <meta property="og:url" content="https://www.telangana.live/news" />
         <meta name="twitter:title" content="Telangana Civic News - Real-Time Updates & AI Summaries" />
       </Helmet>
       {/* Header Section */}

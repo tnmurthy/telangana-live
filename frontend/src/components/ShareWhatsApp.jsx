@@ -17,7 +17,7 @@ const generateWACaption = (type, data, customTitle, customLink) => {
             return `Weather Alert for ${data.district}: ${data.temp}°C, ${data.condition}. ${base}`;
         case 'custom':
             const title = customTitle || (data && data.title) || "Check this out";
-            const link = customLink || (data && data.link) || "https://telangana.live";
+            const link = customLink || (data && data.link) || "https://www.telangana.live";
             return `${title} - ${link}`;
         default:
             return base;

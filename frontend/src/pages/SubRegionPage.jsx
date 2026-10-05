@@ -38,13 +38,13 @@ export default function SubRegionPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://telangana.live/dashboard"
+                "item": "https://www.telangana.live/dashboard"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": meta.title,
-                "item": `https://telangana.live/${region || 'hyderabad'}`
+                "item": `https://www.telangana.live/${region || 'hyderabad'}`
             }
         ]
     };
@@ -159,7 +159,7 @@ export default function SubRegionPage() {
                 <meta property="og:title" content={`${meta.title} News & Local Updates - Telangana.live`} />
                 <meta property="og:description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content={`https://telangana.live/${region || 'hyderabad'}`} />
+                <meta property="og:url" content={`https://www.telangana.live/${region || 'hyderabad'}`} />
                 <meta property="og:site_name" content="Telangana.live" />
                 
                 {/* Twitter Card Meta Tags */}
@@ -168,7 +168,7 @@ export default function SubRegionPage() {
                 <meta name="twitter:description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
                 
                 {/* Canonical URL */}
-                <link rel="canonical" href={`https://telangana.live/${region || 'hyderabad'}`} />
+                <link rel="canonical" href={`https://www.telangana.live/${region || 'hyderabad'}`} />
             </Helmet>
             {/* Region Header */}
             <div className="rounded-3xl border border-white/10 bg-[#15181d] section-block relative overflow-hidden shadow-xl">

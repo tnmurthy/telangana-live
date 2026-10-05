@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const districts = require('../src/data/districts.json');
 
-const BASE_URL = 'https://telangana.live';
+const BASE_URL = 'https://www.telangana.live';
 const DIST_DIR = path.join(__dirname, '../dist');
 const TEMPLATE_PATH = path.join(DIST_DIR, 'index.html');
 
@@ -397,7 +397,7 @@ function prerenderRoute(routePath, meta) {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://telangana.live/"
+          "item": "https://www.telangana.live/"
         },
         {
           "@type": "ListItem",
@@ -429,14 +429,14 @@ function prerenderRoute(routePath, meta) {
           ${headingListHtml}
           <h3>Navigational Links</h3>
           <ul>
-            <li><a href="https://telangana.live/dashboard">Civic Intelligence Dashboard</a></li>
-            <li><a href="https://telangana.live/news">Live Municipal News & Briefings</a></li>
-            <li><a href="https://telangana.live/rates/gold">Today's Gold & Silver Rates in Hyderabad</a></li>
-            <li><a href="https://telangana.live/rates/fuel">Current Petrol & Diesel Prices in Telangana</a></li>
-            <li><a href="https://telangana.live/schemes">Telangana Government Schemes Directory</a></li>
-            <li><a href="https://telangana.live/emergency-contacts">Emergency Helplines & SOS Contacts</a></li>
-            <li><a href="https://telangana.live/reservoirs">Reservoir Levels & Storage Monitor</a></li>
-            <li><a href="https://telangana.live/meeseva">MeeSeva Online Citizen Services Guide</a></li>
+            <li><a href="https://www.telangana.live/dashboard">Civic Intelligence Dashboard</a></li>
+            <li><a href="https://www.telangana.live/news">Live Municipal News & Briefings</a></li>
+            <li><a href="https://www.telangana.live/rates/gold">Today's Gold & Silver Rates in Hyderabad</a></li>
+            <li><a href="https://www.telangana.live/rates/fuel">Current Petrol & Diesel Prices in Telangana</a></li>
+            <li><a href="https://www.telangana.live/schemes">Telangana Government Schemes Directory</a></li>
+            <li><a href="https://www.telangana.live/emergency-contacts">Emergency Helplines & SOS Contacts</a></li>
+            <li><a href="https://www.telangana.live/reservoirs">Reservoir Levels & Storage Monitor</a></li>
+            <li><a href="https://www.telangana.live/meeseva">MeeSeva Online Citizen Services Guide</a></li>
           </ul>
         </div>
       </noscript>

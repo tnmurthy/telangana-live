@@ -10,7 +10,7 @@ const SplashScreen = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Telangana.live",
-    "url": "https://telangana.live/",
+    "url": "https://www.telangana.live/",
     "description": "Telangana local information portal with district pages, government links, news, services, alerts and everyday civic utilities."
   };
 
@@ -18,10 +18,10 @@ const SplashScreen = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Telangana.live",
-    "url": "https://telangana.live/",
+    "url": "https://www.telangana.live/",
     "sameAs": [
-      "https://telangana.live/dashboard",
-      "https://telangana.live/government"
+      "https://www.telangana.live/dashboard",
+      "https://www.telangana.live/government"
     ]
   };
 
@@ -36,13 +36,13 @@ const SplashScreen = () => {
           name="description"
           content="Telangana.live is a local information portal for Telangana with district pages, government directory links, news, services, alerts and civic utilities."
         />
-        <link rel="canonical" href="https://telangana.live/" />
+        <link rel="canonical" href="https://www.telangana.live/" />
         <meta property="og:title" content="Telangana.live - Telangana local information, district pages and government links" />
         <meta
           property="og:description"
           content="Telangana.live is a local information portal for Telangana with district pages, government directory links, news, services, alerts and civic utilities."
         />
-        <meta property="og:url" content="https://telangana.live/" />
+        <meta property="og:url" content="https://www.telangana.live/" />
         <meta name="twitter:title" content="Telangana.live - Telangana local information, district pages and government links" />
       </Helmet>
 

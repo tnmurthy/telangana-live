@@ -56,7 +56,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Telangana.live Dashboard",
-    "url": "https://telangana.live/dashboard",
+    "url": "https://www.telangana.live/dashboard",
     "description": "Live civic dashboard for Hyderabad and Telangana with real-time news, water, power, rates, services and alerts.",
     "about": {
       "@type": "GovernmentOrganization",
@@ -103,13 +103,13 @@ export default function HomePage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://telangana.live/"
+        "item": "https://www.telangana.live/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Dashboard",
-        "item": "https://telangana.live/dashboard"
+        "item": "https://www.telangana.live/dashboard"
       }
     ]
   };
@@ -206,10 +206,10 @@ export default function HomePage() {
       <Helmet>
         <title>Telangana.live - Real-Time Civic Intelligence Dashboard</title>
         <meta name="description" content="Live dashboard for Hyderabad and Telangana. Real-time news, water schedules, power alerts, daily rates, and essential civic services." />
-        <link rel="canonical" href="https://telangana.live/dashboard" />
+        <link rel="canonical" href="https://www.telangana.live/dashboard" />
         <meta property="og:title" content="Telangana.live - Real-Time Civic Intelligence Dashboard" />
         <meta property="og:description" content="Live dashboard for Hyderabad and Telangana. Real-time news, water schedules, power alerts, and daily rates." />
-        <meta property="og:url" content="https://telangana.live/dashboard" />
+        <meta property="og:url" content="https://www.telangana.live/dashboard" />
         <meta name="twitter:title" content="Telangana.live - Real-Time Civic Intelligence Dashboard" />
       </Helmet>
       {/* Liquid Header section */}

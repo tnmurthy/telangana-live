@@ -196,12 +196,12 @@ export default function ArticleModal({ article, onClose }) {
         "name": "Telangana Live",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://telangana.live/favicon.svg"
+          "url": "https://www.telangana.live/favicon.svg"
         }
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": article.link || "https://telangana.live"
+        "@id": article.link || "https://www.telangana.live"
       }
     };
 

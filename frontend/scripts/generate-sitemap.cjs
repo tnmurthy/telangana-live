@@ -3,7 +3,7 @@ const path = require('path');
 
 const districts = require('../src/data/districts.json');
 
-const BASE_URL = 'https://telangana.live';
+const BASE_URL = 'https://www.telangana.live';
 
 const staticRoutes = [
   { url: '/', changefreq: 'always', priority: 1.0 },

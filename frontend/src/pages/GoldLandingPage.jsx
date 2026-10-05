@@ -19,13 +19,13 @@ export default function GoldLandingPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://telangana.live/dashboard"
+                "item": "https://www.telangana.live/dashboard"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Gold Rates",
-                "item": "https://telangana.live/rates/gold"
+                "item": "https://www.telangana.live/rates/gold"
             }
         ]
     };
@@ -53,10 +53,10 @@ export default function GoldLandingPage() {
             <Helmet>
                 <title>Live Gold Rates in Hyderabad - 22K & 24K Gold Today | Telangana.live</title>
                 <meta name="description" content={`Check current gold rates in Hyderabad for 22K and 24K gold. Live silver prices, 7-day market history, and daily updates for ${currentMonthYear}.`} />
-                <link rel="canonical" href="https://telangana.live/rates/gold" />
+                <link rel="canonical" href="https://www.telangana.live/rates/gold" />
                 <meta property="og:title" content="Live Gold Rates in Hyderabad - 22K & 24K Gold Today" />
                 <meta property="og:description" content={`Check current gold rates in Hyderabad for 22K and 24K gold. Live silver prices and daily updates for ${currentMonthYear}.`} />
-                <meta property="og:url" content="https://telangana.live/rates/gold" />
+                <meta property="og:url" content="https://www.telangana.live/rates/gold" />
                 <meta name="twitter:title" content="Live Gold Rates in Hyderabad - 22K & 24K Gold Today" />
             </Helmet>
             <div className="glass-card section-block relative overflow-hidden">

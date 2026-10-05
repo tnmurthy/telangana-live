@@ -1,492 +1,497 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://telangana.live/</loc>
+    <loc>https://www.telangana.live/</loc>
     <changefreq>always</changefreq>
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://telangana.live/news</loc>
+    <loc>https://www.telangana.live/news</loc>
     <changefreq>always</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://telangana.live/weather</loc>
+    <loc>https://www.telangana.live/weather</loc>
     <changefreq>hourly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telangana.live/rates/fuel</loc>
+    <loc>https://www.telangana.live/rates/fuel</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telangana.live/rates/gold</loc>
+    <loc>https://www.telangana.live/rates/gold</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telangana.live/reservoirs</loc>
+    <loc>https://www.telangana.live/reservoirs</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/schemes</loc>
+    <loc>https://www.telangana.live/schemes</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/transport/metro</loc>
+    <loc>https://www.telangana.live/transport/metro</loc>
     <changefreq>hourly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/jobs</loc>
+    <loc>https://www.telangana.live/jobs</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telangana.live/classifieds</loc>
+    <loc>https://www.telangana.live/classifieds</loc>
     <changefreq>always</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telangana.live/ai-pulse</loc>
+    <loc>https://www.telangana.live/ai-pulse</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services</loc>
+    <loc>https://www.telangana.live/advertise</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.telangana.live/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telangana.live/events</loc>
+    <loc>https://www.telangana.live/events</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/panchang</loc>
+    <loc>https://www.telangana.live/panchang</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/budget</loc>
+    <loc>https://www.telangana.live/budget</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/politicians</loc>
+    <loc>https://www.telangana.live/politicians</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/government</loc>
+    <loc>https://www.telangana.live/government</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://telangana.live/property-tax</loc>
+    <loc>https://www.telangana.live/property-tax</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/hyderabad</loc>
+    <loc>https://www.telangana.live/hyderabad</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/cyberabad</loc>
+    <loc>https://www.telangana.live/cyberabad</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/malkajgiri</loc>
+    <loc>https://www.telangana.live/malkajgiri</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/warangal</loc>
+    <loc>https://www.telangana.live/warangal</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/karimnagar</loc>
+    <loc>https://www.telangana.live/karimnagar</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/nizamabad</loc>
+    <loc>https://www.telangana.live/nizamabad</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/khammam</loc>
+    <loc>https://www.telangana.live/khammam</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/nalgonda</loc>
+    <loc>https://www.telangana.live/nalgonda</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/mahbubnagar</loc>
+    <loc>https://www.telangana.live/mahbubnagar</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/adilabad</loc>
+    <loc>https://www.telangana.live/adilabad</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/bhadradri-kothagudem</loc>
+    <loc>https://www.telangana.live/bhadradri-kothagudem</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/jagtial</loc>
+    <loc>https://www.telangana.live/jagtial</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/jangaon</loc>
+    <loc>https://www.telangana.live/jangaon</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/jayashankar-bhupalpally</loc>
+    <loc>https://www.telangana.live/jayashankar-bhupalpally</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/jogulamba-gadwal</loc>
+    <loc>https://www.telangana.live/jogulamba-gadwal</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/kamareddy</loc>
+    <loc>https://www.telangana.live/kamareddy</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/kumuram-bheem-asifabad</loc>
+    <loc>https://www.telangana.live/kumuram-bheem-asifabad</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/mahabubabad</loc>
+    <loc>https://www.telangana.live/mahabubabad</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/mancherial</loc>
+    <loc>https://www.telangana.live/mancherial</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/medak</loc>
+    <loc>https://www.telangana.live/medak</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/medchal-malkajgiri</loc>
+    <loc>https://www.telangana.live/medchal-malkajgiri</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/mulugu</loc>
+    <loc>https://www.telangana.live/mulugu</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/nagarkurnool</loc>
+    <loc>https://www.telangana.live/nagarkurnool</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/narayanpet</loc>
+    <loc>https://www.telangana.live/narayanpet</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/nirmal</loc>
+    <loc>https://www.telangana.live/nirmal</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/peddapalli</loc>
+    <loc>https://www.telangana.live/peddapalli</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/rajanna-sircilla</loc>
+    <loc>https://www.telangana.live/rajanna-sircilla</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/rangareddy</loc>
+    <loc>https://www.telangana.live/rangareddy</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/sangareddy</loc>
+    <loc>https://www.telangana.live/sangareddy</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/siddipet</loc>
+    <loc>https://www.telangana.live/siddipet</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/suryapet</loc>
+    <loc>https://www.telangana.live/suryapet</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/vikarabad</loc>
+    <loc>https://www.telangana.live/vikarabad</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/wanaparthy</loc>
+    <loc>https://www.telangana.live/wanaparthy</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/yadadri-bhuvanagiri</loc>
+    <loc>https://www.telangana.live/yadadri-bhuvanagiri</loc>
     <changefreq>always</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/documents-certificates/birth-certificate</loc>
+    <loc>https://www.telangana.live/services/documents-certificates/birth-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/documents-certificates/caste-certificate</loc>
+    <loc>https://www.telangana.live/services/documents-certificates/caste-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/documents-certificates/death-certificate</loc>
+    <loc>https://www.telangana.live/services/documents-certificates/death-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/documents-certificates/ews-certificate</loc>
+    <loc>https://www.telangana.live/services/documents-certificates/ews-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/documents-certificates/family-membership-certificate</loc>
+    <loc>https://www.telangana.live/services/documents-certificates/family-membership-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/documents-certificates/income-certificate</loc>
+    <loc>https://www.telangana.live/services/documents-certificates/income-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/documents-certificates/residence-certificate</loc>
+    <loc>https://www.telangana.live/services/documents-certificates/residence-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/elections-voting/address-update</loc>
+    <loc>https://www.telangana.live/services/elections-voting/address-update</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/elections-voting/check-voter-list</loc>
+    <loc>https://www.telangana.live/services/elections-voting/check-voter-list</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/elections-voting/polling-booth</loc>
+    <loc>https://www.telangana.live/services/elections-voting/polling-booth</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/elections-voting/voter-registration</loc>
+    <loc>https://www.telangana.live/services/elections-voting/voter-registration</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/bills-taxes/electricity-bill-payment</loc>
+    <loc>https://www.telangana.live/services/bills-taxes/electricity-bill-payment</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/bills-taxes/property-tax</loc>
+    <loc>https://www.telangana.live/services/bills-taxes/property-tax</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/bills-taxes/rta-vehicle-tax</loc>
+    <loc>https://www.telangana.live/services/bills-taxes/rta-vehicle-tax</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/bills-taxes/traffic-challan</loc>
+    <loc>https://www.telangana.live/services/bills-taxes/traffic-challan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/bills-taxes/water-bill-payment</loc>
+    <loc>https://www.telangana.live/services/bills-taxes/water-bill-payment</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/land-property/building-permissions</loc>
+    <loc>https://www.telangana.live/services/land-property/building-permissions</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/land-property/encumbrance-certificate</loc>
+    <loc>https://www.telangana.live/services/land-property/encumbrance-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/land-property/land-records-dharani</loc>
+    <loc>https://www.telangana.live/services/land-property/land-records-dharani</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/land-property/mutation-patta-transfer</loc>
+    <loc>https://www.telangana.live/services/land-property/mutation-patta-transfer</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/land-property/property-registration</loc>
+    <loc>https://www.telangana.live/services/land-property/property-registration</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/ration-food-pensions/aasara-pension</loc>
+    <loc>https://www.telangana.live/services/ration-food-pensions/aasara-pension</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/ration-food-pensions/new-ration-card</loc>
+    <loc>https://www.telangana.live/services/ration-food-pensions/new-ration-card</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/ration-food-pensions/old-age-pension</loc>
+    <loc>https://www.telangana.live/services/ration-food-pensions/old-age-pension</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/ration-food-pensions/ration-card-update</loc>
+    <loc>https://www.telangana.live/services/ration-food-pensions/ration-card-update</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/ration-food-pensions/widow-disability-pension</loc>
+    <loc>https://www.telangana.live/services/ration-food-pensions/widow-disability-pension</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/jobs-education-scholarships/post-matric-scholarship</loc>
+    <loc>https://www.telangana.live/services/jobs-education-scholarships/post-matric-scholarship</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/jobs-education-scholarships/pre-matric-scholarship</loc>
+    <loc>https://www.telangana.live/services/jobs-education-scholarships/pre-matric-scholarship</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/jobs-education-scholarships/skill-development</loc>
+    <loc>https://www.telangana.live/services/jobs-education-scholarships/skill-development</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/jobs-education-scholarships/tspsc-jobs</loc>
+    <loc>https://www.telangana.live/services/jobs-education-scholarships/tspsc-jobs</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/complaints-grievances/ghmc-complaints</loc>
+    <loc>https://www.telangana.live/services/complaints-grievances/ghmc-complaints</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/complaints-grievances/pg-portal</loc>
+    <loc>https://www.telangana.live/services/complaints-grievances/pg-portal</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/complaints-grievances/prajavani</loc>
+    <loc>https://www.telangana.live/services/complaints-grievances/prajavani</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/complaints-grievances/road-civic-issues</loc>
+    <loc>https://www.telangana.live/services/complaints-grievances/road-civic-issues</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/police-safety/character-certificate</loc>
+    <loc>https://www.telangana.live/services/police-safety/character-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/police-safety/online-fir</loc>
+    <loc>https://www.telangana.live/services/police-safety/online-fir</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/police-safety/tenant-verification</loc>
+    <loc>https://www.telangana.live/services/police-safety/tenant-verification</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/police-safety/women-safety</loc>
+    <loc>https://www.telangana.live/services/police-safety/women-safety</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/rti-courts-legal/court-case-status</loc>
+    <loc>https://www.telangana.live/services/rti-courts-legal/court-case-status</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/rti-courts-legal/free-legal-aid</loc>
+    <loc>https://www.telangana.live/services/rti-courts-legal/free-legal-aid</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/rti-courts-legal/lok-adalat</loc>
+    <loc>https://www.telangana.live/services/rti-courts-legal/lok-adalat</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/rti-courts-legal/rti-application</loc>
+    <loc>https://www.telangana.live/services/rti-courts-legal/rti-application</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/health-social-welfare/aarogyasri</loc>
+    <loc>https://www.telangana.live/services/health-social-welfare/aarogyasri</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/health-social-welfare/basthi-dawakhana</loc>
+    <loc>https://www.telangana.live/services/health-social-welfare/basthi-dawakhana</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/health-social-welfare/disability-certificate</loc>
+    <loc>https://www.telangana.live/services/health-social-welfare/disability-certificate</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://telangana.live/services/health-social-welfare/welfare-schemes</loc>
+    <loc>https://www.telangana.live/services/health-social-welfare/welfare-schemes</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

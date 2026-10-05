@@ -15,13 +15,13 @@ export default function FuelLandingPage() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://telangana.live/dashboard"
+                "item": "https://www.telangana.live/dashboard"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Fuel Prices",
-                "item": "https://telangana.live/rates/fuel"
+                "item": "https://www.telangana.live/rates/fuel"
             }
         ]
     };
@@ -40,10 +40,10 @@ export default function FuelLandingPage() {
             <Helmet>
                 <title>Live Fuel Prices in Hyderabad - Petrol, Diesel & LPG Today | Telangana.live</title>
                 <meta name="description" content={`Check current petrol, diesel, LPG, and CNG prices in Hyderabad and across Telangana districts. Real-time fuel price updates for ${new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}.`} />
-                <link rel="canonical" href="https://telangana.live/rates/fuel" />
+                <link rel="canonical" href="https://www.telangana.live/rates/fuel" />
                 <meta property="og:title" content="Live Fuel Prices in Hyderabad - Petrol, Diesel & LPG Today" />
                 <meta property="og:description" content="Check current petrol, diesel, LPG, and CNG prices in Hyderabad and across Telangana districts. Real-time updates." />
-                <meta property="og:url" content="https://telangana.live/rates/fuel" />
+                <meta property="og:url" content="https://www.telangana.live/rates/fuel" />
                 <meta name="twitter:title" content="Live Fuel Prices in Hyderabad - Petrol, Diesel & LPG Today" />
             </Helmet>
             <div className="glass-card section-block relative overflow-hidden">

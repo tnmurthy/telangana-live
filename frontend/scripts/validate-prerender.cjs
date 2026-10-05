@@ -17,7 +17,7 @@ function main() {
   }
 
   const html = fs.readFileSync(DASHBOARD_INDEX, 'utf8');
-  if (!html.includes('href="https://telangana.live/dashboard"')) {
+  if (!html.includes('href="https://www.telangana.live/dashboard"')) {
     fail('missing canonical link for /dashboard');
   }
 
@@ -37,7 +37,7 @@ function main() {
     }
 
     const districtHtml = fs.readFileSync(districtIndex, 'utf8');
-    if (!districtHtml.includes(`href="https://telangana.live/${slug}"`)) {
+    if (!districtHtml.includes(`href="https://www.telangana.live/${slug}"`)) {
       fail(`missing canonical link for /${slug}`);
     }
 
