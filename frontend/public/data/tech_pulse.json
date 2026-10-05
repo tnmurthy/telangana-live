@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-04T16:56:49Z",
+  "generatedAt": "2026-10-05T06:04:43Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -47,6 +47,16 @@
       }
     ],
     "govt": [
+      {
+        "id": "tp-8badd2751c7a",
+        "category": "govt",
+        "title": "KTR hails Telangana space-tech startups after payloads reach orbit",
+        "source": "Telangana Today",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQ1dXc3FGc2NBVXFXWkt0aTRqS0dKM3VuVS1yY0ZmTVVPNnBJVVpkZVNnUDlOTkxRTWFTVTNpN2dZdTljMEtfeWJHX1I5ckd0SWJDNXdsTWNkNmk5OFgxMVppQ0FYOEExZkFtUXFPYWxseFlwQWY3N0ZYcDJWVVlEWjM4dlJOaDMzcmpOQ0pCdVhXX2p3VFdfZQ?oc=5",
+        "publishedAt": "2026-10-03T03:31:19Z",
+        "time": "3 Oct, 9:01 AM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-fdd009ec1bf1",
         "category": "govt",
@@ -95,16 +105,6 @@
         "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBctIBmAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBcg?oc=5",
         "publishedAt": "2026-09-30T09:18:07Z",
         "time": "30 Sep, 2:48 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-8bcb51feb612",
-        "category": "govt",
-        "title": "Hyderabad plans AI video tests at driving tracks",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTh0X0hfMkFDdkV6YV9DbF8ya19NUTZaZFU4MVJadjFKclBvbU9MTzVfcHlTRGpMWnV2ZllSdzBFVWhGYnA2S2w0RnVlS216dkR6R0RLR2YxcUtjX1YxYUJMODI2ZGNkWkRIZ2JIZk5vNlVod29EelhfUFhUQnRzTQ?oc=5",
-        "publishedAt": "2026-09-30T05:20:51Z",
-        "time": "30 Sep, 10:50 AM IST",
         "method": "typesafe"
       }
     ],
