@@ -142,5 +142,21 @@
     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd3lRbnY0R29tX1MzT1J0QzAxeFRIbGkyX04wN2ExemxlVmJlenNFOHB6SHVra0lyY1VjSU5lZ1RTQ21FdnFlVmFDaXd6SktDZjBOdUZGN1YwY01zTW5iUnFXclc2RlNTQ0ZMM2tBVGFpVG1yRnRFUVpmMTJQNHRaTGdOWQ?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd3lRbnY0R29tX1MzT1J0QzAxeFRIbGkyX04wN2ExemxlVmJlenNFOHB6SHVra0lyY1VjSU5lZ1RTQ21FdnFlVmFDaXd6SktDZjBOdUZGN1YwY01zTW5iUnFXclc2RlNTQ0ZMM2tBVGFpVG1yRnRFUVpmMTJQNHRaTGdOWQ?oc=5",
     "source": "hyderabadmail.com"
+  },
+  {
+    "id": "alert-96d267ac3045",
+    "type": "weather",
+    "severity": "low",
+    "title": "Telangana weather: Rain in 4 districts, cooler mornings ahead - Hyderabad Mail",
+    "message": "Telangana weather: Rain in 4 districts, cooler mornings ahead - Hyderabad Mail",
+    "description": "Telangana weather: Rain in 4 districts, cooler mornings ahead  Hyderabad Mail",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-05T18:30:38Z",
+    "publishedAt": "2026-10-05T04:08:46Z",
+    "time": "5 Oct, 9:38 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd3lRbnY0R29tX1MzT1J0QzAxeFRIbGkyX04wN2ExemxlVmJlenNFOHB6SHVra0lyY1VjSU5lZ1RTQ21FdnFlVmFDaXd6SktDZjBOdUZGN1YwY01zTW5iUnFXclc2RlNTQ0ZMM2tBVGFpVG1yRnRFUVpmMTJQNHRaTGdOWQ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd3lRbnY0R29tX1MzT1J0QzAxeFRIbGkyX04wN2ExemxlVmJlenNFOHB6SHVra0lyY1VjSU5lZ1RTQ21FdnFlVmFDaXd6SktDZjBOdUZGN1YwY01zTW5iUnFXclc2RlNTQ0ZMM2tBVGFpVG1yRnRFUVpmMTJQNHRaTGdOWQ?oc=5",
+    "source": "Hyderabad Mail"
   }
 ]
