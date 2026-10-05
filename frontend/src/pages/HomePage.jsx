@@ -206,7 +206,6 @@ export default function HomePage() {
       <Helmet>
         <title>Telangana.live - Real-Time Civic Intelligence Dashboard</title>
         <meta name="description" content="Live dashboard for Hyderabad and Telangana. Real-time news, water schedules, power alerts, daily rates, and essential civic services." />
-        <link rel="canonical" href="https://www.telangana.live/dashboard" />
         <meta property="og:title" content="Telangana.live - Real-Time Civic Intelligence Dashboard" />
         <meta property="og:description" content="Live dashboard for Hyderabad and Telangana. Real-time news, water schedules, power alerts, and daily rates." />
         <meta property="og:url" content="https://www.telangana.live/dashboard" />

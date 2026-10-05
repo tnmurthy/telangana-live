@@ -16,6 +16,7 @@ import BottomNav from './components/BottomNav';
 import ErrorBoundary from './components/ErrorBoundary';
 import { Icons } from './components/Icons';
 import MainLayout from './components/MainLayout';
+import RouteMeta from './components/RouteMeta';
 import BreakingNewsBanner from './components/BreakingNewsBanner';
 import PulseCounter from './components/PulseCounter';
 import StickyAnchorAd from './components/StickyAnchorAd';
@@ -169,6 +170,7 @@ function AppContent() {
   return (
     <LocaleProvider>
       <div className="min-h-screen">
+        <RouteMeta />
         <MainLayout isEmergencyActive={isEmergencyActive}>
           <ProactiveAlerts />
           <ErrorBoundary>

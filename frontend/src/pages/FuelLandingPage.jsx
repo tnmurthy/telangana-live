@@ -40,7 +40,6 @@ export default function FuelLandingPage() {
             <Helmet>
                 <title>Live Fuel Prices in Hyderabad - Petrol, Diesel & LPG Today | Telangana.live</title>
                 <meta name="description" content={`Check current petrol, diesel, LPG, and CNG prices in Hyderabad and across Telangana districts. Real-time fuel price updates for ${new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}.`} />
-                <link rel="canonical" href="https://www.telangana.live/rates/fuel" />
                 <meta property="og:title" content="Live Fuel Prices in Hyderabad - Petrol, Diesel & LPG Today" />
                 <meta property="og:description" content="Check current petrol, diesel, LPG, and CNG prices in Hyderabad and across Telangana districts. Real-time updates." />
                 <meta property="og:url" content="https://www.telangana.live/rates/fuel" />

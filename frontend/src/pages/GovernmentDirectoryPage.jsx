@@ -72,7 +72,6 @@ export default function GovernmentDirectoryPage() {
     <Helmet>
       <title>Telangana Government Directory | Telangana.live</title>
       <meta name="description" content="A Telangana-focused directory of official departments, state bodies, citizen services and district portals." />
-      <link rel="canonical" href="https://www.telangana.live/government" />
     </Helmet>
 
     <section className="relative overflow-hidden rounded-[28px] border border-heritage-gold/20 bg-[#101a15] px-6 py-8 sm:px-9 sm:py-10 shadow-2xl shadow-black/20">

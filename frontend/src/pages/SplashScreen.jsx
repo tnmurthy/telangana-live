@@ -36,7 +36,6 @@ const SplashScreen = () => {
           name="description"
           content="Telangana.live is a local information portal for Telangana with district pages, government directory links, news, services, alerts and civic utilities."
         />
-        <link rel="canonical" href="https://www.telangana.live/" />
         <meta property="og:title" content="Telangana.live - Telangana local information, district pages and government links" />
         <meta
           property="og:description"

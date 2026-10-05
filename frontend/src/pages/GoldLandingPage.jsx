@@ -53,7 +53,6 @@ export default function GoldLandingPage() {
             <Helmet>
                 <title>Live Gold Rates in Hyderabad - 22K & 24K Gold Today | Telangana.live</title>
                 <meta name="description" content={`Check current gold rates in Hyderabad for 22K and 24K gold. Live silver prices, 7-day market history, and daily updates for ${currentMonthYear}.`} />
-                <link rel="canonical" href="https://www.telangana.live/rates/gold" />
                 <meta property="og:title" content="Live Gold Rates in Hyderabad - 22K & 24K Gold Today" />
                 <meta property="og:description" content={`Check current gold rates in Hyderabad for 22K and 24K gold. Live silver prices and daily updates for ${currentMonthYear}.`} />
                 <meta property="og:url" content="https://www.telangana.live/rates/gold" />

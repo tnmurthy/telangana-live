@@ -5,6 +5,8 @@ import rehypeRaw from 'rehype-raw';
 import { ArrowLeft, BookOpen, Share2, Printer } from 'lucide-react';
 import { trackEvent } from '../hooks/usePageTracking';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { guideDescription } from '../utils/pageMeta';
 
 // Helper to recursively get text from children nodes
 const getText = (node) => {
@@ -69,6 +71,10 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="space-y-6 pb-20 max-w-5xl mx-auto px-4 mt-6 animate-fade-in print:p-0 print:m-0 print:pb-0">
+      <Helmet>
+        <title>{`${guide.title} in Telangana: Step-by-Step Guide | Telangana.live`}</title>
+        <meta name="description" content={guideDescription(guide.content)} />
+      </Helmet>
       {/* Top Navigation & Breadcrumbs */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 print:hidden">
         <nav className="flex items-center gap-2 text-xs text-text-muted" aria-label="Breadcrumb">

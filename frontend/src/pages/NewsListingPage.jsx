@@ -89,7 +89,6 @@ const NewsListingPage = () => {
       <Helmet>
         <title>Telangana Civic News - Real-Time Updates & AI Summaries | Telangana.live</title>
         <meta name="description" content="Latest civic news from Hyderabad and across Telangana. Local government updates, community reports, and AI-powered news summaries." />
-        <link rel="canonical" href="https://www.telangana.live/news" />
         <meta property="og:title" content="Telangana Civic News - Real-Time Updates & AI Summaries" />
         <meta property="og:description" content="Latest civic news from Hyderabad and across Telangana. Local government updates, community reports, and AI-powered news summaries." />
         <meta property="og:url" content="https://www.telangana.live/news" />

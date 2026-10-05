@@ -151,7 +151,7 @@ export default function SubRegionPage() {
     return (
         <div className="space-y-12 lg:space-y-16 animate-fade-in p-2 md:p-4 pb-24 max-w-7xl mx-auto">
             <Helmet>
-                <title>{meta.title} News & Local Updates - Telangana.live</title>
+                <title>{`${meta.title} News & Local Updates - Telangana.live`}</title>
                 <meta name="description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
                 <meta name="keywords" content={`${meta.district} news, ${meta.district} local updates, ${meta.district} news today, ${meta.district} power cuts, Telangana news`} />
                 
@@ -168,7 +168,6 @@ export default function SubRegionPage() {
                 <meta name="twitter:description" content={`Get the latest ${meta.title} news today, civic updates, daily rates, power cuts, and local services in ${meta.district}.`} />
                 
                 {/* Canonical URL */}
-                <link rel="canonical" href={`https://www.telangana.live/${region || 'hyderabad'}`} />
             </Helmet>
             {/* Region Header */}
             <div className="rounded-3xl border border-white/10 bg-[#15181d] section-block relative overflow-hidden shadow-xl">
