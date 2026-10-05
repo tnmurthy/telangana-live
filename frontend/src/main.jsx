@@ -3,9 +3,13 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
+import { loadPlausible } from './utils/plausible'
 import { AppProvider } from './context/AppContext.jsx'
 
 import { HelmetProvider } from 'react-helmet-async'
+
+// Cookieless analytics; off until VITE_PLAUSIBLE_DOMAIN is set.
+loadPlausible(import.meta.env.VITE_PLAUSIBLE_DOMAIN)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
