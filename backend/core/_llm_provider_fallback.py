@@ -8,11 +8,12 @@ Adding a new provider requires changes in exactly 4 places (all dicts):
     DEFAULT_MODELS, _CONFIG_KEYS, _AVAILABILITY, _DISPATCH
 """
 
+import logging
 import os
 import time
-import logging
+from typing import Any
+
 import requests
-from typing import Optional, Dict, Any, Callable
 
 logger = logging.getLogger(__name__)
 
@@ -55,14 +56,14 @@ FALLBACK_ORDER = ["gemini", "groq", "moonshot", "anthropic", "zai", "ollama"]
 
 # ── Provider config keys (maps provider → config dict key for its API key) ───
 
-_API_KEY_CFGKEYS: Dict[str, str] = {
+_API_KEY_CFGKEYS: dict[str, str] = {
     "groq":     "groq_api_key",
     "moonshot": "moonshot_api_key",
     "zai":      "z_ai_api_key",
     "anthropic": "anthropic_api_key",
 }
 
-_API_KEY_ENVVARS: Dict[str, str] = {
+_API_KEY_ENVVARS: dict[str, str] = {
     "groq":     "GROQ_API_KEY",
     "moonshot": "MOONSHOT_API_KEY",
     "zai":      "Z_AI_API_KEY",
@@ -70,24 +71,24 @@ _API_KEY_ENVVARS: Dict[str, str] = {
 }
 
 # Base URLs for OpenAI-compatible providers
-_OPENAI_COMPAT_URLS: Dict[str, str] = {
+_OPENAI_COMPAT_URLS: dict[str, str] = {
     "groq":     "https://api.groq.com/openai/v1",
     "moonshot": "https://api.moonshot.cn/v1",
     "zai":      "https://open.z.ai/v1",
 }
 
-_OPENAI_COMPAT_URL_CFGKEYS: Dict[str, str] = {
+_OPENAI_COMPAT_URL_CFGKEYS: dict[str, str] = {
     "moonshot": "moonshot_base_url",
     "zai":      "z_ai_base_url",
 }
 
-_OPENAI_COMPAT_URL_ENVVARS: Dict[str, str] = {
+_OPENAI_COMPAT_URL_ENVVARS: dict[str, str] = {
     "moonshot": "MOONSHOT_BASE_URL",
     "zai":      "Z_AI_BASE_URL",
 }
 
 # Default model per provider
-DEFAULT_MODELS: Dict[str, str] = {
+DEFAULT_MODELS: dict[str, str] = {
     "gemini":    "gemini-2.0-flash",
     "groq":      "llama-3.1-8b-instant",
     "moonshot":  "moonshot-v1-8k",
@@ -97,7 +98,7 @@ DEFAULT_MODELS: Dict[str, str] = {
 }
 
 # Config key that overrides the default model per provider
-_MODEL_CFGKEYS: Dict[str, str] = {
+_MODEL_CFGKEYS: dict[str, str] = {
     "gemini":    "gemini_model",
     "groq":      "groq_model",
     "moonshot":  "moonshot_model",
@@ -110,7 +111,7 @@ _MODEL_CFGKEYS: Dict[str, str] = {
 
 class LLMProvider:
 
-    def __init__(self, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, config: dict[str, Any] | None = None):
         self.config = config or {}
 
         # Anthropic SDK client
@@ -141,7 +142,7 @@ class LLMProvider:
             self._gemini_ok = False
 
         # Simple key presence checks for REST-based providers
-        self._key_available: Dict[str, bool] = {
+        self._key_available: dict[str, bool] = {
             p: bool(self.config.get(cfg) or os.getenv(env))
             for p, cfg, env in (
                 ("groq",     "groq_api_key",     "GROQ_API_KEY"),
@@ -165,13 +166,13 @@ class LLMProvider:
         temperature: float = 0.7,
         max_tokens: int = 1500,
         retries: int = 2,
-        system_prompt: Optional[str] = None,
-    ) -> Dict[str, Any]:
+        system_prompt: str | None = None,
+    ) -> dict[str, Any]:
         """Generate text, falling back through available providers automatically."""
         chain = self._build_chain(provider)
         # Treat the old sentinel as "no model specified"
         caller_model = "" if model == _CALLER_SENTINEL else model
-        last_error: Optional[Exception] = None
+        last_error: Exception | None = None
 
         for p in chain:
             if not self._is_available(p):
@@ -235,8 +236,8 @@ class LLMProvider:
         model: str,
         temperature: float,
         max_tokens: int,
-        system_prompt: Optional[str],
-    ) -> Dict[str, Any]:
+        system_prompt: str | None,
+    ) -> dict[str, Any]:
         if provider == "gemini":
             return self._call_gemini(prompt, model, temperature, system_prompt)
         if provider == "anthropic":
@@ -249,20 +250,20 @@ class LLMProvider:
 
     # ── Provider call implementations ─────────────────────────────────────────
 
-    def _call_gemini(self, prompt: str, model: str, temperature: float, system_prompt: Optional[str]) -> Dict[str, Any]:
+    def _call_gemini(self, prompt: str, model: str, temperature: float, system_prompt: str | None) -> dict[str, Any]:
         if not genai or not self._gemini_ok:
             raise RuntimeError("Gemini is not configured.")
         cfg = genai.types.GenerationConfig(temperature=temperature)
-        kwargs: Dict[str, Any] = {"model_name": model}
+        kwargs: dict[str, Any] = {"model_name": model}
         if system_prompt:
             kwargs["system_instruction"] = system_prompt
         resp = genai.GenerativeModel(**kwargs).generate_content(prompt, generation_config=cfg)
         return {"text": resp.text, "tokens": 0}
 
-    def _call_anthropic(self, prompt: str, model: str, temperature: float, max_tokens: int, system_prompt: Optional[str]) -> Dict[str, Any]:
+    def _call_anthropic(self, prompt: str, model: str, temperature: float, max_tokens: int, system_prompt: str | None) -> dict[str, Any]:
         if not self._anthropic_client:
             raise RuntimeError("Anthropic client is not initialized.")
-        kwargs: Dict[str, Any] = {
+        kwargs: dict[str, Any] = {
             "model": model,
             "max_tokens": max_tokens,
             "temperature": temperature,
@@ -274,8 +275,8 @@ class LLMProvider:
         tokens = getattr(resp.usage, "input_tokens", 0) + getattr(resp.usage, "output_tokens", 0)
         return {"text": resp.content[0].text, "tokens": tokens}
 
-    def _call_ollama(self, prompt: str, model: str, temperature: float, system_prompt: Optional[str]) -> Dict[str, Any]:
-        payload: Dict[str, Any] = {
+    def _call_ollama(self, prompt: str, model: str, temperature: float, system_prompt: str | None) -> dict[str, Any]:
+        payload: dict[str, Any] = {
             "model": model,
             "prompt": prompt,
             "stream": False,
@@ -296,8 +297,8 @@ class LLMProvider:
         model: str,
         temperature: float,
         max_tokens: int,
-        system_prompt: Optional[str],
-    ) -> Dict[str, Any]:
+        system_prompt: str | None,
+    ) -> dict[str, Any]:
         """Single implementation for all OpenAI-compatible REST providers (Groq, Moonshot, ZAI)."""
         key_cfg = _API_KEY_CFGKEYS[provider]
         key_env = _API_KEY_ENVVARS[provider]

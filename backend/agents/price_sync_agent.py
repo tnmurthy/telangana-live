@@ -1,13 +1,11 @@
-import os
-import re
-import requests
 import datetime
 import json
-from bs4 import BeautifulSoup
-from core.config import CONFIG
-from core.database import db
+import os
+
+import requests
+
 from core.logger import logger
-from core.llm_provider import llm
+
 
 class PriceSyncAgent:
     def __init__(self):

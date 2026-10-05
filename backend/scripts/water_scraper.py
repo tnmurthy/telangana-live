@@ -4,11 +4,12 @@ water_scraper.py — Telangana.live Water Reservoir Updates Scraper/Simulator
 Calculates and updates reservoir levels (TMC, Feet, Inflow, Outflow) based on seasonal variations and pushes to Upstash Redis and local JSON file.
 """
 
+import datetime
 import json
 import os
-import sys
-import datetime
 import random
+import sys
+
 import requests
 from dotenv import load_dotenv
 
@@ -216,7 +217,7 @@ def calculate_levels():
         if storage_pct < 0.30:
             alertMessage = f"Critical Storage Alert: {r['name']} is below 30% capacity. Municipal water rationing may be activated."
         elif storage_pct < 0.50 and r["id"] in ["himayat-sagar", "osman-sagar", "nizamsagar"]:
-            alertMessage = f"Low storage warning: Conservation advisory is active."
+            alertMessage = "Low storage warning: Conservation advisory is active."
 
         reservoirs_list.append({
             "id": r["id"],

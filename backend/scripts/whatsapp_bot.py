@@ -11,11 +11,13 @@ Setup Requirements (.env variables):
 """
 
 import os
+
 import requests
-from dotenv import load_dotenv
 
 # Reusing the existing scrapers
-from data_engine import sync_gold, sync_fuel, sync_pulses
+from data_engine import sync_fuel, sync_gold, sync_pulses
+from dotenv import load_dotenv
+
 
 def build_summary(gold_data, fuel_data, pulse_data):
     """Formats the scraped data into a WhatsApp-friendly message."""

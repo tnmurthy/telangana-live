@@ -330,7 +330,7 @@ if __name__ == "__main__":
 
     # Tier 2: Open-Meteo Keyless API (Fallback if OWM key absent or incomplete)
     if len(data) < len(DISTRICT_OWM_MAP):
-        print(f"Proceeding to Tier 2 (Open-Meteo keyless API)...")
+        print("Proceeding to Tier 2 (Open-Meteo keyless API)...")
         try:
             om_data = fetch_weather_open_meteo()
             for dist, val in om_data.items():

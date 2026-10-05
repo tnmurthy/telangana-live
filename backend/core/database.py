@@ -1,11 +1,12 @@
-import os
-
-from supabase import create_client, Client
-from supabase.lib.client_options import ClientOptions
-from datetime import datetime
-from core.config import CONFIG
 import logging
-from schemas import ContentModel, ActivityLogModel, CivicCorrelationModel
+import os
+from datetime import datetime
+
+from supabase import Client, create_client
+from supabase.lib.client_options import ClientOptions
+
+from core.config import CONFIG
+from schemas import ActivityLogModel, CivicCorrelationModel, ContentModel
 
 logger = logging.getLogger(__name__)
 
@@ -68,7 +69,7 @@ class SupabaseDB:
             logger.warning(f"Content inserted/updated but no data returned for title: {title}")
             return None
         except Exception as e:
-            logger.error(f"Error inserting content: {str(e)}")
+            logger.error(f"Error inserting content: {e!s}")
             return None
 
     def log_activity(self, agent, action, status, details, tokens_used):
@@ -84,7 +85,7 @@ class SupabaseDB:
             logger.info(f"Activity logged: {agent} - {action}")
             return True
         except Exception as e:
-            logger.error(f"Error logging activity: {str(e)}")
+            logger.error(f"Error logging activity: {e!s}")
             return False
 
     def get_content_by_category(self, category):
@@ -93,7 +94,7 @@ class SupabaseDB:
             response = self.client.table('content').select('*').eq('category', category).execute()
             return response.data
         except Exception as e:
-            logger.error(f"Error fetching content: {str(e)}")
+            logger.error(f"Error fetching content: {e!s}")
             return []
 
     def get_activity_log(self, limit=50):
@@ -108,7 +109,7 @@ class SupabaseDB:
             )
             return response.data
         except Exception as e:
-            logger.error(f"Error fetching logs: {str(e)}")
+            logger.error(f"Error fetching logs: {e!s}")
             return []
 
     def update_content(self, title, content, token_usage):
@@ -126,7 +127,7 @@ class SupabaseDB:
             logger.info(f"Content updated: {title}")
             return True
         except Exception as e:
-            logger.error(f"Error updating content: {str(e)}")
+            logger.error(f"Error updating content: {e!s}")
             return False
 
     def publish_content(self, title):
@@ -136,7 +137,7 @@ class SupabaseDB:
             logger.info(f"Content published: {title}")
             return True
         except Exception as e:
-            logger.error(f"Error publishing content: {str(e)}")
+            logger.error(f"Error publishing content: {e!s}")
             return False
 
     def get_published_content(self, limit=10):
@@ -152,7 +153,7 @@ class SupabaseDB:
             )
             return response.data
         except Exception as e:
-            logger.error(f"Error fetching published content: {str(e)}")
+            logger.error(f"Error fetching published content: {e!s}")
             return []
 
     def get_pending_quality_check(self, limit=5):
@@ -168,7 +169,7 @@ class SupabaseDB:
             )
             return response.data
         except Exception as e:
-            logger.error(f"Error fetching pending content: {str(e)}")
+            logger.error(f"Error fetching pending content: {e!s}")
             return []
 
     def get_topic_queue(self):
@@ -205,7 +206,7 @@ class SupabaseDB:
                 return row_id
             return None
         except Exception as e:
-            logger.error(f"Error creating civic correlation: {str(e)}")
+            logger.error(f"Error creating civic correlation: {e!s}")
             return None
 
     def get_correlations_by_entity(self, entity_type: str, entity_id: str):
@@ -221,7 +222,7 @@ class SupabaseDB:
              )
              return response.data
         except Exception as e:
-             logger.error(f"Error fetching correlations by entity: {str(e)}")
+             logger.error(f"Error fetching correlations by entity: {e!s}")
              return []
 
     def get_correlations_by_content(self, content_id: int):
@@ -236,7 +237,7 @@ class SupabaseDB:
              )
              return response.data
         except Exception as e:
-             logger.error(f"Error fetching correlations by content: {str(e)}")
+             logger.error(f"Error fetching correlations by content: {e!s}")
              return []
 
     def get_content_by_id(self, content_id: int):
@@ -245,7 +246,7 @@ class SupabaseDB:
             response = self.client.table('content').select('*').eq('id', content_id).execute()
             return response.data[0] if response.data else None
         except Exception as e:
-            logger.error(f"Error fetching content by ID {content_id}: {str(e)}")
+            logger.error(f"Error fetching content by ID {content_id}: {e!s}")
             return None
 
     def get_correlations_by_type(self, entity_type: str):
@@ -260,7 +261,7 @@ class SupabaseDB:
              )
              return response.data
         except Exception as e:
-             logger.error(f"Error fetching correlations by type: {str(e)}")
+             logger.error(f"Error fetching correlations by type: {e!s}")
              return []
 
 

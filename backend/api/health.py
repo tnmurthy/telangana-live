@@ -1,12 +1,13 @@
-import sys
 import os
+import sys
 import time
 
 # Add parent directory to path to allow imports from core
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from core.logger import logger
 from core.database import db
+from core.logger import logger
+
 
 def run_health_check():
     """

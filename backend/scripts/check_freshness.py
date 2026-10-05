@@ -16,7 +16,6 @@ import re
 import sys
 from dataclasses import dataclass
 from email.utils import parsedate_to_datetime
-from typing import List, Optional
 
 _REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 _IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
@@ -34,7 +33,7 @@ def _data(*parts):
     return os.path.join(_REPO_ROOT, "frontend", *parts)
 
 
-MODULES: List[Module] = [
+MODULES: list[Module] = [
     Module("fuel", _data("src", "data", "fuelPrices.js"), "updatedAt", 30),
     Module("gold", _data("src", "data", "goldRates.js"), "date", 48),
     Module("pulses", _data("src", "data", "pulses.js"), "updatedAt", 30),
@@ -48,11 +47,11 @@ MODULES: List[Module] = [
 @dataclass(frozen=True)
 class Result:
     name: str
-    updated: Optional[datetime.datetime]
-    age_hours: Optional[int]
+    updated: datetime.datetime | None
+    age_hours: int | None
     max_age_hours: int
     stale: bool
-    error: Optional[str] = None
+    error: str | None = None
 
 
 def _load(path: str):
@@ -83,7 +82,7 @@ def _parse_time(value) -> datetime.datetime:
     return parsed.astimezone(datetime.timezone.utc)
 
 
-def _values(node, path: List[str]):
+def _values(node, path: list[str]):
     if not path:
         yield node
         return
@@ -114,7 +113,7 @@ def read_timestamp(module: Module) -> datetime.datetime:
     return max(stamps)
 
 
-def check(modules: List[Module], now: Optional[datetime.datetime] = None) -> List[Result]:
+def check(modules: list[Module], now: datetime.datetime | None = None) -> list[Result]:
     now = now or datetime.datetime.now(datetime.timezone.utc)
     results = []
     for m in modules:
@@ -128,7 +127,7 @@ def check(modules: List[Module], now: Optional[datetime.datetime] = None) -> Lis
     return results
 
 
-def _table(results: List[Result]) -> str:
+def _table(results: list[Result]) -> str:
     lines = ["| Module | Last updated (UTC) | Age | Limit | Status |", "|---|---|---|---|---|"]
     for r in results:
         when = r.updated.strftime("%Y-%m-%d %H:%M") if r.updated else "—"
@@ -137,7 +136,7 @@ def _table(results: List[Result]) -> str:
     return "\n".join(lines)
 
 
-def main(now: Optional[datetime.datetime] = None) -> int:
+def main(now: datetime.datetime | None = None) -> int:
     results = check(MODULES, now=now)
     table = _table(results)
     print(table)

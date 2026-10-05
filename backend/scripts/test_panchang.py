@@ -1,7 +1,9 @@
 import unittest
 from datetime import datetime
-from unittest.mock import patch, MagicMock
-from panchang import get_vikram_samvat, answer_muhurat_query
+from unittest.mock import patch
+
+from panchang import answer_muhurat_query, get_vikram_samvat
+
 
 class TestPanchang(unittest.TestCase):
     def test_get_vikram_samvat_default(self):

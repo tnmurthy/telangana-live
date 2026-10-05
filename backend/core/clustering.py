@@ -1,8 +1,9 @@
+import logging
+import math
 import os
 import re
-import math
+
 import requests
-import logging
 
 logger = logging.getLogger(__name__)
 

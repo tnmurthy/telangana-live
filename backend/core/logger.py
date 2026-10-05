@@ -1,7 +1,8 @@
 import logging
+import os
 import sys
 from logging.handlers import RotatingFileHandler
-import os
+
 
 def setup_logger(name="telangana-live", log_file="app.log", level=logging.INFO):
     """

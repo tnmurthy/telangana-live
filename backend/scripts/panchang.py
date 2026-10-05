@@ -1,9 +1,10 @@
-import ephem
-import math
-import sys
-import os
 import json
+import math
+import os
+import sys
 from datetime import datetime
+
+import ephem
 
 # Resolve internal imports
 sys.path.insert(0, os.path.join(os.getcwd(), 'backend'))

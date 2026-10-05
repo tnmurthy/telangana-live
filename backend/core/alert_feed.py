@@ -14,7 +14,7 @@ region/district, sourceLink/link) are kept in sync by construction.
 """
 import datetime
 import hashlib
-from typing import Iterable, Optional
+from collections.abc import Iterable
 
 # Matches SEVERITY_ORDER in frontend/src/pages/AlertsPage.jsx.
 FRONTEND_SEVERITIES = ("low", "medium", "high", "critical")
@@ -43,7 +43,7 @@ def _to_iso(moment: datetime.datetime) -> str:
     return moment.astimezone(datetime.timezone.utc).strftime(_ISO)
 
 
-def _published_to_datetime(published) -> Optional[datetime.datetime]:
+def _published_to_datetime(published) -> datetime.datetime | None:
     """Accept feedparser's *_parsed struct_time (or any 6+ int sequence)."""
     if not published:
         return None
@@ -72,9 +72,9 @@ def _stable_id(link: str, title: str) -> str:
 
 
 def build_alert_record(*, title: str, description: str, alert_type: str,
-                       severity: str, district: Optional[str], link: str,
+                       severity: str, district: str | None, link: str,
                        source: str, published, now: datetime.datetime,
-                       expires: Optional[datetime.datetime] = None) -> dict:
+                       expires: datetime.datetime | None = None) -> dict:
     """Build one alerts.json record that satisfies every consumer.
 
     expires: an official alert's own end time (SACHET CAP). The record is

@@ -1,9 +1,10 @@
-import os
 import json
+import os
+from datetime import datetime
+
 import feedparser
 import requests
-from typing import List, Dict, Optional
-from datetime import datetime
+
 from core.config import CONFIG
 from core.database import db
 from core.logger import logger
@@ -12,11 +13,16 @@ from graph_rag import NewsGraphRAG
 # Global GraphRAG Singleton Instance
 news_graph_rag = NewsGraphRAG()
 
-from core.llm_provider import llm
 from agents.fact_checker import fact_checker
-from core.news_classifier import classify_article, extract_image_url, extract_entities, map_domain_to_civic_schema
 from core.clustering import cluster_articles
 from core.correlation_engine import map_article_to_civic_entities
+from core.llm_provider import llm
+from core.news_classifier import (
+    classify_article,
+    extract_entities,
+    extract_image_url,
+)
+
 
 class NewsSyncAgent:
     def _check_ollama_online(self):

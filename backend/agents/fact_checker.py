@@ -1,9 +1,8 @@
 import json
 import logging
-import sys
 import os
+import sys
 from dataclasses import dataclass
-from typing import Optional
 
 # Ensure providers can be imported
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -26,11 +25,11 @@ class FactCheckVerdict:
     """
 
     checked: bool
-    is_fake: Optional[bool] = None
-    credibility_score: Optional[int] = None
-    civic_action_required: Optional[bool] = None
+    is_fake: bool | None = None
+    credibility_score: int | None = None
+    civic_action_required: bool | None = None
     reasoning: str = ""
-    error: Optional[str] = None
+    error: str | None = None
 
 
 def _parse_verdict(text: str) -> FactCheckVerdict:

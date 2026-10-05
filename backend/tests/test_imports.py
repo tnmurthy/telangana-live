@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 import unittest
 
 # Ensure we can import from the backend root
@@ -19,8 +19,8 @@ class TestStructure(unittest.TestCase):
     def test_agent_imports(self):
         """Verify that agents can be imported with the new structure."""
         try:
-            from agents.content_monitor import ContentMonitor
             from agents.content_generator import ContentGenerator
+            from agents.content_monitor import ContentMonitor
             self.assertIsNotNone(ContentMonitor)
             self.assertIsNotNone(ContentGenerator)
         except ImportError as e:

@@ -4,8 +4,8 @@ Quick validation that core systems initialize without errors.
 Run before comprehensive testing to catch major breakage early.
 """
 
-import sys
 import os
+import sys
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -15,9 +15,7 @@ def test_backend_imports():
     """Verify all core backend modules import successfully."""
     try:
         from core.config import CONFIG
-        from core.database import db
         from core.logger import logger
-        from core.llm_provider import LLMProvider
         assert CONFIG is not None
         assert logger is not None
         print("[OK] Core imports successful")
@@ -28,11 +26,11 @@ def test_backend_imports():
 def test_agent_imports():
     """Verify all agents can be imported without errors."""
     try:
-        from agents.content_monitor import ContentMonitor
         from agents.content_generator import ContentGenerator
-        from agents.quality_checker import QualityChecker
-        from agents.price_sync_agent import PriceSyncAgent
+        from agents.content_monitor import ContentMonitor
         from agents.news_sync_agent import NewsSyncAgent
+        from agents.price_sync_agent import PriceSyncAgent
+        from agents.quality_checker import QualityChecker
         assert all([ContentMonitor, ContentGenerator, QualityChecker, PriceSyncAgent, NewsSyncAgent])
         print("[OK] All agents import successfully")
     except Exception as e:
@@ -58,7 +56,6 @@ def test_llm_provider_initialization():
     """Verify LLM provider can be initialized."""
     try:
         from core.llm_provider import LLMProvider
-        from core.config import CONFIG
         
         provider = LLMProvider()
         assert provider is not None, "LLMProvider object is None"

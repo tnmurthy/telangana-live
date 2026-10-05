@@ -1,11 +1,12 @@
-import sys
 import os
+import sys
 
 # Add parent directory to path to allow imports from core
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from core.database import db
 from core.logger import logger
+
 
 def verify_and_setup():
     """

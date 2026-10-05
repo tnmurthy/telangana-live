@@ -9,7 +9,6 @@ class is imported from the fallback module below.
 """
 
 import sys
-import os
 
 # ── Try shared engine first ───────────────────────────────────────────────────
 
@@ -18,12 +17,17 @@ if SHARED_ENGINES_DIR not in sys.path:
     sys.path.insert(0, SHARED_ENGINES_DIR)
 
 try:
-    from llm_provider import LLMProvider, DEFAULT_MODELS, FALLBACK_ORDER  # noqa: F401
+    from llm_provider import DEFAULT_MODELS, FALLBACK_ORDER, LLMProvider
 except ImportError:
     # CI / no shared engines on disk — fall back to local copy
-    from core._llm_provider_fallback import LLMProvider, DEFAULT_MODELS, FALLBACK_ORDER  # noqa: F401
+    from core._llm_provider_fallback import (  # noqa: F401
+        DEFAULT_MODELS,
+        FALLBACK_ORDER,
+        LLMProvider,
+    )
 
 # ── Project singleton ─────────────────────────────────────────────────────────
 
 from core.config import CONFIG
+
 llm = LLMProvider(config=CONFIG)

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-import sys
-import os
-import requests
 import datetime
-import json
+import os
+import sys
+
 import feedparser
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -37,7 +36,7 @@ def sync_ai_news():
                 try:
                     client.table("ai_daily_news").upsert(data, on_conflict="url").execute()
                     inserted += 1
-                except Exception as e:
+                except Exception:
                     pass
         if client:
             print(f"✅ Upserted {inserted} AI news items to Supabase.")

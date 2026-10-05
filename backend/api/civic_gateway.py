@@ -1,13 +1,14 @@
-from fastapi import APIRouter, HTTPException, Query
-import os
 import json
+import os
 import sys
+
+from fastapi import APIRouter, HTTPException, Query
 
 # Ensure backend/scripts is in path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts")))
 
-from news_scraper import run_scraper
 from emergency_alerts import fetch_latest_alerts
+from news_scraper import run_scraper
 
 router = APIRouter(prefix="/api/civic", tags=["Civic Gateway"])
 
@@ -24,7 +25,7 @@ def get_news(district: str = Query(None, description="Filter news by district (e
         try:
             run_scraper()
         except Exception as e:
-             raise HTTPException(status_code=500, detail=f"Failed to run scraper: {str(e)}")
+             raise HTTPException(status_code=500, detail=f"Failed to run scraper: {e!s}")
 
     try:
         with open(NEWS_FILE, "r", encoding="utf-8") as f:

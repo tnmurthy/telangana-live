@@ -14,13 +14,15 @@ import argparse
 import json
 import os
 import sys
+
 if sys.stdout.encoding != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
 import datetime
-import re
 import html
-import requests
+import re
+
 import feedparser
+import requests
 from bs4 import BeautifulSoup
 
 # Ensure project root is in path for importing backend providers
@@ -441,7 +443,7 @@ def _read_labelled_price(url, label):
     if resp.status_code != 200:
         return None
     text = BeautifulSoup(resp.text, "html.parser").get_text()
-    m = re.search(label + r" Price[^\d]{0,80}₹\s*([\d,.]+)", text, re.I)
+    m = re.search(label + r" Price[^\d]{0,80}₹\s*([\d,.]+)", text, re.IGNORECASE)
     return float(m.group(1).replace(",", "")) if m else None
 
 
@@ -566,7 +568,7 @@ def sync_pulses():
         for display_name, aliases in commodity_map:
             found = None
             for alias in aliases:
-                m = re.search(rf"{alias}[^0-9₹]{{0,80}}(\d{{2,5}}(?:\.\d+)?)", text, re.I)
+                m = re.search(rf"{alias}[^0-9₹]{{0,80}}(\d{{2,5}}(?:\.\d+)?)", text, re.IGNORECASE)
                 if m:
                     found = m.group(1)
                     break
@@ -675,8 +677,8 @@ SACHET_OFFICES = ("Telangana", "Hyderabad", "CWC", "New Delhi")
 
 
 def _sachet_records(now_dt, kept, seen_titles):
-    from core.sachet import AreaFilter, fetch_alerts
     from core.alert_feed import build_official_record
+    from core.sachet import AreaFilter, fetch_alerts
 
     session = requests.Session()
     session.headers["User-Agent"] = "telangana.live alerts (+https://www.telangana.live)"

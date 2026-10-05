@@ -22,7 +22,6 @@ import logging
 import os
 import re
 from dataclasses import dataclass
-from typing import Optional
 
 try:
     # Load .env here rather than relying on core.config being imported first —
@@ -104,18 +103,18 @@ class AlertVerdict:
     thresholds above stay inspectable and retunable."""
 
     accepted: bool
-    alert_type: Optional[str]  # set only when accepted
-    severity: Optional[str]
+    alert_type: str | None  # set only when accepted
+    severity: str | None
     source: str  # "typesafe" | "regex"
-    chosen_type: Optional[str] = None  # raw Choice, populated whether or not accepted
-    rejection_reason: Optional[str] = None
-    type_confidence: Optional[float] = None
-    telangana_probability: Optional[float] = None
-    current_probability: Optional[float] = None
-    severity_score: Optional[float] = None
-    district: Optional[str] = None  # one of TELANGANA_DISTRICTS, only when confident
-    chosen_district: Optional[str] = None  # raw Choice, populated whether or not used
-    district_confidence: Optional[float] = None
+    chosen_type: str | None = None  # raw Choice, populated whether or not accepted
+    rejection_reason: str | None = None
+    type_confidence: float | None = None
+    telangana_probability: float | None = None
+    current_probability: float | None = None
+    severity_score: float | None = None
+    district: str | None = None  # one of TELANGANA_DISTRICTS, only when confident
+    chosen_district: str | None = None  # raw Choice, populated whether or not used
+    district_confidence: float | None = None
 
 
 # ── Question set ──────────────────────────────────────────────────────────────
@@ -364,7 +363,7 @@ def _apply_policy(result) -> AlertVerdict:
     )
 
 
-def district_for(verdict: AlertVerdict, *, keyword_region: Optional[str]) -> Optional[str]:
+def district_for(verdict: AlertVerdict, *, keyword_region: str | None) -> str | None:
     """The district to publish. A TypeSafe verdict is final, including its
     "no single district" (None, shown as Telangana); only the regex fallback
     uses the keyword region from core.news_classifier."""
@@ -414,7 +413,7 @@ def _regex_verdict(headline: str, description: str = "") -> AlertVerdict:
                             source="regex", rejection_reason="not_telangana")
 
     for alert_type, severity, pattern in _FALLBACK_PATTERNS:
-        if re.search(pattern, text, re.I):
+        if re.search(pattern, text, re.IGNORECASE):
             return AlertVerdict(accepted=True, alert_type=alert_type,
                                 severity=severity, source="regex",
                                 chosen_type=alert_type)

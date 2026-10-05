@@ -5,12 +5,19 @@ Writes to Supabase table: news_articles
 Requires: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY env vars
 """
 
-import os, json, hashlib, datetime, feedparser, requests, sys
+import datetime
+import hashlib
+import json
+import os
+import sys
+
+import feedparser
+import requests
 
 # Ensure project root is in path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from core.news_classifier import classify_article, extract_image_url
 from core.correlation_engine import map_article_to_civic_entities
+from core.news_classifier import classify_article, extract_image_url
 
 # Fix Unicode output for Windows terminal
 if sys.stdout.encoding != 'utf-8':

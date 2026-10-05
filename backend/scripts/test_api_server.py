@@ -1,5 +1,6 @@
 import requests
 
+
 def test_api():
     base_url = "http://localhost:8000"
     endpoints = ["/api/gold", "/api/fuel", "/api/mandi"]

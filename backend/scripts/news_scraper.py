@@ -9,14 +9,15 @@ Key changes vs the old version:
   • No more per-article time.sleep() delays
 """
 
-import feedparser
 import json
+import logging
 import os
 import re
 import sys
-import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
+
+import feedparser
 
 _BACKEND_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 sys.path.insert(0, _BACKEND_DIR)
@@ -26,10 +27,10 @@ try:
 except ImportError:
     fact_checker = None
 
-from core.llm_provider import llm
-from core.news_classifier import classify_article, extract_image_url
 from core.clustering import cluster_articles
 from core.correlation_engine import map_article_to_civic_entities
+from core.llm_provider import llm
+from core.news_classifier import classify_article, extract_image_url
 
 logger = logging.getLogger(__name__)
 
