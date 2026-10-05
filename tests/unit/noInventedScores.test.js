@@ -27,3 +27,19 @@ describe('citizen report sample data', () => {
         expect(dashboard).not.toMatch(/mockReports/);
     });
 });
+
+// Sponsor cards showed a random "Brand Sync 85-99% Match" and a "Business
+// DNA Verified" badge. A paid card is labelled Sponsored and claims nothing else.
+describe('sponsor card', () => {
+    const source = readFileSync(join(COMPONENTS, 'PartnerCard.jsx'), 'utf8');
+
+    it('shows no random or invented match score', () => {
+        expect(source).not.toMatch(/Math\.random/);
+        expect(source).not.toMatch(/% Match|DNA Verified/);
+    });
+
+    it('is labelled Sponsored with a sponsored link', () => {
+        expect(source).toMatch(/>\s*Sponsored\s*</);
+        expect(source).toMatch(/rel="sponsored/);
+    });
+});
