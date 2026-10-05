@@ -21,6 +21,7 @@ sys.path.insert(0, os.path.join(repo_root, "backend"))
 from core.alert_feed import (  # noqa: E402
     FRONTEND_SEVERITIES,
     build_alert_record,
+    build_official_record,
     format_ist,
     is_fresh,
     partition_existing,
@@ -84,6 +85,11 @@ class TestSchema:
         assert rec["publishedAt"] == "2026-09-30T18:00:00Z"
         assert rec["createdAt"] == "2026-10-01T09:30:00Z"
 
+    def test_expires_is_written_only_when_given(self):
+        assert "expiresAt" not in _record()
+        until = datetime.datetime(2026, 10, 1, 12, 0, tzinfo=datetime.timezone.utc)
+        assert _record(expires=until)["expiresAt"] == "2026-10-01T12:00:00Z"
+
     def test_district_defaults_to_telangana(self):
         assert _record(district=None)["district"] == "Telangana"
 
@@ -142,6 +148,17 @@ class TestPartitionExisting:
         kept, _ = partition_existing(existing, now=NOW, expiry_days=3)
         assert kept == []
 
+    def test_official_alert_drops_at_its_own_expiry(self):
+        """SACHET alerts carry an expiry (a lightning nowcast lasts an hour)."""
+        existing = [
+            {"title": "over", "publishedAt": "2026-10-01T08:00:00Z",
+             "expiresAt": "2026-10-01T09:00:00Z"},
+            {"title": "running", "publishedAt": "2026-10-01T08:00:00Z",
+             "expiresAt": "2026-10-01T12:00:00Z"},
+        ]
+        kept, _ = partition_existing(existing, now=NOW, expiry_days=3)
+        assert [a["title"] for a in kept] == ["running"]
+
     def test_tolerates_the_legacy_schema(self):
         """The live file currently holds emergency_alerts.py records, which have
         no title or createdAt. The old code did a["title"] and would KeyError."""
@@ -149,6 +166,43 @@ class TestPartitionExisting:
         kept, seen = partition_existing(legacy, now=NOW, expiry_days=3)
         assert kept == []
         assert seen == set()
+
+
+class TestOfficialRecord:
+    """SACHET (NDMA CAP) alerts become ordinary alerts.json records."""
+
+    def _alert(self, **overrides):
+        from core.sachet import SachetAlert
+        ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
+        args = dict(
+            identifier="IN-1_1", sender="Telangana-SDMA",
+            sent=datetime.datetime(2026, 10, 1, 14, 0, tzinfo=ist),
+            event="Heavy Rain", cap_severity="Severe", urgency="Expected",
+            certainty="Likely", headline="Heavy rain likely over Nirmal",
+            description=None, instruction="Avoid low-lying areas.",
+            area="Nirmal, Adilabad districts of Telangana",
+            effective=None,
+            expires=datetime.datetime(2026, 10, 1, 20, 0, tzinfo=ist),
+            link="https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1",
+        )
+        args.update(overrides)
+        return SachetAlert(**args)
+
+    def test_maps_fields(self):
+        rec = build_official_record(self._alert(), now=NOW)
+        assert rec["title"] == "Heavy rain likely over Nirmal"
+        assert rec["type"] == "weather"
+        assert rec["severity"] == "high"
+        assert rec["source"] == "NDMA SACHET (Telangana-SDMA)"
+        assert rec["link"].startswith("https://sachet.ndma.gov.in/")
+        assert rec["publishedAt"] == "2026-10-01T08:30:00Z"
+        assert rec["expiresAt"] == "2026-10-01T14:30:00Z"
+        assert "Nirmal, Adilabad" in rec["description"]
+        assert "Avoid low-lying areas." in rec["description"]
+
+    def test_falls_back_to_event_when_no_headline(self):
+        rec = build_official_record(self._alert(headline=None), now=NOW)
+        assert rec["title"] == "Heavy Rain: Nirmal, Adilabad districts of Telangana"
 
 
 class TestEmergencyAlertsShim:

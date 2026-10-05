@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { activeAlerts } from '../utils/alerts';
 
 // Severity, not type, decides what is "breaking" — matches AlertsBanner.
 // The feed's types are fine-grained (flood, power_outage, road_closure, ...).
@@ -17,7 +18,7 @@ export default function BreakingNewsBanner() {
         const resp = await fetch('/data/alerts.json');
         if (resp.ok) {
           const data = await resp.json();
-          const filtered = data.filter(a => BREAKING_SEVERITIES.has(a.severity));
+          const filtered = activeAlerts(data).filter(a => BREAKING_SEVERITIES.has(a.severity));
           setBreakingAlerts(filtered);
           if (filtered.length > 0) {
             setItem(filtered[0]);

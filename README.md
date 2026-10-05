@@ -351,7 +351,7 @@ infrastructure/
 | TL-29 | Reservoir and transit data are months old | Reservoirs last updated 13 Jul, transit 24 May; no workflow runs their writers. The daily freshness check (added 5 Oct) fails on both | P1 | Schedule water_scraper.py, or find a current source (Telangana irrigation portal) |
 | TL-30 | Metro crowd levels and bus "flow" figures are hand-entered | Shown as live (e.g. "127K: 93, Severe") with no source | P1 | Remove them, or connect a real feed |
 | TL-31 | Google Analytics and Tag Manager load before cookie consent | The banner records "accepted" but gates nothing; consent is required under India's DPDP Act | P1 | Decide: gate GA/GTM behind consent, or switch to cookieless Plausible (already wired, off until VITE_PLAUSIBLE_DOMAIN is set) |
-| TL-32 | Official disaster alerts not used | NDMA's SACHET feed (sachet.ndma.gov.in, all-India CAP alerts, no key) could feed /alerts; ForThePeople's MIT-licensed sachet.ts maps alerts to districts | P2 | Approve porting it |
+| TL-32 | Official disaster alerts not used | Fixed 5 Oct: IMD, CWC and SDMA alerts from NDMA SACHET that name Telangana now feed /alerts every 15 minutes, with issuer, area and an "until" time; hidden once the authority's alert expires | ✅ Fixed | None. Telangana had no active SACHET alert on 5 Oct, so the first one will show when IMD or the SDMA issues it |
 | TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ◐ Partly fixed | 5 Oct: no more invented gold prices (stale runs keep the last real reading with its own date; no fixed fallback). Still needed: confirm acceptable sources |
@@ -388,7 +388,7 @@ infrastructure/
 | TL-29 | Data | `scripts/water_scraper.py`, transit writer | Both modules pass `check_freshness.py` daily | M |
 | TL-30 | Frontend | `components/MetroCard.jsx`, `data/transportData.js`, `transit_status.json` | No crowd or flow value without a source and time | S |
 | TL-31 | Frontend | `index.html`, `CookieConsent.jsx` | No analytics cookie before consent, or GA removed | S |
-| TL-32 | Backend | new alerts source from SACHET RSS + CAP XML | Telangana CAP alerts appear on /alerts with issuer, area and expiry | M |
+| TL-32 | Backend | new alerts source from SACHET RSS + CAP XML | ✅ Done: `core/sachet.py` (shared with vizag), `alert_feed.build_official_record`, `utils/alerts.js`; tests `test_sachet.py`, `alerts.test.js` | M |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ◐ No invented values (tests in `TestSyncFinanceHistoryTracking`); sources still to confirm | M |

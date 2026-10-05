@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icons } from './Icons';
 import alertsData from '../data/alerts.json';
+import { activeAlerts } from '../utils/alerts';
 
 // Deliberately restrained so this doesn't become the "annoying banner nobody
 // reads": only critical/high severity surfaces here at all, capped at 2, and
@@ -20,7 +21,7 @@ export default function AlertsBanner() {
   const [dismissedIds, setDismissedIds] = useState(new Set());
 
   const alerts = useMemo(() => {
-    return [...alertsData]
+    return activeAlerts(alertsData)
       .filter(a => BANNER_SEVERITIES.includes(a.severity))
       .sort((a, b) => (SEVERITY_ORDER[a.severity] ?? 9) - (SEVERITY_ORDER[b.severity] ?? 9))
       .slice(0, MAX_BANNER_ALERTS);

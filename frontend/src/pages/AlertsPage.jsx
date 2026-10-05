@@ -1,7 +1,11 @@
 import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Icons } from '../components/Icons';
-import alertsData from '../data/alerts.json';
+import feed from '../data/alerts.json';
+import { activeAlerts, untilLabel } from '../utils/alerts';
+
+// Official alerts past their end time are hidden even if the build is older.
+const alertsData = activeAlerts(feed);
 
 const SEVERITY_META = {
   critical: { label: 'Critical', color: 'text-red-400', bg: 'bg-red-500/10', border: 'border-red-500/30' },
@@ -67,7 +71,11 @@ function AlertCard({ alert }) {
           {alert.description && (
             <p className="text-xs text-text-secondary mt-1 line-clamp-2">{alert.description}</p>
           )}
-          <p className="text-[10px] text-text-muted mt-2">{timeAgo(alert.publishedAt || alert.createdAt)}</p>
+          <p className="text-[10px] text-text-muted mt-2">
+            {[timeAgo(alert.publishedAt || alert.createdAt), untilLabel(alert.expiresAt), alert.source]
+              .filter(Boolean)
+              .join(' · ')}
+          </p>
         </div>
       </div>
     </a>

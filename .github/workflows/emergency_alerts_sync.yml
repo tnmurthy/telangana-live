@@ -33,7 +33,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
 
-      - name: Sync civic alerts (Google News RSS + TypeSafe triage)
+      - name: Sync civic alerts (NDMA SACHET official alerts + Google News RSS with TypeSafe triage)
         env:
           # Without this the triage falls back to the old regex matcher and
           # labels every verdict source="regex".

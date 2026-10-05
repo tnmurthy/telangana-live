@@ -73,8 +73,13 @@ def _stable_id(link: str, title: str) -> str:
 
 def build_alert_record(*, title: str, description: str, alert_type: str,
                        severity: str, district: Optional[str], link: str,
-                       source: str, published, now: datetime.datetime) -> dict:
-    """Build one alerts.json record that satisfies every consumer."""
+                       source: str, published, now: datetime.datetime,
+                       expires: Optional[datetime.datetime] = None) -> dict:
+    """Build one alerts.json record that satisfies every consumer.
+
+    expires: an official alert's own end time (SACHET CAP). The record is
+    dropped once it passes, ahead of the usual expiry_days window.
+    """
     if severity not in FRONTEND_SEVERITIES:
         raise ValueError(
             f"severity {severity!r} is not one of {FRONTEND_SEVERITIES}; "
@@ -84,7 +89,7 @@ def build_alert_record(*, title: str, description: str, alert_type: str,
     district = district or DEFAULT_DISTRICT
     published_dt = _published_to_datetime(published) or now
 
-    return {
+    record = {
         "id": _stable_id(link, title),
         "type": alert_type,
         "severity": severity,
@@ -100,6 +105,20 @@ def build_alert_record(*, title: str, description: str, alert_type: str,
         "sourceLink": link,
         "source": source,
     }
+    if expires is not None:
+        record["expiresAt"] = _to_iso(expires)
+    return record
+
+
+def _has_ended(expires_at, now: datetime.datetime) -> bool:
+    if not expires_at:
+        return False
+    try:
+        ends = datetime.datetime.strptime(expires_at, _ISO).replace(
+            tzinfo=datetime.timezone.utc)
+    except (TypeError, ValueError):
+        return True  # an unreadable end time is not a reason to keep showing it
+    return ends <= now
 
 
 def partition_existing(existing: Iterable[dict], *, now: datetime.datetime,
@@ -122,6 +141,34 @@ def partition_existing(existing: Iterable[dict], *, now: datetime.datetime,
                 tzinfo=datetime.timezone.utc)
         except (TypeError, ValueError):
             continue
-        if now - published < datetime.timedelta(days=expiry_days):
-            kept.append(alert)
+        if now - published >= datetime.timedelta(days=expiry_days):
+            continue
+        if _has_ended(alert.get("expiresAt"), now):
+            continue
+        kept.append(alert)
     return kept, seen
+
+
+def build_official_record(alert, *, now: datetime.datetime) -> dict:
+    """An alerts.json record from an NDMA SACHET alert (core.sachet.SachetAlert).
+
+    The issuing authority is named in source, and the record carries the CAP
+    expiry so partition_existing drops it when the authority's alert ends.
+    """
+    title = alert.headline or f"{alert.event or 'Alert'}: {alert.area}"
+    description = " ".join(
+        part for part in (f"Area: {alert.area}." if alert.area else "", alert.instruction or "")
+        if part)
+    issued = alert.sent or alert.effective or now
+    return build_alert_record(
+        title=title,
+        description=description,
+        alert_type=alert.kind,
+        severity=alert.severity,
+        district=None,
+        link=alert.link,
+        source=f"NDMA SACHET ({alert.sender})",
+        published=issued.astimezone(datetime.timezone.utc).timetuple(),
+        now=now,
+        expires=alert.expires,
+    )

@@ -668,6 +668,47 @@ def _load_existing_alerts():
         return []
 
 
+# Official alerts from NDMA SACHET (IMD, CWC and the state SDMA publish CAP
+# alerts there; no key). Only these issuing offices' alerts are downloaded, and
+# each must name Telangana. See core/sachet.py.
+SACHET_OFFICES = ("Telangana", "Hyderabad", "CWC", "New Delhi")
+
+
+def _sachet_records(now_dt, kept, seen_titles):
+    from core.sachet import AreaFilter, fetch_alerts
+    from core.alert_feed import build_official_record
+
+    session = requests.Session()
+    session.headers["User-Agent"] = "telangana.live alerts (+https://www.telangana.live)"
+
+    def get(url):
+        response = session.get(url, timeout=30)
+        response.raise_for_status()
+        return response.text
+
+    known = set()
+    for alert in kept:
+        match = re.search(r"sachet\.ndma\.gov\.in/.*identifier=([\w-]+)", alert.get("link") or "")
+        if match:
+            known.add(match.group(1))
+    try:
+        alerts = fetch_alerts(AreaFilter(state="Telangana"), offices=SACHET_OFFICES,
+                              now=now_dt, get=get, skip_guids=known)
+    except Exception as e:
+        print(f"  ⚠️ SACHET feed unavailable: {e}")
+        return []
+
+    records = []
+    for alert in alerts:
+        record = build_official_record(alert, now=now_dt)
+        if record["title"] in seen_titles:
+            continue
+        seen_titles.add(record["title"])
+        records.append(record)
+    print(f"  ✅ SACHET: {len(records)} new official alert(s)")
+    return records
+
+
 def sync_alerts():
     """Scan Google News RSS for likely local civic disruptions (floods, power/water
     outages, road closures, strikes, weather warnings) and write a deduped,
@@ -742,7 +783,8 @@ def sync_alerts():
                 now=now_dt,
             ))
 
-    all_alerts = kept + new_alerts
+    official = _sachet_records(now_dt, kept, existing_titles)
+    all_alerts = kept + official + new_alerts
     with open(PATHS["alerts"], "w", encoding="utf-8") as f:
         json.dump(all_alerts, f, indent=2, ensure_ascii=False)
 

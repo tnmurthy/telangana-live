@@ -5,9 +5,11 @@ Kept as a thin shim because two callers depend on it:
   * .github/workflows/emergency_alerts_sync.yml runs it as a script
   * backend/api/civic_gateway.py imports fetch_latest_alerts()
 
-The work itself lives in scripts/data_engine.sync_alerts(): Google News RSS
-queries for civic disruptions, each headline judged by core.alert_triage
-(TypeSafe), written in the single schema from core.alert_feed.
+The work itself lives in scripts/data_engine.sync_alerts(): official alerts
+from NDMA SACHET (core.sachet: IMD, CWC and state SDMA CAP alerts naming
+Telangana, kept until their own expiry), plus Google News RSS queries for
+civic disruptions, each headline judged by core.alert_triage (TypeSafe), all
+written in the single schema from core.alert_feed.
 
 Removed from this module, deliberately:
   * _try_ai_alerts() asked an LLM to "summarize current civic alerts" with no
