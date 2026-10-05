@@ -4,21 +4,33 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "telanganalive.shop" }],
-      "destination": "https://www.telanganalive.shop/$1",
-      "permanent": true
+      "has": [{ "type": "host", "value": "telanganalive.in" }],
+      "destination": "https://www.telangana.live/$1",
+      "statusCode": 308
     },
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "telanganalive.in" }],
-      "destination": "https://www.telanganalive.shop/$1",
-      "permanent": true
+      "has": [{ "type": "host", "value": "www.telanganalive.in" }],
+      "destination": "https://www.telangana.live/$1",
+      "statusCode": 308
     },
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "telanganalive.online" }],
-      "destination": "https://www.telanganalive.shop/$1",
-      "permanent": true
+      "destination": "https://www.telangana.live/$1",
+      "statusCode": 308
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "telanganalive.shop" }],
+      "destination": "https://www.telangana.live/$1",
+      "statusCode": 308
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.telanganalive.shop" }],
+      "destination": "https://www.telangana.live/$1",
+      "statusCode": 308
     }
   ],
   "rewrites": [
