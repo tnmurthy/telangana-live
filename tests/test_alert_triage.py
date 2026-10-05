@@ -21,10 +21,15 @@ sys.path.insert(0, os.path.join(repo_root, "backend"))
 from core import alert_triage  # noqa: E402
 from core.alert_triage import (  # noqa: E402
     MIN_CURRENT_PROBABILITY,
+    MIN_DISTRICT_CONFIDENCE,
     MIN_TELANGANA_PROBABILITY,
     MIN_TYPE_CONFIDENCE,
     NO_ALERT,
+    STATEWIDE,
+    TELANGANA_DISTRICTS,
+    UNCLEAR_DISTRICT,
     AlertVerdict,
+    district_for,
     severity_for_score,
     triage_headline,
 )
@@ -35,7 +40,8 @@ from core.alert_triage import (  # noqa: E402
 # ---------------------------------------------------------------------------
 
 def _stub_response(alert_type="flood", type_confidence=0.95,
-                   telangana=0.97, current=0.93, severity=3.4):
+                   telangana=0.97, current=0.93, severity=3.4,
+                   district="Hyderabad", district_confidence=0.9):
     """Build an object shaped like a typesafe_sdk SystemOneResponse."""
     choice = MagicMock()
     choice.choice = alert_type
@@ -45,7 +51,11 @@ def _stub_response(alert_type="flood", type_confidence=0.95,
     score.score = severity
 
     resp = MagicMock()
-    resp.choices = {"alert_type": choice}
+    district_choice = MagicMock()
+    district_choice.choice = district
+    district_choice.confidence = district_confidence
+
+    resp.choices = {"alert_type": choice, "district": district_choice}
     resp.scores = {"severity": score}
     resp.nouls = {
         "is_telangana": MagicMock(noul=telangana),
@@ -76,7 +86,7 @@ class TestQuestionSet:
         _, kwargs = client.system_one.call_args
         questions = kwargs["questions"]
         assert set(questions) == {
-            "alert_type", "is_telangana", "is_current", "severity",
+            "alert_type", "is_telangana", "is_current", "severity", "district",
         }
 
     def test_state_carries_headline_and_description_as_named_fields(self):
@@ -266,6 +276,61 @@ FIXTURE_HEADLINES = [
     ("Assembly debates power tariff hike proposal", False, None),
     ("New flyover to be built at Uppal, says minister", False, None),
 ]
+
+
+class TestDistrict:
+    """Which of Telangana's 33 districts an alert is in, asked in the same
+    request as the other four judgments."""
+
+    def _verdict(self, **stub):
+        client = _client_returning(_stub_response(**stub))
+        with patch.object(alert_triage, "_get_client", return_value=client):
+            return triage_headline("Power cut across Gachibowli", "")
+
+    def test_options_are_the_33_districts_plus_no_match_outcomes(self):
+        assert len(TELANGANA_DISTRICTS) == 33
+        assert "Hanumakonda" in TELANGANA_DISTRICTS
+        assert "Cyberabad" not in TELANGANA_DISTRICTS  # a police commissionerate
+        criteria = alert_triage._build_questions()["district"].criteria
+        assert set(criteria) == set(TELANGANA_DISTRICTS) | {STATEWIDE, UNCLEAR_DISTRICT}
+
+    def test_confident_district_is_kept(self):
+        verdict = self._verdict(district="Rangareddy", district_confidence=0.92)
+        assert verdict.accepted
+        assert verdict.district == "Rangareddy"
+
+    def test_low_confidence_district_is_not_claimed(self):
+        verdict = self._verdict(district="Rangareddy",
+                                district_confidence=MIN_DISTRICT_CONFIDENCE - 0.01)
+        assert verdict.district is None
+        assert verdict.chosen_district == "Rangareddy"
+        assert verdict.district_confidence == MIN_DISTRICT_CONFIDENCE - 0.01
+
+    @pytest.mark.parametrize("outcome", [STATEWIDE, UNCLEAR_DISTRICT])
+    def test_no_single_district(self, outcome):
+        verdict = self._verdict(district=outcome, district_confidence=0.99)
+        assert verdict.district is None
+
+    def test_rejected_verdicts_still_report_the_raw_district(self):
+        verdict = self._verdict(telangana=0.1, district="Hyderabad")
+        assert not verdict.accepted
+        assert verdict.chosen_district == "Hyderabad"
+
+    def test_regex_fallback_claims_no_district(self):
+        with patch.object(alert_triage, "_get_client", return_value=None):
+            verdict = triage_headline("Power cut across Kukatpally in Telangana", "")
+        assert verdict.source == "regex"
+        assert verdict.district is None
+
+    def test_district_for_prefers_the_typesafe_judgment(self):
+        judged = self._verdict(district="Rangareddy", district_confidence=0.92)
+        statewide = self._verdict(district=STATEWIDE, district_confidence=0.99)
+        with patch.object(alert_triage, "_get_client", return_value=None):
+            regex = triage_headline("Power cut across Kukatpally in Telangana", "")
+
+        assert district_for(judged, keyword_region="Cyberabad") == "Rangareddy"
+        assert district_for(statewide, keyword_region="Cyberabad") is None
+        assert district_for(regex, keyword_region="Cyberabad") == "Cyberabad"
 
 
 class TestFixtureCorpus:

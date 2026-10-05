@@ -8,7 +8,9 @@ Replaces the previous three-layer stack in scripts/data_engine.py:
   3. a follow-up LLM call prompted for "exactly one word: YES or NO", parsed
      with .startswith("YES") — anything else silently meant "trust the regex"
 
-All four judgments now ride in a single TypeSafe request and come back typed.
+All four judgments now ride in a single TypeSafe request and come back typed,
+together with a fifth: which of the 33 districts the disruption is in (it
+replaced keyword region tagging; see MIN_DISTRICT_CONFIDENCE for its limits).
 Code keeps the policy: thresholds, severity bands and accept/reject live here,
 not in the model, so they can be retuned without re-running inference.
 
@@ -84,6 +86,16 @@ SEVERITY_BANDS = ("low", "medium", "high", "critical")
 MIN_TYPE_CONFIDENCE = 0.80
 MIN_TELANGANA_PROBABILITY = 0.70
 MIN_CURRENT_PROBABILITY = 0.50
+# Below this the district is left unclaimed and the alert shows as Telangana.
+# Calibrated 2026-10-05 with tools/calibrate_alert_district.py: places named in
+# DISTRICT_CRITERIA scored >= 0.93, all correct. For places not named there the
+# model's map knowledge is weak and sometimes confidently wrong (Miyapur ->
+# Medchal-Malkajgiri at 0.75, Devarakadra -> Nalgonda at 0.75):
+#   unlisted: 0.60 -> 14 published, 2 wrong; 0.80 -> 13, 1 wrong
+#   (Devarakadra scored 0.75 on one run, 0.80 on the next); 0.90 -> 10, 0 wrong.
+# A wrong district is worse than "Telangana", so precision wins. Recall for
+# unlisted places needs a place -> district lookup in code, not a lower bar.
+MIN_DISTRICT_CONFIDENCE = 0.90
 
 
 @dataclass(frozen=True)
@@ -101,6 +113,9 @@ class AlertVerdict:
     telangana_probability: Optional[float] = None
     current_probability: Optional[float] = None
     severity_score: Optional[float] = None
+    district: Optional[str] = None  # one of TELANGANA_DISTRICTS, only when confident
+    chosen_district: Optional[str] = None  # raw Choice, populated whether or not used
+    district_confidence: Optional[float] = None
 
 
 # ── Question set ──────────────────────────────────────────────────────────────
@@ -141,6 +156,58 @@ SEVERITY_CRITERIA = [
 ]
 
 
+# The 33 revenue districts, with places people actually name in headlines.
+# The suburbs of Hyderabad are the hard cases: Gachibowli is in Rangareddy and
+# Kukatpally in Medchal-Malkajgiri, not "Hyderabad". Police commissionerates
+# (Cyberabad, Rachakonda) are not districts.
+DISTRICT_CRITERIA = {
+    "Adilabad": "Adilabad town, Utnoor, Ichoda.",
+    "Bhadradri Kothagudem": "Kothagudem, Bhadrachalam, Paloncha, Manuguru, Yellandu.",
+    "Hanumakonda": "Hanumakonda (Hanamkonda) town, Kazipet, Parkal.",
+    "Hyderabad": "The core city: Charminar, Old City, Secunderabad, Begumpet, Ameerpet, "
+                 "Mehdipatnam, Tank Bund, Banjara Hills, Jubilee Hills, Musheerabad, "
+                 "Himayatnagar. Also an event placed only in \"Hyderabad\" or \"the city\" "
+                 "with no locality.",
+    "Jagtial": "Jagtial, Korutla, Metpally.",
+    "Jangaon": "Jangaon town, Ghanpur (Station).",
+    "Jayashankar Bhupalpally": "Bhupalpally, Kaleshwaram, Mahadevpur.",
+    "Jogulamba Gadwal": "Gadwal, Alampur.",
+    "Kamareddy": "Kamareddy, Banswada, Yellareddy.",
+    "Karimnagar": "Karimnagar town, Huzurabad, Lower Manair Dam.",
+    "Khammam": "Khammam town, Sathupalli, Madhira, Wyra.",
+    "Kumuram Bheem Asifabad": "Asifabad, Kagaznagar, Sirpur.",
+    "Mahabubabad": "Mahabubabad, Thorrur.",
+    "Mahabubnagar": "Mahabubnagar (Palamuru), Jadcherla.",
+    "Mancherial": "Mancherial, Bellampalli, Mandamarri, Chennur.",
+    "Medak": "Medak town, Narsapur, Ramayampet.",
+    "Medchal-Malkajgiri": "Northern and eastern Hyderabad suburbs: Kukatpally, Uppal, Alwal, "
+                          "Malkajgiri, Kapra, ECIL, Quthbullapur, Bachupally, Kompally, "
+                          "Medchal, Shamirpet, Ghatkesar.",
+    "Mulugu": "Mulugu, Ramappa, Medaram, Eturnagaram.",
+    "Nagarkurnool": "Nagarkurnool, Achampet, Kalwakurthy.",
+    "Nalgonda": "Nalgonda town, Miryalaguda, Nagarjuna Sagar, Devarakonda.",
+    "Narayanpet": "Narayanpet, Makthal.",
+    "Nirmal": "Nirmal town, Bhainsa, Basar.",
+    "Nizamabad": "Nizamabad town, Bodhan, Armur.",
+    "Peddapalli": "Peddapalli, Ramagundam, Godavarikhani, Manthani.",
+    "Rajanna Sircilla": "Sircilla, Vemulawada.",
+    "Rangareddy": "Western and southern Hyderabad suburbs: Gachibowli, Madhapur, HITEC City, "
+                  "Kondapur, Serilingampally, Narsingi, Rajendranagar, LB Nagar, "
+                  "Shamshabad and the airport, Ibrahimpatnam, Shadnagar.",
+    "Sangareddy": "Sangareddy town, Patancheru, Ameenpur, Zaheerabad.",
+    "Siddipet": "Siddipet town, Gajwel, Husnabad.",
+    "Suryapet": "Suryapet town, Kodad, Huzurnagar.",
+    "Vikarabad": "Vikarabad town, Tandur, Ananthagiri.",
+    "Wanaparthy": "Wanaparthy, Kothakota.",
+    "Warangal": "Warangal city and fort, Narsampet, Wardhannapet.",
+    "Yadadri Bhuvanagiri": "Bhongir (Bhuvanagiri), Yadagirigutta, Choutuppal.",
+}
+TELANGANA_DISTRICTS = tuple(DISTRICT_CRITERIA)
+
+STATEWIDE = "statewide"
+UNCLEAR_DISTRICT = "unclear"
+
+
 def _build_questions():
     return {
         "alert_type": Choice(
@@ -160,6 +227,19 @@ def _build_questions():
                          "next few days? A past event, an anniversary, a review "
                          "of an earlier event, or a project that has only been "
                          "proposed or approved does not count.",
+        ),
+        "district": Choice(
+            instructions="In which Telangana district is the disruption in "
+                         "`headline` located? Use the place it names; a "
+                         "neighbourhood belongs to its district, not to the "
+                         "nearest city.",
+            criteria={
+                **DISTRICT_CRITERIA,
+                STATEWIDE: "Several districts or the whole state, for example a "
+                           "statewide bandh or an IMD warning for many districts.",
+                UNCLEAR_DISTRICT: "No place is named precisely enough to tell the "
+                                  "district, or the place is outside Telangana.",
+            },
         ),
         "severity": Score(
             instructions="How disruptive is this to residents of the affected "
@@ -238,8 +318,11 @@ def _apply_policy(result) -> AlertVerdict:
     telangana = result.nouls["is_telangana"].noul
     current = result.nouls["is_current"].noul
     severity_score = result.scores["severity"].score
+    district_answer = result.choices["district"]
 
     signals = {
+        "chosen_district": district_answer.choice,
+        "district_confidence": district_answer.confidence,
         "chosen_type": type_answer.choice,
         "type_confidence": type_answer.confidence,
         "telangana_probability": telangana,
@@ -266,13 +349,28 @@ def _apply_policy(result) -> AlertVerdict:
     if current < MIN_CURRENT_PROBABILITY:
         return reject("not_current")
 
+    district = None
+    if (district_answer.choice in DISTRICT_CRITERIA
+            and district_answer.confidence >= MIN_DISTRICT_CONFIDENCE):
+        district = district_answer.choice
+
     return AlertVerdict(
         accepted=True,
         alert_type=type_answer.choice,
         severity=severity_for_score(severity_score),
         source="typesafe",
+        district=district,
         **signals,
     )
+
+
+def district_for(verdict: AlertVerdict, *, keyword_region: Optional[str]) -> Optional[str]:
+    """The district to publish. A TypeSafe verdict is final, including its
+    "no single district" (None, shown as Telangana); only the regex fallback
+    uses the keyword region from core.news_classifier."""
+    if verdict.source == "typesafe":
+        return verdict.district
+    return keyword_region
 
 
 # ── Fallback path ─────────────────────────────────────────────────────────────

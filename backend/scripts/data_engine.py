@@ -651,7 +651,7 @@ ALERT_EXPIRY_DAYS = 3
 # core.alert_triage (one TypeSafe request per headline). Thresholds and severity
 # bands live there; see tools/calibrate_alert_triage.py to retune them.
 try:
-    from core.alert_triage import triage_headline
+    from core.alert_triage import district_for, triage_headline
 except ImportError:
     triage_headline = None
 
@@ -766,9 +766,10 @@ def sync_alerts():
                 rejected += 1
                 continue
 
-            region = None
+            keyword_region = None
             if classify_article:
-                _, region = classify_article(title, description)
+                _, keyword_region = classify_article(title, description)
+            region = district_for(verdict, keyword_region=keyword_region)
 
             source = entry.get("source")
             new_alerts.append(build_alert_record(
