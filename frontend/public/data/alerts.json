@@ -110,5 +110,37 @@
     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
     "source": "newsmeter.in"
+  },
+  {
+    "id": "alert-e5f89b577cdc",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Cut: 36 Areas To Face Supply Disruption Till October 6; Check Full List - News18",
+    "message": "Hyderabad Water Cut: 36 Areas To Face Supply Disruption Till October 6; Check Full List - News18",
+    "description": "Hyderabad Water Cut: 36 Areas To Face Supply Disruption Till October 6; Check Full List  News18",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-05T09:08:12Z",
+    "publishedAt": "2026-10-05T07:56:34Z",
+    "time": "5 Oct, 1:26 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMWVWTGpNT0NkU2tKQ3FQYmRoeDMxVTJzWnU4YzhsOENMd0Y0RUVKNG5qaUtsbmc3QzRqU212OFlOdmhnOGo5LVE4SUxpS091Z3JKelNnQkhYYXpGNVNibGtSRDNXMXNjRXJacHNheWdPMjRNOTQycmJXYkJXNVEycGxZUERvRGpGeGF4YVZlTjVMbEhfd3hyUG80RmxoY1NyVUJYWFhINVhFM2xULThGQ0l6R0hCNW5VUVlPb0FGZlcwaFR5RTlwdHJDcFBzT3BDU0ZMMXZ6SUsxbVFCOG5JSUc4QdIB6AFBVV95cUxQQVdFSGNVVURLcmNpYmNwRnhzcEpUbUVCTHBOZU5vNUlMeXhzY2pybGFjUjd3Y2hDcEtDa25lY1NLTW91bUhMdk1IcWt4ZXhORWo0R2JZaUtjeXkzaVhGX0JZU3JNLWZTS0lvX0kxOG1oN0hZVXFwbDVkRjUta3dqcS1fM2hHRGRHVVNBR0FBa2pZVENiMGp4dkhlZF9hYktyYlhfeFFzNWVCR3dZMGpJWDE5cGRpTi16M0pyd2kzTzZaV0VKZ0ItUktEbVRSSkdtNjVERG1TdlR3Z1VRbF9RTjk1eVYyWTBR?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMWVWTGpNT0NkU2tKQ3FQYmRoeDMxVTJzWnU4YzhsOENMd0Y0RUVKNG5qaUtsbmc3QzRqU212OFlOdmhnOGo5LVE4SUxpS091Z3JKelNnQkhYYXpGNVNibGtSRDNXMXNjRXJacHNheWdPMjRNOTQycmJXYkJXNVEycGxZUERvRGpGeGF4YVZlTjVMbEhfd3hyUG80RmxoY1NyVUJYWFhINVhFM2xULThGQ0l6R0hCNW5VUVlPb0FGZlcwaFR5RTlwdHJDcFBzT3BDU0ZMMXZ6SUsxbVFCOG5JSUc4QdIB6AFBVV95cUxQQVdFSGNVVURLcmNpYmNwRnhzcEpUbUVCTHBOZU5vNUlMeXhzY2pybGFjUjd3Y2hDcEtDa25lY1NLTW91bUhMdk1IcWt4ZXhORWo0R2JZaUtjeXkzaVhGX0JZU3JNLWZTS0lvX0kxOG1oN0hZVXFwbDVkRjUta3dqcS1fM2hHRGRHVVNBR0FBa2pZVENiMGp4dkhlZF9hYktyYlhfeFFzNWVCR3dZMGpJWDE5cGRpTi16M0pyd2kzTzZaV0VKZ0ItUktEbVRSSkdtNjVERG1TdlR3Z1VRbF9RTjk1eVYyWTBR?oc=5",
+    "source": "News18"
+  },
+  {
+    "id": "alert-96d267ac3045",
+    "type": "weather",
+    "severity": "low",
+    "title": "Telangana weather: Rain in 4 districts, cooler mornings ahead - hyderabadmail.com",
+    "message": "Telangana weather: Rain in 4 districts, cooler mornings ahead - hyderabadmail.com",
+    "description": "Telangana weather: Rain in 4 districts, cooler mornings ahead  hyderabadmail.com",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-05T09:08:12Z",
+    "publishedAt": "2026-10-05T04:08:46Z",
+    "time": "5 Oct, 9:38 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd3lRbnY0R29tX1MzT1J0QzAxeFRIbGkyX04wN2ExemxlVmJlenNFOHB6SHVra0lyY1VjSU5lZ1RTQ21FdnFlVmFDaXd6SktDZjBOdUZGN1YwY01zTW5iUnFXclc2RlNTQ0ZMM2tBVGFpVG1yRnRFUVpmMTJQNHRaTGdOWQ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd3lRbnY0R29tX1MzT1J0QzAxeFRIbGkyX04wN2ExemxlVmJlenNFOHB6SHVra0lyY1VjSU5lZ1RTQ21FdnFlVmFDaXd6SktDZjBOdUZGN1YwY01zTW5iUnFXclc2RlNTQ0ZMM2tBVGFpVG1yRnRFUVpmMTJQNHRaTGdOWQ?oc=5",
+    "source": "hyderabadmail.com"
   }
 ]
