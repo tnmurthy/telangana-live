@@ -94,5 +94,21 @@
     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
     "source": "NewsMeter"
+  },
+  {
+    "id": "alert-2f327c238148",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "36-hour water disruption in Hyderabad from Monday; check affected areas - newsmeter.in",
+    "message": "36-hour water disruption in Hyderabad from Monday; check affected areas - newsmeter.in",
+    "description": "36-hour water disruption in Hyderabad from Monday; check affected areas  newsmeter.in",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-05T02:06:36Z",
+    "publishedAt": "2026-10-04T11:10:16Z",
+    "time": "4 Oct, 4:40 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
+    "source": "newsmeter.in"
   }
 ]
