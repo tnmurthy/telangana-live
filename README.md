@@ -354,6 +354,7 @@ infrastructure/
 | TL-32 | Official disaster alerts not used | Fixed 5 Oct: IMD, CWC and SDMA alerts from NDMA SACHET that name Telangana now feed /alerts every 15 minutes, with issuer, area and an "until" time; hidden once the authority's alert expires | ✅ Fixed | None. Telangana had no active SACHET alert on 5 Oct, so the first one will show when IMD or the SDMA issues it |
 | TL-33 | Sponsor card showed an invented match score | Fixed 5 Oct: `PartnerCard` showed a random "Brand Sync 85–99% Match" and "Business DNA Verified" on every paid spotlight; now a plain card labelled Sponsored with `rel="sponsored"` | ✅ Fixed | — |
 | TL-34 | Secondary domains duplicated or misdirected | Fixed 5 Oct: bare telangana.live redirected with a temporary 307 (now 308); www.telanganalive.in served a full duplicate of the site; `vercel.json` sent telanganalive.in/.online to telanganalive.shop, which is not on the project. All now 308 to www.telangana.live | ◐ Partly fixed | In Vercel → Domains, set telanganalive.in and telanganalive.online to 308 (they still 307) |
+| TL-35 | Shared links had no preview image | Fixed 5 Oct: `og:image`/`twitter:image` pointed at `/og-image.png`, which did not exist. Added a 1200×630 image | ✅ Fixed | — |
 | TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ◐ Partly fixed | 5 Oct: no more invented gold prices (stale runs keep the last real reading with its own date; no fixed fallback). Still needed: confirm acceptable sources |
@@ -393,6 +394,7 @@ infrastructure/
 | TL-32 | Backend | new alerts source from SACHET RSS + CAP XML | ✅ Done: `core/sachet.py` (shared with vizag), `alert_feed.build_official_record`, `utils/alerts.js`; tests `test_sachet.py`, `alerts.test.js` | M |
 | TL-33 | Frontend | `components/PartnerCard.jsx` | ✅ Done: guard in `tests/unit/noInventedScores.test.js` | S |
 | TL-34 | Infra | `vercel.json`, `frontend/vercel.json`, Vercel domains | ◐ apex 308 and host redirects done; two domain-level 307s need the dashboard | S |
+| TL-35 | Frontend | `public/og-image.png` | ✅ Done: `tests/unit/shareImage.test.js` checks every meta image exists | S |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ◐ No invented values (tests in `TestSyncFinanceHistoryTracking`); sources still to confirm | M |
