@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getReservoirStatus } from '../data/reservoirsData';
 import { fetchWaterLevels } from '../services/waterService';
+import UpdatedAt from '../components/UpdatedAt';
 import newsData from '../data/news.json';
 
 function LevelBar({ pct, color }) {
@@ -197,10 +198,7 @@ export default function ReservoirsPage() {
                         <p className="text-text-muted text-sm mt-1">Major dams & reservoirs in Telangana</p>
                     </div>
                     <div className="text-right flex-shrink-0">
-                        <span className="badge-live bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse-live"></span>
-                            Updated
-                        </span>
+                        <UpdatedAt timestamp={liveData.lastUpdated} maxAgeHours={48} />
                         <p className="text-[10px] text-text-muted mt-1">{updatedTime}</p>
                     </div>
                 </div>

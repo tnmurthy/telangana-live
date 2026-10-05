@@ -3,6 +3,12 @@ import transitStatus from '../data/transit_status.json';
 import newsData from '../data/news.json';
 import ShareWhatsApp from './ShareWhatsApp';
 import { Icons } from './Icons';
+import UpdatedAt from './UpdatedAt';
+import { freshness } from '../utils/freshness';
+
+// Service alerts are shown only while transit_status.json is within its
+// 24-hour limit; older alerts may no longer apply.
+const TRANSIT_MAX_AGE_HOURS = 24;
 
 function CrowdMeter({ level, label, color }) {
     return (
@@ -27,8 +33,9 @@ export default function MetroCard({ variant = 'default' }) {
                     <h2 className="section-title flex items-center gap-2">
                         <Icons.Airport className="w-6 h-6 rotate-[225deg]" /> Public Transport
                     </h2>
-                    <p className="section-subtitle">Metro & MMTS Live Updates</p>
+                    <p className="section-subtitle">Metro & MMTS service alerts</p>
                 </div>
+                <UpdatedAt timestamp={transitStatus?.lastUpdated} maxAgeHours={TRANSIT_MAX_AGE_HOURS} />
             </div>
 
             {/* Metro Takeover Banner */}
@@ -47,7 +54,8 @@ export default function MetroCard({ variant = 'default' }) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                 {metroData.lines.map((line) => {
                     // Filter alerts matching this metro line from transitStatus
-                    const lineAlerts = transitStatus?.alerts?.filter(alert => 
+                    const alertsCurrent = !freshness(transitStatus?.lastUpdated, TRANSIT_MAX_AGE_HOURS).stale;
+                    const lineAlerts = !alertsCurrent ? [] : transitStatus?.alerts?.filter(alert => 
                         alert.title.toLowerCase().includes(line.name.toLowerCase()) ||
                         alert.description.toLowerCase().includes(line.name.toLowerCase())
                     ) || [];

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { fuelPrices as staticFuelPrices } from '../data/fuelPrices';
 import { fetchFuelPrices } from '../services/pricesService';
 import ShareWhatsApp from './ShareWhatsApp';
+import UpdatedAt from './UpdatedAt';
 
 /* ── SVG Icons for fuel types ── */
 const fuelIcons = {
@@ -69,7 +70,10 @@ export default function FuelPriceWidget() {
                     <h3 className="font-heading font-bold text-white text-base sm:text-lg tracking-tight">Fuel Prices</h3>
                     <p className="section-subtitle">{city} daily rates</p>
                 </div>
-                <span className="date-badge">{date}</span>
+                <div className="text-right">
+                    <span className="date-badge">{date}</span>
+                    <div className="mt-1"><UpdatedAt timestamp={fuelPrices.updatedAt || staticFuelPrices.updatedAt} maxAgeHours={30} /></div>
+                </div>
             </div>
 
             {/* Compact table layout */}
