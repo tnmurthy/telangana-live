@@ -377,7 +377,7 @@ def fetch_google_news(query: str) -> list:
 
 
 def _item_id(link: str, headline: str) -> str:
-    return "tp-" + hashlib.sha1((link or headline).encode("utf-8")).hexdigest()[:12]
+    return "tp-" + hashlib.sha1((link or headline).encode("utf-8"), usedforsecurity=False).hexdigest()[:12]
 
 
 # ── Build ─────────────────────────────────────────────────────────────────────

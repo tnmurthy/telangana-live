@@ -44,7 +44,7 @@ def load_feeds():
 CATEGORIZED_FEEDS = load_feeds()
 
 def uid(url):
-    return hashlib.md5(url.encode()).hexdigest()
+    return hashlib.md5(url.encode(), usedforsecurity=False).hexdigest()
 
 articles = []
 seen_links = set()

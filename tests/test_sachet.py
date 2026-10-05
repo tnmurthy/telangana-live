@@ -244,3 +244,10 @@ def test_fetch_alerts_skips_known_identifiers():
 
     assert alerts == []
     assert calls == [SACHET_RSS_URL]
+
+
+def test_parse_rejects_entity_expansion():
+    bomb = ('<?xml version="1.0"?><!DOCTYPE a [<!ENTITY x "xxxxxxxx">'
+            '<!ENTITY y "&x;&x;&x;&x;">]><alert><status>&y;</status></alert>')
+    assert parse_cap(bomb, LINK) is None
+    assert parse_rss(bomb) == []

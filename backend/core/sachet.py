@@ -24,8 +24,11 @@ import datetime
 import email.utils
 import re
 import xml.etree.ElementTree as ET
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
-from typing import Callable, Iterable, Optional
+
+from defusedxml import DefusedXmlException
+from defusedxml import ElementTree as SafeET
 
 SACHET_RSS_URL = "https://sachet.ndma.gov.in/cap_public_website/rss/rss_india.xml"
 _SACHET_LINK = re.compile(r"^https://sachet\.ndma\.gov\.in/")
@@ -36,11 +39,11 @@ _SEVERITY = {"extreme": "critical", "severe": "high", "moderate": "medium", "min
 
 # CAP event -> a type both sites already render. Order matters: first match wins.
 _KINDS = (
-    ("flood", re.compile(r"flood|inundat", re.I)),
-    ("natural_disaster", re.compile(r"landslide|avalanche|earthquake|tsunami", re.I)),
-    ("emergency", re.compile(r"fire", re.I)),
+    ("flood", re.compile(r"flood|inundat", re.IGNORECASE)),
+    ("natural_disaster", re.compile(r"landslide|avalanche|earthquake|tsunami", re.IGNORECASE)),
+    ("emergency", re.compile(r"fire", re.IGNORECASE)),
     ("weather", re.compile(r"cyclone|depression|storm|thunder|lightning|squall|gust"
-                           r"|rain|heat|cold|wind|fog|dust|hail", re.I)),
+                           r"|rain|heat|cold|wind|fog|dust|hail", re.IGNORECASE)),
 )
 
 
@@ -49,25 +52,25 @@ class SachetItem:
     guid: str
     title: str
     link: str
-    office: Optional[str]
-    published: Optional[datetime.datetime]
+    office: str | None
+    published: datetime.datetime | None
 
 
 @dataclass(frozen=True)
 class SachetAlert:
     identifier: str
     sender: str
-    sent: Optional[datetime.datetime]
-    event: Optional[str]
-    cap_severity: Optional[str]
-    urgency: Optional[str]
-    certainty: Optional[str]
-    headline: Optional[str]
-    description: Optional[str]
-    instruction: Optional[str]
+    sent: datetime.datetime | None
+    event: str | None
+    cap_severity: str | None
+    urgency: str | None
+    certainty: str | None
+    headline: str | None
+    description: str | None
+    instruction: str | None
     area: str
-    effective: Optional[datetime.datetime]
-    expires: Optional[datetime.datetime]
+    effective: datetime.datetime | None
+    expires: datetime.datetime | None
     link: str
 
     @property
@@ -83,11 +86,11 @@ class SachetAlert:
         return self.expires is not None and self.expires > now
 
 
-def site_severity(cap_severity: Optional[str]) -> str:
+def site_severity(cap_severity: str | None) -> str:
     return _SEVERITY.get((cap_severity or "").strip().lower(), "low")
 
 
-def alert_kind(event: Optional[str]) -> str:
+def alert_kind(event: str | None) -> str:
     for kind, pattern in _KINDS:
         if event and pattern.search(event):
             return kind
@@ -103,14 +106,16 @@ def _strip_namespaces(root: ET.Element) -> ET.Element:
     return root
 
 
-def _parse_xml(text: str) -> Optional[ET.Element]:
+def _parse_xml(text: str) -> ET.Element | None:
+    # The feed is third-party XML: defusedxml refuses entity expansion and
+    # external references.
     try:
-        return _strip_namespaces(ET.fromstring(text))
-    except ET.ParseError:
+        return _strip_namespaces(SafeET.fromstring(text))
+    except (ET.ParseError, DefusedXmlException):
         return None
 
 
-def _text(el: Optional[ET.Element], tag: str) -> Optional[str]:
+def _text(el: ET.Element | None, tag: str) -> str | None:
     if el is None:
         return None
     child = el.find(tag)
@@ -119,7 +124,7 @@ def _text(el: Optional[ET.Element], tag: str) -> Optional[str]:
     return re.sub(r"\s+", " ", child.text).strip() or None
 
 
-def _iso(value: Optional[str]) -> Optional[datetime.datetime]:
+def _iso(value: str | None) -> datetime.datetime | None:
     if not value:
         return None
     try:
@@ -156,7 +161,7 @@ def parse_rss(xml: str) -> list:
     return items
 
 
-def parse_cap(xml: str, link: str) -> Optional[SachetAlert]:
+def parse_cap(xml: str, link: str) -> SachetAlert | None:
     """A live CAP alert or update, or None (cancellation, test, unparseable)."""
     root = _parse_xml(xml)
     if root is None or root.tag != "alert":
@@ -218,9 +223,9 @@ class AreaFilter:
             return True
         text = f"{alert.headline or ''} | {alert.area}"
         for code in self.codes:
-            if re.search(rf"(?<![a-z]){re.escape(code)}-", text, re.I):
+            if re.search(rf"(?<![a-z]){re.escape(code)}-", text, re.IGNORECASE):
                 return True
-        return any(re.search(rf"\b{re.escape(name)}\b", text, re.I) for name in self.names)
+        return any(re.search(rf"\b{re.escape(name)}\b", text, re.IGNORECASE) for name in self.names)
 
 
 # ── Fetching ─────────────────────────────────────────────────
@@ -245,7 +250,7 @@ def fetch_alerts(area: AreaFilter, *, offices: Iterable[str], now: datetime.date
             continue
         try:
             alert = parse_cap(get(item.link), item.link)
-        except Exception as exc:  # one bad alert must not lose the rest
+        except Exception as exc:  # noqa: BLE001 - one bad alert must not lose the rest
             print(f"  ⚠️ SACHET {item.guid}: {exc}")
             continue
         if alert and alert.is_active(now) and area.matches(alert):

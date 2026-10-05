@@ -67,7 +67,7 @@ def is_fresh(published, *, now: datetime.datetime, max_age_days: int) -> bool:
 
 
 def _stable_id(link: str, title: str) -> str:
-    digest = hashlib.sha1((link or title).encode("utf-8")).hexdigest()[:12]
+    digest = hashlib.sha1((link or title).encode("utf-8"), usedforsecurity=False).hexdigest()[:12]
     return f"alert-{digest}"
 
 
