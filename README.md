@@ -347,7 +347,7 @@ infrastructure/
 | TL-25 | Prices on the site were June's | Fixed 5 Oct: a data file last written 7 Jun was read first; API routes returned fixed lists dated today. Now live API or the synced daily files, with dates; API routes answer 503 when they have nothing | ✅ Fixed | — |
 | TL-26 | Unpaid placements labelled "Sponsored" | Fixed 5 Oct: T-Fiber / T-Hub / Tourism promos relabelled "Featured service"; six invented "verified" partner businesses removed; /advertise page with an enquiry form (telangana.ad_enquiries) | ✅ Fixed | Read enquiries in Supabase; sell the slots |
 | TL-27 | Search engines were sent to redirecting URLs | Fixed 5 Oct: canonical tags, sitemap, robots.txt and share links now use www.telangana.live | ✅ Fixed | Verify the site in Google Search Console and submit the sitemap; make the bare-domain redirect permanent (308) in Vercel |
-| TL-28 | Jobs board is a fixed list from May | 20 hand-entered listings (TSPSC, TCS, Wipro, ...) never refreshed; shown as current openings | P1 | Choose: a real jobs feed, or label it as a directory of recruiters |
+| TL-28 | Jobs board is a fixed list from May | 20 hand-entered listings (TSPSC, TCS, Wipro, ...) never refreshed; shown as current openings | ✅ Fixed | 5 Oct: counts from the real date; expired notifications are not shown; official recruitment portals always linked. A live notifications feed is still a possible upgrade |
 | TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ◐ Partly fixed | 5 Oct: no more invented gold prices (stale runs keep the last real reading with its own date; no fixed fallback). Still needed: confirm acceptable sources |
@@ -380,7 +380,7 @@ infrastructure/
 | TL-25 | Frontend + API | `services/pricesService.js`, `api/fuel-prices.js`, `api/gold-rates.js`, `api/mandi-prices.js` | ✅ Done: no constants or June file; `tests/unit/pricesService.test.js` | M |
 | TL-26 | Frontend + DB | `MainLayout`, `ProgrammaticAd`, `SubRegionPage`, `pages/AdvertisePage.jsx` | ✅ Done: `tests/unit/adEnquiryService.test.js`; insert-only RLS verified | M |
 | TL-27 | Frontend | 14 files using the bare domain | ✅ Done: guard test in `noBrowserSecrets.test.js` | S |
-| TL-28 | Data | `data/jobsData.js`, `JobBoardPage.jsx` | Listings carry a source and date and expire, or the page stops presenting them as current openings | M |
+| TL-28 | Data | `data/jobsData.js`, `JobBoardPage.jsx` | ✅ Done: `utils/jobs.js`, `tests/unit/jobs.test.js` | M |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ◐ No invented values (tests in `TestSyncFinanceHistoryTracking`); sources still to confirm | M |
