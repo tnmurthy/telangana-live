@@ -87,13 +87,13 @@ Our directory includes major initiatives such as Rythu Bandhu, Gruha Jyothi, Kal
 This directory covers police control rooms, women\'s safety lines, child protection services, electricity outage reports, and water board emergency desks. Keep these numbers saved for quick access. You can filter contacts by your specific district or municipal ward for hyper-local emergency support.`
   },
   '/jobs': {
-    title: 'Telangana Job Board - Govt & Private Job Openings - Telangana.live',
-    description: 'Browse the latest government (TSPSC) and private job vacancies in Hyderabad and Telangana districts. Apply online.',
-    h1: 'Telangana Employment & Vacancy Board',
-    h2s: ['Latest Public Sector Jobs', 'Private Openings & Subcontracting', 'Eligibility & Application Pathways'],
-    content: `Find your next career opportunity on the Telangana Live Job Board. We compile active job openings, recruitment notifications, and employment advertisements across both public and private sectors in Hyderabad and all districts. Job seekers can filter vacancies by category, location, and required qualification.
+    title: 'Telangana Jobs - Recruitment Notifications & Official Portals - Telangana.live',
+    description: 'Open recruitment notifications for Telangana with their closing dates, and links to official recruitment portals: TSPSC, TSLPRB, TSGENCO, RRB, UPSC, IBPS and more.',
+    h1: 'Telangana Jobs Board',
+    h2s: ['Open notifications', 'Official recruitment portals'],
+    content: `Recruitment notifications relevant to Telangana are listed with their closing date and a link to the official notice, and each one is removed once its closing date has passed.
 
-We track updates from TSPSC (Telangana State Public Service Commission), municipal recruitment drives, and local private employers. Each listing contains a clear summary of required skills, salary ranges, application deadlines, and direct links to apply. Access local employment resources to help build your professional career.`
+The board also links to the official recruitment portals for state and central bodies, including TSPSC, Telangana Police, TSGENCO, TSTransco, RRB Secunderabad, UPSC, IBPS and SBI, so you can check the source for new notifications.`
   },
   '/services': {
     title: 'Telangana Civic Services Directory & MeeSeva Guide - Telangana.live',

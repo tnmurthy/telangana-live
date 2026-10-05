@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { jobs, jobCategories } from '../data/jobsData';
+import { daysUntil, openListings, recruitmentPortals } from '../utils/jobs';
 
-function daysUntil(dateStr) {
-  const diff = (new Date(dateStr) - new Date('2026-04-04')) / (1000 * 60 * 60 * 24);
-  return Math.ceil(diff);
-}
+// Only notifications whose closing date has not passed are listed; every
+// organisation's official recruitment page is always linked (TL-28).
+const portals = recruitmentPortals(jobs);
 
 function formatSalary(min, max) {
   if (min >= 100000) return `₹${(min / 100000).toFixed(1)}L – ₹${(max / 100000).toFixed(1)}L/yr`;
@@ -21,7 +21,8 @@ export default function JobBoardPage() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [search, setSearch] = useState('');
 
-  const filtered = jobs.filter(j => {
+  const listings = openListings(jobs);
+  const filtered = listings.filter(j => {
     const matchCat = activeCategory === 'All' ||
       (activeCategory === 'Government' && j.type === 'Government') ||
       (activeCategory === 'IT' && j.type === 'IT') ||
@@ -46,7 +47,11 @@ export default function JobBoardPage() {
         <div className="absolute top-0 right-0 p-8 text-8xl opacity-10 pointer-events-none">💼</div>
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-2">
-            <span className="badge-live bg-telangana-green/20 text-telangana-green border border-telangana-green/30">Live Openings</span>
+            {listings.length > 0 ? (
+              <span className="badge-live bg-telangana-green/20 text-telangana-green border border-telangana-green/30">Open notifications</span>
+            ) : (
+              <span className="badge-live bg-white/10 text-text-secondary border border-white/15">Recruitment portals</span>
+            )}
           </div>
           <h2 className="section-title text-3xl sm:text-4xl gold-text mb-2">Jobs Board</h2>
           <p className="text-text-secondary font-medium italic">Government · IT · Banking · Railway · Defence · Telangana 2026</p>
@@ -62,9 +67,9 @@ export default function JobBoardPage() {
       {/* Stats */}
       <div className="grid grid-cols-3 gap-3">
         {[
-          { label: 'Total Jobs', value: jobs.length, emoji: '📋' },
-          { label: 'Total Posts', value: jobs.reduce((s, j) => s + j.posts, 0).toLocaleString('en-IN'), emoji: '👥' },
-          { label: 'Closing Soon', value: jobs.filter(j => daysUntil(j.lastDate) <= 7).length, emoji: '⏰' },
+          { label: 'Open Notifications', value: listings.length, emoji: '📋' },
+          { label: 'Total Posts', value: listings.reduce((s, j) => s + j.posts, 0).toLocaleString('en-IN'), emoji: '👥' },
+          { label: 'Closing in 7 Days', value: listings.filter(j => daysUntil(j.lastDate) <= 7).length, emoji: '⏰' },
         ].map(s => (
           <div key={s.label} className="widget-card p-3 text-center">
             <div className="text-2xl mb-1">{s.emoji}</div>
@@ -159,9 +164,27 @@ export default function JobBoardPage() {
       {filtered.length === 0 && (
         <div className="text-center py-12 text-text-muted">
           <div className="text-4xl mb-3">🔍</div>
-          <p className="text-sm">No jobs found matching your criteria</p>
+          <p className="text-sm">
+            {listings.length === 0
+              ? 'No open notifications on our list right now. Each notification is listed until its closing date; check the official portals below for new ones.'
+              : 'No open notifications match your search.'}
+          </p>
         </div>
       )}
+
+      {/* Official recruitment portals */}
+      <section aria-labelledby="portals" className="space-y-3">
+        <h3 id="portals" className="text-sm font-bold text-white uppercase tracking-wider">Official recruitment portals</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {portals.map(portal => (
+            <a key={portal.organization} href={portal.url} target="_blank" rel="noopener noreferrer"
+              className="widget-card p-3 flex items-center justify-between gap-3 hover-lift">
+              <span className="text-sm font-semibold text-white">{portal.organization}</span>
+              <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${typeColors[portal.type] || 'bg-white/10 text-white'}`}>{portal.type} ↗</span>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
