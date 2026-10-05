@@ -10,8 +10,11 @@ import datetime
 import os
 import sys
 
-repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(repo_root, "backend"))
+# tests/ sits at the repo root in telangana.live and under backend/ in vizag.live.
+_here = os.path.dirname(os.path.abspath(__file__))
+_backend = next(p for p in (os.path.join(_here, "..", "backend"), os.path.join(_here, ".."))
+                if os.path.isfile(os.path.join(p, "core", "sachet.py")))
+sys.path.insert(0, os.path.abspath(_backend))
 
 from core.sachet import (  # noqa: E402
     SACHET_RSS_URL,
