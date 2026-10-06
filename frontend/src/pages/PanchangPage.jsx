@@ -149,6 +149,9 @@ export default function PanchangPage() {
                                 <p className="text-text-secondary text-xl font-medium italic">
                                     {panchangData.teluguMonth} మాసం
                                 </p>
+                                {panchangData.source && (
+                                    <p className="text-[11px] text-text-muted mt-2 max-w-xs md:ml-auto">{panchangData.source}</p>
+                                )}
                             </div>
                         </div>
 
@@ -253,6 +256,9 @@ export default function PanchangPage() {
                             {Icons.Calendar && <Icons.Calendar className="w-6 h-6 text-heritage-gold" />}
                             Upcoming Festivals & Vrats
                         </h2>
+                        {!panchangData.festivals?.length && (
+                            <p className="text-sm text-text-muted">No festival calendar is connected yet, so none are listed.</p>
+                        )}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {panchangData.festivals?.map((fest, idx) => (
                                 <motion.div 
@@ -314,6 +320,9 @@ export default function PanchangPage() {
                         {Icons.Sparkles && <Icons.Sparkles className="w-6 h-6 text-heritage-gold" />}
                         Daily Rituals & Remedies
                     </h2>
+                    {!panchangData.rituals?.length && (
+                        <p className="text-sm text-text-muted">No ritual guide is connected yet.</p>
+                    )}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {panchangData.rituals?.map((ritual, idx) => (
                             <div key={idx} className="bg-dark-surface border border-white/5 rounded-xl p-5 border-l-4 border-l-heritage-gold">
@@ -438,6 +447,9 @@ export default function PanchangPage() {
                                 <p className="text-white leading-relaxed">
                                     {queryResult.explanation}
                                 </p>
+                                {queryResult.note && (
+                                    <p className="text-xs text-text-muted mt-2">{queryResult.note}</p>
+                                )}
                             </div>
                         </div>
                     </motion.div>

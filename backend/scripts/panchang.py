@@ -106,13 +106,13 @@ def get_vikram_samvat(dt: datetime | None = None) -> dict:
         sunrise = ephem.localtime(observer.next_rising(ephem.Sun())).strftime('%H:%M')
         sunset = ephem.localtime(observer.next_setting(ephem.Sun())).strftime('%H:%M')
     except Exception:
-        sunrise, sunset = "06:00", "18:00"
+        sunrise, sunset = None, None  # no fixed stand-in times
         
     try:
         moonrise = ephem.localtime(observer.next_rising(ephem.Moon())).strftime('%H:%M')
         moonset = ephem.localtime(observer.next_setting(ephem.Moon())).strftime('%H:%M')
     except Exception:
-        moonrise, moonset = "18:00", "06:00"
+        moonrise, moonset = None, None
         
     observer.date = dt
     
