@@ -15,7 +15,9 @@ import os
 import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
+
+IST = timezone(timedelta(hours=5, minutes=30))
 
 import feedparser
 
@@ -190,8 +192,9 @@ def _fact_check_article(item: dict) -> dict | None:
 class NewsScraper:
 
     def scrape(self, limit: int = 50) -> list[dict]:
-        logger.info("Starting scrape at %s", datetime.now())
-        print(f"Starting scrape at {datetime.now()}...")
+        started = datetime.now(IST)
+        logger.info("Starting scrape at %s", started)
+        print(f"Starting scrape at {started}...")
 
         # ── Phase 1: Concurrent feed fetching ─────────────────────────────────
         print(f"Fetching {len(FEEDS)} feeds concurrently...")
@@ -217,7 +220,7 @@ class NewsScraper:
                     "title": entry.title,
                     "link": link,
                     "source": source,
-                    "published": entry.get("published", datetime.now().strftime("%Y-%m-%d")),
+                    "published": entry.get("published", datetime.now(IST).strftime("%Y-%m-%d")),
                     "description": desc,
                     "category": cat,
                     "region": reg,

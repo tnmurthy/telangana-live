@@ -72,7 +72,7 @@ for category, feeds in CATEGORIZED_FEEDS.items():
                 seen_links.add(link)
                 title = entry.get("title", "")
                 summary = entry.get("summary", "")
-                published = entry.get("published", datetime.datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S +0530"))
+                published = entry.get("published", datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30))).strftime("%a, %d %b %Y %H:%M:%S +0530"))
                 
                 cat, region = classify_article(title, summary)
                 img = extract_image_url(entry)

@@ -37,7 +37,9 @@ try:
 except ImportError:
     classify_article = None
 
-NOW = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+NOW = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+# Dates shown to readers are India dates; runners keep UTC.
+IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "frontend", "src", "data"))
 FRONTEND_DATA_DIR = DATA_DIR
 
@@ -240,7 +242,8 @@ def _scrape_live_chennai():
                         sil_text = tds[2].get_text(strip=True).split('(')[0].replace(',', '').replace('₹', '') 
                         silver_gram = float(sil_text)
                         break
-    except: pass
+    except Exception as e:
+        print(f"  silver parse failed: {e}")
 
     # Parse gold history table
     try:
@@ -259,9 +262,10 @@ def _scrape_live_chennai():
                             # Added %B for full month names like 'June'
                             for fmt in ["%d/%b/%Y", "%d/%m/%Y", "%d/%B/%Y"]:
                                 try:
-                                    dt = datetime.datetime.strptime(date_raw, fmt)
+                                    dt = datetime.datetime.strptime(date_raw, fmt).replace(tzinfo=IST).date()
                                     break
-                                except: continue
+                                except ValueError:
+                                    continue
                             if dt:
                                 v24, v22 = float(p24_raw), float(p22_raw)
                                 def normalize_g(v): return v / 8 if v > 100000 else v
@@ -271,9 +275,11 @@ def _scrape_live_chennai():
                                     "gold24k": round(normalize_g(v24), 2),
                                     "silver": silver_gram
                                 })
-                        except: continue
+                        except (ValueError, TypeError):
+                            continue
                 break
-    except: pass
+    except Exception as e:
+        print(f"  gold history parse failed: {e}")
     return history
 
 def _scrape_live_mint():
@@ -305,7 +311,8 @@ def _scrape_live_mint():
                         try:
                             if "24 karat" in label or "24k" in label: prices["24k"] = float(val)
                             if "22 karat" in label or "22k" in label: prices["22k"] = float(val)
-                        except: pass
+                        except ValueError:
+                            pass
 
                 # Find date from history table on same page
                 for h_table in soup.find_all("table"):
@@ -317,17 +324,19 @@ def _scrape_live_mint():
                                 d_raw = h_cols[0].get_text(strip=True)
                                 try:
                                     # Mint uses 'Jun 2, 2026'
-                                    d_dt = datetime.datetime.strptime(d_raw, "%b %d, %Y")
+                                    d_dt = datetime.datetime.strptime(d_raw, "%b %d, %Y").replace(tzinfo=IST).date()
                                     history.append({
                                         "date": d_dt.strftime("%Y-%m-%d"),
                                         "gold22k": prices.get("22k"),
                                         "gold24k": prices.get("24k"),
                                         "silver": 290.0 # Mint silver is often separate
                                     })
-                                except: continue
+                                except ValueError:
+                                    continue
                         break
                 break
-    except: pass
+    except Exception as e:
+        print(f"  Mint parse failed: {e}")
     return history
 
 def sync_gold():
@@ -382,7 +391,8 @@ def sync_gold():
                 for entry in old_data.get("history", []):
                     if entry["date"] not in unique_history:
                         unique_history[entry["date"]] = entry
-    except: pass
+    except Exception as e:
+        print(f"  previous gold file unreadable: {e}")
 
     # Only a validated reading for today becomes today's history entry. A
     # stale run used to copy the last price in as "today" (change 0), and with
@@ -806,7 +816,7 @@ def sync_alerts():
 # ── AI PULSE / BRIEFING ───────────────────────────────────────────────────────
 def sync_ai_pulse():
     print("Syncing AI Pulse briefing...")
-    now_formatted = datetime.datetime.now().strftime("%B %d, %Y")
+    now_formatted = datetime.datetime.now(IST).strftime("%B %d, %Y")
     placeholder = _placeholder_briefing()
     briefing = placeholder
 
@@ -925,7 +935,7 @@ def sync_ai_pulse():
             
             text = resp.get("text", "")
             if text:
-                text = text.strip().strip("```json").strip("```").strip()
+                text = text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
                 parsed = json.loads(text)
                 # Ensure all required keys exist
                 if all(k in parsed for k in ("executiveBrief", "deprecations", "comparisonStats")):
@@ -952,8 +962,7 @@ def sync_ai_pulse():
 
 
 def _placeholder_briefing():
-    import datetime
-    now_formatted = datetime.datetime.now().strftime("%B %d, %Y")
+    now_formatted = datetime.datetime.now(IST).strftime("%B %d, %Y")
     return {
         "updatedAt": NOW,
         "date": now_formatted,

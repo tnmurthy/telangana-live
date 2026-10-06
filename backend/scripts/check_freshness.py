@@ -69,8 +69,8 @@ def _parse_time(value) -> datetime.datetime:
     text = str(value).strip()
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
         # A date without a time means "as of that day" in India: end of day IST.
-        day = datetime.datetime.strptime(text, "%Y-%m-%d")
-        return day.replace(hour=23, minute=59, second=59, tzinfo=_IST).astimezone(datetime.timezone.utc)
+        day = datetime.datetime.strptime(text, "%Y-%m-%d").replace(hour=23, minute=59, second=59, tzinfo=_IST)
+        return day.astimezone(datetime.timezone.utc)
     if re.match(r"\d{4}-\d{2}-\d{2}T", text):
         parsed = datetime.datetime.fromisoformat(text.replace("Z", "+00:00"))
     elif re.fullmatch(r"\d{1,2} [A-Za-z]{3}, \d{4} [+-]\d{4}", text):

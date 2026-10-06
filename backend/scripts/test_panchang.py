@@ -17,7 +17,7 @@ class TestPanchang(unittest.TestCase):
 
     def test_get_vikram_samvat_fixed_date(self):
         # Use a fixed date to test consistent output
-        dt = datetime(2023, 1, 1, 12, 0, 0)
+        dt = datetime(2023, 1, 1, 12, 0, 0)  # noqa: DTZ001 - ephem takes naive UTC
         result = get_vikram_samvat(dt)
         self.assertEqual(result['year'], 2079)  # Check Samvat offset
         self.assertTrue(isinstance(result['tithi'], str))

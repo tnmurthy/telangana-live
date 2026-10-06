@@ -56,8 +56,8 @@ def cluster_articles(articles: list, threshold: float = 0.82, jaccard_threshold:
     try:
         resp = requests.get(OLLAMA_URL, timeout=1)
         ollama_online = (resp.status_code == 200)
-    except Exception:
-        pass
+    except Exception as e:
+        logger.debug(f"Ollama not reachable, clustering without embeddings: {e}")
 
     # Pre-calculate embeddings to avoid redundant calls (only if online)
     embeddings = []

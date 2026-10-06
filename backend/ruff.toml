@@ -1,0 +1,13 @@
+# Ruff's default rules, minus one.
+[lint]
+ignore = [
+    # BLE001 (blind except): the scrapers and agents catch Exception on
+    # purpose, so one broken feed or site is logged and the rest of the run
+    # still finishes. Narrow the catch where a specific failure is expected.
+    "BLE001",
+]
+
+[lint.per-file-ignores]
+# Byte-identical with vizag-live, whose lint keeps BLE001 on; its
+# "noqa: BLE001" is unused here but needed there.
+"core/sachet.py" = ["RUF100"]

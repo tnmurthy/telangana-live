@@ -85,11 +85,11 @@ def extract_image_url(entry):
     media_content = entry.get("media_content") or entry.get("media:content")
     if media_content and isinstance(media_content, list):
         for media in media_content:
-            if isinstance(media, dict):
-                # prioritize image medium or type
-                if media.get("medium") == "image" or "image" in media.get("type", ""):
-                    if media.get("url"):
-                        return media.get("url")
+            # prioritize image medium or type
+            if (isinstance(media, dict)
+                    and (media.get("medium") == "image" or "image" in media.get("type", ""))
+                    and media.get("url")):
+                return media.get("url")
         # fallback: return first url
         for media in media_content:
             if isinstance(media, dict) and media.get("url"):
@@ -106,10 +106,8 @@ def extract_image_url(entry):
     enclosures = entry.get("enclosures")
     if enclosures and isinstance(enclosures, list):
         for enc in enclosures:
-            if isinstance(enc, dict):
-                if "image" in enc.get("type", ""):
-                    if enc.get("href"):
-                        return enc.get("href")
+            if isinstance(enc, dict) and "image" in enc.get("type", "") and enc.get("href"):
+                return enc.get("href")
         # fallback: return first href that might be an image link
         for enc in enclosures:
             if isinstance(enc, dict) and enc.get("href"):

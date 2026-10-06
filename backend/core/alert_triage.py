@@ -144,14 +144,14 @@ ALERT_TYPE_CRITERIA = {
 # version keyed Critical on "city-wide or state-wide", so every statewide
 # weather forecast scored critical (20 of 39 alerts in the first live run).
 SEVERITY_CRITERIA = [
-    "Low — a routine forecast or advisory, or a minor disruption confined to a "
-    "single street, building or junction.",
-    "Medium — a disruption affecting one neighbourhood or locality, a scheduled "
-    "outage of a few hours, or a yellow or orange weather warning.",
-    "High — a disruption across a whole district or a major road corridor that "
-    "lasts all day, or an IMD red alert.",
-    "Critical — lives are at risk or people are being rescued or evacuated, for "
-    "example homes flooding, a building collapse or a major fire.",
+    ("Low — a routine forecast or advisory, or a minor disruption confined to a "
+     "single street, building or junction."),
+    ("Medium — a disruption affecting one neighbourhood or locality, a scheduled "
+     "outage of a few hours, or a yellow or orange weather warning."),
+    ("High — a disruption across a whole district or a major road corridor that "
+     "lasts all day, or an IMD red alert."),
+    ("Critical — lives are at risk or people are being rescued or evacuated, for "
+     "example homes flooding, a building collapse or a major fire."),
 ]
 
 
@@ -284,7 +284,7 @@ def reset_client_cache():
 
 def severity_for_score(score: float) -> str:
     """Map an expected Score (probability-weighted level) onto a severity band."""
-    index = int(round(score))
+    index = round(score)
     index = max(0, min(index, len(SEVERITY_BANDS) - 1))
     return SEVERITY_BANDS[index]
 
@@ -390,9 +390,9 @@ _FALLBACK_PATTERNS = [
     ("road_closure", "medium",
      r"road (block|clos)|highway clos|traffic diversion|route diversion|flyover clos"),
     ("power_outage", "medium",
-     r"power cut|power outage|electricity (failure|shutdown)|"
-     r"ts spdcl.*(outage|shutdown|maintenance)|tsspdcl.*(outage|shutdown|maintenance)|"
-     r"tgspdcl.*(outage|shutdown|maintenance)"),
+     (r"power cut|power outage|electricity (failure|shutdown)|"
+      r"ts spdcl.*(outage|shutdown|maintenance)|tsspdcl.*(outage|shutdown|maintenance)|"
+      r"tgspdcl.*(outage|shutdown|maintenance)")),
     ("water_supply", "medium",
      r"water supply.*(cut|disrupt|suspend)|water shortage|hmwssb.*(shutdown|maintenance)"),
 ]

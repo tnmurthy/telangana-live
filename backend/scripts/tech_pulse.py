@@ -37,8 +37,8 @@ import os
 import re
 import sys
 import urllib.parse
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Callable, Optional
 
 _SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 _BACKEND_DIR = os.path.dirname(_SCRIPTS_DIR)
@@ -149,11 +149,11 @@ REGIONS = {
 @dataclass(frozen=True)
 class Verdict:
     accepted: bool
-    category: Optional[str]
+    category: str | None
     method: str  # "typesafe" | "keyword"
-    rejection_reason: Optional[str] = None
-    confidence: Optional[float] = None
-    region_probability: Optional[float] = None
+    rejection_reason: str | None = None
+    confidence: float | None = None
+    region_probability: float | None = None
 
 
 class FeedUnavailable(RuntimeError):
@@ -281,8 +281,7 @@ def judge_headline(headline: str, query_category: str, region: str) -> Verdict:
 
 
 _STOPWORDS = frozenset(
-    "the and for with from that this into over after amid says will about "
-    "plans their have been more than news".split())
+    ["the", "and", "for", "with", "from", "that", "this", "into", "over", "after", "amid", "says", "will", "about", "plans", "their", "have", "been", "more", "than", "news"])
 
 
 def _content_words(text: str) -> set:
@@ -349,7 +348,7 @@ def split_title(title: str):
     return match.group(1), match.group(2).strip()
 
 
-def _published(entry) -> Optional[datetime.datetime]:
+def _published(entry) -> datetime.datetime | None:
     parsed = entry.get("published_parsed")
     if not parsed:
         return None
@@ -359,7 +358,7 @@ def _published(entry) -> Optional[datetime.datetime]:
         return None
 
 
-def _entry_source(entry) -> Optional[str]:
+def _entry_source(entry) -> str | None:
     source = entry.get("source")
     if isinstance(source, dict):
         return source.get("title")
@@ -383,9 +382,9 @@ def _item_id(link: str, headline: str) -> str:
 # ── Build ─────────────────────────────────────────────────────────────────────
 
 def build_feed(region: str, *, fetch: Callable[[str], list] = fetch_google_news,
-               judge: Optional[Callable[[str, str], Verdict]] = None,
-               is_same_story: Callable[[str, list], bool] = None,
-               now: Optional[datetime.datetime] = None) -> dict:
+               judge: Callable[[str, str], Verdict] | None = None,
+               is_same_story: Callable[[str, list], bool] | None = None,
+               now: datetime.datetime | None = None) -> dict:
     config = REGIONS[region]  # KeyError for an unknown region, by design
     now = now or datetime.datetime.now(datetime.timezone.utc)
     judge = judge or (lambda headline, category: judge_headline(headline, category, region))

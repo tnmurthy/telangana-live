@@ -172,7 +172,7 @@ RESERVOIRS_BASE = [
 
 def calculate_levels():
     """Calculates live reservoir levels with seasonal simulation and random variations."""
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.timezone.utc)
     month = now.month
     
     # Define seasonal configuration multipliers

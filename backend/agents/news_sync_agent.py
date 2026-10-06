@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 import feedparser
 import requests
@@ -44,7 +44,7 @@ class NewsSyncAgent:
                 data = json.load(f)
             feeds = {}
             if isinstance(data, dict):
-                for category, items in data.items():
+                for items in data.values():
                     for item in items:
                         if isinstance(item, dict) and "source" in item and "url" in item:
                             feeds[item["source"]] = item["url"]
@@ -79,7 +79,7 @@ class NewsSyncAgent:
                     cat, reg = classify_article(title, description)
                     entities = extract_entities(title, description)
                     img = extract_image_url(entry)
-                    published_date = entry.get("published", datetime.now().isoformat())
+                    published_date = entry.get("published", datetime.now(timezone.utc).isoformat())
 
                     # 2. Fact Checking (Fault Tolerant)
                     # Unchecked articles are counted and published without a

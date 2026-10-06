@@ -29,15 +29,15 @@ def sync_ai_news():
                 "url": entry.link,
                 "source": "hacker_news",
                 "score": 0,
-                "published_at": datetime.datetime.now().isoformat()
+                "published_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
             }
             news_items.append(data)
             if client:
                 try:
                     client.table("ai_daily_news").upsert(data, on_conflict="url").execute()
                     inserted += 1
-                except Exception:
-                    pass
+                except Exception as e:
+                    print(f"⚠️ Upsert failed for {data['url']}: {e}")
         if client:
             print(f"✅ Upserted {inserted} AI news items to Supabase.")
         else:
@@ -54,7 +54,7 @@ def sync_elo_scores():
         {"model_name": "Llama 3.1 405B", "provider": "Meta", "elo_score": 1258, "rank": 4, "source": "lmsys"}
     ]
     
-    today = datetime.date.today().isoformat()
+    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30))).date().isoformat()
     client = get_db_client()
     if client:
         try:
@@ -62,8 +62,8 @@ def sync_elo_scores():
                 model["snapshot_date"] = today
                 try:
                     client.table("ai_models_leaderboard").upsert(model, on_conflict="model_name,source,snapshot_date").execute()
-                except Exception:
-                    pass
+                except Exception as e:
+                    print(f"⚠️ Upsert failed for {model['model_name']}: {e}")
             print(f"✅ Inserted {len(leaderboard)} ELO scores into Supabase.")
         except Exception as e:
             print(f"⚠️ Error syncing ELO scores: {e}")
