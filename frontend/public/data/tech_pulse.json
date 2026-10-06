@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-06T06:44:23Z",
+  "generatedAt": "2026-10-06T18:33:55Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -48,30 +48,20 @@
     ],
     "govt": [
       {
-        "id": "tp-8badd2751c7a",
+        "id": "tp-fdd009ec1bf1",
         "category": "govt",
-        "title": "KTR hails Telangana space-tech startups after payloads reach orbit",
-        "source": "Telangana Today",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQ1dXc3FGc2NBVXFXWkt0aTRqS0dKM3VuVS1yY0ZmTVVPNnBJVVpkZVNnUDlOTkxRTWFTVTNpN2dZdTljMEtfeWJHX1I5ckd0SWJDNXdsTWNkNmk5OFgxMVppQ0FYOEExZkFtUXFPYWxseFlwQWY3N0ZYcDJWVVlEWjM4dlJOaDMzcmpOQ0pCdVhXX2p3VFdfZQ?oc=5",
-        "publishedAt": "2026-10-03T03:31:19Z",
-        "time": "3 Oct, 9:01 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-532acaec58ef",
-        "category": "govt",
-        "title": "T-Hub Launches Flashpoint to Co-Build Startups With Founders",
-        "source": "Siliconindia",
-        "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOR19EYk14QldIS1pTcUZkT3lRRENHMXk1bGNzV19MT2o4M1gweFh3UW1qdTJpTXZ3SC1aNll1Wi14bWtkOWZLdVdQTXFsTS1iNzZkTUJOanQ0bEtnZm9zZkw4aFhiRW5KOTNhcDBUUzQzYTVWVFJPNmN0TWQySV9HQ3diLWZqS2RrYnJlQkpxNkx6Z3V2VURveGdYVzZoWkZ4b3llY1B4c3h2YS1IVEp2amQ0ejBPcGpTWnhsZkhJcWowdw?oc=5",
-        "publishedAt": "2026-10-01T09:41:16Z",
-        "time": "1 Oct, 3:11 PM IST",
+        "title": "Hyderabad's T-Hub launches Flashpoint, a venture studio that will work with founders across India",
+        "source": "Indian Startup News",
+        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPU1V3MThfel9YV09PQlF0RWpJZlp0ZHdMQmIyMUVoNkJob0o4Mlp2M1hmdUZGNWszREVaOGlqV29BZ0IzLTllTDRxNHAtOWFHVWpRYmt1SG5qcm43OWdGeldpZG9kLTN2VGZjNEwwRV9HMHpKQkszS3lZMWs4S1Z4RWZyaVZLREVRbW9KT000S01rdldrei00RXFCRy1CN203V0FHcTM4QnJzZ09mLWlFNV83Yjk5Z082ZTVKRi13b3Y0SE9aeDdNNXNMZ1ZUUjBTcXRIUDdB0gHWAUFVX3lxTE9TVXcxOF96X1hXT09CUXRFaklmWnRkd0xCYjIxRWg2QmhvSjgyWnYzWGZ1RkY1azNERVo4aWpXb0FnQjMtOWVMNHE0cC05YUdValFia3VIbmpybjc5Z0Z6V2lkb2QtM3ZUZmM0TDBFX0cwekpCSzNLeVkxazhLVnhFZnJpVktERVFtb0pPTTRLTWt2V2t6LTRFcUJHLUI3bTdXQUdxMzhCcnNnT2YtaUU1XzdiOTlnTzZlNUpGLXdvdjRIT1p4N001c0xnVlRSMFNxdEhQN0E?oc=5",
+        "publishedAt": "2026-10-01T10:29:09Z",
+        "time": "1 Oct, 3:59 PM IST",
         "method": "typesafe"
       },
       {
         "id": "tp-649433acb288",
         "category": "govt",
         "title": "Out-of-box-Hyderabad: How INAI is using AI to catch traffic violations",
-        "source": "newindianexpress.com",
+        "source": "The New Indian Express",
         "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTVdIMkt2UEVxMFUtQmQ0N1hhY0xucG5LdXh5SDFxcFR6YXdBZXZFN1pEWXhXb09SMVJGS2hONVg5d2RLdG1iVnVNT1BDN0g1bGpaOGZVOWw2RHZHSmhiUWZTcnROSUFrZEViUXB6QTFtOW5LMmd0T0xWcENRSEhpNUQ2MDJqX2dkaExJa1lRZXMtMWE1N3RWdWc5aFU4bUlQblVEYk1CWkpJa1pYQTRRZ1hNcnRUb2NmZEd6NWpDcnBmTE5VSjBLc3dvUzU2d9IB2wFBVV95cUxORXBqX2t5UVZoc2w1Tk9MbnptTDRXN0dJTjVpeGhPekt5ZU94cHJkS3RrSHlTZGJyT1JEbjRMWFZNaHhvNFhDY1FVWmtjV2htYWg2Tjl2OEczcTVnQTBQWjVXUWxyR1BjRDJ4RVZBTFBFdjVwUkd4NDZFSERXc0c4MFdRdmsyR292a2x5WGUwX29uSFVCRzlMSVhNS0tWN3ZDb2gwT1RMaXktRENIVC1fTkFiTnFhSjlYOE1qX0puanFuWjBRNWNoWDZQT20yMXVrSkl1enZfNVV3aTg?oc=5",
         "publishedAt": "2026-10-01T00:30:00Z",
         "time": "1 Oct, 6:00 AM IST",
@@ -101,10 +91,20 @@
         "id": "tp-ddfe1f572b06",
         "category": "govt",
         "title": "T-Hub Opens Agri-Tech and Space-Tech Tracks, Offers Founders 100% Equity",
-        "source": "ciol.com",
+        "source": "CIOL",
         "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBctIBmAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBcg?oc=5",
         "publishedAt": "2026-09-30T09:18:07Z",
         "time": "30 Sep, 2:48 PM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-8bcb51feb612",
+        "category": "govt",
+        "title": "Hyderabad plans AI video tests at driving tracks",
+        "source": "Hyderabad Mail",
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTh0X0hfMkFDdkV6YV9DbF8ya19NUTZaZFU4MVJadjFKclBvbU9MTzVfcHlTRGpMWnV2ZllSdzBFVWhGYnA2S2w0RnVlS216dkR6R0RLR2YxcUtjX1YxYUJMODI2ZGNkWkRIZ2JIZk5vNlVod29EelhfUFhUQnRzTQ?oc=5",
+        "publishedAt": "2026-09-30T05:20:51Z",
+        "time": "30 Sep, 10:50 AM IST",
         "method": "typesafe"
       }
     ],
