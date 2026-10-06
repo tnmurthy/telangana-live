@@ -34,15 +34,14 @@ describe('weatherService', () => {
   });
 
   describe('when VITE_OWM_API_KEY is not set', () => {
-    it('returns mock data with source "mock" for a known district', async () => {
+    it('returns the scraped snapshot for a known district', async () => {
       vi.stubEnv('VITE_OWM_API_KEY', '');
       vi.resetModules();
       const { fetchWeather } = await import('../../src/services/weatherService.js');
 
       const result = await fetchWeather('Hyderabad');
-      expect(result.source).toBe('mock');
-      // Without an API key, the service immediately returns mock data.
-      // Source must always be 'mock'; data may be undefined for unknown districts.
+      expect(result.source).toBe('snapshot');
+      // Without an API key the service returns the scraped snapshot, labelled as such.
     });
 
     it('does not call fetch when no API key is set', async () => {
@@ -61,12 +60,12 @@ describe('weatherService', () => {
       vi.stubEnv('VITE_OWM_API_KEY', 'test-api-key-123');
     });
 
-    it('returns mock data for an unknown district', async () => {
+    it('returns a snapshot (null data) for an unknown district', async () => {
       vi.resetModules();
       const { fetchWeather } = await import('../../src/services/weatherService.js');
 
       const result = await fetchWeather('UnknownDistrict');
-      expect(result.source).toBe('mock');
+      expect(result.source).toBe('snapshot');
     });
 
     it('fetches live weather for a known district and returns source "live"', async () => {
@@ -124,35 +123,36 @@ describe('weatherService', () => {
       expect(result.data.condition).toBe('Light Rain');
     });
 
-    it('includes aqiLabel from AQI index', async () => {
+    it('computes the CPCB AQI and label from PM2.5', async () => {
       vi.resetModules();
       const { fetchWeather } = await import('../../src/services/weatherService.js');
 
-      // AQI index 2 → "Satisfactory"
       mockFetchWeatherAndAqi(SAMPLE_WEATHER, SAMPLE_AQI);
 
       const result = await fetchWeather('Hyderabad');
-      expect(result.data.aqiLabel).toBe('Satisfactory');
+      // pm2_5 30 µg/m³ -> CPCB AQI 50, "Good" (OWM's own 1-5 index is not used)
+      expect(result.data.aqi).toBe(50);
+      expect(result.data.aqiLabel).toBe('Good');
     });
 
-    it('falls back to mock data when the weather API returns non-OK status', async () => {
+    it('falls back to the snapshot when the weather API returns non-OK status', async () => {
       vi.resetModules();
       const { fetchWeather } = await import('../../src/services/weatherService.js');
 
       global.fetch = vi.fn().mockResolvedValue({ ok: false, status: 403 });
 
       const result = await fetchWeather('Warangal');
-      expect(result.source).toBe('mock');
+      expect(result.source).toBe('snapshot');
     });
 
-    it('falls back to mock data when fetch throws', async () => {
+    it('falls back to the snapshot when fetch throws', async () => {
       vi.resetModules();
       const { fetchWeather } = await import('../../src/services/weatherService.js');
 
       global.fetch = vi.fn().mockRejectedValue(new Error('Network error'));
 
       const result = await fetchWeather('Nizamabad');
-      expect(result.source).toBe('mock');
+      expect(result.source).toBe('snapshot');
     });
   });
 });

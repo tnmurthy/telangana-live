@@ -53,7 +53,7 @@ const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
         <span className="text-4xl font-black text-white tracking-tighter leading-none">{weather.temp}°</span>
         <div className="flex flex-col gap-0.5 mb-0.5">
           <span className="text-[10px] text-text-secondary font-semibold">{weather.condition}</span>
-          <span className={`text-[10px] font-bold tracking-widest ${weather.aqi <= 100 ? 'text-success' : 'text-amber-400'}`}>AQI {weather.aqi}</span>
+          {weather.aqi != null && <span className={`text-[10px] font-bold tracking-widest ${weather.aqi <= 100 ? 'text-success' : 'text-amber-400'}`}>AQI {weather.aqi}</span>}
         </div>
       </div>
     </div>

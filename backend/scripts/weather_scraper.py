@@ -155,6 +155,67 @@ def _aqi_label_and_color(aqi_value: int):
     return "Severe", "#991B1B"
 
 
+# CPCB National AQI breakpoints (24-hour average, µg/m³) -> index ranges.
+_CPCB_BREAKPOINTS = {
+    "pm2_5": [(0, 30, 0, 50), (31, 60, 51, 100), (61, 90, 101, 200),
+              (91, 120, 201, 300), (121, 250, 301, 400), (251, 500, 401, 500)],
+    "pm10": [(0, 50, 0, 50), (51, 100, 51, 100), (101, 250, 101, 200),
+             (251, 350, 201, 300), (351, 430, 301, 400), (431, 600, 401, 500)],
+}
+AQI_SOURCE = "Indian AQI (CPCB method) from 24-hour PM2.5 and PM10, Open-Meteo air-quality model"
+
+
+def _sub_index(pollutant: str, conc: float) -> int:
+    conc = round(conc)
+    for c_lo, c_hi, i_lo, i_hi in _CPCB_BREAKPOINTS[pollutant]:
+        if conc <= c_hi:
+            return round(i_lo + (i_hi - i_lo) * (max(conc, c_lo) - c_lo) / (c_hi - c_lo))
+    return 500
+
+
+def indian_aqi(pm25: float | None, pm10: float | None) -> int | None:
+    """CPCB AQI: the worst sub-index of the pollutants we have readings for."""
+    subs = [_sub_index(name, value) for name, value in (("pm2_5", pm25), ("pm10", pm10)) if value is not None]
+    return max(subs) if subs else None
+
+
+_aq_cache: dict[tuple, dict] = {}
+
+
+def fetch_air_quality(lat: float, lon: float) -> dict:
+    """AQI fields for a place, or aqi None when no reading is available."""
+    key = (round(lat, 2), round(lon, 2))
+    if key in _aq_cache:
+        return _aq_cache[key]
+    fields = {"aqi": None, "aqiLabel": None, "aqiColor": None, "aqiSource": None}
+    try:
+        resp = requests.get(
+            "https://air-quality-api.open-meteo.com/v1/air-quality",
+            params={"latitude": lat, "longitude": lon, "hourly": "pm10,pm2_5",
+                    "past_hours": 24, "forecast_hours": 0, "timezone": "Asia/Kolkata"},
+            timeout=10,
+        )
+        resp.raise_for_status()
+        hourly = resp.json().get("hourly", {})
+
+        def mean(name):
+            vals = [v for v in hourly.get(name, []) if v is not None]
+            return sum(vals) / len(vals) if len(vals) >= 16 else None  # need most of the day
+
+        aqi = indian_aqi(mean("pm2_5"), mean("pm10"))
+        if aqi is not None:
+            label, color = _aqi_label_and_color(aqi)
+            fields = {"aqi": aqi, "aqiLabel": label, "aqiColor": color, "aqiSource": AQI_SOURCE}
+    except Exception as exc:
+        print(f"  [AQI] {key}: {exc}")
+    _aq_cache[key] = fields
+    return fields
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 def fetch_weather_owm(api_key: str) -> dict:
     """Fetch current weather for all districts using OpenWeatherMap API."""
     base_url = "https://api.openweathermap.org/data/2.5/weather"
@@ -182,18 +243,15 @@ def fetch_weather_owm(api_key: str) -> dict:
                 owm_desc = d["weather"][0]["description"]
                 condition = _owm_condition(owm_main, owm_desc)
 
-                aqi = 80
-                aqi_label, aqi_color = _aqi_label_and_color(aqi)
-
                 entry = {
                     "temp": temp,
                     "feelsLike": feels_like,
                     "condition": condition,
                     "humidity": humidity,
                     "windSpeed": wind_speed,
-                    "aqi": aqi,
-                    "aqiLabel": aqi_label,
-                    "aqiColor": aqi_color,
+                    "observedAt": _now_iso(),
+                    "source": "OpenWeatherMap",
+                    **fetch_air_quality(*DISTRICT_COORDS[district]),
                 }
                 weather_data[district] = entry
                 weather_cache_by_query[query] = entry
@@ -225,25 +283,24 @@ def fetch_weather_open_meteo() -> dict:
             resp = requests.get(base_url, params=params, timeout=10)
             if resp.status_code == 200:
                 d = resp.json().get("current", {})
-                temp = round(d.get("temperature_2m", 28))
-                feels_like = round(d.get("apparent_temperature", temp + 2))
-                humidity = round(d.get("relative_humidity_2m", 55))
-                wind_speed = round(d.get("wind_speed_10m", 10))
-                weather_code = d.get("weather_code", 1)
-                condition = _wmo_condition(weather_code)
-
-                aqi = 75
-                aqi_label, aqi_color = _aqi_label_and_color(aqi)
+                needed = ("temperature_2m", "apparent_temperature", "relative_humidity_2m",
+                          "wind_speed_10m", "weather_code")
+                if any(d.get(k) is None for k in needed):
+                    # A missing reading is skipped, never filled with a stand-in value.
+                    print(f"  [Open-Meteo] {district}: incomplete reading, skipped")
+                    continue
+                temp = round(d["temperature_2m"])
+                condition = _wmo_condition(d["weather_code"])
 
                 entry = {
                     "temp": temp,
-                    "feelsLike": feels_like,
+                    "feelsLike": round(d["apparent_temperature"]),
                     "condition": condition,
-                    "humidity": humidity,
-                    "windSpeed": wind_speed,
-                    "aqi": aqi,
-                    "aqiLabel": aqi_label,
-                    "aqiColor": aqi_color,
+                    "humidity": round(d["relative_humidity_2m"]),
+                    "windSpeed": round(d["wind_speed_10m"]),
+                    "observedAt": _now_iso(),
+                    "source": "Open-Meteo",
+                    **fetch_air_quality(lat, lon),
                 }
                 weather_data[district] = entry
                 print(f"  [Open-Meteo] {district}: {temp}°C, {condition}")
@@ -270,33 +327,6 @@ def load_existing_weather_cache() -> dict:
     except Exception as e:
         print(f"  Could not read existing weatherData.js: {e}")
     return {}
-
-
-def generate_mock_weather_data() -> dict:
-    """Generate realistic baseline weather data for all districts as last resort."""
-    conditions_list = ["Sunny", "Partly Cloudy", "Cloudy", "Light Rain", "Haze", "Clear", "Thunderstorm"]
-    weather_data = {}
-    
-    for i, district in enumerate(DISTRICT_OWM_MAP.keys()):
-        temp = 24 + (i % 12)
-        feels_like = temp + 2
-        condition = conditions_list[i % len(conditions_list)]
-        humidity = 45 + (i % 35)
-        wind_speed = 8 + (i % 15)
-        aqi = 40 + (i * 9) % 200
-        aqi_label, aqi_color = _aqi_label_and_color(aqi)
-        
-        weather_data[district] = {
-            "temp": temp,
-            "feelsLike": feels_like,
-            "condition": condition,
-            "humidity": humidity,
-            "windSpeed": wind_speed,
-            "aqi": aqi,
-            "aqiLabel": aqi_label,
-            "aqiColor": aqi_color,
-        }
-    return weather_data
 
 
 def write_weather_module(data: dict):
@@ -345,15 +375,13 @@ if __name__ == "__main__":
         cached = load_existing_weather_cache()
         for dist, val in cached.items():
             if dist not in data or not data[dist]:
+                if not val.get("aqiSource"):
+                    # Older files carried a fixed AQI (75/80); drop it.
+                    val = {**val, "aqi": None, "aqiLabel": None, "aqiColor": None, "aqiSource": None}
                 data[dist] = val
 
-    # Tier 4: Baseline seasonal values
-    if len(data) < len(DISTRICT_OWM_MAP):
-        print("Proceeding to Tier 4 (Baseline generation)...")
-        baseline = generate_mock_weather_data()
-        for dist, val in baseline.items():
-            if dist not in data or not data[dist]:
-                data[dist] = val
+    # No generated baseline: a district with no real reading is left out and
+    # the card says weather is unavailable (docs/DATA_STANDARDS.md, rule 1).
 
     if data:
         write_weather_module(data)

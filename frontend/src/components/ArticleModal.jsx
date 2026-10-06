@@ -148,7 +148,7 @@ function renderCivicWidget(entity_type, entity_id) {
         <div className="flex items-center justify-between">
           <div>
             <span className="text-xl font-black text-white">{weather.temp}°C</span>
-            <span className="text-[10px] text-text-muted block">{weather.condition} · AQI: <span style={{ color: weather.aqiColor }} className="font-bold">{weather.aqi}</span></span>
+            <span className="text-[10px] text-text-muted block">{weather.condition}{weather.aqi != null && <> · AQI: <span style={{ color: weather.aqiColor }} className="font-bold">{weather.aqi}</span></>}</span>
           </div>
           <span className="text-2xl">{weather.condition === 'Sunny' ? '☀️' : weather.condition.includes('Cloudy') ? '⛅' : weather.condition.includes('Rain') ? '🌧️' : '☁️'}</span>
         </div>

@@ -1,5 +1,6 @@
 import { districtCoords } from '../data/districtCoords';
-import { weatherData as mockWeather } from '../data/weatherData';
+import { weatherData as snapshot } from '../data/weatherData';
+import { aqiBand, indianAqi } from '../utils/aqi';
 
 const API_KEY = import.meta.env.VITE_OWM_API_KEY;
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
@@ -10,7 +11,8 @@ const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
 
 /**
  * Fetch live weather + AQI for a Telangana district.
- * Falls back to mock data if no API key or on error.
+ * Falls back to the scraped snapshot (weather_scraper.py, every few hours)
+ * when there is no API key or the call fails; that is labelled with its time.
  */
 export async function fetchWeather(districtName) {
     // Map custom/virtual regions to official meteorological districts
@@ -21,9 +23,9 @@ export async function fetchWeather(districtName) {
         searchName = 'Medchal-Malkajgiri';
     }
 
-    // No key → graceful fallback to mock
+    // No key → the scraped snapshot
     if (!API_KEY) {
-        return { data: mockWeather[searchName], source: 'mock' };
+        return { data: snapshot[searchName] ?? null, source: 'snapshot' };
     }
 
     // Check cache
@@ -35,7 +37,7 @@ export async function fetchWeather(districtName) {
 
     const coords = districtCoords[searchName];
     if (!coords) {
-        return { data: mockWeather[searchName], source: 'mock' };
+        return { data: snapshot[searchName] ?? null, source: 'snapshot' };
     }
 
     try {
@@ -50,19 +52,9 @@ export async function fetchWeather(districtName) {
         const weatherJson = await weatherRes.json();
         const aqiJson = aqiRes.ok ? await aqiRes.json() : null;
 
-        // Map AQI index (1-5) to labels and colors
-        const aqiMap = [
-            { label: 'Good', color: '#22C55E' },
-            { label: 'Satisfactory', color: '#84CC16' },
-            { label: 'Moderate', color: '#EAB308' },
-            { label: 'Poor', color: '#F97316' },
-            { label: 'Very Poor', color: '#EF4444' },
-        ];
-
-        const aqiIndex = aqiJson?.list?.[0]?.main?.aqi ?? 1; // 1-5 scale
-        const aqiPm25 = aqiJson?.list?.[0]?.components?.pm2_5 ?? 0;
-        // Convert PM2.5 to approximate AQI value for the gauge
-        const aqiValue = Math.round(aqiPm25 * 4.2); // rough linear approximation
+        // Indian AQI (CPCB) from the current PM2.5/PM10 reading; null if none.
+        const aqiValue = indianAqi(aqiJson?.list?.[0]?.components);
+        const band = aqiBand(aqiValue);
 
         const conditionMap = {
             'Clear': 'Clear',
@@ -90,9 +82,11 @@ export async function fetchWeather(districtName) {
             conditionDesc: description,
             humidity: weatherJson.main.humidity,
             windSpeed: Math.round(weatherJson.wind.speed * 3.6), // m/s → km/h
-            aqi: aqiValue || aqiIndex * 50,
-            aqiLabel: aqiMap[aqiIndex - 1]?.label ?? 'Unknown',
-            aqiColor: aqiMap[aqiIndex - 1]?.color ?? '#A1A1AA',
+            aqi: aqiValue,
+            aqiLabel: band.label,
+            aqiColor: band.color,
+            aqiSource: aqiValue == null ? null : 'Indian AQI (CPCB method) from the current PM2.5/PM10 reading, OpenWeatherMap',
+            observedAt: new Date((weatherJson.dt ?? Date.now() / 1000) * 1000).toISOString(),
         };
 
         // Cache the result
@@ -100,7 +94,7 @@ export async function fetchWeather(districtName) {
 
         return { data, source: 'live' };
     } catch (err) {
-        console.warn(`[WeatherService] Failed for ${searchName}, using mock:`, err.message);
-        return { data: mockWeather[searchName], source: 'mock' };
+        console.warn(`[WeatherService] Failed for ${searchName}, using snapshot:`, err.message);
+        return { data: snapshot[searchName] ?? null, source: 'snapshot' };
     }
 }
