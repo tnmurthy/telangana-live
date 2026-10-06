@@ -204,12 +204,20 @@ export default function ReservoirsPage() {
                 </div>
             </div>
 
-            {/* Summary */}
-            {reservoirs.length > 0 ? (
-                <SummaryBar reservoirs={reservoirs} />
+            {reservoirs.length === 0 ? (
+                <div className="glass-card p-5 space-y-2" role="status">
+                    <p className="text-white font-semibold">Reservoir levels are not available right now.</p>
+                    <p className="text-sm text-text-muted">
+                        We only show readings taken from an official bulletin, and none is connected yet.
+                        For today's levels, see the{' '}
+                        <a href="https://cwc.gov.in/reservoir-level-storage-bulletin" target="_blank" rel="noopener noreferrer" className="text-heritage-gold underline">CWC reservoir storage bulletin</a>
+                        {' '}or the{' '}
+                        <a href="https://irrigation.telangana.gov.in" target="_blank" rel="noopener noreferrer" className="text-heritage-gold underline">Telangana Irrigation Department</a>.
+                    </p>
+                </div>
             ) : (
-                <div className="glass-card p-5 text-center text-text-muted">Loading live reservoir data...</div>
-            )}
+            <>
+            <SummaryBar reservoirs={reservoirs} />
 
             {/* Filter */}
             <div className="flex gap-2 flex-wrap">
@@ -243,9 +251,11 @@ export default function ReservoirsPage() {
             <div className="glass-card p-4">
                 <p className="text-xs text-text-muted leading-relaxed">
                     <span className="text-heritage-gold font-semibold">ℹ️ Data Note: </span>
-                    Reservoir levels are reported in TMC (Thousand Million Cubic feet). Inflow/outflow is in cusecs (cubic feet per second). Data is sourced from CWC (Central Water Commission) and Telangana Irrigation Department. Tap any card for details.
+                    Reservoir levels are reported in TMC (Thousand Million Cubic feet). Inflow/outflow is in cusecs (cubic feet per second). Source: {liveData.source}.
                 </p>
             </div>
+            </>
+            )}
         </div>
     );
 }

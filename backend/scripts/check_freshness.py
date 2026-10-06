@@ -39,7 +39,7 @@ MODULES: list[Module] = [
     Module("pulses", _data("src", "data", "pulses.js"), "updatedAt", 30),
     Module("news", _data("src", "data", "news.json"), "[].published", 12),
     Module("tech_pulse", _data("public", "data", "tech_pulse.json"), "categories.*[].publishedAt", 96),
-    Module("water_levels", _data("src", "data", "water_levels.json"), "lastUpdated", 48),
+    # water_levels: no official source connected yet; the page says so.
     Module("transit_status", _data("src", "data", "transit_status.json"), "lastUpdated", 24),
 ]
 
