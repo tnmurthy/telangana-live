@@ -23,3 +23,17 @@ export function formatRelativeTime(dateStr) {
     return dateStr;
   }
 }
+
+const istDay = (date) => date.toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+
+/**
+ * How many items were published on the current India (IST) calendar day.
+ * Items with a missing or unparseable `published` date are not counted.
+ */
+export function countPublishedToday(items, now = new Date()) {
+  const today = istDay(now);
+  return items.filter((item) => {
+    const date = new Date(item?.published ?? '');
+    return !Number.isNaN(date.getTime()) && istDay(date) === today;
+  }).length;
+}

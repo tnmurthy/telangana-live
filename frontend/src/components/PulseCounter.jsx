@@ -1,19 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import newsData from '../data/news.json';
 import NewsClusterModal from './NewsClusterModal';
+import { countPublishedToday } from '../utils/timeUtils';
 
 export default function PulseCounter() {
-  const todayCount = newsData.length;
-  const [displayCount, setDisplayCount] = useState(todayCount);
+  // Real count of stories published today (IST) in the synced feed. It used
+  // to start from every stored story and tick up at random every 7 seconds
+  // "to simulate live updates".
+  const displayCount = countPublishedToday(newsData);
   const [isClusterOpen, setIsClusterOpen] = useState(false);
-
-  // Occasionally "tick up" to simulate live updates
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDisplayCount(c => c + Math.floor(Math.random() * 2));
-    }, 7000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <>

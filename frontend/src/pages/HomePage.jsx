@@ -268,7 +268,9 @@ export default function HomePage() {
 
       {/* Floating Category Pill */}
       <section className="sticky top-[100px] z-40 py-4 pointer-events-none">
-        <div className="border border-white/10 bg-slate-900 px-2 py-1.5 inline-flex gap-1.5 pointer-events-auto mx-auto rounded-2xl shadow-xl shadow-black/50">
+        {/* max-w-full + overflow-x-auto: on phones the pills scroll inside the bar
+            instead of widening the page (it was 649px wide at 375px). */}
+        <div className="border border-white/10 bg-slate-900 px-2 py-1.5 inline-flex max-w-full overflow-x-auto [scrollbar-width:none] gap-1.5 pointer-events-auto mx-auto rounded-2xl shadow-xl shadow-black/50">
           {CATEGORIES.map(cat => (
             <button
               key={cat.id}
