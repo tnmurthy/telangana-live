@@ -32,22 +32,6 @@
     "source": "urbanacres.in"
   },
   {
-    "id": "alert-cdd8c0e3a6b9",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Water supply to be hit in parts of Hyderabad on October 5-6 - Telangana Today",
-    "message": "Water supply to be hit in parts of Hyderabad on October 5-6 - Telangana Today",
-    "description": "Water supply to be hit in parts of Hyderabad on October 5-6  Telangana Today",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-04T11:36:59Z",
-    "publishedAt": "2026-10-03T16:54:30Z",
-    "time": "3 Oct, 10:24 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQjVDQ0xNLV8tTWctYUo1WXAwUkxWeWpTMFJTU05ZMmoxdzktaUhFTEFUSGZITlVUdGhFRmI2Vzhrb1N0SDQ1Q19UU2NJUEJNbFdKVDdlSVNDSGwzcFZqemdqOERxZHpJZ1ZDUmVCRW9RNVJtTHdKRm1IZmI4VVVqemtoMjJJQ3JaeVZzTWM5aw?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQjVDQ0xNLV8tTWctYUo1WXAwUkxWeWpTMFJTU05ZMmoxdzktaUhFTEFUSGZITlVUdGhFRmI2Vzhrb1N0SDQ1Q19UU2NJUEJNbFdKVDdlSVNDSGwzcFZqemdqOERxZHpJZ1ZDUmVCRW9RNVJtTHdKRm1IZmI4VVVqemtoMjJJQ3JaeVZzTWM5aw?oc=5",
-    "source": "Telangana Today"
-  },
-  {
     "id": "alert-b4a5dcf93425",
     "type": "water_supply",
     "severity": "high",
@@ -62,22 +46,6 @@
     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
     "source": "INDToday"
-  },
-  {
-    "id": "alert-cdd8c0e3a6b9",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Water supply to be hit in parts of Hyderabad on October 5-6 - telanganatoday.com",
-    "message": "Water supply to be hit in parts of Hyderabad on October 5-6 - telanganatoday.com",
-    "description": "Water supply to be hit in parts of Hyderabad on October 5-6  telanganatoday.com",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-04T20:11:56Z",
-    "publishedAt": "2026-10-03T16:54:30Z",
-    "time": "3 Oct, 10:24 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQjVDQ0xNLV8tTWctYUo1WXAwUkxWeWpTMFJTU05ZMmoxdzktaUhFTEFUSGZITlVUdGhFRmI2Vzhrb1N0SDQ1Q19UU2NJUEJNbFdKVDdlSVNDSGwzcFZqemdqOERxZHpJZ1ZDUmVCRW9RNVJtTHdKRm1IZmI4VVVqemtoMjJJQ3JaeVZzTWM5aw?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQjVDQ0xNLV8tTWctYUo1WXAwUkxWeWpTMFJTU05ZMmoxdzktaUhFTEFUSGZITlVUdGhFRmI2Vzhrb1N0SDQ1Q19UU2NJUEJNbFdKVDdlSVNDSGwzcFZqemdqOERxZHpJZ1ZDUmVCRW9RNVJtTHdKRm1IZmI4VVVqemtoMjJJQ3JaeVZzTWM5aw?oc=5",
-    "source": "telanganatoday.com"
   },
   {
     "id": "alert-2f327c238148",
@@ -158,22 +126,6 @@
     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd3lRbnY0R29tX1MzT1J0QzAxeFRIbGkyX04wN2ExemxlVmJlenNFOHB6SHVra0lyY1VjSU5lZ1RTQ21FdnFlVmFDaXd6SktDZjBOdUZGN1YwY01zTW5iUnFXclc2RlNTQ0ZMM2tBVGFpVG1yRnRFUVpmMTJQNHRaTGdOWQ?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPd3lRbnY0R29tX1MzT1J0QzAxeFRIbGkyX04wN2ExemxlVmJlenNFOHB6SHVra0lyY1VjSU5lZ1RTQ21FdnFlVmFDaXd6SktDZjBOdUZGN1YwY01zTW5iUnFXclc2RlNTQ0ZMM2tBVGFpVG1yRnRFUVpmMTJQNHRaTGdOWQ?oc=5",
     "source": "Hyderabad Mail"
-  },
-  {
-    "id": "alert-017c4c3744ee",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad water supply to be disrupted for 36 hrs from Oct 5 - The Siasat Daily",
-    "message": "Hyderabad water supply to be disrupted for 36 hrs from Oct 5 - The Siasat Daily",
-    "description": "Hyderabad water supply to be disrupted for 36 hrs from Oct 5  The Siasat Daily",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-06T06:45:32Z",
-    "publishedAt": "2026-10-03T17:04:36Z",
-    "time": "3 Oct, 10:34 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOOVpaVzBJX1F4RktxYzMtbjRwTU5Sa2Q5ZXZVMDFfT0VaZUhFRE8zZU9QamwtM29vbVlSbWUyQUFyNHlzRkJwcERFa3hvb2xBNkdHa2w4T2VEakk0QURuaGpfbWFuLV9jeXVsY0drR2VOM205MktFbEcwWWxTQ0J4cUw0WDR6Vk5rTjYzYTBoNXR0NmZJeTB30gGcAUFVX3lxTFBYM0UtWmZQd2s3RzVoRmJzOHNKZlV3c0xkOWxScWRBM2w3ZDZ2VWN2VkVHUXFEOUlMM1FqeXNSczUxQXE0MHFFR1N4VER2c0t1YTlzeDN3ajJyX3VrN1Z0a0R3VXMyWFdtdDlSUkdPS3RLaXFVR1JfcGhJejhnUTBNT1VJMHdFOEs0Y0FqSldUWVo1ajQ3ZUI0UTRvRg?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOOVpaVzBJX1F4RktxYzMtbjRwTU5Sa2Q5ZXZVMDFfT0VaZUhFRE8zZU9QamwtM29vbVlSbWUyQUFyNHlzRkJwcERFa3hvb2xBNkdHa2w4T2VEakk0QURuaGpfbWFuLV9jeXVsY0drR2VOM205MktFbEcwWWxTQ0J4cUw0WDR6Vk5rTjYzYTBoNXR0NmZJeTB30gGcAUFVX3lxTFBYM0UtWmZQd2s3RzVoRmJzOHNKZlV3c0xkOWxScWRBM2w3ZDZ2VWN2VkVHUXFEOUlMM1FqeXNSczUxQXE0MHFFR1N4VER2c0t1YTlzeDN3ajJyX3VrN1Z0a0R3VXMyWFdtdDlSUkdPS3RLaXFVR1JfcGhJejhnUTBNT1VJMHdFOEs0Y0FqSldUWVo1ajQ3ZUI0UTRvRg?oc=5",
-    "source": "The Siasat Daily"
   },
   {
     "id": "alert-2f7c424fab4c",
