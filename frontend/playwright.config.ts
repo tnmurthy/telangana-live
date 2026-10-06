@@ -1,8 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: '../tests',
-  testIgnore: ['**/unit/**', '**/smoke_test.spec.ts'],
+  // Specs live next to the app so they resolve @playwright/test from
+  // frontend/node_modules; in ../tests they could not load at all.
+  testDir: './e2e',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

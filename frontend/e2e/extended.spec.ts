@@ -119,6 +119,9 @@ test.describe('Page Title — Route-specific', () => {
 
 test.describe('Live News Clustering Modal', () => {
 
+    // The stories pill renders only on large screens (hidden lg:block in App.jsx).
+    test.skip(({ isMobile }) => isMobile, 'desktop-only control');
+
     test.beforeEach(async ({ page }) => {
         // Disable bottom advertisements via sessionStorage and dynamic DOM hiding before page scripts run
         await page.addInitScript(() => {

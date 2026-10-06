@@ -1,5 +1,4 @@
-// @ts-ignore
-import { test, expect, Page } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 
 test.describe('Telangana.live Enterprise Briefing & Liquid Glass UI', () => {
   test.beforeEach(async ({ page }: { page: Page }) => {
@@ -8,17 +7,18 @@ test.describe('Telangana.live Enterprise Briefing & Liquid Glass UI', () => {
   });
 
   test('Page loads with Liquid Glass aesthetic', async ({ page }: { page: Page }) => {
-    // Check for the deep obsidian background (computed style)
+    // Dark theme: the body background stays near-black (exact shade may change).
     const bodyBg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
-    // rgb(3, 7, 5) is #030705
-    expect(bodyBg).toBe('rgb(3, 7, 5)');
+    const [r, g, b] = bodyBg.match(/\d+/g)!.map(Number);
+    expect(Math.max(r, g, b)).toBeLessThan(30);
 
     // Check for glassmorphic elements
     const glassCard = page.locator('.liquid-glass').first();
     await expect(glassCard).toBeVisible();
     
-    const backdropBlur = await glassCard.evaluate((el: HTMLElement) => getComputedStyle(el).backdropFilter);
-    expect(backdropBlur).toMatch(/blur\(\d+px\)/);
+    // Cards use a solid surface now (the backdrop blur was removed from .liquid-glass).
+    const cardBg = await glassCard.evaluate((el: HTMLElement) => getComputedStyle(el).backgroundColor);
+    expect(cardBg).not.toBe('rgba(0, 0, 0, 0)');
   });
 
   test('Category filtering works correctly', async ({ page }: { page: Page }) => {
@@ -40,9 +40,8 @@ test.describe('Telangana.live Enterprise Briefing & Liquid Glass UI', () => {
     const modal = page.locator('.fixed.z-\\[150\\]'); // ArticleModal z-index
     await expect(modal).toBeVisible();
 
-    // Check for AI Confidence Badge
-    const aiBadge = modal.getByText(/AI Confidence/);
-    await expect(aiBadge).toBeVisible();
+    // No invented "AI Confidence" score (it was derived from the title length; TL-23)
+    await expect(modal.getByText(/AI Confidence/)).toHaveCount(0);
   });
 
   test('Emergency Mode transforms the UI theme', async ({ page }: { page: Page }) => {

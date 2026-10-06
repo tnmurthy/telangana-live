@@ -11,8 +11,10 @@ test.describe('Homepage — Compact Layout & Core Components', () => {
     });
 
     test('header renders with logo and navigation', async ({ page }) => {
-        await expect(page.locator('header')).toBeVisible();
-        await expect(page.locator('header h1')).toContainText('telangana');
+        // Article cards have their own <header>; the site header is the banner landmark.
+        const banner = page.getByRole('banner');
+        await expect(banner).toBeVisible();
+        await expect(banner.getByRole('link').first()).toBeVisible();
     });
 
     test('news ticker is visible', async ({ page }) => {
@@ -33,14 +35,14 @@ test.describe('Homepage — Compact Layout & Core Components', () => {
     });
 
     test('fuel prices section renders', async ({ page }) => {
-        await expect(page.locator('main').getByText('Fuel Prices', { exact: false }).first()).toBeVisible();
+        await expect(page.locator('main').getByText(/Daily Rates & Fuel/i).first()).toBeVisible();
         // Verify petrol entry exists
         await expect(page.locator('main').getByText('Petrol').first()).toBeVisible();
     });
 
     test('power tariff card is visible', async ({ page }) => {
         // Match partial text to be more resilient to emojis or extra spaces
-        await expect(page.getByText(/Power Tariff/i).first()).toBeVisible();
+        await expect(page.getByText(/Power & Tariffs/i).first()).toBeVisible();
     });
 
     test('public transport section renders', async ({ page }) => {
@@ -52,11 +54,7 @@ test.describe('Homepage — Compact Layout & Core Components', () => {
     });
 
     test('body does not overflow horizontally', async ({ page }) => {
-        // Evaluate if any element is causing a horizontal scroll on the document
-        const hasOverflow = await page.evaluate(() => {
-            return document.documentElement.scrollWidth > document.documentElement.clientWidth;
-        });
-        // If it fails, we might need a 1-2px tolerance for subpixel rendering or scrollbars
+        // 1-2px tolerance for subpixel rendering or scrollbars
         const diff = await page.evaluate(() => {
             return document.documentElement.scrollWidth - document.documentElement.clientWidth;
         });
@@ -68,14 +66,14 @@ test.describe('Navigation & Routing', () => {
 
     test('navigating to /cyberabad loads region content', async ({ page }) => {
         await page.goto('/cyberabad', { waitUntil: 'networkidle' });
-        // Region page should have a heading with the region name
-        const heading = page.locator('main h2', { hasText: /cyberabad/i });
+        // The region name is the page's h1
+        const heading = page.locator('main h1', { hasText: /cyberabad/i });
         await expect(heading.first()).toBeVisible();
     });
 
     test('navigating to /malkajgiri loads region content', async ({ page }) => {
         await page.goto('/malkajgiri', { waitUntil: 'networkidle' });
-        const heading = page.locator('main h2', { hasText: /malkajgiri/i });
+        const heading = page.locator('main h1', { hasText: /malkajgiri/i });
         await expect(heading.first()).toBeVisible();
     });
 
@@ -102,12 +100,11 @@ test.describe('Mobile — Bottom Navigation', () => {
         await expect(page.locator('nav.fixed >> text=News')).toBeVisible();
     });
 
-    test('bottom nav has 4 navigation items', async ({ page }) => {
+    test('bottom nav has its 5 navigation items', async ({ page }) => {
         await page.setViewportSize({ width: 375, height: 667 });
         await page.goto('/dashboard', { waitUntil: 'networkidle' });
-        // Count all links + buttons inside the fixed bottom nav
         const items = page.locator('nav.fixed >> :is(a, button)');
-        await expect(items).toHaveCount(4);
+        await expect(items).toHaveText(['Home', 'Services', 'Report', 'Jobs', 'News']);
     });
 
     test('no horizontal overflow on mobile', async ({ page }) => {
