@@ -2,6 +2,7 @@
 Smoke tests for the Python data engine.
 Run with:  pytest tests/
 """
+import inspect
 import json
 import os
 import pytest
@@ -990,6 +991,27 @@ class TestSyncFinanceHistoryTracking:
         history = [self._entry(self._day(-i)) for i in range(12, 0, -1)]
         _, data = self._run(tmp_path, history, chennai=[self._entry(self.TODAY)])
         assert len(data["history"]) <= 7
+
+    def test_mint_without_silver_does_not_overwrite_real_silver(self, tmp_path):
+        # Mint has no silver rate; it used to write a fixed 290.0 over Live
+        # Chennai's reading for the same date.
+        _, data = self._run(tmp_path, [self._entry(self._day(-1), silver=300.0)],
+                            chennai=[self._entry(self.TODAY, 14500, 15800, 312.5)],
+                            mint=[self._entry(self.TODAY, 14510, 15810, None)])
+        assert data["silver"]["price"] == 312.5
+        today = next(h for h in data["history"] if h["date"] == self.TODAY)
+        assert today["silver"] == 312.5
+
+    def test_silver_falls_back_to_last_real_reading(self, tmp_path):
+        # Today's sources have gold but no silver: show the latest real silver.
+        _, data = self._run(tmp_path, [self._entry(self._day(-1), silver=305.0)],
+                            mint=[self._entry(self.TODAY, 14510, 15810, None)])
+        assert data["silver"]["price"] == 305.0
+
+    def test_no_fixed_silver_value_in_scrapers(self):
+        source = inspect.getsource(data_engine._scrape_live_mint) + inspect.getsource(data_engine._scrape_live_chennai)
+        assert "290" not in source
+        assert "silver_gram = 0" not in source
 
     def test_stale_run_does_not_record_a_price_for_today(self, tmp_path):
         # No source has today's price: keep the last real reading, dated as

@@ -45,32 +45,6 @@ def sync_ai_news():
     except Exception as e:
         print(f"⚠️ Error syncing AI news: {e}")
 
-def sync_elo_scores():
-    print("Syncing ELO Scores...")
-    leaderboard = [
-        {"model_name": "GPT-4o", "provider": "OpenAI", "elo_score": 1287, "rank": 1, "source": "lmsys"},
-        {"model_name": "Claude 3.5 Sonnet", "provider": "Anthropic", "elo_score": 1279, "rank": 2, "source": "lmsys"},
-        {"model_name": "Gemini 1.5 Pro", "provider": "Google", "elo_score": 1261, "rank": 3, "source": "lmsys"},
-        {"model_name": "Llama 3.1 405B", "provider": "Meta", "elo_score": 1258, "rank": 4, "source": "lmsys"}
-    ]
-    
-    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30))).date().isoformat()
-    client = get_db_client()
-    if client:
-        try:
-            for model in leaderboard:
-                model["snapshot_date"] = today
-                try:
-                    client.table("ai_models_leaderboard").upsert(model, on_conflict="model_name,source,snapshot_date").execute()
-                except Exception as e:
-                    print(f"⚠️ Upsert failed for {model['model_name']}: {e}")
-            print(f"✅ Inserted {len(leaderboard)} ELO scores into Supabase.")
-        except Exception as e:
-            print(f"⚠️ Error syncing ELO scores: {e}")
-    else:
-        print(f"✅ ELO scores verified ({len(leaderboard)} models).")
-
 if __name__ == "__main__":
     sync_ai_news()
-    sync_elo_scores()
 

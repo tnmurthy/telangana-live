@@ -228,7 +228,7 @@ def _scrape_live_chennai():
         return None
 
     soup = BeautifulSoup(html_content, "html.parser")
-    silver_gram = 0
+    silver_gram = None  # stays None if the page has no silver row (never 0)
     history = []
 
     # Parse silver
@@ -329,7 +329,7 @@ def _scrape_live_mint():
                                         "date": d_dt.strftime("%Y-%m-%d"),
                                         "gold22k": prices.get("22k"),
                                         "gold24k": prices.get("24k"),
-                                        "silver": 290.0 # Mint silver is often separate
+                                        "silver": None,  # Mint gives no silver rate
                                     })
                                 except ValueError:
                                     continue
@@ -371,7 +371,8 @@ def sync_gold():
         # Consensus: Use average if sources differ slightly
         gold24 = sum(item["gold24k"] for item in valid_today) / len(valid_today)
         gold22 = sum(item["gold22k"] for item in valid_today) / len(valid_today)
-        silver = sum(item["silver"] for item in valid_today) / len(valid_today)
+        silver_today = [item["silver"] for item in valid_today if item.get("silver")]
+        silver = sum(silver_today) / len(silver_today) if silver_today else None
         print(f"  ✅ Consensus reached from {len(valid_today)} sources.")
     else:
         print("  ⚠️ No fresh data found today. Keeping the last real reading (Stale Mode).")
@@ -380,8 +381,14 @@ def sync_gold():
     # 4. History Management
     # Deduplicate and sort all history entries
     unique_history = {}
+    # Sources are listed in priority order: the first reading for a date wins,
+    # and a later source only fills fields the earlier one lacks. (Mint used
+    # to overwrite Live Chennai's real silver with a fixed 290.0.)
     for entry in all_history:
-        unique_history[entry["date"]] = entry
+        kept = unique_history.setdefault(entry["date"], dict(entry))
+        for key, value in entry.items():
+            if kept.get(key) is None and value is not None:
+                kept[key] = value
     
     # Load existing file history to fill gaps
     try:
@@ -413,7 +420,17 @@ def sync_gold():
     prev = sorted_history[-2] if len(sorted_history) >= 2 else sorted_history[-1]
     change24 = round(gold24 - prev["gold24k"], 2)
     change22 = round(gold22 - prev["gold22k"], 2)
-    change_sil = round(silver - prev["silver"], 2)
+
+    # Silver: today's reading, else the latest real one in history. Never a
+    # fixed value; if there has never been a reading, keep the published file.
+    silver_readings = [e for e in sorted_history if e.get("silver")]
+    if silver is None and silver_readings:
+        silver = silver_readings[-1]["silver"]
+    if silver is None:
+        print("  ⚠️ No silver reading available; leaving goldRates unchanged.")
+        return None
+    prev_sil = silver_readings[-2]["silver"] if len(silver_readings) >= 2 else silver
+    change_sil = round(silver - prev_sil, 2)
 
     # 6. Final Data Objects
     final_data = {
