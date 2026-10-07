@@ -3,38 +3,6 @@
     "id": "alert-b4a5dcf93425",
     "type": "water_supply",
     "severity": "high",
-    "title": "Hyderabad Water Supply To Be Disrupted For 36 Hours - indtoday.com",
-    "message": "Hyderabad Water Supply To Be Disrupted For 36 Hours - indtoday.com",
-    "description": "Hyderabad Water Supply To Be Disrupted For 36 Hours  indtoday.com",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-04T11:36:59Z",
-    "publishedAt": "2026-10-04T06:25:58Z",
-    "time": "4 Oct, 11:55 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
-    "source": "indtoday.com"
-  },
-  {
-    "id": "alert-525cda1a31a7",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Hyderabad Water Supply Disruption: Areas Affected - urbanacres.in",
-    "message": "Hyderabad Water Supply Disruption: Areas Affected - urbanacres.in",
-    "description": "Hyderabad Water Supply Disruption: Areas Affected  urbanacres.in",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-04T11:36:59Z",
-    "publishedAt": "2026-10-04T06:13:46Z",
-    "time": "4 Oct, 11:43 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdXc3Vl9yR2hKY3JlMHlNcDk2ZF9OVk81aDNYSnhDa2ctdkRCbXk3d3FZdXl0cUd2Y3UzOEdJNi1iTURxR0pjS3pPWUgyaXpIVGFJQ0dtRE9IbEFMQVNOaXpQbHZvVzUyLWloMWZVb3FEZHlRdWhCVUxQbWd1VVp4djZLRjV6dmRnSXM3SWhUYw?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdXc3Vl9yR2hKY3JlMHlNcDk2ZF9OVk81aDNYSnhDa2ctdkRCbXk3d3FZdXl0cUd2Y3UzOEdJNi1iTURxR0pjS3pPWUgyaXpIVGFJQ0dtRE9IbEFMQVNOaXpQbHZvVzUyLWloMWZVb3FEZHlRdWhCVUxQbWd1VVp4djZLRjV6dmRnSXM3SWhUYw?oc=5",
-    "source": "urbanacres.in"
-  },
-  {
-    "id": "alert-b4a5dcf93425",
-    "type": "water_supply",
-    "severity": "high",
     "title": "Hyderabad Water Supply To Be Disrupted For 36 Hours - INDToday",
     "message": "Hyderabad Water Supply To Be Disrupted For 36 Hours - INDToday",
     "description": "Hyderabad Water Supply To Be Disrupted For 36 Hours  INDToday",
@@ -160,22 +128,6 @@
     "source": "The Times of India"
   },
   {
-    "id": "alert-525cda1a31a7",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Hyderabad Water Supply Disruption: Areas Affected - Urban Acres",
-    "message": "Hyderabad Water Supply Disruption: Areas Affected - Urban Acres",
-    "description": "Hyderabad Water Supply Disruption: Areas Affected  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-06T23:18:25Z",
-    "publishedAt": "2026-10-04T06:13:46Z",
-    "time": "4 Oct, 11:43 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdXc3Vl9yR2hKY3JlMHlNcDk2ZF9OVk81aDNYSnhDa2ctdkRCbXk3d3FZdXl0cUd2Y3UzOEdJNi1iTURxR0pjS3pPWUgyaXpIVGFJQ0dtRE9IbEFMQVNOaXpQbHZvVzUyLWloMWZVb3FEZHlRdWhCVUxQbWd1VVp4djZLRjV6dmRnSXM3SWhUYw?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQdXc3Vl9yR2hKY3JlMHlNcDk2ZF9OVk81aDNYSnhDa2ctdkRCbXk3d3FZdXl0cUd2Y3UzOEdJNi1iTURxR0pjS3pPWUgyaXpIVGFJQ0dtRE9IbEFMQVNOaXpQbHZvVzUyLWloMWZVb3FEZHlRdWhCVUxQbWd1VVp4djZLRjV6dmRnSXM3SWhUYw?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-8e10175b28f7",
     "type": "water_supply",
     "severity": "medium",
@@ -190,5 +142,21 @@
     "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxONnB4c29zeGVEOHFEUTVSNjloTVAwTW9LYXR2aTN5bXdRSWJWemVDTE9IM3V5dGVnOEFRWDg1ei1hMXc3aHJibDhCUktjSF8wV1dFbklERXlxdDM4YlduMEhMMW51Wk1QdmQ5cngzMDczTWFkTzRreWQ5NkYtUEpYTXc2UkxfczdkN0tETkhqZF9wUC1TcmRWSE9oeGpOMkoxTE1NQVVOaUFlSHBNeVB2SmJ3a09jVFNKVnhZRHBTNldScExSX3gwRHlaNkREMFI5dUtDaE52UUs5SDVFcENR0gHkAUFVX3lxTE1GQ2ZScXNvUC1GcUNfb3BvMHNES2U4MjRUdUJFRWQ5QVhZM0t6Ym5KYjdLXzE1OTdCbGxPVVZQRXl0dmN0RXhWYW9PNlZBelB1WUxfYVRHbThLNzFOM2F1VnZMOTJBcHQtVTE2ajdmc1FpaWpOZVppSUFJTm5LZ2hJaDYzNWVrQXRlUkEwbVNrX20xeTZMRkd5QTUxWjMxc18yTHAxUTZCdWVpZzBGR3BOU196ckpCWUE2SFVsbW1iZGVCc2Vyd2VYdEZmZ0tncUxxSWtiUWc2VzNjWFJtazZkbFQxdw?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxONnB4c29zeGVEOHFEUTVSNjloTVAwTW9LYXR2aTN5bXdRSWJWemVDTE9IM3V5dGVnOEFRWDg1ei1hMXc3aHJibDhCUktjSF8wV1dFbklERXlxdDM4YlduMEhMMW51Wk1QdmQ5cngzMDczTWFkTzRreWQ5NkYtUEpYTXc2UkxfczdkN0tETkhqZF9wUC1TcmRWSE9oeGpOMkoxTE1NQVVOaUFlSHBNeVB2SmJ3a09jVFNKVnhZRHBTNldScExSX3gwRHlaNkREMFI5dUtDaE52UUs5SDVFcENR0gHkAUFVX3lxTE1GQ2ZScXNvUC1GcUNfb3BvMHNES2U4MjRUdUJFRWQ5QVhZM0t6Ym5KYjdLXzE1OTdCbGxPVVZQRXl0dmN0RXhWYW9PNlZBelB1WUxfYVRHbThLNzFOM2F1VnZMOTJBcHQtVTE2ajdmc1FpaWpOZVppSUFJTm5LZ2hJaDYzNWVrQXRlUkEwbVNrX20xeTZMRkd5QTUxWjMxc18yTHAxUTZCdWVpZzBGR3BOU196ckpCWUE2SFVsbW1iZGVCc2Vyd2VYdEZmZ0tncUxxSWtiUWc2VzNjWFJtazZkbFQxdw?oc=5",
     "source": "The Times of India"
+  },
+  {
+    "id": "alert-1eb3f03c318f",
+    "type": "weather",
+    "severity": "high",
+    "title": "Telangana Rainfall Warning: Heavy Rain Threatens 27 Districts - Urban Acres",
+    "message": "Telangana Rainfall Warning: Heavy Rain Threatens 27 Districts - Urban Acres",
+    "description": "Telangana Rainfall Warning: Heavy Rain Threatens 27 Districts  Urban Acres",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-07T09:19:59Z",
+    "publishedAt": "2026-10-07T07:34:04Z",
+    "time": "7 Oct, 1:04 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQUFiNUNkRkd4S3YzaWxRVXV6UllGbWo4NVlGT3NjY19DREtDVnlIMk9ZVGZOVUhRbU5tZmpJOERPWnA5Q1lRZjRQSC0tY3kydmhsaVY4V0xwQmdjNWt0THd2ZElHWjlsckZIbmVVMFQxMVczTXdrVlJlYk5PV0k3SWhTQ1lVc1NiVld3?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQUFiNUNkRkd4S3YzaWxRVXV6UllGbWo4NVlGT3NjY19DREtDVnlIMk9ZVGZOVUhRbU5tZmpJOERPWnA5Q1lRZjRQSC0tY3kydmhsaVY4V0xwQmdjNWt0THd2ZElHWjlsckZIbmVVMFQxMVczTXdrVlJlYk5PV0k3SWhTQ1lVc1NiVld3?oc=5",
+    "source": "Urban Acres"
   }
 ]
