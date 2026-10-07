@@ -1,28 +1,18 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-07T06:20:17Z",
+  "generatedAt": "2026-10-07T13:45:31Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
       {
-        "id": "tp-84857fc067ca",
+        "id": "tp-876cef6c0e69",
         "category": "safety",
-        "title": "Telangana sees 11% dip in cybercrime, but ₹1,800 crore lost last year: DGP",
-        "source": "The Times of India",
-        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPZzBWSFZNT1FWVmlaSkxPQzktM0RmMzk0ZkJOR0RWQ21ON0hiTVBFb0ZMSUdmenJJRm1GTnNmZnZyN1pSVFQ4ZGxCM0tzd1ZLTWhJSlZ3a21GVDlnSnQ5dWVEUVdRWC1YWFV6RUJoRnZxZWI0eHdGY2NCM2x0RzNTNTMwSjVTOHF0YXpWdHJ1bnNFVXdzUDZvZ0JJTWIxNkhkMUNRMEVNYUdtbTQxZC1hV181MGpSXzRhOUZHQUtNM1RJVERDeVk1SXZjWWlCZWdpSHZqR1hUT2VVNTlRUkdJ0gHkAUFVX3lxTE8tZHVfcXB4b1NtWW84M3RrTEU2MWMzWERyVFBPQXQ2blc0X2xzOWxlRHZlaHlzVHB6VVRuYUFxMDAwcmdVVkpldDBvUV90UWdicXVsdTJLUm5aaXdNWGFjQk1ycHhvaW55dTA3Z1lxb0U0MG91amtOc25heDVqM0FBTzRnZGVJZnBtY0hJb3FRb2ZTa2lVOVZ0dGhzbUZpRlZXemlyQVFGUkxfSDNFRFJEclpkbDBQQ0JnaVZiOHRfblV3S0ZDVjFhWm5yU2lXdjc2a25uYmlNRnVuUElKYy14NllyVA?oc=5",
-        "publishedAt": "2026-10-01T18:36:00Z",
-        "time": "2 Oct, 12:06 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-c09bf0268a03",
-        "category": "safety",
-        "title": "Pause Before You Click: Telangana Begins Cyber Safety Awareness Month",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPRXhPVjJuVzYxcTJqbnQ1LTdQdDZfR3JwYkJ2MlMzbUJwTF9zS0FKRHVPelk5QzBVRUVqYTBPMm9QUGtFWGV6REd4Z3V4SXp6eVZGTHo4dzlBRmJ1OWt2YzNGUmVNYzBaUjdKVExqcTFLUjFxTU9DWUU1U1g3OUQzS1JiOA?oc=5",
-        "publishedAt": "2026-10-01T17:54:22Z",
-        "time": "1 Oct, 11:24 PM IST",
+        "title": "Corporate Professionals Among 101 Arrested In Telangana For Cyber Fraud",
+        "source": "NDTV",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPUnF2YnNiSlZYOThOZk1SQ2hkYktCQm5hQXJ0N2wtclVrTmJBZV9yX1hGZWR3Ymd4V3phV2VnaEVwVkJJeGJ0Y3hpUmxpNTY3QUVwaV9mN3h0WklicllFU0c2SlpIdk1taWJCWnJpMVhYVGNyMWZmQ1lmcmJlZlllVlJ1WTJSSWo2QmthRExTcW9uUmEzWmFyMFpCRE51Q0xYUEJpNGZsd21zSTdIQ1lBQlBB?oc=5",
+        "publishedAt": "2026-10-07T13:06:20Z",
+        "time": "7 Oct, 6:36 PM IST",
         "method": "typesafe"
       },
       {
@@ -34,37 +24,17 @@
         "publishedAt": "2026-09-30T10:24:00Z",
         "time": "30 Sep, 3:54 PM IST",
         "method": "typesafe"
-      },
-      {
-        "id": "tp-94421e0226de",
-        "category": "safety",
-        "title": "TGCSB to hold 2-km night walk in Hyderabad against cyber fraud",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSUdtTU9zc1dmNHU0OE1OR0VabFlTWnJjeC16WFZaVE9tU2xSckFmWkhyakhGSmVHWWNhRWxyeDdMZHpzRW9xNUtGOE9XU1Z2clZ5X3Q2WGtHYThqYWZoazRYbHZjaEtwa1Y4TkZzTUpaNEJwN3J6UF8xQXpKTFFhaUd3UjlvMThJVHRtWkxBeHloQQ?oc=5",
-        "publishedAt": "2026-09-28T15:50:35Z",
-        "time": "28 Sep, 9:20 PM IST",
-        "method": "typesafe"
       }
     ],
     "govt": [
       {
-        "id": "tp-8badd2751c7a",
+        "id": "tp-fdd009ec1bf1",
         "category": "govt",
-        "title": "KTR hails Telangana space-tech startups after payloads reach orbit",
-        "source": "Telangana Today",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQ1dXc3FGc2NBVXFXWkt0aTRqS0dKM3VuVS1yY0ZmTVVPNnBJVVpkZVNnUDlOTkxRTWFTVTNpN2dZdTljMEtfeWJHX1I5ckd0SWJDNXdsTWNkNmk5OFgxMVppQ0FYOEExZkFtUXFPYWxseFlwQWY3N0ZYcDJWVVlEWjM4dlJOaDMzcmpOQ0pCdVhXX2p3VFdfZQ?oc=5",
-        "publishedAt": "2026-10-03T03:31:19Z",
-        "time": "3 Oct, 9:01 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-532acaec58ef",
-        "category": "govt",
-        "title": "T-Hub Launches Flashpoint to Co-Build Startups With Founders",
-        "source": "Siliconindia",
-        "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOR19EYk14QldIS1pTcUZkT3lRRENHMXk1bGNzV19MT2o4M1gweFh3UW1qdTJpTXZ3SC1aNll1Wi14bWtkOWZLdVdQTXFsTS1iNzZkTUJOanQ0bEtnZm9zZkw4aFhiRW5KOTNhcDBUUzQzYTVWVFJPNmN0TWQySV9HQ3diLWZqS2RrYnJlQkpxNkx6Z3V2VURveGdYVzZoWkZ4b3llY1B4c3h2YS1IVEp2amQ0ejBPcGpTWnhsZkhJcWowdw?oc=5",
-        "publishedAt": "2026-10-01T09:41:16Z",
-        "time": "1 Oct, 3:11 PM IST",
+        "title": "Hyderabad's T-Hub launches Flashpoint, a venture studio that will work with founders across India",
+        "source": "Indian Startup News",
+        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPU1V3MThfel9YV09PQlF0RWpJZlp0ZHdMQmIyMUVoNkJob0o4Mlp2M1hmdUZGNWszREVaOGlqV29BZ0IzLTllTDRxNHAtOWFHVWpRYmt1SG5qcm43OWdGeldpZG9kLTN2VGZjNEwwRV9HMHpKQkszS3lZMWs4S1Z4RWZyaVZLREVRbW9KT000S01rdldrei00RXFCRy1CN203V0FHcTM4QnJzZ09mLWlFNV83Yjk5Z082ZTVKRi13b3Y0SE9aeDdNNXNMZ1ZUUjBTcXRIUDdB0gHWAUFVX3lxTE9TVXcxOF96X1hXT09CUXRFaklmWnRkd0xCYjIxRWg2QmhvSjgyWnYzWGZ1RkY1azNERVo4aWpXb0FnQjMtOWVMNHE0cC05YUdValFia3VIbmpybjc5Z0Z6V2lkb2QtM3ZUZmM0TDBFX0cwekpCSzNLeVkxazhLVnhFZnJpVktERVFtb0pPTTRLTWt2V2t6LTRFcUJHLUI3bTdXQUdxMzhCcnNnT2YtaUU1XzdiOTlnTzZlNUpGLXdvdjRIT1p4N001c0xnVlRSMFNxdEhQN0E?oc=5",
+        "publishedAt": "2026-10-01T10:29:09Z",
+        "time": "1 Oct, 3:59 PM IST",
         "method": "typesafe"
       },
       {
@@ -98,6 +68,16 @@
         "method": "typesafe"
       },
       {
+        "id": "tp-8bcb51feb612",
+        "category": "govt",
+        "title": "Hyderabad plans AI video tests at driving tracks",
+        "source": "Hyderabad Mail",
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTh0X0hfMkFDdkV6YV9DbF8ya19NUTZaZFU4MVJadjFKclBvbU9MTzVfcHlTRGpMWnV2ZllSdzBFVWhGYnA2S2w0RnVlS216dkR6R0RLR2YxcUtjX1YxYUJMODI2ZGNkWkRIZ2JIZk5vNlVod29EelhfUFhUQnRzTQ?oc=5",
+        "publishedAt": "2026-09-30T05:20:51Z",
+        "time": "30 Sep, 10:50 AM IST",
+        "method": "typesafe"
+      },
+      {
         "id": "tp-7ca2190acce8",
         "category": "govt",
         "title": "Telangana plans AI boost for tourism",
@@ -109,6 +89,16 @@
       }
     ],
     "jobs": [
+      {
+        "id": "tp-2c820569803b",
+        "category": "jobs",
+        "title": "From Syngene to T-Hub: Somesh Ganti appointed director – HR",
+        "source": "HR Katha",
+        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNc1FMcmVUcFJuNk5UeDJaLWNja2dfREVLQ2pjclc4b1laX2FYVUc5Z3RkSWwzQ2ZyTzhpdnk3N1dqWFRZanhvLVViX1ZlY0N4VEdxZFlaWFFIakJWaTFMOUpEbkVFbm1MMjIwN2YwUGh5OUdoMTFabHE2NmgwQWpHTU8tOS1VOG9HNmcwZG1IdzFJVk9jbGg1NkNUVDl4dw?oc=5",
+        "publishedAt": "2026-10-07T08:30:14Z",
+        "time": "7 Oct, 2:00 PM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-8c34bddfa7d1",
         "category": "jobs",
