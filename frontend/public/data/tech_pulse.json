@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-06T18:33:55Z",
+  "generatedAt": "2026-10-07T06:20:17Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -26,16 +26,6 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-0283edd7c356",
-        "category": "safety",
-        "title": "Pause before you pay: thousands join cyber safety march to promote safer online habits in Hyderabad",
-        "source": "The Hindu",
-        "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQdGFMa3BFZVFQbDBvUUdrRFlPb18ySXZlUDVSLVY1WlFNYmprdG15RjI2QUVQRkNqUW9RVVZsLTNfYVlOTnVyclhDeWZqYy1YTVAtaWkwOGZmN1FKMHRDdVlrYThIUFBSVTI5UHlqdzAtcU8yN3NzN01lOEltb2pMNnltbFBid3JrdjlHVm91MEpBajVWWVhlS1o3WF9nR3JOVmhzOWcxSVFCazVDYno2bmFnV2JGc2V1UmlNYXh4UFJyWmRFRVIwa3BhVlhXOXFJWXZCOC1BbGNWc1lWdVhVWUlUSHBZODVhanhZYTV3d2s0SFlZX3Nad1haTdIBggJBVV95cUxOOHJmcGR2X3R2RmY0LXc3eTlhbmdpRHdzZVc3MkhwZ3J6ZGdqNER3NnEwWVJsSkRQTzdHRUVLUnlhdDFKV0IydmVZaXpnS3ZnXzdjRkc4RkVFS1FtWFl1RU9zS2REQlpDZENNcnEwZWp3WXZzRHVlRHhVNXBTTjliY1l0ZU5BS0ZnNlUxMDZOaGhGcmdCMlR6a0h6Z1V3OU9GX08xU1ZteFQyZjl6M0lJLS1wNEhVSHJIUTVwREtqakttX2Q4aDR4eW5ZSF9CVjZBU0ZxOENCa3hqekdIcTN2YTJOdk5vSFdBYXd1R3J3dThwdmp6SEZ1RnVhMEc5QzNMcEE?oc=5",
-        "publishedAt": "2026-10-01T15:44:08Z",
-        "time": "1 Oct, 9:14 PM IST",
-        "method": "typesafe"
-      },
-      {
         "id": "tp-0d248ff1156f",
         "category": "safety",
         "title": "Nearly 60% of Telangana’s cyber fraud losses linked to investment scams: TGCSB",
@@ -44,17 +34,37 @@
         "publishedAt": "2026-09-30T10:24:00Z",
         "time": "30 Sep, 3:54 PM IST",
         "method": "typesafe"
+      },
+      {
+        "id": "tp-94421e0226de",
+        "category": "safety",
+        "title": "TGCSB to hold 2-km night walk in Hyderabad against cyber fraud",
+        "source": "Hyderabad Mail",
+        "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSUdtTU9zc1dmNHU0OE1OR0VabFlTWnJjeC16WFZaVE9tU2xSckFmWkhyakhGSmVHWWNhRWxyeDdMZHpzRW9xNUtGOE9XU1Z2clZ5X3Q2WGtHYThqYWZoazRYbHZjaEtwa1Y4TkZzTUpaNEJwN3J6UF8xQXpKTFFhaUd3UjlvMThJVHRtWkxBeHloQQ?oc=5",
+        "publishedAt": "2026-09-28T15:50:35Z",
+        "time": "28 Sep, 9:20 PM IST",
+        "method": "typesafe"
       }
     ],
     "govt": [
       {
-        "id": "tp-fdd009ec1bf1",
+        "id": "tp-8badd2751c7a",
         "category": "govt",
-        "title": "Hyderabad's T-Hub launches Flashpoint, a venture studio that will work with founders across India",
-        "source": "Indian Startup News",
-        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPU1V3MThfel9YV09PQlF0RWpJZlp0ZHdMQmIyMUVoNkJob0o4Mlp2M1hmdUZGNWszREVaOGlqV29BZ0IzLTllTDRxNHAtOWFHVWpRYmt1SG5qcm43OWdGeldpZG9kLTN2VGZjNEwwRV9HMHpKQkszS3lZMWs4S1Z4RWZyaVZLREVRbW9KT000S01rdldrei00RXFCRy1CN203V0FHcTM4QnJzZ09mLWlFNV83Yjk5Z082ZTVKRi13b3Y0SE9aeDdNNXNMZ1ZUUjBTcXRIUDdB0gHWAUFVX3lxTE9TVXcxOF96X1hXT09CUXRFaklmWnRkd0xCYjIxRWg2QmhvSjgyWnYzWGZ1RkY1azNERVo4aWpXb0FnQjMtOWVMNHE0cC05YUdValFia3VIbmpybjc5Z0Z6V2lkb2QtM3ZUZmM0TDBFX0cwekpCSzNLeVkxazhLVnhFZnJpVktERVFtb0pPTTRLTWt2V2t6LTRFcUJHLUI3bTdXQUdxMzhCcnNnT2YtaUU1XzdiOTlnTzZlNUpGLXdvdjRIT1p4N001c0xnVlRSMFNxdEhQN0E?oc=5",
-        "publishedAt": "2026-10-01T10:29:09Z",
-        "time": "1 Oct, 3:59 PM IST",
+        "title": "KTR hails Telangana space-tech startups after payloads reach orbit",
+        "source": "Telangana Today",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQ1dXc3FGc2NBVXFXWkt0aTRqS0dKM3VuVS1yY0ZmTVVPNnBJVVpkZVNnUDlOTkxRTWFTVTNpN2dZdTljMEtfeWJHX1I5ckd0SWJDNXdsTWNkNmk5OFgxMVppQ0FYOEExZkFtUXFPYWxseFlwQWY3N0ZYcDJWVVlEWjM4dlJOaDMzcmpOQ0pCdVhXX2p3VFdfZQ?oc=5",
+        "publishedAt": "2026-10-03T03:31:19Z",
+        "time": "3 Oct, 9:01 AM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-532acaec58ef",
+        "category": "govt",
+        "title": "T-Hub Launches Flashpoint to Co-Build Startups With Founders",
+        "source": "Siliconindia",
+        "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOR19EYk14QldIS1pTcUZkT3lRRENHMXk1bGNzV19MT2o4M1gweFh3UW1qdTJpTXZ3SC1aNll1Wi14bWtkOWZLdVdQTXFsTS1iNzZkTUJOanQ0bEtnZm9zZkw4aFhiRW5KOTNhcDBUUzQzYTVWVFJPNmN0TWQySV9HQ3diLWZqS2RrYnJlQkpxNkx6Z3V2VURveGdYVzZoWkZ4b3llY1B4c3h2YS1IVEp2amQ0ejBPcGpTWnhsZkhJcWowdw?oc=5",
+        "publishedAt": "2026-10-01T09:41:16Z",
+        "time": "1 Oct, 3:11 PM IST",
         "method": "typesafe"
       },
       {
@@ -65,16 +75,6 @@
         "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTVdIMkt2UEVxMFUtQmQ0N1hhY0xucG5LdXh5SDFxcFR6YXdBZXZFN1pEWXhXb09SMVJGS2hONVg5d2RLdG1iVnVNT1BDN0g1bGpaOGZVOWw2RHZHSmhiUWZTcnROSUFrZEViUXB6QTFtOW5LMmd0T0xWcENRSEhpNUQ2MDJqX2dkaExJa1lRZXMtMWE1N3RWdWc5aFU4bUlQblVEYk1CWkpJa1pYQTRRZ1hNcnRUb2NmZEd6NWpDcnBmTE5VSjBLc3dvUzU2d9IB2wFBVV95cUxORXBqX2t5UVZoc2w1Tk9MbnptTDRXN0dJTjVpeGhPekt5ZU94cHJkS3RrSHlTZGJyT1JEbjRMWFZNaHhvNFhDY1FVWmtjV2htYWg2Tjl2OEczcTVnQTBQWjVXUWxyR1BjRDJ4RVZBTFBFdjVwUkd4NDZFSERXc0c4MFdRdmsyR292a2x5WGUwX29uSFVCRzlMSVhNS0tWN3ZDb2gwT1RMaXktRENIVC1fTkFiTnFhSjlYOE1qX0puanFuWjBRNWNoWDZQT20yMXVrSkl1enZfNVV3aTg?oc=5",
         "publishedAt": "2026-10-01T00:30:00Z",
         "time": "1 Oct, 6:00 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-01219b64a589",
-        "category": "govt",
-        "title": "IIT-H, AIIMS Bibinagar To Jointly Utilise AI, Medical Expertise",
-        "source": "Deccan Chronicle",
-        "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQcGc1Wk5GeEpJbnJuNXlzRVYwdUhHdVBUSDFSWDhHWG1qTVBHaUMySzV2dVpveFZRbURtaExBTWxBLVl0RmJWRkVxRmpNWnJMUGN5NC1RNWxJSFZHRERUZzJOQVEyeU1sN1k5SXMzNjhyUnhONE1sa3BqTzduYlE3MjJ5SFZ2c0Z3Vy1wWGJQY2VMTEpFUjhVMHpSOEhHMGpyM0tteXZUWDc2TUg1b19kOWZkSzdQOWg1WEJrNDFZd05lVzk3ZGfSAcsBQVVfeXFMUFNKWW8ybmI5VEwyaHVIR0lWZnYxWFRlblZSUll3RTlCQjZMOUN2NUJoOExNOEF5TjRqRHVvTUc3YWk1cHZHMEV4bXpiLTNRVEVwa3hteDBZeUhJbDQ1SUVJN1ppNXhTeXdUMG8yU1Q0QXpKTkxLWDBMXzB1ZGhCUF9HYVpRRWVOa2M5TjRwZ1RIVGx5QlI3b3RnWDZDSi1zLWZUWW85dmx1NDFYVHREQTZVRU9mN0VjN2tWaFlhdjUtX3ZXZjZGLUh6NU0?oc=5",
-        "publishedAt": "2026-09-30T17:29:44Z",
-        "time": "30 Sep, 10:59 PM IST",
         "method": "typesafe"
       },
       {
@@ -98,13 +98,13 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-8bcb51feb612",
+        "id": "tp-7ca2190acce8",
         "category": "govt",
-        "title": "Hyderabad plans AI video tests at driving tracks",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTh0X0hfMkFDdkV6YV9DbF8ya19NUTZaZFU4MVJadjFKclBvbU9MTzVfcHlTRGpMWnV2ZllSdzBFVWhGYnA2S2w0RnVlS216dkR6R0RLR2YxcUtjX1YxYUJMODI2ZGNkWkRIZ2JIZk5vNlVod29EelhfUFhUQnRzTQ?oc=5",
-        "publishedAt": "2026-09-30T05:20:51Z",
-        "time": "30 Sep, 10:50 AM IST",
+        "title": "Telangana plans AI boost for tourism",
+        "source": "The New Indian Express",
+        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQN2VRT0FfbFpOVUppUEtYNnNKeDI2TUI0UFo1cmtyNU5vM3lhY3JCSS1uQ1VUMWdDODRXcUNha3RvMEMyeWIzejM2RnVIalVESVhzM00tR2stN0xxWEV4VHFjOHZoYzJwekMxY3hRbnVLRXk5ZDJsNW82cnZZa1BlZWVnMU5wRUFUNGtaNTdacVJRMUE0NUpkUUJCRUNkQUnSAawBQVVfeXFMUGlBVkM2aVpKXzVvTmxYMldVcjFsdmpiNmhFOXliWTdUTEd0eDRBSzg2SzQwb05HZUR0dGtueWJQYVVmZ1B1Q3gyUHFMZHFaLXhqX0hPRGVleTlaYmpTODc2LXlPTmF2SDlGRzZsWnBHMVo4MlZLTmlvQTFiOWZDR1FMOXotVFBFVFlvWEsyZDRKX2Q1UUtsQmtGd0xuVlR6Z1BrNTBreHB5cmgtbA?oc=5",
+        "publishedAt": "2026-09-27T07:00:00Z",
+        "time": "27 Sep, 12:30 PM IST",
         "method": "typesafe"
       }
     ],
