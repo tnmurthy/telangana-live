@@ -1,53 +1,5 @@
 [
   {
-    "id": "alert-b4a5dcf93425",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Supply To Be Disrupted For 36 Hours - INDToday",
-    "message": "Hyderabad Water Supply To Be Disrupted For 36 Hours - INDToday",
-    "description": "Hyderabad Water Supply To Be Disrupted For 36 Hours  INDToday",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-04T17:03:29Z",
-    "publishedAt": "2026-10-04T10:48:34Z",
-    "time": "4 Oct, 4:18 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB0bmVjSDJ5UFY3RzFfRlgwTnFaYUFzSHY5bWFfSXd3Q0g0VWVyaUM4eE9CbUZLRzRPbjFLNEhBTlBRQ0xkaURjZldDb1EtQXJHTGFfdTVBMF9SUEgzbU82N2JSdUZsYTZCN1pJUkdEZUtQS2FPWHhhLTRmeUU0Zw?oc=5",
-    "source": "INDToday"
-  },
-  {
-    "id": "alert-2f327c238148",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "36-hour water disruption in Hyderabad from Monday; check affected areas - NewsMeter",
-    "message": "36-hour water disruption in Hyderabad from Monday; check affected areas - NewsMeter",
-    "description": "36-hour water disruption in Hyderabad from Monday; check affected areas  NewsMeter",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-04T20:11:56Z",
-    "publishedAt": "2026-10-04T11:10:16Z",
-    "time": "4 Oct, 4:40 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
-    "source": "NewsMeter"
-  },
-  {
-    "id": "alert-2f327c238148",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "36-hour water disruption in Hyderabad from Monday; check affected areas - newsmeter.in",
-    "message": "36-hour water disruption in Hyderabad from Monday; check affected areas - newsmeter.in",
-    "description": "36-hour water disruption in Hyderabad from Monday; check affected areas  newsmeter.in",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-05T02:06:36Z",
-    "publishedAt": "2026-10-04T11:10:16Z",
-    "time": "4 Oct, 4:40 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOUEh4YkdsWDVyOG9JbDdtbVlQeEUzYW1FeUNWX1RyS3Fja2lVYzA2RlpWdUx2SVlKLXhxQ3U1cEdSWXlVTWZTWjFrd1NvNVhMaWFvUVdCNnRjd21kTDFqVmk3UjVKeUVkTDRKZ05GbWVmbm5rWWZlN3ZSR3dHVUZKVi16UzZRWXppc3dHS0MtS2U5ZkdpNkx4Vm50WmdiSUFGaWVXQ0lSdDJZNFhY?oc=5",
-    "source": "newsmeter.in"
-  },
-  {
     "id": "alert-e5f89b577cdc",
     "type": "water_supply",
     "severity": "high",
@@ -158,5 +110,21 @@
     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQUFiNUNkRkd4S3YzaWxRVXV6UllGbWo4NVlGT3NjY19DREtDVnlIMk9ZVGZOVUhRbU5tZmpJOERPWnA5Q1lRZjRQSC0tY3kydmhsaVY4V0xwQmdjNWt0THd2ZElHWjlsckZIbmVVMFQxMVczTXdrVlJlYk5PV0k3SWhTQ1lVc1NiVld3?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQUFiNUNkRkd4S3YzaWxRVXV6UllGbWo4NVlGT3NjY19DREtDVnlIMk9ZVGZOVUhRbU5tZmpJOERPWnA5Q1lRZjRQSC0tY3kydmhsaVY4V0xwQmdjNWt0THd2ZElHWjlsckZIbmVVMFQxMVczTXdrVlJlYk5PV0k3SWhTQ1lVc1NiVld3?oc=5",
     "source": "Urban Acres"
+  },
+  {
+    "id": "alert-3b60719cf564",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Telangana Rain Alert: IMD Warns 10 Districts of Thunderstorms - urbanacres.in",
+    "message": "Telangana Rain Alert: IMD Warns 10 Districts of Thunderstorms - urbanacres.in",
+    "description": "Telangana Rain Alert: IMD Warns 10 Districts of Thunderstorms  urbanacres.in",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-07T16:49:39Z",
+    "publishedAt": "2026-10-07T07:30:06Z",
+    "time": "7 Oct, 1:00 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcUw3eGdZQk9kTjRYMTJzV2daQ0JLU2hFaVhsS1duVTIxZ1Bjb0FlVEJSUGFEOGp1WkRwM1B6YjhGeUowUFl0RFEzelZrbDhESjZkWEhHdXdnNE9WNFBCbV9kaGdkTjdvdEpsT2VxYk43S2ctdEk1SlNiNmM0cUk0RFJfRkw1OHpmV1BV?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcUw3eGdZQk9kTjRYMTJzV2daQ0JLU2hFaVhsS1duVTIxZ1Bjb0FlVEJSUGFEOGp1WkRwM1B6YjhGeUowUFl0RFEzelZrbDhESjZkWEhHdXdnNE9WNFBCbV9kaGdkTjdvdEpsT2VxYk43S2ctdEk1SlNiNmM0cUk0RFJfRkw1OHpmV1BV?oc=5",
+    "source": "urbanacres.in"
   }
 ]
