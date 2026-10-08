@@ -1,18 +1,18 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-07T13:45:31Z",
+  "generatedAt": "2026-10-08T06:31:24Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
       {
-        "id": "tp-876cef6c0e69",
+        "id": "tp-8e9007818f06",
         "category": "safety",
-        "title": "Corporate Professionals Among 101 Arrested In Telangana For Cyber Fraud",
-        "source": "NDTV",
-        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPUnF2YnNiSlZYOThOZk1SQ2hkYktCQm5hQXJ0N2wtclVrTmJBZV9yX1hGZWR3Ymd4V3phV2VnaEVwVkJJeGJ0Y3hpUmxpNTY3QUVwaV9mN3h0WklicllFU0c2SlpIdk1taWJCWnJpMVhYVGNyMWZmQ1lmcmJlZlllVlJ1WTJSSWo2QmthRExTcW9uUmEzWmFyMFpCRE51Q0xYUEJpNGZsd21zSTdIQ1lBQlBB?oc=5",
-        "publishedAt": "2026-10-07T13:06:20Z",
-        "time": "7 Oct, 6:36 PM IST",
+        "title": "Corporate Employees Among 101 Arrested in Telangana's ₹17 Crore Cyber Fraud Crackdown",
+        "source": "The420.in",
+        "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9GSk8yOFVwV3lrLVFEbTkyRE1sQXBXSHA5cDNwZEJYNW9aYjRGVXpZZVBieTdqNFFDZXlNSXlKcnVMSGJtTTNzcXZlZWttRmZSbEdSR2tSdl9zNDE5RU1LaGlOODE4SXdQX1d1ZzR0NUdyeWVRdXI0TQ?oc=5",
+        "publishedAt": "2026-10-08T03:33:51Z",
+        "time": "8 Oct, 9:03 AM IST",
         "method": "typesafe"
       },
       {
@@ -97,6 +97,16 @@
         "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNc1FMcmVUcFJuNk5UeDJaLWNja2dfREVLQ2pjclc4b1laX2FYVUc5Z3RkSWwzQ2ZyTzhpdnk3N1dqWFRZanhvLVViX1ZlY0N4VEdxZFlaWFFIakJWaTFMOUpEbkVFbm1MMjIwN2YwUGh5OUdoMTFabHE2NmgwQWpHTU8tOS1VOG9HNmcwZG1IdzFJVk9jbGg1NkNUVDl4dw?oc=5",
         "publishedAt": "2026-10-07T08:30:14Z",
         "time": "7 Oct, 2:00 PM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-909b63a218d0",
+        "category": "jobs",
+        "title": "DoorDash opens Hyderabad GCC, plans to create 3,000 jobs in India - People Matters",
+        "source": "HR News",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN3ZlNzItYnBTaXk0c2xxZVc3OVA5aUVKX1hFTUtiUFlBS2hfcXItMDJObjZKWkFWTUM1Z0dCOHlrRkNQSTc0V19MYjJyY0xPTjZ3b2tBd2pJQ1NRal91Rk5heDBZODZTVk1fU05JOVktb1RKcjR2LXFmMjl0dElYNGs5SG9zX24yWU5ta29XdkJHbEYxS3VPWXc2ZVFiX1hUaURNd2NzWEF0NEFfbUZQRUh3?oc=5",
+        "publishedAt": "2026-10-01T02:39:50Z",
+        "time": "1 Oct, 8:09 AM IST",
         "method": "typesafe"
       },
       {
