@@ -1,10 +1,20 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-08T06:31:24Z",
+  "generatedAt": "2026-10-08T18:58:19Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
+      {
+        "id": "tp-2b06170f192c",
+        "category": "safety",
+        "title": "IIIT-Hyderabad study cautions against blindly trusting medical AI models",
+        "source": "Telangana Today",
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMXhwdnhMVlZjSFI2bjRQdEJmVFB2MElUT19UYlVha2RDQ3ZWeWZsM0tuZ1VfTG5qeEdvdVVQRWtIbnNuMmF3bDNaMUZYTkU5Y3VlLXVGcVRxUmZ2WERuOGNBVzI0OUZaT3dLTnJlNE50cEJDMEk5WG9ZQ1JwR3ZtMFpMakZqbEd1alk1cTZ3aDU5a3BFS2RGNnRlY3JzaV9j?oc=5",
+        "publishedAt": "2026-10-08T13:06:27Z",
+        "time": "8 Oct, 6:36 PM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-8e9007818f06",
         "category": "safety",
@@ -97,16 +107,6 @@
         "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNc1FMcmVUcFJuNk5UeDJaLWNja2dfREVLQ2pjclc4b1laX2FYVUc5Z3RkSWwzQ2ZyTzhpdnk3N1dqWFRZanhvLVViX1ZlY0N4VEdxZFlaWFFIakJWaTFMOUpEbkVFbm1MMjIwN2YwUGh5OUdoMTFabHE2NmgwQWpHTU8tOS1VOG9HNmcwZG1IdzFJVk9jbGg1NkNUVDl4dw?oc=5",
         "publishedAt": "2026-10-07T08:30:14Z",
         "time": "7 Oct, 2:00 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-909b63a218d0",
-        "category": "jobs",
-        "title": "DoorDash opens Hyderabad GCC, plans to create 3,000 jobs in India - People Matters",
-        "source": "HR News",
-        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN3ZlNzItYnBTaXk0c2xxZVc3OVA5aUVKX1hFTUtiUFlBS2hfcXItMDJObjZKWkFWTUM1Z0dCOHlrRkNQSTc0V19MYjJyY0xPTjZ3b2tBd2pJQ1NRal91Rk5heDBZODZTVk1fU05JOVktb1RKcjR2LXFmMjl0dElYNGs5SG9zX24yWU5ta29XdkJHbEYxS3VPWXc2ZVFiX1hUaURNd2NzWEF0NEFfbUZQRUh3?oc=5",
-        "publishedAt": "2026-10-01T02:39:50Z",
-        "time": "1 Oct, 8:09 AM IST",
         "method": "typesafe"
       },
       {
