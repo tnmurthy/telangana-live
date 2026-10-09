@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-09T06:32:38Z",
+  "generatedAt": "2026-10-09T18:28:20Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -53,28 +53,8 @@
         "title": "Telangana Transport Department plans AI-powered cameras for driving tests",
         "source": "Telangana Today",
         "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWGNrUTlET1JFeGxYRWs4U1BKam44R3FkZDdKQ3ozUmZMTTBDZ0ZlZlM0WU1nZkNsSS1RU2RyTW9aZTNEdHV0U2hfRzZMZUxXdzBkRHVZLVowUXZUQ2tDQ0tselJqRWdGTEkxTUZxSl9IeHh5enA0Q240MEpxR2JRc0c1YlcwU2laYzVKeFVwZHRkYUJXbW14a3NZWWY5eHJlZ1E?oc=5",
-        "publishedAt": "2026-09-30T13:21:29Z",
-        "time": "30 Sep, 6:51 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-ddfe1f572b06",
-        "category": "govt",
-        "title": "T-Hub Opens Agri-Tech and Space-Tech Tracks, Offers Founders 100% Equity",
-        "source": "CIOL",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBctIBmAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBcg?oc=5",
-        "publishedAt": "2026-09-30T09:18:07Z",
-        "time": "30 Sep, 2:48 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-8bcb51feb612",
-        "category": "govt",
-        "title": "Hyderabad plans AI video tests at driving tracks",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPLTh0X0hfMkFDdkV6YV9DbF8ya19NUTZaZFU4MVJadjFKclBvbU9MTzVfcHlTRGpMWnV2ZllSdzBFVWhGYnA2S2w0RnVlS216dkR6R0RLR2YxcUtjX1YxYUJMODI2ZGNkWkRIZ2JIZk5vNlVod29EelhfUFhUQnRzTQ?oc=5",
-        "publishedAt": "2026-09-30T05:20:51Z",
-        "time": "30 Sep, 10:50 AM IST",
+        "publishedAt": "2026-09-30T07:00:00Z",
+        "time": "30 Sep, 12:30 PM IST",
         "method": "typesafe"
       },
       {
