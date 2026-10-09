@@ -9,7 +9,6 @@ import { useLocation, Link } from 'react-router-dom';
 
 import CrisisDashboard from './CrisisDashboard';
 import HeatwavePanel from './HeatwavePanel';
-import EmergencySimulator from './EmergencySimulator';
 import { WidgetErrorBoundary } from './ErrorBoundary';
 import { useEmergency } from '../hooks/useEmergency';
 
@@ -117,8 +116,6 @@ const MainLayout = ({ children }) => {
         </div>
       </main>
 
-      {/* Secret Emergency Simulator for Testing */}
-      <EmergencySimulator />
 
       {/* Mobile Sticky Bottom Ad */}
       {showAds && showBottomAd && (

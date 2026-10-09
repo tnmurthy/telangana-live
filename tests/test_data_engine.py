@@ -376,7 +376,6 @@ class TestSyncPulses:
             data_engine.sync_pulses()
             content = open(data_engine.PATHS["pulses"], encoding="utf-8").read()
             assert "export const pulses" in content
-            assert "Toor Dal" in content
         finally:
             data_engine.PATHS["pulses"] = original_path
 
@@ -392,7 +391,20 @@ class TestSyncPulses:
             assert data["city"] == "Hyderabad"
             assert "date" in data
             assert isinstance(data["commodities"], list)
-            assert len(data["commodities"]) > 0
+        finally:
+            data_engine.PATHS["pulses"] = original_path
+
+    def test_no_invented_prices(self, tmp_path):
+        # TL-44: when no source answered, the file held fixed prices
+        # (Toor Dal 120/kg, ...) presented as today's Hyderabad market.
+        original_path = data_engine.PATHS["pulses"]
+        data_engine.PATHS["pulses"] = str(tmp_path / "pulses.js")
+        try:
+            data_engine.sync_pulses()
+            content = open(data_engine.PATHS["pulses"], encoding="utf-8").read()
+            data = json.loads(re.search(r"= (\{[\s\S]*\});", content).group(1))
+            assert data["commodities"] == []
+            assert data["sourceUrl"].startswith("https://agmarknet.gov.in")
         finally:
             data_engine.PATHS["pulses"] = original_path
 

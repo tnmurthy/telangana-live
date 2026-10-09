@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
-import { meesevaCategories, meesevaCentres } from '../data/meesevaData';
+import { meesevaCategories } from '../data/meesevaData';
 import newsData from '../data/news.json';
-import { useAppContext } from '../context/AppContext';
 import { Icons } from '../components/Icons';
 import { trackEvent } from '../hooks/usePageTracking';
 
@@ -45,26 +44,11 @@ const getCategoryIcon = (iconName, className) => {
 };
 
 export default function MeeSevaPage() {
-  const { myDistrict } = useAppContext();
 
   // States
   const [selectedCategory, setSelectedCategory] = useState('certificates');
   const [offeringsSearch, setOfferingsSearch] = useState('');
   const [expandedOffering, setExpandedOffering] = useState(null);
-
-  const [locatorDistrict, setLocatorDistrict] = useState(myDistrict || 'Hyderabad');
-  const [locatorSearch, setLocatorSearch] = useState('');
-
-  const [trackingId, setTrackingId] = useState('');
-  const [trackedStatus, setTrackedStatus] = useState(null);
-  const [isTrackLoading, setIsTrackLoading] = useState(false);
-
-  // Sync locator district when context district changes
-  useEffect(() => {
-    if (myDistrict) {
-      setLocatorDistrict(myDistrict);
-    }
-  }, [myDistrict]);
 
   // Track category changes
   const handleCategoryChange = (catId) => {
@@ -82,19 +66,7 @@ export default function MeeSevaPage() {
     }
   }, [offeringsSearch]);
 
-  useEffect(() => {
-    if (locatorSearch.length > 2) {
-      const timer = setTimeout(() => {
-        trackEvent('meeseva_locator_search', { search_term: locatorSearch, district: locatorDistrict });
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [locatorSearch, locatorDistrict]);
 
-  // Unique list of districts for centres locator
-  const availableDistricts = useMemo(() => {
-    return [...new Set(meesevaCentres.map(c => c.district))].sort();
-  }, []);
 
   // Filtered offerings based on selected category & search
   const filteredOfferings = useMemo(() => {
@@ -110,21 +82,6 @@ export default function MeeSevaPage() {
     );
   }, [selectedCategory, offeringsSearch]);
 
-  // Filtered MeeSeva centres
-  const filteredCentres = useMemo(() => {
-    let centres = meesevaCentres.filter(c => c.district.toLowerCase() === locatorDistrict.toLowerCase());
-
-    if (locatorSearch.trim()) {
-      const q = locatorSearch.toLowerCase();
-      centres = centres.filter(c => 
-        c.name.toLowerCase().includes(q) || 
-        c.locality.toLowerCase().includes(q) ||
-        c.address.toLowerCase().includes(q) ||
-        c.pincode.includes(q)
-      );
-    }
-    return centres;
-  }, [locatorDistrict, locatorSearch]);
 
   // MeeSeva related news
   const correlatedNews = useMemo(() => {
@@ -135,42 +92,6 @@ export default function MeeSevaPage() {
     }).slice(0, 3);
   }, []);
 
-  // Handle mock tracking submission
-  const handleTrackSubmit = (e) => {
-    e.preventDefault();
-    if (!trackingId.trim()) return;
-
-    trackEvent('meeseva_track_submit', { tracking_id: trackingId });
-
-    setIsTrackLoading(true);
-    setTrackedStatus(null);
-
-    // Simulate server response time
-    setTimeout(() => {
-      setIsTrackLoading(false);
-      // Deterministic mock stages based on number length/hash
-      const idStr = trackingId.toUpperCase();
-      const code = idStr.replace(/[^A-Z0-9]/g, '');
-      const num = code.length > 0 ? code.charCodeAt(code.length - 1) % 4 : 2;
-
-      const stages = [
-        { title: 'Application Submitted', date: 'May 22, 2026', desc: 'Received at MeeSeva counter & registered in portal.', status: 'completed' },
-        { title: 'Documents Verified', date: 'May 24, 2026', desc: 'Mandal Revenue Inspector verified all submitted certificates.', status: num >= 1 ? 'completed' : 'active' },
-        { title: 'Officer Approval', date: num >= 2 ? 'May 25, 2026' : '--', desc: 'Pending signature of the Tahsildar / Authorised Officer.', status: num === 1 ? 'active' : num >= 2 ? 'completed' : 'pending' },
-        { title: 'Certificate Issued', date: num >= 3 ? 'May 26, 2026' : '--', desc: 'Download PDF online or collect at centre.', status: num === 2 ? 'active' : num >= 3 ? 'completed' : 'pending' }
-      ];
-
-      setTrackedStatus({
-        id: idStr,
-        stageIndex: num,
-        stages: stages,
-        applicant: 'S. Ramakrishna Rao',
-        service: 'Integrated Caste & Community Certificate'
-      });
-
-      trackEvent('meeseva_track_success', { tracking_id: idStr, stage_index: num });
-    }, 850);
-  };
 
   return (
     <div className="space-y-8 pb-20 max-w-5xl mx-auto px-4 mt-6 animate-fade-in">
@@ -368,180 +289,40 @@ export default function MeeSevaPage() {
 
         </div>
 
-        {/* Right Column - Status Tracker & Centres Locator (1 Col wide on desktop) */}
+        {/* Right Column - status and centres. The tracker used to make up a
+            status from the application number and the locator listed centres
+            with invented phone numbers, ratings and reviews (TL-44). */}
         <div className="space-y-8">
-          
-          {/* Tracker Widget */}
-          <div className="glass-card p-5 border border-white/[0.04] space-y-4">
+          <a
+            href="https://ts.meeseva.telangana.gov.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-card p-5 border border-white/[0.04] block hover:border-telangana-green/40 transition-colors"
+          >
             <div className="flex items-center gap-2.5">
               <span className="text-lg">🪪</span>
               <div>
-                <h3 className="font-bold text-white text-sm">Application Status Tracker</h3>
-                <p className="text-[10px] text-text-muted">Track certificates or utility records</p>
+                <h3 className="font-bold text-white text-sm">Track your application ↗</h3>
+                <p className="text-[10px] text-text-muted">Check status on the official MeeSeva portal</p>
               </div>
             </div>
+          </a>
 
-            <form onSubmit={handleTrackSubmit} className="flex gap-2">
-              <input
-                type="text"
-                placeholder="Enter App No. (e.g. TS-RE-1029)"
-                value={trackingId}
-                onChange={e => setTrackingId(e.target.value)}
-                className="flex-1 px-3 py-2 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white placeholder:text-text-muted focus:outline-none focus:border-telangana-green/50"
-                required
-              />
-              <button
-                type="submit"
-                disabled={isTrackLoading}
-                className="px-4 py-2 rounded-lg bg-telangana-green hover:bg-telangana-green-hover text-black text-xs font-black transition-all flex items-center justify-center min-w-[70px]"
-              >
-                {isTrackLoading ? (
-                  <div className="w-3.5 h-3.5 border-2 border-black/20 border-t-black rounded-full animate-spin" />
-                ) : 'Track'}
-              </button>
-            </form>
-
-            {/* Tracked Results Output */}
-            {trackedStatus && (
-              <div className="border-t border-white/[0.04] pt-4 space-y-4 animate-fade-in">
-                <div className="bg-white/[0.02] border border-white/[0.05] rounded-xl p-3 text-xs space-y-1">
-                  <p className="text-text-muted">Application ID: <strong className="text-white">{trackedStatus.id}</strong></p>
-                  <p className="text-text-muted">Applicant: <strong className="text-white">{trackedStatus.applicant}</strong></p>
-                  <p className="text-text-muted">Service: <strong className="text-white/80">{trackedStatus.service}</strong></p>
-                </div>
-
-                {/* Vertical Timeline */}
-                <div className="relative pl-6 space-y-4 border-l border-white/[0.08] ml-2.5">
-                  {trackedStatus.stages.map((stage, sIdx) => {
-                    const isCompleted = stage.status === 'completed';
-                    const isActive = stage.status === 'active';
-                    
-                    return (
-                      <div key={sIdx} className="relative">
-                        {/* Bullet indicator */}
-                        <div className={`absolute -left-[31px] top-0.5 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                          isCompleted
-                            ? 'bg-telangana-green border-telangana-green text-black text-[9px] font-bold'
-                            : isActive
-                              ? 'bg-dark-bg border-telangana-green animate-pulse'
-                              : 'bg-dark-bg border-white/20'
-                        }`}>
-                          {isCompleted && '✓'}
-                          {isActive && <div className="w-1.5 h-1.5 rounded-full bg-telangana-green" />}
-                        </div>
-                        
-                        {/* Title and details */}
-                        <div>
-                          <div className="flex items-center justify-between gap-2">
-                            <h4 className={`text-xs font-bold ${
-                              isCompleted ? 'text-white' : isActive ? 'text-telangana-green' : 'text-text-muted'
-                            }`}>
-                              {stage.title}
-                            </h4>
-                            <span className="text-[9px] text-text-muted/60">{stage.date}</span>
-                          </div>
-                          <p className="text-[10px] text-text-muted/80 mt-0.5 leading-normal">{stage.desc}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Centres Locator Widget */}
-          <div id="locator-section" className="glass-card p-5 border border-white/[0.04] space-y-4">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2.5">
-                <span className="text-lg">📍</span>
-                <div>
-                  <h3 className="font-bold text-white text-sm">MeeSeva Centre Locator</h3>
-                  <p className="text-[10px] text-text-muted">Find nearby authorised counters</p>
-                </div>
-              </div>
-              
-              {/* Context preference indicator */}
-              {myDistrict && locatorDistrict.toLowerCase() === myDistrict.toLowerCase() && (
-                <span className="text-[9px] font-black uppercase text-telangana-green px-1.5 py-0.5 rounded bg-telangana-green/10 border border-telangana-green/20">
-                  {myDistrict}
-                </span>
-              )}
-            </div>
-
-            {/* Filter and Search controls */}
-            <div className="space-y-2">
-              <div className="flex gap-2">
-                <select
-                  value={locatorDistrict}
-                  onChange={e => setLocatorDistrict(e.target.value)}
-                  className="w-1/2 px-2.5 py-2 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white focus:outline-none focus:border-telangana-green/50"
-                >
-                  {availableDistricts.map(dist => (
-                    <option key={dist} value={dist} className="bg-dark-bg text-white">
-                      {dist} District
-                    </option>
-                  ))}
-                </select>
-                
-                <input
-                  type="text"
-                  placeholder="Filter locality / PIN..."
-                  value={locatorSearch}
-                  onChange={e => setLocatorSearch(e.target.value)}
-                  className="w-1/2 px-2.5 py-2 rounded-lg bg-white/[0.04] border border-white/10 text-xs text-white placeholder:text-text-muted focus:outline-none focus:border-telangana-green/50"
-                />
+          <a
+            id="locator-section"
+            href="https://www.google.com/maps/search/MeeSeva+centre+near+me"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-card p-5 border border-white/[0.04] block hover:border-telangana-green/40 transition-colors"
+          >
+            <div className="flex items-center gap-2.5">
+              <span className="text-lg">📍</span>
+              <div>
+                <h3 className="font-bold text-white text-sm">Find a MeeSeva centre near you ↗</h3>
+                <p className="text-[10px] text-text-muted">Opens Google Maps</p>
               </div>
             </div>
-
-            {/* Centres List */}
-            <div className="space-y-3 max-h-[360px] overflow-y-auto pr-1 custom-scrollbar">
-              {filteredCentres.length > 0 ? (
-                filteredCentres.map(centre => (
-                  <div key={centre.id} className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.05] space-y-2.5">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <h4 className="text-xs font-bold text-white">{centre.name}</h4>
-                        <p className="text-[10px] text-text-muted mt-0.5 leading-normal">{centre.address}</p>
-                      </div>
-                      <span className="text-[9px] px-1.5 py-0.5 rounded font-black whitespace-nowrap bg-white/5 border border-white/10 text-heritage-gold">
-                        ★ {centre.rating}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between text-[10px] text-text-muted pt-1 border-t border-white/[0.03]">
-                      <span>🕒 {centre.hours}</span>
-                      <span>📞 {centre.phone}</span>
-                    </div>
-
-                    <div className="flex items-center gap-2 pt-0.5">
-                      <a
-                        href={`tel:${centre.phone.replace(/[^0-9]/g, '')}`}
-                        className="flex-1 py-1 rounded bg-white/[0.03] hover:bg-white/[0.08] text-white/90 text-center font-bold text-[10px] flex items-center justify-center gap-1.5 transition-all"
-                      >
-                        {CustomIcons.Phone({ className: "w-3 h-3 text-text-muted" })}
-                        Call Centre
-                      </a>
-                      <a
-                        href={centre.mapLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 py-1 rounded bg-telangana-green/10 hover:bg-telangana-green/20 text-telangana-green text-center font-bold text-[10px] flex items-center justify-center gap-1.5 transition-all"
-                      >
-                        Directions
-                        {CustomIcons.ExternalLink({ className: "w-3 h-3" })}
-                      </a>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="p-8 text-center text-text-muted text-xs border border-dashed border-white/10 rounded-xl">
-                  No centres found for "{locatorSearch}" in {locatorDistrict} District.
-                </div>
-              )}
-            </div>
-          </div>
-          
+          </a>
         </div>
 
       </div>

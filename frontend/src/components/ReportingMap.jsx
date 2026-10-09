@@ -184,7 +184,7 @@ export default function ReportingMap() {
                                 <Popup className="dark-popup">
                                     <div className="text-xs space-y-1.5 min-w-[200px]">
                                         <p className="font-black text-sm">{cat?.icon} {report.description}</p>
-                                        <p className="text-gray-400">📍 {report.corporation} · Ward {report.ward}</p>
+                                        <p className="text-gray-400">📍 {report.corporation}{report.ward ? ` · Ward ${report.ward}` : ''}</p>
                                         <p className="text-gray-400">📅 {report.date}</p>
                                         <StatusBar status={report.status} />
                                     </div>
@@ -270,7 +270,7 @@ export default function ReportingMap() {
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <p className="text-sm text-white font-bold truncate">{report.description}</p>
-                                    <p className="text-[10px] text-text-muted mt-1">📍 {report.corporation} · Ward {report.ward} · {report.date}</p>
+                                    <p className="text-[10px] text-text-muted mt-1">📍 {report.corporation}{report.ward ? ` · Ward ${report.ward}` : ''} · {report.date}</p>
                                     <StatusBar status={report.status} />
                                 </div>
                             </div>

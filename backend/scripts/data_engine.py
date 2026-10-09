@@ -566,65 +566,26 @@ def sync_finance():
 
 
 # ── PULSES / COMMODITIES ──────────────────────────────────────────────────────
+PULSES_SOURCE_URL = "https://agmarknet.gov.in/"
+
+
 def sync_pulses():
-    print("Syncing commodity (pulses) prices...")
+    """Write the pulses file with no prices until a real source is wired.
 
-    fallback_items = [
-        {"name": "Toor Dal", "price": "₹120/kg", "change": "0"},
-        {"name": "Chana Dal", "price": "₹95/kg", "change": "0"},
-        {"name": "Moong Dal", "price": "₹110/kg", "change": "0"},
-        {"name": "Urad Dal", "price": "₹130/kg", "change": "0"},
-    ]
-
-    items = []
-
-    try:
-        url = "https://enam.gov.in/web/dashboard/agmarknet"
-        resp = http_get(url)
-        resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
-        text = soup.get_text(" ", strip=True)
-
-        commodity_map = [
-            ("Toor Dal", ["Tur", "Toor"]),
-            ("Chana Dal", ["Chana"]),
-            ("Moong Dal", ["Moong"]),
-            ("Urad Dal", ["Urad"]),
-        ]
-
-        for display_name, aliases in commodity_map:
-            found = None
-            for alias in aliases:
-                m = re.search(rf"{alias}[^0-9₹]{{0,80}}(\d{{2,5}}(?:\.\d+)?)", text, re.IGNORECASE)
-                if m:
-                    found = m.group(1)
-                    break
-            if found:
-                items.append({"name": display_name, "price": f"₹{found}/kg", "change": "0"})
-
-    except Exception as e:
-        print(f"  ⚠️ Pulses scrape failed ({e}), using fallback values")
-
-    if not items:
-        items = fallback_items
-
-    # Map for Frontend
+    The eNAM page scrape took any number near "Tur" or "Chana" (eNAM quotes
+    per quintal, not per kg) and, when it found nothing, published fixed
+    prices (Toor Dal 120/kg, ...) as today's Hyderabad market (TL-44). The
+    site now shows no commodity price and links to Agmarknet instead.
+    """
+    print("Pulses: no licensed source wired; writing an empty list")
     frontend_pulses = {
         "updatedAt": NOW,
         "date": NOW[:10],
         "city": "Hyderabad",
         "market": "Hyderabad",
-        "commodities": [
-            {
-                "name": item["name"],
-                "price": float(item["price"].replace("₹", "").replace("/kg", "")),
-                "unit": "kg",
-                "change": 0,
-                "correlated_news": get_recent_news_for_entity("mandi_price", item["name"])
-            } for item in items
-        ]
+        "sourceUrl": PULSES_SOURCE_URL,
+        "commodities": [],
     }
-
     write_js_module(PATHS["pulses"], "pulses", frontend_pulses)
     return frontend_pulses
 

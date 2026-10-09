@@ -30,7 +30,8 @@ export default function ReportForm({ lat, lng, onSubmit, onClose }) {
             description,
             photo,
             turnstileToken, // Pass token for backend verification
-            ward: Math.floor(Math.random() * 50) + (detected.key === 'cmc' ? 101 : detected.key === 'mmc' ? 201 : 1),
+            // Ward was a random number (TL-44); none is sent until it comes from the pin.
+            ward: null,
         });
     };
 

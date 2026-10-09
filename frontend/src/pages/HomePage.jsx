@@ -46,7 +46,7 @@ const FeedSection = ({ title, items, icon, delay = '0ms' }) => (
 
 export default function HomePage() {
   const { searchQuery, myDistrict, followed } = useAppContext();
-  const { isEmergencyActive, activateEmergency } = useEmergency();
+  const { isEmergencyActive } = useEmergency();
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All');
@@ -231,8 +231,8 @@ export default function HomePage() {
             </div>
           </Link>
           
-          <div 
-            onClick={() => !isEmergencyActive && activateEmergency('flood')}
+          <Link
+            to="/alerts"
             className={`glass-card p-6 border transition-all group flex items-start gap-4 shadow-xl cursor-pointer ${isEmergencyActive ? 'border-red-500/50 bg-red-500/10' : 'border-white/10 hover:border-red-500/30 hover:bg-white/5'}`}
           >
             <div className={`p-3 rounded-xl transition-transform ${isEmergencyActive ? 'bg-red-500 text-white animate-pulse' : 'bg-red-500/20 text-red-400 group-hover:scale-110'}`}>
@@ -243,10 +243,10 @@ export default function HomePage() {
                 Crisis Dashboard {isEmergencyActive && '(Active)'}
               </h3>
               <p className="text-sm text-text-secondary leading-snug">
-                {isEmergencyActive ? 'Live emergency alerts are currently active at the top of your screen.' : 'No active emergencies. Click to run a system simulation.'}
+                {isEmergencyActive ? 'Live emergency alerts are currently active at the top of your screen.' : 'Official NDMA alerts for Telangana.'}
               </p>
             </div>
-          </div>
+          </Link>
           
           {/* Smart Classifieds Link */}
           <Link to="/classifieds" className="glass-card p-6 border border-white/10 hover:border-yellow-500/50 hover:bg-white/5 transition-all group flex items-start gap-4 shadow-xl md:col-span-2">

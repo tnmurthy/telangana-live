@@ -1,81 +1,14 @@
 import { useState, useEffect } from 'react';
 import { fetchMandiPrices } from '../services/pricesService';
-import {
-    mspPrices,
-    cropAdvisories,
-    farmerSchemes,
-    marketPrices,
-    farmerHelplines,
-    cropCalendar,
-} from '../data/farmerData';
+import { farmerSchemes, farmerHelplines, cropCalendar } from '../data/farmerData';
 
-const urgencyConfig = {
-    critical: { label: 'Critical', color: '#EF4444', bg: 'bg-red-500/10 border-red-500/20' },
-    high: { label: 'Urgent', color: '#F97316', bg: 'bg-orange-500/10 border-orange-500/20' },
-    medium: { label: 'Advisory', color: '#EAB308', bg: 'bg-yellow-500/10 border-yellow-500/20' },
-    low: { label: 'Info', color: '#22C55E', bg: 'bg-green-500/10 border-green-500/20' },
-};
-
-function MspRow({ crop }) {
-    const change = crop.msp - crop.lastYearMsp;
-    const changePct = ((change / crop.lastYearMsp) * 100).toFixed(1);
-    return (
-        <div className="flex items-center justify-between py-2.5 border-b border-white/[0.04] last:border-0">
-            <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-white">{crop.name}</p>
-                <p className="text-[10px] text-text-muted">{crop.telugu} · {crop.season} · {crop.category}</p>
-            </div>
-            <div className="text-right ml-3 flex-shrink-0">
-                <p className="text-sm font-black text-heritage-gold">₹{crop.msp.toLocaleString('en-IN')}</p>
-                <p className="text-[9px] text-text-muted">{crop.unit}</p>
-                <span className={`text-[9px] font-bold ${change >= 0 ? 'text-telangana-green' : 'text-red-400'}`}>
-                    {change >= 0 ? '▲' : '▼'} ₹{Math.abs(change)} ({changePct}%)
-                </span>
-            </div>
-        </div>
-    );
-}
-
-function AdvisoryCard({ advisory }) {
-    const urg = urgencyConfig[advisory.urgency] || urgencyConfig.low;
-    const [expanded, setExpanded] = useState(false);
-
-    return (
-        <div
-            className={`glass-card p-4 cursor-pointer transition-all border ${urg.bg}`}
-            onClick={() => setExpanded(!expanded)}
-        >
-            <div className="flex items-start gap-3">
-                <span className="text-2xl">{advisory.icon}</span>
-                <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2 flex-wrap">
-                        <div>
-                            <p className="text-xs font-bold text-white">{advisory.crop} <span className="text-text-muted font-normal">({advisory.telugu})</span></p>
-                            <p className="text-sm font-semibold text-text-secondary mt-0.5">{advisory.title}</p>
-                        </div>
-                        <span
-                            className="text-[9px] font-bold px-2 py-0.5 rounded-full flex-shrink-0"
-                            style={{ backgroundColor: urg.color + '18', color: urg.color }}
-                        >
-                            {urg.label}
-                        </span>
-                    </div>
-                    {!expanded && <p className="text-xs text-text-muted mt-1.5 line-clamp-2">{advisory.advisory}</p>}
-                    {expanded && (
-                        <div className="mt-2 animate-in">
-                            <p className="text-xs text-text-secondary leading-relaxed">{advisory.advisory}</p>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                                {advisory.tags.map(t => (
-                                    <span key={t} className="text-[9px] bg-white/[0.05] text-text-muted px-2 py-0.5 rounded-full">{t}</span>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-                </div>
-            </div>
-        </div>
-    );
-}
+// The page showed crop advisories with pesticide doses dated April but labelled
+// as this month, an MSP table labelled 2025-26 holding older figures (and MSPs
+// for turmeric and chilli, which have none), and fixed April mandi prices
+// credited to the Marketing Department (TL-44). MSP and mandi prices now come
+// from the official sites or the live feed only.
+const MSP_SOURCE = 'https://cacp.da.gov.in/';
+const MANDI_SOURCE = 'https://agmarknet.gov.in/';
 
 function SchemeCard({ scheme }) {
     const [expanded, setExpanded] = useState(false);
@@ -123,7 +56,6 @@ function SchemeCard({ scheme }) {
 }
 
 const TABS = [
-    { key: 'advisory', label: '🌿 Crop Advisory' },
     { key: 'msp', label: '💰 MSP Prices' },
     { key: 'schemes', label: '📋 Schemes' },
     { key: 'market', label: '📈 Market Rates' },
@@ -131,25 +63,13 @@ const TABS = [
 ];
 
 export default function FarmerPage() {
-    const [activeTab, setActiveTab] = useState('advisory');
-    const [mspSeason, setMspSeason] = useState('All');
-    const [mspCategory, setMspCategory] = useState('All');
+    const [activeTab, setActiveTab] = useState('schemes');
     const [liveMandi, setLiveMandi] = useState({ items: [], lastUpdated: '' });
 
     useEffect(() => {
         fetchMandiPrices().then(data => setLiveMandi(data));
     }, []);
 
-    const categories = ['All', ...new Set(mspPrices.crops.map(c => c.category))];
-    const seasons = ['All', 'Kharif', 'Rabi'];
-
-    const filteredMsp = mspPrices.crops.filter(c => {
-        const seasonOk = mspSeason === 'All' || c.season === mspSeason;
-        const catOk = mspCategory === 'All' || c.category === mspCategory;
-        return seasonOk && catOk;
-    });
-
-    const currentMonthYear = new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
     const currentMonthName = new Date().toLocaleDateString('en-IN', { month: 'long' });
 
     return (
@@ -162,7 +82,7 @@ export default function FarmerPage() {
                             🌾 Farmer Information Portal
                         </h1>
                         <p className="text-text-muted text-sm mt-1">
-                            MSP prices, crop advisories, government schemes &amp; market rates for Telangana farmers
+                            Schemes, helplines, MSP and mandi prices for Telangana farmers
                         </p>
                     </div>
                 </div>
@@ -200,47 +120,12 @@ export default function FarmerPage() {
                 ))}
             </div>
 
-            {/* Crop Advisory */}
-            {activeTab === 'advisory' && (
-                <div className="space-y-3">
-                    <p className="text-xs text-text-muted px-1">
-                        Advisory for <span className="text-telangana-green font-semibold">{currentMonthYear}</span> — Kharif pre-sowing season
-                    </p>
-                    {cropAdvisories.map(a => (
-                        <AdvisoryCard key={a.id} advisory={a} />
-                    ))}
-                </div>
-            )}
-
             {/* MSP Prices */}
             {activeTab === 'msp' && (
-                <div className="space-y-4">
-                    <div className="glass-card p-3">
-                        <p className="text-xs text-text-muted mb-2">
-                            MSP announced by Govt. of India for{' '}
-                            <span className="text-heritage-gold font-semibold">{mspPrices.season}</span>
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                            <div className="flex gap-1">
-                                {seasons.map(s => (
-                                    <button key={s} onClick={() => setMspSeason(s)}
-                                        className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all ${mspSeason === s ? 'bg-heritage-gold/20 text-heritage-gold' : 'bg-white/[0.05] text-text-muted'}`}
-                                    >{s}</button>
-                                ))}
-                            </div>
-                            <div className="flex gap-1 flex-wrap">
-                                {categories.map(c => (
-                                    <button key={c} onClick={() => setMspCategory(c)}
-                                        className={`px-3 py-1 rounded-full text-[10px] font-bold transition-all ${mspCategory === c ? 'bg-telangana-green/20 text-telangana-green' : 'bg-white/[0.05] text-text-muted'}`}
-                                    >{c}</button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="glass-card p-4">
-                        {filteredMsp.map(crop => <MspRow key={crop.name} crop={crop} />)}
-                    </div>
-                </div>
+                <a href={MSP_SOURCE} target="_blank" rel="noopener noreferrer" className="glass-card p-4 block hover:bg-white/[0.04] transition-colors">
+                    <p className="text-sm font-bold text-white">Minimum Support Prices ↗</p>
+                    <p className="text-xs text-text-muted mt-1">The current MSP for each crop, as notified by the Commission for Agricultural Costs and Prices.</p>
+                </a>
             )}
 
             {/* Schemes */}
@@ -254,8 +139,7 @@ export default function FarmerPage() {
             {activeTab === 'market' && (
                 <div className="space-y-4">
                     <p className="text-xs text-text-muted px-1">
-                        APMC regulated market prices (Hybrid Sync) ·{' '}
-                        <span className="text-text-secondary">Last updated: {liveMandi.lastUpdated || marketPrices.lastUpdated}</span>
+                        Agmarknet modal prices{liveMandi.lastUpdated ? ` · ${liveMandi.lastUpdated}` : ''}
                     </p>
                     <div className="glass-card p-4">
                         <h3 className="text-sm font-bold text-white mb-3">Live Mandi Rates</h3>
@@ -271,39 +155,11 @@ export default function FarmerPage() {
                                     </div>
                                 ))
                             ) : (
-                                <p className="text-xs text-text-muted">Loading live rates...</p>
+                                <p className="text-xs text-text-muted">Mandi prices are not available right now. See <a href={MANDI_SOURCE} target="_blank" rel="noopener noreferrer" className="underline">Agmarknet</a>.</p>
                             )}
                         </div>
                     </div>
                     
-                    {/* Fallback Static Data */}
-                    <div className="mt-6">
-                        <p className="text-xs text-text-muted px-1 mb-2">Historical/Static APMC Data</p>
-                        {marketPrices.markets.map(m => (
-                            <div key={m.market} className="glass-card p-4 mb-4">
-                                <h3 className="text-sm font-bold text-white mb-3">{m.market}</h3>
-                                <div className="space-y-0">
-                                    {m.commodities.map(c => (
-                                        <div key={c.name} className="flex items-center justify-between py-2.5 border-b border-white/[0.04] last:border-0">
-                                            <p className="text-sm text-text-secondary">{c.name}</p>
-                                            <div className="text-right">
-                                                <p className="text-sm font-bold text-white">₹{c.price.toLocaleString('en-IN')}</p>
-                                                <p className="text-[9px] text-text-muted">{c.unit}</p>
-                                                {c.change !== 0 && (
-                                                    <span className={`text-[9px] font-bold ${c.change > 0 ? 'text-red-400' : 'text-telangana-green'}`}>
-                                                        {c.change > 0 ? '▲' : '▼'} ₹{Math.abs(c.change)}
-                                                    </span>
-                                                )}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <p className="text-[10px] text-text-muted px-1">
-                        Source: Enum / Local Network Sync
-                    </p>
                 </div>
             )}
 
