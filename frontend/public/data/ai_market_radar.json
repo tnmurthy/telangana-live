@@ -1,0 +1,164 @@
+{
+  "updatedAt": "2026-10-07T06:18:59Z",
+  "source": "snapshot-verified",
+  "trendingModels": [
+    {
+      "id": "autotrust/JEV-27B-VL",
+      "name": "JEV-27B-VL",
+      "author": "autotrust",
+      "downloads": 1525286,
+      "likes": 1041,
+      "pipelineTag": "image-text-to-text",
+      "numParameters": 27781427952,
+      "description": "Dual-system multimodal decision & reasoning foundation (System 1 fast classification + System 2 thought)",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/663b77dda14bfb0a2d41b6aa/6sRaDSlKnKIPlf5pH9E02.jpeg"
+    }
+  ],
+  "marketLeaders": [
+    {
+      "id": "anthropic/claude-3.7-sonnet",
+      "name": "Claude 3.7 Sonnet (Hybrid Reasoning)",
+      "provider": "Anthropic",
+      "role": "code-specialist",
+      "arenaElo": 1385,
+      "codingBenchmarkScore": "70.3% SWE-bench Verified",
+      "pricingSummary": "$3.00 / $15.00 per 1M tokens",
+      "speedTokensPerSec": 72,
+      "sweetSpot": "Gold standard for full-stack engineering, multi-turn bug hunting, and tool use",
+      "isDominant": true
+    },
+    {
+      "id": "deepseek/deepseek-r1",
+      "name": "DeepSeek R1 (Full 671B)",
+      "provider": "DeepSeek",
+      "role": "reasoning",
+      "arenaElo": 1362,
+      "codingBenchmarkScore": "49.2% SWE-bench Verified",
+      "pricingSummary": "$0.55 / $2.19 per 1M tokens",
+      "speedTokensPerSec": 38,
+      "sweetSpot": "Exceptional cost-to-reasoning ratio; excels at formal logic, math & algorithmic synthesis",
+      "isDominant": true
+    },
+    {
+      "id": "google/gemini-2.0-flash-001",
+      "name": "Gemini 2.0 Flash",
+      "provider": "Google",
+      "role": "frontier-agent",
+      "arenaElo": 1340,
+      "codingBenchmarkScore": "62.8% HumanEval+",
+      "pricingSummary": "$0.10 / $0.40 per 1M tokens",
+      "speedTokensPerSec": 135,
+      "sweetSpot": "Ultra-fast multimodal agent loops with 1M native context window at near-zero token cost",
+      "isDominant": false
+    },
+    {
+      "id": "openai/o3-mini",
+      "name": "OpenAI o3-mini",
+      "provider": "OpenAI",
+      "role": "reasoning",
+      "arenaElo": 1358,
+      "codingBenchmarkScore": "73.1% CodeForces Elo equivalent",
+      "pricingSummary": "$1.10 / $4.40 per 1M tokens",
+      "speedTokensPerSec": 85,
+      "sweetSpot": "High-speed reasoning with configurable effort tiers for competition math and STEM analysis",
+      "isDominant": false
+    }
+  ],
+  "sunsetRadar": [
+    {
+      "id": "gpt-3.5-turbo-legacy",
+      "modelName": "GPT-3.5-Turbo (0301 / 0613 checkpoints)",
+      "provider": "OpenAI",
+      "status": "deprecated",
+      "cutoffDate": "Deprecated / Sunset Phase",
+      "statusBadge": "Critical",
+      "impactSummary": "All legacy 0301/0613 endpoints shut down. Traffic must route to GPT-4o mini or Gemini 2.0 Flash.",
+      "recommendedSuccessor": {
+        "id": "openai/gpt-4o-mini",
+        "name": "GPT-4o mini",
+        "speedDelta": "+2.4x Faster",
+        "costDelta": "66% Cheaper ($0.15 vs $0.50)"
+      }
+    },
+    {
+      "id": "claude-2-legacy",
+      "modelName": "Claude 2.0 & Claude 2.1",
+      "provider": "Anthropic",
+      "status": "deprecated",
+      "cutoffDate": "Retiring from Anthropic API",
+      "statusBadge": "Critical",
+      "impactSummary": "Early Anthropic 200k models being phased out in favor of 3.5 Haiku and Sonnet architectures.",
+      "recommendedSuccessor": {
+        "id": "anthropic/claude-3.5-haiku",
+        "name": "Claude 3.5 Haiku",
+        "speedDelta": "+4.1x Faster",
+        "costDelta": "80% Cheaper ($0.80 vs $8.00)"
+      }
+    },
+    {
+      "id": "gemini-1.0-pro-preview",
+      "modelName": "Gemini 1.0 Pro & early 1.5 preview checkpoints",
+      "provider": "Google",
+      "status": "sunset-imminent",
+      "cutoffDate": "Mid 2025",
+      "statusBadge": "Warning",
+      "impactSummary": "v1beta endpoints for Gemini 1.0 pro returning deprecation warnings; upgrade to 2.0 Flash or Flash-Lite.",
+      "recommendedSuccessor": {
+        "id": "google/gemini-2.0-flash-lite-001",
+        "name": "Gemini 2.0 Flash-Lite",
+        "speedDelta": "+3.8x Faster",
+        "costDelta": "85% Cheaper ($0.075 vs $0.50)"
+      }
+    },
+    {
+      "id": "claude-3-opus-legacy",
+      "modelName": "Claude 3 Opus (Original)",
+      "provider": "Anthropic",
+      "status": "legacy-support",
+      "cutoffDate": "Superseded by 3.5 Sonnet / 3.7",
+      "statusBadge": "Notice",
+      "impactSummary": "3 Opus remains available but costs $15/$75 per M tokens while 3.5/3.7 Sonnet outscores it in code and logic.",
+      "recommendedSuccessor": {
+        "id": "anthropic/claude-3.7-sonnet",
+        "name": "Claude 3.7 Sonnet",
+        "speedDelta": "+2.1x Faster",
+        "costDelta": "80% Cheaper ($3/$15 vs $15/$75)"
+      }
+    }
+  ],
+  "spotlight": {
+    "id": "jev-router-spotlight",
+    "name": "Jev & JEV-27B Architecture",
+    "creator": "TypeSafe AI & AutoTrust Lab",
+    "paradigm": "System 1 Probabilistic Decision Router + System 2 Multimodal Reasoning",
+    "releaseDate": "Active Frontier 2025/2026",
+    "description": "Traditional LLMs waste immense autoregressive compute generating repetitive text tokens when an agent simply needs a categorical decision, routing label, or calibrated probability. TypeSafe's Jev introduces instant sub-500ms decision routing, while the open-weights JEV-27B-VL pairs it with Qwen-based visual reasoning.",
+    "architectureHighlights": [
+      "Sub-500ms single-forward-pass routing for agent dispatch & civic classification",
+      "Calibrated probabilities: returns exact confidence scores across candidate classes rather than halluncinated text",
+      "Dual-System Operation: Fast reflex (System 1) for triage, deep step-by-step thinking (System 2) for difficult cases",
+      "Massive cost reduction: Cuts token consumption up to 90% in agent decision pipelines"
+    ],
+    "benchmarks": [
+      {
+        "metric": "Zero-Shot Decision Latency",
+        "value": "< 240ms"
+      },
+      {
+        "metric": "Agent Dispatch Accuracy",
+        "value": "98.4%"
+      },
+      {
+        "metric": "SWE-bench Routing Overhead",
+        "value": "-88% vs GPT-4o"
+      },
+      {
+        "metric": "Multimodal Grounding (JEV-27B)",
+        "value": "86.1% UI-Nav"
+      }
+    ],
+    "hfRepoUrl": "https://huggingface.co/autotrust/JEV-27B-VL",
+    "demoUrl": "https://huggingface.co/spaces/autotrust/JEV-27B-Demo",
+    "sdkUsageSnippet": "// TypeSafe Jev System 1 Routing\nconst decision = await typesafe.decide({\n  system: \"Route incoming Vizag civic alert to ward authority\",\n  context: incidentReport,\n  choices: [\"GVMC_WATER\", \"EPDCL_POWER\", \"TRAFFIC_POLICE\", \"CYBER_CELL\"]\n});\nconsole.log(decision.choice, decision.confidence); // 'GVMC_WATER', 0.984"
+  }
+}

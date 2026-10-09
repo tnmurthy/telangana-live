@@ -1,0 +1,62 @@
+name: 24x7 Autonomous SEO & AEO Agent
+
+on:
+  schedule:
+    # Runs daily at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'Target site URL to audit'
+        required: false
+        default: 'https://www.vizag.live'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  seo-audit-and-indexation:
+    name: Run Autonomous SEO & AEO Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml
+
+      - name: Run SEO & AEO Ingestion Audit
+        env:
+          SEO_TARGET_URL: ${{ github.event.inputs.target_url || 'https://www.vizag.live' }}
+        run: |
+          python backend/scripts/seo_agent.py \
+            --url "${SEO_TARGET_URL}" \
+            --json-out frontend/public/data/seo_report.json \
+            --md-out reports/seo_audit.md
+
+      - name: Verify Audit Report Artifacts
+        run: |
+          ls -la frontend/public/data/seo_report.json
+          ls -la reports/seo_audit.md
+          cat reports/seo_audit.md | head -n 35
+
+      - name: Commit & Push Updated SEO Reports
+        run: |
+          git config --global user.name "VizagLive SEO Agent"
+          git config --global user.email "seo-agent@vizag.live"
+          git add frontend/public/data/seo_report.json reports/seo_audit.md
+          if git diff --staged --quiet; then
+            echo "No changes to SEO audit reports detected."
+          else
+            git commit -m "chore(seo): autonomous daily SEO & AEO audit update [skip ci]"
+            git push origin main
+          fi
