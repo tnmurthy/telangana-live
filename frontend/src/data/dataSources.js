@@ -1,0 +1,80 @@
+// Where every live figure on the site comes from. Keep this in step with the
+// sync scripts in backend/scripts and .github/workflows: a dataset is listed
+// here only if the site shows it, and "status" says plainly when it doesn't.
+
+export const DATA_SOURCES = [
+    {
+        dataset: 'News headlines',
+        source: 'The Hindu (Hyderabad) and Telangana Today RSS feeds; Google News search feeds',
+        refresh: 'Every 2 hours',
+        notes: 'We show the headline and a link to the publisher. The two-line summary is written by an AI model from the feed\'s own description; read the full story at the source.',
+    },
+    {
+        dataset: 'Official alerts',
+        source: 'NDMA SACHET (IMD, CWC and state disaster authorities)',
+        sourceUrl: 'https://sachet.ndma.gov.in/',
+        refresh: 'Every 15 minutes',
+        notes: 'Shown as issued, until the issuer\'s own end time.',
+    },
+    {
+        dataset: 'Weather',
+        source: 'OpenWeatherMap (current conditions) and Open-Meteo (forecast)',
+        sourceUrl: 'https://open-meteo.com/',
+        refresh: 'Hourly',
+        notes: 'Weather data by Open-Meteo.com, licensed CC BY 4.0.',
+    },
+    {
+        dataset: 'Air quality (AQI)',
+        source: 'Open-Meteo air-quality model',
+        sourceUrl: 'https://open-meteo.com/',
+        refresh: 'Hourly',
+        notes: 'We compute the Indian AQI (CPCB method) from 24-hour PM2.5 and PM10. It is a model estimate, not a monitoring-station reading.',
+    },
+    {
+        dataset: 'Gold and silver rates',
+        source: 'Published Hyderabad retail rates (Live Chennai, Mint, Goodreturns)',
+        refresh: 'Twice a day',
+        notes: 'Indicative retail rates. Jewellers\' prices differ; check before you buy.',
+    },
+    {
+        dataset: 'Petrol, diesel, LPG and CNG',
+        source: 'Published Hyderabad retail prices (Goodreturns)',
+        refresh: 'Every 6 hours',
+        notes: 'Prices at the pump can differ by outlet.',
+    },
+    {
+        dataset: 'Panchang',
+        source: 'Computed on our server with the astronomy-engine library',
+        refresh: 'Every request',
+        notes: 'Tithi, nakshatra, yoga and karana at sunrise for Hyderabad (Lahiri ayanamsa).',
+    },
+    {
+        dataset: 'Mandi prices',
+        source: 'Agmarknet',
+        sourceUrl: 'https://agmarknet.gov.in/',
+        refresh: 'Daily, when the feed responds',
+        notes: 'Not shown when the feed is down; we never fill in a price.',
+    },
+    {
+        dataset: 'Reservoir levels',
+        source: 'Not published here yet',
+        sourceUrl: 'https://cwc.gov.in/reservoir-level-storage-bulletin',
+        refresh: '—',
+        notes: 'See the CWC weekly bulletin until we can show official readings with their dates.',
+    },
+    {
+        dataset: 'Tech and AI pulse',
+        source: 'Hacker News, Hugging Face, OpenRouter model pricing, Google News',
+        refresh: 'Three times a day',
+        notes: 'Headlines link to the original posts.',
+    },
+];
+
+// Figures the site used to show that were not real, and what replaced them.
+export const CORRECTIONS = [
+    { date: '2026-10-06', what: 'Reservoir levels were generated, not read from any source. Removed (TL-40).' },
+    { date: '2026-10-06', what: 'A fixed silver price was mixed into real readings, and an AI model leaderboard was hard-coded. Fixed (TL-41).' },
+    { date: '2026-10-06', what: 'The panchang showed the same reading every day. It is now computed daily (TL-42).' },
+    { date: '2026-10-06', what: 'AQI showed stand-in values. It now shows only a computed reading (TL-43).' },
+    { date: '2026-10-09', what: 'Politician scores, ration shops, MeeSeva centres and status tracker, park crowd levels, poll results, farmer advisories, MSPs and pulses prices were invented. All removed; those pages now link to the official source (TL-44).' },
+];

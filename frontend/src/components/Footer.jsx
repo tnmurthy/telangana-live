@@ -36,6 +36,7 @@ export default function Footer() {
             <Link to="/rates/gold" className="hover:text-white transition-colors">Rates</Link>
             <Link to="/health/basthi-dawakhana" className="hover:text-white transition-colors">Health</Link>
             <Link to="/advertise" className="hover:text-white transition-colors">Advertise</Link>
+            <Link to="/sources" className="hover:text-white transition-colors">Sources</Link>
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-white transition-colors">Terms</Link>
           </nav>

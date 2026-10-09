@@ -284,6 +284,15 @@ Monitor air quality indexes across Hyderabad, track daily transit loads on the m
 
 Our articles cover topics such as the impact of the Kaleshwaram Lift Irrigation project, urban drainage systems in Hyderabad, traffic management strategies, and public health campaigns. We review project timelines, expense records, and community impact to promote constructive civic awareness.`
   },
+  '/sources': {
+    title: 'Data Sources - Telangana.live',
+    description: 'Where every live figure on Telangana.live comes from, how often it updates, and our corrections.',
+    h1: 'Where our data comes from',
+    h2s: ['Sources', 'Corrections'],
+    content: `Every live figure on Telangana.live, its source and how often it updates. News headlines come from The Hindu and Telangana Today RSS feeds and Google News, with a link to each publisher. Official alerts come from NDMA SACHET every 15 minutes. Weather comes from OpenWeatherMap and Open-Meteo (CC BY 4.0), and air quality is computed with the CPCB method from the Open-Meteo air-quality model. Gold, silver and fuel prices are published Hyderabad retail rates. The panchang is computed for Hyderabad with the astronomy-engine library. Mandi prices come from Agmarknet and are not shown when the feed is down.
+
+When a source is down we show nothing rather than guess. The corrections list records figures the site used to show that were not real, and what replaced them.`
+  },
   '/privacy': {
     title: 'Privacy Policy - Telangana.live',
     description: 'Understand how Telangana.live handles site traffic data, analytics, and user privacy.',

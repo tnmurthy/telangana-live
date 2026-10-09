@@ -54,6 +54,7 @@ const FarmerPage = lazy(() => import('./pages/FarmerPage'));
 const MeeSevaPage = lazy(() => import('./pages/MeeSevaPage'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
+const SourcesPage = lazy(() => import('./pages/SourcesPage'));
 const ClassifiedsPage = lazy(() => import('./pages/ClassifiedsPage'));
 const HackOfTheDayPage = lazy(() => import('./pages/HackOfTheDayPage'));
 const StatnosticsPage = lazy(() => import('./pages/StatnosticsPage'));
@@ -140,6 +141,7 @@ const routeDefs = [
   { path: '/deep-dives', element: <DeepDivesPage /> },
   { path: '/privacy', element: <PrivacyPolicy /> },
   { path: '/terms', element: <TermsOfService /> },
+  { path: '/sources', element: <SourcesPage /> },
   { path: '/services', element: <ServicesDirectoryPage /> },
   { path: '/services/:category/:slug', element: <ServiceDetailPage /> },
   { path: '/alerts', element: <AlertsPage /> },
