@@ -9,6 +9,9 @@
 // See docs/DATA_STANDARDS.md, rule 1.
 
 import { fuelPrices as syncedFuel } from '../data/fuelPrices';
+import mandiSnapshot from '../data/mandiPrices.json';
+
+const MANDI_MAX_AGE_DAYS = 7;
 
 const API_BASE = import.meta.env.VITE_API_BASE || '';
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
@@ -86,17 +89,21 @@ export async function fetchPowerAlerts(zone = 'all') {
 }
 
 /**
- * Today's mandi prices from the live API. No current source exists in the
- * bundle, so on failure this returns no items rather than old prices.
+ * Telangana wholesale (mandi) prices from the daily Agmarknet snapshot
+ * (backend/scripts/mandi_sync.py -> data/mandiPrices.json). Arrival-weighted
+ * averages in Rs./quintal over the snapshot's date range. A snapshot more than
+ * MANDI_MAX_AGE_DAYS old is not shown (TL-49).
  */
-export async function fetchMandiPrices() {
-  const data = await fetchJson('/api/mandi-prices');
-  const commodities = Array.isArray(data?.commodities) ? data.commodities : [];
-  if (commodities.length === 0) return { items: [] };
+export async function fetchMandiPrices(now = new Date()) {
+  const basket = Array.isArray(mandiSnapshot?.basket) ? mandiSnapshot.basket : [];
+  const toDate = mandiSnapshot?.toDate ? new Date(`${mandiSnapshot.toDate}T23:59:59+05:30`) : null;
+  const tooOld = !toDate || now - toDate > MANDI_MAX_AGE_DAYS * 24 * 3600 * 1000;
+  if (tooOld || basket.length === 0) return { items: [] };
   return {
-    items: commodities
-      .filter((c) => typeof c.modalPrice === 'number')
-      .map((c) => ({ name: c.name, price: c.modalPrice, unit: 'per quintal', change: 0 })),
-    lastUpdated: data.date,
+    items: basket.map((c) => ({ name: c.name, price: c.price, unit: 'per quintal', yearAgo: c.yearAgo ?? null })),
+    lastUpdated: mandiSnapshot.toDate,
+    fromDate: mandiSnapshot.fromDate,
+    source: mandiSnapshot.source,
+    sourceUrl: mandiSnapshot.sourceUrl,
   };
 }

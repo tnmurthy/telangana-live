@@ -21,6 +21,7 @@ never written here, only their names.
 | `emergency_alerts_sync.yml` | every 15 min | NDMA SACHET alerts |
 | `weather_update.yml` | hourly | Open-Meteo forecast and AQI snapshot |
 | `rates_sync.yml` | twice daily | Fuel prices and pulses file |
+| `mandi_sync.yml` | twice daily | Mandi prices and MSPs from Agmarknet |
 | `prices_update.yml` | every 6 h | Fuel prices; pulses file (empty until a source exists) |
 | `ai_pulse_update.yml` | 3× daily | Tech and AI pulse |
 | `data_freshness.yml` | daily | Flags stale data files |
@@ -88,8 +89,10 @@ secrets, and that `/sources`, `/alerts` and `/weather` show current data.
 
 ## Known gaps
 
-- Mandi prices: the Agmarknet endpoint used by `frontend/api/mandi-prices.js`
-  returns 404, so the farmer page shows no prices.
+- Mandi prices come from `api.agmarknet.gov.in`, the API behind the
+  Agmarknet website. It is public and needs no key but is not formally
+  documented; if it changes, `mandi_sync.py` keeps the last snapshot and the
+  pages hide prices once it is a week old.
 - Power alerts: TSSPDCL answers 403 to the scraper.
 - Fuel prices are read from a published retail-rate page; a licensed feed
   would remove that dependency. Gold and silver are not published (TL-46);

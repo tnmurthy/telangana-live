@@ -43,11 +43,11 @@ export const DATA_SOURCES = [
         notes: 'Tithi, nakshatra, yoga and karana at sunrise for Hyderabad (Lahiri ayanamsa).',
     },
     {
-        dataset: 'Mandi prices',
-        source: 'Agmarknet',
+        dataset: 'Mandi prices and MSPs',
+        source: 'Agmarknet (Directorate of Marketing & Inspection, Ministry of Agriculture)',
         sourceUrl: 'https://agmarknet.gov.in/',
-        refresh: 'Daily, when the feed responds',
-        notes: 'Not shown when the feed is down; we never fill in a price.',
+        refresh: 'Twice a day',
+        notes: 'Wholesale arrival-weighted averages per quintal over the last three days. The market price of an MSP crop is shown only when at least 5 tonnes were traded; prices outside a sane range are dropped. If a fetch fails, the last snapshot stays with its date, and nothing is shown once it is a week old.',
     },
     {
         dataset: 'Reservoir levels',

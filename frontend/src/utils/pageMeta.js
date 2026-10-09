@@ -29,6 +29,7 @@ export const STATIC_META = {
     '/classifieds': ['Classifieds in Telangana', 'Local classifieds in Telangana.'],
     '/privacy': ['Privacy Policy', 'How Telangana.live collects and uses data, including advertising cookies.'],
     '/terms': ['Terms of Service', 'Terms of use for Telangana.live.'],
+    '/mandi-prices': ['Mandi Prices in Telangana Today', 'Wholesale prices at Telangana markets for onion, tomato, dals, grains and cotton, with MSPs, from Agmarknet.'],
     '/sources': ['Data Sources', 'Where every live figure on Telangana.live comes from, how often it updates, and our corrections.'],
     '/services': ['Telangana Government Services Guide', 'Step-by-step guides to certificates, bills, land, pensions, police and other government services in Telangana.'],
 };

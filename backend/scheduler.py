@@ -73,14 +73,6 @@ def sync_secondary():
     _run_script(_data_engine_path(), '--task', 'pulses')
 
 
-# ── Tier 3 – ~12 hours: Gold & Silver ────────────────────────────────────────
-
-def sync_gold_silver():
-    """Every 12 hours: refresh gold and silver prices."""
-    logger.info("── 12-hour: syncing gold/silver ──")
-    _run_script(_data_engine_path(), '--task', 'gold')
-
-
 # ── Twice-daily AI maintenance cycles (unchanged behaviour) ──────────────────
 
 def morning_maintenance():
@@ -90,7 +82,7 @@ def morning_maintenance():
     logger.info("=" * 70)
 
     # Full data sync as part of morning cycle
-    for task in ('news', 'gold', 'fuel', 'pulses', 'ai_pulse', 'alerts'):
+    for task in ('news', 'fuel', 'pulses', 'alerts'):
         _run_script(_data_engine_path(), '--task', task)
     _run_script(_weather_scraper_path())
 
@@ -110,7 +102,7 @@ def evening_maintenance():
     logger.info("EVENING MAINTENANCE CYCLE (6:00 PM)")
     logger.info("=" * 70)
 
-    for task in ('news', 'gold', 'fuel', 'pulses', 'alerts'):
+    for task in ('news', 'fuel', 'pulses', 'alerts'):
         _run_script(_data_engine_path(), '--task', task)
     _run_script(_weather_scraper_path())
 
@@ -152,11 +144,6 @@ def run_scheduler():
     for hour in range(0, 24, sec_interval):
         schedule.every().day.at(f"{hour:02d}:15").do(sync_secondary)
 
-    # ── Tier 3: Gold & Silver ─────────────────────────────────────────────────
-    gold_interval = CONFIG.get('gold_sync_interval_hours', 12)
-    for hour in range(0, 24, gold_interval):
-        schedule.every().day.at(f"{hour:02d}:45").do(sync_gold_silver)
-
     # ── AI content maintenance: twice daily ───────────────────────────────────
     schedule.every().day.at(CONFIG['schedule_morning']).do(morning_maintenance)
     schedule.every().day.at(CONFIG['schedule_evening']).do(evening_maintenance)
@@ -167,7 +154,6 @@ def run_scheduler():
     logger.info(f"Tier 1 – every {news_interval} hour(s)   : news (:00), weather (:30)")
     logger.info(f"Alerts – every {alerts_interval} hour(s)   : local alerts feed (:10)")
     logger.info(f"Tier 2 – every {sec_interval} hour(s)   : fuel, commodities (:15)")
-    logger.info(f"Tier 3 – every {gold_interval} hour(s)  : gold & silver (:45)")
     logger.info(f"Morning maintenance     : {CONFIG['schedule_morning']}")
     logger.info(f"Evening maintenance     : {CONFIG['schedule_evening']}")
     logger.info("=" * 70 + "\n")

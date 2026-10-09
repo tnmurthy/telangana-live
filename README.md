@@ -82,7 +82,7 @@ _Last reviewed 2026-10-09. Done items are recorded in git history and on the pub
 
 ### Engineering
 - [ ] **Weather → OpenWeatherMap behind a server route** (decided 2026-10-09). Blocked on the new key. Move `src/services/weatherService.js` off `VITE_OWM_API_KEY`, switch `weather_scraper.py` to OWM, drop Open-Meteo, update `/sources`.
-- [ ] **Mandi prices:** `frontend/api/mandi-prices.js` gets 404 from Agmarknet; find the current data.gov.in endpoint. The farmer page shows nothing until then.
+- [x] **Mandi prices** (TL-49, 2026-10-09): `backend/scripts/mandi_sync.py` reads the public Agmarknet API (no key) twice a day into `mandiPrices.json`; shown on `/mandi-prices`, the farmer page and the rates card. Watch the first scheduled runs: if GitHub's servers cannot reach `api.agmarknet.gov.in`, run the job from elsewhere.
 - [ ] **Power alerts:** TSSPDCL answers 403 to `frontend/api/power-alerts.js`; find a reachable source or remove the widget.
 - [ ] **CI is red:** `ci.yml` fails on lint (unused imports, react-refresh exports); `ci_cd_master.yml` also needs `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` or its deploy jobs removed.
 - [ ] **Fuel prices** are read from Goodreturns; move to a licensed feed or a link-out, like gold (TL-46).
@@ -229,6 +229,7 @@ Data files are bundled into the build, so **new data only appears after a rebuil
 | `scraper` | every 4 h | `data_engine` fuel + pulses | `fuelPrices.js`, `pulses.js` |
 | `prices_update` | every 6 h | `data_engine` fuel + pulses | `fuelPrices.js`, `pulses.js` |
 | `rates_sync` | 01:00, 13:00 | `data_engine --finance-only` | fuel, pulses |
+| `mandi_sync` | 03:00, 13:00 | `mandi_sync.py` (Agmarknet) | `mandiPrices.json` |
 | `ai_pulse_update` | 06:00, 12:00, 18:00 IST | `scripts/tech_pulse.py --region telangana` | `public/data/tech_pulse.json` |
 | `daily_pulse` | daily 02:30 | `whatsapp_bot.py` | WhatsApp message (not sent: WhatsApp secrets unset) |
 | `data_freshness` | daily 02:30 | `check_freshness.py` | fails the run when a data file is stale |

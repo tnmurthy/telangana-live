@@ -272,6 +272,15 @@ Monitor air quality indexes across Hyderabad, track daily transit loads on the m
 
 Our articles cover topics such as the impact of the Kaleshwaram Lift Irrigation project, urban drainage systems in Hyderabad, traffic management strategies, and public health campaigns. We review project timelines, expense records, and community impact to promote constructive civic awareness.`
   },
+  '/mandi-prices': {
+    title: 'Mandi Prices in Telangana Today - Telangana.live',
+    description: 'Wholesale prices at Telangana markets for onion, tomato, dals, grains and cotton, with MSPs, from Agmarknet.',
+    h1: 'Mandi Prices in Telangana',
+    h2s: ['Market prices', 'Minimum Support Prices'],
+    content: `Wholesale prices at Telangana's regulated markets for onion, tomato, potato, tur, bengal gram, moong, urad, groundnut, dry chillies, turmeric, cotton, paddy and maize. Each price is the arrival-weighted average over the last three days, in rupees per quintal, compared with the same days a year ago.
+
+The Minimum Support Price table lists the current MSP for each crop with the latest market price, shown only where enough was traded that day. Data comes from Agmarknet, run by the Directorate of Marketing & Inspection, Ministry of Agriculture, and is refreshed twice a day.`
+  },
   '/sources': {
     title: 'Data Sources - Telangana.live',
     description: 'Where every live figure on Telangana.live comes from, how often it updates, and our corrections.',

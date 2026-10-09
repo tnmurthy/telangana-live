@@ -1,14 +1,12 @@
-import { useState, useEffect } from 'react';
-import { fetchMandiPrices } from '../services/pricesService';
+import { useState } from 'react';
+import { BasketTable, MspTable, MandiSource } from '../components/MandiTables';
 import { farmerSchemes, farmerHelplines, cropCalendar } from '../data/farmerData';
 
 // The page showed crop advisories with pesticide doses dated April but labelled
 // as this month, an MSP table labelled 2025-26 holding older figures (and MSPs
 // for turmeric and chilli, which have none), and fixed April mandi prices
 // credited to the Marketing Department (TL-44). MSP and mandi prices now come
-// from the official sites or the live feed only.
-const MSP_SOURCE = 'https://cacp.da.gov.in/';
-const MANDI_SOURCE = 'https://agmarknet.gov.in/';
+// from the daily Agmarknet snapshot (TL-49).
 
 function SchemeCard({ scheme }) {
     const [expanded, setExpanded] = useState(false);
@@ -64,12 +62,6 @@ const TABS = [
 
 export default function FarmerPage() {
     const [activeTab, setActiveTab] = useState('schemes');
-    const [liveMandi, setLiveMandi] = useState({ items: [], lastUpdated: '' });
-
-    useEffect(() => {
-        fetchMandiPrices().then(data => setLiveMandi(data));
-    }, []);
-
     const currentMonthName = new Date().toLocaleDateString('en-IN', { month: 'long' });
 
     return (
@@ -122,10 +114,10 @@ export default function FarmerPage() {
 
             {/* MSP Prices */}
             {activeTab === 'msp' && (
-                <a href={MSP_SOURCE} target="_blank" rel="noopener noreferrer" className="glass-card p-4 block hover:bg-white/[0.04] transition-colors">
-                    <p className="text-sm font-bold text-white">Minimum Support Prices ↗</p>
-                    <p className="text-xs text-text-muted mt-1">The current MSP for each crop, as notified by the Commission for Agricultural Costs and Prices.</p>
-                </a>
+                <div className="glass-card p-4 space-y-3">
+                    <MspTable />
+                    <MandiSource />
+                </div>
             )}
 
             {/* Schemes */}
@@ -137,29 +129,9 @@ export default function FarmerPage() {
 
             {/* Market Rates */}
             {activeTab === 'market' && (
-                <div className="space-y-4">
-                    <p className="text-xs text-text-muted px-1">
-                        Agmarknet modal prices{liveMandi.lastUpdated ? ` · ${liveMandi.lastUpdated}` : ''}
-                    </p>
-                    <div className="glass-card p-4">
-                        <h3 className="text-sm font-bold text-white mb-3">Live Mandi Rates</h3>
-                        <div className="space-y-0">
-                            {liveMandi.items.length > 0 ? (
-                                liveMandi.items.map(c => (
-                                    <div key={c.name} className="flex items-center justify-between py-2.5 border-b border-white/[0.04] last:border-0">
-                                        <p className="text-sm text-text-secondary">{c.name}</p>
-                                        <div className="text-right">
-                                            <p className="text-sm font-bold text-white">₹{c.price.toLocaleString('en-IN')}</p>
-                                            <p className="text-[9px] text-text-muted">{c.unit}</p>
-                                        </div>
-                                    </div>
-                                ))
-                            ) : (
-                                <p className="text-xs text-text-muted">Mandi prices are not available right now. See <a href={MANDI_SOURCE} target="_blank" rel="noopener noreferrer" className="underline">Agmarknet</a>.</p>
-                            )}
-                        </div>
-                    </div>
-                    
+                <div className="glass-card p-4 space-y-3">
+                    <BasketTable />
+                    <MandiSource />
                 </div>
             )}
 

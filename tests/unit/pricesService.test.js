@@ -7,6 +7,16 @@ import { describe, it, expect, afterEach, vi } from 'vitest';
 // real data, else the synced data files (refreshed by the scheduled jobs),
 // never constants.
 
+vi.mock('../../frontend/src/data/mandiPrices.json', () => ({
+    default: {
+        fromDate: '2026-10-07',
+        toDate: '2026-10-09',
+        source: 'Agmarknet',
+        sourceUrl: 'https://agmarknet.gov.in/',
+        basket: [{ name: 'Tomato', price: 2054.01, yearAgo: 1350.34, unit: 'Rs./quintal' }],
+    },
+}));
+
 vi.mock('../../frontend/src/data/fuelPrices', () => ({
     fuelPrices: {
         date: '2026-10-04',
@@ -58,19 +68,18 @@ describe('fetchFuelPrices', () => {
 });
 
 describe('fetchMandiPrices', () => {
-    it('returns the live market data', async () => {
-        respond(true, { date: '2026-10-04', commodities: [{ name: 'Maize', modalPrice: 2100, unit: 'Quintal' }] });
+    // TL-49: from the daily Agmarknet snapshot, not a live third-party API.
+    it('returns the snapshot basket with its dates and source', async () => {
         const { fetchMandiPrices } = await load();
-        expect(await fetchMandiPrices()).toEqual({
-            items: [{ name: 'Maize', price: 2100, unit: 'per quintal', change: 0 }],
-            lastUpdated: '2026-10-04',
-        });
+        const data = await fetchMandiPrices(new Date('2026-10-09T12:00:00+05:30'));
+        expect(data.items).toEqual([{ name: 'Tomato', price: 2054.01, unit: 'per quintal', yearAgo: 1350.34 }]);
+        expect(data.lastUpdated).toBe('2026-10-09');
+        expect(data.sourceUrl).toBe('https://agmarknet.gov.in/');
     });
 
-    it('returns nothing, not June prices, when the API is unavailable', async () => {
-        respond(false, {}, 503);
+    it('returns nothing when the snapshot is more than a week old', async () => {
         const { fetchMandiPrices } = await load();
-        expect(await fetchMandiPrices()).toEqual({ items: [] });
+        expect(await fetchMandiPrices(new Date('2026-10-20T12:00:00+05:30'))).toEqual({ items: [] });
     });
 });
 
