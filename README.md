@@ -68,6 +68,37 @@ The platform aggregates content from:
 | VSK Telangana | Telugu | Grassroot/Cultural | RSS 2.0 / Atom |
 | OpIndia | Telugu | Counter-Narratives | Enterprise XML |
 
+## 📋 Pending Tasks
+
+_Last reviewed 2026-10-09. Done items are recorded in git history and on the public [/sources](https://www.telangana.live/sources) corrections log; the handover view is in [HANDOVER.md](HANDOVER.md)._
+
+### Owner actions (accounts and money)
+- [ ] **Rotate leaked keys.** Git history of this public repo holds old values of: Gemini (still in use), VAPID, OpenWeatherMap, Upstash Redis, Notion, Google API. Replace each in its provider dashboard, then update Vercel / GitHub secrets.
+- [ ] **New OpenWeatherMap key** for the weather switch below (the old one leaked and is also public through `VITE_OWM_API_KEY`).
+- [ ] **WhatsApp daily summary:** set `WHATSAPP_TOKEN`, `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_TO_NUMBER`, or delete `daily_pulse.yml`.
+- [ ] Delete unused Vercel variables `VITE_UPSTASH_REDIS_REST_URL` and `VITE_UPSTASH_REDIS_REST_TOKEN` (no code reads them since TL-20).
+- [ ] Renew `telangana.live` for 3–5 years (expires 2027-02-18).
+- [ ] Trademark application (IP India, class 41/35/38), claim social handles, apply for AdSense.
+
+### Engineering
+- [ ] **Weather → OpenWeatherMap behind a server route** (decided 2026-10-09). Blocked on the new key. Move `src/services/weatherService.js` off `VITE_OWM_API_KEY`, switch `weather_scraper.py` to OWM, drop Open-Meteo, update `/sources`.
+- [ ] **Mandi prices:** `frontend/api/mandi-prices.js` gets 404 from Agmarknet; find the current data.gov.in endpoint. The farmer page shows nothing until then.
+- [ ] **Power alerts:** TSSPDCL answers 403 to `frontend/api/power-alerts.js`; find a reachable source or remove the widget.
+- [ ] **CI is red:** `ci.yml` fails on lint (unused imports, react-refresh exports); `ci_cd_master.yml` also needs `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` or its deploy jobs removed.
+- [ ] **Fuel prices** are read from Goodreturns; move to a licensed feed or a link-out, like gold (TL-46).
+- [ ] **Reservoir levels:** wire an official CWC / Irrigation source, or keep the link-out.
+- [ ] **Review remaining fixed content** against official sources: service guides (`src/data/services.js` and `/services/*`), MeeSeva offerings, government directory, farmer helplines and crop calendar, district pages, ODOP, Statnostics stories, emergency contacts (checked 2026-10-09; recheck quarterly).
+
+### Before a sale
+- [ ] Move the `telangana` schema out of the shared Talia Supabase project into its own project (steps in HANDOVER.md).
+- [ ] Re-run `gitleaks` and the licence summary in IP.md; refresh HANDOVER.md.
+
+### Growth (Phase 2)
+- [ ] Email / WhatsApp Channel opt-in (an owned audience).
+- [ ] Telugu versions of the most-read pages.
+- [ ] Original data stories from the site's own history (fuel, AQI, alerts).
+- [ ] Two or three direct local sponsors through `/advertise`, with GST invoices.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -181,7 +212,7 @@ _Verified against the repo, workflows and Vercel on 2026-10-02._
  ───────                 ─────────────────────               ───────────                      ──────                    ────
  Google News RSS ──┐
  OWM / Open-Meteo ─┤     scheduled sync jobs                 frontend/src/data/*.js|json ┐    deploy hook ─► build
- gold/fuel sites ──┼──►  python backend/scripts/* ──commit─► frontend/public/data/*.json ├──► vite build + prerender ─► www.telangana.live
+ fuel site ───────┼──►  python backend/scripts/* ──commit─► frontend/public/data/*.json ├──► vite build + prerender ─► www.telangana.live
  eNAM mandi ───────┤     [skip ci] + POST deploy hook        (bundled at build time)     ┘    (113 static pages)
  TypeSafe API ─────┘
 ```
@@ -195,12 +226,12 @@ Data files are bundled into the build, so **new data only appears after a rebuil
 | `emergency_alerts_sync` | every 15 min | `emergency_alerts.py` → `data_engine.sync_alerts()` | `alerts.json` (src + public) |
 | `weather_update` | hourly at :30 | `weather_scraper.py` | `weatherData.js` |
 | `news_aggregation` | every 2 h | `news_aggregation.py` | `news.json` |
-| `scraper` | every 4 h | `data_engine` gold + fuel | `goldRates.js`, `fuelPrices.js` |
+| `scraper` | every 4 h | `data_engine` fuel + pulses | `fuelPrices.js`, `pulses.js` |
 | `prices_update` | every 6 h | `data_engine` fuel + pulses | `fuelPrices.js`, `pulses.js` |
-| `gold_silver_update` | every 12 h | `data_engine --task gold` | `goldRates.js` |
-| `rates_sync` | 01:00, 13:00 | `data_engine --finance-only` | gold, fuel, pulses |
+| `rates_sync` | 01:00, 13:00 | `data_engine --finance-only` | fuel, pulses |
 | `ai_pulse_update` | 06:00, 12:00, 18:00 IST | `scripts/tech_pulse.py --region telangana` | `public/data/tech_pulse.json` |
-| `daily_pulse` | daily 02:30 | `whatsapp_bot.py` | WhatsApp message |
+| `daily_pulse` | daily 02:30 | `whatsapp_bot.py` | WhatsApp message (not sent: WhatsApp secrets unset) |
+| `data_freshness` | daily 02:30 | `check_freshness.py` | fails the run when a data file is stale |
 
 On push: `ci_cd_master` (secret scan → lint, typecheck, build → deploy jobs), plus `ci`, `node.js`, `webpack` and `test`.
 
@@ -215,7 +246,7 @@ backend/
 │   ├── news_classifier.py   keyword category / region tagging
 │   └── correlation_engine.py, clustering.py, llm_provider.py, config.py
 ├── scripts/
-│   ├── data_engine.py       hub: gold, fuel, pulses, news, alerts, ai_pulse
+│   ├── data_engine.py       hub: fuel, pulses, news, alerts (gold and the AI briefing removed, TL-46/48)
 │   ├── emergency_alerts.py  entry point for the alerts job; fetch_latest_alerts() for the API
 │   └── news_scraper.py, news_aggregation.py, weather_scraper.py, whatsapp_bot.py
 └── api/civic_gateway.py     FastAPI: /news, /alerts, /services
@@ -228,7 +259,6 @@ tools/calibrate_alert_triage.py   re-derive alert thresholds against labelled he
 |---|---|---|
 | `AlertsPage`, `AlertsBanner` | `src/data/alerts.json` | imported at build time |
 | `BreakingNewsBanner` | `/data/alerts.json` | fetched at runtime every 5 min; shows `critical` / `high` |
-| `NewsTicker` | `src/data/alerts.js` | separate static file |
 
 Every `alerts.json` record carries the fields all of these read; see `backend/core/alert_feed.py`.
 
@@ -299,7 +329,7 @@ backend/
 ├── agents/
 │   └── fact_checker.py        ⚠ TL-07 parse failure silently passes every article (score 85)
 ├── scripts/
-│   ├── data_engine.py         ⚠ TL-05 gold scrapers depend on fixed table layout; currently "Stale Mode"
+│   ├── data_engine.py         ✅ TL-05 closed: gold no longer published (TL-46)
 │   ├── emergency_alerts.py    ✅ entry point for alerts job; fabricated-alert generator removed
 │   ├── news_scraper.py        ⚠ TL-10 numbered-list parsing can attach summaries to the wrong article
 │   └── news_aggregation.py, weather_scraper.py, whatsapp_bot.py
@@ -324,7 +354,7 @@ infrastructure/
 ├── GitHub secrets             ⚠ TL-02 TYPESAFE_API_KEY missing · TL-13 VERCEL_* missing
 │                              ⚠ TL-16 VERCEL_DEPLOY_HOOK_URL returns 404 → syncs rebuild nothing
 ├── .github/workflows/*.yml    ◐ TL-08 hook gated on a push, but syncs write the run time so most runs push
-│                              ⚠ TL-09 gold scraped by three overlapping jobs
+│                              ✅ TL-09 closed: gold jobs removed (TL-46)
 │                              ⚠ TL-13 Bandit SAST step failing in ci_cd_master
 └── vercel.json                ✅ SPA fallback fixed (rewrite to /, not /index.html)
 ```
@@ -363,13 +393,18 @@ infrastructure/
 | TL-41 | Fixed silver price and AI leaderboard | Fixed 6 Oct: the Mint gold parser wrote `silver: 290.0`, which overwrote Live Chennai's real silver in history and entered today's average; silver now comes only from a real reading (else the last real one). `sync_ai_metrics.py` upserted a hard-coded "GPT-4o 1287…" leaderboard as each day's snapshot; removed | ✅ Fixed | — |
 | TL-42 | /panchang showed the same day forever | Fixed 6 Oct: `/api/panchang/today` returned a fixed Ashadha Dashami / Rohini / sunrise 05:40 reading with June festivals. Now computed per request for Hyderabad from Sun and Moon positions (astronomy-engine, Lahiri ayanamsa, elements at sunrise); matches Drik Panchang for 6 Oct 2026. Festivals and rituals are empty until a source exists. The "is it auspicious" query now gives the model the computed panchang | ✅ Fixed | Optional: a festival calendar source |
 | TL-43 | Weather card said "Demo"; AQI was fixed | Fixed 6 Oct: the scraped snapshot (real Open-Meteo/OWM reading) was labelled "Demo", while its AQI was a constant 75/80 for every district and the live path used "PM2.5 × 4.2", defaulting to "Good". AQI is now the CPCB Indian AQI from 24 h PM2.5/PM10 (Open-Meteo air quality); the card shows "As of HH:MM"; missing fields are skipped, not filled with 28 °C / 55 %; the mock generator and an unused WhatsApp stub with invented train and UV text are gone | ✅ Fixed | — |
+| TL-44 | Invented civic data presented as real | Fixed 9 Oct: politician scores, ration shops, MeeSeva tracker and centres, fake alerts and emergency simulator, random ward numbers, poll tallies, park crowds, farmer advisories/MSPs/mandi, pulses fallback prices; pages now link to official sources | ✅ Fixed | — |
+| TL-45 | Publisher photos and the stand-in weather route | Fixed 9 Oct: news cards show no publisher images; `/api/weather` (fixed 35°C / AQI 180) removed | ✅ Fixed | — |
+| TL-46 | Gold read from sites whose terms may forbid it; invented fuel tax split | Fixed 9 Oct: gold and silver dropped (link to IBJA); fuel "tax breakup" and fixed fallback prices removed | ✅ Fixed | — |
+| TL-47 | Random-number 30-day forecast and more invented datasets | Fixed 9 Oct: weather page shows real current readings; budget, tax rates, jobs, water timings, wards, holidays, tariffs, metro crowding, live bus meter, clinic phones, star ratings removed or linked out | ✅ Fixed | — |
+| TL-48 | Unchecked emergency numbers, model-written AI briefing, wrong scheme details | Fixed 9 Oct: numbers checked against published sources; briefing generator removed; scheme amounts point to official portals | ✅ Fixed | — |
 | TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
-| TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ◐ Partly fixed | 5 Oct: no more invented gold prices (stale runs keep the last real reading with its own date; no fixed fallback). Still needed: confirm acceptable sources |
+| TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ✅ Closed (gold dropped, TL-46) | — |
 | TL-06 | Rate cards don't show staleness | A 3-day-old price looks current | P1 | Set the stale threshold per rate (e.g. gold 12 h, fuel 24 h) |
 | TL-07 | Fake-news check silently switches off on errors | Unverified articles published as checked | ✅ Fixed | 5 Oct: unchecked articles are published as unchecked with no score; failures logged |
 | TL-08 | Rebuild triggered even when nothing changed | Gate added; but every sync writes the run time, so most runs still push and rebuild | ✅ Fixed | 5 Oct: data files are not rewritten when only timestamps changed, so quiet runs commit and deploy nothing |
-| TL-09 | Gold fetched by three overlapping jobs | Wasted runs, conflicting writes | P2 | Choose one refresh cadence |
+| TL-09 | Gold fetched by three overlapping jobs | Wasted runs, conflicting writes | ✅ Closed (gold dropped, TL-46) | — |
 | TL-10 | AI summaries can attach to the wrong article | Misleading summaries | ✅ Fixed | 5 Oct: summaries placed by their number; a batch not numbered 1..N is discarded |
 | TL-11 | Backend test suite red and slow | Regressions go unnoticed | ✅ Fixed | 5 Oct: 172 tests pass in about 40 s (was 8 failing, minutes to hours) |
 | TL-12 | Frontend tests never ran | Fixed 2 Oct: 95 tests now run on every `npm test` | ✅ Fixed | — |
@@ -413,11 +448,11 @@ infrastructure/
 | TL-43 | Backend + Frontend | `weather_scraper.py`, `utils/aqi.js`, `weatherService.js`, `WeatherCard.jsx` | ✅ Done: `test_weather_scraper.py`, `tests/unit/aqi.test.js`; data regenerated (33 districts, real AQI) | M |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
-| TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ◐ No invented values (tests in `TestSyncFinanceHistoryTracking`); sources still to confirm | M |
+| TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ✅ Closed: gold no longer published (TL-46) | M |
 | TL-06 | Frontend + Backend | `FuelPriceWidget.jsx`, `DailyRatesDashboard.jsx`, `GoldLandingPage.jsx`; rate writers in `data_engine.py` | Every card shows source and "as of" time; stale badge past the PO threshold | M |
 | TL-07 | Backend | `agents/fact_checker.py` | ✅ Done: `FactCheckVerdict`; `tests/test_fact_checker.py` | M |
 | TL-08 | Infra | 8 sync workflows; rate/weather writers | ✅ Done: `write_js` / `write_js_module` skip unchanged data; `TestWritesSkipUnchangedData` | S |
-| TL-09 | Infra | `scraper.yml`, `gold_silver_update.yml`, `rates_sync.yml` | One job per dataset; cadence documented in the context map | S |
+| TL-09 | Infra | `scraper.yml`, `gold_silver_update.yml`, `rates_sync.yml` | ✅ Closed: gold no longer published (TL-46) | S |
 | TL-10 | Backend | `scripts/news_scraper.py` | ✅ Done: `tests/test_news_summaries.py` covers 19-of-20 replies | S |
 | TL-11 | Backend | `tests/test_data_engine.py` | ✅ Done: model and fact checker stubbed by an autouse fixture; dependency stubs only when missing | M |
 | TL-12 | Frontend | `vitest.config.ts` | ✅ Done: `test.dir` is the repo root; 8 files, 95 tests | S |
