@@ -20,7 +20,7 @@ never written here, only their names.
 | `news_aggregation.yml` | every 2 h | News RSS → `frontend/src/data`, AI summaries |
 | `emergency_alerts_sync.yml` | every 15 min | NDMA SACHET alerts |
 | `weather_update.yml` | hourly | Open-Meteo forecast and AQI snapshot |
-| `gold_silver_update.yml`, `rates_sync.yml` | 12 h / twice daily | Gold and silver rates |
+| `rates_sync.yml` | twice daily | Fuel prices and pulses file |
 | `prices_update.yml` | every 6 h | Fuel prices; pulses file (empty until a source exists) |
 | `ai_pulse_update.yml` | 3× daily | Tech and AI pulse |
 | `data_freshness.yml` | daily | Flags stale data files |
@@ -91,8 +91,9 @@ secrets, and that `/sources`, `/alerts` and `/weather` show current data.
 - Mandi prices: the Agmarknet endpoint used by `frontend/api/mandi-prices.js`
   returns 404, so the farmer page shows no prices.
 - Power alerts: TSSPDCL answers 403 to the scraper.
-- Gold, silver and fuel prices are read from published retail-rate pages;
-  a licensed feed would remove that dependency.
+- Fuel prices are read from a published retail-rate page; a licensed feed
+  would remove that dependency. Gold and silver are not published (TL-46);
+  /rates/gold links to the IBJA reference rate.
 - Open-Meteo's free API is for non-commercial use; an ad-funded site needs
   its commercial plan.
 - Reservoir levels are not published until an official source is wired.

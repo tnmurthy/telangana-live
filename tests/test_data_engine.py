@@ -164,18 +164,12 @@ class TestDataEngineUtils:
 
 
 # ---------------------------------------------------------------------------
-# Gold / fuel regex sanity check
+# Fuel regex sanity check
 # ---------------------------------------------------------------------------
 
-class TestGoldFuelParsing:
+class TestFuelParsing:
     """Verify that the regex patterns used to extract prices would match
     realistic GoodReturns page text."""
-
-    def test_gold22k_regex(self):
-        sample = "22 K Gold Rate Today Rs. 7,180 per gram"
-        m = re.search(r"22\s*K[\s\S]{0,100}Rs\.?\s*([\d,]+)", sample, re.I)
-        assert m is not None
-        assert float(m.group(1).replace(",", "")) == 7180
 
     def test_petrol_regex(self):
         sample = "Petrol Price Today Rs. 107.41 per litre"
@@ -612,7 +606,7 @@ class TestGetAiSummary:
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# data_engine — sync_finance (gold & fuel parsing)
+# data_engine — sync_fuel
 # ═══════════════════════════════════════════════════════════════════════════
 
 def _make_mock_response(text, status=200):
@@ -622,21 +616,6 @@ def _make_mock_response(text, status=200):
     mock_resp.status_code = status
     return mock_resp
 
-
-# Gold HTML is structured with tables as expected by the new scraper logic
-_GOLD_HTML = """
-<html><body>
-<table>
-    <tr><td>Type</td><td>Currency</td><td>Price</td></tr>
-    <tr><td>Silver 1 gm</td><td>₹</td><td>290.00</td></tr>
-</table>
-<table>
-    <tr><td>Date</td><td>24 K</td><td>22 K</td></tr>
-    <tr><td>02/Jun/2026</td><td>15,704</td><td>14,395</td></tr>
-    <tr><td>01/Jun/2026</td><td>15,704</td><td>14,395</td></tr>
-</table>
-</body></html>
-"""
 
 _DIESEL_HTML = '<html><body><div id="gr_intro_content"><b>97.82</b></div></body></html>'
 
@@ -652,117 +631,23 @@ CNG Price: ₹ 72.8
 """
 
 
-class TestSyncFinanceGoldParsing:
-    """sync_finance correctly parses gold/silver prices from HTML."""
-
-    def _run_finance_sync(self, tmp_path, gold_html=_GOLD_HTML, fuel_html=_FUEL_HTML):
-        original_gold = data_engine.PATHS["gold"]
-        original_fuel = data_engine.PATHS["fuel"]
-        original_now = data_engine.NOW
-        data_engine.PATHS["gold"] = str(tmp_path / "goldRates.js")
-        data_engine.PATHS["fuel"] = str(tmp_path / "fuelPrices.js")
-        # Fix NOW to match our mock HTML
-        data_engine.NOW = "2026-06-02T10:00:00Z"
-        
-        try:
-            with patch.object(data_engine, "requests") as mock_req:
-                mock_req.get.side_effect = [
-                    _make_mock_response(gold_html),      # live chennai
-                    _make_mock_response("<html></html>"), # live mint
-                    _make_mock_response(fuel_html),      # fuel petrol
-                    _make_mock_response(fuel_html),      # fuel diesel
-                    _make_mock_response(fuel_html),      # fuel lpg
-                    _make_mock_response(fuel_html),      # fuel cng
-                ]
-                data_engine.sync_finance()
-        finally:
-            data_engine.PATHS["gold"] = original_gold
-            data_engine.PATHS["fuel"] = original_fuel
-            data_engine.NOW = original_now
-
-    def test_writes_gold_file(self, tmp_path):
-        self._run_finance_sync(tmp_path)
-        assert os.path.exists(str(tmp_path / "goldRates.js"))
-
-    def test_gold_file_has_correct_export(self, tmp_path):
-        self._run_finance_sync(tmp_path)
-        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
-        assert "export const goldRates" in content
-
-    def test_gold22k_price_parsed(self, tmp_path):
-        self._run_finance_sync(tmp_path)
-        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        assert data["gold22k"]["price"] == 14395.0
-
-    def test_gold24k_price_parsed(self, tmp_path):
-        self._run_finance_sync(tmp_path)
-        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        assert data["gold24k"]["price"] == 15704.0
-
-    def test_silver_per_gram_preserved(self, tmp_path):
-        """Silver value <= 1000 should be stored as-is (integer, regex strips decimal)."""
-        self._run_finance_sync(tmp_path)
-        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        assert data["silver"]["price"] == 290.0
-
-    def test_silver_per_kg_normalised_to_per_gram(self, tmp_path):
-        """Silver value > 1000 (per-kg figure) must be divided by 1000."""
-        # Note: the current _scrape_live_chennai doesn't have the per-kg normalization logic for silver,
-        # it just parses the float. If it parses 290000, it stays 290000.
-        gold_html_with_kg_silver = _GOLD_HTML.replace("290.00", "290,000")
-        self._run_finance_sync(tmp_path, gold_html=gold_html_with_kg_silver)
-        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        
-        # Verify it's NOT using fallback (isStale should be False if consensus reached)
-        assert data["isStale"] is False
-        assert data["silver"]["price"] == 290000.0
-
-    def test_gold_data_contains_required_fields(self, tmp_path):
-        self._run_finance_sync(tmp_path)
-        content = open(str(tmp_path / "goldRates.js"), encoding="utf-8").read()
-        match = re.search(r"= (\{[\s\S]*\});", content)
-        data = json.loads(match.group(1))
-        assert data["city"] == "Hyderabad"
-        assert "date" in data
-        assert "gold22k" in data and "price" in data["gold22k"]
-        assert "gold24k" in data and "price" in data["gold24k"]
-        assert "silver" in data and "price" in data["silver"]
-        assert isinstance(data["history"], list)
-
-
 class TestSyncFinanceFuelParsing:
-    """sync_finance correctly parses fuel prices from HTML."""
+    """sync_fuel correctly parses fuel prices from HTML."""
 
     def _run_finance_sync(self, tmp_path, fuel_html=_FUEL_HTML):
-        original_gold = data_engine.PATHS["gold"]
         original_fuel = data_engine.PATHS["fuel"]
-        data_engine.PATHS["gold"] = str(tmp_path / "goldRates.js")
         data_engine.PATHS["fuel"] = str(tmp_path / "fuelPrices.js")
         try:
             with patch.object(data_engine, "requests") as mock_req:
-                # gold: livechennai, livemint; fuel: petrol, diesel, lpg, cng.
-                # (Two responses used to starve the fuel scraper, so these tests
-                # only passed through the hard-coded fallback prices.)
+                # petrol, diesel, lpg, cng pages, in that order.
                 mock_req.get.side_effect = [
-                    _make_mock_response(_GOLD_HTML),
-                    _make_mock_response("<html></html>"),
-                ] + [
                     _make_mock_response(fuel_html),     # petrol page
                     _make_mock_response(_DIESEL_HTML),  # diesel page: its own price first
                     _make_mock_response(fuel_html),     # lpg page
                     _make_mock_response(fuel_html),     # cng page
                 ]
-                data_engine.sync_finance()
+                data_engine.sync_fuel()
         finally:
-            data_engine.PATHS["gold"] = original_gold
             data_engine.PATHS["fuel"] = original_fuel
 
     def test_writes_fuel_file(self, tmp_path):
@@ -796,83 +681,44 @@ class TestSyncFinanceFuelParsing:
         assert "lpgHousehold" in data
         assert "cngVehicle" in data
 
-    def test_fuel_tax_breakup_present(self, tmp_path):
+    def test_no_invented_tax_breakup(self, tmp_path):
+        # TL-46: the "tax breakup" was the price times fixed percentages
+        # (base 55%, excise 22%, ...), shown as if it were the real split.
         self._run_finance_sync(tmp_path)
         content = open(str(tmp_path / "fuelPrices.js"), encoding="utf-8").read()
         match = re.search(r"= (\{[\s\S]*\});", content)
         data = json.loads(match.group(1))
-        assert "taxBreakup" in data["petrol"]
-        assert "taxBreakup" in data["diesel"]
-        assert "basePrice" in data["petrol"]["taxBreakup"]
+        assert "taxBreakup" not in data["petrol"]
+        assert "taxBreakup" not in data["diesel"]
 
 
-class TestSyncFinanceFallbacks:
-    """sync_finance uses default values when network requests fail."""
+class TestSyncFuelFallbacks:
+    """sync_fuel never raises and never publishes a price it did not read."""
 
-    def _paths(self, tmp_path):
-        return str(tmp_path / "goldRates.js"), str(tmp_path / "fuelPrices.js")
-
-    def test_gold_file_written_with_defaults_on_request_error(self, tmp_path):
-        gold_path, fuel_path = self._paths(tmp_path)
-        original_gold = data_engine.PATHS["gold"]
+    def _run(self, tmp_path, **mock):
+        fuel_path = str(tmp_path / "fuelPrices.js")
         original_fuel = data_engine.PATHS["fuel"]
-        data_engine.PATHS["gold"] = gold_path
         data_engine.PATHS["fuel"] = fuel_path
         try:
             with patch.object(data_engine, "requests") as mock_req:
-                mock_req.get.side_effect = RuntimeError("Network error")
-                data_engine.sync_finance()
+                for key, value in mock.items():
+                    setattr(mock_req.get, key, value)
+                data_engine.sync_fuel()
         finally:
-            data_engine.PATHS["gold"] = original_gold
             data_engine.PATHS["fuel"] = original_fuel
-        # Gold file should NOT be written (exception is caught and printed)
-        # The gold block catches the exception and skips writing
-        # Fuel block also catches the exception and skips writing
-        # This tests that sync_finance does not raise an unhandled exception
-        # (files may or may not exist depending on which block ran)
+        return fuel_path
 
-    def test_gold_writes_nothing_when_no_price_is_found(self, tmp_path):
-        """No recognisable price and no history: nothing is published.
-
-        It used to publish fixed 14395 / 15704 / 290 as today's rates.
-        """
-        gold_path, fuel_path = self._paths(tmp_path)
-        original_gold = data_engine.PATHS["gold"]
-        original_fuel = data_engine.PATHS["fuel"]
-        data_engine.PATHS["gold"] = gold_path
-        data_engine.PATHS["fuel"] = fuel_path
-        try:
-            with patch.object(data_engine, "requests") as mock_req:
-                mock_req.get.side_effect = [
-                    _make_mock_response("<html>No prices here</html>"),
-                    _make_mock_response("<html>No prices here</html>"),
-                ]
-                data_engine.sync_finance()
-        finally:
-            data_engine.PATHS["gold"] = original_gold
-            data_engine.PATHS["fuel"] = original_fuel
-
-        assert not os.path.exists(gold_path)
+    def test_request_error_is_handled(self, tmp_path):
+        self._run(tmp_path, side_effect=RuntimeError("Network error"))
 
     def test_fuel_writes_nothing_when_no_price_is_found(self, tmp_path):
         """No price on any page and no earlier file: nothing is published.
 
         It used to publish fixed 107.41 / 97.82 / 803 / 72.8 as today's prices.
         """
-        gold_path, fuel_path = self._paths(tmp_path)
-        original_gold = data_engine.PATHS["gold"]
-        original_fuel = data_engine.PATHS["fuel"]
-        data_engine.PATHS["gold"] = gold_path
-        data_engine.PATHS["fuel"] = fuel_path
-        try:
-            with patch.object(data_engine, "requests") as mock_req:
-                mock_req.get.return_value = _make_mock_response("<html>No prices here</html>")
-                data_engine.sync_finance()
-        finally:
-            data_engine.PATHS["gold"] = original_gold
-            data_engine.PATHS["fuel"] = original_fuel
+        path = self._run(tmp_path, return_value=_make_mock_response("<html>No prices here</html>"))
+        assert not os.path.exists(path)
 
-        assert not os.path.exists(fuel_path)
 
 class TestSyncFuelNoInventedPrices:
     """sync_fuel publishes only scraped prices; a price it could not read this
@@ -939,108 +785,6 @@ class TestSyncFuelNoInventedPrices:
         pages = {k: v for k, v in self.PAGES.items() if k != "cng"}
         result, data = self._run(tmp_path, pages)
         assert result is None and data is None
-
-
-class TestSyncFinanceHistoryTracking:
-    """sync_gold keeps a dated price history and never invents a reading.
-
-    The scrapers are stubbed directly: the old tests fed requests a mocked
-    page the current multi-source scrapers cannot parse, so they exercised
-    stale mode by accident and failed.
-    """
-
-    TODAY = data_engine.NOW[:10]
-
-    def _day(self, offset):
-        base = datetime.strptime(self.TODAY, "%Y-%m-%d")
-        return (base + timedelta(days=offset)).strftime("%Y-%m-%d")
-
-    def _entry(self, date, g22=14400.0, g24=15700.0, silver=290.0):
-        return {"date": date, "gold22k": g22, "gold24k": g24, "silver": silver}
-
-    def _write_gold_file(self, path, history):
-        data = {"city": "Hyderabad", "date": history[-1]["date"] if history else None,
-                "history": history}
-        data_engine.write_js_module(path, "goldRates", data)
-
-    def _run(self, tmp_path, history, chennai=None, mint=None):
-        gold_path = str(tmp_path / "goldRates.js")
-        if history is not None:
-            self._write_gold_file(gold_path, history)
-        original = data_engine.PATHS["gold"]
-        data_engine.PATHS["gold"] = gold_path
-        try:
-            with patch.object(data_engine, "_scrape_live_chennai", return_value=chennai or []), \
-                 patch.object(data_engine, "_scrape_live_mint", return_value=mint or []), \
-                 patch.object(data_engine, "sync_to_redis"), \
-                 patch.object(data_engine, "get_recent_news_for_entity", return_value=[]):
-                result = data_engine.sync_gold()
-        finally:
-            data_engine.PATHS["gold"] = original
-        if not os.path.exists(gold_path):
-            return result, None
-        content = open(gold_path, encoding="utf-8").read()
-        return result, json.loads(re.search(r"= (\{[\s\S]*\});", content).group(1))
-
-    def test_fresh_reading_is_appended_to_history(self, tmp_path):
-        _, data = self._run(tmp_path, [self._entry(self._day(-1))],
-                            chennai=[self._entry(self.TODAY, 14500, 15800, 291)])
-        assert [h["date"] for h in data["history"]] == [self._day(-1), self.TODAY]
-        assert data["isStale"] is False
-
-    def test_day_over_day_change_computed(self, tmp_path):
-        _, data = self._run(tmp_path, [self._entry(self._day(-1), 14400, 15700, 290)],
-                            chennai=[self._entry(self.TODAY, 14500, 15810, 291)])
-        assert data["gold22k"]["change"] == 100
-        assert data["gold24k"]["change"] == 110
-
-    def test_same_date_entry_deduplicated(self, tmp_path):
-        _, data = self._run(tmp_path, [self._entry(self.TODAY, 14000, 15300)],
-                            chennai=[self._entry(self.TODAY, 14500, 15800)])
-        assert len([h for h in data["history"] if h["date"] == self.TODAY]) == 1
-
-    def test_history_capped_at_seven_days(self, tmp_path):
-        history = [self._entry(self._day(-i)) for i in range(12, 0, -1)]
-        _, data = self._run(tmp_path, history, chennai=[self._entry(self.TODAY)])
-        assert len(data["history"]) <= 7
-
-    def test_mint_without_silver_does_not_overwrite_real_silver(self, tmp_path):
-        # Mint has no silver rate; it used to write a fixed 290.0 over Live
-        # Chennai's reading for the same date.
-        _, data = self._run(tmp_path, [self._entry(self._day(-1), silver=300.0)],
-                            chennai=[self._entry(self.TODAY, 14500, 15800, 312.5)],
-                            mint=[self._entry(self.TODAY, 14510, 15810, None)])
-        assert data["silver"]["price"] == 312.5
-        today = next(h for h in data["history"] if h["date"] == self.TODAY)
-        assert today["silver"] == 312.5
-
-    def test_silver_falls_back_to_last_real_reading(self, tmp_path):
-        # Today's sources have gold but no silver: show the latest real silver.
-        _, data = self._run(tmp_path, [self._entry(self._day(-1), silver=305.0)],
-                            mint=[self._entry(self.TODAY, 14510, 15810, None)])
-        assert data["silver"]["price"] == 305.0
-
-    def test_no_fixed_silver_value_in_scrapers(self):
-        source = inspect.getsource(data_engine._scrape_live_mint) + inspect.getsource(data_engine._scrape_live_chennai)
-        assert "290" not in source
-        assert "silver_gram = 0" not in source
-
-    def test_stale_run_does_not_record_a_price_for_today(self, tmp_path):
-        # No source has today's price: keep the last real reading, dated as
-        # it was, instead of copying it into history as "today" with change 0.
-        history = [self._entry(self._day(-2), 14300, 15600), self._entry(self._day(-1), 14400, 15700)]
-        _, data = self._run(tmp_path, history)
-        assert data["isStale"] is True
-        assert [h["date"] for h in data["history"]] == [self._day(-2), self._day(-1)]
-        assert data["date"] == self._day(-1)
-        assert data["gold22k"]["price"] == 14400
-        assert data["gold22k"]["change"] == 100
-
-    def test_no_sources_and_no_history_writes_nothing(self, tmp_path):
-        # Used to publish fixed 15704 / 14395 / 290 as if they were today's rates.
-        result, data = self._run(tmp_path, None)
-        assert result is None
-        assert data is None
 
 
 # ═══════════════════════════════════════════════════════════════════════════

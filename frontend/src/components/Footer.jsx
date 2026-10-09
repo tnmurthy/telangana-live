@@ -33,7 +33,7 @@ export default function Footer() {
             <Link to="/warangal" className="hover:text-white transition-colors">Warangal</Link>
             <Link to="/news" className="hover:text-white transition-colors">News</Link>
             <Link to="/ai-pulse" className="hover:text-white transition-colors">Tech &amp; AI Pulse</Link>
-            <Link to="/rates/gold" className="hover:text-white transition-colors">Rates</Link>
+            <Link to="/rates/fuel" className="hover:text-white transition-colors">Fuel Prices</Link>
             <Link to="/health/basthi-dawakhana" className="hover:text-white transition-colors">Health</Link>
             <Link to="/advertise" className="hover:text-white transition-colors">Advertise</Link>
             <Link to="/sources" className="hover:text-white transition-colors">Sources</Link>

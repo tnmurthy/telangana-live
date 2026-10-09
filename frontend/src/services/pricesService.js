@@ -1,15 +1,14 @@
 // src/services/pricesService.js
-// Fuel, gold and mandi prices for the site.
+// Fuel and mandi prices for the site.
 //
 // Order: the live API route when it returns real prices, else the synced data
-// files (fuelPrices.js / goldRates.js, refreshed by the scheduled data jobs and
+// files (fuelPrices.js, refreshed by the scheduled data jobs and
 // carrying their own date). There are no built-in prices. This service used to
 // read a data file last written on 7 Jun 2026 first, so the site showed June
 // prices as today's, and fell back to hard-coded numbers behind that.
 // See docs/DATA_STANDARDS.md, rule 1.
 
 import { fuelPrices as syncedFuel } from '../data/fuelPrices';
-import { goldRates as syncedGold } from '../data/goldRates';
 
 const API_BASE = import.meta.env.VITE_API_BASE || '';
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour in ms
@@ -67,32 +66,6 @@ export async function fetchFuelPrices(city = 'hyderabad') {
     source: 'synced-file',
     date: syncedFuel.date,
     lastUpdated: syncedFuel.updatedAt,
-  };
-}
-
-/** Gold and silver rates for Hyderabad. */
-export async function fetchGoldRates() {
-  const memKey = 'gold-hyderabad';
-  const cached = getCached(memKey);
-  if (cached) return cached;
-
-  const live = await fetchJson('/api/gold-rates');
-  if (live?.gold22k?.price && live?.gold24k?.price) {
-    setCache(memKey, live);
-    return live;
-  }
-
-  const per10g = (item) => (item?.price ? { price: item.price * 10, unit: 'per 10 grams', change: (item.change ?? 0) * 10 } : null);
-  return {
-    gold22k: price(syncedGold.gold22k, 'per gram'),
-    gold24k: price(syncedGold.gold24k, 'per gram'),
-    silver: price(syncedGold.silver, 'per gram'),
-    gold10g22k: per10g(syncedGold.gold22k),
-    gold10g24k: per10g(syncedGold.gold24k),
-    isStale: Boolean(syncedGold.isStale),
-    source: 'synced-file',
-    date: syncedGold.date,
-    lastUpdated: syncedGold.updatedAt,
   };
 }
 

@@ -29,6 +29,7 @@ and in `frontend/src/data/dataSources.js`. In short:
   links to every story and shows no publisher photos.
 - Weather and air-quality data from Open-Meteo is CC BY 4.0 (attributed on
   /sources).
-- Gold, silver and fuel prices are read from published retail-rate pages.
-  These are facts, but the pages' terms may restrict automated reading; a
-  licensed feed would remove that dependency.
+- Fuel prices are read from a published retail-rate page (Goodreturns).
+  These are facts, but the page's terms may restrict automated reading; a
+  licensed feed would remove that dependency. Gold and silver rates were
+  dropped for this reason on 2026-10-09 (TL-46).

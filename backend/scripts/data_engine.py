@@ -2,12 +2,11 @@
 """
 data_engine.py — Telangana.live data sync engine
 Usage:
-  python scripts/data_engine.py --task gold
   python scripts/data_engine.py --task fuel
   python scripts/data_engine.py --task pulses
   python scripts/data_engine.py --task ai_pulse
   python scripts/data_engine.py --task alerts
-  python scripts/data_engine.py --finance-only   (runs gold + fuel + pulses)
+  python scripts/data_engine.py --finance-only   (runs fuel + pulses)
 """
 
 import argparse
@@ -47,7 +46,6 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 # PATHS registry — allows tests to redirect output files to tmp dirs
 PATHS = {
-    "gold":   os.path.join(DATA_DIR, "goldRates.js"),
     "fuel":   os.path.join(DATA_DIR, "fuelPrices.js"),
     "pulses": os.path.join(DATA_DIR, "pulses.js"),
     "news":   os.path.join(DATA_DIR, "news.json"),
@@ -215,243 +213,10 @@ def clean_price(value):
 # ── GOLD ──────────────────────────────────────────────────────────────────────
 # ── GOLD ──────────────────────────────────────────────────────────────────────
 
-def _scrape_live_chennai():
-    """Primary source for Hyderabad gold rates."""
-    url = "https://www.livechennai.com/gold_silverrate_hyderabad.asp"
-    try:
-        resp = http_get(url)
-        if resp.status_code != 200:
-            return None
-        html_content = resp.text
-    except Exception as e:
-        print(f"  ⚠️ Live Chennai scrape failed (Request): {e}")
-        return None
-
-    soup = BeautifulSoup(html_content, "html.parser")
-    silver_gram = None  # stays None if the page has no silver row (never 0)
-    history = []
-
-    # Parse silver
-    try:
-        for table in soup.find_all("table"):
-            if "silver 1 gm" in table.get_text().lower():
-                rows = table.find_all("tr")
-                if len(rows) > 1:
-                    tds = rows[1].find_all("td")
-                    if len(tds) >= 3:
-                        sil_text = tds[2].get_text(strip=True).split('(')[0].replace(',', '').replace('₹', '') 
-                        silver_gram = float(sil_text)
-                        break
-    except Exception as e:
-        print(f"  silver parse failed: {e}")
-
-    # Parse gold history table
-    try:
-        for table in soup.find_all("table"):
-            table_text = table.get_text().lower()
-            if "24 k" in table_text and "date" in table_text:
-                rows = table.find_all("tr")
-                for row in rows:
-                    cols = row.find_all("td")
-                    if len(cols) >= 3:
-                        date_raw = cols[0].get_text(strip=True)
-                        p24_raw = cols[1].get_text(strip=True).replace(",", "").split("(")[0].strip()
-                        p22_raw = cols[2].get_text(strip=True).replace(",", "").split("(")[0].strip()
-                        try:
-                            dt = None
-                            # Added %B for full month names like 'June'
-                            for fmt in ["%d/%b/%Y", "%d/%m/%Y", "%d/%B/%Y"]:
-                                try:
-                                    dt = datetime.datetime.strptime(date_raw, fmt).replace(tzinfo=IST).date()
-                                    break
-                                except ValueError:
-                                    continue
-                            if dt:
-                                v24, v22 = float(p24_raw), float(p22_raw)
-                                def normalize_g(v): return v / 8 if v > 100000 else v
-                                history.append({
-                                    "date": dt.strftime("%Y-%m-%d"),
-                                    "gold22k": round(normalize_g(v22), 2),
-                                    "gold24k": round(normalize_g(v24), 2),
-                                    "silver": silver_gram
-                                })
-                        except (ValueError, TypeError):
-                            continue
-                break
-    except Exception as e:
-        print(f"  gold history parse failed: {e}")
-    return history
-
-def _scrape_live_mint():
-    """Secondary source for verification."""
-    url = "https://www.livemint.com/gold-prices/hyderabad"
-    try:
-        resp = http_get(url)
-        if resp.status_code != 200:
-            return None
-        html_content = resp.text
-    except Exception as e:
-        print(f"  ⚠️ Live Mint scrape failed (Request): {e}")
-        return None
-
-    soup = BeautifulSoup(html_content, "html.parser")
-    history = []
-    try:
-        for table in soup.find_all("table"):
-            text = table.get_text().lower()
-            if "today" in text and "yesterday" in text and "gram" in text:
-                # Found current price table
-                rows = table.find_all("tr")
-                prices = {}
-                for row in rows:
-                    cols = row.find_all("td")
-                    if len(cols) >= 2:
-                        label = cols[0].get_text().lower()
-                        val = cols[1].get_text().replace("₹", "").replace(",", "").strip()
-                        try:
-                            if "24 karat" in label or "24k" in label: prices["24k"] = float(val)
-                            if "22 karat" in label or "22k" in label: prices["22k"] = float(val)
-                        except ValueError:
-                            pass
-
-                # Find date from history table on same page
-                for h_table in soup.find_all("table"):
-                    if "date" in h_table.get_text().lower() and "24k" in h_table.get_text().lower():
-                        h_rows = h_table.find_all("tr")
-                        for hr in h_rows:
-                            h_cols = hr.find_all("td")
-                            if len(h_cols) >= 3:
-                                d_raw = h_cols[0].get_text(strip=True)
-                                try:
-                                    # Mint uses 'Jun 2, 2026'
-                                    d_dt = datetime.datetime.strptime(d_raw, "%b %d, %Y").replace(tzinfo=IST).date()
-                                    history.append({
-                                        "date": d_dt.strftime("%Y-%m-%d"),
-                                        "gold22k": prices.get("22k"),
-                                        "gold24k": prices.get("24k"),
-                                        "silver": None,  # Mint gives no silver rate
-                                    })
-                                except ValueError:
-                                    continue
-                        break
-                break
-    except Exception as e:
-        print(f"  Mint parse failed: {e}")
-    return history
-
-def sync_gold():
-    print("Syncing gold rates (Multi-Source Validation)...")
-    today_str = NOW[:10]
-    
-    # 1. Scrape multiple sources
-    sources = {
-        "live_chennai": _scrape_live_chennai(),
-        "live_mint": _scrape_live_mint()
-    }
-    
-    # 2. Validation & Consensus Layer
-    valid_today = []
-    all_history = []
-    
-    for s_name, s_data in sources.items():
-        if s_data:
-            all_history.extend(s_data)
-            today_entry = next((item for item in s_data if item["date"] == today_str), None)
-            if today_entry:
-                # Boundary Checks
-                g24, g22 = today_entry["gold24k"], today_entry["gold22k"]
-                if 10000 < g24 < 30000 and 10000 < g22 < 30000:
-                    valid_today.append(today_entry)
-                else:
-                    print(f"  ⚠️ Source {s_name} returned out-of-bounds data: 24k={g24}")
-
-    # 3. Determine Final Values
-    is_stale = False
-    if valid_today:
-        # Consensus: Use average if sources differ slightly
-        gold24 = sum(item["gold24k"] for item in valid_today) / len(valid_today)
-        gold22 = sum(item["gold22k"] for item in valid_today) / len(valid_today)
-        silver_today = [item["silver"] for item in valid_today if item.get("silver")]
-        silver = sum(silver_today) / len(silver_today) if silver_today else None
-        print(f"  ✅ Consensus reached from {len(valid_today)} sources.")
-    else:
-        print("  ⚠️ No fresh data found today. Keeping the last real reading (Stale Mode).")
-        is_stale = True
-
-    # 4. History Management
-    # Deduplicate and sort all history entries
-    unique_history = {}
-    # Sources are listed in priority order: the first reading for a date wins,
-    # and a later source only fills fields the earlier one lacks. (Mint used
-    # to overwrite Live Chennai's real silver with a fixed 290.0.)
-    for entry in all_history:
-        kept = unique_history.setdefault(entry["date"], dict(entry))
-        for key, value in entry.items():
-            if kept.get(key) is None and value is not None:
-                kept[key] = value
-    
-    # Load existing file history to fill gaps
-    try:
-        if os.path.exists(PATHS["gold"]):
-            with open(PATHS["gold"], encoding="utf-8") as f:
-                old_data = json.loads(re.search(r"= (\{[\s\S]*\});", f.read()).group(1))
-                for entry in old_data.get("history", []):
-                    if entry["date"] not in unique_history:
-                        unique_history[entry["date"]] = entry
-    except Exception as e:
-        print(f"  previous gold file unreadable: {e}")
-
-    # Only a validated reading for today becomes today's history entry. A
-    # stale run used to copy the last price in as "today" (change 0), and with
-    # no history at all it published fixed 15704 / 14395 / 290 as real rates.
-    if valid_today:
-        unique_history[today_str] = {"date": today_str, "gold22k": gold22, "gold24k": gold24, "silver": silver}
-    if not unique_history:
-        print("  ⚠️ No gold reading available at all; leaving goldRates unchanged.")
-        return None
-
-    sorted_history = sorted(unique_history.values(), key=lambda x: x["date"])[-10:]
-    if is_stale:
-        latest = sorted_history[-1]
-        gold24, gold22, silver = latest["gold24k"], latest["gold22k"], latest["silver"]
-        today_str = latest["date"]  # the date the shown price was observed
-
-    # 5. Calculate Changes
-    prev = sorted_history[-2] if len(sorted_history) >= 2 else sorted_history[-1]
-    change24 = round(gold24 - prev["gold24k"], 2)
-    change22 = round(gold22 - prev["gold22k"], 2)
-
-    # Silver: today's reading, else the latest real one in history. Never a
-    # fixed value; if there has never been a reading, keep the published file.
-    silver_readings = [e for e in sorted_history if e.get("silver")]
-    if silver is None and silver_readings:
-        silver = silver_readings[-1]["silver"]
-    if silver is None:
-        print("  ⚠️ No silver reading available; leaving goldRates unchanged.")
-        return None
-    prev_sil = silver_readings[-2]["silver"] if len(silver_readings) >= 2 else silver
-    change_sil = round(silver - prev_sil, 2)
-
-    # 6. Final Data Objects
-    final_data = {
-        "updatedAt": NOW,
-        "date": today_str,
-        "city": "Hyderabad",
-        "isStale": is_stale,
-        "sourcesSynced": len(valid_today),
-        "gold22k": {"price": round(gold22, 2), "unit": "per gram", "change": change22},
-        "gold24k": {"price": round(gold24, 2), "unit": "per gram", "change": change24},
-        "silver":  {"price": round(silver, 2), "unit": "per gram", "change": change_sil},
-        "history": sorted_history[-7:],
-        "correlated_news": get_recent_news_for_entity("gold_rate", "gold") + get_recent_news_for_entity("gold_rate", "silver")
-    }
-
-    sync_to_redis("tg:rates:gold", final_data)
-    write_js_module(PATHS["gold"], "goldRates", final_data)
-    return final_data
+# Gold and silver were read from Live Chennai, Mint and Goodreturns, whose
+# terms may not allow it. They are no longer published (TL-46).
 
 
-# ── FUEL ──────────────────────────────────────────────────────────────────────
 def _read_intro_price(url):
     """The first bold number in goodreturns' intro block, if plausible."""
     resp = http_get(url)
@@ -523,13 +288,6 @@ def sync_fuel():
     petrol_price, diesel_price = prices["petrol"], prices["diesel"]
     lpg_price, cng_price = prices["lpgHousehold"], prices["cngVehicle"]
 
-    def _tax_breakup(price):
-        base = round(price * 0.55, 2)
-        excise = round(price * 0.22, 2)
-        vat = round(price * 0.15, 2)
-        dealer = round(price - base - excise - vat, 2)
-        return {"basePrice": base, "exciseDuty": excise, "vatPercent": vat, "dealerCommission": dealer}
-
     try:
         sync_to_redis("tg:rates:fuel:hyderabad", {
             "petrol": {"price": petrol_price, "unit": "per litre", "change": 0},
@@ -546,8 +304,8 @@ def sync_fuel():
         "updatedAt": NOW,
         "date": NOW[:10],
         "city": "Hyderabad",
-        "petrol": {"price": petrol_price, "unit": "per litre", "change": 0, "taxBreakup": _tax_breakup(petrol_price)},
-        "diesel": {"price": diesel_price, "unit": "per litre", "change": 0, "taxBreakup": _tax_breakup(diesel_price)},
+        "petrol": {"price": petrol_price, "unit": "per litre", "change": 0},
+        "diesel": {"price": diesel_price, "unit": "per litre", "change": 0},
         "lpgHousehold": {"price": lpg_price, "unit": "per cylinder (14.2kg)", "change": 0, "label": "LPG Domestic"},
         "cngVehicle": {"price": cng_price, "unit": "per kg", "change": 0, "label": "CNG Vehicle"},
         "news_alerts": get_recent_news_for_entity("fuel_price", "fuel"),
@@ -560,9 +318,9 @@ def sync_fuel():
 
 
 def sync_finance():
-    """Wrapper that runs gold + fuel syncs sequentially. Used by tests."""
-    sync_gold()
+    """Fuel, then pulses. Gold is no longer published (TL-46)."""
     sync_fuel()
+    sync_pulses()
 
 
 # ── PULSES / COMMODITIES ──────────────────────────────────────────────────────
@@ -1033,16 +791,12 @@ def _placeholder_briefing():
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--task", choices=["gold", "fuel", "pulses", "ai_pulse", "news", "alerts"])
+    parser.add_argument("--task", choices=["fuel", "pulses", "ai_pulse", "news", "alerts"])
     parser.add_argument("--finance-only", action="store_true")
     args = parser.parse_args()
 
     if args.finance_only:
-        sync_gold()
-        sync_fuel()
-        sync_pulses()
-    elif args.task == "gold":
-        sync_gold()
+        sync_finance()
     elif args.task == "fuel":
         sync_fuel()
     elif args.task == "pulses":

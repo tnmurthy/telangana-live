@@ -18,15 +18,6 @@ vi.mock('../../frontend/src/data/fuelPrices', () => ({
         staleFields: [],
     },
 }));
-vi.mock('../../frontend/src/data/goldRates', () => ({
-    goldRates: {
-        date: '2026-10-03',
-        isStale: true,
-        gold22k: { price: 14400, unit: 'per gram', change: 0 },
-        gold24k: { price: 15700, unit: 'per gram', change: 0 },
-        silver: { price: 290, unit: 'per gram', change: 0 },
-    },
-}));
 
 function respond(ok, body, status = 200) {
     global.fetch = vi.fn().mockResolvedValue({ ok, status, json: () => Promise.resolve(body) });
@@ -63,24 +54,6 @@ describe('fetchFuelPrices', () => {
         vi.spyOn(console, 'warn').mockImplementation(() => {});
         const { fetchFuelPrices } = await load();
         expect((await fetchFuelPrices()).diesel.price).toBe(103.9);
-    });
-});
-
-describe('fetchGoldRates', () => {
-    it('uses the live API when it returns real rates', async () => {
-        respond(true, { gold22k: { price: 14500 }, gold24k: { price: 15810 }, source: 'goodreturns' });
-        const { fetchGoldRates } = await load();
-        expect((await fetchGoldRates()).gold24k.price).toBe(15810);
-    });
-
-    it('falls back to the synced file and keeps its stale flag and date', async () => {
-        respond(false, {}, 503);
-        const { fetchGoldRates } = await load();
-        const data = await fetchGoldRates();
-        expect(data.gold22k.price).toBe(14400);
-        expect(data.gold10g24k.price).toBe(157000);
-        expect(data.isStale).toBe(true);
-        expect(data.date).toBe('2026-10-03');
     });
 });
 

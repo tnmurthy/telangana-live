@@ -5,7 +5,6 @@ import transitStatus from '../data/transit_status.json';
 import { metroData, basthiDawakhanas } from '../data/transportData';
 import waterLevels from '../data/water_levels.json';
 import { weatherData } from '../data/weatherData';
-import { goldRates } from '../data/goldRates';
 import { fuelPrices } from '../data/fuelPrices';
 
 function renderCivicWidget(entity_type, entity_id) {
@@ -62,32 +61,11 @@ function renderCivicWidget(entity_type, entity_id) {
     );
   }
 
-  if (entity_type === 'gold_rate') {
-    const gold22 = goldRates?.gold22k?.price ? goldRates.gold22k.price * 10 : 143950.0;
-    const gold24 = goldRates?.gold24k?.price ? goldRates.gold24k.price * 10 : 157040.0;
-    return (
-      <div key={`${entity_type}-${entity_id}`} className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-yellow-500/20 transition-colors">
-        <div className="flex justify-between items-center mb-2.5">
-          <span className="text-xs font-bold text-white">🏆 Daily Gold Rates (Hyd)</span>
-          <span className="text-[9px] px-1.5 py-0.5 rounded bg-yellow-500/10 text-yellow-400 font-semibold border border-yellow-500/20 uppercase tracking-wider">Gold</span>
-        </div>
-        <div className="grid grid-cols-2 gap-2 text-[9px]">
-          <div className="p-1.5 rounded bg-white/[0.02] border border-yellow-500/10">
-            <span className="text-yellow-500 font-bold block text-[8px] uppercase">24K Gold</span>
-            <span className="text-white font-bold">₹{gold24.toLocaleString('en-IN')}/10g</span>
-          </div>
-          <div className="p-1.5 rounded bg-white/[0.02] border border-yellow-600/10">
-            <span className="text-yellow-600 font-bold block text-[8px] uppercase">22K Gold</span>
-            <span className="text-white font-bold">₹{gold22.toLocaleString('en-IN')}/10g</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   if (entity_type === 'fuel_price') {
-    const petrol = fuelPrices?.petrol?.price || 107.41;
-    const diesel = fuelPrices?.diesel?.price || 95.64;
+    // No fixed stand-in price when the file holds no reading.
+    const petrol = fuelPrices?.petrol?.price;
+    const diesel = fuelPrices?.diesel?.price;
+    if (petrol == null || diesel == null) return null;
     return (
       <div key={`${entity_type}-${entity_id}`} className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-green-500/20 transition-colors">
         <div className="flex justify-between items-center mb-2.5">

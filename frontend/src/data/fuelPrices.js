@@ -6,24 +6,12 @@ export const fuelPrices = {
   "petrol": {
     "price": 116.15,
     "unit": "per litre",
-    "change": 0,
-    "taxBreakup": {
-      "basePrice": 63.88,
-      "exciseDuty": 25.55,
-      "vatPercent": 17.42,
-      "dealerCommission": 9.3
-    }
+    "change": 0
   },
   "diesel": {
     "price": 104.23,
     "unit": "per litre",
-    "change": 0,
-    "taxBreakup": {
-      "basePrice": 57.33,
-      "exciseDuty": 22.93,
-      "vatPercent": 15.63,
-      "dealerCommission": 8.34
-    }
+    "change": 0
   },
   "lpgHousehold": {
     "price": 994.0,

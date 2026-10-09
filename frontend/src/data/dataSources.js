@@ -31,12 +31,6 @@ export const DATA_SOURCES = [
         notes: 'We compute the Indian AQI (CPCB method) from 24-hour PM2.5 and PM10. It is a model estimate, not a monitoring-station reading.',
     },
     {
-        dataset: 'Gold and silver rates',
-        source: 'Published Hyderabad retail rates (Live Chennai, Mint, Goodreturns)',
-        refresh: 'Twice a day',
-        notes: 'Indicative retail rates. Jewellers\' prices differ; check before you buy.',
-    },
-    {
         dataset: 'Petrol, diesel, LPG and CNG',
         source: 'Published Hyderabad retail prices (Goodreturns)',
         refresh: 'Every 6 hours',
@@ -77,4 +71,5 @@ export const CORRECTIONS = [
     { date: '2026-10-06', what: 'The panchang showed the same reading every day. It is now computed daily (TL-42).' },
     { date: '2026-10-06', what: 'AQI showed stand-in values. It now shows only a computed reading (TL-43).' },
     { date: '2026-10-09', what: 'Politician scores, ration shops, MeeSeva centres and status tracker, park crowd levels, poll results, farmer advisories, MSPs and pulses prices were invented. All removed; those pages now link to the official source (TL-44).' },
+    { date: '2026-10-09', what: 'Gold and silver rates are no longer published: they were read from retail-rate pages whose terms may not allow it. The fuel "tax breakup" was the price times fixed percentages and is removed, along with fixed fallback prices on article cards (TL-46).' },
 ];

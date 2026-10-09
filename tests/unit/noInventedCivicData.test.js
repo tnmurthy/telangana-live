@@ -65,3 +65,23 @@ describe('serverless routes', () => {
         expect(existsSync(join(__dirname, '..', '..', 'frontend', 'api', 'weather.js'))).toBe(false);
     });
 });
+
+// TL-46: gold and silver were dropped (read from retail-rate pages whose terms
+// may not allow it); the fuel "tax breakup" was the price times fixed
+// percentages; article cards fell back to fixed gold and fuel prices.
+describe('gold removal and fixed fallbacks', () => {
+    const ROOT = join(__dirname, '..', '..');
+    it('no gold data, route or workflow remains', () => {
+        for (const path of ['frontend/src/data/goldRates.js', 'frontend/api/gold-rates.js', '.github/workflows/gold_silver_update.yml']) {
+            expect(existsSync(join(ROOT, path)), path).toBe(false);
+        }
+    });
+
+    it('article cards carry no fixed prices', () => {
+        expect(read('components/ArticleModal.jsx')).not.toMatch(/143950|157040|107\.41|95\.64/);
+    });
+
+    it('the fuel sync computes no tax breakup', () => {
+        expect(readFileSync(join(ROOT, 'backend', 'scripts', 'data_engine.py'), 'utf8')).not.toMatch(/_tax_breakup|taxBreakup/);
+    });
+});

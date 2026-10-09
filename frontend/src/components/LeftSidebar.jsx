@@ -57,7 +57,7 @@ const LeftSidebar = () => (
       <div className="divider mx-3" />
 
       <SidebarSection title="Money & Rates" collapsible defaultOpen={false}>
-        <NavItem to="/rates/gold" icon={icons.rates} label="Market Rates" badge="Live" />
+        <NavItem to="/rates/fuel" icon={icons.rates} label="Fuel Prices" />
         <NavItem to="/property-tax" icon={icons.home} label="Property Tax" />
         <NavItem to="/budget" icon={<Icons.TrendingUp size="sm" />} label="Budget Tracker" />
       </SidebarSection>

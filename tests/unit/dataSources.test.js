@@ -19,7 +19,7 @@ describe('data sources page', () => {
 
     it('lists the invented-data corrections', () => {
         const text = CORRECTIONS.map((c) => c.what).join(' ');
-        for (const ticket of ['TL-40', 'TL-41', 'TL-42', 'TL-43', 'TL-44']) expect(text).toContain(ticket);
+        for (const ticket of ['TL-40', 'TL-41', 'TL-42', 'TL-43', 'TL-44', 'TL-46']) expect(text).toContain(ticket);
     });
 
     it('is linked from the footer and in the sitemap', () => {

@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { goldRates } from '../data/goldRates';
 import { fuelPrices } from '../data/fuelPrices';
 import newsData from '../data/news.json';
 import { Icons } from '../components/Icons';
@@ -10,17 +9,6 @@ export default function ContentAdminCockpit() {
 
   const contentSources = useMemo(() => {
     const sources = [];
-
-    // 1. Gold Rates
-    sources.push({
-      id: 'gold',
-      name: 'Gold & Silver Rates',
-      category: 'Finance',
-      page: '/rates/gold',
-      file: 'src/data/goldRates.js',
-      lastUpdated: goldRates.date,
-      action: 'Update rate variables and history array',
-    });
 
     // 2. Fuel Prices
     sources.push({

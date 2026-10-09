@@ -45,7 +45,6 @@ jobs:
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
         run: |
           cd backend
-          python scripts/data_engine.py --task gold
           python scripts/data_engine.py --task fuel
           python scripts/data_engine.py --task pulses
 
@@ -54,7 +53,7 @@ jobs:
         run: |
           git config --global user.name "Data Engine Bot"
           git config --global user.email "bot@telangana.live"
-          git add frontend/src/data/goldRates.js frontend/src/data/fuelPrices.js frontend/src/data/pulses.js
+          git add frontend/src/data/fuelPrices.js frontend/src/data/pulses.js
           if ! git diff --staged --quiet; then
             git commit -m "chore: Auto-update civic data [skip ci]"
             git pull --rebase origin main || (git rebase --abort && exit 0)

@@ -35,7 +35,6 @@ def _data(*parts):
 
 MODULES: list[Module] = [
     Module("fuel", _data("src", "data", "fuelPrices.js"), "updatedAt", 30),
-    Module("gold", _data("src", "data", "goldRates.js"), "date", 48),
     Module("pulses", _data("src", "data", "pulses.js"), "updatedAt", 30),
     Module("news", _data("src", "data", "news.json"), "[].published", 12),
     Module("tech_pulse", _data("public", "data", "tech_pulse.json"), "categories.*[].publishedAt", 96),

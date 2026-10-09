@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchWeather } from '../services/weatherService';
-import { fetchGoldRates, fetchFuelPrices, fetchMandiPrices } from '../services/pricesService';
+import { fetchFuelPrices, fetchMandiPrices } from '../services/pricesService';
 import { Icons } from './Icons';
-import { goldRates as staticGold } from '../data/goldRates';
 import { fuelPrices as staticFuel } from '../data/fuelPrices';
 import ProgrammaticAd from './ProgrammaticAd';
 import { useAppContext } from '../context/AppContext';
@@ -62,20 +61,9 @@ const WeatherWidget = ({ selectedDistrict = 'Hyderabad' }) => {
 
 
 const MarketWidget = () => {
-  const [goldRates, setGoldRates] = useState(staticGold);
   const [fuelPrices, setFuelPrices] = useState(staticFuel);
 
   useEffect(() => {
-    fetchGoldRates().then(data => {
-      if (data?.gold10g24k) {
-        setGoldRates(prev => ({
-          ...prev,
-          gold24k: { ...prev.gold24k, price: data.gold24k.price, change: data.gold24k.change || 0 },
-          gold10g24k: data.gold10g24k.price
-        }));
-      }
-    }).catch(() => {});
-
     fetchFuelPrices().then(data => {
       if (data?.petrol) {
         setFuelPrices(prev => ({
@@ -87,33 +75,18 @@ const MarketWidget = () => {
     }).catch(() => {});
   }, []);
 
-  const gold10g = goldRates?.gold10g24k || (goldRates?.gold24k?.price ? goldRates.gold24k.price * 10 : 0);
-  const goldPer10g = gold10g.toLocaleString('en-IN');
   const petrol = fuelPrices?.petrol;
   const diesel = fuelPrices?.diesel;
 
   return (
     <div className="widget-card hover-lift-gold">
       <div className="flex justify-between items-center pb-3 mb-3 border-b border-white/[0.06]">
-        <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted">Market Rates</h4>
+        <h4 className="text-[10px] font-bold uppercase tracking-[0.15em] text-text-muted">Fuel Prices</h4>
         <span className="badge-live bg-heritage-gold/10 text-heritage-gold border border-heritage-gold/20">
           <span className="w-1.5 h-1.5 rounded-full bg-heritage-gold animate-pulse-live"></span>
           Live
         </span>
       </div>
-
-      {/* Gold */}
-      <div className="flex justify-between items-end mb-3.5">
-        <div className="flex flex-col gap-0.5">
-          <span className="text-[9px] text-text-muted font-semibold uppercase tracking-wider">Gold 24K / 10g</span>
-          <span className="text-xl font-black gold-text tracking-tight leading-none">₹{goldPer10g}</span>
-        </div>
-        <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-success/10">
-          <span className="text-[10px] font-bold text-success uppercase">Steady</span>
-        </div>
-      </div>
-
-      <div className="divider mb-3.5"></div>
 
       {/* Fuel */}
       <div className="grid grid-cols-2 gap-4">

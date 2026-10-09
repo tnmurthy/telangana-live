@@ -51,13 +51,13 @@ Whether you are planning a trip, managing agricultural schedules, or checking fo
 We also provide a detailed tax structure breakdown, displaying base prices, excise duties, dealer commissions, and VAT percentages. By keeping these metrics transparent, our portal enables consumers to understand the pricing components of everyday utilities. Read related news alerts regarding oil price fluctuations and local supply logistics.`
   },
   '/rates/gold': {
-    title: 'Live Gold Rates in Hyderabad - 22K & 24K Gold Price - Telangana.live',
-    description: 'Check current gold rates in Hyderabad today for 22 Karat and 24 Karat gold. Daily silver price history and buyer guides.',
-    h1: 'Hyderabad Gold & Silver Price Index',
-    h2s: ['Today\'s 22K and 24K Gold Prices', 'Live Silver Rate per Gram', 'Market History & Buyer Guidelines'],
-    content: `Access standard, live gold and silver rates in Hyderabad. Our multi-source consensus engine retrieves and validates retail gold prices for 22 Carat and 24 Carat gold (per gram and per 10 grams) along with standard silver prices daily. This guarantees that you are viewing the most reliable market index before making purchases.
+    title: 'Gold & Silver Rates in Hyderabad - Telangana.live',
+    description: 'Where to check the gold and silver reference rate in Hyderabad, and what to ask your jeweller before you buy.',
+    h1: 'Gold & Silver Rates in Hyderabad',
+    h2s: ['Before you buy'],
+    content: `We don't publish our own gold or silver rates. The India Bullion and Jewellers Association (IBJA) publishes daily reference rates that many jewellers use as a benchmark.
 
-In addition to live rates, we maintain a 7-day historical price table to show recent market trends and daily price fluctuations. Our daily buyer's guide details seasonal patterns, GST implications, and retail buying tips, helping you make informed financial decisions when purchasing jewelry or bullion in Telangana.`
+Retail prices are the reference rate plus making charges, which vary by jeweller and design. GST of 3% applies to the value of gold jewellery, and making charges attract GST separately. Ask for a BIS hallmark (HUID) on every piece.`
   },
   '/reservoirs': {
     title: 'Telangana Reservoir Levels - Live Dam Storage Capacity - Telangana.live',
@@ -440,7 +440,7 @@ function prerenderRoute(routePath, meta) {
           <ul>
             <li><a href="https://www.telangana.live/dashboard">Civic Intelligence Dashboard</a></li>
             <li><a href="https://www.telangana.live/news">Live Municipal News & Briefings</a></li>
-            <li><a href="https://www.telangana.live/rates/gold">Today's Gold & Silver Rates in Hyderabad</a></li>
+            <li><a href="https://www.telangana.live/rates/gold">Gold & Silver Rates in Hyderabad</a></li>
             <li><a href="https://www.telangana.live/rates/fuel">Current Petrol & Diesel Prices in Telangana</a></li>
             <li><a href="https://www.telangana.live/schemes">Telangana Government Schemes Directory</a></li>
             <li><a href="https://www.telangana.live/emergency-contacts">Emergency Helplines & SOS Contacts</a></li>
