@@ -56,3 +56,12 @@ describe('invented civic data stays out', () => {
         }
     });
 });
+
+// /api/weather answered with fixed values (35°C, AQI 180) stamped with the
+// current time whenever its key was missing, which was always. Nothing on the
+// site called it; it is removed.
+describe('serverless routes', () => {
+    it('the stand-in weather route is gone', () => {
+        expect(existsSync(join(__dirname, '..', '..', 'frontend', 'api', 'weather.js'))).toBe(false);
+    });
+});
