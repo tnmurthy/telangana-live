@@ -22,9 +22,7 @@ export default function BasthiDawakhana({ region, variant = 'default' }) {
                     "addressLocality": d.area,
                     "addressRegion": "Telangana",
                     "addressCountry": "IN"
-                },
-                "telephone": d.phone,
-                "openingHours": "Mo-Sa 09:00-16:00"
+                }
             }
         }));
 
@@ -108,10 +106,14 @@ export default function BasthiDawakhana({ region, variant = 'default' }) {
                                         'bg-green-500/15 text-green-300'
                                 }`}>{d.zone === 'hyderabad' ? 'GHMC' : d.zone === 'cyberabad' ? 'CMC' : 'MMC'}</span>
                         </div>
-                        <div className="flex items-center justify-between text-xs">
-                            <span className="text-text-muted">🕐 {d.timings}</span>
-                            <a href={`tel:${d.phone}`} className="text-heritage-gold hover:underline font-medium">📞 {d.phone}</a>
-                        </div>
+                        <a
+                            href={`https://www.google.com/maps/search/${encodeURIComponent(d.name)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-heritage-gold hover:underline font-medium"
+                        >
+                            Find on Maps ↗
+                        </a>
                     </div>
                 ))}
                 {filtered.length === 0 && (

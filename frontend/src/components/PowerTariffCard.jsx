@@ -1,20 +1,16 @@
-import { useState } from 'react';
-import { powerTariff } from '../data/alerts';
-import { Card, CardHeader, CategoryList } from './LocalPulse';
+import { Card, CardHeader } from './LocalPulse';
 
+// The card listed per-unit rates, effective "2026-03-01", that were not taken
+// from a tariff order (TL-47). It now points to the regulator and the
+// distribution company.
 export default function PowerTariffCard({ variant = 'default' }) {
-    const [expanded, setExpanded] = useState(false);
-    const categories = powerTariff.categories.map((category, index) => ({ ...category, hot: index < 2 }));
-
-    if (variant === 'district') {
-        return <Card accent="orange" className="animate-fade-in h-full">
-            <CardHeader icon="⚡" title="Power & Tariffs" subtitle={`TSSPDCL / TSNPDCL · ${categories.length} categories`} status={`Eff. ${powerTariff.lastUpdated}`} />
-            <CategoryList items={categories} expanded={expanded} onToggle={() => setExpanded((value) => !value)} />
-        </Card>;
-    }
-
     return <Card accent="orange" className="animate-fade-in h-full">
-        <CardHeader icon="⚡" title="TS Power Tariff" subtitle="TSSPDCL / TSNPDCL" status={powerTariff.lastUpdated} />
-        <CategoryList items={categories} expanded={expanded} onToggle={() => setExpanded((value) => !value)} />
+        <CardHeader icon="⚡" title={variant === 'district' ? 'Power & Tariffs' : 'Power Tariff'} subtitle="TGERC / TGSPDCL" />
+        <p className="text-[12px] text-text-secondary">
+            Current tariffs are set by the{' '}
+            <a href="https://tgerc.telangana.gov.in/" target="_blank" rel="noopener noreferrer" className="underline">Electricity Regulatory Commission</a>.
+            Pay bills and report outages with{' '}
+            <a href="https://www.tgsouthernpower.org/" target="_blank" rel="noopener noreferrer" className="underline">TGSPDCL</a> or call 1912.
+        </p>
     </Card>;
 }

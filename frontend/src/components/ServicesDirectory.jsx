@@ -74,7 +74,6 @@ function ServiceCard({ service, onExpand, isExpanded, variant = 'default' }) {
                                                 }`}>
                                                 {item.type}
                                             </span>
-                                            {item.rating && <div className="text-xs text-heritage-gold mt-1 font-semibold">★ {item.rating}</div>}
                                         </div>
                                     </div>
                                 </div>

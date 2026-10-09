@@ -64,7 +64,6 @@ class CivicServicesAPI {
                 area: 'Online Portal',
                 type: 'Government',
                 url: service.url,
-                rating: 5.0
             });
             grouped[catKey].count += 1;
         });

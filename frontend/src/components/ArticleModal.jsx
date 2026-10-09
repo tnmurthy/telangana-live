@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
-import transitStatus from '../data/transit_status.json';
 import { metroData, basthiDawakhanas } from '../data/transportData';
 import waterLevels from '../data/water_levels.json';
 import { weatherData } from '../data/weatherData';
@@ -13,21 +12,11 @@ function renderCivicWidget(entity_type, entity_id) {
     if (!line) return null;
     return (
       <div key={`${entity_type}-${entity_id}`} className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] hover:border-blue-500/20 transition-colors">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: line.color }} />
-            <span className="text-xs font-bold text-white">{line.name}</span>
-          </div>
-          <span className="text-[9px] px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 font-semibold border border-blue-500/20 uppercase tracking-wider">Metro</span>
+        <div className="flex items-center gap-2 mb-1">
+          <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: line.color }} />
+          <span className="text-xs font-bold text-white">{line.name}</span>
         </div>
-        <p className="text-[10px] text-text-secondary mb-2">{line.route}</p>
-        <div className="h-1 bg-white/10 rounded-full overflow-hidden mb-1">
-          <div className="h-full rounded-full" style={{ width: `${line.crowdLevel}%`, backgroundColor: line.crowdLevel > 75 ? '#EF4444' : line.crowdLevel > 50 ? '#EAB308' : '#22C55E' }} />
-        </div>
-        <div className="flex justify-between text-[8px] text-text-muted">
-          <span>Crowd: {line.crowdLabel}</span>
-          <span>Peak: {line.peakHours}</span>
-        </div>
+        <p className="text-[10px] text-text-secondary">{line.route}</p>
       </div>
     );
   }
@@ -98,16 +87,9 @@ function renderCivicWidget(entity_type, entity_id) {
           </div>
           <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-semibold border border-emerald-500/20 uppercase tracking-wider shrink-0">Health Clinic</span>
         </div>
-        <div className="grid grid-cols-2 gap-2 text-[9px] mt-1.5">
-          <div className="p-1 rounded bg-white/[0.02] border border-white/5">
-            <span className="text-text-muted block text-[8px] uppercase font-bold">Timings</span>
-            <span className="text-white font-bold">{clinic.timings}</span>
-          </div>
-          <div className="p-1 rounded bg-white/[0.02] border border-white/5">
-            <span className="text-text-muted block text-[8px] uppercase font-bold">Contact</span>
-            <a href={`tel:${clinic.phone}`} className="text-heritage-gold font-bold hover:underline">{clinic.phone}</a>
-          </div>
-        </div>
+        <a href={`https://www.google.com/maps/search/${encodeURIComponent(clinic.name)}`} target="_blank" rel="noopener noreferrer" className="text-[9px] text-heritage-gold font-bold hover:underline">
+          Find on Maps ↗
+        </a>
       </div>
     );
   }

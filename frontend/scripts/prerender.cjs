@@ -33,13 +33,13 @@ Access step-by-step guides for applying to government welfare schemes, calculati
 Our feed updates continuously throughout the day, filtering content by region and category. We track topics such as municipal governance, local administration, public safety warnings, environmental notices, and cultural events. Our goal is to ensure that residents across Secunderabad, Hyderabad, and all other districts have a central, transparent place to access daily public updates.`
   },
   '/weather': {
-    title: 'Telangana Weather Forecast & Rain Reports - Telangana.live',
-    description: 'Check today\'s temperature, rain forecast, and 30-day weather outlook for Hyderabad and all Telangana districts.',
-    h1: 'Telangana Weather Monitoring & Outlook Dashboard',
-    h2s: ['Today\'s Temperature & Rain Outlook', '30-Day Monthly Forecast', 'District Weather Warnings'],
-    content: `Stay prepared with the most accurate, real-time weather monitoring and outlook dashboard for the state of Telangana. We provide comprehensive daily forecasts, rain probabilities, humidity ranges, and wind speeds across all 33 districts. Our automated system retrieves updates frequently from meteorological sensors and official agencies, presenting plain, actionable weather guidelines for citizens.
+    title: "Weather in Telangana - Telangana.live",
+    description: "Current temperature, humidity, wind and air quality for every Telangana district, updated hourly.",
+    h1: "Weather in Telangana",
+    h2s: ["Current conditions", "Air quality"],
+    content: `Current temperature, humidity, wind and air quality for each of Telangana's 33 districts, from Open-Meteo, updated every hour. Air quality is the Indian AQI (CPCB method) computed from the Open-Meteo air-quality model, a model estimate rather than a monitoring-station reading.
 
-Whether you are planning a trip, managing agricultural schedules, or checking for extreme heatwave or heavy rainfall alerts in your local area, our dashboard makes it simple. We offer a 7-day detailed view and a 30-day monthly outlook, complete with seasonal safety advisories to protect you and your family from extreme weather conditions.`
+For forecasts and heat or rain warnings, see the India Meteorological Department's Hyderabad centre.`
   },
   '/rates/fuel': {
     title: 'Current Petrol & Diesel Prices in Hyderabad - Telangana.live',
@@ -87,13 +87,11 @@ Our directory includes major initiatives such as Rythu Bandhu, Gruha Jyothi, Kal
 This directory covers police control rooms, women\'s safety lines, child protection services, electricity outage reports, and water board emergency desks. Keep these numbers saved for quick access. You can filter contacts by your specific district or municipal ward for hyper-local emergency support.`
   },
   '/jobs': {
-    title: 'Telangana Jobs - Recruitment Notifications & Official Portals - Telangana.live',
-    description: 'Open recruitment notifications for Telangana with their closing dates, and links to official recruitment portals: TSPSC, TSLPRB, TSGENCO, RRB, UPSC, IBPS and more.',
-    h1: 'Telangana Jobs Board',
-    h2s: ['Open notifications', 'Official recruitment portals'],
-    content: `Recruitment notifications relevant to Telangana are listed with their closing date and a link to the official notice, and each one is removed once its closing date has passed.
-
-The board also links to the official recruitment portals for state and central bodies, including TSPSC, Telangana Police, TSGENCO, TSTransco, RRB Secunderabad, UPSC, IBPS and SBI, so you can check the source for new notifications.`
+    title: "Government Jobs in Telangana - Telangana.live",
+    description: "Where to find current TGPSC, police and central government job notifications for Telangana.",
+    h1: "Government Jobs in Telangana",
+    h2s: ["Where to check notifications"],
+    content: `Notifications, dates and vacancies change often, so check them on the recruiting body's own site. TGPSC publishes Group I to IV and other state recruitment; the Telangana Police Recruitment Board publishes constable and sub-inspector recruitment; the National Career Service lists central and private openings.`
   },
   '/services': {
     title: 'Telangana Civic Services Directory & MeeSeva Guide - Telangana.live',
@@ -105,13 +103,11 @@ The board also links to the official recruitment portals for state and central b
 Our directory bundles services by citizen intent (such as starting a business or moving to a new home) rather than department. Read detailed walkthroughs for obtaining birth certificates, paying power or water bills, calculating property tax, and applying for building approvals. All guides include links to official transaction pages.`
   },
   '/transport/metro': {
-    title: 'Hyderabad Metro Timings, Routes & Smart Card Guide - Telangana.live',
-    description: 'Get the latest Hyderabad Metro timings, route map, ticket fare calculator, and smart card recharge guidelines.',
-    h1: 'Hyderabad Metro Transit Information Hub',
-    h2s: ['Metro Route Map & Station List', 'Fare Calculator & Ticket Prices', 'First and Last Train Schedules'],
-    content: `Check current schedules, routes, and fare details for the Hyderabad Metro Rail network. Metro rail is the fastest public transport option in the tri-cities. Our portal provides a mobile-friendly directory of the Red, Blue, and Green lines, along with terminal station operating hours and ticket calculators.
-
-Understand how to purchase and recharge smart cards, buy single-journey tokens, and use QR-based tickets to save time. We also compile notifications about transit delays, service expansions, and local feeder bus connections, ensuring your daily commute remains smooth and predictable.`
+    title: "Getting Around Hyderabad: Metro, Bus & MMTS - Telangana.live",
+    description: "Hyderabad Metro lines and where to check metro, TGSRTC bus and MMTS timings.",
+    h1: "Getting Around Hyderabad",
+    h2s: ["Metro lines", "Timings and fares"],
+    content: `Hyderabad Metro runs three lines: the Red Line (Miyapur to LB Nagar), the Blue Line (Nagole to Raidurg) and the Green Line (JBS to MGBS). Timings and fares are published by Hyderabad Metro, city bus routes by TGSRTC, and the MMTS timetable by South Central Railway.`
   },
   '/health/basthi-dawakhana': {
     title: 'Basthi Dawakhana Locator & Public Clinics Directory - Telangana.live',
@@ -141,13 +137,11 @@ Every story links to the outlet that reported it and shows when it was published
 Every paid placement is labelled Sponsored, current visitor figures are shared before payment, and no ads run on emergency pages. Send an enquiry from this page and we will reply.`
   },
   '/water-supply': {
-    title: 'Telangana Water Supply Schedule & Tanker Booking - Telangana.live',
-    description: 'Track municipal water supply timings, water board reservoir storage, and book drinking water tankers online.',
-    h1: 'Telangana Municipal Water Supply Directory',
-    h2s: ['Drinking Water Supply Timings', 'Online Water Tanker Booking Guide', 'HMWS&SB Helpline & Service Desk'],
-    content: `Track municipal drinking water supply schedules and manage booking transactions in Hyderabad and major towns in Telangana. Clean water supply is managed at scheduled intervals; our guide helps you stay prepared by outlining distribution timings and pressure updates for your municipal circle.
-
-Learn how to book drinking water tankers online, track tanker delivery status, and resolve billing issues with the water board (HMWS&SB). Access service helplines and read recommendations on water conservation, rainwater harvesting, and municipal pipe connection approvals.`
+    title: "Water Supply in Hyderabad - Telangana.live",
+    description: "Where to check HMWSSB water supply schedules, register complaints and pay water bills.",
+    h1: "Water Supply",
+    h2s: ["HMWSSB"],
+    content: `Supply timings, complaints and new connections in Hyderabad are handled by the Hyderabad Metropolitan Water Supply and Sewerage Board (HMWSSB). Its customer care number is 155313.`
   },
   '/ration-pds': {
     title: 'Telangana Ration PDS Card FSC Search & Eligibility - Telangana.live',
@@ -159,13 +153,11 @@ Learn how to book drinking water tankers online, track tanker delivery status, a
 Read detailed guides on applying for a new white ration card, correcting card details, and adding family members. We also list fair price shops and PDS dealers by mandal and village, ensuring you can locate distribution centers and understand your monthly allocation rights.`
   },
   '/events': {
-    title: 'Telangana Events Calendar & Public Holidays - Telangana.live',
-    description: 'Check upcoming cultural festivals, state public holidays, municipal meetings, and community events in Telangana.',
-    h1: 'Telangana Regional Events & Holiday Calendar',
-    h2s: ['State Government Public Holidays', 'Regional Festivals & Cultural Calendars', 'Civic Meetings & Public Forums'],
-    content: `Stay updated on regional festivals, public holidays, and civic events in Telangana. Our state calendar keeps track of official government holidays, banking shutdowns, and local municipal forums, helping you plan administrative visits and community engagements.
-
-We cover major regional and national celebrations including Bonalu, Bathukamma, Dasara, and Ramzan, listing local events, public transport schedules, and road closures. Find public forums, townhall meetings, and community gatherings to participate in local civic conversations.`
+    title: "Holidays & Festivals in Telangana - Telangana.live",
+    description: "Where to find Telangana's notified public and optional holidays.",
+    h1: "Holidays & Festivals",
+    h2s: ["Notified holidays"],
+    content: `The Telangana General Administration Department publishes the year's public and optional holidays as a government order on the state portal. Check it before you plan around a date. Our panchang page shows tithi, nakshatra and festival days computed daily for Hyderabad.`
   },
   '/panchang': {
     title: 'Daily Telangana Panchang & Almanac Timings - Telangana.live',
@@ -177,13 +169,11 @@ We cover major regional and national celebrations including Bonalu, Bathukamma, 
 View current Tithi, Nakshatra, Yoga, and Karana, along with auspicious times (Abhijit Muhurat) and times to avoid (Rahukalam, Yamagandam). We calculate sunrise and sunset times specific to regional latitudes, providing an accurate reference for daily calendars.`
   },
   '/budget': {
-    title: 'Telangana State Budget Tracker & Public Finance - Telangana.live',
-    description: 'Track state budget allocations, civic development spend, and sector-wise revenue utilization in Telangana.',
-    h1: 'Telangana Public Finance & Budget Tracker',
-    h2s: ['Annual Budget Allocations', 'Civic Spend & Infrastructure Funding', 'Welfare Program Disbursements'],
-    content: `Track annual budget allocations and analyze public finance distributions in the state of Telangana. Transparent public spending is key to development; we summarize the state budget to show where taxpayer money is allocated across infrastructure, education, health, and welfare.
-
-Review charts of department spending (including irrigation, power, municipal administration, and welfare). Compare annual allocations, track public debt records, and read analyses of how these financial plans impact regional civic amenities and local municipal projects.`
+    title: "Telangana Budget - Telangana.live",
+    description: "Where to read Telangana's budget documents and an independent analysis.",
+    h1: "Telangana Budget",
+    h2s: ["Budget documents"],
+    content: `The Finance Department of Telangana publishes the state budget documents, allocations and statements. PRS Legislative Research publishes a plain-language analysis of each state budget.`
   },
   '/politicians': {
     title: 'Telangana MLA / MP Constituency & Profile Tracker - Telangana.live',
@@ -195,13 +185,11 @@ Review charts of department spending (including irrigation, power, municipal adm
 Review constituency reports summarizing completed infrastructure works, pending road repairs, water supply expansions, and municipal funding. Access public disclosures and election declarations to ensure transparency and accountability in local administration.`
   },
   '/property-tax': {
-    title: 'GHMC Property Tax Calculator & Payment Guide - Telangana.live',
-    description: 'Calculate municipal property tax, pay online, search assessments, and check dues on GHMC portal.',
-    h1: 'Telangana Municipal Property Tax Guide',
-    h2s: ['Online Property Tax Calculator', 'Step-by-step Payment Guide', 'Assessment Status & Receipt Download'],
-    content: `Calculate and pay your municipal property tax online in Hyderabad and other municipalities in Telangana. Property tax is a main revenue source for municipal services; our guide simplifies the annual assessment and payment process on official platforms (GHMC, CDMA).
-
-Use our tax calculator helper to estimate dues based on property dimensions, construction type, and usage (residential or commercial). Read guides on self-assessment, updating ownership records, finding tax assessment numbers (PTIN), and downloading payment receipts online.`
+    title: "GHMC Property Tax - Telangana.live",
+    description: "How to check and pay GHMC property tax in Hyderabad.",
+    h1: "Property Tax",
+    h2s: ["Pay on the GHMC site"],
+    content: `Check and pay GHMC property tax, and file a self-assessment, on the corporation's website. Our step-by-step guide explains the process.`
   },
   '/report': {
     title: 'Civic Complaint Register & Reporting Desk - Telangana.live',

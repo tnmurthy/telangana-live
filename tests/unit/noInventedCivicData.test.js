@@ -85,3 +85,35 @@ describe('gold removal and fixed fallbacks', () => {
         expect(readFileSync(join(ROOT, 'backend', 'scripts', 'data_engine.py'), 'utf8')).not.toMatch(/_tax_breakup|taxBreakup/);
     });
 });
+
+// TL-47: a random-number "30-day forecast", invented budget, tax rates, jobs,
+// water timings, wards, holidays, tariffs, metro crowding, a "live" bus crowd
+// meter, patterned clinic phone numbers and hospital star ratings.
+describe('TL-47 invented datasets', () => {
+    const ROOT = join(__dirname, '..', '..');
+    it('the removed data files are gone', () => {
+        for (const name of ['weatherForecastData.js', 'budgetData.js', 'propertyTaxData.js', 'jobsData.js', 'waterSupplyData.js', 'calendarData.js', 'wardData.js', 'alerts.js', 'transit_status.json']) {
+            expect(existsSync(join(SRC, 'data', name)), name).toBe(false);
+        }
+    });
+
+    it('no page generates weather from random numbers', () => {
+        expect(read('pages/WeatherForecastPage.jsx')).not.toMatch(/seededRand|Math\.random|weatherForecastData/);
+    });
+
+    it('metro and clinic data carry no crowd levels or phone numbers', () => {
+        const transport = read('data/transportData.js');
+        expect(transport).not.toMatch(/crowdLevel:|phone:|timings:|ridership2026:/);
+        expect(read('components/BasthiDawakhana.jsx')).not.toMatch(/telephone|d\.phone/);
+    });
+
+    it('hospital and portal listings carry no star ratings', () => {
+        expect(read('data/services.js')).not.toMatch(/rating:/);
+        expect(read('services/civicServicesAPI.js')).not.toMatch(/rating:/);
+    });
+
+    it('freshness checks no longer watch removed files', () => {
+        const fresh = readFileSync(join(ROOT, 'backend', 'scripts', 'check_freshness.py'), 'utf8');
+        expect(fresh).not.toMatch(/goldRates|transit_status/);
+    });
+});
