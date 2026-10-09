@@ -72,11 +72,9 @@ secrets at the new project, and redeploy. Migrations live in
 User data held (2026-10-09): `citizen_reports` 0 rows, `smart_classifieds`
 0, `ad_enquiries` 0. `news_articles` holds about 1,600 rows of headlines.
 
-Eight tables in the `telangana` schema have Row Level Security off
-(`districts`, `constituencies`, `schemes`, `tenders`, `news_items`,
-`grievances`, `budget_heads`, `scraper_log`). The `anon` and `authenticated`
-roles have no grants on them, so they are not reachable from the browser;
-enable RLS anyway before handover.
+Row Level Security is on for every table in the `telangana` schema (the
+last eight were enabled on 2026-10-09,
+`supabase/migrations/20261009_telangana_enable_rls.sql`).
 
 ## Verify after transfer
 
