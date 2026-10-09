@@ -149,7 +149,7 @@ export default function SchemesPage() {
                     <div className="flex items-center gap-2 text-xs text-text-muted">
                       <span>📅 Since {scheme.launchedYear}</span>
                       <span>•</span>
-                      <span>👥 {scheme.beneficiaries}</span>
+                      {scheme.beneficiaries && <span>👥 {scheme.beneficiaries}</span>}
                     </div>
                     <a
                       href={scheme.applyUrl}

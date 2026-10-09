@@ -4,7 +4,6 @@ data_engine.py — Telangana.live data sync engine
 Usage:
   python scripts/data_engine.py --task fuel
   python scripts/data_engine.py --task pulses
-  python scripts/data_engine.py --task ai_pulse
   python scripts/data_engine.py --task alerts
   python scripts/data_engine.py --finance-only   (runs fuel + pulses)
 """
@@ -49,7 +48,6 @@ PATHS = {
     "fuel":   os.path.join(DATA_DIR, "fuelPrices.js"),
     "pulses": os.path.join(DATA_DIR, "pulses.js"),
     "news":   os.path.join(DATA_DIR, "news.json"),
-    "ai":     os.path.join(DATA_DIR, "aiBriefingData.js"),
     "weather": os.path.join(DATA_DIR, "weatherData.js"),
     "alerts":        os.path.join(DATA_DIR, "alerts.json"),
     # DATA_DIR is frontend/src/data, so the public dir is two levels up, not one.
@@ -383,7 +381,7 @@ def sync_news():
 # Regex-first classification (cheap, reliable, no dependency). AI is used only
 # as an OPTIONAL confidence check for the more ambiguous alert types, and only
 # if the LLM provider is actually available — alerts must never depend on AI
-# being online, matching the graceful-degradation pattern used by sync_ai_pulse().
+# being online, degrading gracefully when it is not.
 ALERT_TOPIC_QUERIES = [
     "Telangana flood warning",
     "Hyderabad road closed traffic diversion",
@@ -549,249 +547,16 @@ def sync_alerts():
     return all_alerts
 
 
-# ── AI PULSE / BRIEFING ───────────────────────────────────────────────────────
-def sync_ai_pulse():
-    print("Syncing AI Pulse briefing...")
-    now_formatted = datetime.datetime.now(IST).strftime("%B %d, %Y")
-    placeholder = _placeholder_briefing()
-    briefing = placeholder
-
-    context_headlines = []
-    try:
-        feeds_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources", "feeds.json")
-        if os.path.exists(feeds_file):
-            with open(feeds_file, "r") as f:
-                feeds_data = json.load(f)
-                tech_feeds = feeds_data.get("tech_ai", [])
-                for f_meta in tech_feeds:
-                    f_parsed = feedparser.parse(f_meta["url"])
-                    for entry in f_parsed.entries[:5]:
-                        context_headlines.append(entry.get("title", ""))
-    except Exception as e:
-        print(f"  ⚠️ Failed to fetch feed context: {e}")
-
-    if llm:
-        try:
-            prompt = (
-                "You are the Telangana.live AI Daily Pulse agent. "
-                "Based on these recent headlines, generate a daily AI pulse briefing in JSON format. "
-                f"Headlines: {', '.join(context_headlines[:15])}\n\n"
-                "Format as a JSON object matching this schema exactly:\n"
-                "{\n"
-                '  "date": "May 21, 2026",\n'
-                '  "executiveBrief": [\n'
-                '    {\n'
-                '      "id": "coding",\n'
-                '      "trend": "up",\n'
-                '      "title": "Coding & Intelligence",\n'
-                '      "description": "Short summary of latest coding model advances (e.g., Claude 3.5 Sonnet, GPT-4o updates).",\n'
-                '      "gainedGround": "Name of the leading model"\n'
-                '    },\n'
-                '    {\n'
-                '      "id": "context",\n'
-                '      "trend": "stable",\n'
-                '      "title": "Context & Reasoning",\n'
-                '      "description": "Short summary of context or reasoning advances.",\n'
-                '      "gainedGround": "Name of the leading model"\n'
-                '    },\n'
-                '    {\n'
-                '      "id": "compute",\n'
-                '      "trend": "alert",\n'
-                '      "title": "Compute & Spend",\n'
-                '      "description": "Short summary of pricing warfare or spend updates.",\n'
-                '      "gainedGround": "Model or provider gaining pricing advantage"\n'
-                '    }\n'
-                '  ],\n'
-                '  "deprecations": [\n'
-                '    {\n'
-                '      "model": "deprecated-model-name",\n'
-                '      "date": "YYYY-MM-DD",\n'
-                '      "replacement": "replacement-model-name",\n'
-                '      "provider": "ProviderName"\n'
-                '    }\n'
-                '  ],\n'
-                '  "comparisonStats": [\n'
-                '    {\n'
-                '      "model": "Claude 3.5 Sonnet",\n'
-                '      "provider": "Anthropic",\n'
-                '      "color": "bg-orange-500",\n'
-                '      "status": "Active",\n'
-                '      "codingScore": "92.0%",\n'
-                '      "agenticScore": "89.0%",\n'
-                '      "contextWindow": "200K",\n'
-                '      "pricePer1M": "$3.00 / $15.00",\n'
-                '      "priceChange": -0.15\n'
-                '    },\n'
-                '    {\n'
-                '      "model": "GPT-4o",\n'
-                '      "provider": "OpenAI",\n'
-                '      "color": "bg-green-500",\n'
-                '      "status": "Updated",\n'
-                '      "codingScore": "90.2%",\n'
-                '      "agenticScore": "87.5%",\n'
-                '      "contextWindow": "128K",\n'
-                '      "pricePer1M": "$5.00 / $15.00",\n'
-                '      "priceChange": 0.0\n'
-                '    },\n'
-                '    {\n'
-                '      "model": "Gemini 1.5 Pro",\n'
-                '      "provider": "Google",\n'
-                '      "color": "bg-blue-500",\n'
-                '      "status": "Active",\n'
-                '      "codingScore": "86.5%",\n'
-                '      "agenticScore": "85.2%",\n'
-                '      "contextWindow": "2M",\n'
-                '      "pricePer1M": "$3.50 / $10.50",\n'
-                '      "priceChange": -0.50\n'
-                '    },\n'
-                '    {\n'
-                '      "model": "Llama 3.1 405B",\n'
-                '      "provider": "Meta (Open Source)",\n'
-                '      "color": "bg-purple-500",\n'
-                '      "status": "Active",\n'
-                '      "codingScore": "85.0%",\n'
-                '      "agenticScore": "81.0%",\n'
-                '      "contextWindow": "128K",\n'
-                '      "pricePer1M": "$2.66 / $2.66",\n'
-                '      "priceChange": -0.20\n'
-                '    }\n'
-                '  ]\n'
-                "}\n"
-                "Return ONLY the raw JSON object. Do not include markdown code block syntax."
-            )
-
-            # Use local Ollama (phi4-mini:latest) as requested by user
-            # Fallback to gemini if ollama fails or is not selected in config
-            resp = llm.generate(
-                prompt=prompt, 
-                provider="ollama", 
-                model="phi4-mini:latest",
-                system_prompt="You are a helpful assistant that outputs ONLY JSON."
-            )
-            
-            text = resp.get("text", "")
-            if text:
-                text = text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-                parsed = json.loads(text)
-                # Ensure all required keys exist
-                if all(k in parsed for k in ("executiveBrief", "deprecations", "comparisonStats")):
-                    briefing.update(parsed)
-                    briefing["date"] = now_formatted
-                    briefing["updatedAt"] = NOW
-                    print("  ✅ Ollama (phi4-mini:latest) AI briefing generated with live context")
-                else:
-                    raise ValueError("JSON missing required schema keys")
-            else:
-                raise ValueError("LLM returned empty text")
-        except Exception as e:
-            print(f"  ⚠️ LLM failed ({e}), using placeholder")
-    else:
-        print("  ℹ️ LLMProvider not available — using placeholder content")
-
-    # Never publish the placeholder: it presented 2024 models and invented
-    # scores as "today's" briefing whenever the LLM was unavailable, which in
-    # GitHub Actions is always (TL-17, docs/DATA_STANDARDS.md rule 1).
-    if briefing is placeholder:
-        print("  ⚠️ No generated briefing; leaving aiBriefingData.js unchanged.")
-        return briefing
-    write_js("aiBriefingData.js", "aiBriefingData", briefing)
-
-
-def _placeholder_briefing():
-    now_formatted = datetime.datetime.now(IST).strftime("%B %d, %Y")
-    return {
-        "updatedAt": NOW,
-        "date": now_formatted,
-        "executiveBrief": [
-            {
-                "id": "coding",
-                "trend": "up",
-                "title": "Coding & Intelligence",
-                "description": "Claude 3.5 Sonnet remains the developer favorite with superior code generation and refactoring, but GPT-4o is catching up with recent optimization updates.",
-                "gainedGround": "Claude 3.5 Sonnet"
-            },
-            {
-                "id": "context",
-                "trend": "stable",
-                "title": "Context & Reasoning",
-                "description": "Gemini 1.5 Pro dominates context-heavy workloads with its massive 2M token window, proving highly efficient for large codebase analysis.",
-                "gainedGround": "Gemini 1.5 Pro"
-            },
-            {
-                "id": "compute",
-                "trend": "alert",
-                "title": "Compute & Spend",
-                "description": "Google shifts Gemini from message limits to a compute-based model based on task weight (minutes), as pricing wars continue and API costs drop.",
-                "gainedGround": "Google Gemini"
-            }
-        ],
-        "deprecations": [
-            {
-                "model": "gpt-4-0314",
-                "date": "2026-06-15",
-                "replacement": "gpt-4o",
-                "provider": "OpenAI"
-            },
-            {
-                "model": "claude-2.0",
-                "date": "2026-08-01",
-                "replacement": "claude-3-5-sonnet",
-                "provider": "Anthropic"
-            }
-        ],
-        "comparisonStats": [
-            {
-                "model": "Claude 3.5 Sonnet",
-                "provider": "Anthropic",
-                "color": "bg-orange-500",
-                "status": "Active",
-                "codingScore": "92.0%",
-                "agenticScore": "89.0%",
-                "contextWindow": "200K",
-                "pricePer1M": "$3.00 / $15.00",
-                "priceChange": -0.15
-            },
-            {
-                "model": "GPT-4o",
-                "provider": "OpenAI",
-                "color": "bg-green-500",
-                "status": "Updated",
-                "codingScore": "90.2%",
-                "agenticScore": "87.5%",
-                "contextWindow": "128K",
-                "pricePer1M": "$5.00 / $15.00",
-                "priceChange": 0.0
-            },
-            {
-                "model": "Gemini 1.5 Pro",
-                "provider": "Google",
-                "color": "bg-blue-500",
-                "status": "Active",
-                "codingScore": "86.5%",
-                "agenticScore": "85.2%",
-                "contextWindow": "2M",
-                "pricePer1M": "$3.50 / $10.50",
-                "priceChange": -0.50
-            },
-            {
-                "model": "Llama 3.1 405B",
-                "provider": "Meta (Open Source)",
-                "color": "bg-purple-500",
-                "status": "Active",
-                "codingScore": "85.0%",
-                "agenticScore": "81.0%",
-                "contextWindow": "128K",
-                "pricePer1M": "$2.66 / $2.66",
-                "priceChange": -0.20
-            }
-        ]
-    }
+# The "AI briefing" (aiBriefingData.js) was written by a small local model
+# asked to produce comparison stats and prices; nothing on the site showed it
+# and no workflow ran it. Removed (TL-48). The tech pulse comes from
+# tech_pulse.py and sync_ai_pulse_news.py instead.
 
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--task", choices=["fuel", "pulses", "ai_pulse", "news", "alerts"])
+    parser.add_argument("--task", choices=["fuel", "pulses", "news", "alerts"])
     parser.add_argument("--finance-only", action="store_true")
     args = parser.parse_args()
 
@@ -801,8 +566,6 @@ def main():
         sync_fuel()
     elif args.task == "pulses":
         sync_pulses()
-    elif args.task == "ai_pulse":
-        sync_ai_pulse()
     elif args.task == "news":
         sync_news()
     elif args.task == "alerts":

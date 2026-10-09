@@ -57,7 +57,7 @@ export default function HomePage() {
     "@type": "WebPage",
     "name": "Telangana.live Dashboard",
     "url": "https://www.telangana.live/dashboard",
-    "description": "Live civic dashboard for Hyderabad and Telangana with real-time news, water, power, rates, services and alerts.",
+    "description": "News, weather, official alerts, fuel prices and guides to civic services for Hyderabad and Telangana.",
     "about": {
       "@type": "GovernmentOrganization",
       "name": "Telangana.live Civic Intelligence Portal"
@@ -204,12 +204,12 @@ export default function HomePage() {
   return (
     <div className="space-y-10 pb-20 max-w-5xl mx-auto px-4 mt-6">
       <Helmet>
-        <title>Telangana.live - Real-Time Civic Intelligence Dashboard</title>
-        <meta name="description" content="Live dashboard for Hyderabad and Telangana. Real-time news, water schedules, power alerts, daily rates, and essential civic services." />
-        <meta property="og:title" content="Telangana.live - Real-Time Civic Intelligence Dashboard" />
-        <meta property="og:description" content="Live dashboard for Hyderabad and Telangana. Real-time news, water schedules, power alerts, and daily rates." />
+        <title>Telangana.live - Hyderabad & Telangana News, Weather and Civic Services</title>
+        <meta name="description" content="News, weather, official alerts, fuel prices and guides to civic services for Hyderabad and Telangana." />
+        <meta property="og:title" content="Telangana.live - Hyderabad & Telangana News, Weather and Civic Services" />
+        <meta property="og:description" content="News, weather, official alerts, fuel prices and guides to civic services for Hyderabad and Telangana." />
         <meta property="og:url" content="https://www.telangana.live/dashboard" />
-        <meta name="twitter:title" content="Telangana.live - Real-Time Civic Intelligence Dashboard" />
+        <meta name="twitter:title" content="Telangana.live - Hyderabad & Telangana News, Weather and Civic Services" />
       </Helmet>
       {/* Liquid Header section */}
       <section className="animate-liquid-in">

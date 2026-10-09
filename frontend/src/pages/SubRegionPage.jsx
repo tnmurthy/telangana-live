@@ -282,13 +282,13 @@ export default function SubRegionPage() {
                                 <svg className="w-5 h-5 text-telangana-green" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5" /></svg>
                             </span> <span className="gold-text">Local News</span>
                         </h3>
-                        <p className="section-subtitle">Real-time civic & community updates for {meta.title}</p>
+                        <p className="section-subtitle">Latest civic and community news for {meta.title}</p>
                     </div>
                 </div>
 
                 {localSources.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-4">
-                        <span className="text-xs font-bold text-text-muted my-auto mr-2 uppercase tracking-widest">Live Sources:</span>
+                        <span className="text-xs font-bold text-text-muted my-auto mr-2 uppercase tracking-widest">Sources:</span>
                         {localSources.map(src => (
                             <span key={src.id} className="text-xs font-semibold px-2 py-1 bg-white/5 border border-white/10 rounded-lg text-telangana-green-light flex items-center gap-1">
                                 <span className={`w-1.5 h-1.5 rounded-full ${src.is_active ? 'bg-green-500 animate-pulse' : 'bg-gray-500'}`}></span>

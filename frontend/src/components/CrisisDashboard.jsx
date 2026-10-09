@@ -41,7 +41,6 @@ export default function CrisisDashboard({ currentRegion = 'hyderabad' }) {
 
     if (!isEmergencyActive) return null;
 
-    const regional = emergencyContacts.regional[currentRegion];
     const isHighSeverity = emergencyData?.severity === 'critical' || emergencyData?.severity === 'high';
     const getBgClass = () => {
         if (isHighSeverity) return 'from-red-950 via-red-900 to-red-950';
@@ -114,24 +113,6 @@ export default function CrisisDashboard({ currentRegion = 'hyderabad' }) {
                                 </div>
                             ))}
                         </div>
-                    </div>
-                )}
-
-                {/* Regional priority contact */}
-                {regional && (
-                    <div className="bg-white/10 rounded-xl p-3 mb-3 flex items-center justify-between border border-white/10">
-                        <div className="flex items-center gap-2.5">
-                            <div className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center">
-                                {regional && Icons[regional.icon] ? Icons[regional.icon]({ className: "w-6 h-6 text-white" }) : <Icons.Emergency className="w-6 h-6 text-white" />}
-                            </div>
-                            <div>
-                                <p className="text-white font-semibold text-sm">{regional?.name || 'GHMC Helpline'}</p>
-                                <p className="text-red-200/70 text-xs">{regional?.desc || 'Emergency Support'} · Priority Context</p>
-                            </div>
-                        </div>
-                        <a href={`tel:${(regional?.number || '21111111').replace(/\s/g, '')}`} className="text-white font-bold text-sm bg-white/15 px-3 py-1.5 rounded-lg hover:bg-white/25 transition-all">
-                            📞 {regional?.number || '21111111'}
-                        </a>
                     </div>
                 )}
 

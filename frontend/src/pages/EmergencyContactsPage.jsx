@@ -1,3 +1,8 @@
+// Checked 2026-10-09 (TL-48). Changed then: AIIMS Bibinagar's number was
+// wrong (removed; see aiimsbibinagar.edu.in); the SHE Teams number was not the
+// published one (Telangana Today, Jul 2026: WhatsApp 8712656858); the "GHMC
+// Control Room" number was unconfirmed (replaced by the GHMC call centre and
+// DRF lines from GHMC's rain advisories); 1098 was listed twice.
 export default function EmergencyContactsPage() {
   const categories = [
     {
@@ -7,7 +12,7 @@ export default function EmergencyContactsPage() {
       badge: 'bg-blue-500/20 text-blue-300',
       contacts: [
         { name: 'Police Emergency', number: '100', description: 'All-India police emergency helpline' },
-        { name: 'Dial 100 Hyderabad', number: '100', description: 'Hyderabad Police instant response' },
+        { name: 'Emergency (all services)', number: '112', description: 'Police, fire and ambulance in one number' },
         { name: 'Cyber Crime', number: '1930', description: 'Report online fraud and cyber crime' },
       ],
     },
@@ -19,7 +24,6 @@ export default function EmergencyContactsPage() {
       contacts: [
         { name: '108 Ambulance', number: '108', description: 'Free ambulance service — Telangana' },
         { name: '104 Health Helpline', number: '104', description: 'Mobile medical unit & health advice' },
-        { name: 'AIIMS Bibinagar', number: '08682-282000', description: 'All India Institute of Medical Sciences' },
       ],
     },
     {
@@ -29,7 +33,7 @@ export default function EmergencyContactsPage() {
       badge: 'bg-orange-500/20 text-orange-300',
       contacts: [
         { name: 'Fire Emergency', number: '101', description: 'Telangana State Fire & Emergency Services' },
-        { name: 'Disaster Management', number: '1070', description: 'State Disaster Response & Coordination' },
+        { name: 'State Control Room', number: '1070', description: 'Telangana state control room for disasters' },
       ],
     },
     {
@@ -39,8 +43,7 @@ export default function EmergencyContactsPage() {
       badge: 'bg-purple-500/20 text-purple-300',
       contacts: [
         { name: 'Women Helpline', number: '181', description: '24/7 women safety & domestic violence helpline' },
-        { name: 'SHE Teams Hyderabad', number: '8712661100', description: 'Rapid response for women safety in public' },
-        { name: 'Anti-Trafficking Helpline', number: '1098', description: 'Report trafficking and child exploitation' },
+        { name: 'SHE Teams Hyderabad (WhatsApp)', number: '8712656858', description: 'Report harassment of women in public' },
       ],
     },
     {
@@ -49,10 +52,11 @@ export default function EmergencyContactsPage() {
       color: 'border-green-500/30 bg-green-500/5',
       badge: 'bg-green-500/20 text-green-300',
       contacts: [
-        { name: 'GHMC Control Room', number: '040-23221111', description: 'Garbage, roads, flooding — GHMC helpline' },
+        { name: 'GHMC Call Centre', number: '040-21111111', description: 'Garbage, roads, flooding — GHMC helpline' },
+        { name: 'GHMC Disaster Response Force', number: '9000113667', description: 'Waterlogging and rain emergencies' },
         { name: 'HMWSSB Water', number: '155313', description: 'Water supply complaints & emergencies' },
-        { name: 'TSSPDCL Electricity', number: '1912', description: 'Power outage, line fault, billing issues' },
-        { name: 'TSRTC Bus Helpline', number: '040-69440000', description: 'RTC bus complaints and information' },
+        { name: 'TGSPDCL Electricity', number: '1912', description: 'Power outage, line fault, billing issues' },
+        { name: 'TGSRTC Call Centre', number: '040-69440000', description: 'Bus information and complaints' },
       ],
     },
     {
@@ -160,7 +164,7 @@ export default function EmergencyContactsPage() {
 
       <div className="glass-card section-block bg-telangana-green/5 border border-telangana-green/20 text-center">
         <p className="text-sm text-text-secondary">
-          ⚠️ Numbers verified as of 2026. In life-threatening emergencies, call <strong className="text-white">112</strong> (Integrated Emergency Number — Police + Fire + Ambulance)
+          ⚠️ Numbers checked in October 2026 and can change. In life-threatening emergencies, call <strong className="text-white">112</strong> (Integrated Emergency Number — Police + Fire + Ambulance)
         </p>
       </div>
     </div>

@@ -117,3 +117,26 @@ describe('TL-47 invented datasets', () => {
         expect(fresh).not.toMatch(/goldRates|transit_status/);
     });
 });
+
+// TL-48: emergency numbers checked against published sources; a fixed March
+// heatwave reading and invented ORS distances; a model-written "AI briefing";
+// wrong or out-of-date scheme amounts and an Andhra Pradesh scheme.
+describe('TL-48 checks', () => {
+    it('emergency data has no unconfirmed or fixed readings', () => {
+        const data = read('data/emergencyData.js');
+        expect(data).not.toMatch(/heatwaveData|orsPoints|83330 68536|87126 99165|2785 2000|2326 1555/);
+        const page = read('pages/EmergencyContactsPage.jsx');
+        expect(page).not.toMatch(/08682-282000|8712661100|040-23221111/);
+    });
+
+    it('the AI briefing file and generator are gone', () => {
+        expect(existsSync(join(SRC, 'data', 'aiBriefingData.js'))).toBe(false);
+        const engine = readFileSync(join(__dirname, '..', '..', 'backend', 'scripts', 'data_engine.py'), 'utf8');
+        expect(engine).not.toMatch(/def sync_ai_pulse|def _placeholder_briefing/);
+    });
+
+    it('schemes carry no AP scheme or mislabelled KCR Kit', () => {
+        const data = read('data/schemesData.js');
+        expect(data).not.toMatch(/name: 'Vidya Deevena|name: 'KCR Kit|beneficiaries:/);
+    });
+});
