@@ -9,20 +9,6 @@ import { useAppContext } from '../context/AppContext';
 
 import { trackEvent } from '../hooks/usePageTracking';
 
-const getCategoryCover = (category) => {
-  const covers = {
-    Govt: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=500&auto=format&fit=crop&q=80',
-    Business: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&auto=format&fit=crop&q=80',
-    Safety: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=80',
-    Transit: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=500&auto=format&fit=crop&q=80',
-    Weather: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=500&auto=format&fit=crop&q=80',
-    Education: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&auto=format&fit=crop&q=80',
-    Health: 'https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?w=500&auto=format&fit=crop&q=80',
-    General: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=500&auto=format&fit=crop&q=80'
-  };
-  return covers[category] || covers.General;
-};
-
 function PublisherLogo({ name = '' }) {
   const char = name.charAt(0).toUpperCase();
   const colors = {
@@ -52,10 +38,9 @@ function ConfidenceBadge({ score = 78 }) {
 /* ─── NewsCard (Liquid Glass Edition) ───────────────────────── */
 const NewsCard = ({ news, isSpotlight = false, variant = 'default' }) => {
   const isDistrict = variant === 'district';
-  const { id, title, link, source, published, description, region, category, ai_summary, image_url, credibility_score, other_sources } = news;
+  const { id, title, link, source, published, description, region, category, ai_summary, credibility_score, other_sources } = news;
   const [speaking, setSpeaking] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [imageError, setImageError] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const { recordRead, followed, toggleFollow } = useAppContext();
 
@@ -66,8 +51,6 @@ const NewsCard = ({ news, isSpotlight = false, variant = 'default' }) => {
   const isOfficial = source?.toLowerCase().includes('ghmc') || source?.toLowerCase().includes('govt');
   const isVerified = source?.toLowerCase().includes('hindu') || source?.toLowerCase().includes('today');
   const isFollowing = followed.topics.includes(category) || followed.regions.includes(region);
-
-  const finalImage = (!imageError && image_url) ? image_url : null;
 
   const civicAction = useMemo(() => {
     const t = title?.toLowerCase() || '';
@@ -135,19 +118,6 @@ const NewsCard = ({ news, isSpotlight = false, variant = 'default' }) => {
         {/* Inner Gradient Glow */}
         <div className="absolute inset-0 gradient-glass pointer-events-none" />
         
-        {/* Image - Spotlight Left/Top */}
-        {isSpotlight && finalImage && (
-          <div className="shrink-0 w-full md:w-[42%] h-52 md:h-60 rounded-2xl overflow-hidden relative z-10 border border-white/10 shadow-lg">
-            <img 
-              src={finalImage} 
-              alt={title} 
-              onError={() => setImageError(true)}
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          </div>
-        )}
-
         {/* Content Area */}
         <div className="flex-grow min-w-0 flex flex-col relative z-10">
           {/* Header Row */}
@@ -277,19 +247,6 @@ const NewsCard = ({ news, isSpotlight = false, variant = 'default' }) => {
             </div>
           </div>
         </div>
-
-        {/* Image - Standard Right */}
-        {!isSpotlight && finalImage && (
-          <div className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border border-white/10 shadow-md relative z-10 self-start">
-            <img 
-              src={finalImage} 
-              alt={title} 
-              onError={() => setImageError(true)}
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-          </div>
-        )}
 
         {/* Glass Reflection Highlight */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50" />
