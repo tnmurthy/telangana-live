@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { FALLBACK_MODELS, type LLMModelPricing } from "../../lib/llmPricing";
+import { FALLBACK_MODELS } from "../../lib/llmPricing";
 
 describe("LLM Pricing Definitions", () => {
   it("contains all required models across providers", () => {

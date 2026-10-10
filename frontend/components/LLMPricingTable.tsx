@@ -3,16 +3,11 @@
 import { useEffect, useState, useMemo } from "react";
 import {
   Calculator,
-  Cpu,
-  Layers,
   Sparkles,
-  TrendingDown,
   ExternalLink,
   RefreshCw,
   Search,
-  CheckCircle2,
   DollarSign,
-  Zap,
   Info,
   Code2,
 } from "lucide-react";

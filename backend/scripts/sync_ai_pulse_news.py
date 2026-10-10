@@ -9,9 +9,9 @@ import json
 import logging
 import os
 import sys
-import urllib.error
-import urllib.request
 from datetime import datetime, timezone
+
+import requests
 
 logger = logging.getLogger(__name__)
 
@@ -174,13 +174,13 @@ console.log(decision.choice, decision.confidence); // 'GVMC_WATER', 0.984""",
 
 def fetch_hf_trending():
     """Fetch live trending items from Hugging Face API."""
-    req = urllib.request.Request(
+    resp = requests.get(
         HF_TRENDING_URL,
-        headers={"User-Agent": "VizagLive-AIMarketPulse/1.0 (https://vizag.live)"},
+        headers={"User-Agent": "TelanganaLive-AIMarketPulse/1.0 (https://www.telangana.live)"},
+        timeout=12,
     )
-    with urllib.request.urlopen(req, timeout=12) as response:
-        if response.status == 200:
-            return json.loads(response.read().decode("utf-8"))
+    if resp.status_code == 200:
+        return resp.json()
     return None
 
 

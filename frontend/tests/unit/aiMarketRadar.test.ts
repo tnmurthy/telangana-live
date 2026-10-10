@@ -1,10 +1,5 @@
 import { describe, it, expect } from "vitest";
-import {
-  FALLBACK_MARKET_PULSE,
-  type HFTrendingModel,
-  type MarketLeaderModel,
-  type ModelSunsetAlert,
-} from "../../lib/aiMarketPulse";
+import { FALLBACK_MARKET_PULSE } from "../../lib/aiMarketPulse";
 
 describe("AI Market Pulse & Radar Definitions", () => {
   it("contains valid trending models from Hugging Face", () => {

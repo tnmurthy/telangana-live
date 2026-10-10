@@ -12,9 +12,9 @@ import logging
 import os
 import re
 import sys
-import urllib.error
-import urllib.request
 from datetime import datetime, timezone
+
+import requests
 
 logger = logging.getLogger(__name__)
 
@@ -308,12 +308,13 @@ def score_model_relevance(model_obj: dict) -> float:
 
 def fetch_openrouter_models() -> dict:
     """Fetch live catalog from OpenRouter with headers and timeout."""
-    req = urllib.request.Request(
+    resp = requests.get(
         OPENROUTER_MODELS_URL,
-        headers={"User-Agent": "VizagLiveTechPulse/2.0", "Accept": "application/json"}
+        headers={"User-Agent": "TelanganaLiveTechPulse/2.0", "Accept": "application/json"},
+        timeout=12,
     )
-    with urllib.request.urlopen(req, timeout=12) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    resp.raise_for_status()
+    return resp.json()
 
 
 def parse_model_item(model_id: str, live_item: dict | None, baseline_meta: dict | None) -> dict:
@@ -371,9 +372,7 @@ def parse_model_item(model_id: str, live_item: dict | None, baseline_meta: dict 
     elif "r1" in model_id:
         item["badge"] = "Open Reasoning"
 
-    if baseline_meta and baseline_meta.get("isPopular"):
-        item["isPopular"] = True
-    elif any(k in model_id for k in ["flash-001", "gpt-4o", "sonnet", "chat"]):
+    if baseline_meta and baseline_meta.get("isPopular") or any(k in model_id for k in ["flash-001", "gpt-4o", "sonnet", "chat"]):
         item["isPopular"] = True
 
     return item

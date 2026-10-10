@@ -3,7 +3,6 @@
 import { useState } from "react";
 import {
   Sparkles,
-  TrendingUp,
   Award,
   AlertTriangle,
   BrainCircuit,
@@ -15,9 +14,7 @@ import {
   CheckCircle2,
   Download,
   Heart,
-  Cpu,
   Boxes,
-  Code2,
   Terminal,
 } from "lucide-react";
 import type { AIMarketPulseData } from "@/lib/aiMarketPulse";

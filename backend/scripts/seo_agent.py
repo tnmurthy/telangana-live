@@ -15,14 +15,13 @@ Capabilities:
    - reports/seo_audit.md (executive summary markdown report for automated PRs & GitHub summaries)
 """
 
+import argparse
+import json
 import os
 import sys
-import json
-import re
-import argparse
 from datetime import datetime, timezone
-from typing import Dict, List, Any, Optional
-from urllib.parse import urljoin, urlparse
+from typing import Any
+from urllib.parse import urlparse
 
 try:
     import requests
@@ -102,7 +101,7 @@ class OpenSEOAgent:
         self.results = []
         self.summary = {}
 
-    def fetch_routes_from_sitemap(self) -> List[str]:
+    def fetch_routes_from_sitemap(self) -> list[str]:
         """Try fetching sitemap.xml from site; fall back to known routes if unreachable."""
         sitemap_url = f"{self.base_url}/sitemap.xml"
         routes = []
@@ -125,7 +124,7 @@ class OpenSEOAgent:
 
         return FALLBACK_ROUTES
 
-    def audit_robots_and_aeo(self) -> Dict[str, Any]:
+    def audit_robots_and_aeo(self) -> dict[str, Any]:
         """Inspect robots.txt, llms.txt, and llms-full.txt discovery endpoints."""
         audit_info = {
             "robots_txt": {"status": "missing", "allowed_ai_crawlers": [], "disallowed_agents": []},
@@ -183,7 +182,7 @@ class OpenSEOAgent:
         audit_info["aeo_score"] = score
         return audit_info
 
-    def audit_single_route(self, route: str) -> Dict[str, Any]:
+    def audit_single_route(self, route: str) -> dict[str, Any]:
         """Crawl a route and evaluate SEO, OpenGraph, Canonical, and Schema markers."""
         full_url = f"{self.base_url}{route}"
         route_report = {
@@ -206,10 +205,10 @@ class OpenSEOAgent:
             "response_time_ms": 0
         }
 
-        start_time = datetime.now()
+        start_time = datetime.now(timezone.utc)
         try:
             resp = self.session.get(full_url, timeout=12)
-            elapsed_ms = int((datetime.now() - start_time).total_seconds() * 1000)
+            elapsed_ms = int((datetime.now(timezone.utc) - start_time).total_seconds() * 1000)
             route_report["response_time_ms"] = elapsed_ms
             route_report["status_code"] = resp.status_code
 
@@ -293,12 +292,12 @@ class OpenSEOAgent:
 
         except Exception as e:
             route_report["status_code"] = 0
-            route_report["issues"].append(f"Network error or unreachable: {str(e)}")
+            route_report["issues"].append(f"Network error or unreachable: {e!s}")
             route_report["passed"] = False
 
         return route_report
 
-    def run_full_audit(self) -> Dict[str, Any]:
+    def run_full_audit(self) -> dict[str, Any]:
         """Execute complete audit over all civic endpoints."""
         print(f"=== Starting Autonomous SEO & AEO Audit for {self.base_url} ===")
         routes = self.fetch_routes_from_sitemap()
@@ -357,7 +356,7 @@ class OpenSEOAgent:
         return full_report
 
 
-def export_reports(report_data: Dict[str, Any], output_json_path: str, output_md_path: str):
+def export_reports(report_data: dict[str, Any], output_json_path: str, output_md_path: str):
     """Save structured JSON and user-friendly Markdown reports."""
     os.makedirs(os.path.dirname(os.path.abspath(output_json_path)), exist_ok=True)
     os.makedirs(os.path.dirname(os.path.abspath(output_md_path)), exist_ok=True)

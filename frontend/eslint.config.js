@@ -20,4 +20,11 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    // Next.js App Router files (ported from vizag-live; the Vite app does not
+    // load them). Next requires pages to export `metadata`, which this
+    // Vite-specific rule would otherwise reject.
+    files: ['app/**/*.{ts,tsx}'],
+    rules: { 'react-refresh/only-export-components': 'off' },
+  },
 ])

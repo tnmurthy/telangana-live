@@ -4,6 +4,18 @@
  * with robust local cache fallback (/data/llm_pricing.json) and client-side revalidation.
  */
 
+
+/** The fields of an OpenRouter /models entry that this module reads. */
+interface OpenRouterModel {
+  id: string;
+  name?: string;
+  created?: number;
+  context_length?: number;
+  architecture?: { instruct_type?: string | null };
+  pricing?: { prompt?: string; completion?: string };
+  reasoning?: { default_enabled?: boolean; mandatory?: boolean };
+}
+
 export type ModelCategory = 'all' | 'economy' | 'balanced' | 'reasoning';
 
 export interface LLMModelPricing {
@@ -310,11 +322,11 @@ export async function fetchLLMPricing(): Promise<LLMPricingData> {
 
     if (orRes.ok) {
       const orJson = await orRes.json();
-      const openRouterList = Array.isArray(orJson?.data) ? orJson.data : [];
+      const openRouterList: OpenRouterModel[] = Array.isArray(orJson?.data) ? orJson.data : [];
 
       if (openRouterList.length > 0) {
-        const liveMap = new Map<string, any>();
-        const dynamicCandidates: any[] = [];
+        const liveMap = new Map<string, OpenRouterModel>();
+        const dynamicCandidates: { score: number; created: number; item: OpenRouterModel }[] = [];
 
         for (const item of openRouterList) {
           if (!item?.id) continue;
