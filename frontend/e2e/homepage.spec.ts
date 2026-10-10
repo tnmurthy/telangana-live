@@ -21,22 +21,19 @@ test.describe('Homepage — Compact Layout & Core Components', () => {
         await expect(page.getByTestId('news-ticker')).toBeVisible();
     });
 
-    test('daily rates card renders', async ({ page }) => {
-        // Use heading role for "Daily Rates" — only the section heading
-        const heading = page.locator('h3', { hasText: 'Daily Rates' });
+    test('rates card renders', async ({ page }) => {
+        const heading = page.locator('h3', { hasText: 'Fuel & Commodities' });
         await expect(heading.first()).toBeVisible();
     });
 
-    test('gold rate tab switching works', async ({ page }) => {
-        // Click the Silver tab button in the 7-Day Trend area
-        const silverTab = page.locator('button', { hasText: /^Silver$/i }).first();
-        await silverTab.click();
-        await expect(page.locator('text=7-Day Trend')).toBeVisible();
+    test('rates card links to mandi prices and gold guidance', async ({ page }) => {
+        // Gold was dropped (TL-46); commodities come from Agmarknet (TL-49).
+        await expect(page.locator('main').getByRole('link', { name: /all mandi prices/i }).first()).toBeVisible();
+        await expect(page.locator('main').getByRole('link', { name: /where to check today/i }).first()).toBeVisible();
     });
 
     test('fuel prices section renders', async ({ page }) => {
-        await expect(page.locator('main').getByText(/Daily Rates & Fuel/i).first()).toBeVisible();
-        // Verify petrol entry exists
+        await expect(page.locator('main').getByText(/Fuel & Commodities/i).first()).toBeVisible();
         await expect(page.locator('main').getByText('Petrol').first()).toBeVisible();
     });
 

@@ -44,24 +44,11 @@ test.describe('Telangana.live Enterprise Briefing & Liquid Glass UI', () => {
     await expect(modal.getByText(/AI Confidence/)).toHaveCount(0);
   });
 
-  test('Emergency Mode transforms the UI theme', async ({ page }: { page: Page }) => {
-    // Click the Emergency Simulator toggle (floating button)
-    const emergencyToggle = page.locator('#emergency-simulator-toggle');
-    await emergencyToggle.click({ force: true });
-
-    // Trigger 'Heatwave' mode
-    const heatwaveBtn = page.getByRole('button', { name: /Heatwave/ });
-    await heatwaveBtn.click({ force: true });
-
-    // Verify the theme class on the root element
-    const rootClass = await page.evaluate(() => document.documentElement.className);
-    expect(rootClass).toContain('theme-emergency-heatwave');
-
-    // Verify the background pulse is active
-    const mainContainer = page.locator('.min-h-screen').last();
-    await expect(mainContainer).toHaveClass(/emergency-pulse/);
-
-    // Verify Heatwave Panel is visible
-    await expect(page.getByText('Cooling Dashboard')).toBeVisible();
+  test('there is no pretend emergency simulator; the crisis card opens official alerts', async ({ page }: { page: Page }) => {
+    // TL-44: a floating simulator and the home Crisis card could set off a
+    // made-up flood or heatwave. Emergencies now come only from NDMA SACHET.
+    await expect(page.locator('#emergency-simulator-toggle')).toHaveCount(0);
+    const crisisCard = page.locator('a[href="/alerts"]', { hasText: /Crisis Dashboard/i }).first();
+    await expect(crisisCard).toBeVisible();
   });
 });
