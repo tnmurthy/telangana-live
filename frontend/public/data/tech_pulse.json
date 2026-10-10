@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-10T06:14:39Z",
+  "generatedAt": "2026-10-10T12:55:03Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -48,16 +48,6 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-ddfe1f572b06",
-        "category": "govt",
-        "title": "T-Hub Opens Agri-Tech and Space-Tech Tracks, Offers Founders 100% Equity",
-        "source": "CIOL",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBctIBmAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBcg?oc=5",
-        "publishedAt": "2026-09-30T09:18:07Z",
-        "time": "30 Sep, 2:48 PM IST",
-        "method": "typesafe"
-      },
-      {
         "id": "tp-052ea6b08736",
         "category": "govt",
         "title": "Telangana Transport Department plans AI-powered cameras for driving tests",
@@ -87,16 +77,6 @@
         "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNc1FMcmVUcFJuNk5UeDJaLWNja2dfREVLQ2pjclc4b1laX2FYVUc5Z3RkSWwzQ2ZyTzhpdnk3N1dqWFRZanhvLVViX1ZlY0N4VEdxZFlaWFFIakJWaTFMOUpEbkVFbm1MMjIwN2YwUGh5OUdoMTFabHE2NmgwQWpHTU8tOS1VOG9HNmcwZG1IdzFJVk9jbGg1NkNUVDl4dw?oc=5",
         "publishedAt": "2026-10-07T08:30:14Z",
         "time": "7 Oct, 2:00 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-8c34bddfa7d1",
-        "category": "jobs",
-        "title": "AI Reshapes Entry-Level IT Hiring in Hyderabad",
-        "source": "Deccan Chronicle",
-        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcDBxczJKaDU1Ynp2cXlULXp5ZTN6RFMxSzk5RDNyc0JoWHM0blRHOGpTczhMZkh6YnNYVFBQUzBzTVFpb0hTTGlhMDJlb01adFpVQ0k5eV92NHZhT3JGSVUtS3UyVVpzQTNmLVFfUFVJaEhxdEtsa1BFYTNENUh5OXpOak9GUFVwQVR4TXA4amhnUWxpQTNoWk5LMkJ3YnBMSlFpc2VqN2JPNEMyMzBsUGx30gG3AUFVX3lxTE1qRjduVV9pYU1wSTBNeExwZENuVUVjYnVmUTlXUzFZTWpNaHhabGhTei0xSUtjLW1BWkZFTXZLcFdjdld0SlhOdEkySG1rNlo4S2E0NjUtbGhrQlFvTEluel9BNGxMY1M1ZTJMR2hmTzVxanFOa28wZkVvY3A0MjkxYm9DZWdtcXBveEZPc0lJd2tQa2hnVTN4eUNZbzZNR2o4UHBqMFdfb0JyZEp3RlQxckFQY1M0NA?oc=5",
-        "publishedAt": "2026-09-26T07:00:00Z",
-        "time": "26 Sep, 12:30 PM IST",
         "method": "typesafe"
       }
     ]
