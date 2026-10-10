@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from pydantic import BaseModel, Field
 
@@ -15,8 +15,8 @@ class ContentModel(BaseModel):
     entities: dict | None = None
     district: str | None = None
     vector_embedding: list[float] | None = None
-    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
-    updated_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    created_at: str = Field(default_factory=lambda: datetime.now(UTC).isoformat())
+    updated_at: str = Field(default_factory=lambda: datetime.now(UTC).isoformat())
 
 class ActivityLogModel(BaseModel):
     agent: str
@@ -24,7 +24,7 @@ class ActivityLogModel(BaseModel):
     status: str
     details: str | None = None
     tokens_used: int = 0
-    timestamp: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    timestamp: str = Field(default_factory=lambda: datetime.now(UTC).isoformat())
 
 class CivicCorrelationModel(BaseModel):
     content_id: int
@@ -32,5 +32,5 @@ class CivicCorrelationModel(BaseModel):
     entity_id: str
     correlation_score: float = 1.0
     is_active: bool = True
-    created_at: str | None = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    created_at: str | None = Field(default_factory=lambda: datetime.now(UTC).isoformat())
 

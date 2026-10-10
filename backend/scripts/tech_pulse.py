@@ -353,7 +353,7 @@ def _published(entry) -> datetime.datetime | None:
     if not parsed:
         return None
     try:
-        return datetime.datetime(*tuple(parsed)[:6], tzinfo=datetime.timezone.utc)
+        return datetime.datetime(*tuple(parsed)[:6], tzinfo=datetime.UTC)
     except (TypeError, ValueError):
         return None
 
@@ -386,7 +386,7 @@ def build_feed(region: str, *, fetch: Callable[[str], list] = fetch_google_news,
                is_same_story: Callable[[str, list], bool] | None = None,
                now: datetime.datetime | None = None) -> dict:
     config = REGIONS[region]  # KeyError for an unknown region, by design
-    now = now or datetime.datetime.now(datetime.timezone.utc)
+    now = now or datetime.datetime.now(datetime.UTC)
     judge = judge or (lambda headline, category: judge_headline(headline, category, region))
     is_same_story = is_same_story or same_story
     cutoff = now - datetime.timedelta(days=MAX_AGE_DAYS)

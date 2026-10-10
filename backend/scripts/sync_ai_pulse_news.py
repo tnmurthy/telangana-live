@@ -9,7 +9,7 @@ import json
 import logging
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import requests
 
@@ -252,7 +252,7 @@ def build_market_radar_snapshot(live_hf_data=None):
             "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/663b77dda14bfb0a2d41b6aa/6sRaDSlKnKIPlf5pH9E02.jpeg",
         })
 
-    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    now_iso = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     return {
         "updatedAt": now_iso,
         "source": "hf-trending-live" if live_hf_data else "snapshot-verified",

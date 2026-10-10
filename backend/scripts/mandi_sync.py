@@ -213,7 +213,7 @@ def main() -> int:
     except (requests.RequestException, ValueError) as exc:
         print(f"mandi_sync: Agmarknet unavailable ({exc}); leaving {OUT_PATH} unchanged")
         return 0
-    snapshot = build_snapshot(basket, msp, now.date(), now.astimezone(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+    snapshot = build_snapshot(basket, msp, now.date(), now.astimezone(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ"))
     if snapshot is None:
         print("mandi_sync: no usable rows; leaving the previous file unchanged")
         return 0

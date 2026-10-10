@@ -35,7 +35,7 @@ try:
 except ImportError:
     classify_article = None
 
-NOW = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+NOW = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 # Dates shown to readers are India dates; runners keep UTC.
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 DATA_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "frontend", "src", "data"))
@@ -468,7 +468,7 @@ def sync_alerts():
     """
     print("Syncing local alerts feed...")
 
-    now_dt = datetime.datetime.now(datetime.timezone.utc)
+    now_dt = datetime.datetime.now(datetime.UTC)
     kept, existing_titles = partition_existing(
         _load_existing_alerts(), now=now_dt, expiry_days=ALERT_EXPIRY_DAYS)
 

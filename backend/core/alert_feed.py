@@ -40,7 +40,7 @@ def format_ist(moment: datetime.datetime) -> str:
 
 
 def _to_iso(moment: datetime.datetime) -> str:
-    return moment.astimezone(datetime.timezone.utc).strftime(_ISO)
+    return moment.astimezone(datetime.UTC).strftime(_ISO)
 
 
 def _published_to_datetime(published) -> datetime.datetime | None:
@@ -48,7 +48,7 @@ def _published_to_datetime(published) -> datetime.datetime | None:
     if not published:
         return None
     try:
-        return datetime.datetime(*tuple(published)[:6], tzinfo=datetime.timezone.utc)
+        return datetime.datetime(*tuple(published)[:6], tzinfo=datetime.UTC)
     except (TypeError, ValueError):
         return None
 
@@ -115,7 +115,7 @@ def _has_ended(expires_at, now: datetime.datetime) -> bool:
         return False
     try:
         ends = datetime.datetime.strptime(expires_at, _ISO).replace(
-            tzinfo=datetime.timezone.utc)
+            tzinfo=datetime.UTC)
     except (TypeError, ValueError):
         return True  # an unreadable end time is not a reason to keep showing it
     return ends <= now
@@ -138,7 +138,7 @@ def partition_existing(existing: Iterable[dict], *, now: datetime.datetime,
         stamp = alert.get("publishedAt") or alert.get("createdAt")
         try:
             published = datetime.datetime.strptime(stamp, _ISO).replace(
-                tzinfo=datetime.timezone.utc)
+                tzinfo=datetime.UTC)
         except (TypeError, ValueError):
             continue
         if now - published >= datetime.timedelta(days=expiry_days):
@@ -168,7 +168,7 @@ def build_official_record(alert, *, now: datetime.datetime) -> dict:
         district=None,
         link=alert.link,
         source=f"NDMA SACHET ({alert.sender})",
-        published=issued.astimezone(datetime.timezone.utc).timetuple(),
+        published=issued.astimezone(datetime.UTC).timetuple(),
         now=now,
         expires=alert.expires,
     )

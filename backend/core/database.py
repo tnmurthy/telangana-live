@@ -1,6 +1,6 @@
 import logging
 import os
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from supabase import Client, create_client
 from supabase.lib.client_options import ClientOptions
@@ -114,7 +114,7 @@ class SupabaseDB:
 
     def update_content(self, title, content, token_usage):
         """Update existing content."""
-        now = datetime.now(timezone.utc).isoformat()
+        now = datetime.now(UTC).isoformat()
 
         data = {
             'content': content,
@@ -133,7 +133,7 @@ class SupabaseDB:
     def publish_content(self, title):
         """Mark content as published so the frontend can surface it."""
         try:
-            self.client.table('content').update({'status': 'published', 'updated_at': datetime.now(timezone.utc).isoformat()}).eq('title', title).execute()
+            self.client.table('content').update({'status': 'published', 'updated_at': datetime.now(UTC).isoformat()}).eq('title', title).execute()
             logger.info(f"Content published: {title}")
             return True
         except Exception as e:

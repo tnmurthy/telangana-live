@@ -29,7 +29,7 @@ def sync_ai_news():
                 "url": entry.link,
                 "source": "hacker_news",
                 "score": 0,
-                "published_at": datetime.datetime.now(datetime.timezone.utc).isoformat()
+                "published_at": datetime.datetime.now(datetime.UTC).isoformat()
             }
             news_items.append(data)
             if client:

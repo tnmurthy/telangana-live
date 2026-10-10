@@ -69,16 +69,16 @@ def _parse_time(value) -> datetime.datetime:
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text):
         # A date without a time means "as of that day" in India: end of day IST.
         day = datetime.datetime.strptime(text, "%Y-%m-%d").replace(hour=23, minute=59, second=59, tzinfo=_IST)
-        return day.astimezone(datetime.timezone.utc)
+        return day.astimezone(datetime.UTC)
     if re.match(r"\d{4}-\d{2}-\d{2}T", text):
-        parsed = datetime.datetime.fromisoformat(text.replace("Z", "+00:00"))
+        parsed = datetime.datetime.fromisoformat(text)
     elif re.fullmatch(r"\d{1,2} [A-Za-z]{3}, \d{4} [+-]\d{4}", text):
         parsed = datetime.datetime.strptime(text, "%d %b, %Y %z")  # "01 Oct, 2026 +0530"
     else:
         parsed = parsedate_to_datetime(text)  # RFC 822, e.g. RSS pubDate
     if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=datetime.timezone.utc)
-    return parsed.astimezone(datetime.timezone.utc)
+        parsed = parsed.replace(tzinfo=datetime.UTC)
+    return parsed.astimezone(datetime.UTC)
 
 
 def _values(node, path: list[str]):
@@ -113,7 +113,7 @@ def read_timestamp(module: Module) -> datetime.datetime:
 
 
 def check(modules: list[Module], now: datetime.datetime | None = None) -> list[Result]:
-    now = now or datetime.datetime.now(datetime.timezone.utc)
+    now = now or datetime.datetime.now(datetime.UTC)
     results = []
     for m in modules:
         try:

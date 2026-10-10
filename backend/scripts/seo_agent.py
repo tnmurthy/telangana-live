@@ -19,7 +19,7 @@ import argparse
 import json
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 from urllib.parse import urlparse
 
@@ -205,10 +205,10 @@ class OpenSEOAgent:
             "response_time_ms": 0
         }
 
-        start_time = datetime.now(timezone.utc)
+        start_time = datetime.now(UTC)
         try:
             resp = self.session.get(full_url, timeout=12)
-            elapsed_ms = int((datetime.now(timezone.utc) - start_time).total_seconds() * 1000)
+            elapsed_ms = int((datetime.now(UTC) - start_time).total_seconds() * 1000)
             route_report["response_time_ms"] = elapsed_ms
             route_report["status_code"] = resp.status_code
 
@@ -338,7 +338,7 @@ class OpenSEOAgent:
 
         full_report = {
             "meta": {
-                "generated_at": datetime.now(timezone.utc).isoformat(),
+                "generated_at": datetime.now(UTC).isoformat(),
                 "base_url": self.base_url,
                 "agent": "VizagLive Autonomous OpenSEO Agent v2.0",
                 "total_routes_checked": total_routes,

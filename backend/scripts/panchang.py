@@ -2,7 +2,7 @@ import json
 import math
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import ephem
 
@@ -52,7 +52,7 @@ KARANAS = ["Bava", "Balava", "Kaulava", "Taitila", "Gara", "Vanija", "Vishti"]
 
 def get_vikram_samvat(dt: datetime | None = None) -> dict:
     if dt is None:
-        dt = datetime.now(timezone.utc).replace(tzinfo=None)
+        dt = datetime.now(UTC).replace(tzinfo=None)
         
     observer = ephem.Observer()
     observer.lat = HYD_LAT
@@ -188,7 +188,7 @@ def answer_muhurat_query(query: str, llm_provider: str = 'openai', today_panchan
         }
     
     if not today_panchang:
-        today_panchang = get_vikram_samvat(datetime.now(timezone.utc).replace(tzinfo=None))
+        today_panchang = get_vikram_samvat(datetime.now(UTC).replace(tzinfo=None))
     
     # Construct the system prompt and context
     panchang_context = json.dumps(today_panchang, indent=2)

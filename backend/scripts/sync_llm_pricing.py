@@ -12,7 +12,7 @@ import logging
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import requests
 
@@ -420,7 +420,7 @@ def build_pricing_snapshot(live_data: dict | None = None) -> dict:
             models_list.append(item)
             included_ids.add(mid)
 
-    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    now_iso = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     return {
         "updatedAt": now_iso,
         "source": "openrouter-live" if live_map else "snapshot-verified",
