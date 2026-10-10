@@ -1,18 +1,18 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-09T18:28:20Z",
+  "generatedAt": "2026-10-10T06:14:39Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
       {
-        "id": "tp-2b06170f192c",
+        "id": "tp-89d6f6b15e91",
         "category": "safety",
-        "title": "IIIT-Hyderabad study cautions against blindly trusting medical AI models",
-        "source": "Telangana Today",
-        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMXhwdnhMVlZjSFI2bjRQdEJmVFB2MElUT19UYlVha2RDQ3ZWeWZsM0tuZ1VfTG5qeEdvdVVQRWtIbnNuMmF3bDNaMUZYTkU5Y3VlLXVGcVRxUmZ2WERuOGNBVzI0OUZaT3dLTnJlNE50cEJDMEk5WG9ZQ1JwR3ZtMFpMakZqbEd1alk1cTZ3aDU5a3BFS2RGNnRlY3JzaV9j?oc=5",
-        "publishedAt": "2026-10-08T13:06:27Z",
-        "time": "8 Oct, 6:36 PM IST",
+        "title": "IIIT-H Study On Medical AI Models Cautions Against Blindly Trusting Their Output",
+        "source": "IIIT Hyderabad",
+        "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBnZTF2MG1XbzFSQ3h4Sk1CS2RGTG5hRFNVb3lzQTdKOTRuYVlDeHU1LVUtcGVZODVkN3A5VWVNNzd6eVRYaFNWbzBFRkpqbS01anUw?oc=5",
+        "publishedAt": "2026-10-09T22:08:03Z",
+        "time": "10 Oct, 3:38 AM IST",
         "method": "typesafe"
       },
       {
@@ -45,6 +45,16 @@
         "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPU1V3MThfel9YV09PQlF0RWpJZlp0ZHdMQmIyMUVoNkJob0o4Mlp2M1hmdUZGNWszREVaOGlqV29BZ0IzLTllTDRxNHAtOWFHVWpRYmt1SG5qcm43OWdGeldpZG9kLTN2VGZjNEwwRV9HMHpKQkszS3lZMWs4S1Z4RWZyaVZLREVRbW9KT000S01rdldrei00RXFCRy1CN203V0FHcTM4QnJzZ09mLWlFNV83Yjk5Z082ZTVKRi13b3Y0SE9aeDdNNXNMZ1ZUUjBTcXRIUDdB0gHWAUFVX3lxTE9TVXcxOF96X1hXT09CUXRFaklmWnRkd0xCYjIxRWg2QmhvSjgyWnYzWGZ1RkY1azNERVo4aWpXb0FnQjMtOWVMNHE0cC05YUdValFia3VIbmpybjc5Z0Z6V2lkb2QtM3ZUZmM0TDBFX0cwekpCSzNLeVkxazhLVnhFZnJpVktERVFtb0pPTTRLTWt2V2t6LTRFcUJHLUI3bTdXQUdxMzhCcnNnT2YtaUU1XzdiOTlnTzZlNUpGLXdvdjRIT1p4N001c0xnVlRSMFNxdEhQN0E?oc=5",
         "publishedAt": "2026-10-01T10:29:09Z",
         "time": "1 Oct, 3:59 PM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-ddfe1f572b06",
+        "category": "govt",
+        "title": "T-Hub Opens Agri-Tech and Space-Tech Tracks, Offers Founders 100% Equity",
+        "source": "CIOL",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBctIBmAFBVV95cUxPTVM2eXpZeHczZUZRYVM0YWEwcm9xNmJJN0VYQUlTTFZ4OEdlb0pFMTZfSzF6clBuQjU3UkpXblZaTER0eUN2ZXNQcU5YT1VXZ1FUYzRWaFNGSHBHUmdJX0I2NlNJTGM2TnJyanU1SUh6MFFLcW9STVlkSUY0YUpTZl9NLUZZY3JmRENJRmJhZG1xSEhBU2xBcg?oc=5",
+        "publishedAt": "2026-09-30T09:18:07Z",
+        "time": "30 Sep, 2:48 PM IST",
         "method": "typesafe"
       },
       {
