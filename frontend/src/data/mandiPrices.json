@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T09:40:18Z",
+  "updatedAt": "2026-10-11T17:54:09Z",
   "state": "Telangana",
   "fromDate": "2026-10-09",
   "toDate": "2026-10-11",
@@ -10,21 +10,21 @@
     {
       "name": "Onion",
       "group": "Vegetables",
-      "price": 3354.84,
+      "price": 3355.19,
       "yearAgo": 1277.48,
       "unit": "Rs./quintal"
     },
     {
       "name": "Tomato",
       "group": "Vegetables",
-      "price": 1975.09,
+      "price": 1978.06,
       "yearAgo": 1429.79,
       "unit": "Rs./quintal"
     },
     {
       "name": "Potato",
       "group": "Vegetables",
-      "price": 1518.63,
+      "price": 1519.88,
       "yearAgo": 1658.95,
       "unit": "Rs./quintal"
     },
@@ -87,7 +87,7 @@
     {
       "name": "Paddy",
       "group": "Cereals",
-      "price": 2442.22,
+      "price": 2443.71,
       "yearAgo": 2162.36,
       "unit": "Rs./quintal"
     },
