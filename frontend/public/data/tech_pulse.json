@@ -1,18 +1,18 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-10T12:55:03Z",
+  "generatedAt": "2026-10-11T13:18:48Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
       {
-        "id": "tp-89d6f6b15e91",
+        "id": "tp-977bb5975f45",
         "category": "safety",
-        "title": "IIIT-H Study On Medical AI Models Cautions Against Blindly Trusting Their Output",
-        "source": "IIIT Hyderabad",
-        "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBnZTF2MG1XbzFSQ3h4Sk1CS2RGTG5hRFNVb3lzQTdKOTRuYVlDeHU1LVUtcGVZODVkN3A5VWVNNzd6eVRYaFNWbzBFRkpqbS01anUw?oc=5",
-        "publishedAt": "2026-10-09T22:08:03Z",
-        "time": "10 Oct, 3:38 AM IST",
+        "title": "IIIT-H study caution doctors against relying entirely on AI for medical diagnosis",
+        "source": "The Hindu",
+        "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQNnNKRi00Q3FpdVZORjlzQndEQ05Ja0J3aC1LUFJjMXE2WXBvb3JpUUNLNnBIaWt6cUVkVlNfTzZ0NzVjNkYzV2k5eU1DQnZkb3NCdVZtLUdWRml5Mk04b2JKVDFPMURyRlVQaDA2bW1tMXk5S0JiZVlvbDBacmRQZU1lSlhfTE5UMVlXQW1lRXRwSjJQalVTaVVaYmpxNWw0bXZXYnpvT2RVMEt4QTR1Qi04R2RROUVJM08wWDdfdDZ1R2ZNR2hPNG9JZ0dETHNYTFgyWWE3RGFHdlFlcWw2M2NB0gHoAUFVX3lxTE5keVd4X2wzcXRwZlRCTnRqMXpmZE9jZzlGQjREMEVQN0UtdThaTnFtOUliSFRZYWFEcUNtS0xrbWxPNHFnVmpxMDF4eF9FOWVvQVJCLU9pZWNmTDFsUlFZWG11S3dlWWRUYWw3MGpjb2NyNFE3VzM0al9nTHNld0I5a2hDdmNWREFWQVExcmdxVWhRMDJlWVdZcWZ5UWhDLTdhLVp6UERUams1MDFOVmxfWktLUFlIRHBuRmgwb294UjgxcEFzWE9DVW5tTWNzWU1jejhKT3NaeHlGeEFTRWhJODdyb1JUZUM?oc=5",
+        "publishedAt": "2026-10-09T06:43:38Z",
+        "time": "9 Oct, 12:13 PM IST",
         "method": "typesafe"
       },
       {
@@ -55,16 +55,6 @@
         "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWGNrUTlET1JFeGxYRWs4U1BKam44R3FkZDdKQ3ozUmZMTTBDZ0ZlZlM0WU1nZkNsSS1RU2RyTW9aZTNEdHV0U2hfRzZMZUxXdzBkRHVZLVowUXZUQ2tDQ0tselJqRWdGTEkxTUZxSl9IeHh5enA0Q240MEpxR2JRc0c1YlcwU2laYzVKeFVwZHRkYUJXbW14a3NZWWY5eHJlZ1E?oc=5",
         "publishedAt": "2026-09-30T07:00:00Z",
         "time": "30 Sep, 12:30 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-7ca2190acce8",
-        "category": "govt",
-        "title": "Telangana plans AI boost for tourism",
-        "source": "The New Indian Express",
-        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQN2VRT0FfbFpOVUppUEtYNnNKeDI2TUI0UFo1cmtyNU5vM3lhY3JCSS1uQ1VUMWdDODRXcUNha3RvMEMyeWIzejM2RnVIalVESVhzM00tR2stN0xxWEV4VHFjOHZoYzJwekMxY3hRbnVLRXk5ZDJsNW82cnZZa1BlZWVnMU5wRUFUNGtaNTdacVJRMUE0NUpkUUJCRUNkQUnSAawBQVVfeXFMUGlBVkM2aVpKXzVvTmxYMldVcjFsdmpiNmhFOXliWTdUTEd0eDRBSzg2SzQwb05HZUR0dGtueWJQYVVmZ1B1Q3gyUHFMZHFaLXhqX0hPRGVleTlaYmpTODc2LXlPTmF2SDlGRzZsWnBHMVo4MlZLTmlvQTFiOWZDR1FMOXotVFBFVFlvWEsyZDRKX2Q1UUtsQmtGd0xuVlR6Z1BrNTBreHB5cmgtbA?oc=5",
-        "publishedAt": "2026-09-27T07:00:00Z",
-        "time": "27 Sep, 12:30 PM IST",
         "method": "typesafe"
       }
     ],
