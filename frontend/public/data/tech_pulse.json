@@ -1,18 +1,18 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-11T13:18:48Z",
+  "generatedAt": "2026-10-12T06:21:59Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
       {
-        "id": "tp-977bb5975f45",
+        "id": "tp-2b06170f192c",
         "category": "safety",
-        "title": "IIIT-H study caution doctors against relying entirely on AI for medical diagnosis",
-        "source": "The Hindu",
-        "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQNnNKRi00Q3FpdVZORjlzQndEQ05Ja0J3aC1LUFJjMXE2WXBvb3JpUUNLNnBIaWt6cUVkVlNfTzZ0NzVjNkYzV2k5eU1DQnZkb3NCdVZtLUdWRml5Mk04b2JKVDFPMURyRlVQaDA2bW1tMXk5S0JiZVlvbDBacmRQZU1lSlhfTE5UMVlXQW1lRXRwSjJQalVTaVVaYmpxNWw0bXZXYnpvT2RVMEt4QTR1Qi04R2RROUVJM08wWDdfdDZ1R2ZNR2hPNG9JZ0dETHNYTFgyWWE3RGFHdlFlcWw2M2NB0gHoAUFVX3lxTE5keVd4X2wzcXRwZlRCTnRqMXpmZE9jZzlGQjREMEVQN0UtdThaTnFtOUliSFRZYWFEcUNtS0xrbWxPNHFnVmpxMDF4eF9FOWVvQVJCLU9pZWNmTDFsUlFZWG11S3dlWWRUYWw3MGpjb2NyNFE3VzM0al9nTHNld0I5a2hDdmNWREFWQVExcmdxVWhRMDJlWVdZcWZ5UWhDLTdhLVp6UERUams1MDFOVmxfWktLUFlIRHBuRmgwb294UjgxcEFzWE9DVW5tTWNzWU1jejhKT3NaeHlGeEFTRWhJODdyb1JUZUM?oc=5",
-        "publishedAt": "2026-10-09T06:43:38Z",
-        "time": "9 Oct, 12:13 PM IST",
+        "title": "IIIT-Hyderabad study cautions against blindly trusting medical AI models",
+        "source": "Telangana Today",
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPMXhwdnhMVlZjSFI2bjRQdEJmVFB2MElUT19UYlVha2RDQ3ZWeWZsM0tuZ1VfTG5qeEdvdVVQRWtIbnNuMmF3bDNaMUZYTkU5Y3VlLXVGcVRxUmZ2WERuOGNBVzI0OUZaT3dLTnJlNE50cEJDMEk5WG9ZQ1JwR3ZtMFpMakZqbEd1alk1cTZ3aDU5a3BFS2RGNnRlY3JzaV9j?oc=5",
+        "publishedAt": "2026-10-08T13:06:27Z",
+        "time": "8 Oct, 6:36 PM IST",
         "method": "typesafe"
       },
       {
@@ -59,6 +59,16 @@
       }
     ],
     "jobs": [
+      {
+        "id": "tp-1d938356b15c",
+        "category": "jobs",
+        "title": "IIT Hyderabad Applied AI Professional Certification Programme 2026: Check Eligibility and Dates",
+        "source": "College Mentor",
+        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdndoeVJ3NHJCWlFZa2E1TnQ0N2lmMVhnTjV1TldjUjhuN2NuNlVmcjFITFRoWGRXb1dVM2xZS0ROR2VoXzlSS2gzdDZzeVo5cEZHREpROFFHcHYtZ2l5M1NUQmJkNGVZelB4WVEwdk52OURfbDY3enNZT1RSS210S2lMZW9vZmFaRkd6T3kxNm9TSjMyWTdxVktlS01vcmNZX1Jz?oc=5",
+        "publishedAt": "2026-10-10T05:29:14Z",
+        "time": "10 Oct, 10:59 AM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-2c820569803b",
         "category": "jobs",
