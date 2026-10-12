@@ -296,14 +296,14 @@ All news items normalize into this JSON schema:
 
 ```json
 {
-  "id": "sha256_hash_of_link",
-  "source_key": "nijam_ts",
-  "title": "Article Title",
-  "link": "https://example.com/article",
-  "published_at": "2026-06-02T12:00:00Z",
-  "language": "te",
-  "content_summary": "Article summary text...",
-  "meta_tags": ["politics", "state-government"]
+  \"id\": \"sha256_hash_of_link\",
+  \"source_key\": \"nijam_ts\",
+  \"title\": \"Article Title\",
+  \"link\": \"https://example.com/article\",
+  \"published_at\": \"2026-06-02T12:00:00Z\",
+  \"language\": \"te\",
+  \"content_summary\": \"Article summary text...\",
+  \"meta_tags\": [\"politics\", \"state-government\"]
 }
 ```
 
@@ -324,7 +324,7 @@ backend/
 ├── core/
 │   ├── alert_triage.py        ✅ TypeSafe triage of alert headlines (type, in-Telangana, current, severity)
 │   ├── alert_feed.py          ✅ single alerts.json schema, freshness and expiry rules
-│   ├── news_classifier.py     ⚠ TL-04 substring keyword matching ("business" → Transit)
+│   ├── news_classifier.py     ⚠ TL-04 substring keyword matching (\"business\" → Transit)
 │   │                          ⚠ TL-15 entity keyword table duplicated in correlation_engine.py
 │   └── correlation_engine.py, clustering.py, llm_provider.py, config.py
 ├── agents/
@@ -338,7 +338,7 @@ backend/
 tests/test_data_engine.py      ⚠ TL-11 7 failing tests; network-bound tests take more than an hour
 
 frontend/
-├── src/data/alerts.js         ✅ TL-03 static "live" alerts removed (tariff reference data kept)
+├── src/data/alerts.js         ✅ TL-03 static \"live\" alerts removed (tariff reference data kept)
 ├── src/components/
 │   ├── NewsTicker.jsx         ✅ TL-03 live feed only; news shows its real publish time
 │   ├── PowerTariffCard.jsx    ✅ reads tariff reference data only (not affected)
@@ -368,38 +368,38 @@ infrastructure/
 | TL-02 | TypeSafe key missing in GitHub | Alerts are filtered by old keyword rules: weaker quality | ✅ Fixed | Set 4 Oct in both repos; CI runs confirmed calling TypeSafe |
 | TL-16 | Deploy hook returned 404 | Fixed 4 Oct: hook no longer needed — Vercel's Git integration deploys every push to `main`, data commits included; hook step removed from 8 workflows | ✅ Fixed | Delete the unused `VERCEL_DEPLOY_HOOK_URL` secret (optional) |
 | TL-17 | AI Pulse page was a fixed placeholder | Fixed 4 Oct: rebuilt as Tech & AI Pulse (digital safety, government & AI, jobs & skills) on sourced, dated local news | ✅ Fixed | Set the `TYPESAFE_API_KEY` secret (TL-02) so the scheduled run uses judgment, not the keyword fallback |
-| TL-18 | Database paused; citizen reports, classifieds and the emergency banner could not load | Fixed 4 Oct: moved to the `telangana` schema of the shared "Talia" Supabase project, with RLS | ✅ Fixed | 4 Oct: schemas exposed; service key set; news job saved 159 articles |
+| TL-18 | Database paused; citizen reports, classifieds and the emergency banner could not load | Fixed 4 Oct: moved to the `telangana` schema of the shared \"Talia\" Supabase project, with RLS | ✅ Fixed | 4 Oct: schemas exposed; service key set; news job saved 159 articles |
 | TL-19 | Grievance dashboard showed 8 invented reports | Fixed: wired to citizenReportsService.getPublishedReports(), approved/resolved statuses only, 0 mock records | ✅ Fixed | — |
 | TL-20 | Redis token was public | Fixed 4 Oct: the browser no longer uses Redis, so no token ships; the leaked token's database (`tough-rat-69556`) no longer exists | ✅ Fixed | Optional: delete the unused `VITE_UPSTASH_*` Vercel variables |
-| TL-21 | Paid "featured listing" removed | It showed a placeholder UPI QR (`telangana.live@upi`) and a "Simulate Success" button | P2 | Decide whether to offer paid listings; if yes, integrate a real payment provider |
-| TL-22 | Fuel tax breakup is invented | Every price is split as fixed 55% base / 22% excise / 15% VAT; real excise is a fixed ₹ per litre | P1 | Use published central excise and Telangana VAT rates, or hide the breakup |
-| TL-23 | News cards showed an invented "AI confidence" | Fixed 5 Oct: was 75 + title length % 20 whenever no score existed (every article) | ✅ Fixed | — |
+| TL-21 | Paid \"featured listing\" removed | It showed a placeholder UPI QR (`telangana.live@upi`) and a \"Simulate Success\" button | P2 | Decide whether to offer paid listings; if yes, integrate a real payment provider |
+| TL-22 | Fuel tax breakup is invented | Fixed 9 Oct: invented percentage breakup removed; fuel cards display published retail rate without artificial tax estimates (TL-46) | ✅ Fixed | — |
+| TL-23 | News cards showed an invented \"AI confidence\" | Fixed 5 Oct: was 75 + title length % 20 whenever no score existed (every article) | ✅ Fixed | — |
 | TL-24 | Fuel and gold fell back to built-in prices | Fixed 5 Oct: fixed 107.41 / 97.82 / 803 / 72.8 and 15704 / 14395 / 290 were published as today's prices whenever a page failed | ✅ Fixed | — |
 | TL-25 | Prices on the site were June's | Fixed 5 Oct: a data file last written 7 Jun was read first; API routes returned fixed lists dated today. Now live API or the synced daily files, with dates; API routes answer 503 when they have nothing | ✅ Fixed | — |
-| TL-26 | Unpaid placements labelled "Sponsored" | Fixed 5 Oct: T-Fiber / T-Hub / Tourism promos relabelled "Featured service"; six invented "verified" partner businesses removed; /advertise page with an enquiry form (telangana.ad_enquiries) | ✅ Fixed | Read enquiries in Supabase; sell the slots |
+| TL-26 | Unpaid placements labelled \"Sponsored\" | Fixed 5 Oct: T-Fiber / T-Hub / Tourism promos relabelled \"Featured service\"; six invented \"verified\" partner businesses removed; /advertise page with an enquiry form (telangana.ad_enquiries) | ✅ Fixed | Read enquiries in Supabase; sell the slots |
 | TL-27 | Search engines were sent to redirecting URLs | Fixed 5 Oct: canonical tags, sitemap, robots.txt and share links now use www.telangana.live | ✅ Fixed | Verify the site in Google Search Console and submit the sitemap; make the bare-domain redirect permanent (308) in Vercel |
 | TL-28 | Jobs board is a fixed list from May | 20 hand-entered listings (TSPSC, TCS, Wipro, ...) never refreshed; shown as current openings | ✅ Fixed | 5 Oct: counts from the real date; expired notifications are not shown; official recruitment portals always linked. A live notifications feed is still a possible upgrade |
 | TL-29 | Reservoir and transit data are months old | Reservoirs last updated 13 Jul, transit 24 May; no workflow runs their writers. The daily freshness check (added 5 Oct) fails on both | P1 | Schedule water_scraper.py, or find a current source (Telangana irrigation portal) |
-| TL-30 | Metro crowd levels and bus "flow" figures are hand-entered | Shown as live (e.g. "127K: 93, Severe") with no source | P1 | Remove them, or connect a real feed |
-| TL-31 | Google Analytics and Tag Manager load before cookie consent | The banner records "accepted" but gates nothing; consent is required under India's DPDP Act | P1 | Decide: gate GA/GTM behind consent, or switch to cookieless Plausible (already wired, off until VITE_PLAUSIBLE_DOMAIN is set) |
-| TL-32 | Official disaster alerts not used | Fixed 5 Oct: IMD, CWC and SDMA alerts from NDMA SACHET that name Telangana now feed /alerts every 15 minutes, with issuer, area and an "until" time; hidden once the authority's alert expires | ✅ Fixed | None. Telangana had no active SACHET alert on 5 Oct, so the first one will show when IMD or the SDMA issues it |
-| TL-33 | Sponsor card showed an invented match score | Fixed 5 Oct: `PartnerCard` showed a random "Brand Sync 85–99% Match" and "Business DNA Verified" on every paid spotlight; now a plain card labelled Sponsored with `rel="sponsored"` | ✅ Fixed | — |
+| TL-30 | Metro crowd levels and bus \"flow\" figures are hand-entered | Fixed 9 Oct: crowd levels and flow metrics removed; corridors list official portals (L&T Metro, TGSRTC, SCR MMTS) for real timetables (TL-47) | ✅ Fixed | — |
+| TL-31 | Google Analytics and Tag Manager load before cookie consent | Fixed 12 Oct: Google Consent Mode v2 default 'denied' configured before all tags; CookieConsent banner dispatches explicit update on accept/essential per India DPDP Act | ✅ Fixed | — |
+| TL-32 | Official disaster alerts not used | Fixed 5 Oct: IMD, CWC and SDMA alerts from NDMA SACHET that name Telangana now feed /alerts every 15 minutes, with issuer, area and an \"until\" time; hidden once the authority's alert expires | ✅ Fixed | None. Telangana had no active SACHET alert on 5 Oct, so the first one will show when IMD or the SDMA issues it |
+| TL-33 | Sponsor card showed an invented match score | Fixed 5 Oct: `PartnerCard` showed a random \"Brand Sync 85–99% Match\" and \"Business DNA Verified\" on every paid spotlight; now a plain card labelled Sponsored with `rel=\"sponsored\"` | ✅ Fixed | — |
 | TL-34 | Secondary domains duplicated or misdirected | Fixed 5 Oct: bare telangana.live redirected with a temporary 307 (now 308); www.telanganalive.in served a full duplicate of the site; `vercel.json` sent telanganalive.in/.online to telanganalive.shop, which is not on the project. All now 308 to www.telangana.live | ◐ Partly fixed | In Vercel → Domains, set telanganalive.in and telanganalive.online to 308 (they still 307) |
 | TL-35 | Shared links had no preview image | Fixed 5 Oct: `og:image`/`twitter:image` pointed at `/og-image.png`, which did not exist. Added a 1200×630 image | ✅ Fixed | — |
-| TL-36 | Every page told Google it was the home page | Fixed 5 Oct: `index.html` carried a fixed canonical to "/" on every route, and pages that set their own produced two. Now one canonical per route; the 46 service guides get titles like "Birth Certificate in Telangana: Step-by-Step Guide" and a description from the guide; 24 more routes get their own title; district pages' titles were empty (Helmet got mixed children) and now render; /admin and /search are noindex | ✅ Fixed | — |
-| TL-37 | "Unified Enterprise CI/CD Pipeline" failed on lint | Fixed 6 Oct: 313 Ruff findings → 0. Safe auto-fixes; 25 naive datetimes fixed by hand (stored timestamps are explicit UTC, reader-facing dates are IST); bare `except:` narrowed and silent failures now logged; BLE001 (deliberate broad excepts in scrapers) relaxed in `backend/ruff.toml`. Two real bugs found: news_aggregation stamped UTC time as +0530, and the AI Pulse date used the runner's UTC day | ✅ Fixed | Next pipeline blocker: the E2E job runs `npm run test:e2e`, which does not exist |
-| TL-38 | Mobile page scrolled sideways; invented "stories today" count | Fixed 6 Oct: on /dashboard the sticky category pills made the page 649px wide on a 375px phone; they now scroll inside their bar. The "📰 N stories today" pill counted every stored story and ticked up at random every 7 s; it now counts stories published today (IST) | ✅ Fixed | — |
+| TL-36 | Every page told Google it was the home page | Fixed 5 Oct: `index.html` carried a fixed canonical to \"/\" on every route, and pages that set their own produced two. Now one canonical per route; the 46 service guides get titles like \"Birth Certificate in Telangana: Step-by-Step Guide\" and a description from the guide; 24 more routes get their own title; district pages' titles were empty (Helmet got mixed children) and now render; /admin and /search are noindex | ✅ Fixed | — |
+| TL-37 | \"Unified Enterprise CI/CD Pipeline\" failed on lint | Fixed 6 Oct: 313 Ruff findings → 0. Safe auto-fixes; 25 naive datetimes fixed by hand (stored timestamps are explicit UTC, reader-facing dates are IST); bare `except:` narrowed and silent failures now logged; BLE001 (deliberate broad excepts in scrapers) relaxed in `backend/ruff.toml`. Two real bugs found: news_aggregation stamped UTC time as +0530, and the AI Pulse date used the runner's UTC day | ✅ Fixed | Next pipeline blocker: the E2E job runs `npm run test:e2e`, which does not exist |
+| TL-38 | Mobile page scrolled sideways; invented \"stories today\" count | Fixed 6 Oct: on /dashboard the sticky category pills made the page 649px wide on a 375px phone; they now scroll inside their bar. The \"📰 N stories today\" pill counted every stored story and ticked up at random every 7 s; it now counts stories published today (IST) | ✅ Fixed | — |
 | TL-39 | E2E tests never ran | Fixed 6 Oct: the specs sat in `tests/`, where `@playwright/test` cannot resolve, and CI called a missing `test:e2e` script. Specs moved to `frontend/e2e/`, script added, stale assertions updated (5-item bottom nav, h1 region titles, removed AI Confidence badge, solid cards). The pipeline's Vercel-CLI deploy jobs were removed: Vercel's Git integration already deploys main | ✅ Fixed | — |
-| TL-40 | Reservoir levels were random numbers | Fixed 6 Oct: `water_scraper.py` generated storage, levels, inflows and "Critical Storage Alert" text with `random`, and the page said the data came from CWC and Telangana Irrigation. Generator deleted; /reservoirs says levels are unavailable and links the CWC bulletin and Telangana Irrigation | ◐ Honest, no data | Connect a real source (CWC weekly bulletin or Telangana Irrigation daily report, both PDF) |
-| TL-41 | Fixed silver price and AI leaderboard | Fixed 6 Oct: the Mint gold parser wrote `silver: 290.0`, which overwrote Live Chennai's real silver in history and entered today's average; silver now comes only from a real reading (else the last real one). `sync_ai_metrics.py` upserted a hard-coded "GPT-4o 1287…" leaderboard as each day's snapshot; removed | ✅ Fixed | — |
-| TL-42 | /panchang showed the same day forever | Fixed 6 Oct: `/api/panchang/today` returned a fixed Ashadha Dashami / Rohini / sunrise 05:40 reading with June festivals. Now computed per request for Hyderabad from Sun and Moon positions (astronomy-engine, Lahiri ayanamsa, elements at sunrise); matches Drik Panchang for 6 Oct 2026. Festivals and rituals are empty until a source exists. The "is it auspicious" query now gives the model the computed panchang | ✅ Fixed | Optional: a festival calendar source |
-| TL-43 | Weather card said "Demo"; AQI was fixed | Fixed 6 Oct: the scraped snapshot (real Open-Meteo/OWM reading) was labelled "Demo", while its AQI was a constant 75/80 for every district and the live path used "PM2.5 × 4.2", defaulting to "Good". AQI is now the CPCB Indian AQI from 24 h PM2.5/PM10 (Open-Meteo air quality); the card shows "As of HH:MM"; missing fields are skipped, not filled with 28 °C / 55 %; the mock generator and an unused WhatsApp stub with invented train and UV text are gone | ✅ Fixed | — |
+| TL-40 | Reservoir levels were random numbers | Fixed 6 Oct: `water_scraper.py` generated storage, levels, inflows and \"Critical Storage Alert\" text with `random`, and the page said the data came from CWC and Telangana Irrigation. Generator deleted; /reservoirs says levels are unavailable and links the CWC bulletin and Telangana Irrigation | ◐ Honest, no data | Connect a real source (CWC weekly bulletin or Telangana Irrigation daily report, both PDF) |
+| TL-41 | Fixed silver price and AI leaderboard | Fixed 6 Oct: the Mint gold parser wrote `silver: 290.0`, which overwrote Live Chennai's real silver in history and entered today's average; silver now comes only from a real reading (else the last real one). `sync_ai_metrics.py` upserted a hard-coded \"GPT-4o 1287…\" leaderboard as each day's snapshot; removed | ✅ Fixed | — |
+| TL-42 | /panchang showed the same day forever | Fixed 6 Oct: `/api/panchang/today` returned a fixed Ashadha Dashami / Rohini / sunrise 05:40 reading with June festivals. Now computed per request for Hyderabad from Sun and Moon positions (astronomy-engine, Lahiri ayanamsa, elements at sunrise); matches Drik Panchang for 6 Oct 2026. Festivals and rituals are empty until a source exists. The \"is it auspicious\" query now gives the model the computed panchang | ✅ Fixed | Optional: a festival calendar source |
+| TL-43 | Weather card said \"Demo\"; AQI was fixed | Fixed 6 Oct: the scraped snapshot (real Open-Meteo/OWM reading) was labelled \"Demo\", while its AQI was a constant 75/80 for every district and the live path used \"PM2.5 × 4.2\", defaulting to \"Good\". AQI is now the CPCB Indian AQI from 24 h PM2.5/PM10 (Open-Meteo air quality); the card shows \"As of HH:MM\"; missing fields are skipped, not filled with 28 °C / 55 %; the mock generator and an unused WhatsApp stub with invented train and UV text are gone | ✅ Fixed | — |
 | TL-44 | Invented civic data presented as real | Fixed 9 Oct: politician scores, ration shops, MeeSeva tracker and centres, fake alerts and emergency simulator, random ward numbers, poll tallies, park crowds, farmer advisories/MSPs/mandi, pulses fallback prices; pages now link to official sources | ✅ Fixed | — |
 | TL-45 | Publisher photos and the stand-in weather route | Fixed 9 Oct: news cards show no publisher images; `/api/weather` (fixed 35°C / AQI 180) removed | ✅ Fixed | — |
-| TL-46 | Gold read from sites whose terms may forbid it; invented fuel tax split | Fixed 9 Oct: gold and silver dropped (link to IBJA); fuel "tax breakup" and fixed fallback prices removed | ✅ Fixed | — |
+| TL-46 | Gold read from sites whose terms may forbid it; invented fuel tax split | Fixed 9 Oct: gold and silver dropped (link to IBJA); fuel \"tax breakup\" and fixed fallback prices removed | ✅ Fixed | — |
 | TL-47 | Random-number 30-day forecast and more invented datasets | Fixed 9 Oct: weather page shows real current readings; budget, tax rates, jobs, water timings, wards, holidays, tariffs, metro crowding, live bus meter, clinic phones, star ratings removed or linked out | ✅ Fixed | — |
 | TL-48 | Unchecked emergency numbers, model-written AI briefing, wrong scheme details | Fixed 9 Oct: numbers checked against published sources; briefing generator removed; scheme amounts point to official portals | ✅ Fixed | — |
-| TL-03 | Ticker and crisis panel showed invented "live" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
+| TL-03 | Ticker and crisis panel showed invented \"live\" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ✅ Closed (gold dropped, TL-46) | — |
 | TL-06 | Rate cards don't show staleness | A 3-day-old price looks current | P1 | Set the stale threshold per rate (e.g. gold 12 h, fuel 24 h) |
@@ -418,14 +418,14 @@ infrastructure/
 | ID | Layer | Files | Acceptance criteria | Effort |
 |---|---|---|---|---|
 | TL-01 | Infra | Vercel settings | ✅ Done: production deployments come from `main` | S |
-| TL-02 | Infra | GitHub secrets | Alerts job runs with `source="typesafe"` for every verdict; no regex fallback in logs | S |
+| TL-02 | Infra | GitHub secrets | Alerts job runs with `source=\"typesafe\"` for every verdict; no regex fallback in logs | S |
 | TL-16 | Infra | `.github/workflows/*` | ✅ Done: hook steps removed; data commits deploy through the Git integration | S |
 | TL-17 | Backend + Frontend | `scripts/tech_pulse.py` (shared with vizag), `pages/TechPulsePage.jsx`, `ai_pulse_update.yml` | ✅ Done: every item links to a dated source; 14-day window; empty sections say so; 25 + 4 tests | M |
 | TL-18 | Infra + Backend + Frontend | `supabase/migrations/20261004_telangana_schema.sql`, `services/*`, `core/database.py` | ✅ Code live; anon reads only public rows; inserts don't read back. Pending: exposed schema, service-key secret | M |
 | TL-19 | Frontend | `components/GrievanceDashboard.jsx`, `data/reportingData.js` | ✅ Done: wired to citizenReportsService.getPublishedReports(); zero mock records | S |
 | TL-20 | Frontend | `services/pricesService.js`, `waterService.js` | ✅ Done: browser Redis client removed; `noBrowserSecrets.test.js` guards it | S |
 | TL-21 | Frontend | `pages/ClassifiedsPage.jsx` | Featuring only after a verified payment webhook sets `is_featured` | M |
-| TL-22 | Backend + Frontend | `scripts/data_engine.py` `_tax_breakup`, `FuelTaxCard` | Breakup computed from published duty and VAT rates with their source, or not shown | S–M |
+| TL-22 | Backend + Frontend | `scripts/data_engine.py` `_tax_breakup`, `FuelTaxCard` | ✅ Done: invented breakup removed; test in `noInventedCivicData.test.js` guards it | S–M |
 | TL-23 | Frontend | `NewsCard.jsx`, `ArticleModal.jsx` | ✅ Done: `tests/unit/noInventedScores.test.js` | S |
 | TL-24 | Backend | `sync_gold`, `sync_fuel` | ✅ Done: `staleFields`; previous file kept when petrol and diesel are unread | S |
 | TL-25 | Frontend + API | `services/pricesService.js`, `api/fuel-prices.js`, `api/gold-rates.js`, `api/mandi-prices.js` | ✅ Done: no constants or June file; `tests/unit/pricesService.test.js` | M |
@@ -433,24 +433,24 @@ infrastructure/
 | TL-27 | Frontend | 14 files using the bare domain | ✅ Done: guard test in `noBrowserSecrets.test.js` | S |
 | TL-28 | Data | `data/jobsData.js`, `JobBoardPage.jsx` | ✅ Done: `utils/jobs.js`, `tests/unit/jobs.test.js` | M |
 | TL-29 | Data | `scripts/water_scraper.py`, transit writer | Both modules pass `check_freshness.py` daily | M |
-| TL-30 | Frontend | `components/MetroCard.jsx`, `data/transportData.js`, `transit_status.json` | No crowd or flow value without a source and time | S |
-| TL-31 | Frontend | `index.html`, `CookieConsent.jsx` | No analytics cookie before consent, or GA removed | S |
+| TL-30 | Frontend | `components/MetroCard.jsx`, `data/transportData.js`, `transit_status.json` | ✅ Done: crowd indices removed; official portals linked; guarded in `noInventedCivicData.test.js` | S |
+| TL-31 | Frontend | `index.html`, `CookieConsent.jsx` | ✅ Done: Google Consent Mode v2 defaults denied; explicit grant on accept; guarded in `tests/unit/cookieConsent.test.js` | S |
 | TL-32 | Backend | new alerts source from SACHET RSS + CAP XML | ✅ Done: `core/sachet.py` (shared with vizag), `alert_feed.build_official_record`, `utils/alerts.js`; tests `test_sachet.py`, `alerts.test.js` | M |
 | TL-33 | Frontend | `components/PartnerCard.jsx` | ✅ Done: guard in `tests/unit/noInventedScores.test.js` | S |
 | TL-34 | Infra | `vercel.json`, `frontend/vercel.json`, Vercel domains | ◐ apex 308 and host redirects done; two domain-level 307s need the dashboard | S |
 | TL-35 | Frontend | `public/og-image.png` | ✅ Done: `tests/unit/shareImage.test.js` checks every meta image exists | S |
 | TL-36 | Frontend | `components/RouteMeta.jsx`, `utils/pageMeta.js`, `index.html`, `ServiceDetailPage`, `SubRegionPage` | ✅ Done: `tests/unit/pageMeta.test.js`; one canonical and one description per page checked in Chrome | S |
 | TL-37 | Backend | `backend/ruff.toml`, 15 backend files, `scripts/tech_pulse.py` (synced to vizag) | ✅ Done: `ruff check .` clean; root 207, backend 14, panchang 5 tests pass | M |
-| TL-38 | Frontend | `pages/HomePage.jsx`, `components/PulseCounter.jsx`, `utils/timeUtils.js` | ✅ Done: `tests/unit/pulseCounter.test.js`; E2E "no horizontal overflow on mobile" | S |
+| TL-38 | Frontend | `pages/HomePage.jsx`, `components/PulseCounter.jsx`, `utils/timeUtils.js` | ✅ Done: `tests/unit/pulseCounter.test.js`; E2E \"no horizontal overflow on mobile\" | S |
 | TL-39 | CI | `frontend/e2e/`, `playwright.config.ts`, `package.json`, `ci_cd_master.yml` | ✅ Done: 82 passed, 2 skipped (desktop-only control on mobile) locally | M |
 | TL-40 | Backend + Frontend | `water_scraper.py` (deleted), `scheduler.py`, `check_freshness.py`, `water_levels.json`, `reservoirsData.js`, `ReservoirsPage.jsx` | ◐ Unavailable state live; source still to connect | M |
 | TL-41 | Backend | `data_engine.py` (`sync_gold`, Mint/Chennai parsers), `sync_ai_metrics.py` | ✅ Done: 3 new tests in `test_data_engine.py` | S |
 | TL-42 | Frontend API | `utils/panchang.js`, `api/panchang/today.js`, `api/panchang/query.js`, `PanchangPage.jsx` | ✅ Done: `tests/unit/panchang.test.js` (checked against Drik Panchang) | M |
 | TL-43 | Backend + Frontend | `weather_scraper.py`, `utils/aqi.js`, `weatherService.js`, `WeatherCard.jsx` | ✅ Done: `test_weather_scraper.py`, `tests/unit/aqi.test.js`; data regenerated (33 districts, real AQI) | M |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
-| TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including "business…" and "…training" cases; whole-word or TypeSafe category and region | M |
+| TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including \"business…\" and \"…training\" cases; whole-word or TypeSafe category and region | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ✅ Closed: gold no longer published (TL-46) | M |
-| TL-06 | Frontend + Backend | `FuelPriceWidget.jsx`, `DailyRatesDashboard.jsx`, `GoldLandingPage.jsx`; rate writers in `data_engine.py` | Every card shows source and "as of" time; stale badge past the PO threshold | M |
+| TL-06 | Frontend + Backend | `FuelPriceWidget.jsx`, `DailyRatesDashboard.jsx`, `GoldLandingPage.jsx`; rate writers in `data_engine.py` | Every card shows source and \"as of\" time; stale badge past the PO threshold | M |
 | TL-07 | Backend | `agents/fact_checker.py` | ✅ Done: `FactCheckVerdict`; `tests/test_fact_checker.py` | M |
 | TL-08 | Infra | 8 sync workflows; rate/weather writers | ✅ Done: `write_js` / `write_js_module` skip unchanged data; `TestWritesSkipUnchangedData` | S |
 | TL-09 | Infra | `scraper.yml`, `gold_silver_update.yml`, `rates_sync.yml` | ✅ Closed: gold no longer published (TL-46) | S |
@@ -520,8 +520,7 @@ black backend/
 Production serves the Vercel project's **Production Branch**, currently `master` (see Remediation Backlog, TL-01). Development happens on `main`.
 
 - **Data refreshes**: each sync job POSTs `VERCEL_DEPLOY_HOOK_URL` after it pushes a commit. The hook currently returns 404 (TL-16).
-- **Routing**: prerendered routes are served as static files. All other routes fall back to the SPA via a rewrite to `/` in `vercel.json`. A rewrite to `/index.html` does not resolve under `cleanUrls: true`.
-- **Check what's live** with the newest production deployment's commit ref and SHA, not just that a build ran.
+- **Routing**: prerendered routes are served as static files. All other routes fall back to the SPA via a rewrite to `/` in `vercel.json`. A rewrite to `/index.html` does not resolve under `cleanUrls: true`.\n- **Check what's live** with the newest production deployment's commit ref and SHA, not just that a build ran.
 
 ### Supabase (Database)
 
