@@ -5,6 +5,7 @@ import mandi from '../data/mandiPrices.json';
 import { mandiIsCurrent } from './MandiTables';
 import { fetchFuelPrices } from '../services/pricesService';
 import { Card, CardHeader, StatChip } from './LocalPulse';
+import UpdatedAt from './UpdatedAt';
 
 const ESSENTIALS = ['Onion', 'Tomato', 'Potato', 'Tur (red gram)'];
 
@@ -20,14 +21,26 @@ export default function DailyRatesDashboard({ variant = 'default' }) {
             petrol: { ...previous.petrol, price: data.petrol.price },
             diesel: { ...previous.diesel, price: data.diesel.price },
             ...(data.lpg ? { lpgHousehold: { ...previous.lpgHousehold, price: data.lpg.price } } : {}),
-        })));
+            ...(data.lastUpdated ? { updatedAt: data.lastUpdated, date: data.date || new Date(data.lastUpdated).toISOString().slice(0, 10) } : {}),
+            source: data.source || previous.source,
+        }))).catch(() => {});
     }, []);
 
-    const { petrol, diesel, lpgHousehold, city, date } = fuelPrices;
+    const { petrol, diesel, lpgHousehold, city, date, updatedAt } = fuelPrices;
     const basketItems = mandiIsCurrent() ? (mandi.basket || []).filter((c) => ESSENTIALS.includes(c.name)) : [];
 
     return <Card accent="amber" className="animate-fade-in h-full">
-        <CardHeader icon="✦" title={variant === 'district' ? 'Fuel & Commodities' : 'Daily Rates'} subtitle={`${city} prices`} status={date} />
+        <CardHeader
+            icon="✦"
+            title={variant === 'district' ? 'Fuel & Commodities' : 'Daily Rates'}
+            subtitle={`${city} prices`}
+            status={
+                <div className="flex flex-col items-end gap-0.5">
+                    <span>{date}</span>
+                    <UpdatedAt timestamp={updatedAt || staticFuelPrices.updatedAt} maxAgeHours={24} />
+                </div>
+            }
+        />
         <div className="local-pulse-stat-grid">
             {petrol?.price != null && <StatChip label="Petrol" value={`₹${petrol.price}`} accent />}
             {diesel?.price != null && <StatChip label="Diesel" value={`₹${diesel.price}`} />}

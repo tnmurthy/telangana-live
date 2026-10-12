@@ -49,6 +49,8 @@ export default function FuelPriceWidget() {
                     ...(data.lpg ? { lpgHousehold: { ...prev.lpgHousehold, price: data.lpg.price, change: data.lpg.change ?? 0 } } : {}),
                     ...(data.cng ? { cngVehicle:   { ...prev.cngVehicle,   price: data.cng.price, change: data.cng.change ?? 0 } } : {}),
                     date: data.lastUpdated ? new Date(data.lastUpdated).toISOString().slice(0, 10) : prev.date,
+                    updatedAt: data.lastUpdated || prev.updatedAt,
+                    source: data.source || prev.source,
                 }));
             }
         }).catch(() => {});
@@ -72,7 +74,7 @@ export default function FuelPriceWidget() {
                 </div>
                 <div className="text-right">
                     <span className="date-badge">{date}</span>
-                    <div className="mt-1"><UpdatedAt timestamp={fuelPrices.updatedAt || staticFuelPrices.updatedAt} maxAgeHours={30} /></div>
+                    <div className="mt-1"><UpdatedAt timestamp={fuelPrices.updatedAt || staticFuelPrices.updatedAt} maxAgeHours={24} /></div>
                 </div>
             </div>
 

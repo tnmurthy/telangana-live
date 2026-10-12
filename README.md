@@ -343,9 +343,9 @@ frontend/
 │   ├── NewsTicker.jsx         ✅ TL-03 live feed only; news shows its real publish time
 │   ├── PowerTariffCard.jsx    ✅ reads tariff reference data only (not affected)
 │   ├── BreakingNewsBanner.jsx ✅ severity-based, reads live feed
-│   ├── FuelPriceWidget.jsx    ⚠ TL-06 no stale indicator
-│   └── DailyRatesDashboard.jsx ⚠ TL-06 no stale indicator
-├── src/pages/GoldLandingPage.jsx ⚠ TL-06 no stale indicator
+│   ├── FuelPriceWidget.jsx    ✅ TL-06 calibrated 24h stale threshold with live updatedAt
+│   └── DailyRatesDashboard.jsx ✅ TL-06 calibrated 24h stale threshold with live updatedAt
+├── src/pages/GoldLandingPage.jsx ✅ TL-46/TL-06 links out to IBJA benchmark (gold dropped)
 ├── src/services/powerAlertsService.js ✅ TL-03 reads /data/alerts.json; no invented fallback
 ├── src/App.tsx, src/main.tsx  ⚠ TL-14 dead files (entry is main.jsx → App.jsx)
 └── vitest.config.ts           ✅ TL-12 runs the repo-root tests (8 files, 95 tests)
@@ -402,7 +402,7 @@ infrastructure/
 | TL-03 | Ticker and crisis panel showed invented \"live\" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
 | TL-04 | News filed under wrong category | Fixed 12 Oct: replaced substring search with precompiled whole-word regex patterns across 8 categories and 19 regions; verified on 34-headline benchmark (tests/test_news_classifier.py) | ✅ Fixed | — |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ✅ Closed (gold dropped, TL-46) | — |
-| TL-06 | Rate cards don't show staleness | A 3-day-old price looks current | P1 | Set the stale threshold per rate (e.g. gold 12 h, fuel 24 h) |
+| TL-06 | Rate cards don't show staleness | Fixed 12 Oct: FuelPriceWidget and DailyRatesDashboard calibrated to 24 h threshold; live updatedAt preserved across refreshes; tests in rateCards.test.js | ✅ Fixed | — |
 | TL-07 | Fake-news check silently switches off on errors | Unverified articles published as checked | ✅ Fixed | 5 Oct: unchecked articles are published as unchecked with no score; failures logged |
 | TL-08 | Rebuild triggered even when nothing changed | Gate added; but every sync writes the run time, so most runs still push and rebuild | ✅ Fixed | 5 Oct: data files are not rewritten when only timestamps changed, so quiet runs commit and deploy nothing |
 | TL-09 | Gold fetched by three overlapping jobs | Wasted runs, conflicting writes | ✅ Closed (gold dropped, TL-46) | — |
@@ -450,7 +450,7 @@ infrastructure/
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
 | TL-04 | Backend | `core/news_classifier.py` | ✅ Done: 34-headline benchmark passes; whole-word matching prevents false Transit/Safety mappings; tests in `tests/test_news_classifier.py` | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ✅ Closed: gold no longer published (TL-46) | M |
-| TL-06 | Frontend + Backend | `FuelPriceWidget.jsx`, `DailyRatesDashboard.jsx`, `GoldLandingPage.jsx`; rate writers in `data_engine.py` | Every card shows source and \"as of\" time; stale badge past the PO threshold | M |
+| TL-06 | Frontend + Backend | `FuelPriceWidget.jsx`, `DailyRatesDashboard.jsx`, `GoldLandingPage.jsx`; rate writers in `data_engine.py` | ✅ Done: 24 h stale threshold on rate cards; live updatedAt state preserved; unit test in tests/unit/rateCards.test.js | M |
 | TL-07 | Backend | `agents/fact_checker.py` | ✅ Done: `FactCheckVerdict`; `tests/test_fact_checker.py` | M |
 | TL-08 | Infra | 8 sync workflows; rate/weather writers | ✅ Done: `write_js` / `write_js_module` skip unchanged data; `TestWritesSkipUnchangedData` | S |
 | TL-09 | Infra | `scraper.yml`, `gold_silver_update.yml`, `rates_sync.yml` | ✅ Closed: gold no longer published (TL-46) | S |
