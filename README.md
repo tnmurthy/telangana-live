@@ -241,16 +241,16 @@ On push: `ci_cd_master` (secret scan → lint, typecheck, build → deploy jobs)
 ```
 backend/
 ├── core/
-│   ├── alert_triage.py      TypeSafe judgments per headline: Choice(type), Noul(in Telangana),
-│   │                        Noul(current), Score(severity). Regex fallback without a key.
-│   ├── alert_feed.py        the one alerts.json schema; freshness and expiry rules
-│   ├── news_classifier.py   keyword category / region tagging
+│   ├── alert_triage.py        ✅ TypeSafe triage of alert headlines (type, in-Telangana, current, severity)
+│   ├── alert_feed.py          ✅ single alerts.json schema, freshness and expiry rules
+│   ├── news_classifier.py     ✅ TL-04 whole-word regex matching across categories & regions
 │   └── correlation_engine.py, clustering.py, llm_provider.py, config.py
 ├── scripts/
-│   ├── data_engine.py       hub: fuel, pulses, news, alerts (gold and the AI briefing removed, TL-46/48)
-│   ├── emergency_alerts.py  entry point for the alerts job; fetch_latest_alerts() for the API
-│   └── news_scraper.py, news_aggregation.py, weather_scraper.py, whatsapp_bot.py
-└── api/civic_gateway.py     FastAPI: /news, /alerts, /services
+│   ├── data_engine.py         ✅ TL-05 closed: gold no longer published (TL-46)
+│   ├── emergency_alerts.py    ✅ entry point for alerts job; fabricated-alert generator removed
+│   ├── news_scraper.py        ⚠ TL-10 numbered-list parsing can attach summaries to the wrong article
+│   └── news_aggregation.py, weather_scraper.py, whatsapp_bot.py
+└── api/civic_gateway.py       ✅ /alerts reads the published feed
 tools/calibrate_alert_triage.py   re-derive alert thresholds against labelled headlines
 ```
 
@@ -324,8 +324,7 @@ backend/
 ├── core/
 │   ├── alert_triage.py        ✅ TypeSafe triage of alert headlines (type, in-Telangana, current, severity)
 │   ├── alert_feed.py          ✅ single alerts.json schema, freshness and expiry rules
-│   ├── news_classifier.py     ⚠ TL-04 substring keyword matching (\"business\" → Transit)
-│   │                          ⚠ TL-15 entity keyword table duplicated in correlation_engine.py
+│   ├── news_classifier.py     ✅ TL-04 whole-word regex matching across categories & regions
 │   └── correlation_engine.py, clustering.py, llm_provider.py, config.py
 ├── agents/
 │   └── fact_checker.py        ⚠ TL-07 parse failure silently passes every article (score 85)
@@ -400,7 +399,7 @@ infrastructure/
 | TL-47 | Random-number 30-day forecast and more invented datasets | Fixed 9 Oct: weather page shows real current readings; budget, tax rates, jobs, water timings, wards, holidays, tariffs, metro crowding, live bus meter, clinic phones, star ratings removed or linked out | ✅ Fixed | — |
 | TL-48 | Unchecked emergency numbers, model-written AI briefing, wrong scheme details | Fixed 9 Oct: numbers checked against published sources; briefing generator removed; scheme amounts point to official portals | ✅ Fixed | — |
 | TL-03 | Ticker and crisis panel showed invented \"live\" alerts (6 static + 2 fallback shutdowns) | Fixed 2 Oct: live feed only, empty when quiet | ✅ Fixed | — |
-| TL-04 | News filed under wrong category | Category pages, the SEO surface, carry wrong articles | P1 | Confirm category and region list |
+| TL-04 | News filed under wrong category | Fixed 12 Oct: replaced substring search with precompiled whole-word regex patterns across 8 categories and 19 regions; verified on 34-headline benchmark (tests/test_news_classifier.py) | ✅ Fixed | — |
 | TL-05 | Gold price scraper fragile, currently stale | Gold page, a high-traffic page, shows old prices | ✅ Closed (gold dropped, TL-46) | — |
 | TL-06 | Rate cards don't show staleness | A 3-day-old price looks current | P1 | Set the stale threshold per rate (e.g. gold 12 h, fuel 24 h) |
 | TL-07 | Fake-news check silently switches off on errors | Unverified articles published as checked | ✅ Fixed | 5 Oct: unchecked articles are published as unchecked with no score; failures logged |
@@ -448,7 +447,7 @@ infrastructure/
 | TL-42 | Frontend API | `utils/panchang.js`, `api/panchang/today.js`, `api/panchang/query.js`, `PanchangPage.jsx` | ✅ Done: `tests/unit/panchang.test.js` (checked against Drik Panchang) | M |
 | TL-43 | Backend + Frontend | `weather_scraper.py`, `utils/aqi.js`, `weatherService.js`, `WeatherCard.jsx` | ✅ Done: `test_weather_scraper.py`, `tests/unit/aqi.test.js`; data regenerated (33 districts, real AQI) | M |
 | TL-03 | Frontend | `src/data/alerts.js`, `NewsTicker.jsx`, `services/powerAlertsService.js` | ✅ Done: reads `/data/alerts.json`; [] on failure; 7 tests in `tests/unit/powerAlertsService.test.js` | S |
-| TL-04 | Backend | `core/news_classifier.py` | Labelled set of ≥30 headlines passes, including \"business…\" and \"…training\" cases; whole-word or TypeSafe category and region | M |
+| TL-04 | Backend | `core/news_classifier.py` | ✅ Done: 34-headline benchmark passes; whole-word matching prevents false Transit/Safety mappings; tests in `tests/test_news_classifier.py` | M |
 | TL-05 | Backend | `scripts/data_engine.py` (gold scrapers) | ✅ Closed: gold no longer published (TL-46) | M |
 | TL-06 | Frontend + Backend | `FuelPriceWidget.jsx`, `DailyRatesDashboard.jsx`, `GoldLandingPage.jsx`; rate writers in `data_engine.py` | Every card shows source and \"as of\" time; stale badge past the PO threshold | M |
 | TL-07 | Backend | `agents/fact_checker.py` | ✅ Done: `FactCheckVerdict`; `tests/test_fact_checker.py` | M |
@@ -520,7 +519,8 @@ black backend/
 Production serves the Vercel project's **Production Branch**, currently `master` (see Remediation Backlog, TL-01). Development happens on `main`.
 
 - **Data refreshes**: each sync job POSTs `VERCEL_DEPLOY_HOOK_URL` after it pushes a commit. The hook currently returns 404 (TL-16).
-- **Routing**: prerendered routes are served as static files. All other routes fall back to the SPA via a rewrite to `/` in `vercel.json`. A rewrite to `/index.html` does not resolve under `cleanUrls: true`.\n- **Check what's live** with the newest production deployment's commit ref and SHA, not just that a build ran.
+- **Routing**: prerendered routes are served as static files. All other routes fall back to the SPA via a rewrite to `/` in `vercel.json`. A rewrite to `/index.html` does not resolve under `cleanUrls: true`.
+- **Check what's live** with the newest production deployment's commit ref and SHA, not just that a build ran.
 
 ### Supabase (Database)
 
