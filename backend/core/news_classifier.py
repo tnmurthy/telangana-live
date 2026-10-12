@@ -2,76 +2,161 @@ import re
 
 from core.correlation_engine import ENTITY_MAPPING_RULES, map_article_to_civic_entities
 
+CATEGORY_KEYWORDS = {
+    "Weather": [
+        "rain", "flood", "heatwave", "weather", "imd", "monsoon", "cyclone",
+        "temperature", "climate", "forecast", "hailstorm", "thunderstorm",
+        "downpour", "rainfall", "heavy rain",
+    ],
+    "Safety": [
+        "police", "crime", "robbery", "arrest", "arrested", "safety", "security",
+        "murder", "theft", "scam", "fraud", "cybercrime", "seizure", "raid",
+        "raids", "fir", "jail", "encounter", "court", "investigation", "lokayukta",
+        "vigilance", "smuggling", "narcotics", "contraband",
+    ],
+    "Health": [
+        "hospital", "hospitals", "health", "healthcare", "covid", "dengue",
+        "doctor", "doctors", "medicine", "medicines", "vaccine", "vaccines",
+        "disease", "treatment", "outbreak", "clinical", "virus", "malaria",
+        "chikungunya", "typhoid",
+    ],
+    "Education": [
+        "school", "schools", "college", "colleges", "exam", "exams", "result",
+        "results", "education", "student", "students", "teacher", "teachers",
+        "syllabus", "university", "universities", "admission", "admissions",
+        "curriculum", "scholarship", "tsbie", "inter results", "ssc results",
+    ],
+    "Transit": [
+        "traffic", "metro", "rtc", "tgsrtc", "tsrtc", "train", "trains",
+        "railway", "railways", "road", "roads", "transit", "flyover", "flyovers",
+        "highway", "highways", "bus", "buses", "transport", "aviation",
+        "airport", "airports", "flight", "flights", "expressway", "mmts",
+    ],
+    "Business": [
+        "gold", "silver", "stock", "stocks", "market", "markets", "rupee",
+        "finance", "business", "businesses", "price", "prices", "inflation",
+        "mandi", "mandis", "pulses", "economy", "trade", "gst", "corporate",
+        "investment", "investments", "shares", "startup", "startups",
+    ],
+    "Govt": [
+        "govt", "government", "civic", "ghmc", "hmda", "tsspdcl", "municipal",
+        "cm", "chief minister", "revanth", "minister", "scheme", "policy",
+        "cabinet", "election", "elections", "bjp", "congress", "brs", "mla",
+        "mlas", "mp", "mps", "secretariat", "collector", "hyderabad municipal",
+    ],
+}
+
+REGION_KEYWORDS = {
+    "Cyberabad": [
+        "cyberabad", "hitec city", "hitec", "gachibowli", "kondapur",
+        "madhapur", "serilingampally", "financial district", "kokapet",
+        "nanakramguda", "raidurg",
+    ],
+    "Malkajgiri": [
+        "malkajgiri", "uppal", "alwal", "kapra", "medchal", "kushaiguda", "ecil",
+    ],
+    "Warangal": [
+        "warangal", "hanumakonda", "hanamkonda", "kazipet", "gwmc", "kakatiya",
+        "ఓరుగల్లు", "వరంగల్", "హనుమకొండ", "కాజీపేట", "పరకాల",
+    ],
+    "Karimnagar": [
+        "karimnagar", "smart city", "granite hub", "kmc", "కరీంనగర్",
+    ],
+    "Khammam": [
+        "khammam", "stambhadri", "ఖమ్మం", "స్తంభాద్రి",
+    ],
+    "Nizamabad": [
+        "nizamabad", "indur", "నిజామాబాద్", "ఇందూరు",
+    ],
+    "Nalgonda": [
+        "nalgonda", "neelagiri", "నల్గొండ", "నీలగిరి",
+    ],
+    "Mahbubnagar": [
+        "mahbubnagar", "palamuru", "మహబూబ్ నగర్", "పాలమూరు",
+    ],
+    "Adilabad": [
+        "adilabad", "edulabad", "ఆదిలాబాద్",
+    ],
+    "Siddipet": [
+        "siddipet", "సిద్దిపేట",
+    ],
+    "Sangareddy": [
+        "sangareddy", "సంగారెడ్డి",
+    ],
+    "Rangareddy": [
+        "rangareddy", "రంగారెడ్డి",
+    ],
+    "Suryapet": [
+        "suryapet", "సూర్యాపేట",
+    ],
+    "Mancherial": [
+        "mancherial", "మంచిర్యాల",
+    ],
+    "Jagtial": [
+        "jagtial", "jagityal", "జగిత్యాల",
+    ],
+    "Jayashankar Bhupalpally": [
+        "bhupalpally", "jayashankar", "భూపాలపల్లి",
+    ],
+    "Bhadradri Kothagudem": [
+        "kothagudem", "bhadradri", "కొత్తగూడెం", "భద్రాద్రి",
+    ],
+    "Yadadri Bhuvanagiri": [
+        "bhuvanagiri", "yadadri", "భువనగిరి", "యాదాద్రి",
+    ],
+    "Hyderabad": [
+        "hyderabad", "ghmc", "banjara hills", "banjara", "jubilee hills",
+        "jubilee", "secunderabad", "charminar", "koti", "begumpet",
+        "khairatabad", "nampally", "old city", "హైదరాబాద్", "సికింద్రాబాద్",
+    ],
+}
+
+
+def _compile_patterns(keyword_map: dict[str, list[str]]) -> dict[str, list[re.Pattern]]:
+    compiled = {}
+    for key, words in keyword_map.items():
+        patterns = []
+        for word in words:
+            escaped = re.escape(word)
+            patterns.append(re.compile(rf"(?<!\w){escaped}(?!\w)", re.IGNORECASE))
+        compiled[key] = patterns
+    return compiled
+
+
+_COMPILED_CATEGORIES = _compile_patterns(CATEGORY_KEYWORDS)
+_COMPILED_REGIONS = _compile_patterns(REGION_KEYWORDS)
+
 
 def classify_article(title: str, description: str):
     """
     Classifies a news article into a category and a region based on title and description keywords.
-    Categories: Govt, Business, Safety, Transit, Weather, Education, Health, General
-    Regions: Hyderabad, Cyberabad, Malkajgiri, Warangal, Karimnagar, Khammam, Nizamabad, Telangana
+    Uses whole-word boundary matching to prevent substring collisions (TL-04).
+    Categories: Weather, Safety, Health, Education, Transit, Business, Govt, General
+    Regions: Cyberabad, Malkajgiri, Warangal, Karimnagar, Khammam, Nizamabad, Nalgonda,
+             Mahbubnagar, Adilabad, Siddipet, Sangareddy, Rangareddy, Suryapet, Mancherial,
+             Jagtial, Jayashankar Bhupalpally, Bhadradri Kothagudem, Yadadri Bhuvanagiri,
+             Hyderabad, Telangana
     """
     title_val = title or ""
     desc_val = description or ""
-    text = f"{title_val} {desc_val}".lower()
+    text = f"{title_val} {desc_val}"
 
-    # Category classification based on keywords
+    # Category classification based on whole-word regex patterns
     category = "General"
-    if any(k in text for k in ["traffic", "metro", "rtc", "tsrtc", "train", "railway", "road", "transit", "flyover", "highway", "bus", "transport", "aviation", "airport", "flight"]):
-        category = "Transit"
-    elif any(k in text for k in ["rain", "flood", "heat", "weather", "imd", "monsoon", "cyclone", "temperature", "climate", "summer", "winter", "forecast"]):
-        category = "Weather"
-    elif any(k in text for k in ["police", "crime", "robbery", "arrest", "safety", "security", "murder", "theft", "scam", "fraud", "cybercrime", "seizure", "raid", "fir", "jail", "encounter", "court", "investigation"]):
-        category = "Safety"
-    elif any(k in text for k in ["school", "college", "exam", "result", "education", "student", "teacher", "syllabus", "university", "admission", "curriculum"]):
-        category = "Education"
-    elif any(k in text for k in ["gold", "silver", "stock", "market", "rupee", "finance", "business", "price", "inflation", "mandi", "pulses", "economy", "trade", "gst", "corporate", "investment", "shares"]):
-        category = "Business"
-    elif any(k in text for k in ["hospital", "health", "covid", "dengue", "doctor", "medicine", "vaccine", "disease", "treatment", "outbreak", "clinical", "virus", "malaria"]):
-        category = "Health"
-    elif any(k in text for k in ["govt", "government", "civic", "ghmc", "hmda", "tsspdcl", "municipal", "cm ", "revanth", "minister", "scheme", "policy", "cabinet", "election", "bjp", "congress", "brs", "mla", "mp ", "secretariat", "collector", "hyderabad municipal"]):
-        category = "Govt"
+    for cat, patterns in _COMPILED_CATEGORIES.items():
+        if any(p.search(text) for p in patterns):
+            category = cat
+            break
 
-    # Region classification based on keywords
+    # Region classification based on whole-word regex patterns
     region = "Telangana"
-    if any(k in text for k in ["cyberabad", "hitec", "gachibowli", "kondapur", "madhapur", "serilingampally"]):
-        region = "Cyberabad"
-    elif any(k in text for k in ["malkajgiri", "uppal", "alwal", "kapra", "medchal"]):
-        region = "Malkajgiri"
-    elif any(k in text for k in ["warangal", "hanumakonda", "kazipet", "gwmc", "kakatiya", "ఓరుగల్లు", "వరంగల్", "హనుమకొండ", "కాజీపేట", "పరకాల"]):
-        region = "Warangal"
-    elif any(k in text for k in ["karimnagar", "smart city", "granite hub", "kmc", "కరీంనగర్"]):
-        region = "Karimnagar"
-    elif any(k in text for k in ["khammam", "stambhadri", "ఖమ్మం", "స్తంభాద్రి"]):
-        region = "Khammam"
-    elif any(k in text for k in ["nizamabad", "indur", "నిజామాబాద్", "ఇందూరు"]):
-        region = "Nizamabad"
-    elif any(k in text for k in ["nalgonda", "neelagiri", "నల్గొండ", "నీలగిరి"]):
-        region = "Nalgonda"
-    elif any(k in text for k in ["mahbubnagar", "palamuru", "మహబూబ్ నగర్", "పాలమూరు"]):
-        region = "Mahbubnagar"
-    elif any(k in text for k in ["adilabad", "edulabad", "ఆదిలాబాద్"]):
-        region = "Adilabad"
-    elif any(k in text for k in ["hyderabad", "ghmc", "banjara", "jubilee", "secunderabad", "charminar", "koti", "begumpet", "khairatabad", "nampally", "old city"]):
-        region = "Hyderabad"
-    elif any(k in text for k in ["siddipet"]):
-        region = "Siddipet"
-    elif any(k in text for k in ["sangareddy"]):
-        region = "Sangareddy"
-    elif any(k in text for k in ["rangareddy"]):
-        region = "Rangareddy"
-    elif any(k in text for k in ["suryapet"]):
-        region = "Suryapet"
-    elif any(k in text for k in ["mancherial"]):
-        region = "Mancherial"
-    elif any(k in text for k in ["jagityal", "jagtial"]):
-        region = "Jagtial"
-    elif any(k in text for k in ["bhupalpally"]):
-        region = "Jayashankar Bhupalpally"
-    elif any(k in text for k in ["kothagudem", "bhadradri"]):
-        region = "Bhadradri Kothagudem"
-    elif any(k in text for k in ["bhuvanagiri", "yadadri"]):
-        region = "Yadadri Bhuvanagiri"
+    for reg, patterns in _COMPILED_REGIONS.items():
+        if any(p.search(text) for p in patterns):
+            region = reg
+            break
 
     return category, region
+
 
 def extract_image_url(entry):
     """
@@ -125,6 +210,7 @@ def extract_image_url(entry):
                 return img_match.group(1)
 
     return ""
+
 
 def entity_label(entity_type: str, entity_id: str) -> str:
     """Human-readable label for a civic entity, as stored in civic_tags."""
