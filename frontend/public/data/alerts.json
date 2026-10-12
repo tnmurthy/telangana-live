@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "id": "alert-e9841181ff9f",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad faces 150 MGD water deficit as groundwater levels plunge - Telangana Today",
+    "message": "Hyderabad faces 150 MGD water deficit as groundwater levels plunge - Telangana Today",
+    "description": "Hyderabad faces 150 MGD water deficit as groundwater levels plunge  Telangana Today",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-12T22:36:27Z",
+    "publishedAt": "2026-10-12T10:10:13Z",
+    "time": "12 Oct, 3:40 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZVVkTndZazI5Q0ZqUFk3NER0X2UyTURLcVpFNndHMFhacFUtUVVMdnpFenRJODRQOVJUWExHMWJnZ1pjajZmbk1kTGRGRjVXY3hzWm13RU9KU2lEdXI0VkptdUt3dWN5ZXpwWnh6OENuRGVwVkJibnJzZnhfVmdpY3pFQXNBUi1aSng1NGlFbHhYclc1UWZUOQ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZVVkTndZazI5Q0ZqUFk3NER0X2UyTURLcVpFNndHMFhacFUtUVVMdnpFenRJODRQOVJUWExHMWJnZ1pjajZmbk1kTGRGRjVXY3hzWm13RU9KU2lEdXI0VkptdUt3dWN5ZXpwWnh6OENuRGVwVkJibnJzZnhfVmdpY3pFQXNBUi1aSng1NGlFbHhYclc1UWZUOQ?oc=5",
+    "source": "Telangana Today"
+  },
+  {
+    "id": "alert-10d0264ea628",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Crisis Deepens as HMWSSB Faces 150 MGD Shortfall - Urban Acres",
+    "message": "Hyderabad Water Crisis Deepens as HMWSSB Faces 150 MGD Shortfall - Urban Acres",
+    "description": "Hyderabad Water Crisis Deepens as HMWSSB Faces 150 MGD Shortfall  Urban Acres",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-12T22:36:27Z",
+    "publishedAt": "2026-10-12T14:01:59Z",
+    "time": "12 Oct, 7:31 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
+    "source": "Urban Acres"
+  },
+  {
+    "id": "alert-08c7efeca816",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Water board decides to cut water supply to IIT, BHEL, ODF, BDL - Telangana Today",
+    "message": "Water board decides to cut water supply to IIT, BHEL, ODF, BDL - Telangana Today",
+    "description": "Water board decides to cut water supply to IIT, BHEL, ODF, BDL  Telangana Today",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-12T22:36:27Z",
+    "publishedAt": "2026-10-12T14:52:33Z",
+    "time": "12 Oct, 8:22 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZGJ0LWFsSkdRQUQwdEhmRWF0bGg1U1BkLUEtVERXMDNULUJzM1hfTHZQRzMyQlRLNGZoN1NDUzNzSWI4N0dSR3JpNWZ5Z3kzZVBpNDZhNGZvUGF3QjFFWFZVM2FUZkQ1MnZDbWJ0a0VpRjlZNVNUMzhFUkQtWnBjRFVHeTI0V2dCUEtFOEptcw?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZGJ0LWFsSkdRQUQwdEhmRWF0bGg1U1BkLUEtVERXMDNULUJzM1hfTHZQRzMyQlRLNGZoN1NDUzNzSWI4N0dSR3JpNWZ5Z3kzZVBpNDZhNGZvUGF3QjFFWFZVM2FUZkQ1MnZDbWJ0a0VpRjlZNVNUMzhFUkQtWnBjRFVHeTI0V2dCUEtFOEptcw?oc=5",
+    "source": "Telangana Today"
+  },
+  {
+    "id": "alert-f3bf4055fc69",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Hyderabad tankers see early surge in demand, bookings cross 6,500 a day - Hyderabad Mail",
+    "message": "Hyderabad tankers see early surge in demand, bookings cross 6,500 a day - Hyderabad Mail",
+    "description": "Hyderabad tankers see early surge in demand, bookings cross 6,500 a day  Hyderabad Mail",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-12T22:36:27Z",
+    "publishedAt": "2026-10-12T07:38:36Z",
+    "time": "12 Oct, 1:08 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5TV3pCa3hXM1ZRQmFnVl9sWlpXM3paSWQ4V3dTcEZ3eTBnd0ZuTGJ5cGd4ZHA1cEV6cF9ucUFPQzN1SnhLd09DSVQ5VWNaYzh5dFZsdDBVb2FXMUxEVFRJOEtiZlFJalAwaXBNUXI3N1FDSHYxWlp2cV9VZjFiQQ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5TV3pCa3hXM1ZRQmFnVl9sWlpXM3paSWQ4V3dTcEZ3eTBnd0ZuTGJ5cGd4ZHA1cEV6cF9ucUFPQzN1SnhLd09DSVQ5VWNaYzh5dFZsdDBVb2FXMUxEVFRJOEtiZlFJalAwaXBNUXI3N1FDSHYxWlp2cV9VZjFiQQ?oc=5",
+    "source": "Hyderabad Mail"
+  }
+]
