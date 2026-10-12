@@ -86,7 +86,7 @@ _Last reviewed 2026-10-09. Done items are recorded in git history and on the pub
 - [ ] **Power alerts:** TSSPDCL answers 403 to `frontend/api/power-alerts.js`; find a reachable source or remove the widget.
 - [ ] **CI is red:** `ci.yml` fails on lint (unused imports, react-refresh exports); `ci_cd_master.yml` also needs `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` or its deploy jobs removed.
 - [ ] **Fuel prices** are read from Goodreturns; move to a licensed feed or a link-out, like gold (TL-46).
-- [ ] **Reservoir levels:** wire an official CWC / Irrigation source, or keep the link-out.
+- [x] **Reservoir levels** (TL-40, TL-29): fake scraper purged; /reservoirs displays honest unavailable state linking to official CWC bulletin and Telangana Irrigation department.
 - [ ] **Review remaining fixed content** against official sources: service guides (`src/data/services.js` and `/services/*`), MeeSeva offerings, government directory, farmer helplines and crop calendar, district pages, ODOP, Statnostics stories, emergency contacts (checked 2026-10-09; recheck quarterly).
 
 ### Before a sale
@@ -137,8 +137,8 @@ cp .env.example .env
 # Run automation agents
 python backend/agents/news_sync_agent.py
 python backend/agents/price_sync_agent.py
-python backend/agents/transit_sync_agent.py
-python backend/agents/water_sync_agent.py
+python backend/scripts/emergency_alerts.py
+python backend/scripts/mandi_sync.py
 
 # Or run the API server
 python api_server.py
@@ -181,8 +181,9 @@ telangana-live/
 │   ├── agents/
 │   │   ├── news_sync_agent.py  # RSS aggregator
 │   │   ├── price_sync_agent.py # Commodity pricing scraper
-│   │   ├── transit_sync_agent.py # Public transit data
-│   │   ├── water_sync_agent.py  # Water utility scraper
+│   │   ├── content_generator.py # Automated article drafting
+│   │   ├── content_monitor.py   # Feed & pipeline health monitoring
+│   │   ├── quality_checker.py   # Verification agent
 │   │   └── fact_checker.py      # AI-powered fact verification
 │   ├── scripts/
 │   │   ├── data_engine.py       # Data normalization & JS export
@@ -379,7 +380,7 @@ infrastructure/
 | TL-26 | Unpaid placements labelled \"Sponsored\" | Fixed 5 Oct: T-Fiber / T-Hub / Tourism promos relabelled \"Featured service\"; six invented \"verified\" partner businesses removed; /advertise page with an enquiry form (telangana.ad_enquiries) | ✅ Fixed | Read enquiries in Supabase; sell the slots |
 | TL-27 | Search engines were sent to redirecting URLs | Fixed 5 Oct: canonical tags, sitemap, robots.txt and share links now use www.telangana.live | ✅ Fixed | Verify the site in Google Search Console and submit the sitemap; make the bare-domain redirect permanent (308) in Vercel |
 | TL-28 | Jobs board is a fixed list from May | 20 hand-entered listings (TSPSC, TCS, Wipro, ...) never refreshed; shown as current openings | ✅ Fixed | 5 Oct: counts from the real date; expired notifications are not shown; official recruitment portals always linked. A live notifications feed is still a possible upgrade |
-| TL-29 | Reservoir and transit data are months old | Reservoirs last updated 13 Jul, transit 24 May; no workflow runs their writers. The daily freshness check (added 5 Oct) fails on both | P1 | Schedule water_scraper.py, or find a current source (Telangana irrigation portal) |
+| TL-29 | Reservoir and transit data are months old | Fixed: transit metrics retired in favor of official agency portals (TL-30/TL-47); fake water_scraper generator purged (TL-40) with honest empty state linking to CWC & Telangana Irrigation portals; check_freshness.py monitors active data feeds only | ✅ Fixed | — |
 | TL-30 | Metro crowd levels and bus \"flow\" figures are hand-entered | Fixed 9 Oct: crowd levels and flow metrics removed; corridors list official portals (L&T Metro, TGSRTC, SCR MMTS) for real timetables (TL-47) | ✅ Fixed | — |
 | TL-31 | Google Analytics and Tag Manager load before cookie consent | Fixed 12 Oct: Google Consent Mode v2 default 'denied' configured before all tags; CookieConsent banner dispatches explicit update on accept/essential per India DPDP Act | ✅ Fixed | — |
 | TL-32 | Official disaster alerts not used | Fixed 5 Oct: IMD, CWC and SDMA alerts from NDMA SACHET that name Telangana now feed /alerts every 15 minutes, with issuer, area and an \"until\" time; hidden once the authority's alert expires | ✅ Fixed | None. Telangana had no active SACHET alert on 5 Oct, so the first one will show when IMD or the SDMA issues it |
@@ -432,7 +433,7 @@ infrastructure/
 | TL-26 | Frontend + DB | `MainLayout`, `ProgrammaticAd`, `SubRegionPage`, `pages/AdvertisePage.jsx` | ✅ Done: `tests/unit/adEnquiryService.test.js`; insert-only RLS verified | M |
 | TL-27 | Frontend | 14 files using the bare domain | ✅ Done: guard test in `noBrowserSecrets.test.js` | S |
 | TL-28 | Data | `data/jobsData.js`, `JobBoardPage.jsx` | ✅ Done: `utils/jobs.js`, `tests/unit/jobs.test.js` | M |
-| TL-29 | Data | `scripts/water_scraper.py`, transit writer | Both modules pass `check_freshness.py` daily | M |
+| TL-29 | Data | `scripts/water_scraper.py` (purged), transit writer (retired), `check_freshness.py` | ✅ Done: daily freshness check watches active feeds; Reservoirs & Transit safely link out | M |
 | TL-30 | Frontend | `components/MetroCard.jsx`, `data/transportData.js`, `transit_status.json` | ✅ Done: crowd indices removed; official portals linked; guarded in `noInventedCivicData.test.js` | S |
 | TL-31 | Frontend | `index.html`, `CookieConsent.jsx` | ✅ Done: Google Consent Mode v2 defaults denied; explicit grant on accept; guarded in `tests/unit/cookieConsent.test.js` | S |
 | TL-32 | Backend | new alerts source from SACHET RSS + CAP XML | ✅ Done: `core/sachet.py` (shared with vizag), `alert_feed.build_official_record`, `utils/alerts.js`; tests `test_sachet.py`, `alerts.test.js` | M |
