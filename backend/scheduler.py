@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 def _run_script(script_path: str, *extra_args: str):
     """Run a Python script in a subprocess with optional extra arguments, logging success/failure."""
     try:
-        subprocess.run([sys.executable, script_path, *extra_args], check=True)
+        subprocess.run([sys.executable, script_path, *extra_args], check=True)  # nosec B603
         logger.info(f"✓ {os.path.basename(script_path)} {' '.join(extra_args)} complete")
     except Exception as e:
         logger.error(f"✗ {os.path.basename(script_path)} failed: {e}")
@@ -168,5 +168,3 @@ if __name__ == '__main__':
         run_scheduler()
     except KeyboardInterrupt:
         logger.info("Scheduler stopped by user")
-
-
