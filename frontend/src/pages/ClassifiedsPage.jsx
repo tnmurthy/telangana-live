@@ -81,14 +81,12 @@ export default function ClassifiedsPage() {
     const executePost = async () => {
         setSubmitting(true);
         setPostError(false);
-        // Simulate OTP wait...
-        await new Promise(r => setTimeout(r, 1000));
         
-        // Post via service (mock AI processing)
+        // Post via service (database persistent under RLS)
         const newPost = await classifiedsService.postClassified(
             rawText,
-            mapCenter[0] + (Math.random() - 0.5) * 0.02, // slight jitter for MVP
-            mapCenter[1] + (Math.random() - 0.5) * 0.02,
+            mapCenter[0],
+            mapCenter[1],
             'Jubilee Hills',
             phone
         );
@@ -112,7 +110,7 @@ export default function ClassifiedsPage() {
         setRawText('');
         setPhone('');
         setSubmitting(false);
-        alert(featured ? 'Item successfully paid, processed by AI, and posted as Featured!' : 'Item successfully processed by AI and posted!');
+        alert('Item successfully processed and posted!');
     };
 
     return (
@@ -135,8 +133,7 @@ export default function ClassifiedsPage() {
             </div>
 
             {/* Post Ad Form (Conditional) */}
-            {showPostForm && (
-                <div className="glass-card p-6 border border-telangana-green/30 animate-slide-up">
+            {showPostForm && (\n                <div className="glass-card p-6 border border-telangana-green/30 animate-slide-up">
                     <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                         <Icons.Sparkles className="w-5 h-5 text-telangana-green" /> AI Quick Post
                     </h3>
