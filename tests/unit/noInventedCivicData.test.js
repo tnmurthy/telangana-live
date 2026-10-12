@@ -55,6 +55,14 @@ describe('invented civic data stays out', () => {
             expect(read(path), path).not.toMatch(/040-2345\d{4}/);
         }
     });
+
+    it('GrievanceDashboard and reportingData carry no mock reports', () => {
+        const dashboard = read('components/GrievanceDashboard.jsx');
+        expect(dashboard).not.toMatch(/mockReports/);
+        expect(dashboard).toContain('citizenReportsService.getPublishedReports()');
+        const reporting = read('data/reportingData.js');
+        expect(reporting).not.toMatch(/mockReports/);
+    });
 });
 
 // /api/weather answered with fixed values (35°C, AQI 180) stamped with the

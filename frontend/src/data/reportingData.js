@@ -55,7 +55,7 @@ export function detectCorporation(lat, lng) {
     return { key: 'ghmc', ...trifurcationBoundaries.ghmc };
 }
 
-// Mock existing reports for demo
+// Citizen report status progression steps
 export const statusSteps = [
     { key: 'reported', label: 'Reported', icon: '📝' },
     { key: 'assigned', label: 'Assigned', icon: '👷' },

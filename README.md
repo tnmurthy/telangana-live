@@ -369,7 +369,7 @@ infrastructure/
 | TL-16 | Deploy hook returned 404 | Fixed 4 Oct: hook no longer needed — Vercel's Git integration deploys every push to `main`, data commits included; hook step removed from 8 workflows | ✅ Fixed | Delete the unused `VERCEL_DEPLOY_HOOK_URL` secret (optional) |
 | TL-17 | AI Pulse page was a fixed placeholder | Fixed 4 Oct: rebuilt as Tech & AI Pulse (digital safety, government & AI, jobs & skills) on sourced, dated local news | ✅ Fixed | Set the `TYPESAFE_API_KEY` secret (TL-02) so the scheduled run uses judgment, not the keyword fallback |
 | TL-18 | Database paused; citizen reports, classifieds and the emergency banner could not load | Fixed 4 Oct: moved to the `telangana` schema of the shared "Talia" Supabase project, with RLS | ✅ Fixed | 4 Oct: schemas exposed; service key set; news job saved 159 articles |
-| TL-19 | Grievance dashboard shows 8 invented reports | Same sample data the report map used to show; presented as real | P1 | Wire it to approved reports, or hide it |
+| TL-19 | Grievance dashboard showed 8 invented reports | Fixed: wired to citizenReportsService.getPublishedReports(), approved/resolved statuses only, 0 mock records | ✅ Fixed | — |
 | TL-20 | Redis token was public | Fixed 4 Oct: the browser no longer uses Redis, so no token ships; the leaked token's database (`tough-rat-69556`) no longer exists | ✅ Fixed | Optional: delete the unused `VITE_UPSTASH_*` Vercel variables |
 | TL-21 | Paid "featured listing" removed | It showed a placeholder UPI QR (`telangana.live@upi`) and a "Simulate Success" button | P2 | Decide whether to offer paid listings; if yes, integrate a real payment provider |
 | TL-22 | Fuel tax breakup is invented | Every price is split as fixed 55% base / 22% excise / 15% VAT; real excise is a fixed ₹ per litre | P1 | Use published central excise and Telangana VAT rates, or hide the breakup |
@@ -422,7 +422,7 @@ infrastructure/
 | TL-16 | Infra | `.github/workflows/*` | ✅ Done: hook steps removed; data commits deploy through the Git integration | S |
 | TL-17 | Backend + Frontend | `scripts/tech_pulse.py` (shared with vizag), `pages/TechPulsePage.jsx`, `ai_pulse_update.yml` | ✅ Done: every item links to a dated source; 14-day window; empty sections say so; 25 + 4 tests | M |
 | TL-18 | Infra + Backend + Frontend | `supabase/migrations/20261004_telangana_schema.sql`, `services/*`, `core/database.py` | ✅ Code live; anon reads only public rows; inserts don't read back. Pending: exposed schema, service-key secret | M |
-| TL-19 | Frontend | `components/GrievanceDashboard.jsx`, `data/reportingData.js` | No `mockReports` import; counts come from `citizen_reports` | S |
+| TL-19 | Frontend | `components/GrievanceDashboard.jsx`, `data/reportingData.js` | ✅ Done: wired to citizenReportsService.getPublishedReports(); zero mock records | S |
 | TL-20 | Frontend | `services/pricesService.js`, `waterService.js` | ✅ Done: browser Redis client removed; `noBrowserSecrets.test.js` guards it | S |
 | TL-21 | Frontend | `pages/ClassifiedsPage.jsx` | Featuring only after a verified payment webhook sets `is_featured` | M |
 | TL-22 | Backend + Frontend | `scripts/data_engine.py` `_tax_breakup`, `FuelTaxCard` | Breakup computed from published duty and VAT rates with their source, or not shown | S–M |
