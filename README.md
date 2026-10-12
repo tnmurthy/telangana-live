@@ -241,16 +241,17 @@ On push: `ci_cd_master` (secret scan → lint, typecheck, build → deploy jobs)
 ```
 backend/
 ├── core/
-│   ├── alert_triage.py        ✅ TypeSafe triage of alert headlines (type, in-Telangana, current, severity)
-│   ├── alert_feed.py          ✅ single alerts.json schema, freshness and expiry rules
-│   ├── news_classifier.py     ✅ TL-04 whole-word regex matching across categories & regions
+│   ├── alert_triage.py      TypeSafe judgments per headline: Choice(type), Noul(in Telangana),
+│   │                        Noul(current), Score(severity). Regex fallback without a key.
+│   ├── alert_feed.py        the one alerts.json schema; freshness and expiry rules
+│   ├── news_classifier.py   ✅ TL-04 whole-word regex matching across categories & regions
 │   └── correlation_engine.py, clustering.py, llm_provider.py, config.py
 ├── scripts/
-│   ├── data_engine.py         ✅ TL-05 closed: gold no longer published (TL-46)
-│   ├── emergency_alerts.py    ✅ entry point for alerts job; fabricated-alert generator removed
-│   ├── news_scraper.py        ⚠ TL-10 numbered-list parsing can attach summaries to the wrong article
+│   ├── data_engine.py       ✅ TL-05 closed: gold no longer published (TL-46)
+│   ├── emergency_alerts.py  entry point for alerts job; fabricated-alert generator removed
+│   ├── news_scraper.py      ⚠ TL-10 numbered-list parsing can attach summaries to the wrong article
 │   └── news_aggregation.py, weather_scraper.py, whatsapp_bot.py
-└── api/civic_gateway.py       ✅ /alerts reads the published feed
+└── api/civic_gateway.py     ✅ /alerts reads the published feed
 tools/calibrate_alert_triage.py   re-derive alert thresholds against labelled headlines
 ```
 
@@ -267,10 +268,10 @@ Every `alerts.json` record carries the fields all of these read; see `backend/co
 
 | Secret | Used by | Status |
 |---|---|---|
-| `VERCEL_DEPLOY_HOOK_URL` | every sync job | set |
+| `VERCEL_DEPLOY_HOOK_URL` | legacy sync jobs | optional (retired in TL-16) |
 | `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` | sync jobs | set |
-| `TYPESAFE_API_KEY` | `emergency_alerts_sync` | **missing**: alert triage falls back to regex |
-| `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` | `ci_cd_master` deploy jobs | **missing** |
+| `TYPESAFE_API_KEY` | `emergency_alerts_sync` | set (TL-02) |
+| `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` | `ci_cd_master` | not needed: native Vercel Git integration deploys main (TL-13) |
 
 ## 🧪 Testing
 
@@ -351,11 +352,11 @@ frontend/
 
 infrastructure/
 ├── Vercel project settings    ⚠ TL-01 Production Branch is master; work lands on main
-├── GitHub secrets             ⚠ TL-02 TYPESAFE_API_KEY missing · TL-13 VERCEL_* missing
-│                              ⚠ TL-16 VERCEL_DEPLOY_HOOK_URL returns 404 → syncs rebuild nothing
+├── GitHub secrets             ✅ TL-02 TYPESAFE_API_KEY set · TL-13 VERCEL_* retired
+│                              ✅ TL-16 deploy hook retired in favor of native Git integration
 ├── .github/workflows/*.yml    ◐ TL-08 hook gated on a push, but syncs write the run time so most runs push
 │                              ✅ TL-09 closed: gold jobs removed (TL-46)
-│                              ⚠ TL-13 Bandit SAST step failing in ci_cd_master
+│                              ✅ TL-13 Bandit clean, redundant deploy jobs removed
 └── vercel.json                ✅ SPA fallback fixed (rewrite to /, not /index.html)
 ```
 
@@ -408,7 +409,7 @@ infrastructure/
 | TL-10 | AI summaries can attach to the wrong article | Misleading summaries | ✅ Fixed | 5 Oct: summaries placed by their number; a batch not numbered 1..N is discarded |
 | TL-11 | Backend test suite red and slow | Regressions go unnoticed | ✅ Fixed | 5 Oct: 172 tests pass in about 40 s (was 8 failing, minutes to hours) |
 | TL-12 | Frontend tests never ran | Fixed 2 Oct: 95 tests now run on every `npm test` | ✅ Fixed | — |
-| TL-13 | CI deploy jobs lack secrets; security scan step failing | Pipeline can't gate production | P3 | Decide: delete the never-working deploy jobs (Vercel now deploys every push to main) |
+| TL-13 | CI deploy jobs lack secrets; security scan step failing | Fixed 12 Oct: Bandit SAST clean (nosec B603 in scheduler.py); redundant Vercel CLI deploy jobs retired in favor of native Vercel Git integration | ✅ Fixed | — |
 | TL-14 | Dead entry files | Confusion for contributors | ✅ Fixed | 5 Oct: removed; build output identical |
 | TL-15 | Duplicated entity keyword tables | Two lists drift apart | ✅ Fixed | 5 Oct: one table in core/correlation_engine.py; classifier derives from it |
 
@@ -456,7 +457,7 @@ infrastructure/
 | TL-10 | Backend | `scripts/news_scraper.py` | ✅ Done: `tests/test_news_summaries.py` covers 19-of-20 replies | S |
 | TL-11 | Backend | `tests/test_data_engine.py` | ✅ Done: model and fact checker stubbed by an autouse fixture; dependency stubs only when missing | M |
 | TL-12 | Frontend | `vitest.config.ts` | ✅ Done: `test.dir` is the repo root; 8 files, 95 tests | S |
-| TL-13 | Infra | `ci_cd_master.yml` | Pipeline green end to end, or deploy jobs removed in favour of the hook | S–M |
+| TL-13 | Infra | `ci_cd_master.yml` | ✅ Done: pipeline green end to end; deploy jobs retired; Bandit security scan passes | S–M |
 | TL-14 | Frontend | `src/App.tsx`, `src/main.tsx` | ✅ Done | S |
 | TL-15 | Backend | `core/correlation_engine.py`, `core/news_classifier.py` | ✅ Done: `tests/test_civic_entities.py` | M |
 
