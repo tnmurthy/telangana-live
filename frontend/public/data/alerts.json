@@ -62,5 +62,37 @@
     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5TV3pCa3hXM1ZRQmFnVl9sWlpXM3paSWQ4V3dTcEZ3eTBnd0ZuTGJ5cGd4ZHA1cEV6cF9ucUFPQzN1SnhLd09DSVQ5VWNaYzh5dFZsdDBVb2FXMUxEVFRJOEtiZlFJalAwaXBNUXI3N1FDSHYxWlp2cV9VZjFiQQ?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5TV3pCa3hXM1ZRQmFnVl9sWlpXM3paSWQ4V3dTcEZ3eTBnd0ZuTGJ5cGd4ZHA1cEV6cF9ucUFPQzN1SnhLd09DSVQ5VWNaYzh5dFZsdDBVb2FXMUxEVFRJOEtiZlFJalAwaXBNUXI3N1FDSHYxWlp2cV9VZjFiQQ?oc=5",
     "source": "Hyderabad Mail"
+  },
+  {
+    "id": "alert-ee6b5f074c4a",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Hyderabad Water Supply Cuts Loom as Singur Falls to 12% - Urban Acres",
+    "message": "Hyderabad Water Supply Cuts Loom as Singur Falls to 12% - Urban Acres",
+    "description": "Hyderabad Water Supply Cuts Loom as Singur Falls to 12%  Urban Acres",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-13T03:12:06Z",
+    "publishedAt": "2026-10-13T00:23:17Z",
+    "time": "13 Oct, 5:53 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRWs3RUNSVjVrWEFpZE80UmhZTDJ3U09FSDh5N2hQS3dHLVJhTGRkSGRmdmdBMEY0a01DdUpRaFZjWDF4bzhDUXN0cTB2aTlGZW1kQU4zdGhNaFZuTmJyenVMVmFaTm9HbUpEZFBIU3F6NVAzaTM5czlnREt6Zl83VUVYd05YVERCOFE?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRWs3RUNSVjVrWEFpZE80UmhZTDJ3U09FSDh5N2hQS3dHLVJhTGRkSGRmdmdBMEY0a01DdUpRaFZjWDF4bzhDUXN0cTB2aTlGZW1kQU4zdGhNaFZuTmJyenVMVmFaTm9HbUpEZFBIU3F6NVAzaTM5czlnREt6Zl83VUVYd05YVERCOFE?oc=5",
+    "source": "Urban Acres"
+  },
+  {
+    "id": "alert-10d0264ea628",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Crisis: HMWSSB Faces 150 MGD Gap - Urban Acres",
+    "message": "Hyderabad Water Crisis: HMWSSB Faces 150 MGD Gap - Urban Acres",
+    "description": "Hyderabad Water Crisis: HMWSSB Faces 150 MGD Gap  Urban Acres",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-13T03:12:06Z",
+    "publishedAt": "2026-10-12T14:01:59Z",
+    "time": "12 Oct, 7:31 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
+    "source": "Urban Acres"
   }
 ]
