@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T08:23:33Z",
+  "updatedAt": "2026-10-14T17:46:56Z",
   "state": "Telangana",
   "fromDate": "2026-10-12",
   "toDate": "2026-10-14",
@@ -10,21 +10,21 @@
     {
       "name": "Onion",
       "group": "Vegetables",
-      "price": 3318.52,
+      "price": 3324.42,
       "yearAgo": 1111.3,
       "unit": "Rs./quintal"
     },
     {
       "name": "Tomato",
       "group": "Vegetables",
-      "price": 1835.19,
+      "price": 1746.05,
       "yearAgo": 1377.08,
       "unit": "Rs./quintal"
     },
     {
       "name": "Potato",
       "group": "Vegetables",
-      "price": 1406.92,
+      "price": 1359.27,
       "yearAgo": 1678.97,
       "unit": "Rs./quintal"
     },
@@ -38,70 +38,70 @@
     {
       "name": "Tur (red gram)",
       "group": "Pulses",
-      "price": 10057.41,
+      "price": 14233.53,
       "yearAgo": 6451.09,
       "unit": "Rs./quintal"
     },
     {
       "name": "Bengal gram",
       "group": "Pulses",
-      "price": 7313.76,
+      "price": 7281.55,
       "yearAgo": 6165.67,
       "unit": "Rs./quintal"
     },
     {
       "name": "Green gram (moong)",
       "group": "Pulses",
-      "price": 7416.7,
+      "price": 7654.68,
       "yearAgo": 5419.23,
       "unit": "Rs./quintal"
     },
     {
       "name": "Black gram (urad)",
       "group": "Pulses",
-      "price": 9528.87,
+      "price": 14261.8,
       "yearAgo": 4483.35,
       "unit": "Rs./quintal"
     },
     {
       "name": "Groundnut",
       "group": "Oil Seeds",
-      "price": 6892.45,
+      "price": 6846.28,
       "yearAgo": 4606.08,
       "unit": "Rs./quintal"
     },
     {
       "name": "Dry chillies",
       "group": "Spices",
-      "price": 20313.37,
+      "price": 21669.01,
       "yearAgo": 8856.66,
       "unit": "Rs./quintal"
     },
     {
       "name": "Turmeric",
       "group": "Spices",
-      "price": 17824.31,
+      "price": 18417.72,
       "yearAgo": 11250.43,
       "unit": "Rs./quintal"
     },
     {
       "name": "Cotton",
       "group": "Fibre Crops",
-      "price": 8818.25,
+      "price": 8818.8,
       "yearAgo": 6311.46,
       "unit": "Rs./quintal"
     },
     {
       "name": "Paddy",
       "group": "Cereals",
-      "price": 2634.49,
+      "price": 2637.56,
       "yearAgo": 2282.14,
       "unit": "Rs./quintal"
     },
     {
       "name": "Maize",
       "group": "Cereals",
-      "price": 2538.3,
+      "price": 2586.76,
       "yearAgo": 1910.19,
       "unit": "Rs./quintal"
     }
