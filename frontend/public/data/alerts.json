@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-08c7efeca816",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Water board decides to cut water supply to IIT, BHEL, ODF, BDL - Telangana Today",
-    "message": "Water board decides to cut water supply to IIT, BHEL, ODF, BDL - Telangana Today",
-    "description": "Water board decides to cut water supply to IIT, BHEL, ODF, BDL  Telangana Today",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-12T22:36:27Z",
-    "publishedAt": "2026-10-12T14:52:33Z",
-    "time": "12 Oct, 8:22 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZGJ0LWFsSkdRQUQwdEhmRWF0bGg1U1BkLUEtVERXMDNULUJzM1hfTHZQRzMyQlRLNGZoN1NDUzNzSWI4N0dSR3JpNWZ5Z3kzZVBpNDZhNGZvUGF3QjFFWFZVM2FUZkQ1MnZDbWJ0a0VpRjlZNVNUMzhFUkQtWnBjRFVHeTI0V2dCUEtFOEptcw?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZGJ0LWFsSkdRQUQwdEhmRWF0bGg1U1BkLUEtVERXMDNULUJzM1hfTHZQRzMyQlRLNGZoN1NDUzNzSWI4N0dSR3JpNWZ5Z3kzZVBpNDZhNGZvUGF3QjFFWFZVM2FUZkQ1MnZDbWJ0a0VpRjlZNVNUMzhFUkQtWnBjRFVHeTI0V2dCUEtFOEptcw?oc=5",
-    "source": "Telangana Today"
-  },
-  {
     "id": "alert-ee6b5f074c4a",
     "type": "water_supply",
     "severity": "medium",
