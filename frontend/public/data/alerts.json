@@ -94,5 +94,37 @@
     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
     "source": "Urban Acres"
+  },
+  {
+    "id": "alert-2255dbfe62ce",
+    "type": "weather",
+    "severity": "low",
+    "title": "Andhra, Telangana weather today: Check IMD rain alerts for different districts - The Economic Times",
+    "message": "Andhra, Telangana weather today: Check IMD rain alerts for different districts - The Economic Times",
+    "description": "Andhra, Telangana weather today: Check IMD rain alerts for different districts  The Economic Times",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-15T04:07:09Z",
+    "publishedAt": "2026-10-14T02:53:27Z",
+    "time": "14 Oct, 8:23 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQYTA2V1Rka2tsdkh4dkkyMkVRR1pGV2hKOVB2WTZWenEtd2lxZkF6ZllLenRPTC1NT1Rpem9sMmRDWVZYVTluWHRDcHhEblpnWU9Bb3l4VE9PN3hLWVYwcTZWZ1piX0hPbEV2OW5XbkhqdDVPd1VwTzhVX1hvZ1QtUVB0VjJHNm93VC1uOVViakRZYlRtRTF5UVFkR29zVmpWLUtfaEZWZjhEXzVINnZOQ2JVdWFqY2J2RENSaVFYcG5IQzZ2dW5hRWZyUkNvSHF5YXkyS3JVUnJNMWJLMmtyYtIB5gFBVV95cUxPVHFPQmxZTUF3VmlpQU55U050S2dDRGViMDFSNXRHdEI5VlBpOUs0WTVrcXEyT2hXVmNQRFVocjdyeTlCM0pGcEpLR1A2YjNYY2lqNGR3ZXU3MEJPaV8wT29UdkhmTVlXMmgyR2RIS2lVc0hnVzNwYXhtSVNzdmxGdmQ0S0NhUWljbUFuLXUwQnRuODRJYm5CYnJaMzZFcjF4VHFsNHJrOG5yZFBLMTNhUFFXY09QTWJuUDJGd3d5N3hzY2RjRW9uRGFUeXdnVHUyV2ItQ2hLMENGS1QyaGhwSWpFck9Ddw?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQYTA2V1Rka2tsdkh4dkkyMkVRR1pGV2hKOVB2WTZWenEtd2lxZkF6ZllLenRPTC1NT1Rpem9sMmRDWVZYVTluWHRDcHhEblpnWU9Bb3l4VE9PN3hLWVYwcTZWZ1piX0hPbEV2OW5XbkhqdDVPd1VwTzhVX1hvZ1QtUVB0VjJHNm93VC1uOVViakRZYlRtRTF5UVFkR29zVmpWLUtfaEZWZjhEXzVINnZOQ2JVdWFqY2J2RENSaVFYcG5IQzZ2dW5hRWZyUkNvSHF5YXkyS3JVUnJNMWJLMmtyYtIB5gFBVV95cUxPVHFPQmxZTUF3VmlpQU55U050S2dDRGViMDFSNXRHdEI5VlBpOUs0WTVrcXEyT2hXVmNQRFVocjdyeTlCM0pGcEpLR1A2YjNYY2lqNGR3ZXU3MEJPaV8wT29UdkhmTVlXMmgyR2RIS2lVc0hnVzNwYXhtSVNzdmxGdmQ0S0NhUWljbUFuLXUwQnRuODRJYm5CYnJaMzZFcjF4VHFsNHJrOG5yZFBLMTNhUFFXY09QTWJuUDJGd3d5N3hzY2RjRW9uRGFUeXdnVHUyV2ItQ2hLMENGS1QyaGhwSWpFck9Ddw?oc=5",
+    "source": "The Economic Times"
+  },
+  {
+    "id": "alert-1b67fa22a5b4",
+    "type": "weather",
+    "severity": "low",
+    "title": "Telangana Weather Alert: Rain Forecast in Several Districts - INDToday",
+    "message": "Telangana Weather Alert: Rain Forecast in Several Districts - INDToday",
+    "description": "Telangana Weather Alert: Rain Forecast in Several Districts  INDToday",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-15T04:07:09Z",
+    "publishedAt": "2026-10-15T03:07:33Z",
+    "time": "15 Oct, 8:37 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTUU1djJORi0xeDM1UU41VVBBSGIyX2VkZ3RkQzJNaENkY2ExQmZDbXNPTUhsLVhFQU0xLVpabmpWREVodDctU0hHVGdJLUI2ZVRZN1M3Q2xQS3NZbWtjQTBPcXItMU04LUt1SFZRTXRuQ3pOVS0yMm5qcmVwUEk?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTUU1djJORi0xeDM1UU41VVBBSGIyX2VkZ3RkQzJNaENkY2ExQmZDbXNPTUhsLVhFQU0xLVpabmpWREVodDctU0hHVGdJLUI2ZVRZN1M3Q2xQS3NZbWtjQTBPcXItMU04LUt1SFZRTXRuQ3pOVS0yMm5qcmVwUEk?oc=5",
+    "source": "INDToday"
   }
 ]
