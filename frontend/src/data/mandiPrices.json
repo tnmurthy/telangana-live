@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-14T17:46:56Z",
+  "updatedAt": "2026-10-15T07:59:39Z",
   "state": "Telangana",
-  "fromDate": "2026-10-12",
-  "toDate": "2026-10-14",
+  "fromDate": "2026-10-13",
+  "toDate": "2026-10-15",
   "source": "Agmarknet, Directorate of Marketing & Inspection, Ministry of Agriculture",
   "sourceUrl": "https://agmarknet.gov.in/",
   "minArrivalTonnes": 5.0,
@@ -10,183 +10,184 @@
     {
       "name": "Onion",
       "group": "Vegetables",
-      "price": 3324.42,
-      "yearAgo": 1111.3,
+      "price": 3317.56,
+      "yearAgo": 1121.6,
       "unit": "Rs./quintal"
     },
     {
       "name": "Tomato",
       "group": "Vegetables",
-      "price": 1746.05,
-      "yearAgo": 1377.08,
+      "price": 1645.42,
+      "yearAgo": 1376.74,
       "unit": "Rs./quintal"
     },
     {
       "name": "Potato",
       "group": "Vegetables",
-      "price": 1359.27,
-      "yearAgo": 1678.97,
-      "unit": "Rs./quintal"
-    },
-    {
-      "name": "Wheat",
-      "group": "Cereals",
-      "price": 2499.0,
-      "yearAgo": 2600.0,
+      "price": 1392.87,
+      "yearAgo": 1655.59,
       "unit": "Rs./quintal"
     },
     {
       "name": "Tur (red gram)",
       "group": "Pulses",
-      "price": 14233.53,
-      "yearAgo": 6451.09,
+      "price": 15781.41,
+      "yearAgo": 6328.12,
       "unit": "Rs./quintal"
     },
     {
       "name": "Bengal gram",
       "group": "Pulses",
-      "price": 7281.55,
-      "yearAgo": 6165.67,
+      "price": 7342.24,
+      "yearAgo": 6102.15,
       "unit": "Rs./quintal"
     },
     {
       "name": "Green gram (moong)",
       "group": "Pulses",
-      "price": 7654.68,
-      "yearAgo": 5419.23,
+      "price": 7848.67,
+      "yearAgo": 5858.38,
       "unit": "Rs./quintal"
     },
     {
       "name": "Black gram (urad)",
       "group": "Pulses",
-      "price": 14261.8,
-      "yearAgo": 4483.35,
+      "price": 15013.54,
+      "yearAgo": 4646.3,
       "unit": "Rs./quintal"
     },
     {
       "name": "Groundnut",
       "group": "Oil Seeds",
-      "price": 6846.28,
-      "yearAgo": 4606.08,
+      "price": 6781.65,
+      "yearAgo": 4674.52,
       "unit": "Rs./quintal"
     },
     {
       "name": "Dry chillies",
       "group": "Spices",
-      "price": 21669.01,
-      "yearAgo": 8856.66,
+      "price": 21866.31,
+      "yearAgo": 9039.89,
       "unit": "Rs./quintal"
     },
     {
       "name": "Turmeric",
       "group": "Spices",
-      "price": 18417.72,
-      "yearAgo": 11250.43,
+      "price": 19805.75,
+      "yearAgo": 11196.26,
       "unit": "Rs./quintal"
     },
     {
       "name": "Cotton",
       "group": "Fibre Crops",
-      "price": 8818.8,
-      "yearAgo": 6311.46,
+      "price": 8839.92,
+      "yearAgo": 6262.16,
       "unit": "Rs./quintal"
     },
     {
       "name": "Paddy",
       "group": "Cereals",
-      "price": 2637.56,
-      "yearAgo": 2282.14,
+      "price": 2645.26,
+      "yearAgo": 2252.39,
       "unit": "Rs./quintal"
     },
     {
       "name": "Maize",
       "group": "Cereals",
-      "price": 2586.76,
-      "yearAgo": 1910.19,
+      "price": 2605.02,
+      "yearAgo": 1911.35,
       "unit": "Rs./quintal"
     }
   ],
   "mspSeason": "2026-27",
   "msp": [
     {
+      "name": "Jowar(Sorghum)",
+      "group": "Cereals",
+      "msp": 4023.0,
+      "price": 4251.18,
+      "arrivalTonnes": 48.7,
+      "reportedDate": "13-10-2026"
+    },
+    {
       "name": "Maize",
       "group": "Cereals",
       "msp": 2410.0,
-      "price": 2567.7,
-      "arrivalTonnes": 1033.76,
-      "reportedDate": "12-10-2026"
+      "price": 2549.63,
+      "arrivalTonnes": 823.56,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Paddy(Common)",
       "group": "Cereals",
       "msp": 2441.0,
-      "price": 2625.94,
-      "arrivalTonnes": 2833.37,
-      "reportedDate": "12-10-2026"
+      "price": 2564.11,
+      "arrivalTonnes": 2602.88,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Cotton",
       "group": "Fibre Crops",
       "msp": 8267.0,
-      "price": null,
-      "arrivalTonnes": 1.9,
-      "reportedDate": "12-10-2026"
+      "price": 8635.75,
+      "arrivalTonnes": 14.73,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Groundnut",
       "group": "Oil Seeds",
       "msp": 7517.0,
-      "price": 6109.4,
-      "arrivalTonnes": 19.7,
-      "reportedDate": "12-10-2026"
+      "price": 6079.05,
+      "arrivalTonnes": 6.3,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Safflower",
       "group": "Oil Seeds",
       "msp": 6540.0,
       "price": null,
-      "arrivalTonnes": 1.0,
-      "reportedDate": "12-10-2026"
+      "arrivalTonnes": null,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Soyabean",
       "group": "Oil Seeds",
       "msp": 5708.0,
-      "price": 6566.37,
-      "arrivalTonnes": 522.35,
-      "reportedDate": "12-10-2026"
+      "price": 7861.45,
+      "arrivalTonnes": 318.55,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Bengal Gram(Gram)(Whole)",
       "group": "Pulses",
       "msp": 5875.0,
       "price": null,
-      "arrivalTonnes": 1.3,
-      "reportedDate": "12-10-2026"
+      "arrivalTonnes": 0.4,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Black Gram(Urd Beans)(Whole)",
       "group": "Pulses",
       "msp": 8200.0,
-      "price": null,
-      "arrivalTonnes": 2.9,
-      "reportedDate": "12-10-2026"
+      "price": 16553.31,
+      "arrivalTonnes": 8.55,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Green Gram(Moong)(Whole)",
       "group": "Pulses",
       "msp": 8780.0,
-      "price": 7240.95,
-      "arrivalTonnes": 19.66,
-      "reportedDate": "12-10-2026"
+      "price": 8787.24,
+      "arrivalTonnes": 25.28,
+      "reportedDate": "13-10-2026"
     },
     {
       "name": "Red gram/Arhar/Tur(whole)",
       "group": "Pulses",
       "msp": 8450.0,
       "price": null,
-      "arrivalTonnes": 3.4,
-      "reportedDate": "12-10-2026"
+      "arrivalTonnes": 4.45,
+      "reportedDate": "13-10-2026"
     }
   ]
 }
