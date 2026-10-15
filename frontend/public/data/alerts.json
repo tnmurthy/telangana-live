@@ -1,37 +1,5 @@
 [
   {
-    "id": "alert-e9841181ff9f",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad faces 150 MGD water deficit as groundwater levels plunge - Telangana Today",
-    "message": "Hyderabad faces 150 MGD water deficit as groundwater levels plunge - Telangana Today",
-    "description": "Hyderabad faces 150 MGD water deficit as groundwater levels plunge  Telangana Today",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-12T22:36:27Z",
-    "publishedAt": "2026-10-12T10:10:13Z",
-    "time": "12 Oct, 3:40 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZVVkTndZazI5Q0ZqUFk3NER0X2UyTURLcVpFNndHMFhacFUtUVVMdnpFenRJODRQOVJUWExHMWJnZ1pjajZmbk1kTGRGRjVXY3hzWm13RU9KU2lEdXI0VkptdUt3dWN5ZXpwWnh6OENuRGVwVkJibnJzZnhfVmdpY3pFQXNBUi1aSng1NGlFbHhYclc1UWZUOQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNZVVkTndZazI5Q0ZqUFk3NER0X2UyTURLcVpFNndHMFhacFUtUVVMdnpFenRJODRQOVJUWExHMWJnZ1pjajZmbk1kTGRGRjVXY3hzWm13RU9KU2lEdXI0VkptdUt3dWN5ZXpwWnh6OENuRGVwVkJibnJzZnhfVmdpY3pFQXNBUi1aSng1NGlFbHhYclc1UWZUOQ?oc=5",
-    "source": "Telangana Today"
-  },
-  {
-    "id": "alert-10d0264ea628",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Crisis Deepens as HMWSSB Faces 150 MGD Shortfall - Urban Acres",
-    "message": "Hyderabad Water Crisis Deepens as HMWSSB Faces 150 MGD Shortfall - Urban Acres",
-    "description": "Hyderabad Water Crisis Deepens as HMWSSB Faces 150 MGD Shortfall  Urban Acres",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-12T22:36:27Z",
-    "publishedAt": "2026-10-12T14:01:59Z",
-    "time": "12 Oct, 7:31 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-08c7efeca816",
     "type": "water_supply",
     "severity": "medium",
@@ -61,22 +29,6 @@
     "time": "13 Oct, 5:53 AM IST",
     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRWs3RUNSVjVrWEFpZE80UmhZTDJ3U09FSDh5N2hQS3dHLVJhTGRkSGRmdmdBMEY0a01DdUpRaFZjWDF4bzhDUXN0cTB2aTlGZW1kQU4zdGhNaFZuTmJyenVMVmFaTm9HbUpEZFBIU3F6NVAzaTM5czlnREt6Zl83VUVYd05YVERCOFE?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRWs3RUNSVjVrWEFpZE80UmhZTDJ3U09FSDh5N2hQS3dHLVJhTGRkSGRmdmdBMEY0a01DdUpRaFZjWDF4bzhDUXN0cTB2aTlGZW1kQU4zdGhNaFZuTmJyenVMVmFaTm9HbUpEZFBIU3F6NVAzaTM5czlnREt6Zl83VUVYd05YVERCOFE?oc=5",
-    "source": "Urban Acres"
-  },
-  {
-    "id": "alert-10d0264ea628",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Crisis: HMWSSB Faces 150 MGD Gap - Urban Acres",
-    "message": "Hyderabad Water Crisis: HMWSSB Faces 150 MGD Gap - Urban Acres",
-    "description": "Hyderabad Water Crisis: HMWSSB Faces 150 MGD Gap  Urban Acres",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-13T03:12:06Z",
-    "publishedAt": "2026-10-12T14:01:59Z",
-    "time": "12 Oct, 7:31 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlFvTnJxXzQ2akxLNDJNdTBDdjkwTk5CLVY2bFFjV2F6WHIxSkJGVjgzcUtiWlRFQlRyVXQyWV9jWHZuMzFSOE9jTHY4enlnYnlGR1J1Ukg1T1h4MkJKb1U2dkZ2RXAwWVk0dW5iWjdvR29NYzRPTnJ5bGlSVWY2ZVZ4QmZwdnlQOGdNcWtFVTM?oc=5",
     "source": "Urban Acres"
   },
   {
@@ -143,5 +95,21 @@
     "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQUlVnSnBjLTJPanBQRGZqd3BTdHk4cm9HaFk1UjNfbmZ5d1FfWXQ3QllyZVpBWDc2OFZSYTg4N2k1S3lCdnJtSzQtQlJqLVNPUnY3d1EyUHdmNEU5VExGaXJva1BtcHVZTmNtYnhKd0tkNWlzcHhWVU5UcFhjSUxrTjFxMjNUZEFxWHM4Z2paNzBoeTNXU2h0U0tOMVBOa05TSTE0WEZqX0NVSUJmWldwbW9mcDVXeUxRbW1MbEM4dGFxdFZ1WkNtQ1h3ZVdYYlUtaTFwbExPaWZ3NjJQVlUwd19mT21wcVhqS2EwcGVWX0Y5VnZ5Tm0zStIB_gFBVV95cUxObkNIRnVreld4ZTZiRzZlTE5hZ1dGSFV6b2ZFWXdab0M0LVpQUVRValpyWE9fVm9kUzI4ZFZjZmhrcnB5SjZhV1NsNzZkZHVuRGpWYmJfNVQ4eU81T1cwSlpsN3FScXBzX1JkZHVXSE1RNjJoeHl4ME1CRFI4Zi1TdXhOTVFKZnIwcnh4RWxrNFp2NThQY1dSOXRid2FZaEhfM3R6N2dtdWtabXd0N0h1cjBJTXUwZlVTOFhOcXpsT205elBrb2lGLWZ5YnJxNWNNN3NiTlRoU1g4WHYzRGYtaTUtWTZVa3o1UU8zMUNWZkVFMC1QUnI4RzBhaUotUQ?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQUlVnSnBjLTJPanBQRGZqd3BTdHk4cm9HaFk1UjNfbmZ5d1FfWXQ3QllyZVpBWDc2OFZSYTg4N2k1S3lCdnJtSzQtQlJqLVNPUnY3d1EyUHdmNEU5VExGaXJva1BtcHVZTmNtYnhKd0tkNWlzcHhWVU5UcFhjSUxrTjFxMjNUZEFxWHM4Z2paNzBoeTNXU2h0U0tOMVBOa05TSTE0WEZqX0NVSUJmWldwbW9mcDVXeUxRbW1MbEM4dGFxdFZ1WkNtQ1h3ZVdYYlUtaTFwbExPaWZ3NjJQVlUwd19mT21wcVhqS2EwcGVWX0Y5VnZ5Tm0zStIB_gFBVV95cUxObkNIRnVreld4ZTZiRzZlTE5hZ1dGSFV6b2ZFWXdab0M0LVpQUVRValpyWE9fVm9kUzI4ZFZjZmhrcnB5SjZhV1NsNzZkZHVuRGpWYmJfNVQ4eU81T1cwSlpsN3FScXBzX1JkZHVXSE1RNjJoeHl4ME1CRFI4Zi1TdXhOTVFKZnIwcnh4RWxrNFp2NThQY1dSOXRid2FZaEhfM3R6N2dtdWtabXd0N0h1cjBJTXUwZlVTOFhOcXpsT205elBrb2lGLWZ5YnJxNWNNN3NiTlRoU1g4WHYzRGYtaTUtWTZVa3o1UU8zMUNWZkVFMC1QUnI4RzBhaUotUQ?oc=5",
     "source": "The Economic Times"
+  },
+  {
+    "id": "alert-90190f38b34d",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Unseasonal surge: HMWSSB faces summer-like tanker demand in October - Telangana Today",
+    "message": "Unseasonal surge: HMWSSB faces summer-like tanker demand in October - Telangana Today",
+    "description": "Unseasonal surge: HMWSSB faces summer-like tanker demand in October  Telangana Today",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-15T14:11:36Z",
+    "publishedAt": "2026-10-15T12:45:11Z",
+    "time": "15 Oct, 6:15 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcHdFTHpfTjlaLW15TWJnQnpGU3ptLTBrRTRFSkJSYzVEcXlCYW5JdmNySWNWMVFJXzNtRjItSlpnZXRDbjAwc241aDl0VkdfVW5CeF9OTFNkVEJNbDQwNjFSU2o2aFJBV19DZy03aW1QV2Zpc2JNT1hyZjVsS1FzWFFNTnBFS0FxdWtuNFl0VWY4VmJzR3Z0NA?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcHdFTHpfTjlaLW15TWJnQnpGU3ptLTBrRTRFSkJSYzVEcXlCYW5JdmNySWNWMVFJXzNtRjItSlpnZXRDbjAwc241aDl0VkdfVW5CeF9OTFNkVEJNbDQwNjFSU2o2aFJBV19DZy03aW1QV2Zpc2JNT1hyZjVsS1FzWFFNTnBFS0FxdWtuNFl0VWY4VmJzR3Z0NA?oc=5",
+    "source": "Telangana Today"
   }
 ]
