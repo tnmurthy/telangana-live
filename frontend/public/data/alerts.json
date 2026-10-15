@@ -48,22 +48,6 @@
     "source": "Telangana Today"
   },
   {
-    "id": "alert-f3bf4055fc69",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Hyderabad tankers see early surge in demand, bookings cross 6,500 a day - Hyderabad Mail",
-    "message": "Hyderabad tankers see early surge in demand, bookings cross 6,500 a day - Hyderabad Mail",
-    "description": "Hyderabad tankers see early surge in demand, bookings cross 6,500 a day  Hyderabad Mail",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-12T22:36:27Z",
-    "publishedAt": "2026-10-12T07:38:36Z",
-    "time": "12 Oct, 1:08 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5TV3pCa3hXM1ZRQmFnVl9sWlpXM3paSWQ4V3dTcEZ3eTBnd0ZuTGJ5cGd4ZHA1cEV6cF9ucUFPQzN1SnhLd09DSVQ5VWNaYzh5dFZsdDBVb2FXMUxEVFRJOEtiZlFJalAwaXBNUXI3N1FDSHYxWlp2cV9VZjFiQQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5TV3pCa3hXM1ZRQmFnVl9sWlpXM3paSWQ4V3dTcEZ3eTBnd0ZuTGJ5cGd4ZHA1cEV6cF9ucUFPQzN1SnhLd09DSVQ5VWNaYzh5dFZsdDBVb2FXMUxEVFRJOEtiZlFJalAwaXBNUXI3N1FDSHYxWlp2cV9VZjFiQQ?oc=5",
-    "source": "Hyderabad Mail"
-  },
-  {
     "id": "alert-ee6b5f074c4a",
     "type": "water_supply",
     "severity": "medium",
@@ -126,5 +110,38 @@
     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTUU1djJORi0xeDM1UU41VVBBSGIyX2VkZ3RkQzJNaENkY2ExQmZDbXNPTUhsLVhFQU0xLVpabmpWREVodDctU0hHVGdJLUI2ZVRZN1M3Q2xQS3NZbWtjQTBPcXItMU04LUt1SFZRTXRuQ3pOVS0yMm5qcmVwUEk?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTUU1djJORi0xeDM1UU41VVBBSGIyX2VkZ3RkQzJNaENkY2ExQmZDbXNPTUhsLVhFQU0xLVpabmpWREVodDctU0hHVGdJLUI2ZVRZN1M3Q2xQS3NZbWtjQTBPcXItMU04LUt1SFZRTXRuQ3pOVS0yMm5qcmVwUEk?oc=5",
     "source": "INDToday"
+  },
+  {
+    "id": "alert-67658b5efedf",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Khammam, Mahabubabad, Mulugu, Nalgonda, Suryapet in next 24 hours - By TGiCCC .",
+    "message": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Khammam, Mahabubabad, Mulugu, Nalgonda, Suryapet in next 24 hours - By TGiCCC .",
+    "description": "Area: 6 districts of Telangana. Please follow SDMA guidelines.",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-15T09:10:43Z",
+    "publishedAt": "2026-10-15T07:23:00Z",
+    "time": "15 Oct, 12:53 PM IST",
+    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792047823604030",
+    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792047823604030",
+    "source": "NDMA SACHET (Telangana-SDMA)",
+    "expiresAt": "2026-10-16T03:00:00Z"
+  },
+  {
+    "id": "alert-f4e22454007b",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Andhra Pradesh, Telangana weather today: Check IMD alerts, heavy rain warning and latest forecast - The Economic Times",
+    "message": "Andhra Pradesh, Telangana weather today: Check IMD alerts, heavy rain warning and latest forecast - The Economic Times",
+    "description": "Andhra Pradesh, Telangana weather today: Check IMD alerts, heavy rain warning and latest forecast  The Economic Times",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-15T09:10:43Z",
+    "publishedAt": "2026-10-15T04:05:32Z",
+    "time": "15 Oct, 9:35 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQUlVnSnBjLTJPanBQRGZqd3BTdHk4cm9HaFk1UjNfbmZ5d1FfWXQ3QllyZVpBWDc2OFZSYTg4N2k1S3lCdnJtSzQtQlJqLVNPUnY3d1EyUHdmNEU5VExGaXJva1BtcHVZTmNtYnhKd0tkNWlzcHhWVU5UcFhjSUxrTjFxMjNUZEFxWHM4Z2paNzBoeTNXU2h0U0tOMVBOa05TSTE0WEZqX0NVSUJmWldwbW9mcDVXeUxRbW1MbEM4dGFxdFZ1WkNtQ1h3ZVdYYlUtaTFwbExPaWZ3NjJQVlUwd19mT21wcVhqS2EwcGVWX0Y5VnZ5Tm0zStIB_gFBVV95cUxObkNIRnVreld4ZTZiRzZlTE5hZ1dGSFV6b2ZFWXdab0M0LVpQUVRValpyWE9fVm9kUzI4ZFZjZmhrcnB5SjZhV1NsNzZkZHVuRGpWYmJfNVQ4eU81T1cwSlpsN3FScXBzX1JkZHVXSE1RNjJoeHl4ME1CRFI4Zi1TdXhOTVFKZnIwcnh4RWxrNFp2NThQY1dSOXRid2FZaEhfM3R6N2dtdWtabXd0N0h1cjBJTXUwZlVTOFhOcXpsT205elBrb2lGLWZ5YnJxNWNNN3NiTlRoU1g4WHYzRGYtaTUtWTZVa3o1UU8zMUNWZkVFMC1QUnI4RzBhaUotUQ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQUlVnSnBjLTJPanBQRGZqd3BTdHk4cm9HaFk1UjNfbmZ5d1FfWXQ3QllyZVpBWDc2OFZSYTg4N2k1S3lCdnJtSzQtQlJqLVNPUnY3d1EyUHdmNEU5VExGaXJva1BtcHVZTmNtYnhKd0tkNWlzcHhWVU5UcFhjSUxrTjFxMjNUZEFxWHM4Z2paNzBoeTNXU2h0U0tOMVBOa05TSTE0WEZqX0NVSUJmWldwbW9mcDVXeUxRbW1MbEM4dGFxdFZ1WkNtQ1h3ZVdYYlUtaTFwbExPaWZ3NjJQVlUwd19mT21wcVhqS2EwcGVWX0Y5VnZ5Tm0zStIB_gFBVV95cUxObkNIRnVreld4ZTZiRzZlTE5hZ1dGSFV6b2ZFWXdab0M0LVpQUVRValpyWE9fVm9kUzI4ZFZjZmhrcnB5SjZhV1NsNzZkZHVuRGpWYmJfNVQ4eU81T1cwSlpsN3FScXBzX1JkZHVXSE1RNjJoeHl4ME1CRFI4Zi1TdXhOTVFKZnIwcnh4RWxrNFp2NThQY1dSOXRid2FZaEhfM3R6N2dtdWtabXd0N0h1cjBJTXUwZlVTOFhOcXpsT205elBrb2lGLWZ5YnJxNWNNN3NiTlRoU1g4WHYzRGYtaTUtWTZVa3o1UU8zMUNWZkVFMC1QUnI4RzBhaUotUQ?oc=5",
+    "source": "The Economic Times"
   }
 ]
