@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-15T05:01:59Z",
+  "generatedAt": "2026-10-15T11:56:49Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -26,28 +26,7 @@
         "method": "typesafe"
       }
     ],
-    "govt": [
-      {
-        "id": "tp-cc7763dbba60",
-        "category": "govt",
-        "title": "T-Hub launches Flashpoint venture studio to co-build companies",
-        "source": "The Times of India",
-        "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQZy1MOWEyc3BaQnlIekFCU0xqdUJrS3p0LVpDUF82eENBTFZPSE10MlI4WTQ5eGpES1pIUnZyejBVN2s0em9ESk5vNy1LTVQ5YjdtaktFYWVSdmg2dENYNGlxbEQxYUI5V3c1NVozdU9fbWtfZ0FVRE85cEc1ZldzaFZDYlJxMmpOQnZwd0puTmFzZ1MtSTNiNjRsMHdmTlJVa3otVzlBaXR1NXBjR0VtUlpGMkI2WUU4U0FTamt3RnF2ekxmU1Q0dmlVb3ZtbTU5dndsSS1R0gHbAUFVX3lxTE42OXNfX2JXbHpvMWJ3Uk9XM1o2MzJPZ1BLX1IwSUthQmxQSFhUR2ZaUDdzSHUxRW42QkcwWkQzWlN5Szl1YTZZVWx1LURSY0wyQ3NVRUVPSXNXUmgyQmxEZExYdGMwVzdraTlxVmNkMmFfeTFRcnVGSzBUZ0F3WjkzTWVETmkxQTlrTlhMUm9kMUFYb0t5bElHLU1HT2wteERXWF9jT0V5a19qNGJyem15MlBmTTZyZmpKd1ljWVRGVEZiUEtzTk85cXJEeEppMGNDOXcyNDBDMjQ4cw?oc=5",
-        "publishedAt": "2026-10-01T07:00:00Z",
-        "time": "1 Oct, 12:30 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-649433acb288",
-        "category": "govt",
-        "title": "Out-of-box-Hyderabad: How INAI is using AI to catch traffic violations",
-        "source": "The New Indian Express",
-        "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTVdIMkt2UEVxMFUtQmQ0N1hhY0xucG5LdXh5SDFxcFR6YXdBZXZFN1pEWXhXb09SMVJGS2hONVg5d2RLdG1iVnVNT1BDN0g1bGpaOGZVOWw2RHZHSmhiUWZTcnROSUFrZEViUXB6QTFtOW5LMmd0T0xWcENRSEhpNUQ2MDJqX2dkaExJa1lRZXMtMWE1N3RWdWc5aFU4bUlQblVEYk1CWkpJa1pYQTRRZ1hNcnRUb2NmZEd6NWpDcnBmTE5VSjBLc3dvUzU2d9IB2wFBVV95cUxORXBqX2t5UVZoc2w1Tk9MbnptTDRXN0dJTjVpeGhPekt5ZU94cHJkS3RrSHlTZGJyT1JEbjRMWFZNaHhvNFhDY1FVWmtjV2htYWg2Tjl2OEczcTVnQTBQWjVXUWxyR1BjRDJ4RVZBTFBFdjVwUkd4NDZFSERXc0c4MFdRdmsyR292a2x5WGUwX29uSFVCRzlMSVhNS0tWN3ZDb2gwT1RMaXktRENIVC1fTkFiTnFhSjlYOE1qX0puanFuWjBRNWNoWDZQT20yMXVrSkl1enZfNVV3aTg?oc=5",
-        "publishedAt": "2026-10-01T07:00:00Z",
-        "time": "1 Oct, 12:30 PM IST",
-        "method": "typesafe"
-      }
-    ],
+    "govt": [],
     "jobs": [
       {
         "id": "tp-2c820569803b",
