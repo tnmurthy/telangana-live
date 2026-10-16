@@ -78,5 +78,38 @@
     "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNWWdhbkh6NWdJZ0RnUm9RS3BLRVlZSHJIb2RIY3BFWEEzdFdDOEV3SGJualNPYVNYUjFVOHRJS2s2d1Rqakhid3YxbFlfSnJQTjVlMEJxUzRvZU5oOTBiUTdqeVBpMzhxSHNFdEFMWTA0ZkJMMlpYRnJXYlRldTlYbWJNenFudU85d1U1bGxPOUZqNWZGdmc2cUxJTFJfSG12eldBVnVWSkFBVC11ekxjelY0Z3ZVV25WRlJPc3EyRFJITE1QV2pUcEo5YTNydzMtT0diMUNOdDQ1STJKOS1TdWxrRkhHeHVRMzFUTy1HN1JJY1pkTTR0RC1oeGpfaWUxZXZhanI4ME1GeVR3QUYtN1pVNEhENlUyM19zRDB4M1dMUQ?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNWWdhbkh6NWdJZ0RnUm9RS3BLRVlZSHJIb2RIY3BFWEEzdFdDOEV3SGJualNPYVNYUjFVOHRJS2s2d1Rqakhid3YxbFlfSnJQTjVlMEJxUzRvZU5oOTBiUTdqeVBpMzhxSHNFdEFMWTA0ZkJMMlpYRnJXYlRldTlYbWJNenFudU85d1U1bGxPOUZqNWZGdmc2cUxJTFJfSG12eldBVnVWSkFBVC11ekxjelY0Z3ZVV25WRlJPc3EyRFJITE1QV2pUcEo5YTNydzMtT0diMUNOdDQ1STJKOS1TdWxrRkhHeHVRMzFUTy1HN1JJY1pkTTR0RC1oeGpfaWUxZXZhanI4ME1GeVR3QUYtN1pVNEhENlUyM19zRDB4M1dMUQ?oc=5",
     "source": "The New Indian Express"
+  },
+  {
+    "id": "alert-3bd91d7b32bf",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Khammam, Mulugu, Nalgonda, Suryapet in next 24 hours. By Telangana Integrated Command and Control Centre(TGiCCC).",
+    "message": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Khammam, Mulugu, Nalgonda, Suryapet in next 24 hours. By Telangana Integrated Command and Control Centre(TGiCCC).",
+    "description": "Area: 5 districts of Telangana. Please follow SDMA guidelines.",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-16T09:03:02Z",
+    "publishedAt": "2026-10-16T08:51:47Z",
+    "time": "16 Oct, 2:21 PM IST",
+    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792139466004030",
+    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792139466004030",
+    "source": "NDMA SACHET (Telangana-SDMA)",
+    "expiresAt": "2026-10-17T03:00:00Z"
+  },
+  {
+    "id": "alert-a51e094017aa",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Crisis: Tanker Demand Hits Summer Levels - Urban Acres",
+    "message": "Hyderabad Water Crisis: Tanker Demand Hits Summer Levels - Urban Acres",
+    "description": "Hyderabad Water Crisis: Tanker Demand Hits Summer Levels  Urban Acres",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-16T09:03:02Z",
+    "publishedAt": "2026-10-16T03:24:40Z",
+    "time": "16 Oct, 8:54 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONVVxRHEtWS1uWnN0bDhxeUNBU2NBcjUzNUNvTXJkd2xCQlJHMWphb1Nkc25DZ2llazF0WjZuay01SDNlNkhsNHZwYU1jYVZWby00NlRDUU94bkw2eFRDSkpabFVHUWRNdk1tR3ZUWHpUSmJYdkM3V01iZTFlOXNlQWFTWjc3UQ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONVVxRHEtWS1uWnN0bDhxeUNBU2NBcjUzNUNvTXJkd2xCQlJHMWphb1Nkc25DZ2llazF0WjZuay01SDNlNkhsNHZwYU1jYVZWby00NlRDUU94bkw2eFRDSkpabFVHUWRNdk1tR3ZUWHpUSmJYdkM3V01iZTFlOXNlQWFTWjc3UQ?oc=5",
+    "source": "Urban Acres"
   }
 ]
