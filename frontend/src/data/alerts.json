@@ -111,5 +111,21 @@
     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONVVxRHEtWS1uWnN0bDhxeUNBU2NBcjUzNUNvTXJkd2xCQlJHMWphb1Nkc25DZ2llazF0WjZuay01SDNlNkhsNHZwYU1jYVZWby00NlRDUU94bkw2eFRDSkpabFVHUWRNdk1tR3ZUWHpUSmJYdkM3V01iZTFlOXNlQWFTWjc3UQ?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONVVxRHEtWS1uWnN0bDhxeUNBU2NBcjUzNUNvTXJkd2xCQlJHMWphb1Nkc25DZ2llazF0WjZuay01SDNlNkhsNHZwYU1jYVZWby00NlRDUU94bkw2eFRDSkpabFVHUWRNdk1tR3ZUWHpUSmJYdkM3V01iZTFlOXNlQWFTWjc3UQ?oc=5",
     "source": "Urban Acres"
+  },
+  {
+    "id": "alert-a4adcbb9510f",
+    "type": "weather",
+    "severity": "medium",
+    "title": "IMD issues heavy rain alert for Karnataka, Kerala, Tamil Nadu, Telangana till October 22 - The Indian Express",
+    "message": "IMD issues heavy rain alert for Karnataka, Kerala, Tamil Nadu, Telangana till October 22 - The Indian Express",
+    "description": "IMD issues heavy rain alert for Karnataka, Kerala, Tamil Nadu, Telangana till October 22  The Indian Express",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-16T13:59:23Z",
+    "publishedAt": "2026-10-16T09:00:16Z",
+    "time": "16 Oct, 2:30 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZ01sbXpVQUtJdldDdnc1LXFCLVl2Q0lDRTAxdnVJMHdZZVhFZFlRdFFEdXN0dFhtcHh2YUVWWTlVSl9LWE5pOEpJaVNjeDBXS19DODVMajJTbE1kOXJnZlU1dDBYSVZsSGVxODIybkc2VVFHVUVIQk9MSFc0djdNbVhQNUNzRVNVelZrdmM0VlYxOHFXaGtkcG40Z1U3XzJKZWt5eGhXYzV4WnI0c1JaVzVuZXdfdEJTQTUxcVFqT0hEMUdqUWNn?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQZ01sbXpVQUtJdldDdnc1LXFCLVl2Q0lDRTAxdnVJMHdZZVhFZFlRdFFEdXN0dFhtcHh2YUVWWTlVSl9LWE5pOEpJaVNjeDBXS19DODVMajJTbE1kOXJnZlU1dDBYSVZsSGVxODIybkc2VVFHVUVIQk9MSFc0djdNbVhQNUNzRVNVelZrdmM0VlYxOHFXaGtkcG40Z1U3XzJKZWt5eGhXYzV4WnI0c1JaVzVuZXdfdEJTQTUxcVFqT0hEMUdqUWNn?oc=5",
+    "source": "The Indian Express"
   }
 ]
