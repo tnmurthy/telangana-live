@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-ee6b5f074c4a",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Hyderabad Water Supply Cuts Loom as Singur Falls to 12% - Urban Acres",
-    "message": "Hyderabad Water Supply Cuts Loom as Singur Falls to 12% - Urban Acres",
-    "description": "Hyderabad Water Supply Cuts Loom as Singur Falls to 12%  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-13T03:12:06Z",
-    "publishedAt": "2026-10-13T00:23:17Z",
-    "time": "13 Oct, 5:53 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRWs3RUNSVjVrWEFpZE80UmhZTDJ3U09FSDh5N2hQS3dHLVJhTGRkSGRmdmdBMEY0a01DdUpRaFZjWDF4bzhDUXN0cTB2aTlGZW1kQU4zdGhNaFZuTmJyenVMVmFaTm9HbUpEZFBIU3F6NVAzaTM5czlnREt6Zl83VUVYd05YVERCOFE?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRWs3RUNSVjVrWEFpZE80UmhZTDJ3U09FSDh5N2hQS3dHLVJhTGRkSGRmdmdBMEY0a01DdUpRaFZjWDF4bzhDUXN0cTB2aTlGZW1kQU4zdGhNaFZuTmJyenVMVmFaTm9HbUpEZFBIU3F6NVAzaTM5czlnREt6Zl83VUVYd05YVERCOFE?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-2255dbfe62ce",
     "type": "weather",
     "severity": "low",
@@ -46,23 +30,6 @@
     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTUU1djJORi0xeDM1UU41VVBBSGIyX2VkZ3RkQzJNaENkY2ExQmZDbXNPTUhsLVhFQU0xLVpabmpWREVodDctU0hHVGdJLUI2ZVRZN1M3Q2xQS3NZbWtjQTBPcXItMU04LUt1SFZRTXRuQ3pOVS0yMm5qcmVwUEk?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTUU1djJORi0xeDM1UU41VVBBSGIyX2VkZ3RkQzJNaENkY2ExQmZDbXNPTUhsLVhFQU0xLVpabmpWREVodDctU0hHVGdJLUI2ZVRZN1M3Q2xQS3NZbWtjQTBPcXItMU04LUt1SFZRTXRuQ3pOVS0yMm5qcmVwUEk?oc=5",
     "source": "INDToday"
-  },
-  {
-    "id": "alert-67658b5efedf",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Khammam, Mahabubabad, Mulugu, Nalgonda, Suryapet in next 24 hours - By TGiCCC .",
-    "message": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Khammam, Mahabubabad, Mulugu, Nalgonda, Suryapet in next 24 hours - By TGiCCC .",
-    "description": "Area: 6 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-15T09:10:43Z",
-    "publishedAt": "2026-10-15T07:23:00Z",
-    "time": "15 Oct, 12:53 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792047823604030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792047823604030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-16T03:00:00Z"
   },
   {
     "id": "alert-f4e22454007b",
