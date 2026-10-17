@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-16T16:52:15Z",
+  "generatedAt": "2026-10-17T04:51:58Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -27,17 +27,6 @@
       }
     ],
     "govt": [],
-    "jobs": [
-      {
-        "id": "tp-2c820569803b",
-        "category": "jobs",
-        "title": "From Syngene to T-Hub: Somesh Ganti appointed director – HR",
-        "source": "HR Katha",
-        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNc1FMcmVUcFJuNk5UeDJaLWNja2dfREVLQ2pjclc4b1laX2FYVUc5Z3RkSWwzQ2ZyTzhpdnk3N1dqWFRZanhvLVViX1ZlY0N4VEdxZFlaWFFIakJWaTFMOUpEbkVFbm1MMjIwN2YwUGh5OUdoMTFabHE2NmgwQWpHTU8tOS1VOG9HNmcwZG1IdzFJVk9jbGg1NkNUVDl4dw?oc=5",
-        "publishedAt": "2026-10-07T08:30:14Z",
-        "time": "7 Oct, 2:00 PM IST",
-        "method": "typesafe"
-      }
-    ]
+    "jobs": []
   }
 }
