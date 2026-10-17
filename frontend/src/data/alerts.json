@@ -177,23 +177,6 @@
     "source": "INDToday"
   },
   {
-    "id": "alert-af6d75f8adb0",
-    "type": "weather",
-    "severity": "high",
-    "title": "Moderate Rain or Thunderstorms with surface wind (30-40) kmph is very likely to occur at a few places over Hyderabad, Medchal Malkajgiri, Ranga Reddy and Yadadri Bhuvanagiri in next 3 hours - By TGiCCC .",
-    "message": "Moderate Rain or Thunderstorms with surface wind (30-40) kmph is very likely to occur at a few places over Hyderabad, Medchal Malkajgiri, Ranga Reddy and Yadadri Bhuvanagiri in next 3 hours - By TGiCCC .",
-    "description": "Area: MODERATE RAIN OF TS. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-17T14:07:15Z",
-    "publishedAt": "2026-10-17T13:56:05Z",
-    "time": "17 Oct, 7:26 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792244780323030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792244780323030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-17T16:42:00Z"
-  },
-  {
     "id": "alert-c7cfe2be23ab",
     "type": "weather",
     "severity": "medium",
