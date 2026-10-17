@@ -142,5 +142,38 @@
     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA5anBHWGtTOEI5VzRySTNnTjk5dzJmQjNpSXdVVzdJUnJ2VEZ0Q2YtbjhiZkx6dFRXbUZxQkp5aDl3MlJtSlBnN19tOHFsSGwwUElmS19R?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA5anBHWGtTOEI5VzRySTNnTjk5dzJmQjNpSXdVVzdJUnJ2VEZ0Q2YtbjhiZkx6dFRXbUZxQkp5aDl3MlJtSlBnN19tOHFsSGwwUElmS19R?oc=5",
     "source": "Instagram"
+  },
+  {
+    "id": "alert-32b01f36e2e1",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Thundering with Lightning, Gusty winds(30-40 Kmph), and Thunderstorm is very likely to occur at isolated places over Bhadradri Kothagudem, Jayashankar Bhupalapally, Jogulamba Gadwal, Khammam, Mulugu, Nagarkurnool, Nalgonda, Ranga Reddy, Suryapet, Wanaparthy in next 24 hours - By TGiCCC.",
+    "message": "Thundering with Lightning, Gusty winds(30-40 Kmph), and Thunderstorm is very likely to occur at isolated places over Bhadradri Kothagudem, Jayashankar Bhupalapally, Jogulamba Gadwal, Khammam, Mulugu, Nagarkurnool, Nalgonda, Ranga Reddy, Suryapet, Wanaparthy in next 24 hours - By TGiCCC.",
+    "description": "Area: 10 districts of Telangana. Please follow SDMA guidelines.",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-17T10:48:34Z",
+    "publishedAt": "2026-10-17T07:57:59Z",
+    "time": "17 Oct, 1:27 PM IST",
+    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792223568835030",
+    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792223568835030",
+    "source": "NDMA SACHET (Telangana-SDMA)",
+    "expiresAt": "2026-10-18T03:00:00Z"
+  },
+  {
+    "id": "alert-0bbde2555f64",
+    "type": "water_supply",
+    "severity": "low",
+    "title": "Raja Singh Urges Hyderabad Residents to Save Water Amid Shortage Concerns - INDToday",
+    "message": "Raja Singh Urges Hyderabad Residents to Save Water Amid Shortage Concerns - INDToday",
+    "description": "Raja Singh Urges Hyderabad Residents to Save Water Amid Shortage Concerns  INDToday",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-17T10:48:34Z",
+    "publishedAt": "2026-10-17T10:37:27Z",
+    "time": "17 Oct, 4:07 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNDJwN2JJcGFOOUlsQmtwYm0wR25zY1RpeFVpSDdnelN1RXJqem9PVW5NTXhzLXpQWldzNjZGdFA1cTdqc1VoU3ZBb3M2ZnNrdDlRd0JZOVlnVjhxTUpybG5icFh5QmpTTE1FOTRGT1RiT2luTkNsMGdDYUU4TFNVcHVYZDZ5V1ZsQVB5VDV6UWRQaVZQa3RnSkpJMA?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNNDJwN2JJcGFOOUlsQmtwYm0wR25zY1RpeFVpSDdnelN1RXJqem9PVW5NTXhzLXpQWldzNjZGdFA1cTdqc1VoU3ZBb3M2ZnNrdDlRd0JZOVlnVjhxTUpybG5icFh5QmpTTE1FOTRGT1RiT2luTkNsMGdDYUU4TFNVcHVYZDZ5V1ZsQVB5VDV6UWRQaVZQa3RnSkpJMA?oc=5",
+    "source": "INDToday"
   }
 ]
