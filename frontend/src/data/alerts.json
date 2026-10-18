@@ -1,37 +1,5 @@
 [
   {
-    "id": "alert-1b67fa22a5b4",
-    "type": "weather",
-    "severity": "low",
-    "title": "Telangana Weather Alert: Rain Forecast in Several Districts - INDToday",
-    "message": "Telangana Weather Alert: Rain Forecast in Several Districts - INDToday",
-    "description": "Telangana Weather Alert: Rain Forecast in Several Districts  INDToday",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-15T04:07:09Z",
-    "publishedAt": "2026-10-15T03:07:33Z",
-    "time": "15 Oct, 8:37 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTUU1djJORi0xeDM1UU41VVBBSGIyX2VkZ3RkQzJNaENkY2ExQmZDbXNPTUhsLVhFQU0xLVpabmpWREVodDctU0hHVGdJLUI2ZVRZN1M3Q2xQS3NZbWtjQTBPcXItMU04LUt1SFZRTXRuQ3pOVS0yMm5qcmVwUEk?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9XTUU1djJORi0xeDM1UU41VVBBSGIyX2VkZ3RkQzJNaENkY2ExQmZDbXNPTUhsLVhFQU0xLVpabmpWREVodDctU0hHVGdJLUI2ZVRZN1M3Q2xQS3NZbWtjQTBPcXItMU04LUt1SFZRTXRuQ3pOVS0yMm5qcmVwUEk?oc=5",
-    "source": "INDToday"
-  },
-  {
-    "id": "alert-f4e22454007b",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Andhra Pradesh, Telangana weather today: Check IMD alerts, heavy rain warning and latest forecast - The Economic Times",
-    "message": "Andhra Pradesh, Telangana weather today: Check IMD alerts, heavy rain warning and latest forecast - The Economic Times",
-    "description": "Andhra Pradesh, Telangana weather today: Check IMD alerts, heavy rain warning and latest forecast  The Economic Times",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-15T09:10:43Z",
-    "publishedAt": "2026-10-15T04:05:32Z",
-    "time": "15 Oct, 9:35 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQUlVnSnBjLTJPanBQRGZqd3BTdHk4cm9HaFk1UjNfbmZ5d1FfWXQ3QllyZVpBWDc2OFZSYTg4N2k1S3lCdnJtSzQtQlJqLVNPUnY3d1EyUHdmNEU5VExGaXJva1BtcHVZTmNtYnhKd0tkNWlzcHhWVU5UcFhjSUxrTjFxMjNUZEFxWHM4Z2paNzBoeTNXU2h0U0tOMVBOa05TSTE0WEZqX0NVSUJmWldwbW9mcDVXeUxRbW1MbEM4dGFxdFZ1WkNtQ1h3ZVdYYlUtaTFwbExPaWZ3NjJQVlUwd19mT21wcVhqS2EwcGVWX0Y5VnZ5Tm0zStIB_gFBVV95cUxObkNIRnVreld4ZTZiRzZlTE5hZ1dGSFV6b2ZFWXdab0M0LVpQUVRValpyWE9fVm9kUzI4ZFZjZmhrcnB5SjZhV1NsNzZkZHVuRGpWYmJfNVQ4eU81T1cwSlpsN3FScXBzX1JkZHVXSE1RNjJoeHl4ME1CRFI4Zi1TdXhOTVFKZnIwcnh4RWxrNFp2NThQY1dSOXRid2FZaEhfM3R6N2dtdWtabXd0N0h1cjBJTXUwZlVTOFhOcXpsT205elBrb2lGLWZ5YnJxNWNNN3NiTlRoU1g4WHYzRGYtaTUtWTZVa3o1UU8zMUNWZkVFMC1QUnI4RzBhaUotUQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQUlVnSnBjLTJPanBQRGZqd3BTdHk4cm9HaFk1UjNfbmZ5d1FfWXQ3QllyZVpBWDc2OFZSYTg4N2k1S3lCdnJtSzQtQlJqLVNPUnY3d1EyUHdmNEU5VExGaXJva1BtcHVZTmNtYnhKd0tkNWlzcHhWVU5UcFhjSUxrTjFxMjNUZEFxWHM4Z2paNzBoeTNXU2h0U0tOMVBOa05TSTE0WEZqX0NVSUJmWldwbW9mcDVXeUxRbW1MbEM4dGFxdFZ1WkNtQ1h3ZVdYYlUtaTFwbExPaWZ3NjJQVlUwd19mT21wcVhqS2EwcGVWX0Y5VnZ5Tm0zStIB_gFBVV95cUxObkNIRnVreld4ZTZiRzZlTE5hZ1dGSFV6b2ZFWXdab0M0LVpQUVRValpyWE9fVm9kUzI4ZFZjZmhrcnB5SjZhV1NsNzZkZHVuRGpWYmJfNVQ4eU81T1cwSlpsN3FScXBzX1JkZHVXSE1RNjJoeHl4ME1CRFI4Zi1TdXhOTVFKZnIwcnh4RWxrNFp2NThQY1dSOXRid2FZaEhfM3R6N2dtdWtabXd0N0h1cjBJTXUwZlVTOFhOcXpsT205elBrb2lGLWZ5YnJxNWNNN3NiTlRoU1g4WHYzRGYtaTUtWTZVa3o1UU8zMUNWZkVFMC1QUnI4RzBhaUotUQ?oc=5",
-    "source": "The Economic Times"
-  },
-  {
     "id": "alert-90190f38b34d",
     "type": "water_supply",
     "severity": "medium",
@@ -46,22 +14,6 @@
     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcHdFTHpfTjlaLW15TWJnQnpGU3ptLTBrRTRFSkJSYzVEcXlCYW5JdmNySWNWMVFJXzNtRjItSlpnZXRDbjAwc241aDl0VkdfVW5CeF9OTFNkVEJNbDQwNjFSU2o2aFJBV19DZy03aW1QV2Zpc2JNT1hyZjVsS1FzWFFNTnBFS0FxdWtuNFl0VWY4VmJzR3Z0NA?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcHdFTHpfTjlaLW15TWJnQnpGU3ptLTBrRTRFSkJSYzVEcXlCYW5JdmNySWNWMVFJXzNtRjItSlpnZXRDbjAwc241aDl0VkdfVW5CeF9OTFNkVEJNbDQwNjFSU2o2aFJBV19DZy03aW1QV2Zpc2JNT1hyZjVsS1FzWFFNTnBFS0FxdWtuNFl0VWY4VmJzR3Z0NA?oc=5",
     "source": "Telangana Today"
-  },
-  {
-    "id": "alert-9ed2c598cfe7",
-    "type": "water_supply",
-    "severity": "low",
-    "title": "Hyderbad: Water supply, sewerage board urges Sangareddy locals, industries to cut water use - The New Indian Express",
-    "message": "Hyderbad: Water supply, sewerage board urges Sangareddy locals, industries to cut water use - The New Indian Express",
-    "description": "Hyderbad: Water supply, sewerage board urges Sangareddy locals, industries to cut water use  The New Indian Express",
-    "district": "Sangareddy",
-    "region": "Sangareddy",
-    "createdAt": "2026-10-15T21:39:30Z",
-    "publishedAt": "2026-10-15T04:00:32Z",
-    "time": "15 Oct, 9:30 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNWWdhbkh6NWdJZ0RnUm9RS3BLRVlZSHJIb2RIY3BFWEEzdFdDOEV3SGJualNPYVNYUjFVOHRJS2s2d1Rqakhid3YxbFlfSnJQTjVlMEJxUzRvZU5oOTBiUTdqeVBpMzhxSHNFdEFMWTA0ZkJMMlpYRnJXYlRldTlYbWJNenFudU85d1U1bGxPOUZqNWZGdmc2cUxJTFJfSG12eldBVnVWSkFBVC11ekxjelY0Z3ZVV25WRlJPc3EyRFJITE1QV2pUcEo5YTNydzMtT0diMUNOdDQ1STJKOS1TdWxrRkhHeHVRMzFUTy1HN1JJY1pkTTR0RC1oeGpfaWUxZXZhanI4ME1GeVR3QUYtN1pVNEhENlUyM19zRDB4M1dMUQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNWWdhbkh6NWdJZ0RnUm9RS3BLRVlZSHJIb2RIY3BFWEEzdFdDOEV3SGJualNPYVNYUjFVOHRJS2s2d1Rqakhid3YxbFlfSnJQTjVlMEJxUzRvZU5oOTBiUTdqeVBpMzhxSHNFdEFMWTA0ZkJMMlpYRnJXYlRldTlYbWJNenFudU85d1U1bGxPOUZqNWZGdmc2cUxJTFJfSG12eldBVnVWSkFBVC11ekxjelY0Z3ZVV25WRlJPc3EyRFJITE1QV2pUcEo5YTNydzMtT0diMUNOdDQ1STJKOS1TdWxrRkhHeHVRMzFUTy1HN1JJY1pkTTR0RC1oeGpfaWUxZXZhanI4ME1GeVR3QUYtN1pVNEhENlUyM19zRDB4M1dMUQ?oc=5",
-    "source": "The New Indian Express"
   },
   {
     "id": "alert-a51e094017aa",
@@ -142,23 +94,6 @@
     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA5anBHWGtTOEI5VzRySTNnTjk5dzJmQjNpSXdVVzdJUnJ2VEZ0Q2YtbjhiZkx6dFRXbUZxQkp5aDl3MlJtSlBnN19tOHFsSGwwUElmS19R?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA5anBHWGtTOEI5VzRySTNnTjk5dzJmQjNpSXdVVzdJUnJ2VEZ0Q2YtbjhiZkx6dFRXbUZxQkp5aDl3MlJtSlBnN19tOHFsSGwwUElmS19R?oc=5",
     "source": "Instagram"
-  },
-  {
-    "id": "alert-32b01f36e2e1",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Thundering with Lightning, Gusty winds(30-40 Kmph), and Thunderstorm is very likely to occur at isolated places over Bhadradri Kothagudem, Jayashankar Bhupalapally, Jogulamba Gadwal, Khammam, Mulugu, Nagarkurnool, Nalgonda, Ranga Reddy, Suryapet, Wanaparthy in next 24 hours - By TGiCCC.",
-    "message": "Thundering with Lightning, Gusty winds(30-40 Kmph), and Thunderstorm is very likely to occur at isolated places over Bhadradri Kothagudem, Jayashankar Bhupalapally, Jogulamba Gadwal, Khammam, Mulugu, Nagarkurnool, Nalgonda, Ranga Reddy, Suryapet, Wanaparthy in next 24 hours - By TGiCCC.",
-    "description": "Area: 10 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-17T10:48:34Z",
-    "publishedAt": "2026-10-17T07:57:59Z",
-    "time": "17 Oct, 1:27 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792223568835030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792223568835030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-18T03:00:00Z"
   },
   {
     "id": "alert-0bbde2555f64",
