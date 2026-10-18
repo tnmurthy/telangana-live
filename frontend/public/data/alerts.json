@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-90190f38b34d",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Unseasonal surge: HMWSSB faces summer-like tanker demand in October - Telangana Today",
-    "message": "Unseasonal surge: HMWSSB faces summer-like tanker demand in October - Telangana Today",
-    "description": "Unseasonal surge: HMWSSB faces summer-like tanker demand in October  Telangana Today",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-15T14:11:36Z",
-    "publishedAt": "2026-10-15T12:45:11Z",
-    "time": "15 Oct, 6:15 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcHdFTHpfTjlaLW15TWJnQnpGU3ptLTBrRTRFSkJSYzVEcXlCYW5JdmNySWNWMVFJXzNtRjItSlpnZXRDbjAwc241aDl0VkdfVW5CeF9OTFNkVEJNbDQwNjFSU2o2aFJBV19DZy03aW1QV2Zpc2JNT1hyZjVsS1FzWFFNTnBFS0FxdWtuNFl0VWY4VmJzR3Z0NA?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPcHdFTHpfTjlaLW15TWJnQnpGU3ptLTBrRTRFSkJSYzVEcXlCYW5JdmNySWNWMVFJXzNtRjItSlpnZXRDbjAwc241aDl0VkdfVW5CeF9OTFNkVEJNbDQwNjFSU2o2aFJBV19DZy03aW1QV2Zpc2JNT1hyZjVsS1FzWFFNTnBFS0FxdWtuNFl0VWY4VmJzR3Z0NA?oc=5",
-    "source": "Telangana Today"
-  },
-  {
     "id": "alert-a51e094017aa",
     "type": "water_supply",
     "severity": "high",
@@ -191,5 +175,21 @@
     "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOaUF6UTZpZ0loZGxvcUdhWnY3RURWSWhtZGd3SW03ajREcUl3eUh1NmhTMHp5Tkpid25Yc3hJVXJ1TThVTjRienBXTlpObWwxWDBhdzhLdkhMdjdQOTNLTk13eDBxaWE5WFJvTE5wSnBHR0FtQl9GMHUtWGNPQzlkcnBVTUtqN2hP?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOaUF6UTZpZ0loZGxvcUdhWnY3RURWSWhtZGd3SW03ajREcUl3eUh1NmhTMHp5Tkpid25Yc3hJVXJ1TThVTjRienBXTlpObWwxWDBhdzhLdkhMdjdQOTNLTk13eDBxaWE5WFJvTE5wSnBHR0FtQl9GMHUtWGNPQzlkcnBVTUtqN2hP?oc=5",
     "source": "Hyderabad Mail"
+  },
+  {
+    "id": "alert-80c2f835f119",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "El Nino concerns: Hyderabad tanker bookings double; households told to cut water use by 20% - The Hindu",
+    "message": "El Nino concerns: Hyderabad tanker bookings double; households told to cut water use by 20% - The Hindu",
+    "description": "El Nino concerns: Hyderabad tanker bookings double; households told to cut water use by 20%  The Hindu",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-18T14:53:07Z",
+    "publishedAt": "2026-10-17T06:55:32Z",
+    "time": "17 Oct, 12:25 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQWkZyWG5reEJHYnNuQ2RkNlNDbVpISXlFTkYtemhYcDBKZk10SFJUT1lkUW5KVXpJd0tEUzQ0RGVtdUthUXgtRnFzUGJ1N1p6YjFNUktjbldCWUJtUVhZZ1hBRkVkZU1WREZfd3Y2d2JrVWd3cGVMMVp3ajU3RGhLMGhfOXhqcXBrV3kzOG5peUhaejVHTjZKQ2QtSS1RcEV6RlFraFdNVUNqbmJQX1puU0VaQm1taVcxbXM0b2FxdVZPZFNiTG8tUmVzYlRmVVBKWmtUYmJ3WVJuZXZZbDN5S3cxMkhMbmpYNXdv0gHyAUFVX3lxTFByY29yYk9KaGRZb3BPSEFkbS1ldGJ6VFVETkRJMHN4Rjkydm9lS2lYZ0pXYkxxc01YbVg0ZkVfSGVWdXgxWGFfYW1zTmQ0bjBSNEFHT2JKaHFkb2liOGhGRTRqcGptbFZDYnZSOGpXbWRLN2V1b3dvRElRSVQ3ZG5RdGlKRlliaDlCR3RSRU5XQnRhT2MxeUh2NHpKSm1GY2xnYVVBX3VIS21LeDZLX3ZNLWw2Y3FhTURZS3IwR214N2djMHoyR0w4Ty0wZFdqaDM3WC12U1h1cTUteHhhYjdfVjd4OE1WcVlnM1ZGc0RIZWln?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQWkZyWG5reEJHYnNuQ2RkNlNDbVpISXlFTkYtemhYcDBKZk10SFJUT1lkUW5KVXpJd0tEUzQ0RGVtdUthUXgtRnFzUGJ1N1p6YjFNUktjbldCWUJtUVhZZ1hBRkVkZU1WREZfd3Y2d2JrVWd3cGVMMVp3ajU3RGhLMGhfOXhqcXBrV3kzOG5peUhaejVHTjZKQ2QtSS1RcEV6RlFraFdNVUNqbmJQX1puU0VaQm1taVcxbXM0b2FxdVZPZFNiTG8tUmVzYlRmVVBKWmtUYmJ3WVJuZXZZbDN5S3cxMkhMbmpYNXdv0gHyAUFVX3lxTFByY29yYk9KaGRZb3BPSEFkbS1ldGJ6VFVETkRJMHN4Rjkydm9lS2lYZ0pXYkxxc01YbVg0ZkVfSGVWdXgxWGFfYW1zTmQ0bjBSNEFHT2JKaHFkb2liOGhGRTRqcGptbFZDYnZSOGpXbWRLN2V1b3dvRElRSVQ3ZG5RdGlKRlliaDlCR3RSRU5XQnRhT2MxeUh2NHpKSm1GY2xnYVVBX3VIS21LeDZLX3ZNLWw2Y3FhTURZS3IwR214N2djMHoyR0w4Ty0wZFdqaDM3WC12U1h1cTUteHhhYjdfVjd4OE1WcVlnM1ZGc0RIZWln?oc=5",
+    "source": "The Hindu"
   }
 ]
