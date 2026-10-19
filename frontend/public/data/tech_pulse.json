@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-19T05:07:00Z",
+  "generatedAt": "2026-10-19T13:49:22Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -28,12 +28,22 @@
     ],
     "govt": [
       {
-        "id": "tp-aef0c5bfc841",
+        "id": "tp-d4da61dbc655",
+        "category": "govt",
+        "title": "Future City Hyderabad Set for Police, Skills and Urban Management Push",
+        "source": "Urban Acres",
+        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcmJFN3NHT1RvUDJKR19ZVFdDRUdMcEQ4cHQwTUFkeDFBbkxmQWRMUmRBTV9xcEs3b0Z3S01PRDVkbDNVSmN6OG9oY2tpWkJpMjlsdXAtTVpaLVRYY2FGSXdRM1RJYVBxMElER2lpcndOcDV2VWFVSUdJV2dFaVpmTlA2aVZhbmRxODlnRFNmMnkyUjVCczJR?oc=5",
+        "publishedAt": "2026-10-19T05:47:41Z",
+        "time": "19 Oct, 11:17 AM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-9af1303020ad",
         "category": "govt",
         "title": "Lack of clarity on AI usage causes confusion in Telangana's Commercial Tax department",
         "source": "The New Indian Express",
-        "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNc1VQb1hSeHg3dmJpSEM4YVNuazFGWkhuYlR3R0QzT3FGVDZaRTc5bVJ0VElGLV9fU2czRHhDOTNmRUV6VEd3Vk5WQlloQ2tpdzRaOWR3b0hMNzBnNTdKRzhNZlVwckJkZDMzOENfY2dLN1RvT3J4dk4weUZQR19uZTRUckowVkJhYWgxM2poT1hoby11cVFHWnZ3aDdYMmdsQi1Ucm8wdE5YZDlaMGsxajFiU3dUTzd2dGRkckdKOEhUNkVhTlczMmd6bnRzakZveXY2QWg0N2IzcFNzTTVyUkxkVnFjendxVm1IOdIB7AFBVV95cUxNc1VQb1hSeHg3dmJpSEM4YVNuazFGWkhuYlR3R0QzT3FGVDZaRTc5bVJ0VElGLV9fU2czRHhDOTNmRUV6VEd3Vk5WQlloQ2tpdzRaOWR3b0hMNzBnNTdKRzhNZlVwckJkZDMzOENfY2dLN1RvT3J4dk4weUZQR19uZTRUckowVkJhYWgxM2poT1hoby11cVFHWnZ3aDdYMmdsQi1Ucm8wdE5YZDlaMGsxajFiU3dUTzd2dGRkckdKOEhUNkVhTlczMmd6bnRzakZveXY2QWg0N2IzcFNzTTVyUkxkVnFjendxVm1IOQ?oc=5",
-        "publishedAt": "2026-10-19T03:12:00Z",
+        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOX1J6SEFCb1VEa2l1cUNyQ0tIeGdkd3VFUW5mU3U3YXBxelI1X3EwcXRZa0ZtVDdTUmxRRk1EbHdXNUgxQ204NldVLW1OWWpPV1F6S203bFBJUDEyVV9yRXhzN052ZjI5enM0YlZPa2x4OGF5dUVNWFM5clNMZXFfZlo3eGlGQjJSUm15Tkd6dmVpbVdMUngxNmhuUGhwcWhfdEoweGpUTDZXdEJBTTEtaGtBNXlpcVJRNnNTR2tfSndJYXZFQl9keFcyVXpsNGJVOTBxdGpzblZUQ05RYllv?oc=5",
+        "publishedAt": "2026-10-19T03:12:18Z",
         "time": "19 Oct, 8:42 AM IST",
         "method": "typesafe"
       },
