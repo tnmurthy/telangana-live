@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-a51e094017aa",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Crisis: Tanker Demand Hits Summer Levels - Urban Acres",
-    "message": "Hyderabad Water Crisis: Tanker Demand Hits Summer Levels - Urban Acres",
-    "description": "Hyderabad Water Crisis: Tanker Demand Hits Summer Levels  Urban Acres",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-16T09:03:02Z",
-    "publishedAt": "2026-10-16T03:24:40Z",
-    "time": "16 Oct, 8:54 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONVVxRHEtWS1uWnN0bDhxeUNBU2NBcjUzNUNvTXJkd2xCQlJHMWphb1Nkc25DZ2llazF0WjZuay01SDNlNkhsNHZwYU1jYVZWby00NlRDUU94bkw2eFRDSkpabFVHUWRNdk1tR3ZUWHpUSmJYdkM3V01iZTFlOXNlQWFTWjc3UQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMihgFBVV95cUxONVVxRHEtWS1uWnN0bDhxeUNBU2NBcjUzNUNvTXJkd2xCQlJHMWphb1Nkc25DZ2llazF0WjZuay01SDNlNkhsNHZwYU1jYVZWby00NlRDUU94bkw2eFRDSkpabFVHUWRNdk1tR3ZUWHpUSmJYdkM3V01iZTFlOXNlQWFTWjc3UQ?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-a4adcbb9510f",
     "type": "weather",
     "severity": "medium",
@@ -96,23 +80,6 @@
     "source": "Hyderabad Mail"
   },
   {
-    "id": "alert-c312ac5ca7ef",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Thundering with Lightning, Gusty winds(30-40 Kmph) is very likely to occur at isolated places over BDDK, HNMa, Hyderabad, JSKB, JGLG, Khammam, MBB,MBN, MDCM, Mulugu, NGKL, Nalgonda, NRPT, RR, Suryapet, Wanaparthy, Warangal, YDDB in next 24 hours By TGiCCC.",
-    "message": "Thundering with Lightning, Gusty winds(30-40 Kmph) is very likely to occur at isolated places over BDDK, HNMa, Hyderabad, JSKB, JGLG, Khammam, MBB,MBN, MDCM, Mulugu, NGKL, Nalgonda, NRPT, RR, Suryapet, Wanaparthy, Warangal, YDDB in next 24 hours By TGiCCC.",
-    "description": "Area: 18 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-18T11:45:14Z",
-    "publishedAt": "2026-10-18T07:07:39Z",
-    "time": "18 Oct, 12:37 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792306556021030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792306556021030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-19T03:02:00Z"
-  },
-  {
     "id": "alert-3838ef2b5d04",
     "type": "water_supply",
     "severity": "low",
@@ -191,5 +158,21 @@
     "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQWkZyWG5reEJHYnNuQ2RkNlNDbVpISXlFTkYtemhYcDBKZk10SFJUT1lkUW5KVXpJd0tEUzQ0RGVtdUthUXgtRnFzUGJ1N1p6YjFNUktjbldCWUJtUVhZZ1hBRkVkZU1WREZfd3Y2d2JrVWd3cGVMMVp3ajU3RGhLMGhfOXhqcXBrV3kzOG5peUhaejVHTjZKQ2QtSS1RcEV6RlFraFdNVUNqbmJQX1puU0VaQm1taVcxbXM0b2FxdVZPZFNiTG8tUmVzYlRmVVBKWmtUYmJ3WVJuZXZZbDN5S3cxMkhMbmpYNXdv0gHyAUFVX3lxTFByY29yYk9KaGRZb3BPSEFkbS1ldGJ6VFVETkRJMHN4Rjkydm9lS2lYZ0pXYkxxc01YbVg0ZkVfSGVWdXgxWGFfYW1zTmQ0bjBSNEFHT2JKaHFkb2liOGhGRTRqcGptbFZDYnZSOGpXbWRLN2V1b3dvRElRSVQ3ZG5RdGlKRlliaDlCR3RSRU5XQnRhT2MxeUh2NHpKSm1GY2xnYVVBX3VIS21LeDZLX3ZNLWw2Y3FhTURZS3IwR214N2djMHoyR0w4Ty0wZFdqaDM3WC12U1h1cTUteHhhYjdfVjd4OE1WcVlnM1ZGc0RIZWln?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQWkZyWG5reEJHYnNuQ2RkNlNDbVpISXlFTkYtemhYcDBKZk10SFJUT1lkUW5KVXpJd0tEUzQ0RGVtdUthUXgtRnFzUGJ1N1p6YjFNUktjbldCWUJtUVhZZ1hBRkVkZU1WREZfd3Y2d2JrVWd3cGVMMVp3ajU3RGhLMGhfOXhqcXBrV3kzOG5peUhaejVHTjZKQ2QtSS1RcEV6RlFraFdNVUNqbmJQX1puU0VaQm1taVcxbXM0b2FxdVZPZFNiTG8tUmVzYlRmVVBKWmtUYmJ3WVJuZXZZbDN5S3cxMkhMbmpYNXdv0gHyAUFVX3lxTFByY29yYk9KaGRZb3BPSEFkbS1ldGJ6VFVETkRJMHN4Rjkydm9lS2lYZ0pXYkxxc01YbVg0ZkVfSGVWdXgxWGFfYW1zTmQ0bjBSNEFHT2JKaHFkb2liOGhGRTRqcGptbFZDYnZSOGpXbWRLN2V1b3dvRElRSVQ3ZG5RdGlKRlliaDlCR3RSRU5XQnRhT2MxeUh2NHpKSm1GY2xnYVVBX3VIS21LeDZLX3ZNLWw2Y3FhTURZS3IwR214N2djMHoyR0w4Ty0wZFdqaDM3WC12U1h1cTUteHhhYjdfVjd4OE1WcVlnM1ZGc0RIZWln?oc=5",
     "source": "The Hindu"
+  },
+  {
+    "id": "alert-3236ab0857c6",
+    "type": "weather",
+    "severity": "high",
+    "title": "Weather today, October 19: Heavy rain warnings for Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telanga - The Economic Times",
+    "message": "Weather today, October 19: Heavy rain warnings for Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telanga - The Economic Times",
+    "description": "Weather today, October 19: Heavy rain warnings for Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telanga  The Economic Times",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-19T05:22:32Z",
+    "publishedAt": "2026-10-18T15:22:13Z",
+    "time": "18 Oct, 8:52 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMivgJBVV95cUxQYVBsczlqR2NTemVkUWZXNnJpX21CSDNYM0FuS1JIX01ZdnozZHJIdF94ekdnSFV4OUtEc2UtN256alRVd29naUo2MUpqWGE1dkFFczhnUlRiNFFKdzA5czVqYTBmbk1EOEFCNXN5bDJ2MTB4UE9wcnRrcUIwdFo3blJWRXRDQ194X3BvQU10REdTNWtieC1keFU4cWJSd0dnWVN2WDE0MlhrWHBiXzY3blVkRVR6RTJyZHlkMlFJaTdrMWR1SkMxMjJWdnl1c1YwU21hckJWMTFxUU1fYzU2LVd6Qk1aWVR1czRtczFIZzV5aktGbXNIM0VTRThDQkYwb2ZKR0hwN2JHXy1kTG81ZDc3ZjByYVpGVVF0UW5ZVUtOd3dqdW12Vm9HM1MzYnVVMWtWdmg1TGV4QXRRMlHSAcMCQVVfeXFMT2l5NDhXVDBBSHhOQ3RCV3Z0WVVsVERqZXktLWR4dDdhU1kzcDA0WXFUN0dMUVNKbnpzUm0zVDVVRWtoQVAzU0QyZmRYOGJPOWtab3AwejN2aXdqeHMtcVZuenUyOGEwbi0xRGNxbHN0OTZRbDlxY0paNjdIbk0wTzVNOFEtY0RnMXRiWF9aTlk5cjgwRWlIWmxRVHl4bjN2RHA0VE9GNExLNnZINlVFcFdPVEVHY1V5ODRMNGY2ZmdjcWYwMjJVdUE4cDVZZUxBWGxjdWI3U1pLeGtBQ0NXbUhVVlNGUlh2UVJKaDNfck9NTVQ4dG8xMWR2RUJYQ0t3LUJpeF9vcnJ5clIzME5nZGxORUlaZFNCT1BRek9wMjZBZE1YMDZRSHJIenJCNzVnY3FwanlTeWx5azRwaGNrU214M3c?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMivgJBVV95cUxQYVBsczlqR2NTemVkUWZXNnJpX21CSDNYM0FuS1JIX01ZdnozZHJIdF94ekdnSFV4OUtEc2UtN256alRVd29naUo2MUpqWGE1dkFFczhnUlRiNFFKdzA5czVqYTBmbk1EOEFCNXN5bDJ2MTB4UE9wcnRrcUIwdFo3blJWRXRDQ194X3BvQU10REdTNWtieC1keFU4cWJSd0dnWVN2WDE0MlhrWHBiXzY3blVkRVR6RTJyZHlkMlFJaTdrMWR1SkMxMjJWdnl1c1YwU21hckJWMTFxUU1fYzU2LVd6Qk1aWVR1czRtczFIZzV5aktGbXNIM0VTRThDQkYwb2ZKR0hwN2JHXy1kTG81ZDc3ZjByYVpGVVF0UW5ZVUtOd3dqdW12Vm9HM1MzYnVVMWtWdmg1TGV4QXRRMlHSAcMCQVVfeXFMT2l5NDhXVDBBSHhOQ3RCV3Z0WVVsVERqZXktLWR4dDdhU1kzcDA0WXFUN0dMUVNKbnpzUm0zVDVVRWtoQVAzU0QyZmRYOGJPOWtab3AwejN2aXdqeHMtcVZuenUyOGEwbi0xRGNxbHN0OTZRbDlxY0paNjdIbk0wTzVNOFEtY0RnMXRiWF9aTlk5cjgwRWlIWmxRVHl4bjN2RHA0VE9GNExLNnZINlVFcFdPVEVHY1V5ODRMNGY2ZmdjcWYwMjJVdUE4cDVZZUxBWGxjdWI3U1pLeGtBQ0NXbUhVVlNGUlh2UVJKaDNfck9NTVQ4dG8xMWR2RUJYQ0t3LUJpeF9vcnJ5clIzME5nZGxORUlaZFNCT1BRek9wMjZBZE1YMDZRSHJIenJCNzVnY3FwanlTeWx5azRwaGNrU214M3c?oc=5",
+    "source": "The Economic Times"
   }
 ]
