@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-20T05:09:06Z",
+  "generatedAt": "2026-10-20T17:26:33Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -68,6 +68,17 @@
         "method": "typesafe"
       }
     ],
-    "jobs": []
+    "jobs": [
+      {
+        "id": "tp-2b103ec3cd66",
+        "category": "jobs",
+        "title": "IIT Hyderabad launches four-week Applied AI certificate programme for working professionals",
+        "source": "Careers360",
+        "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOdkRNSjVDcEZQNHRfWWVLS1RUeFZHSlloVUh1TEFQYnhnWXh4amlTTmdYTk44RjQzbnFCWUZMbWNSUk1vT1RUWGw1VkM4eXpMMXY3b183bjdvWXJRN2VMbGswSGRIUWNobnpId2RseFJ0YU52N1BTT1Z5VnIwUDRsMUtscXRSb1VtSWtMTlFMaXFUR1NNSDNGWDFUamlTVFB0WFppS2NqRnA2RUV0SHdwTkpVRVJQVExFU1JhVzBzWFBIQTBoZkw0cjZ6aFBmc3ZSdWNpMlZQSGd3RVRTXzQwOTFTeG1pcmxYSmpMRjdSUdIB9AFBVV95cUxOY01EN1BMWlB0b1pINlBrRkYxNzJKYWJ6RGlJTHRfOEZ6NE1pUDVVbjEtWjJXLUZUYkZ4dnpNd0JKNUVrcENKRFBiRk80VTM4c0wwcGdrZTc5SDNrcklTa0VlQm1HdnROQ1pDV3hQY1hWcUNOVUwyTG5iNjN6Y011MDVZY00xbTdDRC1qVV9WN1ZvTVRaSEtjTWZneUNnTkd5Rzh0NDZ5M3g3Z0xiSTlDZGdzQnhFYnVUeTNPdWxBc0FrODlDd3paSnFWclRXbTRqbXgwT3ExRUxIbDZGY01OR3QzY1NRbFpLaGtDU1o5bmVZQmZ3?oc=5",
+        "publishedAt": "2026-10-09T07:00:00Z",
+        "time": "9 Oct, 12:30 PM IST",
+        "method": "typesafe"
+      }
+    ]
   }
 }
