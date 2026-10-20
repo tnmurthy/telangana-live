@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-19T13:49:22Z",
+  "generatedAt": "2026-10-20T05:09:06Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -16,17 +16,27 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-0701d5d27d0a",
+        "id": "tp-c5e3c53ee23a",
         "category": "safety",
-        "title": "Telangana Cyber Security Bureau arrests 101 in multi-state cybercrime crackdown | India News",
-        "source": "Hindustan Times",
-        "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNem1VbjZIYzV5RUdTNHVuaF9fQzNyb1hoaEs3cWpnV205SVpvb0RsY3NlWlNYN0s5SnNzTmw2a0lzOWhEOFprM0U5TE96VnVUeFdBaGRTRDZkSXlqbHMzVFh3aWFtTVgteE1qcDNZLXVmaFdjMnVkQ2JfQUMwTFBfemFZZ2M0MGxLOGI4RDdmeUhuTjJGZXl6VWtyZTdOLVE0MW9OU1JvNXpsSWlHSktqc0ZxNnJUblFVX2MwVF9IRG1vbWdhNW1NdUpzeUFIWTUtZlAyTWo4Tk1uZ9IB3wFBVV95cUxPQjFlM2pQSGM3Q2VnLUs4YlN5SnY4ckNPeGtjeGdlZ0hQcmtpbkZYMUtLNzFxWUw1N0tKTjhGcXdQRjNHRzJaSHpjWmVqaHU4MDNfYVdzU0JhZFRLVF9hZW50bjU3ZjRPWFJneGlFaDJFSFIzNExZQkV0WWJpOGZqRzk5UWN0QUtDczYwQTVjR0gyc05BZTlra253M0FEZkR0WGt2cVJQMHVuNGk3YlY2T29mQTJyRHVGOUI0b0V0dlZUdS1fSEJUZmRUbnpvS1JobmI3dDBrQndnQnRIVDJj?oc=5",
-        "publishedAt": "2026-10-07T10:28:39Z",
-        "time": "7 Oct, 3:58 PM IST",
+        "title": "Telangana cyber security sleuths arrest 101 in multi-state operation",
+        "source": "Deccan Herald",
+        "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdDZjUkRiTmMydHFHemJLM09KSi1seUc0Q1lSa1QxalRQOElZenRCWFVLdTF6N2N4VE14a1FZX1FoVzRtTDlkd0lRNHdVTXlnSHJsTUR4S2JMNGE4Qmk4UEVKX1d5bm9tZU1UWjYyWWJUSFZKU2tpRUxMM1ZiRnUxZUswQk1DQ0NkbjZ4VE9VNEMyald2M25lQVdrR2hWazRoRzVKWWdLQjhCcFFjY19FcEFvdXBJMVREV2hSeUhB?oc=5",
+        "publishedAt": "2026-10-07T07:00:00Z",
+        "time": "7 Oct, 12:30 PM IST",
         "method": "typesafe"
       }
     ],
     "govt": [
+      {
+        "id": "tp-3bc1d654ec6e",
+        "category": "govt",
+        "title": "Revanth Reddy lays NIUM foundation, reviews Invest Telangana plans",
+        "source": "The News Mill",
+        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQREEteDRmZFJUcGg4S0Jrbmt0dW5OanJkQUVQTFRmRS1mNGxYUWFXbElaREVPeHBkUHltTEJRT0VZdmRnT2JUUTdLZWVrN04yZTA2bmtsaWVKd0VTOXpKZkFEZVVsMlk0dGs1REFVTWVaX2RHTDF1TnRUZjJ2cWhkb09pUHR3S21LWUp3S1FZbDRCWXd6ejdXZUZfbXdRbDA?oc=5",
+        "publishedAt": "2026-10-20T03:27:22Z",
+        "time": "20 Oct, 8:57 AM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-d4da61dbc655",
         "category": "govt",
