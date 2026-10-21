@@ -112,23 +112,6 @@
     "source": "The New Indian Express"
   },
   {
-    "id": "alert-ea88a0e2f1ef",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Jogulamba Gadwal, Khammam, Mahabubnagar, Nagarkurnool, Nalgonda, Suryapet, Wanaparthy in next 24 hours By TGiCCC",
-    "message": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Jogulamba Gadwal, Khammam, Mahabubnagar, Nagarkurnool, Nalgonda, Suryapet, Wanaparthy in next 24 hours By TGiCCC",
-    "description": "Area: 8 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-20T10:20:08Z",
-    "publishedAt": "2026-10-20T06:36:47Z",
-    "time": "20 Oct, 12:06 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792476333616030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792476333616030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-21T03:00:00Z"
-  },
-  {
     "id": "alert-74bcdf741768",
     "type": "water_supply",
     "severity": "medium",
@@ -191,5 +174,37 @@
     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWXVhZUFnVmRaNnJQcVpuWWhDejJKZXE1bHJvdGlGV0ZDSlZSczd1ZXdsclF3QXItcVBLampLTEE4OVU0QnVUYmg2elVqbTdUaEVWZUJYak53a1VjdGE0QzA0OU9kaHdZUDdpZzhlcjB3eXBPdkhjaVZDTjNad2NqcV9EcEFFWFhfenZOV2FBdGJLeEZBUzNn?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWXVhZUFnVmRaNnJQcVpuWWhDejJKZXE1bHJvdGlGV0ZDSlZSczd1ZXdsclF3QXItcVBLampLTEE4OVU0QnVUYmg2elVqbTdUaEVWZUJYak53a1VjdGE0QzA0OU9kaHdZUDdpZzhlcjB3eXBPdkhjaVZDTjNad2NqcV9EcEFFWFhfenZOV2FBdGJLeEZBUzNn?oc=5",
     "source": "Hyderabad Mail"
+  },
+  {
+    "id": "alert-f24f743297f6",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad: Car rams into air valve of Krishna water pipeline, 1 dead; HMWSSB plugs leak - NewsMeter",
+    "message": "Hyderabad: Car rams into air valve of Krishna water pipeline, 1 dead; HMWSSB plugs leak - NewsMeter",
+    "description": "Hyderabad: Car rams into air valve of Krishna water pipeline, 1 dead; HMWSSB plugs leak  NewsMeter",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-21T06:04:03Z",
+    "publishedAt": "2026-10-21T03:17:09Z",
+    "time": "21 Oct, 8:47 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWnJreFdkeU1nSjNvTW45N3BtYWxYY1pMbjdPSWpoblh6Vi1LSWY4Y1Jkb2paY1hMLXNpdE5QR25hci1CNGxHOWdRY2ZMU1VfZktPdjVVcm5sVlZOZkIxbF9RSTBlbFBkT09MWUNGZk5LY2k5cUpSdGczRzBaV21mLXZhTi1XRzYwNm1VSXVjbzFLUGpoNDlOTTdWQXhvam55SUNqMlhfejVQVzhVZVZxZzBpcV9GWkVUZkh5c0trNA?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPWnJreFdkeU1nSjNvTW45N3BtYWxYY1pMbjdPSWpoblh6Vi1LSWY4Y1Jkb2paY1hMLXNpdE5QR25hci1CNGxHOWdRY2ZMU1VfZktPdjVVcm5sVlZOZkIxbF9RSTBlbFBkT09MWUNGZk5LY2k5cUpSdGczRzBaV21mLXZhTi1XRzYwNm1VSXVjbzFLUGpoNDlOTTdWQXhvam55SUNqMlhfejVQVzhVZVZxZzBpcV9GWkVUZkh5c0trNA?oc=5",
+    "source": "NewsMeter"
+  },
+  {
+    "id": "alert-c05518063727",
+    "type": "weather",
+    "severity": "medium",
+    "title": "IMD Hyderabad Rain Alert: Eight Telangana Districts Today - INDToday",
+    "message": "IMD Hyderabad Rain Alert: Eight Telangana Districts Today - INDToday",
+    "description": "IMD Hyderabad Rain Alert: Eight Telangana Districts Today  INDToday",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-21T06:04:03Z",
+    "publishedAt": "2026-10-21T05:57:57Z",
+    "time": "21 Oct, 11:27 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQUtnWFRaS3dFYVhwaTF2Y04wc0U2V3JvY19HdmMwVlF4RDZoUF9GLXBrNF9pTTREMG5ad0xvdlh0ck1GUlpWN3NyWmNvaFBBTDI1ZGMyR0RNd1pVYXVKUWR2QndqX3JTUWlXTjFtRWloRHg0ZVQtc0lFd2NSbXo0MVI4OWs?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQUtnWFRaS3dFYVhwaTF2Y04wc0U2V3JvY19HdmMwVlF4RDZoUF9GLXBrNF9pTTREMG5ad0xvdlh0ck1GUlpWN3NyWmNvaFBBTDI1ZGMyR0RNd1pVYXVKUWR2QndqX3JTUWlXTjFtRWloRHg0ZVQtc0lFd2NSbXo0MVI4OWs?oc=5",
+    "source": "INDToday"
   }
 ]
