@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-3236ab0857c6",
-    "type": "weather",
-    "severity": "high",
-    "title": "Weather today, October 19: Heavy rain warnings for Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telanga - The Economic Times",
-    "message": "Weather today, October 19: Heavy rain warnings for Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telanga - The Economic Times",
-    "description": "Weather today, October 19: Heavy rain warnings for Tamil Nadu, Kerala, Karnataka, Andhra Pradesh & Telanga  The Economic Times",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-19T05:22:32Z",
-    "publishedAt": "2026-10-18T15:22:13Z",
-    "time": "18 Oct, 8:52 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMivgJBVV95cUxQYVBsczlqR2NTemVkUWZXNnJpX21CSDNYM0FuS1JIX01ZdnozZHJIdF94ekdnSFV4OUtEc2UtN256alRVd29naUo2MUpqWGE1dkFFczhnUlRiNFFKdzA5czVqYTBmbk1EOEFCNXN5bDJ2MTB4UE9wcnRrcUIwdFo3blJWRXRDQ194X3BvQU10REdTNWtieC1keFU4cWJSd0dnWVN2WDE0MlhrWHBiXzY3blVkRVR6RTJyZHlkMlFJaTdrMWR1SkMxMjJWdnl1c1YwU21hckJWMTFxUU1fYzU2LVd6Qk1aWVR1czRtczFIZzV5aktGbXNIM0VTRThDQkYwb2ZKR0hwN2JHXy1kTG81ZDc3ZjByYVpGVVF0UW5ZVUtOd3dqdW12Vm9HM1MzYnVVMWtWdmg1TGV4QXRRMlHSAcMCQVVfeXFMT2l5NDhXVDBBSHhOQ3RCV3Z0WVVsVERqZXktLWR4dDdhU1kzcDA0WXFUN0dMUVNKbnpzUm0zVDVVRWtoQVAzU0QyZmRYOGJPOWtab3AwejN2aXdqeHMtcVZuenUyOGEwbi0xRGNxbHN0OTZRbDlxY0paNjdIbk0wTzVNOFEtY0RnMXRiWF9aTlk5cjgwRWlIWmxRVHl4bjN2RHA0VE9GNExLNnZINlVFcFdPVEVHY1V5ODRMNGY2ZmdjcWYwMjJVdUE4cDVZZUxBWGxjdWI3U1pLeGtBQ0NXbUhVVlNGUlh2UVJKaDNfck9NTVQ4dG8xMWR2RUJYQ0t3LUJpeF9vcnJ5clIzME5nZGxORUlaZFNCT1BRek9wMjZBZE1YMDZRSHJIenJCNzVnY3FwanlTeWx5azRwaGNrU214M3c?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMivgJBVV95cUxQYVBsczlqR2NTemVkUWZXNnJpX21CSDNYM0FuS1JIX01ZdnozZHJIdF94ekdnSFV4OUtEc2UtN256alRVd29naUo2MUpqWGE1dkFFczhnUlRiNFFKdzA5czVqYTBmbk1EOEFCNXN5bDJ2MTB4UE9wcnRrcUIwdFo3blJWRXRDQ194X3BvQU10REdTNWtieC1keFU4cWJSd0dnWVN2WDE0MlhrWHBiXzY3blVkRVR6RTJyZHlkMlFJaTdrMWR1SkMxMjJWdnl1c1YwU21hckJWMTFxUU1fYzU2LVd6Qk1aWVR1czRtczFIZzV5aktGbXNIM0VTRThDQkYwb2ZKR0hwN2JHXy1kTG81ZDc3ZjByYVpGVVF0UW5ZVUtOd3dqdW12Vm9HM1MzYnVVMWtWdmg1TGV4QXRRMlHSAcMCQVVfeXFMT2l5NDhXVDBBSHhOQ3RCV3Z0WVVsVERqZXktLWR4dDdhU1kzcDA0WXFUN0dMUVNKbnpzUm0zVDVVRWtoQVAzU0QyZmRYOGJPOWtab3AwejN2aXdqeHMtcVZuenUyOGEwbi0xRGNxbHN0OTZRbDlxY0paNjdIbk0wTzVNOFEtY0RnMXRiWF9aTlk5cjgwRWlIWmxRVHl4bjN2RHA0VE9GNExLNnZINlVFcFdPVEVHY1V5ODRMNGY2ZmdjcWYwMjJVdUE4cDVZZUxBWGxjdWI3U1pLeGtBQ0NXbUhVVlNGUlh2UVJKaDNfck9NTVQ4dG8xMWR2RUJYQ0t3LUJpeF9vcnJ5clIzME5nZGxORUlaZFNCT1BRek9wMjZBZE1YMDZRSHJIenJCNzVnY3FwanlTeWx5azRwaGNrU214M3c?oc=5",
-    "source": "The Economic Times"
-  },
-  {
     "id": "alert-cb565d938eaf",
     "type": "weather",
     "severity": "low",
