@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-21T05:10:18Z",
+  "generatedAt": "2026-10-21T12:13:05Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -13,16 +13,6 @@
         "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBnZTF2MG1XbzFSQ3h4Sk1CS2RGTG5hRFNVb3lzQTdKOTRuYVlDeHU1LVUtcGVZODVkN3A5VWVNNzd6eVRYaFNWbzBFRkpqbS01anUw?oc=5",
         "publishedAt": "2026-10-09T22:08:03Z",
         "time": "10 Oct, 3:38 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-f58ea26fbf24",
-        "category": "safety",
-        "title": "TGSCB Busts Rs 17 Cr Inter-State Cyber Fraud, Arrests 101",
-        "source": "Deccan Chronicle",
-        "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQWkRXdEdSNGFUMUZIT3VvNzYzWjBRaWhGS3huTV9EWUNnT2tXclQ1aklzdThiSHl2eWhibHBhamc2ZEMzbW94bU9uejNrUk1QUU4xZklzUVFtMURhTDBsYV9DOVpYMVBXY2s3eEM2RDNOSjIxcjlPZUNxUHQwRnhmNHNLVVg1S2ZrSXo0WkxLSUpQTUxSeFVZS1FpXzlNUV84NUZZcjRfNDE4YWRDNEFCMWVuX0hSRXRyT3ZNZF9pR0VpZVh2Tnp4b25GejB6QzlhSU1YYkIxSmhuTWluUkxFenBtMELSAeoBQVVfeXFMTjBvclNTY3phWVIzdjBJeHRrMmpYZFhHTkYya0NEamxVeXg0eGs2YWpkdTRCaFRBbTFQSl9kTy13OTFESWhYNm5oRlhpazFoc2NoNldYUThhMEtoR2FfRV9OaHMtck1Da2VOb3M0RDU4WGdqT1JiZWVLZEdCMjNacklNUGFsRHM2TFcwdE43RjZmMTFvTWEzakVCRlRQM29OMDF2NldMcEdyWXBMa2dmMDBKNTdqMHNIREZ3cldndUdmdXhUeHNaZHFKOTVCbkthbXFMb181M2xXSGFnNDdOMk5UOGRrU1M2QU9B?oc=5",
-        "publishedAt": "2026-10-07T07:00:00Z",
-        "time": "7 Oct, 12:30 PM IST",
         "method": "typesafe"
       }
     ],
