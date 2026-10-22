@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-cb565d938eaf",
-    "type": "weather",
-    "severity": "low",
-    "title": "Hyderabad Weather Today, October 19: IMD Forecasts Rain, Thunderstorms and Gusty Winds - Hyderabad Mail",
-    "message": "Hyderabad Weather Today, October 19: IMD Forecasts Rain, Thunderstorms and Gusty Winds - Hyderabad Mail",
-    "description": "Hyderabad Weather Today, October 19: IMD Forecasts Rain, Thunderstorms and Gusty Winds  Hyderabad Mail",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-19T17:29:49Z",
-    "publishedAt": "2026-10-19T12:08:58Z",
-    "time": "19 Oct, 5:38 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1waW9iRHh2dUp3Z21aaWdLMW5rcHlUaFloS2VpSVRDMTZHM3JHZmlaajN5Y2ktckhlZHM2SFhPNkowRWRWbmZsNHpDV1U3NkNmOWJONWhXUWJGM29uWVF3Q1BPZ3I4c01OcFd4Ym4tZVZqbDEx?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1waW9iRHh2dUp3Z21aaWdLMW5rcHlUaFloS2VpSVRDMTZHM3JHZmlaajN5Y2ktckhlZHM2SFhPNkowRWRWbmZsNHpDV1U3NkNmOWJONWhXUWJGM29uWVF3Q1BPZ3I4c01OcFd4Ym4tZVZqbDEx?oc=5",
-    "source": "Hyderabad Mail"
-  },
-  {
     "id": "alert-9af70d1a46a8",
     "type": "water_supply",
     "severity": "medium",
@@ -126,5 +110,21 @@
     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQUtnWFRaS3dFYVhwaTF2Y04wc0U2V3JvY19HdmMwVlF4RDZoUF9GLXBrNF9pTTREMG5ad0xvdlh0ck1GUlpWN3NyWmNvaFBBTDI1ZGMyR0RNd1pVYXVKUWR2QndqX3JTUWlXTjFtRWloRHg0ZVQtc0lFd2NSbXo0MVI4OWs?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQUtnWFRaS3dFYVhwaTF2Y04wc0U2V3JvY19HdmMwVlF4RDZoUF9GLXBrNF9pTTREMG5ad0xvdlh0ck1GUlpWN3NyWmNvaFBBTDI1ZGMyR0RNd1pVYXVKUWR2QndqX3JTUWlXTjFtRWloRHg0ZVQtc0lFd2NSbXo0MVI4OWs?oc=5",
     "source": "INDToday"
+  },
+  {
+    "id": "alert-7a1dc9efa1eb",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Hyderabad’s water clock is ticking - The New Indian Express",
+    "message": "Hyderabad’s water clock is ticking - The New Indian Express",
+    "description": "Hyderabad’s water clock is ticking  The New Indian Express",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-22T13:07:46Z",
+    "publishedAt": "2026-10-22T03:14:01Z",
+    "time": "22 Oct, 8:44 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOUdHbENEM0V1dm9nTDhmVUFkU3A4d3UxMEpzZFVaUU1KLXZYREtHZ0Q3Ny1EZlh3V3FtTHQ3TkdLRElYdGNYVFBHaGQ4Y19KUkxUNV9veXV4bV9NUS1LamdVajJyakJzSFhMV2ppX3F0Q0RtQ2VfWEpIVzFUZVI1Z2QtZGNDeHkyUjBiUFhEelRBSnBfcFcwcXoyVdIBqAFBVV95cUxOTzFWSGl5dHFURms5ejhuTGlRWElpcV9IQ0ExSXJQeWJ4T1BMa1hLcnFFVjIzenZpRHFsU0tVSkRabDI3cjlxWHg0T3BEcDM0RGFqX3E2TDhiQk9DSm42ZThydVBlS0RDRmpOWnFSbllMMnliYm5JLWF2SF82T2RjMFNSc25fLWk1ZG4yd3BYcFZlenZPSEZKUmJnN0h3SkFqbGlpZ1hpSnU?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOUdHbENEM0V1dm9nTDhmVUFkU3A4d3UxMEpzZFVaUU1KLXZYREtHZ0Q3Ny1EZlh3V3FtTHQ3TkdLRElYdGNYVFBHaGQ4Y19KUkxUNV9veXV4bV9NUS1LamdVajJyakJzSFhMV2ppX3F0Q0RtQ2VfWEpIVzFUZVI1Z2QtZGNDeHkyUjBiUFhEelRBSnBfcFcwcXoyVdIBqAFBVV95cUxOTzFWSGl5dHFURms5ejhuTGlRWElpcV9IQ0ExSXJQeWJ4T1BMa1hLcnFFVjIzenZpRHFsU0tVSkRabDI3cjlxWHg0T3BEcDM0RGFqX3E2TDhiQk9DSm42ZThydVBlS0RDRmpOWnFSbllMMnliYm5JLWF2SF82T2RjMFNSc25fLWk1ZG4yd3BYcFZlenZPSEZKUmJnN0h3SkFqbGlpZ1hpSnU?oc=5",
+    "source": "The New Indian Express"
   }
 ]
