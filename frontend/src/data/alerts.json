@@ -126,22 +126,5 @@
     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQUtnWFRaS3dFYVhwaTF2Y04wc0U2V3JvY19HdmMwVlF4RDZoUF9GLXBrNF9pTTREMG5ad0xvdlh0ck1GUlpWN3NyWmNvaFBBTDI1ZGMyR0RNd1pVYXVKUWR2QndqX3JTUWlXTjFtRWloRHg0ZVQtc0lFd2NSbXo0MVI4OWs?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQUtnWFRaS3dFYVhwaTF2Y04wc0U2V3JvY19HdmMwVlF4RDZoUF9GLXBrNF9pTTREMG5ad0xvdlh0ck1GUlpWN3NyWmNvaFBBTDI1ZGMyR0RNd1pVYXVKUWR2QndqX3JTUWlXTjFtRWloRHg0ZVQtc0lFd2NSbXo0MVI4OWs?oc=5",
     "source": "INDToday"
-  },
-  {
-    "id": "alert-20c51222820e",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Khammam, Mahabubnagar, Nagarkurnool, Nalgonda, Suryapet in next 24 hours - By Telangana Integrated Command and Control Centre.",
-    "message": "Thunderstorm accompanied with Lightning and Gusty winds (30-40 kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Khammam, Mahabubnagar, Nagarkurnool, Nalgonda, Suryapet in next 24 hours - By Telangana Integrated Command and Control Centre.",
-    "description": "Area: 6 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-21T11:54:28Z",
-    "publishedAt": "2026-10-21T07:34:37Z",
-    "time": "21 Oct, 1:04 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792566814094030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1792566814094030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-22T03:00:00Z"
   }
 ]
