@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-3b01b82d656e",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Hyderabad Weather Today, October 20: Hazy Skies Forecast, Thunderstorm Warning in 8 Telangana Districts - Hyderabad Mail",
-    "message": "Hyderabad Weather Today, October 20: Hazy Skies Forecast, Thunderstorm Warning in 8 Telangana Districts - Hyderabad Mail",
-    "description": "Hyderabad Weather Today, October 20: Hazy Skies Forecast, Thunderstorm Warning in 8 Telangana Districts  Hyderabad Mail",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-20T15:18:32Z",
-    "publishedAt": "2026-10-20T10:44:13Z",
-    "time": "20 Oct, 4:14 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWXVhZUFnVmRaNnJQcVpuWWhDejJKZXE1bHJvdGlGV0ZDSlZSczd1ZXdsclF3QXItcVBLampLTEE4OVU0QnVUYmg2elVqbTdUaEVWZUJYak53a1VjdGE0QzA0OU9kaHdZUDdpZzhlcjB3eXBPdkhjaVZDTjNad2NqcV9EcEFFWFhfenZOV2FBdGJLeEZBUzNn?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWXVhZUFnVmRaNnJQcVpuWWhDejJKZXE1bHJvdGlGV0ZDSlZSczd1ZXdsclF3QXItcVBLampLTEE4OVU0QnVUYmg2elVqbTdUaEVWZUJYak53a1VjdGE0QzA0OU9kaHdZUDdpZzhlcjB3eXBPdkhjaVZDTjNad2NqcV9EcEFFWFhfenZOV2FBdGJLeEZBUzNn?oc=5",
-    "source": "Hyderabad Mail"
-  },
-  {
     "id": "alert-f24f743297f6",
     "type": "water_supply",
     "severity": "high",
