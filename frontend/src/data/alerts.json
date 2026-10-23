@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-9af70d1a46a8",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Hyderabad: HYDRAA joins water fight - The New Indian Express",
-    "message": "Hyderabad: HYDRAA joins water fight - The New Indian Express",
-    "description": "Hyderabad: HYDRAA joins water fight  The New Indian Express",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-20T05:24:27Z",
-    "publishedAt": "2026-10-20T02:05:37Z",
-    "time": "20 Oct, 7:35 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNDNJVzQ2ZklZSThfd1JEaTJiR3kwRXdLbTd5dFFpYk0zTWhySk9RZ3dDLWNNSjdJSnM4U2NVbXc0czhBU2RqNFJ2SVRPRE9CeElCTEhVamxQaUpBQ2lfTU54anExeU14T0ZnMzZXbDNLMDI4Y00wVmVRQ3YySkVacVpqWnc4MWpTQkdOREdNMTFzazdMbVhVQkFyWlfSAaoBQVVfeXFMUGxGeUN6QjNxOWFiblBUZ1ctNDY1YlZ6Unk5aFB3TTViWFM0dGhLN09aVnM1cGRrZFk2NnQ2SjJleE1HVlFEaDhZbW42aGdISFNNY3hoT1pwTUdvQ0ZoOVhLT3pnbE1XZHgyRmtYMDdoRWhiTmttMWs0dDg4dWpzRHNPVDB1d1BSbUZqelExWGVYQ05KTDMzOWZ0bUl2Uk1sRG9yd3NoamdCNlE?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNDNJVzQ2ZklZSThfd1JEaTJiR3kwRXdLbTd5dFFpYk0zTWhySk9RZ3dDLWNNSjdJSnM4U2NVbXc0czhBU2RqNFJ2SVRPRE9CeElCTEhVamxQaUpBQ2lfTU54anExeU14T0ZnMzZXbDNLMDI4Y00wVmVRQ3YySkVacVpqWnc4MWpTQkdOREdNMTFzazdMbVhVQkFyWlfSAaoBQVVfeXFMUGxGeUN6QjNxOWFiblBUZ1ctNDY1YlZ6Unk5aFB3TTViWFM0dGhLN09aVnM1cGRrZFk2NnQ2SjJleE1HVlFEaDhZbW42aGdISFNNY3hoT1pwTUdvQ0ZoOVhLT3pnbE1XZHgyRmtYMDdoRWhiTmttMWs0dDg4dWpzRHNPVDB1d1BSbUZqelExWGVYQ05KTDMzOWZ0bUl2Uk1sRG9yd3NoamdCNlE?oc=5",
-    "source": "The New Indian Express"
-  },
-  {
     "id": "alert-74bcdf741768",
     "type": "water_supply",
     "severity": "medium",
