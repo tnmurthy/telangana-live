@@ -1,18 +1,18 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-23T05:13:02Z",
+  "generatedAt": "2026-10-23T11:57:33Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
       {
-        "id": "tp-ab3b0ce55aa2",
+        "id": "tp-4c434215b14f",
         "category": "safety",
-        "title": "Hyderabad NBFC Cyberattack Exposes API Security Gaps",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUFplR2s5VEZXODBjNjhJZ0ZQNkhBOFZlamxRaUM3WnRJNV9uczJkanJFamM2SEFEb1hRQUNTYlFCTFFQWURaS0huNTNkeVNDdG5NM25vV0VnbnlOZm5vM0E0S3VpRkFkY1BZYXFibGUzZVFEbTVhS3lYMFVFVDdUNHU1ZFhVUEZTdU9CbUFn?oc=5",
-        "publishedAt": "2026-10-22T21:59:53Z",
-        "time": "23 Oct, 3:29 AM IST",
+        "title": "Hyderabad NBFC Loses Rs 3.3 Crore In Cyberattack",
+        "source": "INDToday",
+        "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5HTTI4a2Jxc2dkNlZkaTR2MksxNWtXVGdoUXNOZ2VwMy04SWZMRHdpNHVRODdtYzk3Z3RRa1E3UFZPV0wyb0dkdzJfOG1QblQ0dEhJM3I3QkQwWUlRWXhsLUR4TWlvRXpQajV6cGxkeVpnSkwwQ2xpWWFB?oc=5",
+        "publishedAt": "2026-10-23T07:07:47Z",
+        "time": "23 Oct, 12:37 PM IST",
         "method": "typesafe"
       },
       {
@@ -38,13 +38,13 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-d4da61dbc655",
+        "id": "tp-a7e4da1512ac",
         "category": "govt",
-        "title": "Future City Hyderabad Set for Police, Skills and Urban Management Push",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcmJFN3NHT1RvUDJKR19ZVFdDRUdMcEQ4cHQwTUFkeDFBbkxmQWRMUmRBTV9xcEs3b0Z3S01PRDVkbDNVSmN6OG9oY2tpWkJpMjlsdXAtTVpaLVRYY2FGSXdRM1RJYVBxMElER2lpcndOcDV2VWFVSUdJV2dFaVpmTlA2aVZhbmRxODlnRFNmMnkyUjVCczJR?oc=5",
-        "publishedAt": "2026-10-19T05:47:41Z",
-        "time": "19 Oct, 11:17 AM IST",
+        "title": "Democratising Data, Powering Innovation: Telangana’s Blueprint for AI-Enabled Governance",
+        "source": "Elets eGov",
+        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTnVJNll4bFZTWHhnOWVSTFZYMU1laTNySjZ3QmwwenVna001N2RWOVZLWE9rRHl1ZDdZQjFuamhJZHhHcWRQdzJiWHRDS25TYjB2dE1DRmdPaVZYOTdRcTB0U18welh0c0tNYnd3U0c2aG5vaVhhT2x2Q2J1WUZ6MnJBLW5tTTlDOGZSUklRbG5ROS1JQ1V2NDI4Um1CcHNzLWl1TTdSQUdfbW9oWFdiQmpyZGtaSDdqTElTeXhvc3A?oc=5",
+        "publishedAt": "2026-10-19T07:00:00Z",
+        "time": "19 Oct, 12:30 PM IST",
         "method": "typesafe"
       },
       {
