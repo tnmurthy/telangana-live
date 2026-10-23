@@ -1,10 +1,20 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-21T12:13:05Z",
+  "generatedAt": "2026-10-23T05:13:02Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
+      {
+        "id": "tp-ab3b0ce55aa2",
+        "category": "safety",
+        "title": "Hyderabad NBFC Cyberattack Exposes API Security Gaps",
+        "source": "Urban Acres",
+        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPUFplR2s5VEZXODBjNjhJZ0ZQNkhBOFZlamxRaUM3WnRJNV9uczJkanJFamM2SEFEb1hRQUNTYlFCTFFQWURaS0huNTNkeVNDdG5NM25vV0VnbnlOZm5vM0E0S3VpRkFkY1BZYXFibGUzZVFEbTVhS3lYMFVFVDdUNHU1ZFhVUEZTdU9CbUFn?oc=5",
+        "publishedAt": "2026-10-22T21:59:53Z",
+        "time": "23 Oct, 3:29 AM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-89d6f6b15e91",
         "category": "safety",
