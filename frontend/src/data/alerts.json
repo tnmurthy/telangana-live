@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-c05518063727",
-    "type": "weather",
-    "severity": "medium",
-    "title": "IMD Hyderabad Rain Alert: Eight Telangana Districts Today - INDToday",
-    "message": "IMD Hyderabad Rain Alert: Eight Telangana Districts Today - INDToday",
-    "description": "IMD Hyderabad Rain Alert: Eight Telangana Districts Today  INDToday",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-21T06:04:03Z",
-    "publishedAt": "2026-10-21T05:57:57Z",
-    "time": "21 Oct, 11:27 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQUtnWFRaS3dFYVhwaTF2Y04wc0U2V3JvY19HdmMwVlF4RDZoUF9GLXBrNF9pTTREMG5ad0xvdlh0ck1GUlpWN3NyWmNvaFBBTDI1ZGMyR0RNd1pVYXVKUWR2QndqX3JTUWlXTjFtRWloRHg0ZVQtc0lFd2NSbXo0MVI4OWs?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQUtnWFRaS3dFYVhwaTF2Y04wc0U2V3JvY19HdmMwVlF4RDZoUF9GLXBrNF9pTTREMG5ad0xvdlh0ck1GUlpWN3NyWmNvaFBBTDI1ZGMyR0RNd1pVYXVKUWR2QndqX3JTUWlXTjFtRWloRHg0ZVQtc0lFd2NSbXo0MVI4OWs?oc=5",
-    "source": "INDToday"
-  },
-  {
     "id": "alert-7a1dc9efa1eb",
     "type": "water_supply",
     "severity": "medium",
