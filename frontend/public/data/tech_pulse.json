@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-23T17:22:17Z",
+  "generatedAt": "2026-10-24T04:55:42Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -14,16 +14,6 @@
         "publishedAt": "2026-10-23T07:07:47Z",
         "time": "23 Oct, 12:37 PM IST",
         "method": "typesafe"
-      },
-      {
-        "id": "tp-89d6f6b15e91",
-        "category": "safety",
-        "title": "IIIT-H Study On Medical AI Models Cautions Against Blindly Trusting Their Output",
-        "source": "IIIT Hyderabad",
-        "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBnZTF2MG1XbzFSQ3h4Sk1CS2RGTG5hRFNVb3lzQTdKOTRuYVlDeHU1LVUtcGVZODVkN3A5VWVNNzd6eVRYaFNWbzBFRkpqbS01anUw?oc=5",
-        "publishedAt": "2026-10-09T22:08:03Z",
-        "time": "10 Oct, 3:38 AM IST",
-        "method": "typesafe"
       }
     ],
     "govt": [
@@ -35,6 +25,16 @@
         "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQREEteDRmZFJUcGg4S0Jrbmt0dW5OanJkQUVQTFRmRS1mNGxYUWFXbElaREVPeHBkUHltTEJRT0VZdmRnT2JUUTdLZWVrN04yZTA2bmtsaWVKd0VTOXpKZkFEZVVsMlk0dGs1REFVTWVaX2RHTDF1TnRUZjJ2cWhkb09pUHR3S21LWUp3S1FZbDRCWXd6ejdXZUZfbXdRbDA?oc=5",
         "publishedAt": "2026-10-20T03:27:22Z",
         "time": "20 Oct, 8:57 AM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-a7e4da1512ac",
+        "category": "govt",
+        "title": "Democratising Data, Powering Innovation: Telangana’s Blueprint for AI-Enabled Governance",
+        "source": "Elets eGov",
+        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTnVJNll4bFZTWHhnOWVSTFZYMU1laTNySjZ3QmwwenVna001N2RWOVZLWE9rRHl1ZDdZQjFuamhJZHhHcWRQdzJiWHRDS25TYjB2dE1DRmdPaVZYOTdRcTB0U18welh0c0tNYnd3U0c2aG5vaVhhT2x2Q2J1WUZ6MnJBLW5tTTlDOGZSUklRbG5ROS1JQ1V2NDI4Um1CcHNzLWl1TTdSQUdfbW9oWFdiQmpyZGtaSDdqTElTeXhvc3A?oc=5",
+        "publishedAt": "2026-10-19T07:00:00Z",
+        "time": "19 Oct, 12:30 PM IST",
         "method": "typesafe"
       },
       {
@@ -58,6 +58,17 @@
         "method": "typesafe"
       }
     ],
-    "jobs": []
+    "jobs": [
+      {
+        "id": "tp-3160dcd962b7",
+        "category": "jobs",
+        "title": "IIIT-Hyderabad revamps MSIT programme for AI-focused learning",
+        "source": "Hyderabad Mail",
+        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVkpBWU5mWFRWd0dZakhhMTVnYlVCdDJlSjVQS0ZKQmdoQzJ1aU1jMHZfQ1JJOUhGSEI2cm5EZW0tdXBnZ01SYTR4VzRKZUF6MXpnWElKZ0lHX1ZpamJTYVRGYnVWbERrcm92aWQ0Uk9fUV9EdWdqa0pCNklUeGRlaTU0OW8zY20xOWJF?oc=5",
+        "publishedAt": "2026-10-23T16:07:39Z",
+        "time": "23 Oct, 9:37 PM IST",
+        "method": "typesafe"
+      }
+    ]
   }
 }
