@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T07:53:13Z",
+  "updatedAt": "2026-10-24T16:26:07Z",
   "state": "Telangana",
   "fromDate": "2026-10-22",
   "toDate": "2026-10-24",
@@ -10,28 +10,28 @@
     {
       "name": "Onion",
       "group": "Vegetables",
-      "price": 3816.39,
+      "price": 3782.67,
       "yearAgo": 1280.63,
       "unit": "Rs./quintal"
     },
     {
       "name": "Tomato",
       "group": "Vegetables",
-      "price": 1883.12,
+      "price": 1820.3,
       "yearAgo": 1607.24,
       "unit": "Rs./quintal"
     },
     {
       "name": "Potato",
       "group": "Vegetables",
-      "price": 1371.51,
+      "price": 1383.17,
       "yearAgo": 1630.16,
       "unit": "Rs./quintal"
     },
     {
       "name": "Tur (red gram)",
       "group": "Pulses",
-      "price": 8909.33,
+      "price": 8974.13,
       "yearAgo": 6232.84,
       "unit": "Rs./quintal"
     },
@@ -45,21 +45,21 @@
     {
       "name": "Green gram (moong)",
       "group": "Pulses",
-      "price": 7362.73,
+      "price": 7361.38,
       "yearAgo": 4845.92,
       "unit": "Rs./quintal"
     },
     {
       "name": "Black gram (urad)",
       "group": "Pulses",
-      "price": 10844.64,
+      "price": 10430.07,
       "yearAgo": 4668.62,
       "unit": "Rs./quintal"
     },
     {
       "name": "Groundnut",
       "group": "Oil Seeds",
-      "price": 6761.15,
+      "price": 6674.08,
       "yearAgo": 4605.47,
       "unit": "Rs./quintal"
     },
@@ -80,21 +80,21 @@
     {
       "name": "Cotton",
       "group": "Fibre Crops",
-      "price": 9053.0,
+      "price": 9012.75,
       "yearAgo": 6463.31,
       "unit": "Rs./quintal"
     },
     {
       "name": "Paddy",
       "group": "Cereals",
-      "price": 2687.45,
+      "price": 2692.11,
       "yearAgo": 2127.62,
       "unit": "Rs./quintal"
     },
     {
       "name": "Maize",
       "group": "Cereals",
-      "price": 2750.28,
+      "price": 2799.64,
       "yearAgo": 1928.16,
       "unit": "Rs./quintal"
     }
