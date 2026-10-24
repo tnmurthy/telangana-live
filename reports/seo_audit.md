@@ -1,5 +1,5 @@
 # 🌐 Vizag.live Autonomous SEO & AEO Health Audit
-**Generated:** 2026-10-23T02:42:28.695211+00:00  
+**Generated:** 2026-10-24T02:39:39.702579+00:00  
 **Target Host:** `https://www.vizag.live`  
 **Overall SEO Score:** `100%` | **AEO Discovery Score:** `100%`
 
@@ -26,61 +26,61 @@
 ## 4. Route Health Breakdown
 | Route | Status | Res Time | Title | Description | Schema LD | Issues / Warnings |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| `/` | ✅ 200 | 348ms | ✅ | ✅ | ✅ (WebSite) | ⚠️ Description exceeds recommended 160 chars<br>⚠️ Missing rel='canonical' tag |
-| `/ai-assistant` | ✅ 200 | 337ms | ✅ | ✅ | — | Clean |
-| `/anakapalle` | ✅ 200 | 1509ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/aqi` | ✅ 200 | 747ms | ✅ | ✅ | — | Clean |
-| `/auto-nagar` | ✅ 200 | 500ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/beach-safety` | ✅ 200 | 369ms | ✅ | ✅ | — | Clean |
-| `/bheemili` | ✅ 200 | 271ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/budget` | ✅ 200 | 337ms | ✅ | ✅ | — | Clean |
-| `/bus-tracker` | ✅ 200 | 344ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
-| `/businesses` | ✅ 200 | 335ms | ✅ | ✅ | — | Clean |
-| `/certificates` | ✅ 200 | 335ms | ✅ | ✅ | — | Clean |
-| `/councillors` | ✅ 200 | 276ms | ✅ | ✅ | — | Clean |
-| `/court` | ✅ 200 | 312ms | ✅ | ✅ | — | Clean |
-| `/fare-calculator` | ✅ 200 | 325ms | ✅ | ✅ | — | Clean |
-| `/farmers` | ✅ 200 | 285ms | ✅ | ✅ | — | Clean |
-| `/gajuwaka` | ✅ 200 | 470ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/` | ✅ 200 | 15ms | ✅ | ✅ | ✅ (WebSite) | ⚠️ Description exceeds recommended 160 chars<br>⚠️ Missing rel='canonical' tag |
+| `/ai-assistant` | ✅ 200 | 279ms | ✅ | ✅ | — | Clean |
+| `/anakapalle` | ✅ 200 | 1062ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/aqi` | ✅ 200 | 318ms | ✅ | ✅ | — | Clean |
+| `/auto-nagar` | ✅ 200 | 428ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/beach-safety` | ✅ 200 | 320ms | ✅ | ✅ | — | Clean |
+| `/bheemili` | ✅ 200 | 425ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/budget` | ✅ 200 | 251ms | ✅ | ✅ | — | Clean |
+| `/bus-tracker` | ✅ 200 | 267ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
+| `/businesses` | ✅ 200 | 327ms | ✅ | ✅ | — | Clean |
+| `/certificates` | ✅ 200 | 272ms | ✅ | ✅ | — | Clean |
+| `/councillors` | ✅ 200 | 20ms | ✅ | ✅ | — | Clean |
+| `/court` | ✅ 200 | 281ms | ✅ | ✅ | — | Clean |
+| `/fare-calculator` | ✅ 200 | 269ms | ✅ | ✅ | — | Clean |
+| `/farmers` | ✅ 200 | 262ms | ✅ | ✅ | — | Clean |
+| `/gajuwaka` | ✅ 200 | 417ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
 | `/hospitals` | ✅ 200 | 329ms | ✅ | ✅ | — | Clean |
-| `/jobs` | ✅ 200 | 280ms | ✅ | ✅ | — | Clean |
-| `/kurmannapalem` | ✅ 200 | 264ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/labour-rates` | ✅ 200 | 336ms | ✅ | ✅ | — | Clean |
-| `/madhurawada` | ✅ 200 | 458ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/market-rates` | ✅ 200 | 319ms | ✅ | ✅ | — | Clean |
-| `/mvp-colony` | ✅ 200 | 265ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/news` | ✅ 200 | 285ms | ✅ | ✅ | ✅ (CollectionPage) | Clean |
-| `/noc` | ✅ 200 | 374ms | ✅ | ✅ | — | Clean |
-| `/notices` | ✅ 200 | 339ms | ✅ | ✅ | — | Clean |
-| `/panchang` | ✅ 200 | 283ms | ✅ | ✅ | — | Clean |
-| `/participate` | ✅ 200 | 327ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
-| `/pendurthi` | ✅ 200 | 262ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/pharmacy` | ✅ 200 | 332ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
-| `/pollution` | ✅ 200 | 315ms | ✅ | ✅ | — | Clean |
-| `/port` | ✅ 200 | 366ms | ✅ | ✅ | — | Clean |
-| `/power` | ✅ 200 | 313ms | ✅ | ✅ | — | Clean |
-| `/privacy` | ✅ 200 | 308ms | ✅ | ✅ | — | Clean |
-| `/property-tax` | ✅ 200 | 335ms | ✅ | ✅ | — | Clean |
-| `/public-works` | ✅ 200 | 313ms | ✅ | ✅ | — | Clean |
-| `/report` | ✅ 200 | 310ms | ✅ | ✅ | — | Clean |
-| `/representatives` | ✅ 200 | 307ms | ✅ | ✅ | — | Clean |
-| `/rti` | ✅ 200 | 362ms | ✅ | ✅ | — | Clean |
-| `/rushikonda` | ✅ 200 | 480ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/schemes` | ✅ 200 | 326ms | ✅ | ✅ | — | Clean |
-| `/seethammadhara` | ✅ 200 | 260ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/sos` | ✅ 200 | 314ms | ✅ | ✅ | — | Clean |
-| `/sources` | ✅ 200 | 323ms | ✅ | ✅ | — | Clean |
-| `/tech-pulse` | ✅ 200 | 431ms | ✅ | ✅ | — | Clean |
-| `/tenders` | ✅ 200 | 333ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
-| `/tidal` | ✅ 200 | 323ms | ✅ | ✅ | — | Clean |
-| `/tourism` | ✅ 200 | 385ms | ✅ | ✅ | — | Clean |
-| `/traffic` | ✅ 200 | 323ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
-| `/transport` | ✅ 200 | 333ms | ✅ | ✅ | — | Clean |
-| `/visakhapatnam` | ✅ 200 | 463ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
-| `/volunteers` | ✅ 200 | 338ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
-| `/water` | ✅ 200 | 319ms | ✅ | ✅ | — | Clean |
-| `/water-bill` | ✅ 200 | 312ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
-| `/water-quality` | ✅ 200 | 391ms | ✅ | ✅ | — | Clean |
+| `/jobs` | ✅ 200 | 20ms | ✅ | ✅ | — | Clean |
+| `/kurmannapalem` | ✅ 200 | 409ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/labour-rates` | ✅ 200 | 308ms | ✅ | ✅ | — | Clean |
+| `/madhurawada` | ✅ 200 | 407ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/market-rates` | ✅ 200 | 292ms | ✅ | ✅ | — | Clean |
+| `/mvp-colony` | ✅ 200 | 412ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/news` | ✅ 200 | 11ms | ✅ | ✅ | ✅ (CollectionPage) | Clean |
+| `/noc` | ✅ 200 | 255ms | ✅ | ✅ | — | Clean |
+| `/notices` | ✅ 200 | 268ms | ✅ | ✅ | — | Clean |
+| `/panchang` | ✅ 200 | 24ms | ✅ | ✅ | — | Clean |
+| `/participate` | ✅ 200 | 253ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
+| `/pendurthi` | ✅ 200 | 410ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/pharmacy` | ✅ 200 | 305ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
+| `/pollution` | ✅ 200 | 271ms | ✅ | ✅ | — | Clean |
+| `/port` | ✅ 200 | 286ms | ✅ | ✅ | — | Clean |
+| `/power` | ✅ 200 | 17ms | ✅ | ✅ | — | Clean |
+| `/privacy` | ✅ 200 | 17ms | ✅ | ✅ | — | Clean |
+| `/property-tax` | ✅ 200 | 253ms | ✅ | ✅ | — | Clean |
+| `/public-works` | ✅ 200 | 263ms | ✅ | ✅ | — | Clean |
+| `/report` | ✅ 200 | 343ms | ✅ | ✅ | — | Clean |
+| `/representatives` | ✅ 200 | 252ms | ✅ | ✅ | — | Clean |
+| `/rti` | ✅ 200 | 273ms | ✅ | ✅ | — | Clean |
+| `/rushikonda` | ✅ 200 | 405ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/schemes` | ✅ 200 | 17ms | ✅ | ✅ | — | Clean |
+| `/seethammadhara` | ✅ 200 | 413ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/sos` | ✅ 200 | 278ms | ✅ | ✅ | — | Clean |
+| `/sources` | ✅ 200 | 321ms | ✅ | ✅ | — | Clean |
+| `/tech-pulse` | ✅ 200 | 23ms | ✅ | ✅ | — | Clean |
+| `/tenders` | ✅ 200 | 298ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
+| `/tidal` | ✅ 200 | 301ms | ✅ | ✅ | — | Clean |
+| `/tourism` | ✅ 200 | 300ms | ✅ | ✅ | — | Clean |
+| `/traffic` | ✅ 200 | 304ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
+| `/transport` | ✅ 200 | 21ms | ✅ | ✅ | — | Clean |
+| `/visakhapatnam` | ✅ 200 | 541ms | ✅ | ✅ | — | ⚠️ Missing rel='canonical' tag |
+| `/volunteers` | ✅ 200 | 291ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
+| `/water` | ✅ 200 | 14ms | ✅ | ✅ | — | Clean |
+| `/water-bill` | ✅ 200 | 278ms | ✅ | ✅ | — | ⚠️ Description is brief (<50 chars) |
+| `/water-quality` | ✅ 200 | 280ms | ✅ | ✅ | — | Clean |
 
 ---
 *Report autonomously compiled by OpenSEO Agent for Vizag.live.*
