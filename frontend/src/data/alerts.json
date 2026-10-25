@@ -126,5 +126,37 @@
     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbGpNMk4zQVMtTXFPQmxiYXZTa25LVFlCZmdVZ1VEME5jTWMzN0dQNUNNb1VNUFJEcDdrS2YtLWt3eE1wWkZJTXVKOEhIRUIzQVNOcGVRU09FekpPamtGVGRtT0VYckpXdURwaFE2VV9vWW9XZWFxUERaeTFURnBVb2hueHJ6X19FVmFB?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbGpNMk4zQVMtTXFPQmxiYXZTa25LVFlCZmdVZ1VEME5jTWMzN0dQNUNNb1VNUFJEcDdrS2YtLWt3eE1wWkZJTXVKOEhIRUIzQVNOcGVRU09FekpPamtGVGRtT0VYckpXdURwaFE2VV9vWW9XZWFxUERaeTFURnBVb2hueHJ6X19FVmFB?oc=5",
     "source": "Urban Acres"
+  },
+  {
+    "id": "alert-34f2be113381",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad water crisis : Tanker bookings surge to 8,000 a day as groundwater levels fall - Daily Pioneer",
+    "message": "Hyderabad water crisis : Tanker bookings surge to 8,000 a day as groundwater levels fall - Daily Pioneer",
+    "description": "Hyderabad water crisis : Tanker bookings surge to 8,000 a day as groundwater levels fall  Daily Pioneer",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-25T19:59:13Z",
+    "publishedAt": "2026-10-25T05:04:08Z",
+    "time": "25 Oct, 10:34 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYXZaNG1CRjVaUXdFRXFxZHBnYl8zUXVobW9sS3d6MkVQMzd0cDRBbW1ZSXQwOHFsOFBUOTFBbEtjVkJFUzNyaUlMTmFYc3dUZTRTd3Z3ZHFTNmJnOTJxWTVQZ1pScUZHb3VNNkVMNHpSMnl3NS1wM2RCSEVIcm1XSjVMN2lsSzNhNUZQd0xDZjBWLUo1dGpDc1ZLdjBrVk9kTFQzQVIta2QyUdIBtwFBVV95cUxOby04R2NBZXd5TjBXeU9uRlI5UzlJaHhJSGhqTXFHVDlpMTRTU1h3YUNzTDlkWWwwUHFpamlJSWdlZFNuVmg3TWFXOVNMYjAweFhLaFFBdk9BVlcwMUxKb2ZWMk4tdEFtb20xOXJuYktGaWJ5aS03VzJCMjJKVkZ2bnk5amRfYVRmb1dOWW9jNVRMcEVQbmZQNHgwdDN0WEw2UWJZRGc3anB3RlY4TFRURXBEZ0xXMmM?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNYXZaNG1CRjVaUXdFRXFxZHBnYl8zUXVobW9sS3d6MkVQMzd0cDRBbW1ZSXQwOHFsOFBUOTFBbEtjVkJFUzNyaUlMTmFYc3dUZTRTd3Z3ZHFTNmJnOTJxWTVQZ1pScUZHb3VNNkVMNHpSMnl3NS1wM2RCSEVIcm1XSjVMN2lsSzNhNUZQd0xDZjBWLUo1dGpDc1ZLdjBrVk9kTFQzQVIta2QyUdIBtwFBVV95cUxOby04R2NBZXd5TjBXeU9uRlI5UzlJaHhJSGhqTXFHVDlpMTRTU1h3YUNzTDlkWWwwUHFpamlJSWdlZFNuVmg3TWFXOVNMYjAweFhLaFFBdk9BVlcwMUxKb2ZWMk4tdEFtb20xOXJuYktGaWJ5aS03VzJCMjJKVkZ2bnk5amRfYVRmb1dOWW9jNVRMcEVQbmZQNHgwdDN0WEw2UWJZRGc3anB3RlY4TFRURXBEZ0xXMmM?oc=5",
+    "source": "Daily Pioneer"
+  },
+  {
+    "id": "alert-cb3032cdfc5c",
+    "type": "weather",
+    "severity": "high",
+    "title": "Telangana Rain Alert: Red Warning for 3 Districts - urbanacres.in",
+    "message": "Telangana Rain Alert: Red Warning for 3 Districts - urbanacres.in",
+    "description": "Telangana Rain Alert: Red Warning for 3 Districts  urbanacres.in",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-25T19:59:13Z",
+    "publishedAt": "2026-10-25T19:14:05Z",
+    "time": "26 Oct, 12:44 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWEcxcG5nUE5leFc4Rk0ycy1Rd3ZyQkd0WEQzOVZ6X3NJd2c0aTRGa2dkcnhFMGZfTHJQVWRZaTlEa1NvLVg3RjdxY09PSGlUU2p4S2FzcDFyVUpwc0I2akF6dTZsRXJSWkVrbHRreGcwZWRtanlUOHZTa1JsS2VUSTVBZmN1c0RDYzdlWDd4N2F6bFR1?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWEcxcG5nUE5leFc4Rk0ycy1Rd3ZyQkd0WEQzOVZ6X3NJd2c0aTRGa2dkcnhFMGZfTHJQVWRZaTlEa1NvLVg3RjdxY09PSGlUU2p4S2FzcDFyVUpwc0I2akF6dTZsRXJSWkVrbHRreGcwZWRtanlUOHZTa1JsS2VUSTVBZmN1c0RDYzdlWDd4N2F6bFR1?oc=5",
+    "source": "urbanacres.in"
   }
 ]
