@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T08:06:51Z",
+  "updatedAt": "2026-10-25T16:57:37Z",
   "state": "Telangana",
   "fromDate": "2026-10-23",
   "toDate": "2026-10-25",
@@ -10,21 +10,21 @@
     {
       "name": "Onion",
       "group": "Vegetables",
-      "price": 3690.66,
+      "price": 3690.68,
       "yearAgo": 1338.57,
       "unit": "Rs./quintal"
     },
     {
       "name": "Tomato",
       "group": "Vegetables",
-      "price": 1814.57,
+      "price": 1816.36,
       "yearAgo": 1612.89,
       "unit": "Rs./quintal"
     },
     {
       "name": "Potato",
       "group": "Vegetables",
-      "price": 1420.9,
+      "price": 1420.71,
       "yearAgo": 1641.36,
       "unit": "Rs./quintal"
     },
@@ -45,7 +45,7 @@
     {
       "name": "Green gram (moong)",
       "group": "Pulses",
-      "price": 7175.04,
+      "price": 7413.46,
       "yearAgo": 4889.5,
       "unit": "Rs./quintal"
     },
@@ -87,14 +87,14 @@
     {
       "name": "Paddy",
       "group": "Cereals",
-      "price": 2682.14,
+      "price": 2687.45,
       "yearAgo": 2183.29,
       "unit": "Rs./quintal"
     },
     {
       "name": "Maize",
       "group": "Cereals",
-      "price": 2787.61,
+      "price": 2793.23,
       "yearAgo": 1914.16,
       "unit": "Rs./quintal"
     }
