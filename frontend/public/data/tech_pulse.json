@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-25T05:07:41Z",
+  "generatedAt": "2026-10-25T11:55:17Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -48,16 +48,6 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-3bc1d654ec6e",
-        "category": "govt",
-        "title": "Revanth Reddy lays NIUM foundation, reviews Invest Telangana plans",
-        "source": "The News Mill",
-        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQREEteDRmZFJUcGg4S0Jrbmt0dW5OanJkQUVQTFRmRS1mNGxYUWFXbElaREVPeHBkUHltTEJRT0VZdmRnT2JUUTdLZWVrN04yZTA2bmtsaWVKd0VTOXpKZkFEZVVsMlk0dGs1REFVTWVaX2RHTDF1TnRUZjJ2cWhkb09pUHR3S21LWUp3S1FZbDRCWXd6ejdXZUZfbXdRbDA?oc=5",
-        "publishedAt": "2026-10-20T03:27:22Z",
-        "time": "20 Oct, 8:57 AM IST",
-        "method": "typesafe"
-      },
-      {
         "id": "tp-a7e4da1512ac",
         "category": "govt",
         "title": "Democratising Data, Powering Innovation: Telangana’s Blueprint for AI-Enabled Governance",
@@ -90,23 +80,13 @@
     ],
     "jobs": [
       {
-        "id": "tp-2df71526acdc",
+        "id": "tp-6db15748bf33",
         "category": "jobs",
-        "title": "IIIT Hyderabad Opens Applications For January 2027 MSIT Programme",
-        "source": "BW Education",
-        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNnY2R0ozU1BqTW85eklJWjJUSkg1eHJ2MUtxYU5mRFpDdzhySFQzTk9LMWthSjJ4cjF2anZoSlN1UFgxTlYzcE02N1hlaUE4SFNTcFZSSGxrRDVFbzFQRW1tWWFFRFUydFdOc3hYdFhrN0lSLU5ZWEhJclo1Vnc0V1p2dlU3VUl1eGJtM3dyMy1xeWtkUkU4b01ESWVfTmtYUm5GamVoZE1kOFlI?oc=5",
-        "publishedAt": "2026-10-24T05:39:04Z",
-        "time": "24 Oct, 11:09 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-3160dcd962b7",
-        "category": "jobs",
-        "title": "IIIT-Hyderabad revamps MSIT programme for AI-focused learning",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOVkpBWU5mWFRWd0dZakhhMTVnYlVCdDJlSjVQS0ZKQmdoQzJ1aU1jMHZfQ1JJOUhGSEI2cm5EZW0tdXBnZ01SYTR4VzRKZUF6MXpnWElKZ0lHX1ZpamJTYVRGYnVWbERrcm92aWQ0Uk9fUV9EdWdqa0pCNklUeGRlaTU0OW8zY20xOWJF?oc=5",
-        "publishedAt": "2026-10-23T16:07:39Z",
-        "time": "23 Oct, 9:37 PM IST",
+        "title": "IIIT Hyderabad revamps MSIT programme with AI research, venture-building; admissions open",
+        "source": "Careers360",
+        "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTnMtV3BYRWNSVGlkMFNFXzZRTGpaTjU4OEZQUTJZZmVYektYTmxvcV9LZEhTTWV1OFFCMXR2M29jMk5nNG8wQWdQajBCSU1qMDFlZ1lRRl9QVmNITmF2UzhqNjBYOXlQN3dfS1hkM2FkQzdQR01QUkF2a045dnU1QzNwbzh0WG13SHFJNUd1REZRVmVmSUY5QWNBcHJzYWd4QWR3ZG9ZT01oSm1JdDdMaDgyRUcwZ9IBuwFBVV95cUxOc1A1eGt2VTVkVDg3QTZ1ZzlHZDkxeGpIUDBQQ0M2aHUwbC1RQXVJU2pFSkNmUUc2QnhUYWp1ZDZpdFRNYzc4STZJbFpwb1hiN2ppTXdrR1NRMEtMUGh3NG0zN3FaRlpyZ1BxUUtWamdhaFBGaENoTEsycHNieV9TQlNVc2lWZmRUMWxSeThfWXNfeU9odXN5cVpFVFcyT3p6aGloYy1PMDI5a0VySktjR3RpSUstT3Rsa25B?oc=5",
+        "publishedAt": "2026-10-24T09:35:18Z",
+        "time": "24 Oct, 3:05 PM IST",
         "method": "typesafe"
       }
     ]
