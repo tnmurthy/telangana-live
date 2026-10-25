@@ -94,5 +94,37 @@
     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNX0pfcjRwWEJicmdjU0luX1drZDVrR0s4RDh0cS1OZGJaWXBXMjdwdmVtX2djUG41enZFbm1WbGpLRmU3UWVMMjRnQnJSaVZZdVl5SzRNSE9HWDlXTzhzNURhYmhTVWl5bVNfc2RvbWUwNktyWEZsbGtQam5JTGFCZ2NB?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNX0pfcjRwWEJicmdjU0luX1drZDVrR0s4RDh0cS1OZGJaWXBXMjdwdmVtX2djUG41enZFbm1WbGpLRmU3UWVMMjRnQnJSaVZZdVl5SzRNSE9HWDlXTzhzNURhYmhTVWl5bVNfc2RvbWUwNktyWEZsbGtQam5JTGFCZ2NB?oc=5",
     "source": "INDToday"
+  },
+  {
+    "id": "alert-b8b584400ace",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad water board declares emergency over acute shortage - The Siasat Daily",
+    "message": "Hyderabad water board declares emergency over acute shortage - The Siasat Daily",
+    "description": "Hyderabad water board declares emergency over acute shortage  The Siasat Daily",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-25T17:33:55Z",
+    "publishedAt": "2026-10-25T09:53:44Z",
+    "time": "25 Oct, 3:23 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTE9RcTZMSG5ySG9WNGN6cUViOU1uTE1RckZub0VaRjMwSG4wVW5kYjQ2VGxCRWswWHBrTW9fQUtsT2JZZUEtOWJBZVlzSzd5SHJYWUZSZHpGSTl0OUFKajFvU1VzUGtabGFUOEl1aHNEc1Z1dnRtR1pYZGtrYjJfWHg5MHBpTVVtS2c3TlBaSFNVcFVNMDhN0gGcAUFVX3lxTE1JZDA4cGtJVzl4ZnoyRWZfOExqNFpRWTBKQzNfUmxZZ01HclZjTkpRbXkzYWlaUmZvZDVIMnZHTjQ2U1o4cnVfSm5TU3lPRllaLVVLV1VSeGNwQXhyQ3VwY2NNb3JnS0kyZDlQN2hVQmdZc0hkYnJsRF95djhUM3R5UkxmU3h4VzFVZ1l1S3dQWGc1T1pUbzlGcmZtZA?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNTE9RcTZMSG5ySG9WNGN6cUViOU1uTE1RckZub0VaRjMwSG4wVW5kYjQ2VGxCRWswWHBrTW9fQUtsT2JZZUEtOWJBZVlzSzd5SHJYWUZSZHpGSTl0OUFKajFvU1VzUGtabGFUOEl1aHNEc1Z1dnRtR1pYZGtrYjJfWHg5MHBpTVVtS2c3TlBaSFNVcFVNMDhN0gGcAUFVX3lxTE1JZDA4cGtJVzl4ZnoyRWZfOExqNFpRWTBKQzNfUmxZZ01HclZjTkpRbXkzYWlaUmZvZDVIMnZHTjQ2U1o4cnVfSm5TU3lPRllaLVVLV1VSeGNwQXhyQ3VwY2NNb3JnS0kyZDlQN2hVQmdZc0hkYnJsRF95djhUM3R5UkxmU3h4VzFVZ1l1S3dQWGc1T1pUbzlGcmZtZA?oc=5",
+    "source": "The Siasat Daily"
+  },
+  {
+    "id": "alert-766b3fe0029b",
+    "type": "weather",
+    "severity": "high",
+    "title": "IMD Telangana Rain Forecast: Red Alert Issued for 3 Districts - Urban Acres",
+    "message": "IMD Telangana Rain Forecast: Red Alert Issued for 3 Districts - Urban Acres",
+    "description": "IMD Telangana Rain Forecast: Red Alert Issued for 3 Districts  Urban Acres",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-25T17:33:55Z",
+    "publishedAt": "2026-10-25T17:02:35Z",
+    "time": "25 Oct, 10:32 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbGpNMk4zQVMtTXFPQmxiYXZTa25LVFlCZmdVZ1VEME5jTWMzN0dQNUNNb1VNUFJEcDdrS2YtLWt3eE1wWkZJTXVKOEhIRUIzQVNOcGVRU09FekpPamtGVGRtT0VYckpXdURwaFE2VV9vWW9XZWFxUERaeTFURnBVb2hueHJ6X19FVmFB?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbGpNMk4zQVMtTXFPQmxiYXZTa25LVFlCZmdVZ1VEME5jTWMzN0dQNUNNb1VNUFJEcDdrS2YtLWt3eE1wWkZJTXVKOEhIRUIzQVNOcGVRU09FekpPamtGVGRtT0VYckpXdURwaFE2VV9vWW9XZWFxUERaeTFURnBVb2hueHJ6X19FVmFB?oc=5",
+    "source": "Urban Acres"
   }
 ]
