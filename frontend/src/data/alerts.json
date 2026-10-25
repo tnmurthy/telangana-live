@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-7a1dc9efa1eb",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Hyderabad’s water clock is ticking - The New Indian Express",
-    "message": "Hyderabad’s water clock is ticking - The New Indian Express",
-    "description": "Hyderabad’s water clock is ticking  The New Indian Express",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-22T13:07:46Z",
-    "publishedAt": "2026-10-22T03:14:01Z",
-    "time": "22 Oct, 8:44 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOUdHbENEM0V1dm9nTDhmVUFkU3A4d3UxMEpzZFVaUU1KLXZYREtHZ0Q3Ny1EZlh3V3FtTHQ3TkdLRElYdGNYVFBHaGQ4Y19KUkxUNV9veXV4bV9NUS1LamdVajJyakJzSFhMV2ppX3F0Q0RtQ2VfWEpIVzFUZVI1Z2QtZGNDeHkyUjBiUFhEelRBSnBfcFcwcXoyVdIBqAFBVV95cUxOTzFWSGl5dHFURms5ejhuTGlRWElpcV9IQ0ExSXJQeWJ4T1BMa1hLcnFFVjIzenZpRHFsU0tVSkRabDI3cjlxWHg0T3BEcDM0RGFqX3E2TDhiQk9DSm42ZThydVBlS0RDRmpOWnFSbllMMnliYm5JLWF2SF82T2RjMFNSc25fLWk1ZG4yd3BYcFZlenZPSEZKUmJnN0h3SkFqbGlpZ1hpSnU?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOUdHbENEM0V1dm9nTDhmVUFkU3A4d3UxMEpzZFVaUU1KLXZYREtHZ0Q3Ny1EZlh3V3FtTHQ3TkdLRElYdGNYVFBHaGQ4Y19KUkxUNV9veXV4bV9NUS1LamdVajJyakJzSFhMV2ppX3F0Q0RtQ2VfWEpIVzFUZVI1Z2QtZGNDeHkyUjBiUFhEelRBSnBfcFcwcXoyVdIBqAFBVV95cUxOTzFWSGl5dHFURms5ejhuTGlRWElpcV9IQ0ExSXJQeWJ4T1BMa1hLcnFFVjIzenZpRHFsU0tVSkRabDI3cjlxWHg0T3BEcDM0RGFqX3E2TDhiQk9DSm42ZThydVBlS0RDRmpOWnFSbllMMnliYm5JLWF2SF82T2RjMFNSc25fLWk1ZG4yd3BYcFZlenZPSEZKUmJnN0h3SkFqbGlpZ1hpSnU?oc=5",
-    "source": "The New Indian Express"
-  },
-  {
     "id": "alert-bfe7e150ea9c",
     "type": "water_supply",
     "severity": "high",
@@ -78,5 +62,21 @@
     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeGRiMGxXcXhCVVNSNGZtQnNOb1JiNU1PVkR6UlZGeFlMM1BPT3U3VU0tOU9aTU1xTU1hT18teDd6RlhzWDFEenkyaVl3ck16T2hDajRvdEJZa2tLN1dOZ18zc2FIUHF1NnRmTk1RT3FBSklGSDBJbk9FUG0xYnhreHI0OC0?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeGRiMGxXcXhCVVNSNGZtQnNOb1JiNU1PVkR6UlZGeFlMM1BPT3U3VU0tOU9aTU1xTU1hT18teDd6RlhzWDFEenkyaVl3ck16T2hDajRvdEJZa2tLN1dOZ18zc2FIUHF1NnRmTk1RT3FBSklGSDBJbk9FUG0xYnhreHI0OC0?oc=5",
     "source": "Hyderabad Mail"
+  },
+  {
+    "id": "alert-4c1e45d436d6",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days - theprint",
+    "message": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days - theprint",
+    "description": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days  theprint",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-25T04:50:01Z",
+    "publishedAt": "2026-10-24T01:30:03Z",
+    "time": "24 Oct, 7:00 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPclVmREM4cVhVWWswVG81N3cwM2hEVk1iN2NlQ2hlYjNqZG1HMEhQOVdDejhXcEFGVE1xaW1SS2t2RUNZOERXMWlBaUxCancwQTg0akNJemxSSEU0czJtb05nZEExcmduOFNpWnJ6blNIdUFGS0VPRXduemZQaDVUQmE2OGZJMEItMTB0ZWZxSHFqWWlncElyUmVtN3JyRUpxb3BvdS1Xd2hWVktoUkVYVGh4OUQwc0dVbWJDTG9QRkpCSkw2Sjc4NERR0gHPAUFVX3lxTE0zclhldlQ5Q0E1dXY1TVNpc3NPckExbFg2TXlhRW5VRC1XSjc0dmNZaVJTMWN3bzlxS3B2eGwyMlh2WXdCaDNtbkp1d00wY1BkdUNuQlVaQWVCN1I3c29Qb0VXNkNJcm1oOTlWOWFzaTUxcEduUGNEc0FnNUFMMHhnd005ck5XVTN0akFubTctbk5LNmg3SnV4OG8yMUpKRmtUem53UkpkakkzR1pTbmY4TFFRVjNpbHoyM1c3Zks2SXJodlN3V0Z0OGdIV2VNMA?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPclVmREM4cVhVWWswVG81N3cwM2hEVk1iN2NlQ2hlYjNqZG1HMEhQOVdDejhXcEFGVE1xaW1SS2t2RUNZOERXMWlBaUxCancwQTg0akNJemxSSEU0czJtb05nZEExcmduOFNpWnJ6blNIdUFGS0VPRXduemZQaDVUQmE2OGZJMEItMTB0ZWZxSHFqWWlncElyUmVtN3JyRUpxb3BvdS1Xd2hWVktoUkVYVGh4OUQwc0dVbWJDTG9QRkpCSkw2Sjc4NERR0gHPAUFVX3lxTE0zclhldlQ5Q0E1dXY1TVNpc3NPckExbFg2TXlhRW5VRC1XSjc0dmNZaVJTMWN3bzlxS3B2eGwyMlh2WXdCaDNtbkp1d00wY1BkdUNuQlVaQWVCN1I3c29Qb0VXNkNJcm1oOTlWOWFzaTUxcEduUGNEc0FnNUFMMHhnd005ck5XVTN0akFubTctbk5LNmg3SnV4OG8yMUpKRmtUem53UkpkakkzR1pTbmY4TFFRVjNpbHoyM1c3Zks2SXJodlN3V0Z0OGdIV2VNMA?oc=5",
+    "source": "theprint"
   }
 ]
