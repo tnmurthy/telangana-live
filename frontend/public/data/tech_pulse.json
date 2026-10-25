@@ -1,10 +1,20 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-24T16:10:25Z",
+  "generatedAt": "2026-10-25T05:07:41Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
+      {
+        "id": "tp-014248d164d8",
+        "category": "safety",
+        "title": "Telangana Government Portal Under Ransomware Siege",
+        "source": "The420.in",
+        "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5XeldPU1Z0Yk9HLWF6TWZSXzk3YldHQ1N3aEd2R0FTdV9lTG14MFlSTmoxZzVPQnF1Qk5tSkJCLVFHVHQ3bFpVeVQzVWdiRDlXcDc1R1dJc3otU3dzVTE5VXhUdHBFN2J3cXpwTGd3ckhNX2pXZmc?oc=5",
+        "publishedAt": "2026-10-25T03:24:41Z",
+        "time": "25 Oct, 8:54 AM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-4c434215b14f",
         "category": "safety",
@@ -18,6 +28,16 @@
     ],
     "govt": [
       {
+        "id": "tp-4e0a302b7098",
+        "category": "govt",
+        "title": "Telangana Unveils AI Avatar of IT Minister at Hyderabad DevFest",
+        "source": "Urban Acres",
+        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRGU0TEo5UUFxUHE5Rjg0ZkZldTBaZFItNHB5eGkyMGpCbWxPb0diRlNNeXhVR095Ti1DY2FmZEdJQWJUOHlUblk5NF92VnpzTHJyTHE0NjdUejVFQVFRWDZiU2Zpd042di1CUUdNZVpfaVJWRjZEc0JsRENldUNvYTY3NzNPM3hoTEFEN3kxcw?oc=5",
+        "publishedAt": "2026-10-24T20:38:43Z",
+        "time": "25 Oct, 2:08 AM IST",
+        "method": "typesafe"
+      },
+      {
         "id": "tp-71a03e7ca307",
         "category": "govt",
         "title": "Telangana’s AI Minister Tests a New Model of Digital Governance",
@@ -25,16 +45,6 @@
         "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNVlI0VHUwTVZKbFhTUlRoRTFIdWYzODNaUGZpTkpjdFp3RHpzcUY2SDZKSlFZeUtFYWpnN2kxcUFUcThWN2hSQnJUWW1aakV1cW1TMk9zWWx0dmNtZE9XZDRoc3JaWnM3dGlsYWRIeW1LSV9UUjJ0WWZJZk1mNE9ySzd5Z2QtYTNfMVFkS25n?oc=5",
         "publishedAt": "2026-10-24T14:59:06Z",
         "time": "24 Oct, 8:29 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-1c1088fc0c04",
-        "category": "govt",
-        "title": "Telangana unveils AI minister at DevFest 2026, bringing AI Innovation closer to people",
-        "source": "India.com",
-        "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSWtzcERhU1BETjlhOGk0c0VTMWtueXlEQi1xRWxQbFUxcmVZaVNJbXFlaTJuUUdHZGVwcGw0VkxtQU5JUWVfN1VYMHlFOXJCOU9YbG54YkUtXy1zS2pwajMzcnBsR3FDOGRKVkdMWExBMlRkUGRKSkRRMzVBVkNlN3B3QWhtTElBOW56enluTGt1UThfWmozMldZQ0RLZjYySGUyT3pndzgyWXhIREN6dGZmM05LWDRJUngxMUUxanJRRTjSAcgBQVVfeXFMTm9lbTN2bk55VjhCZmRka2Nvb3lEM2ZGemExWE8zN1gwb2k2a2NkcHVpWDltV1VOMjhwSVhWeFMwQmxVODR1V1NsX21tMFBuWkZQU0xaTXNRamlVcjgzT3FNcExIOEZWQTF5TWdlM09VUnhIeUxXWlE4TkRWdkxHcndNOG9ETWhvSHBCTVBOUTUtY1RfLU5MblZPQWxrYy1La1FTZVZ4TldPWFRseFphTGM1LXlHUDhTcmM0MnQ4T2lQd0U5dllVY1E?oc=5",
-        "publishedAt": "2026-10-24T14:37:52Z",
-        "time": "24 Oct, 8:07 PM IST",
         "method": "typesafe"
       },
       {
@@ -58,16 +68,6 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-d4da61dbc655",
-        "category": "govt",
-        "title": "Future City Hyderabad Set for Police, Skills and Urban Management Push",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcmJFN3NHT1RvUDJKR19ZVFdDRUdMcEQ4cHQwTUFkeDFBbkxmQWRMUmRBTV9xcEs3b0Z3S01PRDVkbDNVSmN6OG9oY2tpWkJpMjlsdXAtTVpaLVRYY2FGSXdRM1RJYVBxMElER2lpcndOcDV2VWFVSUdJV2dFaVpmTlA2aVZhbmRxODlnRFNmMnkyUjVCczJR?oc=5",
-        "publishedAt": "2026-10-19T05:47:41Z",
-        "time": "19 Oct, 11:17 AM IST",
-        "method": "typesafe"
-      },
-      {
         "id": "tp-a838544c031e",
         "category": "govt",
         "title": "Lack of clarity on AI usage causes confusion in Telangana's Commercial Tax department",
@@ -75,6 +75,16 @@
         "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOX1J6SEFCb1VEa2l1cUNyQ0tIeGdkd3VFUW5mU3U3YXBxelI1X3EwcXRZa0ZtVDdTUmxRRk1EbHdXNUgxQ204NldVLW1OWWpPV1F6S203bFBJUDEyVV9yRXhzN052ZjI5enM0YlZPa2x4OGF5dUVNWFM5clNMZXFfZlo3eGlGQjJSUm15Tkd6dmVpbVdMUngxNmhuUGhwcWhfdEoweGpUTDZXdEJBTTEtaGtBNXlpcVJRNnNTR2tfSndJYXZFQl9keFcyVXpsNGJVOTBxdGpzblZUQ05RYllv0gHsAUFVX3lxTE1zVVBvWFJ4eDd2YmlIQzhhU25rMUZaSG5iVHdHRDNPcUZUNlpFNzltUnRUSUYtX19TZzNEeEM5M2ZFRXpUR3dWTlZCWWhDa2l3NFo5ZHdvSEw3MGc1N0pHOE1mVXByQmRkMzM4Q19jZ0s3VG9Pcnh2TjB5RlBHX25lNFRySjBWQmFhaDEzamhPWGhvLXVxUUdadndoN1gyZ2xCLVRybzB0TlhkOVowazFqMWJTd1RPN3Z0ZGRyR0o4SFQ2RWFOVzMyZ3pudHNqRm95djZBaDQ3YjNwU3NNNXJSTGRWcWN6d3FWbUg5?oc=5",
         "publishedAt": "2026-10-19T03:12:18Z",
         "time": "19 Oct, 8:42 AM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-5f5856168b42",
+        "category": "govt",
+        "title": "Telangana govt declares 2020 as year of Artificial Intelligence",
+        "source": "ET Government",
+        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPTUZhR1NWY181ajdFX3NMSzNrSWhUS1luOEloQUh4Rmh2VGxBZUpTNUV6ZGwzblhpV29KdXI1Um52TTIzdTE3T2Fib1QyWGNGaXpvNDdoa3JXbHNTVmFiUG81RnA2X0JfQkJiTTlZMENWUFl0TTJjNFRKbV9PRUVlZWl2eVRKWU1tM3JOV0txSms1R05OdlFyemxjZmZCNU9FcWsxVEJDUGo1bF8zbzBrOHFydmZTWTlOdFhEbXA3cTZUcGwzREtFcldVT1YwQk4zUVhGTXQ5X290SGE1RkVV0gHaAUFVX3lxTE5SYVBXc1JYcGxSV1JZVkFjSDF1ZDEwYUZhcnNPU2JjRzlxWUZDYVlNMS1iNlhtaVFHcThzQXY5bzFENWNXaG9UREVwZVRYWlhRS1pRVklWbEI2emNBWUtxMldVeHczZnNqcTN0MHFiSXlmdHpWeW5QT1lqTFZTLWJBX01DMkx4ejBCZnpvN2J2X1VOQVVxU0FDVUxsSUZKelQwU2x0N1Vhd1R2cExMM244U1lSSXV1UnNSY0ludlZuZmNCLVRraktFVHNBeXp5RV8wQUhoV1FGWi1R?oc=5",
+        "publishedAt": "2026-10-18T11:40:01Z",
+        "time": "18 Oct, 5:10 PM IST",
         "method": "typesafe"
       }
     ],
