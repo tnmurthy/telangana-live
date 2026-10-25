@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-24T02:39:39.702579+00:00",
+    "generated_at": "2026-10-25T02:28:35.137351+00:00",
     "base_url": "https://www.vizag.live",
     "agent": "VizagLive Autonomous OpenSEO Agent v2.0",
     "total_routes_checked": 55,
@@ -186,7 +186,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 15
+      "response_time_ms": 329
     },
     {
       "route": "/ai-assistant",
@@ -205,7 +205,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 279
+      "response_time_ms": 264
     },
     {
       "route": "/anakapalle",
@@ -226,7 +226,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 1062
+      "response_time_ms": 1102
     },
     {
       "route": "/aqi",
@@ -245,7 +245,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 318
+      "response_time_ms": 268
     },
     {
       "route": "/auto-nagar",
@@ -266,7 +266,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 428
+      "response_time_ms": 463
     },
     {
       "route": "/beach-safety",
@@ -285,7 +285,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 320
+      "response_time_ms": 294
     },
     {
       "route": "/bheemili",
@@ -306,7 +306,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 425
+      "response_time_ms": 426
     },
     {
       "route": "/budget",
@@ -325,7 +325,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 251
+      "response_time_ms": 300
     },
     {
       "route": "/bus-tracker",
@@ -346,7 +346,7 @@
         "Description is brief (<50 chars)"
       ],
       "passed": true,
-      "response_time_ms": 267
+      "response_time_ms": 279
     },
     {
       "route": "/businesses",
@@ -365,7 +365,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 327
+      "response_time_ms": 304
     },
     {
       "route": "/certificates",
@@ -384,7 +384,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 272
+      "response_time_ms": 360
     },
     {
       "route": "/councillors",
@@ -403,7 +403,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 20
+      "response_time_ms": 368
     },
     {
       "route": "/court",
@@ -422,7 +422,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 281
+      "response_time_ms": 285
     },
     {
       "route": "/fare-calculator",
@@ -441,7 +441,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 269
+      "response_time_ms": 288
     },
     {
       "route": "/farmers",
@@ -460,7 +460,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 262
+      "response_time_ms": 315
     },
     {
       "route": "/gajuwaka",
@@ -481,7 +481,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 417
+      "response_time_ms": 444
     },
     {
       "route": "/hospitals",
@@ -500,7 +500,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 329
+      "response_time_ms": 263
     },
     {
       "route": "/jobs",
@@ -519,7 +519,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 20
+      "response_time_ms": 284
     },
     {
       "route": "/kurmannapalem",
@@ -540,7 +540,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 409
+      "response_time_ms": 431
     },
     {
       "route": "/labour-rates",
@@ -559,7 +559,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 308
+      "response_time_ms": 334
     },
     {
       "route": "/madhurawada",
@@ -580,7 +580,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 407
+      "response_time_ms": 436
     },
     {
       "route": "/market-rates",
@@ -599,7 +599,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 292
+      "response_time_ms": 16
     },
     {
       "route": "/mvp-colony",
@@ -620,7 +620,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 412
+      "response_time_ms": 443
     },
     {
       "route": "/news",
@@ -641,7 +641,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 11
+      "response_time_ms": 266
     },
     {
       "route": "/noc",
@@ -660,7 +660,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 255
+      "response_time_ms": 278
     },
     {
       "route": "/notices",
@@ -679,7 +679,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 268
+      "response_time_ms": 260
     },
     {
       "route": "/panchang",
@@ -698,7 +698,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 24
+      "response_time_ms": 271
     },
     {
       "route": "/participate",
@@ -719,7 +719,7 @@
         "Description is brief (<50 chars)"
       ],
       "passed": true,
-      "response_time_ms": 253
+      "response_time_ms": 297
     },
     {
       "route": "/pendurthi",
@@ -740,7 +740,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 410
+      "response_time_ms": 435
     },
     {
       "route": "/pharmacy",
@@ -761,7 +761,7 @@
         "Description is brief (<50 chars)"
       ],
       "passed": true,
-      "response_time_ms": 305
+      "response_time_ms": 300
     },
     {
       "route": "/pollution",
@@ -780,7 +780,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 271
+      "response_time_ms": 279
     },
     {
       "route": "/port",
@@ -799,7 +799,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 286
+      "response_time_ms": 312
     },
     {
       "route": "/power",
@@ -818,7 +818,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 17
+      "response_time_ms": 301
     },
     {
       "route": "/privacy",
@@ -837,7 +837,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 17
+      "response_time_ms": 291
     },
     {
       "route": "/property-tax",
@@ -856,7 +856,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 253
+      "response_time_ms": 259
     },
     {
       "route": "/public-works",
@@ -875,7 +875,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 263
+      "response_time_ms": 265
     },
     {
       "route": "/report",
@@ -894,7 +894,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 343
+      "response_time_ms": 292
     },
     {
       "route": "/representatives",
@@ -913,7 +913,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 252
+      "response_time_ms": 257
     },
     {
       "route": "/rti",
@@ -932,7 +932,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 273
+      "response_time_ms": 271
     },
     {
       "route": "/rushikonda",
@@ -953,7 +953,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 405
+      "response_time_ms": 452
     },
     {
       "route": "/schemes",
@@ -972,7 +972,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 17
+      "response_time_ms": 244
     },
     {
       "route": "/seethammadhara",
@@ -993,7 +993,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 413
+      "response_time_ms": 419
     },
     {
       "route": "/sos",
@@ -1012,7 +1012,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 278
+      "response_time_ms": 286
     },
     {
       "route": "/sources",
@@ -1031,7 +1031,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 321
+      "response_time_ms": 289
     },
     {
       "route": "/tech-pulse",
@@ -1050,7 +1050,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 23
+      "response_time_ms": 377
     },
     {
       "route": "/tenders",
@@ -1071,7 +1071,7 @@
         "Description is brief (<50 chars)"
       ],
       "passed": true,
-      "response_time_ms": 298
+      "response_time_ms": 347
     },
     {
       "route": "/tidal",
@@ -1090,7 +1090,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 301
+      "response_time_ms": 323
     },
     {
       "route": "/tourism",
@@ -1109,7 +1109,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 300
+      "response_time_ms": 334
     },
     {
       "route": "/traffic",
@@ -1130,7 +1130,7 @@
         "Description is brief (<50 chars)"
       ],
       "passed": true,
-      "response_time_ms": 304
+      "response_time_ms": 268
     },
     {
       "route": "/transport",
@@ -1149,7 +1149,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 21
+      "response_time_ms": 754
     },
     {
       "route": "/visakhapatnam",
@@ -1170,7 +1170,7 @@
         "Missing rel='canonical' tag"
       ],
       "passed": true,
-      "response_time_ms": 541
+      "response_time_ms": 423
     },
     {
       "route": "/volunteers",
@@ -1210,7 +1210,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 14
+      "response_time_ms": 263
     },
     {
       "route": "/water-bill",
@@ -1231,7 +1231,7 @@
         "Description is brief (<50 chars)"
       ],
       "passed": true,
-      "response_time_ms": 278
+      "response_time_ms": 263
     },
     {
       "route": "/water-quality",
@@ -1250,7 +1250,7 @@
       "issues": [],
       "warnings": [],
       "passed": true,
-      "response_time_ms": 280
+      "response_time_ms": 286
     }
   ]
 }
