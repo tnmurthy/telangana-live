@@ -1,37 +1,5 @@
 [
   {
-    "id": "alert-bfe7e150ea9c",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Crisis: Tanker Bookings Cross 7,000 - INDToday",
-    "message": "Hyderabad Water Crisis: Tanker Bookings Cross 7,000 - INDToday",
-    "description": "Hyderabad Water Crisis: Tanker Bookings Cross 7,000  INDToday",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-23T09:56:16Z",
-    "publishedAt": "2026-10-23T09:05:32Z",
-    "time": "23 Oct, 2:35 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBsb2tpWVhTWlZJSjZBZXpxWjRtRW9JU0pZMjU4OFRTN3dndUFsdzBOX1FZVjdkaUx6TXZ5M045SGtKNm5ibU9EVmhfRVp2eEo1aVBIU3hIQlQ4MklTb1BCNld6NWYyZG04T3dMaXc2SW9yUWZiekF2akY2RQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBsb2tpWVhTWlZJSjZBZXpxWjRtRW9JU0pZMjU4OFRTN3dndUFsdzBOX1FZVjdkaUx6TXZ5M045SGtKNm5ibU9EVmhfRVp2eEo1aVBIU3hIQlQ4MklTb1BCNld6NWYyZG04T3dMaXc2SW9yUWZiekF2akY2RQ?oc=5",
-    "source": "INDToday"
-  },
-  {
-    "id": "alert-ed8a1fbf9ae4",
-    "type": "water_supply",
-    "severity": "low",
-    "title": "El Nino-linked water shortage forces IIIT Basara to extend Dasara break - Hyderabad Mail",
-    "message": "El Nino-linked water shortage forces IIIT Basara to extend Dasara break - Hyderabad Mail",
-    "description": "El Nino-linked water shortage forces IIIT Basara to extend Dasara break  Hyderabad Mail",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-23T09:56:16Z",
-    "publishedAt": "2026-10-23T06:31:48Z",
-    "time": "23 Oct, 12:01 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcTJ3MW1UQ3p0RWRIUGljZ3Rfc2lXYlAxM0MtODdBSl9lMF9MMU1iNFN2LWlVNFNlS3Z4Vm12c05KbHgyWFBNQ3dUWlp5aVEzN0RaQUVwb2tUM1RzZThoSVFNYnJ6RkIydEt1NWVvUnQ2NldiNkRzM2VpM3AzS18xSDZzdzE?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPcTJ3MW1UQ3p0RWRIUGljZ3Rfc2lXYlAxM0MtODdBSl9lMF9MMU1iNFN2LWlVNFNlS3Z4Vm12c05KbHgyWFBNQ3dUWlp5aVEzN0RaQUVwb2tUM1RzZThoSVFNYnJ6RkIydEt1NWVvUnQ2NldiNkRzM2VpM3AzS18xSDZzdzE?oc=5",
-    "source": "Hyderabad Mail"
-  },
-  {
     "id": "alert-4c1e45d436d6",
     "type": "water_supply",
     "severity": "high",
@@ -190,5 +158,21 @@
     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWEcxcG5nUE5leFc4Rk0ycy1Rd3ZyQkd0WEQzOVZ6X3NJd2c0aTRGa2dkcnhFMGZfTHJQVWRZaTlEa1NvLVg3RjdxY09PSGlUU2p4S2FzcDFyVUpwc0I2akF6dTZsRXJSWkVrbHRreGcwZWRtanlUOHZTa1JsS2VUSTVBZmN1c0RDYzdlWDd4N2F6bFR1?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWEcxcG5nUE5leFc4Rk0ycy1Rd3ZyQkd0WEQzOVZ6X3NJd2c0aTRGa2dkcnhFMGZfTHJQVWRZaTlEa1NvLVg3RjdxY09PSGlUU2p4S2FzcDFyVUpwc0I2akF6dTZsRXJSWkVrbHRreGcwZWRtanlUOHZTa1JsS2VUSTVBZmN1c0RDYzdlWDd4N2F6bFR1?oc=5",
     "source": "Urban Acres"
+  },
+  {
+    "id": "alert-b6f08deb0918",
+    "type": "road_closure",
+    "severity": "low",
+    "title": "IIIT Junction road closure extended by three months from October 27 - Hyderabad Mail",
+    "message": "IIIT Junction road closure extended by three months from October 27 - Hyderabad Mail",
+    "description": "IIIT Junction road closure extended by three months from October 27  Hyderabad Mail",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-26T11:26:14Z",
+    "publishedAt": "2026-10-26T09:34:30Z",
+    "time": "26 Oct, 3:04 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPb1FnLVRIcEljOTJkZnE5d2V4Vmg5RkM3UW1OQTZYMlFTSVZna0ZKTHYzRGk0QjNGbnBPcnFOdG5JTTBVVWlwRGJoOVQ4MFJLQ2kxcXptckVLMnF1OExqT1JXRlY4SzZ5UldyMXVwYlpPbVdveTJCT1JYZ2Z2TU5wR0RuTDJGU2YyZjM3cUhlRmxXMmc?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPb1FnLVRIcEljOTJkZnE5d2V4Vmg5RkM3UW1OQTZYMlFTSVZna0ZKTHYzRGk0QjNGbnBPcnFOdG5JTTBVVWlwRGJoOVQ4MFJLQ2kxcXptckVLMnF1OExqT1JXRlY4SzZ5UldyMXVwYlpPbVdveTJCT1JYZ2Z2TU5wR0RuTDJGU2YyZjM3cUhlRmxXMmc?oc=5",
+    "source": "Hyderabad Mail"
   }
 ]
