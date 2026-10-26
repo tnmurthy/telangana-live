@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-25T16:42:30Z",
+  "generatedAt": "2026-10-26T05:10:32Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -38,16 +38,6 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-71a03e7ca307",
-        "category": "govt",
-        "title": "Telangana’s AI Minister Tests a New Model of Digital Governance",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNVlI0VHUwTVZKbFhTUlRoRTFIdWYzODNaUGZpTkpjdFp3RHpzcUY2SDZKSlFZeUtFYWpnN2kxcUFUcThWN2hSQnJUWW1aakV1cW1TMk9zWWx0dmNtZE9XZDRoc3JaWnM3dGlsYWRIeW1LSV9UUjJ0WWZJZk1mNE9ySzd5Z2QtYTNfMVFkS25n?oc=5",
-        "publishedAt": "2026-10-24T14:59:06Z",
-        "time": "24 Oct, 8:29 PM IST",
-        "method": "typesafe"
-      },
-      {
         "id": "tp-3bc1d654ec6e",
         "category": "govt",
         "title": "Revanth Reddy lays NIUM foundation, reviews Invest Telangana plans",
@@ -68,16 +58,6 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-d4da61dbc655",
-        "category": "govt",
-        "title": "Future City Hyderabad Set for Police, Skills and Urban Management Push",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcmJFN3NHT1RvUDJKR19ZVFdDRUdMcEQ4cHQwTUFkeDFBbkxmQWRMUmRBTV9xcEs3b0Z3S01PRDVkbDNVSmN6OG9oY2tpWkJpMjlsdXAtTVpaLVRYY2FGSXdRM1RJYVBxMElER2lpcndOcDV2VWFVSUdJV2dFaVpmTlA2aVZhbmRxODlnRFNmMnkyUjVCczJR?oc=5",
-        "publishedAt": "2026-10-19T05:47:41Z",
-        "time": "19 Oct, 11:17 AM IST",
-        "method": "typesafe"
-      },
-      {
         "id": "tp-a838544c031e",
         "category": "govt",
         "title": "Lack of clarity on AI usage causes confusion in Telangana's Commercial Tax department",
@@ -86,17 +66,27 @@
         "publishedAt": "2026-10-19T03:12:18Z",
         "time": "19 Oct, 8:42 AM IST",
         "method": "typesafe"
+      },
+      {
+        "id": "tp-5f5856168b42",
+        "category": "govt",
+        "title": "Telangana govt declares 2020 as year of Artificial Intelligence",
+        "source": "ET Government",
+        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPTUZhR1NWY181ajdFX3NMSzNrSWhUS1luOEloQUh4Rmh2VGxBZUpTNUV6ZGwzblhpV29KdXI1Um52TTIzdTE3T2Fib1QyWGNGaXpvNDdoa3JXbHNTVmFiUG81RnA2X0JfQkJiTTlZMENWUFl0TTJjNFRKbV9PRUVlZWl2eVRKWU1tM3JOV0txSms1R05OdlFyemxjZmZCNU9FcWsxVEJDUGo1bF8zbzBrOHFydmZTWTlOdFhEbXA3cTZUcGwzREtFcldVT1YwQk4zUVhGTXQ5X290SGE1RkVV0gHaAUFVX3lxTE5SYVBXc1JYcGxSV1JZVkFjSDF1ZDEwYUZhcnNPU2JjRzlxWUZDYVlNMS1iNlhtaVFHcThzQXY5bzFENWNXaG9UREVwZVRYWlhRS1pRVklWbEI2emNBWUtxMldVeHczZnNqcTN0MHFiSXlmdHpWeW5QT1lqTFZTLWJBX01DMkx4ejBCZnpvN2J2X1VOQVVxU0FDVUxsSUZKelQwU2x0N1Vhd1R2cExMM244U1lSSXV1UnNSY0ludlZuZmNCLVRraktFVHNBeXp5RV8wQUhoV1FGWi1R?oc=5",
+        "publishedAt": "2026-10-18T11:40:01Z",
+        "time": "18 Oct, 5:10 PM IST",
+        "method": "typesafe"
       }
     ],
     "jobs": [
       {
-        "id": "tp-2df71526acdc",
+        "id": "tp-6b5a55eaa027",
         "category": "jobs",
-        "title": "IIIT Hyderabad Opens Applications For January 2027 MSIT Programme",
-        "source": "BW Education",
-        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQNnY2R0ozU1BqTW85eklJWjJUSkg1eHJ2MUtxYU5mRFpDdzhySFQzTk9LMWthSjJ4cjF2anZoSlN1UFgxTlYzcE02N1hlaUE4SFNTcFZSSGxrRDVFbzFQRW1tWWFFRFUydFdOc3hYdFhrN0lSLU5ZWEhJclo1Vnc0V1p2dlU3VUl1eGJtM3dyMy1xeWtkUkU4b01ESWVfTmtYUm5GamVoZE1kOFlI?oc=5",
-        "publishedAt": "2026-10-24T05:39:04Z",
-        "time": "24 Oct, 11:09 AM IST",
+        "title": "IIIT Hyderabad MSIT Programme: January 2027 Admissions",
+        "source": "INDToday",
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOd3czMDdYZF9ubm9uRC1oSWNXNTlqWTA3U1A4Z1ZTektWei1POUszSzhURVRIRGJCblpQQy1iOEpYNjJWb3Q0QTUzeUlEYVpqVW1UNXBIcjNWaENNRzRJSlN2X01ZcDBYWUEwa2xCMk5mWUFLSENhR2lKaHRDemVrOQ?oc=5",
+        "publishedAt": "2026-10-26T00:33:33Z",
+        "time": "26 Oct, 6:03 AM IST",
         "method": "typesafe"
       },
       {
