@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-26T13:28:03Z",
+  "generatedAt": "2026-10-27T05:25:01Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -55,16 +55,6 @@
         "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQREEteDRmZFJUcGg4S0Jrbmt0dW5OanJkQUVQTFRmRS1mNGxYUWFXbElaREVPeHBkUHltTEJRT0VZdmRnT2JUUTdLZWVrN04yZTA2bmtsaWVKd0VTOXpKZkFEZVVsMlk0dGs1REFVTWVaX2RHTDF1TnRUZjJ2cWhkb09pUHR3S21LWUp3S1FZbDRCWXd6ejdXZUZfbXdRbDA?oc=5",
         "publishedAt": "2026-10-20T03:27:22Z",
         "time": "20 Oct, 8:57 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-a7e4da1512ac",
-        "category": "govt",
-        "title": "Democratising Data, Powering Innovation: Telangana’s Blueprint for AI-Enabled Governance",
-        "source": "Elets eGov",
-        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTnVJNll4bFZTWHhnOWVSTFZYMU1laTNySjZ3QmwwenVna001N2RWOVZLWE9rRHl1ZDdZQjFuamhJZHhHcWRQdzJiWHRDS25TYjB2dE1DRmdPaVZYOTdRcTB0U18welh0c0tNYnd3U0c2aG5vaVhhT2x2Q2J1WUZ6MnJBLW5tTTlDOGZSUklRbG5ROS1JQ1V2NDI4Um1CcHNzLWl1TTdSQUdfbW9oWFdiQmpyZGtaSDdqTElTeXhvc3A?oc=5",
-        "publishedAt": "2026-10-19T07:00:00Z",
-        "time": "19 Oct, 12:30 PM IST",
         "method": "typesafe"
       },
       {
