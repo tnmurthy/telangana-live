@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-4c1e45d436d6",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days - ThePrint",
-    "message": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days - ThePrint",
-    "description": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days  ThePrint",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-24T05:06:42Z",
-    "publishedAt": "2026-10-24T01:30:03Z",
-    "time": "24 Oct, 7:00 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPclVmREM4cVhVWWswVG81N3cwM2hEVk1iN2NlQ2hlYjNqZG1HMEhQOVdDejhXcEFGVE1xaW1SS2t2RUNZOERXMWlBaUxCancwQTg0akNJemxSSEU0czJtb05nZEExcmduOFNpWnJ6blNIdUFGS0VPRXduemZQaDVUQmE2OGZJMEItMTB0ZWZxSHFqWWlncElyUmVtN3JyRUpxb3BvdS1Xd2hWVktoUkVYVGh4OUQwc0dVbWJDTG9QRkpCSkw2Sjc4NERR0gHPAUFVX3lxTE0zclhldlQ5Q0E1dXY1TVNpc3NPckExbFg2TXlhRW5VRC1XSjc0dmNZaVJTMWN3bzlxS3B2eGwyMlh2WXdCaDNtbkp1d00wY1BkdUNuQlVaQWVCN1I3c29Qb0VXNkNJcm1oOTlWOWFzaTUxcEduUGNEc0FnNUFMMHhnd005ck5XVTN0akFubTctbk5LNmg3SnV4OG8yMUpKRmtUem53UkpkakkzR1pTbmY4TFFRVjNpbHoyM1c3Zks2SXJodlN3V0Z0OGdIV2VNMA?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPclVmREM4cVhVWWswVG81N3cwM2hEVk1iN2NlQ2hlYjNqZG1HMEhQOVdDejhXcEFGVE1xaW1SS2t2RUNZOERXMWlBaUxCancwQTg0akNJemxSSEU0czJtb05nZEExcmduOFNpWnJ6blNIdUFGS0VPRXduemZQaDVUQmE2OGZJMEItMTB0ZWZxSHFqWWlncElyUmVtN3JyRUpxb3BvdS1Xd2hWVktoUkVYVGh4OUQwc0dVbWJDTG9QRkpCSkw2Sjc4NERR0gHPAUFVX3lxTE0zclhldlQ5Q0E1dXY1TVNpc3NPckExbFg2TXlhRW5VRC1XSjc0dmNZaVJTMWN3bzlxS3B2eGwyMlh2WXdCaDNtbkp1d00wY1BkdUNuQlVaQWVCN1I3c29Qb0VXNkNJcm1oOTlWOWFzaTUxcEduUGNEc0FnNUFMMHhnd005ck5XVTN0akFubTctbk5LNmg3SnV4OG8yMUpKRmtUem53UkpkakkzR1pTbmY4TFFRVjNpbHoyM1c3Zks2SXJodlN3V0Z0OGdIV2VNMA?oc=5",
-    "source": "ThePrint"
-  },
-  {
     "id": "alert-2efa670ee0fc",
     "type": "water_supply",
     "severity": "medium",
@@ -30,22 +14,6 @@
     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeGRiMGxXcXhCVVNSNGZtQnNOb1JiNU1PVkR6UlZGeFlMM1BPT3U3VU0tOU9aTU1xTU1hT18teDd6RlhzWDFEenkyaVl3ck16T2hDajRvdEJZa2tLN1dOZ18zc2FIUHF1NnRmTk1RT3FBSklGSDBJbk9FUG0xYnhreHI0OC0?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeGRiMGxXcXhCVVNSNGZtQnNOb1JiNU1PVkR6UlZGeFlMM1BPT3U3VU0tOU9aTU1xTU1hT18teDd6RlhzWDFEenkyaVl3ck16T2hDajRvdEJZa2tLN1dOZ18zc2FIUHF1NnRmTk1RT3FBSklGSDBJbk9FUG0xYnhreHI0OC0?oc=5",
     "source": "Hyderabad Mail"
-  },
-  {
-    "id": "alert-4c1e45d436d6",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days - theprint",
-    "message": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days - theprint",
-    "description": "Hyderabad in the grips of severe drinking water crisis—8,000 tankers a day, supply once in 3 days  theprint",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-25T04:50:01Z",
-    "publishedAt": "2026-10-24T01:30:03Z",
-    "time": "24 Oct, 7:00 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPclVmREM4cVhVWWswVG81N3cwM2hEVk1iN2NlQ2hlYjNqZG1HMEhQOVdDejhXcEFGVE1xaW1SS2t2RUNZOERXMWlBaUxCancwQTg0akNJemxSSEU0czJtb05nZEExcmduOFNpWnJ6blNIdUFGS0VPRXduemZQaDVUQmE2OGZJMEItMTB0ZWZxSHFqWWlncElyUmVtN3JyRUpxb3BvdS1Xd2hWVktoUkVYVGh4OUQwc0dVbWJDTG9QRkpCSkw2Sjc4NERR0gHPAUFVX3lxTE0zclhldlQ5Q0E1dXY1TVNpc3NPckExbFg2TXlhRW5VRC1XSjc0dmNZaVJTMWN3bzlxS3B2eGwyMlh2WXdCaDNtbkp1d00wY1BkdUNuQlVaQWVCN1I3c29Qb0VXNkNJcm1oOTlWOWFzaTUxcEduUGNEc0FnNUFMMHhnd005ck5XVTN0akFubTctbk5LNmg3SnV4OG8yMUpKRmtUem53UkpkakkzR1pTbmY4TFFRVjNpbHoyM1c3Zks2SXJodlN3V0Z0OGdIV2VNMA?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPclVmREM4cVhVWWswVG81N3cwM2hEVk1iN2NlQ2hlYjNqZG1HMEhQOVdDejhXcEFGVE1xaW1SS2t2RUNZOERXMWlBaUxCancwQTg0akNJemxSSEU0czJtb05nZEExcmduOFNpWnJ6blNIdUFGS0VPRXduemZQaDVUQmE2OGZJMEItMTB0ZWZxSHFqWWlncElyUmVtN3JyRUpxb3BvdS1Xd2hWVktoUkVYVGh4OUQwc0dVbWJDTG9QRkpCSkw2Sjc4NERR0gHPAUFVX3lxTE0zclhldlQ5Q0E1dXY1TVNpc3NPckExbFg2TXlhRW5VRC1XSjc0dmNZaVJTMWN3bzlxS3B2eGwyMlh2WXdCaDNtbkp1d00wY1BkdUNuQlVaQWVCN1I3c29Qb0VXNkNJcm1oOTlWOWFzaTUxcEduUGNEc0FnNUFMMHhnd005ck5XVTN0akFubTctbk5LNmg3SnV4OG8yMUpKRmtUem53UkpkakkzR1pTbmY4TFFRVjNpbHoyM1c3Zks2SXJodlN3V0Z0OGdIV2VNMA?oc=5",
-    "source": "theprint"
   },
   {
     "id": "alert-2c7f9275b766",
@@ -174,5 +142,53 @@
     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPb1FnLVRIcEljOTJkZnE5d2V4Vmg5RkM3UW1OQTZYMlFTSVZna0ZKTHYzRGk0QjNGbnBPcnFOdG5JTTBVVWlwRGJoOVQ4MFJLQ2kxcXptckVLMnF1OExqT1JXRlY4SzZ5UldyMXVwYlpPbVdveTJCT1JYZ2Z2TU5wR0RuTDJGU2YyZjM3cUhlRmxXMmc?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPb1FnLVRIcEljOTJkZnE5d2V4Vmg5RkM3UW1OQTZYMlFTSVZna0ZKTHYzRGk0QjNGbnBPcnFOdG5JTTBVVWlwRGJoOVQ4MFJLQ2kxcXptckVLMnF1OExqT1JXRlY4SzZ5UldyMXVwYlpPbVdveTJCT1JYZ2Z2TU5wR0RuTDJGU2YyZjM3cUhlRmxXMmc?oc=5",
     "source": "Hyderabad Mail"
+  },
+  {
+    "id": "alert-054fa9ff0839",
+    "type": "weather",
+    "severity": "high",
+    "title": "Weather today: Andhra Pradesh, Telangana receive heavy rainfall alert as Cyclone Arnab intensifies; check - The Economic Times",
+    "message": "Weather today: Andhra Pradesh, Telangana receive heavy rainfall alert as Cyclone Arnab intensifies; check - The Economic Times",
+    "description": "Weather today: Andhra Pradesh, Telangana receive heavy rainfall alert as Cyclone Arnab intensifies; check  The Economic Times",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-27T06:43:13Z",
+    "publishedAt": "2026-10-27T01:58:16Z",
+    "time": "27 Oct, 7:28 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQRDNNQXBOQUN0ZVdfOHptZmNQdkhuUkwtR3ZQVFJuaHdvdWRhOThtWlFOOUVta0E3VGVkV19GUzBvbmI3eGdUUmkweFR3YUtuR0xRTUJHaEFTdEdENHBHZExxd2NfbUxVRnpqUC1oVTJESHhSMXpUMDFXWk5RT05vME12SGdtcjVjWUUxb25pZmRNV3JkMWZjM05SWFpVdHZpc0dUWTdpalF5VHUxemN3OWQzdE1oNno0QnAtaHVnTlEzaHo5OFdfdk83NWU1M0l0U20zNDlzcVJlTUQ4d2lob0pxRzFGc1ZmMmNaSGtNbmZSaEZVNVcteVV1SFEyc3ROb19KVzNacE44dkxnSmZ3aWk0ZjJrbzRQSEh30gGgAkFVX3lxTFBjVUF2c0FqYUExU2Y5ckVoVjVPN3pNd1IwYlZRMVVuc24xM3VhTkRJczBpRFgxTzNoZXVwdVVSUDBMeDB5ejhDTm4zbURXNk5xX1ZmVVBaN3BoanBlcWt1VW5FR1FQZDFOY3U2UXpOR0N4ZXQ1WDk0MG11eVJDRzBEZFpGcDFuQ3RZdFFSQjVPVUppVjNubnNRWHJlQ0gyMDhneUtndjctdVhUX1A0LVZBQUkyNEJBVUZWb2NLblpjZHBFZXk4cHBrdTlQV2xZMUJsMVNWcVBqM1dtOXFjN1Z2YV8yM2F5ZC13UERZeUpNR3U0dVZGcllRZ0JscG00aXpaN3ZVMVNoLTlyQW1INVE0NlN6Q1BEaU9YaVIzN0ZZYg?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQRDNNQXBOQUN0ZVdfOHptZmNQdkhuUkwtR3ZQVFJuaHdvdWRhOThtWlFOOUVta0E3VGVkV19GUzBvbmI3eGdUUmkweFR3YUtuR0xRTUJHaEFTdEdENHBHZExxd2NfbUxVRnpqUC1oVTJESHhSMXpUMDFXWk5RT05vME12SGdtcjVjWUUxb25pZmRNV3JkMWZjM05SWFpVdHZpc0dUWTdpalF5VHUxemN3OWQzdE1oNno0QnAtaHVnTlEzaHo5OFdfdk83NWU1M0l0U20zNDlzcVJlTUQ4d2lob0pxRzFGc1ZmMmNaSGtNbmZSaEZVNVcteVV1SFEyc3ROb19KVzNacE44dkxnSmZ3aWk0ZjJrbzRQSEh30gGgAkFVX3lxTFBjVUF2c0FqYUExU2Y5ckVoVjVPN3pNd1IwYlZRMVVuc24xM3VhTkRJczBpRFgxTzNoZXVwdVVSUDBMeDB5ejhDTm4zbURXNk5xX1ZmVVBaN3BoanBlcWt1VW5FR1FQZDFOY3U2UXpOR0N4ZXQ1WDk0MG11eVJDRzBEZFpGcDFuQ3RZdFFSQjVPVUppVjNubnNRWHJlQ0gyMDhneUtndjctdVhUX1A0LVZBQUkyNEJBVUZWb2NLblpjZHBFZXk4cHBrdTlQV2xZMUJsMVNWcVBqM1dtOXFjN1Z2YV8yM2F5ZC13UERZeUpNR3U0dVZGcllRZ0JscG00aXpaN3ZVMVNoLTlyQW1INVE0NlN6Q1BEaU9YaVIzN0ZZYg?oc=5",
+    "source": "The Economic Times"
+  },
+  {
+    "id": "alert-907384d4b432",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "As reservoirs dry up, Hyderabad Water Board bets on enforcement, awareness and reuse - The New Indian Express",
+    "message": "As reservoirs dry up, Hyderabad Water Board bets on enforcement, awareness and reuse - The New Indian Express",
+    "description": "As reservoirs dry up, Hyderabad Water Board bets on enforcement, awareness and reuse  The New Indian Express",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-27T06:43:13Z",
+    "publishedAt": "2026-10-27T03:32:08Z",
+    "time": "27 Oct, 9:02 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNQ3dIM0dIanZLVzdaM2tzVHpWNXg3VGdtNTlmeUQyUDV1YlIyX3B5ZXFFTnlXWTVmeGRZMTZsMUpLbTBtTmhXd1d0cDh4RWRkTmhoLThKMG1kTWE2WllkNmYweUY0MlRGWkhreVdoaTJDbWZmd0otSGstMjJtbVdiX1lXclVrbnpjVkFkRVlZQXEwV3JiSTV5blFFdXlsVVkxMmpjcER5d2VLbVRfNThGUnRNRWVVaGc2eXBPQl9tR1dPeEExakJSSTBwdDhLT2gzTjFXTlJNbDI1aF9L0gHqAUFVX3lxTE1KS082VGpWbGhSdmZvZVR2V19UV1RKNlhJNWlUN2hfdWZJaEc4V0kzbXRlb2hvaE5OcFJLWkxVTU1JSU51dmlaRGE2MDZ6eERGcGw4dUx1OWFnTmRjUmxuUktEWndjVEk5VG5hQ1pPR3ptdlliNThMdHliZ0Y2RU0wa0FtRFV6cE1ybXBlSjBHM0R0T080bVY4SjRBQ2VYQ1ZqOXIzOEJVV0dKNW44NVBxdjNOMEVfQjJQeGJ5dFk0QmxzUkF3TzJJbEwwZ3RsY0w3Rll3YnUwR2FLbS1zZ1NfM2luRlUtSzg5Zw?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNQ3dIM0dIanZLVzdaM2tzVHpWNXg3VGdtNTlmeUQyUDV1YlIyX3B5ZXFFTnlXWTVmeGRZMTZsMUpLbTBtTmhXd1d0cDh4RWRkTmhoLThKMG1kTWE2WllkNmYweUY0MlRGWkhreVdoaTJDbWZmd0otSGstMjJtbVdiX1lXclVrbnpjVkFkRVlZQXEwV3JiSTV5blFFdXlsVVkxMmpjcER5d2VLbVRfNThGUnRNRWVVaGc2eXBPQl9tR1dPeEExakJSSTBwdDhLT2gzTjFXTlJNbDI1aF9L0gHqAUFVX3lxTE1KS082VGpWbGhSdmZvZVR2V19UV1RKNlhJNWlUN2hfdWZJaEc4V0kzbXRlb2hvaE5OcFJLWkxVTU1JSU51dmlaRGE2MDZ6eERGcGw4dUx1OWFnTmRjUmxuUktEWndjVEk5VG5hQ1pPR3ptdlliNThMdHliZ0Y2RU0wa0FtRFV6cE1ybXBlSjBHM0R0T080bVY4SjRBQ2VYQ1ZqOXIzOEJVV0dKNW44NVBxdjNOMEVfQjJQeGJ5dFk0QmxzUkF3TzJJbEwwZ3RsY0w3Rll3YnUwR2FLbS1zZ1NfM2luRlUtSzg5Zw?oc=5",
+    "source": "The New Indian Express"
+  },
+  {
+    "id": "alert-2de3cbf323f1",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Hyderabad: Amid water crisis, HMWSSB to launch app to encourage citizens to report wastage - NewsMeter",
+    "message": "Hyderabad: Amid water crisis, HMWSSB to launch app to encourage citizens to report wastage - NewsMeter",
+    "description": "Hyderabad: Amid water crisis, HMWSSB to launch app to encourage citizens to report wastage  NewsMeter",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-27T06:43:13Z",
+    "publishedAt": "2026-10-27T05:21:26Z",
+    "time": "27 Oct, 10:51 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbmNISWhvMmNJM0xKX2E1cXZreTVPUFFRck9NNUpabGxZbEhJUmNscFNKTTlHT3RSWXU3NE9FNjBRMm5SaVNUbHJJZFdKazhhajVIcTVaRlVZRklrY2NkbERJaUtnNHpkR0psMjNaRk9CdlhheVd5Q1A2ajd2R1VFMV9MU0V0dlpWc2E3ejI3YXFaemp2Sm5FcC1RNHp4Unk3SEV4bVZ1ckZxa3ZxMWYtUk9uMU13ZWpkSWVNa09HOGVyX0ZDcXBJ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbmNISWhvMmNJM0xKX2E1cXZreTVPUFFRck9NNUpabGxZbEhJUmNscFNKTTlHT3RSWXU3NE9FNjBRMm5SaVNUbHJJZFdKazhhajVIcTVaRlVZRklrY2NkbERJaUtnNHpkR0psMjNaRk9CdlhheVd5Q1A2ajd2R1VFMV9MU0V0dlpWc2E3ejI3YXFaemp2Sm5FcC1RNHp4Unk3SEV4bVZ1ckZxa3ZxMWYtUk9uMU13ZWpkSWVNa09HOGVyX0ZDcXBJ?oc=5",
+    "source": "NewsMeter"
   }
 ]
