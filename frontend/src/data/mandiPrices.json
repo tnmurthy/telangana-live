@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T19:01:29Z",
+  "updatedAt": "2026-10-27T08:38:45Z",
   "state": "Telangana",
   "fromDate": "2026-10-25",
   "toDate": "2026-10-27",
@@ -10,21 +10,21 @@
     {
       "name": "Onion",
       "group": "Vegetables",
-      "price": 3640.78,
+      "price": 3755.3,
       "yearAgo": 1409.27,
       "unit": "Rs./quintal"
     },
     {
       "name": "Tomato",
       "group": "Vegetables",
-      "price": 1947.14,
+      "price": 2015.27,
       "yearAgo": 1610.69,
       "unit": "Rs./quintal"
     },
     {
       "name": "Potato",
       "group": "Vegetables",
-      "price": 1368.12,
+      "price": 1446.95,
       "yearAgo": 1829.01,
       "unit": "Rs./quintal"
     },
@@ -52,7 +52,7 @@
     {
       "name": "Green gram (moong)",
       "group": "Pulses",
-      "price": 6889.91,
+      "price": 6902.97,
       "yearAgo": 4610.21,
       "unit": "Rs./quintal"
     },
@@ -73,7 +73,7 @@
     {
       "name": "Dry chillies",
       "group": "Spices",
-      "price": 21083.84,
+      "price": 19783.86,
       "yearAgo": 11387.25,
       "unit": "Rs./quintal"
     },
@@ -87,21 +87,21 @@
     {
       "name": "Cotton",
       "group": "Fibre Crops",
-      "price": 8825.39,
+      "price": 8896.11,
       "yearAgo": 6613.18,
       "unit": "Rs./quintal"
     },
     {
       "name": "Paddy",
       "group": "Cereals",
-      "price": 2601.1,
+      "price": 2608.37,
       "yearAgo": 2231.2,
       "unit": "Rs./quintal"
     },
     {
       "name": "Maize",
       "group": "Cereals",
-      "price": 2835.76,
+      "price": 2797.09,
       "yearAgo": 1940.92,
       "unit": "Rs./quintal"
     }
@@ -112,57 +112,41 @@
       "name": "Jowar(Sorghum)",
       "group": "Cereals",
       "msp": 4023.0,
-      "price": 2200.0,
-      "arrivalTonnes": 77.5,
-      "reportedDate": "24-10-2026"
+      "price": null,
+      "arrivalTonnes": 0.5,
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Maize",
       "group": "Cereals",
       "msp": 2410.0,
-      "price": 2822.91,
-      "arrivalTonnes": 2100.32,
-      "reportedDate": "24-10-2026"
+      "price": 2713.09,
+      "arrivalTonnes": 500.6,
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Paddy(Common)",
       "group": "Cereals",
       "msp": 2441.0,
-      "price": 2678.26,
-      "arrivalTonnes": 5636.28,
-      "reportedDate": "24-10-2026"
-    },
-    {
-      "name": "Ragi(Finger Millet)",
-      "group": "Cereals",
-      "msp": 5205.0,
-      "price": null,
-      "arrivalTonnes": null,
-      "reportedDate": "24-10-2026"
+      "price": 2712.58,
+      "arrivalTonnes": 3145.8,
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Cotton",
       "group": "Fibre Crops",
       "msp": 8267.0,
-      "price": 8728.24,
-      "arrivalTonnes": 55.45,
-      "reportedDate": "24-10-2026"
+      "price": 8840.04,
+      "arrivalTonnes": 15.3,
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Groundnut",
       "group": "Oil Seeds",
       "msp": 7517.0,
-      "price": 6261.87,
-      "arrivalTonnes": 23.9,
-      "reportedDate": "24-10-2026"
-    },
-    {
-      "name": "Safflower",
-      "group": "Oil Seeds",
-      "msp": 6540.0,
       "price": null,
-      "arrivalTonnes": null,
-      "reportedDate": "24-10-2026"
+      "arrivalTonnes": 1.3,
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Sesamum(Sesame,Gingelly,Til)",
@@ -170,15 +154,15 @@
       "msp": 10346.0,
       "price": null,
       "arrivalTonnes": null,
-      "reportedDate": "24-10-2026"
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Soyabean",
       "group": "Oil Seeds",
       "msp": 5708.0,
-      "price": 7255.71,
-      "arrivalTonnes": 132.2,
-      "reportedDate": "24-10-2026"
+      "price": null,
+      "arrivalTonnes": null,
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Bengal Gram(Gram)(Whole)",
@@ -186,31 +170,31 @@
       "msp": 5875.0,
       "price": null,
       "arrivalTonnes": null,
-      "reportedDate": "24-10-2026"
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Black Gram(Urd Beans)(Whole)",
       "group": "Pulses",
       "msp": 8200.0,
       "price": null,
-      "arrivalTonnes": 3.95,
-      "reportedDate": "24-10-2026"
+      "arrivalTonnes": null,
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Green Gram(Moong)(Whole)",
       "group": "Pulses",
       "msp": 8780.0,
       "price": null,
-      "arrivalTonnes": 2.65,
-      "reportedDate": "24-10-2026"
+      "arrivalTonnes": null,
+      "reportedDate": "25-10-2026"
     },
     {
       "name": "Red gram/Arhar/Tur(whole)",
       "group": "Pulses",
       "msp": 8450.0,
       "price": null,
-      "arrivalTonnes": 0.9,
-      "reportedDate": "24-10-2026"
+      "arrivalTonnes": null,
+      "reportedDate": "25-10-2026"
     }
   ]
 }
