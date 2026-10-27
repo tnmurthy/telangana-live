@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-2efa670ee0fc",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Hyderabad faces water shortage from December 15, HMWSSB warns - Hyderabad Mail",
-    "message": "Hyderabad faces water shortage from December 15, HMWSSB warns - Hyderabad Mail",
-    "description": "Hyderabad faces water shortage from December 15, HMWSSB warns  Hyderabad Mail",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-24T13:37:28Z",
-    "publishedAt": "2026-10-24T12:39:54Z",
-    "time": "24 Oct, 6:09 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeGRiMGxXcXhCVVNSNGZtQnNOb1JiNU1PVkR6UlZGeFlMM1BPT3U3VU0tOU9aTU1xTU1hT18teDd6RlhzWDFEenkyaVl3ck16T2hDajRvdEJZa2tLN1dOZ18zc2FIUHF1NnRmTk1RT3FBSklGSDBJbk9FUG0xYnhreHI0OC0?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOeGRiMGxXcXhCVVNSNGZtQnNOb1JiNU1PVkR6UlZGeFlMM1BPT3U3VU0tOU9aTU1xTU1hT18teDd6RlhzWDFEenkyaVl3ck16T2hDajRvdEJZa2tLN1dOZ18zc2FIUHF1NnRmTk1RT3FBSklGSDBJbk9FUG0xYnhreHI0OC0?oc=5",
-    "source": "Hyderabad Mail"
-  },
-  {
     "id": "alert-2c7f9275b766",
     "type": "water_supply",
     "severity": "high",
@@ -190,5 +174,21 @@
     "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbmNISWhvMmNJM0xKX2E1cXZreTVPUFFRck9NNUpabGxZbEhJUmNscFNKTTlHT3RSWXU3NE9FNjBRMm5SaVNUbHJJZFdKazhhajVIcTVaRlVZRklrY2NkbERJaUtnNHpkR0psMjNaRk9CdlhheVd5Q1A2ajd2R1VFMV9MU0V0dlpWc2E3ejI3YXFaemp2Sm5FcC1RNHp4Unk3SEV4bVZ1ckZxa3ZxMWYtUk9uMU13ZWpkSWVNa09HOGVyX0ZDcXBJ?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbmNISWhvMmNJM0xKX2E1cXZreTVPUFFRck9NNUpabGxZbEhJUmNscFNKTTlHT3RSWXU3NE9FNjBRMm5SaVNUbHJJZFdKazhhajVIcTVaRlVZRklrY2NkbERJaUtnNHpkR0psMjNaRk9CdlhheVd5Q1A2ajd2R1VFMV9MU0V0dlpWc2E3ejI3YXFaemp2Sm5FcC1RNHp4Unk3SEV4bVZ1ckZxa3ZxMWYtUk9uMU13ZWpkSWVNa09HOGVyX0ZDcXBJ?oc=5",
     "source": "NewsMeter"
+  },
+  {
+    "id": "alert-e019c66103da",
+    "type": "weather",
+    "severity": "medium",
+    "title": "IMD forecasts intense rain in Telangana from October 27 - Telangana Today",
+    "message": "IMD forecasts intense rain in Telangana from October 27 - Telangana Today",
+    "description": "IMD forecasts intense rain in Telangana from October 27  Telangana Today",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-27T12:44:11Z",
+    "publishedAt": "2026-10-25T14:12:25Z",
+    "time": "25 Oct, 7:42 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxONU5fYWZsNXRQaEFIendSYm4zQXZ0OTRVc3J5WHlXRjV3UE1ydGEzYncwNTB0TW42STUxaDZIRFpYS0E4emVORElUWU11RlZ2ZVZuMlhKWWMyRE8tS0pBM2tjY1p5ZURrMFk4bnpzdnF6MlpXRFVscFNNWW9vcU1QcGJUa19Rd1lWemc?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiigFBVV95cUxONU5fYWZsNXRQaEFIendSYm4zQXZ0OTRVc3J5WHlXRjV3UE1ydGEzYncwNTB0TW42STUxaDZIRFpYS0E4emVORElUWU11RlZ2ZVZuMlhKWWMyRE8tS0pBM2tjY1p5ZURrMFk4bnpzdnF6MlpXRFVscFNNWW9vcU1QcGJUa19Rd1lWemc?oc=5",
+    "source": "Telangana Today"
   }
 ]
