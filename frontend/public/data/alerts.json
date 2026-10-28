@@ -1,37 +1,5 @@
 [
   {
-    "id": "alert-766b3fe0029b",
-    "type": "weather",
-    "severity": "high",
-    "title": "IMD Telangana Rain Forecast: Red Alert Issued for 3 Districts - Urban Acres",
-    "message": "IMD Telangana Rain Forecast: Red Alert Issued for 3 Districts - Urban Acres",
-    "description": "IMD Telangana Rain Forecast: Red Alert Issued for 3 Districts  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-25T17:33:55Z",
-    "publishedAt": "2026-10-25T17:02:35Z",
-    "time": "25 Oct, 10:32 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbGpNMk4zQVMtTXFPQmxiYXZTa25LVFlCZmdVZ1VEME5jTWMzN0dQNUNNb1VNUFJEcDdrS2YtLWt3eE1wWkZJTXVKOEhIRUIzQVNOcGVRU09FekpPamtGVGRtT0VYckpXdURwaFE2VV9vWW9XZWFxUERaeTFURnBVb2hueHJ6X19FVmFB?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbGpNMk4zQVMtTXFPQmxiYXZTa25LVFlCZmdVZ1VEME5jTWMzN0dQNUNNb1VNUFJEcDdrS2YtLWt3eE1wWkZJTXVKOEhIRUIzQVNOcGVRU09FekpPamtGVGRtT0VYckpXdURwaFE2VV9vWW9XZWFxUERaeTFURnBVb2hueHJ6X19FVmFB?oc=5",
-    "source": "Urban Acres"
-  },
-  {
-    "id": "alert-cb3032cdfc5c",
-    "type": "weather",
-    "severity": "high",
-    "title": "Telangana Rain Alert: Red Warning for 3 Districts - urbanacres.in",
-    "message": "Telangana Rain Alert: Red Warning for 3 Districts - urbanacres.in",
-    "description": "Telangana Rain Alert: Red Warning for 3 Districts  urbanacres.in",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-25T19:59:13Z",
-    "publishedAt": "2026-10-25T19:14:05Z",
-    "time": "26 Oct, 12:44 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWEcxcG5nUE5leFc4Rk0ycy1Rd3ZyQkd0WEQzOVZ6X3NJd2c0aTRGa2dkcnhFMGZfTHJQVWRZaTlEa1NvLVg3RjdxY09PSGlUU2p4S2FzcDFyVUpwc0I2akF6dTZsRXJSWkVrbHRreGcwZWRtanlUOHZTa1JsS2VUSTVBZmN1c0RDYzdlWDd4N2F6bFR1?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWEcxcG5nUE5leFc4Rk0ycy1Rd3ZyQkd0WEQzOVZ6X3NJd2c0aTRGa2dkcnhFMGZfTHJQVWRZaTlEa1NvLVg3RjdxY09PSGlUU2p4S2FzcDFyVUpwc0I2akF6dTZsRXJSWkVrbHRreGcwZWRtanlUOHZTa1JsS2VUSTVBZmN1c0RDYzdlWDd4N2F6bFR1?oc=5",
-    "source": "urbanacres.in"
-  },
-  {
     "id": "alert-3055e8d9e8b6",
     "type": "weather",
     "severity": "high",
@@ -45,22 +13,6 @@
     "time": "26 Oct, 3:55 AM IST",
     "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZURaTldUelhGVkNFbnN3SWRFNnpXMUU0VEZRcG1UT0wxSnNuajI2MVAtUDJFeXJxY0c0WDhHcnRva1dxN3dkYU04bnpFZ3hOWnNZdmFhangySDc0Rm5CZmlBeE5wa1hmcmh3ZGRVOWI3N2VveGtWWjM0TzlRUW5lQUJWeno?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZURaTldUelhGVkNFbnN3SWRFNnpXMUU0VEZRcG1UT0wxSnNuajI2MVAtUDJFeXJxY0c0WDhHcnRva1dxN3dkYU04bnpFZ3hOWnNZdmFhangySDc0Rm5CZmlBeE5wa1hmcmh3ZGRVOWI3N2VveGtWWjM0TzlRUW5lQUJWeno?oc=5",
-    "source": "Urban Acres"
-  },
-  {
-    "id": "alert-cb3032cdfc5c",
-    "type": "weather",
-    "severity": "high",
-    "title": "Telangana Rain Alert: Red Warning for 3 Districts - Urban Acres",
-    "message": "Telangana Rain Alert: Red Warning for 3 Districts - Urban Acres",
-    "description": "Telangana Rain Alert: Red Warning for 3 Districts  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-25T22:28:29Z",
-    "publishedAt": "2026-10-25T19:14:05Z",
-    "time": "26 Oct, 12:44 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWEcxcG5nUE5leFc4Rk0ycy1Rd3ZyQkd0WEQzOVZ6X3NJd2c0aTRGa2dkcnhFMGZfTHJQVWRZaTlEa1NvLVg3RjdxY09PSGlUU2p4S2FzcDFyVUpwc0I2akF6dTZsRXJSWkVrbHRreGcwZWRtanlUOHZTa1JsS2VUSTVBZmN1c0RDYzdlWDd4N2F6bFR1?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWEcxcG5nUE5leFc4Rk0ycy1Rd3ZyQkd0WEQzOVZ6X3NJd2c0aTRGa2dkcnhFMGZfTHJQVWRZaTlEa1NvLVg3RjdxY09PSGlUU2p4S2FzcDFyVUpwc0I2akF6dTZsRXJSWkVrbHRreGcwZWRtanlUOHZTa1JsS2VUSTVBZmN1c0RDYzdlWDd4N2F6bFR1?oc=5",
     "source": "Urban Acres"
   },
   {
@@ -240,5 +192,37 @@
     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNcFNQVV9sM2tfNzJVWFRnRVIxTHF1LXk5Z3dWZGxDUHp6TjhiS2lVWXMtTG9ndzZjTUxubkhZSVNQVkF5a1Jrd2tzZzBvbG93NkZHRnc3ZEZXMlZGU1ZMMVo0VW0tTldwRDlTSzRYcVRRQnlKSGN0bnpKdDB1cm5KSGM0dnZ4bnJfbmNEcTd3TXdYc2dta3E2S3BlSkhWcGEzQUp1U1R6dGNzYnZBZGV6amplSDJRVmFSTEtHd01TRlBJYmM0WjN0cW81dWh2NjNDdGZNNUROQjnSAd4BQVVfeXFMUGpnSnZ0MVdYUzgwUXhKOV9SMzRtdlJCakZYN0lzZmFvQjNYNnl2QlRlQkh5U29ja0V0Q2VIRlIzNkxHX2VUbzhPdWlFaVk1UTQyYl9palBpckpoTTc2MmJEbE1BNjFnemIyQzdFZ3RkWDcyNWNxV0VTajRtY2dDR1FGbjRqZzYzWmNXSUZVd3Zqek1URC1JRXpKTVZHOTBKZjVBV1JKc0pxZHVYMkd0WXBYOXotVkdwNTJYUkpIWDFlRWtxLXNfejd1dGpvRVlxSk1jUUczSDBtNmZOMXN3?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNcFNQVV9sM2tfNzJVWFRnRVIxTHF1LXk5Z3dWZGxDUHp6TjhiS2lVWXMtTG9ndzZjTUxubkhZSVNQVkF5a1Jrd2tzZzBvbG93NkZHRnc3ZEZXMlZGU1ZMMVo0VW0tTldwRDlTSzRYcVRRQnlKSGN0bnpKdDB1cm5KSGM0dnZ4bnJfbmNEcTd3TXdYc2dta3E2S3BlSkhWcGEzQUp1U1R6dGNzYnZBZGV6amplSDJRVmFSTEtHd01TRlBJYmM0WjN0cW81dWh2NjNDdGZNNUROQjnSAd4BQVVfeXFMUGpnSnZ0MVdYUzgwUXhKOV9SMzRtdlJCakZYN0lzZmFvQjNYNnl2QlRlQkh5U29ja0V0Q2VIRlIzNkxHX2VUbzhPdWlFaVk1UTQyYl9palBpckpoTTc2MmJEbE1BNjFnemIyQzdFZ3RkWDcyNWNxV0VTajRtY2dDR1FGbjRqZzYzWmNXSUZVd3Zqek1URC1JRXpKTVZHOTBKZjVBV1JKc0pxZHVYMkd0WXBYOXotVkdwNTJYUkpIWDFlRWtxLXNfejd1dGpvRVlxSk1jUUczSDBtNmZOMXN3?oc=5",
     "source": "The Week"
+  },
+  {
+    "id": "alert-d4ff5dc14ed2",
+    "type": "weather",
+    "severity": "medium",
+    "title": "IMD issues yellow alert in 12 districts as rain eases in Telangana - The Times of India",
+    "message": "IMD issues yellow alert in 12 districts as rain eases in Telangana - The Times of India",
+    "description": "IMD issues yellow alert in 12 districts as rain eases in Telangana  The Times of India",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-28T20:18:15Z",
+    "publishedAt": "2026-10-28T17:46:00Z",
+    "time": "28 Oct, 11:16 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVTZOUzdtcnZSbXlDQ24ycUtkV3hsWTduZGlSTlVwWUpFb2gyMHFxTmJEMlBsbUMtOGJYdWNMYVRobTRNZlZFVHVUajBic0EwWU8xVlZ4SXM2RWM3akxzSmVZcTZIU1djTHB4UUxZUGR6VUw2YkNzejMxVzQ2Wll5U244eFZRa1RiUXEwRkQ5YVU5Rm1Ga3pMcjZIV0x1cnF6OUtmTndmWS1sS1pRNkFVQjRVVU82ZFAzSDNEeDQwVE1OenNnODVuOUZvWjExZEY2UlBpeEZ1TDFPMFHSAeABQVVfeXFMUE5ySElHbVQySXRhSzFEVi1uNV9nMVNQUUNKbkczWGQ1ajBHSV9OcmFNeTlYQlVmcWdGeU1tNnlPY2drSmU4cjdGb01yNzdhVEp6TXUwcEN6UzEzaWJBajdvSlEwdW9VTDRzd0JsMnJndTY5QXBqX3cyNzA4RE9uSG9IXzY2bXVGU2Zta0xTVWtabHJxQ1BxQTROYkl3VlpTcUNaVFIyakl5TS1BaWJtX2dad0N1bVd0MTluY3Jlay1Vb0FWbU8wRE51VjN6RTNvR0hwaENzMmdqdXl4S2xtbVc?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVTZOUzdtcnZSbXlDQ24ycUtkV3hsWTduZGlSTlVwWUpFb2gyMHFxTmJEMlBsbUMtOGJYdWNMYVRobTRNZlZFVHVUajBic0EwWU8xVlZ4SXM2RWM3akxzSmVZcTZIU1djTHB4UUxZUGR6VUw2YkNzejMxVzQ2Wll5U244eFZRa1RiUXEwRkQ5YVU5Rm1Ga3pMcjZIV0x1cnF6OUtmTndmWS1sS1pRNkFVQjRVVU82ZFAzSDNEeDQwVE1OenNnODVuOUZvWjExZEY2UlBpeEZ1TDFPMFHSAeABQVVfeXFMUE5ySElHbVQySXRhSzFEVi1uNV9nMVNQUUNKbkczWGQ1ajBHSV9OcmFNeTlYQlVmcWdGeU1tNnlPY2drSmU4cjdGb01yNzdhVEp6TXUwcEN6UzEzaWJBajdvSlEwdW9VTDRzd0JsMnJndTY5QXBqX3cyNzA4RE9uSG9IXzY2bXVGU2Zta0xTVWtabHJxQ1BxQTROYkl3VlpTcUNaVFIyakl5TS1BaWJtX2dad0N1bVd0MTluY3Jlay1Vb0FWbU8wRE51VjN6RTNvR0hwaENzMmdqdXl4S2xtbVc?oc=5",
+    "source": "The Times of India"
+  },
+  {
+    "id": "alert-c8487e8092f0",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Telangana Rain Alert: IMD Warns 12 Districts of Lightning and Winds - Urban Acres",
+    "message": "Telangana Rain Alert: IMD Warns 12 Districts of Lightning and Winds - Urban Acres",
+    "description": "Telangana Rain Alert: IMD Warns 12 Districts of Lightning and Winds  Urban Acres",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-28T20:18:15Z",
+    "publishedAt": "2026-10-28T19:15:15Z",
+    "time": "29 Oct, 12:45 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNR093SEV4Tlgyal9MVk9VcThQN0pOdVp0MkdsTm5mV1ZHZTJSN0Z3N0tUeG51d1BCRUdHM1ZKREx6TnhUcGdSVnlLeDBwLXc0Zy1kOUlWZDcyZzhPQkxhalZCTlNJMnJDbG1OMkFlb0ZTRmpWNUdONDg1R3BUS2tQTEJNNV9icGJxNDN5WEQxMXhZRm8?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNR093SEV4Tlgyal9MVk9VcThQN0pOdVp0MkdsTm5mV1ZHZTJSN0Z3N0tUeG51d1BCRUdHM1ZKREx6TnhUcGdSVnlLeDBwLXc0Zy1kOUlWZDcyZzhPQkxhalZCTlNJMnJDbG1OMkFlb0ZTRmpWNUdONDg1R3BUS2tQTEJNNV9icGJxNDN5WEQxMXhZRm8?oc=5",
+    "source": "Urban Acres"
   }
 ]
