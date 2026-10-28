@@ -1,31 +1,10 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-27T12:35:16Z",
+  "generatedAt": "2026-10-28T06:05:28Z",
   "maxAgeDays": 14,
   "categories": {
-    "safety": [
-      {
-        "id": "tp-014248d164d8",
-        "category": "safety",
-        "title": "Telangana Government Portal Under Ransomware Siege",
-        "source": "The420.in",
-        "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5XeldPU1Z0Yk9HLWF6TWZSXzk3YldHQ1N3aEd2R0FTdV9lTG14MFlSTmoxZzVPQnF1Qk5tSkJCLVFHVHQ3bFpVeVQzVWdiRDlXcDc1R1dJc3otU3dzVTE5VXhUdHBFN2J3cXpwTGd3ckhNX2pXZmc?oc=5",
-        "publishedAt": "2026-10-25T03:24:41Z",
-        "time": "25 Oct, 8:54 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-4c434215b14f",
-        "category": "safety",
-        "title": "Hyderabad NBFC Loses Rs 3.3 Crore In Cyberattack",
-        "source": "INDToday",
-        "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5HTTI4a2Jxc2dkNlZkaTR2MksxNWtXVGdoUXNOZ2VwMy04SWZMRHdpNHVRODdtYzk3Z3RRa1E3UFZPV0wyb0dkdzJfOG1QblQ0dEhJM3I3QkQwWUlRWXhsLUR4TWlvRXpQajV6cGxkeVpnSkwwQ2xpWWFB?oc=5",
-        "publishedAt": "2026-10-23T07:07:47Z",
-        "time": "23 Oct, 12:37 PM IST",
-        "method": "typesafe"
-      }
-    ],
+    "safety": [],
     "govt": [
       {
         "id": "tp-02595b8761c5",
@@ -58,11 +37,11 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-a7e4da1512ac",
+        "id": "tp-a838544c031e",
         "category": "govt",
-        "title": "Democratising Data, Powering Innovation: Telangana’s Blueprint for AI-Enabled Governance",
-        "source": "Elets eGov",
-        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPTnVJNll4bFZTWHhnOWVSTFZYMU1laTNySjZ3QmwwenVna001N2RWOVZLWE9rRHl1ZDdZQjFuamhJZHhHcWRQdzJiWHRDS25TYjB2dE1DRmdPaVZYOTdRcTB0U18welh0c0tNYnd3U0c2aG5vaVhhT2x2Q2J1WUZ6MnJBLW5tTTlDOGZSUklRbG5ROS1JQ1V2NDI4Um1CcHNzLWl1TTdSQUdfbW9oWFdiQmpyZGtaSDdqTElTeXhvc3A?oc=5",
+        "title": "Lack of clarity on AI usage causes confusion in Telangana's Commercial Tax department",
+        "source": "The New Indian Express",
+        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOX1J6SEFCb1VEa2l1cUNyQ0tIeGdkd3VFUW5mU3U3YXBxelI1X3EwcXRZa0ZtVDdTUmxRRk1EbHdXNUgxQ204NldVLW1OWWpPV1F6S203bFBJUDEyVV9yRXhzN052ZjI5enM0YlZPa2x4OGF5dUVNWFM5clNMZXFfZlo3eGlGQjJSUm15Tkd6dmVpbVdMUngxNmhuUGhwcWhfdEoweGpUTDZXdEJBTTEtaGtBNXlpcVJRNnNTR2tfSndJYXZFQl9keFcyVXpsNGJVOTBxdGpzblZUQ05RYllv0gHsAUFVX3lxTE1zVVBvWFJ4eDd2YmlIQzhhU25rMUZaSG5iVHdHRDNPcUZUNlpFNzltUnRUSUYtX19TZzNEeEM5M2ZFRXpUR3dWTlZCWWhDa2l3NFo5ZHdvSEw3MGc1N0pHOE1mVXByQmRkMzM4Q19jZ0s3VG9Pcnh2TjB5RlBHX25lNFRySjBWQmFhaDEzamhPWGhvLXVxUUdadndoN1gyZ2xCLVRybzB0TlhkOVowazFqMWJTd1RPN3Z0ZGRyR0o4SFQ2RWFOVzMyZ3pudHNqRm95djZBaDQ3YjNwU3NNNXJSTGRWcWN6d3FWbUg5?oc=5",
         "publishedAt": "2026-10-19T07:00:00Z",
         "time": "19 Oct, 12:30 PM IST",
         "method": "typesafe"
@@ -76,16 +55,6 @@
         "publishedAt": "2026-10-19T05:47:41Z",
         "time": "19 Oct, 11:17 AM IST",
         "method": "typesafe"
-      },
-      {
-        "id": "tp-a838544c031e",
-        "category": "govt",
-        "title": "Lack of clarity on AI usage causes confusion in Telangana's Commercial Tax department",
-        "source": "The New Indian Express",
-        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOX1J6SEFCb1VEa2l1cUNyQ0tIeGdkd3VFUW5mU3U3YXBxelI1X3EwcXRZa0ZtVDdTUmxRRk1EbHdXNUgxQ204NldVLW1OWWpPV1F6S203bFBJUDEyVV9yRXhzN052ZjI5enM0YlZPa2x4OGF5dUVNWFM5clNMZXFfZlo3eGlGQjJSUm15Tkd6dmVpbVdMUngxNmhuUGhwcWhfdEoweGpUTDZXdEJBTTEtaGtBNXlpcVJRNnNTR2tfSndJYXZFQl9keFcyVXpsNGJVOTBxdGpzblZUQ05RYllv0gHsAUFVX3lxTE1zVVBvWFJ4eDd2YmlIQzhhU25rMUZaSG5iVHdHRDNPcUZUNlpFNzltUnRUSUYtX19TZzNEeEM5M2ZFRXpUR3dWTlZCWWhDa2l3NFo5ZHdvSEw3MGc1N0pHOE1mVXByQmRkMzM4Q19jZ0s3VG9Pcnh2TjB5RlBHX25lNFRySjBWQmFhaDEzamhPWGhvLXVxUUdadndoN1gyZ2xCLVRybzB0TlhkOVowazFqMWJTd1RPN3Z0ZGRyR0o4SFQ2RWFOVzMyZ3pudHNqRm95djZBaDQ3YjNwU3NNNXJSTGRWcWN6d3FWbUg5?oc=5",
-        "publishedAt": "2026-10-19T03:12:18Z",
-        "time": "19 Oct, 8:42 AM IST",
-        "method": "typesafe"
       }
     ],
     "jobs": [
@@ -97,16 +66,6 @@
         "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOd3czMDdYZF9ubm9uRC1oSWNXNTlqWTA3U1A4Z1ZTektWei1POUszSzhURVRIRGJCblpQQy1iOEpYNjJWb3Q0QTUzeUlEYVpqVW1UNXBIcjNWaENNRzRJSlN2X01ZcDBYWUEwa2xCMk5mWUFLSENhR2lKaHRDemVrOQ?oc=5",
         "publishedAt": "2026-10-26T00:34:45Z",
         "time": "26 Oct, 6:04 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-6db15748bf33",
-        "category": "jobs",
-        "title": "IIIT Hyderabad revamps MSIT programme with AI research, venture-building; admissions open",
-        "source": "Careers360",
-        "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTnMtV3BYRWNSVGlkMFNFXzZRTGpaTjU4OEZQUTJZZmVYektYTmxvcV9LZEhTTWV1OFFCMXR2M29jMk5nNG8wQWdQajBCSU1qMDFlZ1lRRl9QVmNITmF2UzhqNjBYOXlQN3dfS1hkM2FkQzdQR01QUkF2a045dnU1QzNwbzh0WG13SHFJNUd1REZRVmVmSUY5QWNBcHJzYWd4QWR3ZG9ZT01oSm1JdDdMaDgyRUcwZ9IBuwFBVV95cUxOc1A1eGt2VTVkVDg3QTZ1ZzlHZDkxeGpIUDBQQ0M2aHUwbC1RQXVJU2pFSkNmUUc2QnhUYWp1ZDZpdFRNYzc4STZJbFpwb1hiN2ppTXdrR1NRMEtMUGh3NG0zN3FaRlpyZ1BxUUtWamdhaFBGaENoTEsycHNieV9TQlNVc2lWZmRUMWxSeThfWXNfeU9odXN5cVpFVFcyT3p6aGloYy1PMDI5a0VySktjR3RpSUstT3Rsa25B?oc=5",
-        "publishedAt": "2026-10-24T09:35:18Z",
-        "time": "24 Oct, 3:05 PM IST",
         "method": "typesafe"
       }
     ]
