@@ -1,31 +1,32 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-28T06:05:28Z",
+  "generatedAt": "2026-10-28T13:23:35Z",
   "maxAgeDays": 14,
   "categories": {
-    "safety": [],
+    "safety": [
+      {
+        "id": "tp-014248d164d8",
+        "category": "safety",
+        "title": "Telangana Government Portal Under Ransomware Siege",
+        "source": "The420.in",
+        "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5XeldPU1Z0Yk9HLWF6TWZSXzk3YldHQ1N3aEd2R0FTdV9lTG14MFlSTmoxZzVPQnF1Qk5tSkJCLVFHVHQ3bFpVeVQzVWdiRDlXcDc1R1dJc3otU3dzVTE5VXhUdHBFN2J3cXpwTGd3ckhNX2pXZmc?oc=5",
+        "publishedAt": "2026-10-25T03:24:41Z",
+        "time": "25 Oct, 8:54 AM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-4c434215b14f",
+        "category": "safety",
+        "title": "Hyderabad NBFC Loses Rs 3.3 Crore In Cyberattack",
+        "source": "INDToday",
+        "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5HTTI4a2Jxc2dkNlZkaTR2MksxNWtXVGdoUXNOZ2VwMy04SWZMRHdpNHVRODdtYzk3Z3RRa1E3UFZPV0wyb0dkdzJfOG1QblQ0dEhJM3I3QkQwWUlRWXhsLUR4TWlvRXpQajV6cGxkeVpnSkwwQ2xpWWFB?oc=5",
+        "publishedAt": "2026-10-23T07:07:47Z",
+        "time": "23 Oct, 12:37 PM IST",
+        "method": "typesafe"
+      }
+    ],
     "govt": [
-      {
-        "id": "tp-02595b8761c5",
-        "category": "govt",
-        "title": "Telangana Unveils AI-Powered Digital Twin of IT Minister at DevFest 2026",
-        "source": "Analytics India Magazine",
-        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWmFibi1yZGN5eE4zbkY2RXB3dmFOYW9jQnRzd3RTU1pob0JGa0NheURMOHhCRTg1RWc3ZTdtQzVyUHN1MnE0QlRwWmNXelFmV1BMVEdoMUltR2EtRHpDalRlUTVGSkQwd1pSNGdQNzhFYUxBVU9oWVBsaHhFTzNhMmtJRUV4VG4tbkdIY254X2FxRy1RWlRnRnVUcEltb0hOQWMwYjRuaHdFTnk0elpR?oc=5",
-        "publishedAt": "2026-10-26T08:54:58Z",
-        "time": "26 Oct, 2:24 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-71a03e7ca307",
-        "category": "govt",
-        "title": "Telangana’s AI Minister Tests a New Model of Digital Governance",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNVlI0VHUwTVZKbFhTUlRoRTFIdWYzODNaUGZpTkpjdFp3RHpzcUY2SDZKSlFZeUtFYWpnN2kxcUFUcThWN2hSQnJUWW1aakV1cW1TMk9zWWx0dmNtZE9XZDRoc3JaWnM3dGlsYWRIeW1LSV9UUjJ0WWZJZk1mNE9ySzd5Z2QtYTNfMVFkS25n?oc=5",
-        "publishedAt": "2026-10-24T14:59:06Z",
-        "time": "24 Oct, 8:29 PM IST",
-        "method": "typesafe"
-      },
       {
         "id": "tp-3bc1d654ec6e",
         "category": "govt",
@@ -57,17 +58,6 @@
         "method": "typesafe"
       }
     ],
-    "jobs": [
-      {
-        "id": "tp-6b5a55eaa027",
-        "category": "jobs",
-        "title": "IIIT Hyderabad MSIT Programme: January 2027 Admissions",
-        "source": "INDToday",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOd3czMDdYZF9ubm9uRC1oSWNXNTlqWTA3U1A4Z1ZTektWei1POUszSzhURVRIRGJCblpQQy1iOEpYNjJWb3Q0QTUzeUlEYVpqVW1UNXBIcjNWaENNRzRJSlN2X01ZcDBYWUEwa2xCMk5mWUFLSENhR2lKaHRDemVrOQ?oc=5",
-        "publishedAt": "2026-10-26T00:34:45Z",
-        "time": "26 Oct, 6:04 AM IST",
-        "method": "typesafe"
-      }
-    ]
+    "jobs": []
   }
 }
