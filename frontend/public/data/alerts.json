@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-3055e8d9e8b6",
-    "type": "weather",
-    "severity": "high",
-    "title": "Telangana Rain Alert: Red Warning Issued for 3 Districts - Urban Acres",
-    "message": "Telangana Rain Alert: Red Warning Issued for 3 Districts - Urban Acres",
-    "description": "Telangana Rain Alert: Red Warning Issued for 3 Districts  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-25T22:28:29Z",
-    "publishedAt": "2026-10-25T22:25:29Z",
-    "time": "26 Oct, 3:55 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZURaTldUelhGVkNFbnN3SWRFNnpXMUU0VEZRcG1UT0wxSnNuajI2MVAtUDJFeXJxY0c0WDhHcnRva1dxN3dkYU04bnpFZ3hOWnNZdmFhangySDc0Rm5CZmlBeE5wa1hmcmh3ZGRVOWI3N2VveGtWWjM0TzlRUW5lQUJWeno?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNZURaTldUelhGVkNFbnN3SWRFNnpXMUU0VEZRcG1UT0wxSnNuajI2MVAtUDJFeXJxY0c0WDhHcnRva1dxN3dkYU04bnpFZ3hOWnNZdmFhangySDc0Rm5CZmlBeE5wa1hmcmh3ZGRVOWI3N2VveGtWWjM0TzlRUW5lQUJWeno?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-b6f08deb0918",
     "type": "road_closure",
     "severity": "low",
