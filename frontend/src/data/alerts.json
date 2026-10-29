@@ -254,5 +254,37 @@
     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPd2NmS2RTOXYwUkVseHF6emtINmp4VFNCbFBRci1jOXotVHNOWmpwdGlZWDlzWnhVb0hTUUF6djNtOWdjd1VOMXpBMndYZ0kwX1FGN2hSUjIyaWk1b1dmOVA5WkRSTGctN3M0eGRYcUJLWWl5U2pHZWRKcV9ocHd0MmtlNnFIV1o3TzV1emRUeWZmaHZySlpiZk9pSQ?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPd2NmS2RTOXYwUkVseHF6emtINmp4VFNCbFBRci1jOXotVHNOWmpwdGlZWDlzWnhVb0hTUUF6djNtOWdjd1VOMXpBMndYZ0kwX1FGN2hSUjIyaWk1b1dmOVA5WkRSTGctN3M0eGRYcUJLWWl5U2pHZWRKcV9ocHd0MmtlNnFIV1o3TzV1emRUeWZmaHZySlpiZk9pSQ?oc=5",
     "source": "Telangana Today"
+  },
+  {
+    "id": "alert-a168cc3062d2",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Hyderabad Water Deficit May Reach 50 MGD, HMWSSB Acts - urbanacres.in",
+    "message": "Hyderabad Water Deficit May Reach 50 MGD, HMWSSB Acts - urbanacres.in",
+    "description": "Hyderabad Water Deficit May Reach 50 MGD, HMWSSB Acts  urbanacres.in",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-29T23:11:43Z",
+    "publishedAt": "2026-10-29T22:27:15Z",
+    "time": "30 Oct, 3:57 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
+    "source": "urbanacres.in"
+  },
+  {
+    "id": "alert-c26dfaaea319",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections - Urban Acres",
+    "message": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections - Urban Acres",
+    "description": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections  Urban Acres",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-29T23:11:43Z",
+    "publishedAt": "2026-10-29T16:20:45Z",
+    "time": "29 Oct, 9:50 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOGx0dW5KYm80M2JmUXA2ME5tamZtWmp2NlJMdHppenNtdGotMExBX2JIMjBoODVqRjJkUDFBY285VlNaamg3aUNqQ2FDQmZzX1VhQTFDdEpwUnBXZjZHM1ZMYm80a0o5THdla21ULV81cmxmS2N6cXN0VlFwZUtjQUVJX3BtQXM?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOGx0dW5KYm80M2JmUXA2ME5tamZtWmp2NlJMdHppenNtdGotMExBX2JIMjBoODVqRjJkUDFBY285VlNaamg3aUNqQ2FDQmZzX1VhQTFDdEpwUnBXZjZHM1ZMYm80a0o5THdla21ULV81cmxmS2N6cXN0VlFwZUtjQUVJX3BtQXM?oc=5",
+    "source": "Urban Acres"
   }
 ]
