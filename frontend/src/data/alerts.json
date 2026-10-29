@@ -97,23 +97,6 @@
     "expiresAt": "2026-10-29T07:32:00Z"
   },
   {
-    "id": "alert-8d44629d8cc7",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Heavy Rainfall very likely to occur at isolated places in JSKB,MLG,MBB,WGL, HNK districts Thunderstorm accompanied with Lightning and Gusty Winds of 30-40 kmph very likely to occur at isolatedplacesADL,KMRB,MNCL,NRL,NZM,JGT,RJSC,KRM,PPL,JNG,SDP,YDDB,RR,HYD,MDK,KMR,MBN,NGK,WNP,NRPT,JGLG districts - TGiCCC",
-    "message": "Heavy Rainfall very likely to occur at isolated places in JSKB,MLG,MBB,WGL, HNK districts Thunderstorm accompanied with Lightning and Gusty Winds of 30-40 kmph very likely to occur at isolatedplacesADL,KMRB,MNCL,NRL,NZM,JGT,RJSC,KRM,PPL,JNG,SDP,YDDB,RR,HYD,MDK,KMR,MBN,NGK,WNP,NRPT,JGLG districts - TGiCCC",
-    "description": "Area: 29 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-28T08:08:36Z",
-    "publishedAt": "2026-10-28T07:35:04Z",
-    "time": "28 Oct, 1:05 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793172397012030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793172397012030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-29T03:02:00Z"
-  },
-  {
     "id": "alert-fbe7c4713771",
     "type": "water_supply",
     "severity": "high",
@@ -208,5 +191,21 @@
     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNR093SEV4Tlgyal9MVk9VcThQN0pOdVp0MkdsTm5mV1ZHZTJSN0Z3N0tUeG51d1BCRUdHM1ZKREx6TnhUcGdSVnlLeDBwLXc0Zy1kOUlWZDcyZzhPQkxhalZCTlNJMnJDbG1OMkFlb0ZTRmpWNUdONDg1R3BUS2tQTEJNNV9icGJxNDN5WEQxMXhZRm8?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNR093SEV4Tlgyal9MVk9VcThQN0pOdVp0MkdsTm5mV1ZHZTJSN0Z3N0tUeG51d1BCRUdHM1ZKREx6TnhUcGdSVnlLeDBwLXc0Zy1kOUlWZDcyZzhPQkxhalZCTlNJMnJDbG1OMkFlb0ZTRmpWNUdONDg1R3BUS2tQTEJNNV9icGJxNDN5WEQxMXhZRm8?oc=5",
     "source": "Urban Acres"
+  },
+  {
+    "id": "alert-35f28b864bbe",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Owaisi seeks urgent measures to tackle El Nino impact, water shortage in Telangana at all-party meeting - www.indiagazette.com",
+    "message": "Owaisi seeks urgent measures to tackle El Nino impact, water shortage in Telangana at all-party meeting - www.indiagazette.com",
+    "description": "Owaisi seeks urgent measures to tackle El Nino impact, water shortage in Telangana at all-party meeting  www.indiagazette.com",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-29T06:00:03Z",
+    "publishedAt": "2026-10-28T22:28:00Z",
+    "time": "29 Oct, 3:58 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQclEtWWx0RUxfcFpXdHdPampCNGNqRGp0M0FBQjByYTJ5ZXEtOEFnUkwtOFZTcVhOOGVxem1BRnJTMjYyemZfd1doVlR6UHFTcDNJQ1pJSzJMU1NCXzZEcTBhenVjTVNtRU5GMWVTejExRlhGUHVZVDRlX193aFRMSE9rOGc2enVzNTd0ZDBpclp2b0xGMWhwOG04NHN1VDBMeGUzRGZVRFgyQUhmeE5NWjdueXVid3A1WDZMWWRQMWR4V3o4TlkxQWZwT2FWc3hVMHFjM24zNlE0S0JqMTc4?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQclEtWWx0RUxfcFpXdHdPampCNGNqRGp0M0FBQjByYTJ5ZXEtOEFnUkwtOFZTcVhOOGVxem1BRnJTMjYyemZfd1doVlR6UHFTcDNJQ1pJSzJMU1NCXzZEcTBhenVjTVNtRU5GMWVTejExRlhGUHVZVDRlX193aFRMSE9rOGc2enVzNTd0ZDBpclp2b0xGMWhwOG04NHN1VDBMeGUzRGZVRFgyQUhmeE5NWjdueXVid3A1WDZMWWRQMWR4V3o4TlkxQWZwT2FWc3hVMHFjM24zNlE0S0JqMTc4?oc=5",
+    "source": "www.indiagazette.com"
   }
 ]
