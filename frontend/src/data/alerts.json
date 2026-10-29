@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-b6f08deb0918",
-    "type": "road_closure",
-    "severity": "low",
-    "title": "IIIT Junction road closure extended by three months from October 27 - Hyderabad Mail",
-    "message": "IIIT Junction road closure extended by three months from October 27 - Hyderabad Mail",
-    "description": "IIIT Junction road closure extended by three months from October 27  Hyderabad Mail",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-26T11:26:14Z",
-    "publishedAt": "2026-10-26T09:34:30Z",
-    "time": "26 Oct, 3:04 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPb1FnLVRIcEljOTJkZnE5d2V4Vmg5RkM3UW1OQTZYMlFTSVZna0ZKTHYzRGk0QjNGbnBPcnFOdG5JTTBVVWlwRGJoOVQ4MFJLQ2kxcXptckVLMnF1OExqT1JXRlY4SzZ5UldyMXVwYlpPbVdveTJCT1JYZ2Z2TU5wR0RuTDJGU2YyZjM3cUhlRmxXMmc?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPb1FnLVRIcEljOTJkZnE5d2V4Vmg5RkM3UW1OQTZYMlFTSVZna0ZKTHYzRGk0QjNGbnBPcnFOdG5JTTBVVWlwRGJoOVQ4MFJLQ2kxcXptckVLMnF1OExqT1JXRlY4SzZ5UldyMXVwYlpPbVdveTJCT1JYZ2Z2TU5wR0RuTDJGU2YyZjM3cUhlRmxXMmc?oc=5",
-    "source": "Hyderabad Mail"
-  },
-  {
     "id": "alert-054fa9ff0839",
     "type": "weather",
     "severity": "high",
@@ -78,23 +62,6 @@
     "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOZ0pLeE1lRjA1TGlKUDQ3NEVxLVFFbmVWR3BfUjBYc3FrNnBrdjh2Wng1RzRYZjY1NjJ3REpMdHhpMVFuWXFRcnVzb2Zyd2hzZ0RscjBFaW5mV0RhTGthZDZ6Yl9ISU5mX3BPM2kxZmliYWM5Y2kzaUpha00yaHZCZURENGxScnpvM3NYYnE3MDAyVEZZeWpPaDVESE10clh1RGpvblJZWVZfVEI2RlNkaG1iVzN2UXZfZnFUaFdXb05LMXN6Nlp4bmRxMEtyUERaQVR1T0llamZHNXZJeGVkNNIB5gFBVV95cUxQOUliNWZLd0t6Ynp4ODZjMTEzNDRFaF9sbnpSVUpJV1AxRC1YSkpqZ3dyQzdXbjBuUXg4NUowaHlmNnFTdnpYUDRaY3ZYT1NuUndIeG01bDIyTlZ1ODRCQUo3MkhDYWNFX1VXcVZKZFVwX0tNRXJOZ1kyMzN6MU1FRDQtSVM2MWtWNEM4U3liMWNOSWVtMWYxZFpRclRrYmFpOTRRRlVNRGNSdE1JUzhicUlHbjd2enkzcGVkYkoxNEptNTNySF94aExOeTVzMGdVNHBSWDFSZDBHNDVHcXVsa2hZTlBzZw?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOZ0pLeE1lRjA1TGlKUDQ3NEVxLVFFbmVWR3BfUjBYc3FrNnBrdjh2Wng1RzRYZjY1NjJ3REpMdHhpMVFuWXFRcnVzb2Zyd2hzZ0RscjBFaW5mV0RhTGthZDZ6Yl9ISU5mX3BPM2kxZmliYWM5Y2kzaUpha00yaHZCZURENGxScnpvM3NYYnE3MDAyVEZZeWpPaDVESE10clh1RGpvblJZWVZfVEI2RlNkaG1iVzN2UXZfZnFUaFdXb05LMXN6Nlp4bmRxMEtyUERaQVR1T0llamZHNXZJeGVkNNIB5gFBVV95cUxQOUliNWZLd0t6Ynp4ODZjMTEzNDRFaF9sbnpSVUpJV1AxRC1YSkpqZ3dyQzdXbjBuUXg4NUowaHlmNnFTdnpYUDRaY3ZYT1NuUndIeG01bDIyTlZ1ODRCQUo3MkhDYWNFX1VXcVZKZFVwX0tNRXJOZ1kyMzN6MU1FRDQtSVM2MWtWNEM4U3liMWNOSWVtMWYxZFpRclRrYmFpOTRRRlVNRGNSdE1JUzhicUlHbjd2enkzcGVkYkoxNEptNTNySF94aExOeTVzMGdVNHBSWDFSZDBHNDVHcXVsa2hZTlBzZw?oc=5",
     "source": "The Times of India"
-  },
-  {
-    "id": "alert-a55f2e023033",
-    "type": "weather",
-    "severity": "high",
-    "title": "Heavy to Very Heavy Rainfall very likely to occur at isolated places in BDDK, KHM, NLG, SRPT districts of Telangana.Thunderstorm accompanied with Lightning and Gusty Winds of 50-60 kmph gusting to 70 kmph very likely to occur at isolated places in JSKB,MLG, BDDK,KHM,NLG,SRPT,MBB,WGL,HNK districts - TGiCCC",
-    "message": "Heavy to Very Heavy Rainfall very likely to occur at isolated places in BDDK, KHM, NLG, SRPT districts of Telangana.Thunderstorm accompanied with Lightning and Gusty Winds of 50-60 kmph gusting to 70 kmph very likely to occur at isolated places in JSKB,MLG, BDDK,KHM,NLG,SRPT,MBB,WGL,HNK districts - TGiCCC",
-    "description": "Area: 9 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-28T08:08:36Z",
-    "publishedAt": "2026-10-28T07:41:16Z",
-    "time": "28 Oct, 1:11 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793173085672030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793173085672030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-29T07:32:00Z"
   },
   {
     "id": "alert-fbe7c4713771",
@@ -207,5 +174,37 @@
     "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQclEtWWx0RUxfcFpXdHdPampCNGNqRGp0M0FBQjByYTJ5ZXEtOEFnUkwtOFZTcVhOOGVxem1BRnJTMjYyemZfd1doVlR6UHFTcDNJQ1pJSzJMU1NCXzZEcTBhenVjTVNtRU5GMWVTejExRlhGUHVZVDRlX193aFRMSE9rOGc2enVzNTd0ZDBpclp2b0xGMWhwOG04NHN1VDBMeGUzRGZVRFgyQUhmeE5NWjdueXVid3A1WDZMWWRQMWR4V3o4TlkxQWZwT2FWc3hVMHFjM24zNlE0S0JqMTc4?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQclEtWWx0RUxfcFpXdHdPampCNGNqRGp0M0FBQjByYTJ5ZXEtOEFnUkwtOFZTcVhOOGVxem1BRnJTMjYyemZfd1doVlR6UHFTcDNJQ1pJSzJMU1NCXzZEcTBhenVjTVNtRU5GMWVTejExRlhGUHVZVDRlX193aFRMSE9rOGc2enVzNTd0ZDBpclp2b0xGMWhwOG04NHN1VDBMeGUzRGZVRFgyQUhmeE5NWjdueXVid3A1WDZMWWRQMWR4V3o4TlkxQWZwT2FWc3hVMHFjM24zNlE0S0JqMTc4?oc=5",
     "source": "www.indiagazette.com"
+  },
+  {
+    "id": "alert-973dae4a0337",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad drought alert: 30 mandals affected, 5 in Rangareddy severely hit - Hyderabad Mail",
+    "message": "Hyderabad drought alert: 30 mandals affected, 5 in Rangareddy severely hit - Hyderabad Mail",
+    "description": "Hyderabad drought alert: 30 mandals affected, 5 in Rangareddy severely hit  Hyderabad Mail",
+    "district": "Rangareddy",
+    "region": "Rangareddy",
+    "createdAt": "2026-10-29T12:50:57Z",
+    "publishedAt": "2026-10-29T02:25:47Z",
+    "time": "29 Oct, 7:55 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdndHdUhCeW1OTFUzM1hxc0FuZzdaZVROYm44VVVZZ1hFakhjME5aMjJZSFd5d0RFNUN2QVc2Z0xMajZLVXJqUGZuX0ExSEx2TC0tSDAza25pTHh1NFE5OWFBRTR1cTdxTGc3RUxWdThQTXBzZFUxUlJtblVFWl9Jcm1RWW9QNjhCWHlDdFVhMA?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdndHdUhCeW1OTFUzM1hxc0FuZzdaZVROYm44VVVZZ1hFakhjME5aMjJZSFd5d0RFNUN2QVc2Z0xMajZLVXJqUGZuX0ExSEx2TC0tSDAza25pTHh1NFE5OWFBRTR1cTdxTGc3RUxWdThQTXBzZFUxUlJtblVFWl9Jcm1RWW9QNjhCWHlDdFVhMA?oc=5",
+    "source": "Hyderabad Mail"
+  },
+  {
+    "id": "alert-35f28b864bbe",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Owaisi seeks urgent measures to tackle El Nino impact, water shortage in Telangana at all-party meeting - https://www.indiagazette.com/",
+    "message": "Owaisi seeks urgent measures to tackle El Nino impact, water shortage in Telangana at all-party meeting - https://www.indiagazette.com/",
+    "description": "Owaisi seeks urgent measures to tackle El Nino impact, water shortage in Telangana at all-party meeting  https://www.indiagazette.com/",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-29T12:50:57Z",
+    "publishedAt": "2026-10-28T22:28:00Z",
+    "time": "29 Oct, 3:58 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQclEtWWx0RUxfcFpXdHdPampCNGNqRGp0M0FBQjByYTJ5ZXEtOEFnUkwtOFZTcVhOOGVxem1BRnJTMjYyemZfd1doVlR6UHFTcDNJQ1pJSzJMU1NCXzZEcTBhenVjTVNtRU5GMWVTejExRlhGUHVZVDRlX193aFRMSE9rOGc2enVzNTd0ZDBpclp2b0xGMWhwOG04NHN1VDBMeGUzRGZVRFgyQUhmeE5NWjdueXVid3A1WDZMWWRQMWR4V3o4TlkxQWZwT2FWc3hVMHFjM24zNlE0S0JqMTc4?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQclEtWWx0RUxfcFpXdHdPampCNGNqRGp0M0FBQjByYTJ5ZXEtOEFnUkwtOFZTcVhOOGVxem1BRnJTMjYyemZfd1doVlR6UHFTcDNJQ1pJSzJMU1NCXzZEcTBhenVjTVNtRU5GMWVTejExRlhGUHVZVDRlX193aFRMSE9rOGc2enVzNTd0ZDBpclp2b0xGMWhwOG04NHN1VDBMeGUzRGZVRFgyQUhmeE5NWjdueXVid3A1WDZMWWRQMWR4V3o4TlkxQWZwT2FWc3hVMHFjM24zNlE0S0JqMTc4?oc=5",
+    "source": "https://www.indiagazette.com/"
   }
 ]
