@@ -1,40 +1,50 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-29T13:32:29Z",
+  "generatedAt": "2026-10-30T06:17:28Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
       {
-        "id": "tp-363c742cc1f2",
+        "id": "tp-2735c67e601c",
         "category": "safety",
-        "title": "TGCSB warns against fake ₹8,000 Diwali benefit messages circulating on WhatsApp",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQU0xtNEhIWURmVi1aeWdPRVJCWWMyV25RcHFoczhnOUZoRjZTbVZac0VQcHZWb2ZweGktMzd6NXJRQUo1bVhyeTVMSHFjNndYT3dQWkRzNlNuZFQtbWI2UWtCbnNoM1BIUUJCNGNVTWZOeklQbVFYMTBzUG1XUXZ4YXBXNVFYQQ?oc=5",
-        "publishedAt": "2026-10-29T12:16:45Z",
-        "time": "29 Oct, 5:46 PM IST",
+        "title": "Fake Diwali WhatsApp Message Promises Rs 8,000, TGCSB Warns",
+        "source": "INDToday",
+        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQdDFTd3ZmbDRhU0hoMGxZMzlZd1RXS095TzdRRzVMWUdYY2xNQVVVUlkxTGRyVXdlMndwZWRUMm5LcW5OV2hQR0l0SzZzcU9iT3JqektZYlNZT0lBdDQ2ZWhPVjBaNExxMW92NlFYWXZoSmVCMGwyOG40NlBEVFEzZ1pDOWY5dw?oc=5",
+        "publishedAt": "2026-10-30T05:11:52Z",
+        "time": "30 Oct, 10:41 AM IST",
         "method": "typesafe"
       }
     ],
     "govt": [
       {
-        "id": "tp-02595b8761c5",
+        "id": "tp-85c078560c0b",
         "category": "govt",
-        "title": "Telangana Unveils AI-Powered Digital Twin of IT Minister at DevFest 2026",
-        "source": "Analytics India Magazine",
-        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWmFibi1yZGN5eE4zbkY2RXB3dmFOYW9jQnRzd3RTU1pob0JGa0NheURMOHhCRTg1RWc3ZTdtQzVyUHN1MnE0QlRwWmNXelFmV1BMVEdoMUltR2EtRHpDalRlUTVGSkQwd1pSNGdQNzhFYUxBVU9oWVBsaHhFTzNhMmtJRUV4VG4tbkdIY254X2FxRy1RWlRnRnVUcEltb0hOQWMwYjRuaHdFTnk0elpR?oc=5",
-        "publishedAt": "2026-10-26T08:54:58Z",
-        "time": "26 Oct, 2:24 PM IST",
+        "title": "Telangana Unveils AI Avatar of IT Minister D Sridhar Babu",
+        "source": "News18",
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUDROclhXbWVRZEJZVmlpQU94ekIzUWw4REpNbGx6XzJ3eXZqVU5QUEc0NGtMd256Mnh2VUU3VVJZSVQ5UlZIaThKZVpVMUtzbk8wUGlRaE8xXzNKNFF1dWhuSXZlZE0yWkN5dkszbGFEZGNkNTY1VFI0Zk1TMk1SWVoybmNKelFEMDJacXc3NjlnUXhnRUNaTzFYcEE1OFNXNV83ZlAwVdIBrAFBVV95cUxOR3Y5X2dGZHBRR0NhOWlubG5EZVhoa3lYRjZuS1pXbnRRMFA2cENCN2hRM0c4NU5hczNmU25jbndlZGR5QV9QNnNoc0NXY0Vpc2lkblUtaXZKRnh2VHJyWEZzVGU4NkhBVHhfSFhNQ0FVQVQ5Y1lCWjhkQlBsckJTYm90bTFsTlhEcFhIX0stcFlibnBhSFNNS19Ub1V6UGFTR0FaVWtZN2RTd2dH?oc=5",
+        "publishedAt": "2026-10-27T12:30:00Z",
+        "time": "27 Oct, 6:00 PM IST",
         "method": "typesafe"
       },
       {
-        "id": "tp-3bc1d654ec6e",
+        "id": "tp-71a03e7ca307",
         "category": "govt",
-        "title": "Revanth Reddy lays NIUM foundation, reviews Invest Telangana plans",
-        "source": "The News Mill",
-        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQREEteDRmZFJUcGg4S0Jrbmt0dW5OanJkQUVQTFRmRS1mNGxYUWFXbElaREVPeHBkUHltTEJRT0VZdmRnT2JUUTdLZWVrN04yZTA2bmtsaWVKd0VTOXpKZkFEZVVsMlk0dGs1REFVTWVaX2RHTDF1TnRUZjJ2cWhkb09pUHR3S21LWUp3S1FZbDRCWXd6ejdXZUZfbXdRbDA?oc=5",
-        "publishedAt": "2026-10-20T07:00:00Z",
-        "time": "20 Oct, 12:30 PM IST",
+        "title": "Telangana’s AI Minister Tests a New Model of Digital Governance",
+        "source": "Urban Acres",
+        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNVlI0VHUwTVZKbFhTUlRoRTFIdWYzODNaUGZpTkpjdFp3RHpzcUY2SDZKSlFZeUtFYWpnN2kxcUFUcThWN2hSQnJUWW1aakV1cW1TMk9zWWx0dmNtZE9XZDRoc3JaWnM3dGlsYWRIeW1LSV9UUjJ0WWZJZk1mNE9ySzd5Z2QtYTNfMVFkS25n?oc=5",
+        "publishedAt": "2026-10-24T14:59:06Z",
+        "time": "24 Oct, 8:29 PM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-8e0984affb89",
+        "category": "govt",
+        "title": "Telangana Announces ₹70,000 Crore AI Data Centre in Future City",
+        "source": "Elets eGov",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUnA0NS1iZHNhRDBlbTE1bnJiM0FveE9YUXZBUTFJci1qZ2NwaHhMTm8zWC11QzhwVWVNVW51UlFWYTZBWENXMVJzdmZPYmI4NFlOSEw4cnd6c1ZUVU9DaXotejlIVmJLRU9nQkllME43WUFrS3hqZGVjSjRCekJ5QmpWa0xXNThXVEdDeTA2bTE2YUFUWjJtMGxLejdjTXVjQ05VNjFJZ1VubnpL?oc=5",
+        "publishedAt": "2026-10-21T07:00:00Z",
+        "time": "21 Oct, 12:30 PM IST",
         "method": "typesafe"
       },
       {
@@ -48,13 +58,13 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-d4da61dbc655",
+        "id": "tp-5f5856168b42",
         "category": "govt",
-        "title": "Future City Hyderabad Set for Police, Skills and Urban Management Push",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcmJFN3NHT1RvUDJKR19ZVFdDRUdMcEQ4cHQwTUFkeDFBbkxmQWRMUmRBTV9xcEs3b0Z3S01PRDVkbDNVSmN6OG9oY2tpWkJpMjlsdXAtTVpaLVRYY2FGSXdRM1RJYVBxMElER2lpcndOcDV2VWFVSUdJV2dFaVpmTlA2aVZhbmRxODlnRFNmMnkyUjVCczJR?oc=5",
-        "publishedAt": "2026-10-19T05:47:41Z",
-        "time": "19 Oct, 11:17 AM IST",
+        "title": "Telangana govt declares 2020 as year of Artificial Intelligence",
+        "source": "ET Government",
+        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPTUZhR1NWY181ajdFX3NMSzNrSWhUS1luOEloQUh4Rmh2VGxBZUpTNUV6ZGwzblhpV29KdXI1Um52TTIzdTE3T2Fib1QyWGNGaXpvNDdoa3JXbHNTVmFiUG81RnA2X0JfQkJiTTlZMENWUFl0TTJjNFRKbV9PRUVlZWl2eVRKWU1tM3JOV0txSms1R05OdlFyemxjZmZCNU9FcWsxVEJDUGo1bF8zbzBrOHFydmZTWTlOdFhEbXA3cTZUcGwzREtFcldVT1YwQk4zUVhGTXQ5X290SGE1RkVV0gHaAUFVX3lxTE5SYVBXc1JYcGxSV1JZVkFjSDF1ZDEwYUZhcnNPU2JjRzlxWUZDYVlNMS1iNlhtaVFHcThzQXY5bzFENWNXaG9UREVwZVRYWlhRS1pRVklWbEI2emNBWUtxMldVeHczZnNqcTN0MHFiSXlmdHpWeW5QT1lqTFZTLWJBX01DMkx4ejBCZnpvN2J2X1VOQVVxU0FDVUxsSUZKelQwU2x0N1Vhd1R2cExMM244U1lSSXV1UnNSY0ludlZuZmNCLVRraktFVHNBeXp5RV8wQUhoV1FGWi1R?oc=5",
+        "publishedAt": "2026-10-18T11:40:01Z",
+        "time": "18 Oct, 5:10 PM IST",
         "method": "typesafe"
       }
     ],
