@@ -1,37 +1,5 @@
 [
   {
-    "id": "alert-907384d4b432",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "As reservoirs dry up, Hyderabad Water Board bets on enforcement, awareness and reuse - The New Indian Express",
-    "message": "As reservoirs dry up, Hyderabad Water Board bets on enforcement, awareness and reuse - The New Indian Express",
-    "description": "As reservoirs dry up, Hyderabad Water Board bets on enforcement, awareness and reuse  The New Indian Express",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-27T06:43:13Z",
-    "publishedAt": "2026-10-27T03:32:08Z",
-    "time": "27 Oct, 9:02 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNQ3dIM0dIanZLVzdaM2tzVHpWNXg3VGdtNTlmeUQyUDV1YlIyX3B5ZXFFTnlXWTVmeGRZMTZsMUpLbTBtTmhXd1d0cDh4RWRkTmhoLThKMG1kTWE2WllkNmYweUY0MlRGWkhreVdoaTJDbWZmd0otSGstMjJtbVdiX1lXclVrbnpjVkFkRVlZQXEwV3JiSTV5blFFdXlsVVkxMmpjcER5d2VLbVRfNThGUnRNRWVVaGc2eXBPQl9tR1dPeEExakJSSTBwdDhLT2gzTjFXTlJNbDI1aF9L0gHqAUFVX3lxTE1KS082VGpWbGhSdmZvZVR2V19UV1RKNlhJNWlUN2hfdWZJaEc4V0kzbXRlb2hvaE5OcFJLWkxVTU1JSU51dmlaRGE2MDZ6eERGcGw4dUx1OWFnTmRjUmxuUktEWndjVEk5VG5hQ1pPR3ptdlliNThMdHliZ0Y2RU0wa0FtRFV6cE1ybXBlSjBHM0R0T080bVY4SjRBQ2VYQ1ZqOXIzOEJVV0dKNW44NVBxdjNOMEVfQjJQeGJ5dFk0QmxzUkF3TzJJbEwwZ3RsY0w3Rll3YnUwR2FLbS1zZ1NfM2luRlUtSzg5Zw?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNQ3dIM0dIanZLVzdaM2tzVHpWNXg3VGdtNTlmeUQyUDV1YlIyX3B5ZXFFTnlXWTVmeGRZMTZsMUpLbTBtTmhXd1d0cDh4RWRkTmhoLThKMG1kTWE2WllkNmYweUY0MlRGWkhreVdoaTJDbWZmd0otSGstMjJtbVdiX1lXclVrbnpjVkFkRVlZQXEwV3JiSTV5blFFdXlsVVkxMmpjcER5d2VLbVRfNThGUnRNRWVVaGc2eXBPQl9tR1dPeEExakJSSTBwdDhLT2gzTjFXTlJNbDI1aF9L0gHqAUFVX3lxTE1KS082VGpWbGhSdmZvZVR2V19UV1RKNlhJNWlUN2hfdWZJaEc4V0kzbXRlb2hvaE5OcFJLWkxVTU1JSU51dmlaRGE2MDZ6eERGcGw4dUx1OWFnTmRjUmxuUktEWndjVEk5VG5hQ1pPR3ptdlliNThMdHliZ0Y2RU0wa0FtRFV6cE1ybXBlSjBHM0R0T080bVY4SjRBQ2VYQ1ZqOXIzOEJVV0dKNW44NVBxdjNOMEVfQjJQeGJ5dFk0QmxzUkF3TzJJbEwwZ3RsY0w3Rll3YnUwR2FLbS1zZ1NfM2luRlUtSzg5Zw?oc=5",
-    "source": "The New Indian Express"
-  },
-  {
-    "id": "alert-2de3cbf323f1",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "Hyderabad: Amid water crisis, HMWSSB to launch app to encourage citizens to report wastage - NewsMeter",
-    "message": "Hyderabad: Amid water crisis, HMWSSB to launch app to encourage citizens to report wastage - NewsMeter",
-    "description": "Hyderabad: Amid water crisis, HMWSSB to launch app to encourage citizens to report wastage  NewsMeter",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-27T06:43:13Z",
-    "publishedAt": "2026-10-27T05:21:26Z",
-    "time": "27 Oct, 10:51 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbmNISWhvMmNJM0xKX2E1cXZreTVPUFFRck9NNUpabGxZbEhJUmNscFNKTTlHT3RSWXU3NE9FNjBRMm5SaVNUbHJJZFdKazhhajVIcTVaRlVZRklrY2NkbERJaUtnNHpkR0psMjNaRk9CdlhheVd5Q1A2ajd2R1VFMV9MU0V0dlpWc2E3ejI3YXFaemp2Sm5FcC1RNHp4Unk3SEV4bVZ1ckZxa3ZxMWYtUk9uMU13ZWpkSWVNa09HOGVyX0ZDcXBJ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbmNISWhvMmNJM0xKX2E1cXZreTVPUFFRck9NNUpabGxZbEhJUmNscFNKTTlHT3RSWXU3NE9FNjBRMm5SaVNUbHJJZFdKazhhajVIcTVaRlVZRklrY2NkbERJaUtnNHpkR0psMjNaRk9CdlhheVd5Q1A2ajd2R1VFMV9MU0V0dlpWc2E3ejI3YXFaemp2Sm5FcC1RNHp4Unk3SEV4bVZ1ckZxa3ZxMWYtUk9uMU13ZWpkSWVNa09HOGVyX0ZDcXBJ?oc=5",
-    "source": "NewsMeter"
-  },
-  {
     "id": "alert-346645a4d3b2",
     "type": "water_supply",
     "severity": "high",
@@ -285,6 +253,39 @@
     "time": "30 Oct, 12:50 AM IST",
     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSnlkdlRMb2hpSTdQT29ObGQ5OTBsVWUwZk1oQ3hiUTQ0a2ZYMlFSQ3Zub1FQMS1sS1VmaGcyUTdZbks1MGdfekFfb0FSc0VhNHhVb2RJUzNwYjVaYUIwMkZQVWc0VXJORVV1Yl9sS1hnT2VYZ2cwYXJBVU5ZUkRyVGs2UVREWVREM3Q0MkdwSmc?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSnlkdlRMb2hpSTdQT29ObGQ5OTBsVWUwZk1oQ3hiUTQ0a2ZYMlFSQ3Zub1FQMS1sS1VmaGcyUTdZbks1MGdfekFfb0FSc0VhNHhVb2RJUzNwYjVaYUIwMkZQVWc0VXJORVV1Yl9sS1hnT2VYZ2cwYXJBVU5ZUkRyVGs2UVREWVREM3Q0MkdwSmc?oc=5",
+    "source": "Urban Acres"
+  },
+  {
+    "id": "alert-a0143e764943",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Thundering with Lightning, Gusty winds(30-40 Kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Hanumakonda, Jangoan, Khammam, Mahabubabad, Mulugu, Nalgonda, Siddipet, Suryapet, Warangal, Yadadri Bhuvanagiri in next 24 hours - By Telangana Integrated Command and Control Centre.",
+    "message": "Thundering with Lightning, Gusty winds(30-40 Kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Hanumakonda, Jangoan, Khammam, Mahabubabad, Mulugu, Nalgonda, Siddipet, Suryapet, Warangal, Yadadri Bhuvanagiri in next 24 hours - By Telangana Integrated Command and Control Centre.",
+    "description": "Area: 11 districts of Telangana. Please follow SDMA guidelines.",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-30T09:02:47Z",
+    "publishedAt": "2026-10-30T07:52:30Z",
+    "time": "30 Oct, 1:22 PM IST",
+    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793344739976030",
+    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793344739976030",
+    "source": "NDMA SACHET (Telangana-SDMA)",
+    "expiresAt": "2026-10-31T03:00:00Z"
+  },
+  {
+    "id": "alert-a168cc3062d2",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Hyderabad Water Deficit May Reach 50 MGD, HMWSSB Acts - Urban Acres",
+    "message": "Hyderabad Water Deficit May Reach 50 MGD, HMWSSB Acts - Urban Acres",
+    "description": "Hyderabad Water Deficit May Reach 50 MGD, HMWSSB Acts  Urban Acres",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-30T09:02:47Z",
+    "publishedAt": "2026-10-29T22:27:15Z",
+    "time": "30 Oct, 3:57 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
     "source": "Urban Acres"
   }
 ]
