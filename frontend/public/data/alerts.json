@@ -287,5 +287,21 @@
     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
     "source": "Urban Acres"
+  },
+  {
+    "id": "alert-051373470591",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Telangana to receive rain till November 3; IMD issues yellow warning for all districts - NewsMeter",
+    "message": "Telangana to receive rain till November 3; IMD issues yellow warning for all districts - NewsMeter",
+    "description": "Telangana to receive rain till November 3; IMD issues yellow warning for all districts  NewsMeter",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-10-30T15:57:46Z",
+    "publishedAt": "2026-10-30T10:40:00Z",
+    "time": "30 Oct, 4:10 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQNkotV0NONHNhVjhMNldweXhsMk9qS2FJUm5OUnNONEVGaWV6anJWNEZmQ1Ezd0dHWVp4b2dNOE96bmk0b3BCRlZGODV3bVQ1OGIyTTZqRWNXdWM4MERibGJrQmtqeWIwalBqX2VDWGhVZEFMRUVocllJRlVTM3ZYWDVrUnFKZDNKV25FZjVRcEVGWXNLZEJJTXRzS0VibEx4WGhlUGRqRzFpYjJLRkRVekt0NVFNUmprU1RWZHlnVFhjVk0?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQNkotV0NONHNhVjhMNldweXhsMk9qS2FJUm5OUnNONEVGaWV6anJWNEZmQ1Ezd0dHWVp4b2dNOE96bmk0b3BCRlZGODV3bVQ1OGIyTTZqRWNXdWM4MERibGJrQmtqeWIwalBqX2VDWGhVZEFMRUVocllJRlVTM3ZYWDVrUnFKZDNKV25FZjVRcEVGWXNLZEJJTXRzS0VibEx4WGhlUGRqRzFpYjJLRkRVekt0NVFNUmprU1RWZHlnVFhjVk0?oc=5",
+    "source": "NewsMeter"
   }
 ]
