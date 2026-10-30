@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-30T06:17:28Z",
+  "generatedAt": "2026-10-30T13:23:16Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -11,8 +11,8 @@
         "title": "Fake Diwali WhatsApp Message Promises Rs 8,000, TGCSB Warns",
         "source": "INDToday",
         "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQdDFTd3ZmbDRhU0hoMGxZMzlZd1RXS095TzdRRzVMWUdYY2xNQVVVUlkxTGRyVXdlMndwZWRUMm5LcW5OV2hQR0l0SzZzcU9iT3JqektZYlNZT0lBdDQ2ZWhPVjBaNExxMW92NlFYWXZoSmVCMGwyOG40NlBEVFEzZ1pDOWY5dw?oc=5",
-        "publishedAt": "2026-10-30T05:11:52Z",
-        "time": "30 Oct, 10:41 AM IST",
+        "publishedAt": "2026-10-30T10:04:39Z",
+        "time": "30 Oct, 3:34 PM IST",
         "method": "typesafe"
       }
     ],
@@ -68,17 +68,6 @@
         "method": "typesafe"
       }
     ],
-    "jobs": [
-      {
-        "id": "tp-6b5a55eaa027",
-        "category": "jobs",
-        "title": "IIIT Hyderabad MSIT Programme: January 2027 Admissions",
-        "source": "INDToday",
-        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOd3czMDdYZF9ubm9uRC1oSWNXNTlqWTA3U1A4Z1ZTektWei1POUszSzhURVRIRGJCblpQQy1iOEpYNjJWb3Q0QTUzeUlEYVpqVW1UNXBIcjNWaENNRzRJSlN2X01ZcDBYWUEwa2xCMk5mWUFLSENhR2lKaHRDemVrOQ?oc=5",
-        "publishedAt": "2026-10-26T00:34:45Z",
-        "time": "26 Oct, 6:04 AM IST",
-        "method": "typesafe"
-      }
-    ]
+    "jobs": []
   }
 }
