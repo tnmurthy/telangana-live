@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-054fa9ff0839",
-    "type": "weather",
-    "severity": "high",
-    "title": "Weather today: Andhra Pradesh, Telangana receive heavy rainfall alert as Cyclone Arnab intensifies; check - The Economic Times",
-    "message": "Weather today: Andhra Pradesh, Telangana receive heavy rainfall alert as Cyclone Arnab intensifies; check - The Economic Times",
-    "description": "Weather today: Andhra Pradesh, Telangana receive heavy rainfall alert as Cyclone Arnab intensifies; check  The Economic Times",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-27T06:43:13Z",
-    "publishedAt": "2026-10-27T01:58:16Z",
-    "time": "27 Oct, 7:28 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQRDNNQXBOQUN0ZVdfOHptZmNQdkhuUkwtR3ZQVFJuaHdvdWRhOThtWlFOOUVta0E3VGVkV19GUzBvbmI3eGdUUmkweFR3YUtuR0xRTUJHaEFTdEdENHBHZExxd2NfbUxVRnpqUC1oVTJESHhSMXpUMDFXWk5RT05vME12SGdtcjVjWUUxb25pZmRNV3JkMWZjM05SWFpVdHZpc0dUWTdpalF5VHUxemN3OWQzdE1oNno0QnAtaHVnTlEzaHo5OFdfdk83NWU1M0l0U20zNDlzcVJlTUQ4d2lob0pxRzFGc1ZmMmNaSGtNbmZSaEZVNVcteVV1SFEyc3ROb19KVzNacE44dkxnSmZ3aWk0ZjJrbzRQSEh30gGgAkFVX3lxTFBjVUF2c0FqYUExU2Y5ckVoVjVPN3pNd1IwYlZRMVVuc24xM3VhTkRJczBpRFgxTzNoZXVwdVVSUDBMeDB5ejhDTm4zbURXNk5xX1ZmVVBaN3BoanBlcWt1VW5FR1FQZDFOY3U2UXpOR0N4ZXQ1WDk0MG11eVJDRzBEZFpGcDFuQ3RZdFFSQjVPVUppVjNubnNRWHJlQ0gyMDhneUtndjctdVhUX1A0LVZBQUkyNEJBVUZWb2NLblpjZHBFZXk4cHBrdTlQV2xZMUJsMVNWcVBqM1dtOXFjN1Z2YV8yM2F5ZC13UERZeUpNR3U0dVZGcllRZ0JscG00aXpaN3ZVMVNoLTlyQW1INVE0NlN6Q1BEaU9YaVIzN0ZZYg?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMimwJBVV95cUxQRDNNQXBOQUN0ZVdfOHptZmNQdkhuUkwtR3ZQVFJuaHdvdWRhOThtWlFOOUVta0E3VGVkV19GUzBvbmI3eGdUUmkweFR3YUtuR0xRTUJHaEFTdEdENHBHZExxd2NfbUxVRnpqUC1oVTJESHhSMXpUMDFXWk5RT05vME12SGdtcjVjWUUxb25pZmRNV3JkMWZjM05SWFpVdHZpc0dUWTdpalF5VHUxemN3OWQzdE1oNno0QnAtaHVnTlEzaHo5OFdfdk83NWU1M0l0U20zNDlzcVJlTUQ4d2lob0pxRzFGc1ZmMmNaSGtNbmZSaEZVNVcteVV1SFEyc3ROb19KVzNacE44dkxnSmZ3aWk0ZjJrbzRQSEh30gGgAkFVX3lxTFBjVUF2c0FqYUExU2Y5ckVoVjVPN3pNd1IwYlZRMVVuc24xM3VhTkRJczBpRFgxTzNoZXVwdVVSUDBMeDB5ejhDTm4zbURXNk5xX1ZmVVBaN3BoanBlcWt1VW5FR1FQZDFOY3U2UXpOR0N4ZXQ1WDk0MG11eVJDRzBEZFpGcDFuQ3RZdFFSQjVPVUppVjNubnNRWHJlQ0gyMDhneUtndjctdVhUX1A0LVZBQUkyNEJBVUZWb2NLblpjZHBFZXk4cHBrdTlQV2xZMUJsMVNWcVBqM1dtOXFjN1Z2YV8yM2F5ZC13UERZeUpNR3U0dVZGcllRZ0JscG00aXpaN3ZVMVNoLTlyQW1INVE0NlN6Q1BEaU9YaVIzN0ZZYg?oc=5",
-    "source": "The Economic Times"
-  },
-  {
     "id": "alert-907384d4b432",
     "type": "water_supply",
     "severity": "high",
@@ -285,6 +269,22 @@
     "time": "29 Oct, 9:50 PM IST",
     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOGx0dW5KYm80M2JmUXA2ME5tamZtWmp2NlJMdHppenNtdGotMExBX2JIMjBoODVqRjJkUDFBY285VlNaamg3aUNqQ2FDQmZzX1VhQTFDdEpwUnBXZjZHM1ZMYm80a0o5THdla21ULV81cmxmS2N6cXN0VlFwZUtjQUVJX3BtQXM?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOGx0dW5KYm80M2JmUXA2ME5tamZtWmp2NlJMdHppenNtdGotMExBX2JIMjBoODVqRjJkUDFBY285VlNaamg3aUNqQ2FDQmZzX1VhQTFDdEpwUnBXZjZHM1ZMYm80a0o5THdla21ULV81cmxmS2N6cXN0VlFwZUtjQUVJX3BtQXM?oc=5",
+    "source": "Urban Acres"
+  },
+  {
+    "id": "alert-730ff41e0e3f",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Deficit May Hit 3 Lakh Connections - Urban Acres",
+    "message": "Hyderabad Water Deficit May Hit 3 Lakh Connections - Urban Acres",
+    "description": "Hyderabad Water Deficit May Hit 3 Lakh Connections  Urban Acres",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-30T02:38:58Z",
+    "publishedAt": "2026-10-29T19:20:54Z",
+    "time": "30 Oct, 12:50 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSnlkdlRMb2hpSTdQT29ObGQ5OTBsVWUwZk1oQ3hiUTQ0a2ZYMlFSQ3Zub1FQMS1sS1VmaGcyUTdZbks1MGdfekFfb0FSc0VhNHhVb2RJUzNwYjVaYUIwMkZQVWc0VXJORVV1Yl9sS1hnT2VYZ2cwYXJBVU5ZUkRyVGs2UVREWVREM3Q0MkdwSmc?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSnlkdlRMb2hpSTdQT29ObGQ5OTBsVWUwZk1oQ3hiUTQ0a2ZYMlFSQ3Zub1FQMS1sS1VmaGcyUTdZbks1MGdfekFfb0FSc0VhNHhVb2RJUzNwYjVaYUIwMkZQVWc0VXJORVV1Yl9sS1hnT2VYZ2cwYXJBVU5ZUkRyVGs2UVREWVREM3Q0MkdwSmc?oc=5",
     "source": "Urban Acres"
   }
 ]
