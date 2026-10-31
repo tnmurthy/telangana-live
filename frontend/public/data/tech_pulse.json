@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-31T06:08:50Z",
+  "generatedAt": "2026-10-31T12:57:40Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -78,6 +78,17 @@
         "method": "typesafe"
       }
     ],
-    "jobs": []
+    "jobs": [
+      {
+        "id": "tp-6b5a55eaa027",
+        "category": "jobs",
+        "title": "IIIT Hyderabad MSIT Programme: January 2027 Admissions",
+        "source": "INDToday",
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOd3czMDdYZF9ubm9uRC1oSWNXNTlqWTA3U1A4Z1ZTektWei1POUszSzhURVRIRGJCblpQQy1iOEpYNjJWb3Q0QTUzeUlEYVpqVW1UNXBIcjNWaENNRzRJSlN2X01ZcDBYWUEwa2xCMk5mWUFLSENhR2lKaHRDemVrOQ?oc=5",
+        "publishedAt": "2026-10-26T00:34:45Z",
+        "time": "26 Oct, 6:04 AM IST",
+        "method": "typesafe"
+      }
+    ]
   }
 }
