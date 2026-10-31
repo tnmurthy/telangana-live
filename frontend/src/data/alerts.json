@@ -1,37 +1,5 @@
 [
   {
-    "id": "alert-d4ff5dc14ed2",
-    "type": "weather",
-    "severity": "medium",
-    "title": "IMD issues yellow alert in 12 districts as rain eases in Telangana - The Times of India",
-    "message": "IMD issues yellow alert in 12 districts as rain eases in Telangana - The Times of India",
-    "description": "IMD issues yellow alert in 12 districts as rain eases in Telangana  The Times of India",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-28T20:18:15Z",
-    "publishedAt": "2026-10-28T17:46:00Z",
-    "time": "28 Oct, 11:16 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVTZOUzdtcnZSbXlDQ24ycUtkV3hsWTduZGlSTlVwWUpFb2gyMHFxTmJEMlBsbUMtOGJYdWNMYVRobTRNZlZFVHVUajBic0EwWU8xVlZ4SXM2RWM3akxzSmVZcTZIU1djTHB4UUxZUGR6VUw2YkNzejMxVzQ2Wll5U244eFZRa1RiUXEwRkQ5YVU5Rm1Ga3pMcjZIV0x1cnF6OUtmTndmWS1sS1pRNkFVQjRVVU82ZFAzSDNEeDQwVE1OenNnODVuOUZvWjExZEY2UlBpeEZ1TDFPMFHSAeABQVVfeXFMUE5ySElHbVQySXRhSzFEVi1uNV9nMVNQUUNKbkczWGQ1ajBHSV9OcmFNeTlYQlVmcWdGeU1tNnlPY2drSmU4cjdGb01yNzdhVEp6TXUwcEN6UzEzaWJBajdvSlEwdW9VTDRzd0JsMnJndTY5QXBqX3cyNzA4RE9uSG9IXzY2bXVGU2Zta0xTVWtabHJxQ1BxQTROYkl3VlpTcUNaVFIyakl5TS1BaWJtX2dad0N1bVd0MTluY3Jlay1Vb0FWbU8wRE51VjN6RTNvR0hwaENzMmdqdXl4S2xtbVc?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOVTZOUzdtcnZSbXlDQ24ycUtkV3hsWTduZGlSTlVwWUpFb2gyMHFxTmJEMlBsbUMtOGJYdWNMYVRobTRNZlZFVHVUajBic0EwWU8xVlZ4SXM2RWM3akxzSmVZcTZIU1djTHB4UUxZUGR6VUw2YkNzejMxVzQ2Wll5U244eFZRa1RiUXEwRkQ5YVU5Rm1Ga3pMcjZIV0x1cnF6OUtmTndmWS1sS1pRNkFVQjRVVU82ZFAzSDNEeDQwVE1OenNnODVuOUZvWjExZEY2UlBpeEZ1TDFPMFHSAeABQVVfeXFMUE5ySElHbVQySXRhSzFEVi1uNV9nMVNQUUNKbkczWGQ1ajBHSV9OcmFNeTlYQlVmcWdGeU1tNnlPY2drSmU4cjdGb01yNzdhVEp6TXUwcEN6UzEzaWJBajdvSlEwdW9VTDRzd0JsMnJndTY5QXBqX3cyNzA4RE9uSG9IXzY2bXVGU2Zta0xTVWtabHJxQ1BxQTROYkl3VlpTcUNaVFIyakl5TS1BaWJtX2dad0N1bVd0MTluY3Jlay1Vb0FWbU8wRE51VjN6RTNvR0hwaENzMmdqdXl4S2xtbVc?oc=5",
-    "source": "The Times of India"
-  },
-  {
-    "id": "alert-c8487e8092f0",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Telangana Rain Alert: IMD Warns 12 Districts of Lightning and Winds - Urban Acres",
-    "message": "Telangana Rain Alert: IMD Warns 12 Districts of Lightning and Winds - Urban Acres",
-    "description": "Telangana Rain Alert: IMD Warns 12 Districts of Lightning and Winds  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-28T20:18:15Z",
-    "publishedAt": "2026-10-28T19:15:15Z",
-    "time": "29 Oct, 12:45 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNR093SEV4Tlgyal9MVk9VcThQN0pOdVp0MkdsTm5mV1ZHZTJSN0Z3N0tUeG51d1BCRUdHM1ZKREx6TnhUcGdSVnlLeDBwLXc0Zy1kOUlWZDcyZzhPQkxhalZCTlNJMnJDbG1OMkFlb0ZTRmpWNUdONDg1R3BUS2tQTEJNNV9icGJxNDN5WEQxMXhZRm8?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNR093SEV4Tlgyal9MVk9VcThQN0pOdVp0MkdsTm5mV1ZHZTJSN0Z3N0tUeG51d1BCRUdHM1ZKREx6TnhUcGdSVnlLeDBwLXc0Zy1kOUlWZDcyZzhPQkxhalZCTlNJMnJDbG1OMkFlb0ZTRmpWNUdONDg1R3BUS2tQTEJNNV9icGJxNDN5WEQxMXhZRm8?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-35f28b864bbe",
     "type": "water_supply",
     "severity": "medium",
@@ -287,5 +255,21 @@
     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxORk5KNHd1TnFoMkhoOTF1Y0ltQXI3NmtUd3NGbkxnYWZkck1NLXdrTHVCV09WUXlRVkg2dlBPNlJYa1lDS3pHV0hkNjZ3TVY4VFhvMzRnZk5TRFdTdms3eWJUM3NqQ2MzRzktLTNEYjhjOWdlSXYzcjhMV3UtN1MzSXFUVFRwNjBFTDFBNGVWT0hucFk5SzJFaWxvQTJxTHlnT0hGQUVmbm9EdG5KU25hQUZVSmVia19Xc21hem9idER1YUhwV0lKMDQ4VEF1bXc?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMizwFBVV95cUxORk5KNHd1TnFoMkhoOTF1Y0ltQXI3NmtUd3NGbkxnYWZkck1NLXdrTHVCV09WUXlRVkg2dlBPNlJYa1lDS3pHV0hkNjZ3TVY4VFhvMzRnZk5TRFdTdms3eWJUM3NqQ2MzRzktLTNEYjhjOWdlSXYzcjhMV3UtN1MzSXFUVFRwNjBFTDFBNGVWT0hucFk5SzJFaWxvQTJxTHlnT0hGQUVmbm9EdG5KU25hQUZVSmVia19Xc21hem9idER1YUhwV0lKMDQ4VEF1bXc?oc=5",
     "source": "NewsMeter"
+  },
+  {
+    "id": "alert-3dd3a00d41f2",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Supply Disruption to Hit Key Areas for 36 Hours - Urban Acres",
+    "message": "Hyderabad Water Supply Disruption to Hit Key Areas for 36 Hours - Urban Acres",
+    "description": "Hyderabad Water Supply Disruption to Hit Key Areas for 36 Hours  Urban Acres",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-10-31T20:28:48Z",
+    "publishedAt": "2026-10-31T17:16:42Z",
+    "time": "31 Oct, 10:46 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRVRpR24xLUpfVmZyaXRzTE1sU2RKc1VydEJLQTZ2cFYxZU5Gb0xMdnVQS1owOXdIMTZBMWI2UExwWERaSm9RQTJad3V3OUZ3NzJXTlo0UVFaQUVFNXF1QkNheWFzd1dweVdNT3NCYmF0ay1SZUoyVzhDbjFZbW9VVldqQlkyNXpkRVh6NHk1cw?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQRVRpR24xLUpfVmZyaXRzTE1sU2RKc1VydEJLQTZ2cFYxZU5Gb0xMdnVQS1owOXdIMTZBMWI2UExwWERaSm9RQTJad3V3OUZ3NzJXTlo0UVFaQUVFNXF1QkNheWFzd1dweVdNT3NCYmF0ay1SZUoyVzhDbjFZbW9VVldqQlkyNXpkRVh6NHk1cw?oc=5",
+    "source": "Urban Acres"
   }
 ]
