@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-10-30T13:23:16Z",
+  "generatedAt": "2026-10-31T06:08:50Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -48,6 +48,16 @@
         "method": "typesafe"
       },
       {
+        "id": "tp-3bc1d654ec6e",
+        "category": "govt",
+        "title": "Revanth Reddy lays NIUM foundation, reviews Invest Telangana plans",
+        "source": "The News Mill",
+        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQREEteDRmZFJUcGg4S0Jrbmt0dW5OanJkQUVQTFRmRS1mNGxYUWFXbElaREVPeHBkUHltTEJRT0VZdmRnT2JUUTdLZWVrN04yZTA2bmtsaWVKd0VTOXpKZkFEZVVsMlk0dGs1REFVTWVaX2RHTDF1TnRUZjJ2cWhkb09pUHR3S21LWUp3S1FZbDRCWXd6ejdXZUZfbXdRbDA?oc=5",
+        "publishedAt": "2026-10-20T07:00:00Z",
+        "time": "20 Oct, 12:30 PM IST",
+        "method": "typesafe"
+      },
+      {
         "id": "tp-a838544c031e",
         "category": "govt",
         "title": "Lack of clarity on AI usage causes confusion in Telangana's Commercial Tax department",
@@ -58,13 +68,13 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-5f5856168b42",
+        "id": "tp-d4da61dbc655",
         "category": "govt",
-        "title": "Telangana govt declares 2020 as year of Artificial Intelligence",
-        "source": "ET Government",
-        "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPTUZhR1NWY181ajdFX3NMSzNrSWhUS1luOEloQUh4Rmh2VGxBZUpTNUV6ZGwzblhpV29KdXI1Um52TTIzdTE3T2Fib1QyWGNGaXpvNDdoa3JXbHNTVmFiUG81RnA2X0JfQkJiTTlZMENWUFl0TTJjNFRKbV9PRUVlZWl2eVRKWU1tM3JOV0txSms1R05OdlFyemxjZmZCNU9FcWsxVEJDUGo1bF8zbzBrOHFydmZTWTlOdFhEbXA3cTZUcGwzREtFcldVT1YwQk4zUVhGTXQ5X290SGE1RkVV0gHaAUFVX3lxTE5SYVBXc1JYcGxSV1JZVkFjSDF1ZDEwYUZhcnNPU2JjRzlxWUZDYVlNMS1iNlhtaVFHcThzQXY5bzFENWNXaG9UREVwZVRYWlhRS1pRVklWbEI2emNBWUtxMldVeHczZnNqcTN0MHFiSXlmdHpWeW5QT1lqTFZTLWJBX01DMkx4ejBCZnpvN2J2X1VOQVVxU0FDVUxsSUZKelQwU2x0N1Vhd1R2cExMM244U1lSSXV1UnNSY0ludlZuZmNCLVRraktFVHNBeXp5RV8wQUhoV1FGWi1R?oc=5",
-        "publishedAt": "2026-10-18T11:40:01Z",
-        "time": "18 Oct, 5:10 PM IST",
+        "title": "Future City Hyderabad Set for Police, Skills and Urban Management Push",
+        "source": "Urban Acres",
+        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPcmJFN3NHT1RvUDJKR19ZVFdDRUdMcEQ4cHQwTUFkeDFBbkxmQWRMUmRBTV9xcEs3b0Z3S01PRDVkbDNVSmN6OG9oY2tpWkJpMjlsdXAtTVpaLVRYY2FGSXdRM1RJYVBxMElER2lpcndOcDV2VWFVSUdJV2dFaVpmTlA2aVZhbmRxODlnRFNmMnkyUjVCczJR?oc=5",
+        "publishedAt": "2026-10-19T05:47:41Z",
+        "time": "19 Oct, 11:17 AM IST",
         "method": "typesafe"
       }
     ],
