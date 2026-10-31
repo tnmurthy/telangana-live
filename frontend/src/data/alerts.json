@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-fbe7c4713771",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Water crisis: Hyderabad to face 50 MGD shortfall per day; HMWSSB to reduce consumption by 20% - NewsMeter",
-    "message": "Water crisis: Hyderabad to face 50 MGD shortfall per day; HMWSSB to reduce consumption by 20% - NewsMeter",
-    "description": "Water crisis: Hyderabad to face 50 MGD shortfall per day; HMWSSB to reduce consumption by 20%  NewsMeter",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-28T08:08:36Z",
-    "publishedAt": "2026-10-28T05:36:38Z",
-    "time": "28 Oct, 11:06 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORFRlZG10X0RXd1RnMUlSa1M2TWNNdVByZEN4MFIzX1had0cwMzlhcHVJNEpwNUpXZ1lhSGlUcEhrdjJuOWhRcy1DZ3hpb21jUlJ4RElDeEloVzJJTVlBVmZ3RlhvZ0VfUnBtLXVlZGI4b0w0OFR4VUdfV2U2aU9wcjBCUkZBckxyaE9YZzhtTC05OW14cDQ2ZGRvMGhqS1VWdFBaWm5ld3VvYkxienNwSTJhSUJVRTRiRlNXMUJONy1TakxRSGZZ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORFRlZG10X0RXd1RnMUlSa1M2TWNNdVByZEN4MFIzX1had0cwMzlhcHVJNEpwNUpXZ1lhSGlUcEhrdjJuOWhRcy1DZ3hpb21jUlJ4RElDeEloVzJJTVlBVmZ3RlhvZ0VfUnBtLXVlZGI4b0w0OFR4VUdfV2U2aU9wcjBCUkZBckxyaE9YZzhtTC05OW14cDQ2ZGRvMGhqS1VWdFBaWm5ld3VvYkxienNwSTJhSUJVRTRiRlNXMUJONy1TakxRSGZZ?oc=5",
-    "source": "NewsMeter"
-  },
-  {
     "id": "alert-923789719874",
     "type": "water_supply",
     "severity": "high",
@@ -238,23 +222,6 @@
     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSnlkdlRMb2hpSTdQT29ObGQ5OTBsVWUwZk1oQ3hiUTQ0a2ZYMlFSQ3Zub1FQMS1sS1VmaGcyUTdZbks1MGdfekFfb0FSc0VhNHhVb2RJUzNwYjVaYUIwMkZQVWc0VXJORVV1Yl9sS1hnT2VYZ2cwYXJBVU5ZUkRyVGs2UVREWVREM3Q0MkdwSmc?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSnlkdlRMb2hpSTdQT29ObGQ5OTBsVWUwZk1oQ3hiUTQ0a2ZYMlFSQ3Zub1FQMS1sS1VmaGcyUTdZbks1MGdfekFfb0FSc0VhNHhVb2RJUzNwYjVaYUIwMkZQVWc0VXJORVV1Yl9sS1hnT2VYZ2cwYXJBVU5ZUkRyVGs2UVREWVREM3Q0MkdwSmc?oc=5",
     "source": "Urban Acres"
-  },
-  {
-    "id": "alert-a0143e764943",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Thundering with Lightning, Gusty winds(30-40 Kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Hanumakonda, Jangoan, Khammam, Mahabubabad, Mulugu, Nalgonda, Siddipet, Suryapet, Warangal, Yadadri Bhuvanagiri in next 24 hours - By Telangana Integrated Command and Control Centre.",
-    "message": "Thundering with Lightning, Gusty winds(30-40 Kmph) is very likely to occur at isolated places over Bhadradri Kothagudem, Hanumakonda, Jangoan, Khammam, Mahabubabad, Mulugu, Nalgonda, Siddipet, Suryapet, Warangal, Yadadri Bhuvanagiri in next 24 hours - By Telangana Integrated Command and Control Centre.",
-    "description": "Area: 11 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-30T09:02:47Z",
-    "publishedAt": "2026-10-30T07:52:30Z",
-    "time": "30 Oct, 1:22 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793344739976030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793344739976030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-10-31T03:00:00Z"
   },
   {
     "id": "alert-a168cc3062d2",
