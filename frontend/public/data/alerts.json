@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-66980b6fcdef",
-    "type": "water_supply",
-    "severity": "medium",
-    "title": "HMWSSB Launches PAANI App As Hyderabad Faces Possible 50 MGD Water Deficit - Deccan Chronicle",
-    "message": "HMWSSB Launches PAANI App As Hyderabad Faces Possible 50 MGD Water Deficit - Deccan Chronicle",
-    "description": "HMWSSB Launches PAANI App As Hyderabad Faces Possible 50 MGD Water Deficit  Deccan Chronicle",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-29T18:53:35Z",
-    "publishedAt": "2026-10-29T17:55:06Z",
-    "time": "29 Oct, 11:25 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQ0pPVGdiS29henAzMVZseDFHZV9TanZHSWpHRkFSd3pDcjJidWZNV3pPdnRvcEsyNkF1RlNnSHNiRHZaOXRraGVpNkZYcHVzYUpuRDUxcmUtX3FtYTllVWk5dXNzV3NxMUw2TnpSQ2ZmNV9jekJqT2lCZlN5bXhrTk81ODkzUFVvaFUxRzI4Q3ZDOUpEQnpzSHZJZlN1VTh3UXF4OU0xV19IYVJtUl9vbWZHcnpzSHlfSlAwc001b3BjckRCWXFLZ3N0Wk4yTWlDNFNvWmRYc9IB3AFBVV95cUxNUUdWVHJSNDYxSl9fVWxQVFkyMzktendNeVpYeFl3RVJYZEE0QllBaWFld3JNaEN6aE8yZE1pRFZ1ZS1FZGc1MkxhMlRNNG82Q3lOWnE2Y2xIamlnRGs2QkRWLVBTV014TGFtUHhSY2ozdWxBYjVlVG9hOExxWkJZQWM0ZVdCYTJXVkYtN204UUdKTFZSWFd0MlVOdnlYcGRsemlyeVRqdTRqdG55ekRTNVZmTkFvS0hRc2EzLUdFal9peHdZOUNaQ1NiazBpQXQ1RkNpa0RtdDQzVFVP?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQ0pPVGdiS29henAzMVZseDFHZV9TanZHSWpHRkFSd3pDcjJidWZNV3pPdnRvcEsyNkF1RlNnSHNiRHZaOXRraGVpNkZYcHVzYUpuRDUxcmUtX3FtYTllVWk5dXNzV3NxMUw2TnpSQ2ZmNV9jekJqT2lCZlN5bXhrTk81ODkzUFVvaFUxRzI4Q3ZDOUpEQnpzSHZJZlN1VTh3UXF4OU0xV19IYVJtUl9vbWZHcnpzSHlfSlAwc001b3BjckRCWXFLZ3N0Wk4yTWlDNFNvWmRYc9IB3AFBVV95cUxNUUdWVHJSNDYxSl9fVWxQVFkyMzktendNeVpYeFl3RVJYZEE0QllBaWFld3JNaEN6aE8yZE1pRFZ1ZS1FZGc1MkxhMlRNNG82Q3lOWnE2Y2xIamlnRGs2QkRWLVBTV014TGFtUHhSY2ozdWxBYjVlVG9hOExxWkJZQWM0ZVdCYTJXVkYtN204UUdKTFZSWFd0MlVOdnlYcGRsemlyeVRqdTRqdG55ekRTNVZmTkFvS0hRc2EzLUdFal9peHdZOUNaQ1NiazBpQXQ1RkNpa0RtdDQzVFVP?oc=5",
-    "source": "Deccan Chronicle"
-  },
-  {
     "id": "alert-a168cc3062d2",
     "type": "water_supply",
     "severity": "medium",
@@ -30,22 +14,6 @@
     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
     "source": "urbanacres.in"
-  },
-  {
-    "id": "alert-730ff41e0e3f",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Deficit May Hit 3 Lakh Connections - Urban Acres",
-    "message": "Hyderabad Water Deficit May Hit 3 Lakh Connections - Urban Acres",
-    "description": "Hyderabad Water Deficit May Hit 3 Lakh Connections  Urban Acres",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-30T02:38:58Z",
-    "publishedAt": "2026-10-29T19:20:54Z",
-    "time": "30 Oct, 12:50 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSnlkdlRMb2hpSTdQT29ObGQ5OTBsVWUwZk1oQ3hiUTQ0a2ZYMlFSQ3Zub1FQMS1sS1VmaGcyUTdZbks1MGdfekFfb0FSc0VhNHhVb2RJUzNwYjVaYUIwMkZQVWc0VXJORVV1Yl9sS1hnT2VYZ2cwYXJBVU5ZUkRyVGs2UVREWVREM3Q0MkdwSmc?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSnlkdlRMb2hpSTdQT29ObGQ5OTBsVWUwZk1oQ3hiUTQ0a2ZYMlFSQ3Zub1FQMS1sS1VmaGcyUTdZbks1MGdfekFfb0FSc0VhNHhVb2RJUzNwYjVaYUIwMkZQVWc0VXJORVV1Yl9sS1hnT2VYZ2cwYXJBVU5ZUkRyVGs2UVREWVREM3Q0MkdwSmc?oc=5",
-    "source": "Urban Acres"
   },
   {
     "id": "alert-a168cc3062d2",
