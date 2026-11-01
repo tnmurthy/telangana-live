@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-c26dfaaea319",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections - urbanacres.in",
-    "message": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections - urbanacres.in",
-    "description": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections  urbanacres.in",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-29T18:53:35Z",
-    "publishedAt": "2026-10-29T16:20:45Z",
-    "time": "29 Oct, 9:50 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOGx0dW5KYm80M2JmUXA2ME5tamZtWmp2NlJMdHppenNtdGotMExBX2JIMjBoODVqRjJkUDFBY285VlNaamg3aUNqQ2FDQmZzX1VhQTFDdEpwUnBXZjZHM1ZMYm80a0o5THdla21ULV81cmxmS2N6cXN0VlFwZUtjQUVJX3BtQXM?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOGx0dW5KYm80M2JmUXA2ME5tamZtWmp2NlJMdHppenNtdGotMExBX2JIMjBoODVqRjJkUDFBY285VlNaamg3aUNqQ2FDQmZzX1VhQTFDdEpwUnBXZjZHM1ZMYm80a0o5THdla21ULV81cmxmS2N6cXN0VlFwZUtjQUVJX3BtQXM?oc=5",
-    "source": "urbanacres.in"
-  },
-  {
     "id": "alert-66980b6fcdef",
     "type": "water_supply",
     "severity": "medium",
@@ -32,22 +16,6 @@
     "source": "Deccan Chronicle"
   },
   {
-    "id": "alert-286038d25bf1",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad faces 100 MGD water deficit as Singur, Manjeera levels fall - Telangana Today",
-    "message": "Hyderabad faces 100 MGD water deficit as Singur, Manjeera levels fall - Telangana Today",
-    "description": "Hyderabad faces 100 MGD water deficit as Singur, Manjeera levels fall  Telangana Today",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-29T18:53:35Z",
-    "publishedAt": "2026-10-29T15:04:46Z",
-    "time": "29 Oct, 8:34 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPd2NmS2RTOXYwUkVseHF6emtINmp4VFNCbFBRci1jOXotVHNOWmpwdGlZWDlzWnhVb0hTUUF6djNtOWdjd1VOMXpBMndYZ0kwX1FGN2hSUjIyaWk1b1dmOVA5WkRSTGctN3M0eGRYcUJLWWl5U2pHZWRKcV9ocHd0MmtlNnFIV1o3TzV1emRUeWZmaHZySlpiZk9pSQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPd2NmS2RTOXYwUkVseHF6emtINmp4VFNCbFBRci1jOXotVHNOWmpwdGlZWDlzWnhVb0hTUUF6djNtOWdjd1VOMXpBMndYZ0kwX1FGN2hSUjIyaWk1b1dmOVA5WkRSTGctN3M0eGRYcUJLWWl5U2pHZWRKcV9ocHd0MmtlNnFIV1o3TzV1emRUeWZmaHZySlpiZk9pSQ?oc=5",
-    "source": "Telangana Today"
-  },
-  {
     "id": "alert-a168cc3062d2",
     "type": "water_supply",
     "severity": "medium",
@@ -62,22 +30,6 @@
     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQVEhVQ3FoQXBJYVJkVzZOa3YxQS04SDEzajVMcTZ0YmtLaE50ekM0TThEWlQtNGlZck1LZ1RQMjhMTVF2WS1hUE4yMldNa1FUVDVpWHpCRnJ1V0FYdkJCcEw4WDhkOGtvWG5zRzlsVFo4Zjd0ZF9hQTBhN0JCN3lNajdwUG83ZmJfcFhj?oc=5",
     "source": "urbanacres.in"
-  },
-  {
-    "id": "alert-c26dfaaea319",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections - Urban Acres",
-    "message": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections - Urban Acres",
-    "description": "Hyderabad Water Deficit May Hit 50 MGD, 3 Lakh Connections  Urban Acres",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-29T23:11:43Z",
-    "publishedAt": "2026-10-29T16:20:45Z",
-    "time": "29 Oct, 9:50 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOGx0dW5KYm80M2JmUXA2ME5tamZtWmp2NlJMdHppenNtdGotMExBX2JIMjBoODVqRjJkUDFBY285VlNaamg3aUNqQ2FDQmZzX1VhQTFDdEpwUnBXZjZHM1ZMYm80a0o5THdla21ULV81cmxmS2N6cXN0VlFwZUtjQUVJX3BtQXM?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOOGx0dW5KYm80M2JmUXA2ME5tamZtWmp2NlJMdHppenNtdGotMExBX2JIMjBoODVqRjJkUDFBY285VlNaamg3aUNqQ2FDQmZzX1VhQTFDdEpwUnBXZjZHM1ZMYm80a0o5THdla21ULV81cmxmS2N6cXN0VlFwZUtjQUVJX3BtQXM?oc=5",
-    "source": "Urban Acres"
   },
   {
     "id": "alert-730ff41e0e3f",
@@ -318,6 +270,38 @@
     "time": "1 Nov, 2:26 AM IST",
     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZUlDbk90US1iRWhwSHNUbV9kRW9LUE5TMGpCTWNFQ2xjU0JoTjdqQUFXeHp3Rkd5WC1rb2NnZmZlN1ExZk1fd3ctTzJaSHUwazM4YTFVb240ZkNHQ0tBTm9ISGxSUFZJTU5TMnhwd2hwN0l1N1VaWC1ZTWc3M2loc290eEN4TktGSVdrVzJiVXNDWlU?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZUlDbk90US1iRWhwSHNUbV9kRW9LUE5TMGpCTWNFQ2xjU0JoTjdqQUFXeHp3Rkd5WC1rb2NnZmZlN1ExZk1fd3ctTzJaSHUwazM4YTFVb240ZkNHQ0tBTm9ISGxSUFZJTU5TMnhwd2hwN0l1N1VaWC1ZTWc3M2loc290eEN4TktGSVdrVzJiVXNDWlU?oc=5",
+    "source": "Urban Acres"
+  },
+  {
+    "id": "alert-073644cad2af",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Cyclone ‘Murasu’: Telangana issues orange alert for 6 districts amid heavy rainfall warning on Nov 2 - Livemint",
+    "message": "Cyclone ‘Murasu’: Telangana issues orange alert for 6 districts amid heavy rainfall warning on Nov 2 - Livemint",
+    "description": "Cyclone ‘Murasu’: Telangana issues orange alert for 6 districts amid heavy rainfall warning on Nov 2  Livemint",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-11-01T16:41:54Z",
+    "publishedAt": "2026-11-01T11:41:10Z",
+    "time": "1 Nov, 5:11 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNMWdvZHkwTjJ0TXhWeHE4WkRZTzd5ZlJlbGJ3Y3NJa2xlS1JvWURaYndwTnRMT1ZSdWFXci04QXRtVTl1TFVSSExPZkE3TzBiRlBUMEJEWWFhaFRaQ2hGSEFxbG11Si12Q3U3eUF3X2VfMTBYNDFqdTZtWmdoTTBaYnRsbnlrV2V5TjVRcUlIOXR2d3A2MWxHWkMzREpKMGRFczZ5MUFxV0NiNEh0bHBONUU3MzFnZVBISGxKQjFOWjJmU0lJU25aNWxyRzVVR1o5NnlURG1ZZmVXTmZvblg5bmtXNEJtV1Nh0gHuAUFVX3lxTE5XTXN1WFVXNUNmWkhaSl9qS1M4aTg5ZThYZlNGQjFYM2RjY2dDalMyRVY3eGRfY3NnQUwzZEFLV3RwMFB0ZVNIemVxdjJGdllobHJ6R1RJaFJVWVZnUDFzS2U2bF9ySXVNNmI1UmdzYnZRTThVM1VHeEZNdk1mX3NNVUJndmRpTGl5MnRGQzljT3ZvY1NnRUd1Y0pfaHljc0I4a19NSTVZbGZRT3FxRmE0WXRXSGhib1R0bWhUSkg3LUR3eGxjMzVTUDFKeTZ0ZlRVbUZYQUI2ZlhoZzk1Nm9GaFZHa01DRWVRZG5WTmc?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNMWdvZHkwTjJ0TXhWeHE4WkRZTzd5ZlJlbGJ3Y3NJa2xlS1JvWURaYndwTnRMT1ZSdWFXci04QXRtVTl1TFVSSExPZkE3TzBiRlBUMEJEWWFhaFRaQ2hGSEFxbG11Si12Q3U3eUF3X2VfMTBYNDFqdTZtWmdoTTBaYnRsbnlrV2V5TjVRcUlIOXR2d3A2MWxHWkMzREpKMGRFczZ5MUFxV0NiNEh0bHBONUU3MzFnZVBISGxKQjFOWjJmU0lJU25aNWxyRzVVR1o5NnlURG1ZZmVXTmZvblg5bmtXNEJtV1Nh0gHuAUFVX3lxTE5XTXN1WFVXNUNmWkhaSl9qS1M4aTg5ZThYZlNGQjFYM2RjY2dDalMyRVY3eGRfY3NnQUwzZEFLV3RwMFB0ZVNIemVxdjJGdllobHJ6R1RJaFJVWVZnUDFzS2U2bF9ySXVNNmI1UmdzYnZRTThVM1VHeEZNdk1mX3NNVUJndmRpTGl5MnRGQzljT3ZvY1NnRUd1Y0pfaHljc0I4a19NSTVZbGZRT3FxRmE0WXRXSGhib1R0bWhUSkg3LUR3eGxjMzVTUDFKeTZ0ZlRVbUZYQUI2ZlhoZzk1Nm9GaFZHa01DRWVRZG5WTmc?oc=5",
+    "source": "Livemint"
+  },
+  {
+    "id": "alert-9eceae8c0c16",
+    "type": "weather",
+    "severity": "medium",
+    "title": "Cyclone Murasu Telangana: Heavy Rain Warning Issued - Urban Acres",
+    "message": "Cyclone Murasu Telangana: Heavy Rain Warning Issued - Urban Acres",
+    "description": "Cyclone Murasu Telangana: Heavy Rain Warning Issued  Urban Acres",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-11-01T16:41:54Z",
+    "publishedAt": "2026-11-01T12:35:04Z",
+    "time": "1 Nov, 6:05 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMGNLSnlOOTQyX2RjeENtSHBEUUhiZEJWc0s2N1o1TzdhT0l5c0RtbG0wb3JQSWFJSU5WYmF1UE1NUHNyR1MwbUZrY0FnN1lObjJMRlkyUmNmcXFQUXY0MnNTUWRTWmI3dXB2aDZEN0gtbFN2UThMM1ZCeTBSMTBuUms4MXBXb2VFRVlv?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMGNLSnlOOTQyX2RjeENtSHBEUUhiZEJWc0s2N1o1TzdhT0l5c0RtbG0wb3JQSWFJSU5WYmF1UE1NUHNyR1MwbUZrY0FnN1lObjJMRlkyUmNmcXFQUXY0MnNTUWRTWmI3dXB2aDZEN0gtbFN2UThMM1ZCeTBSMTBuUms4MXBXb2VFRVlv?oc=5",
     "source": "Urban Acres"
   }
 ]
