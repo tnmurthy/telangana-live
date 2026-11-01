@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-973dae4a0337",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad drought alert: 30 mandals affected, 5 in Rangareddy severely hit - Hyderabad Mail",
-    "message": "Hyderabad drought alert: 30 mandals affected, 5 in Rangareddy severely hit - Hyderabad Mail",
-    "description": "Hyderabad drought alert: 30 mandals affected, 5 in Rangareddy severely hit  Hyderabad Mail",
-    "district": "Rangareddy",
-    "region": "Rangareddy",
-    "createdAt": "2026-10-29T12:50:57Z",
-    "publishedAt": "2026-10-29T02:25:47Z",
-    "time": "29 Oct, 7:55 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdndHdUhCeW1OTFUzM1hxc0FuZzdaZVROYm44VVVZZ1hFakhjME5aMjJZSFd5d0RFNUN2QVc2Z0xMajZLVXJqUGZuX0ExSEx2TC0tSDAza25pTHh1NFE5OWFBRTR1cTdxTGc3RUxWdThQTXBzZFUxUlJtblVFWl9Jcm1RWW9QNjhCWHlDdFVhMA?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdndHdUhCeW1OTFUzM1hxc0FuZzdaZVROYm44VVVZZ1hFakhjME5aMjJZSFd5d0RFNUN2QVc2Z0xMajZLVXJqUGZuX0ExSEx2TC0tSDAza25pTHh1NFE5OWFBRTR1cTdxTGc3RUxWdThQTXBzZFUxUlJtblVFWl9Jcm1RWW9QNjhCWHlDdFVhMA?oc=5",
-    "source": "Hyderabad Mail"
-  },
-  {
     "id": "alert-c26dfaaea319",
     "type": "water_supply",
     "severity": "high",
