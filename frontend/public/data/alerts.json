@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-75aa767604ad",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Hyderabad to see 4 more days of evening showers, IMD warns of gusty winds; Yellow alert for surrounding d - The Times of India",
-    "message": "Hyderabad to see 4 more days of evening showers, IMD warns of gusty winds; Yellow alert for surrounding d - The Times of India",
-    "description": "Hyderabad to see 4 more days of evening showers, IMD warns of gusty winds; Yellow alert for surrounding d  The Times of India",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-10-31T00:08:01Z",
-    "publishedAt": "2026-10-30T17:49:00Z",
-    "time": "30 Oct, 11:19 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPRE53bGRFbnJhVHFrcVZvU1RTelVLcFZmTHFuX3hHNGx6N1JOMlc0U3FaMUxsMWVqSWdOdUNMYU5nZDdZdzFST1ktb0FmdkxwYVp4WUZ1bTl3dWZEYnZoRk1ia0J6MWd5ZHowakVCN2VSSlhzMklXX2d0VXQxTWxMTFdPOGM1MXlBZFdOMERaaFF3VnprV2FSQVdEd21tVUlzYkxRa2lmcTZmSmJuZ181b2N5QkNZWEY5Y2JFZHl5YlRwTk5QUW9JYWx1eGJhcVpoemp0Vl82XzJxeDV5YVFFdExTMDRUaU1xWGJTeXRNWnZvc05nWENhazlzWWhGMkc1c08td2VFUExLWG80WUM3Tl9CNldOVFRPLU5NUzI4SFV1NHFO0gGqAkFVX3lxTE5qNU4wYlBQWWY3TDNmMWltZkpQM3p0R0xlblIyMFFHLWdPaTN6MHFIU2FLSkdWck9UbkczT1ZaYlphNF9JSUsxU1IxNkpNTzRVckE4bDdBcjNjNHkzTEU4Z055QWNoYUg5dHhwY0hUdHlDdVRiTHo2Vmo0LTdTdHEzVmZQYWJTTEhzOXBLV2daTEJsOEF1akF5UldrOEZEMzBLMWdncGEyWjFYMVVTWGlWRjVBc3hDcElEVjVtOHpwTXBmdmZ5V3dldDRlcVEzUmJsMENkbmk4WVg4c3RwSHI3clVrSkJ4VnNibExHcmtoX2FKOEFTRmR3b3VMWVBQajdnc2RyUVIxY2NPMEFOZms2a3FCMkYzcFVjY1hpMExCaUFqaFZQajltcXc?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPRE53bGRFbnJhVHFrcVZvU1RTelVLcFZmTHFuX3hHNGx6N1JOMlc0U3FaMUxsMWVqSWdOdUNMYU5nZDdZdzFST1ktb0FmdkxwYVp4WUZ1bTl3dWZEYnZoRk1ia0J6MWd5ZHowakVCN2VSSlhzMklXX2d0VXQxTWxMTFdPOGM1MXlBZFdOMERaaFF3VnprV2FSQVdEd21tVUlzYkxRa2lmcTZmSmJuZ181b2N5QkNZWEY5Y2JFZHl5YlRwTk5QUW9JYWx1eGJhcVpoemp0Vl82XzJxeDV5YVFFdExTMDRUaU1xWGJTeXRNWnZvc05nWENhazlzWWhGMkc1c08td2VFUExLWG80WUM3Tl9CNldOVFRPLU5NUzI4SFV1NHFO0gGqAkFVX3lxTE5qNU4wYlBQWWY3TDNmMWltZkpQM3p0R0xlblIyMFFHLWdPaTN6MHFIU2FLSkdWck9UbkczT1ZaYlphNF9JSUsxU1IxNkpNTzRVckE4bDdBcjNjNHkzTEU4Z055QWNoYUg5dHhwY0hUdHlDdVRiTHo2Vmo0LTdTdHEzVmZQYWJTTEhzOXBLV2daTEJsOEF1akF5UldrOEZEMzBLMWdncGEyWjFYMVVTWGlWRjVBc3hDcElEVjVtOHpwTXBmdmZ5V3dldDRlcVEzUmJsMENkbmk4WVg4c3RwSHI3clVrSkJ4VnNibExHcmtoX2FKOEFTRmR3b3VMWVBQajdnc2RyUVIxY2NPMEFOZms2a3FCMkYzcFVjY1hpMExCaUFqaFZQajltcXc?oc=5",
-    "source": "The Times of India"
-  },
-  {
     "id": "alert-1ab71f5a6334",
     "type": "water_supply",
     "severity": "high",
@@ -289,5 +273,37 @@
     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQN0p2Qmp6c3NaR3JLMHAwMjFSOUNvUl90NFV1bFE4YzlTeVh6a3dJZ2EtNm8wLUlNa19GdkxwSDY0eWFCdS02TXBLLWNwWnZhNnh2Q29vUU8taFZ3UzJyVzc2N1Eybk9XTnplbDZrelp3dXFzd0pXSkJ0S3lHbERzZDkxNkRyTXNIZXRjUE5GVUtSZENidUJiVUFZVnczN1o0bzJNaldXdXQxdk1FWk5JMy1OSHZwVW9DSmc?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQN0p2Qmp6c3NaR3JLMHAwMjFSOUNvUl90NFV1bFE4YzlTeVh6a3dJZ2EtNm8wLUlNa19GdkxwSDY0eWFCdS02TXBLLWNwWnZhNnh2Q29vUU8taFZ3UzJyVzc2N1Eybk9XTnplbDZrelp3dXFzd0pXSkJ0S3lHbERzZDkxNkRyTXNIZXRjUE5GVUtSZENidUJiVUFZVnczN1o0bzJNaldXdXQxdk1FWk5JMy1OSHZwVW9DSmc?oc=5",
     "source": "NewsMeter"
+  },
+  {
+    "id": "alert-2410df84a576",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "HMWSSB to meet water shortfall during Osman Sagar conduit repairs - Telangana Today",
+    "message": "HMWSSB to meet water shortfall during Osman Sagar conduit repairs - Telangana Today",
+    "description": "HMWSSB to meet water shortfall during Osman Sagar conduit repairs  Telangana Today",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-11-02T23:42:36Z",
+    "publishedAt": "2026-11-02T16:36:29Z",
+    "time": "2 Nov, 10:06 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOM2ZkZWtJc1I1cTA4aTBFdlM1ZF9oQlNONUtOV2ZzdTk0eVRweWx2MEpZMllhS3hYZDJwdy1yNXdrZjc1bEp2WlZxbTBCUDhMakVpSTY5LVdwYWE2SUhzOTBoeTBRZVJQekFuYUt3SkthMmRfMkdlbHRSRFcydVdHUWRxcUZPdkFRU254WjZkeGs0RUQwVlRF?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOM2ZkZWtJc1I1cTA4aTBFdlM1ZF9oQlNONUtOV2ZzdTk0eVRweWx2MEpZMllhS3hYZDJwdy1yNXdrZjc1bEp2WlZxbTBCUDhMakVpSTY5LVdwYWE2SUhzOTBoeTBRZVJQekFuYUt3SkthMmRfMkdlbHRSRFcydVdHUWRxcUZPdkFRU254WjZkeGs0RUQwVlRF?oc=5",
+    "source": "Telangana Today"
+  },
+  {
+    "id": "alert-26427ae2ced3",
+    "type": "weather",
+    "severity": "high",
+    "title": "Murasu Impact: IMD issues heavy rain alert for several Telangana districts - Telangana Today",
+    "message": "Murasu Impact: IMD issues heavy rain alert for several Telangana districts - Telangana Today",
+    "description": "Murasu Impact: IMD issues heavy rain alert for several Telangana districts  Telangana Today",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-11-02T23:42:36Z",
+    "publishedAt": "2026-11-02T18:50:05Z",
+    "time": "3 Nov, 12:20 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNR1RnRlg2WjhvQ1FuQjNUSVhRSDV2RzRNRENVWks4dTYtQS0zTXJ1ZUhtbFh3N1diQ2ZmTlJWT0FTODRNbTNjYjNWeGg0NC1mVkVadzZILXVWQmhZR2VsYmNGaWVHYUVpc29XaUNTTDhySnNCSDA0US0yVW1YU3NMOTNpbV9MTldfWGltQTltMXA3VEZQNDEwN1RQMEczNjN0REE?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNR1RnRlg2WjhvQ1FuQjNUSVhRSDV2RzRNRENVWks4dTYtQS0zTXJ1ZUhtbFh3N1diQ2ZmTlJWT0FTODRNbTNjYjNWeGg0NC1mVkVadzZILXVWQmhZR2VsYmNGaWVHYUVpc29XaUNTTDhySnNCSDA0US0yVW1YU3NMOTNpbV9MTldfWGltQTltMXA3VEZQNDEwN1RQMEczNjN0REE?oc=5",
+    "source": "Telangana Today"
   }
 ]
