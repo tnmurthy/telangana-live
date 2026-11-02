@@ -112,23 +112,6 @@
     "source": "urbanacres.in"
   },
   {
-    "id": "alert-aaa221749a07",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Thunderstorm accompanied with Lightning and Gusty Winds of 30-40 kmph very likely to occur at isolated places in Mulugu, Bhadradri Kothagudem, Khammam, Nalgonda, Suryapet, Mahabubabad, Warangal, Hanamkonda, Jangaon, Siddipet, Yadadri Bhuvanagiri, RR, Hyderabad, MDCM,VKB,MBN,NGKR districts-By TGiCCC.",
-    "message": "Thunderstorm accompanied with Lightning and Gusty Winds of 30-40 kmph very likely to occur at isolated places in Mulugu, Bhadradri Kothagudem, Khammam, Nalgonda, Suryapet, Mahabubabad, Warangal, Hanamkonda, Jangaon, Siddipet, Yadadri Bhuvanagiri, RR, Hyderabad, MDCM,VKB,MBN,NGKR districts-By TGiCCC.",
-    "description": "Area: 17 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-11-01T09:46:30Z",
-    "publishedAt": "2026-11-01T08:43:38Z",
-    "time": "1 Nov, 2:13 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793522384403030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793522384403030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-11-02T03:04:00Z"
-  },
-  {
     "id": "alert-be5a35555686",
     "type": "water_supply",
     "severity": "high",
@@ -239,5 +222,21 @@
     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMGNLSnlOOTQyX2RjeENtSHBEUUhiZEJWc0s2N1o1TzdhT0l5c0RtbG0wb3JQSWFJSU5WYmF1UE1NUHNyR1MwbUZrY0FnN1lObjJMRlkyUmNmcXFQUXY0MnNTUWRTWmI3dXB2aDZEN0gtbFN2UThMM1ZCeTBSMTBuUms4MXBXb2VFRVlv?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNMGNLSnlOOTQyX2RjeENtSHBEUUhiZEJWc0s2N1o1TzdhT0l5c0RtbG0wb3JQSWFJSU5WYmF1UE1NUHNyR1MwbUZrY0FnN1lObjJMRlkyUmNmcXFQUXY0MnNTUWRTWmI3dXB2aDZEN0gtbFN2UThMM1ZCeTBSMTBuUms4MXBXb2VFRVlv?oc=5",
     "source": "Urban Acres"
+  },
+  {
+    "id": "alert-d48b4261c6c3",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Supply Disruption For 36 Hours From Nov. 3 - INDToday",
+    "message": "Hyderabad Water Supply Disruption For 36 Hours From Nov. 3 - INDToday",
+    "description": "Hyderabad Water Supply Disruption For 36 Hours From Nov. 3  INDToday",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-11-02T06:42:59Z",
+    "publishedAt": "2026-11-02T00:31:25Z",
+    "time": "2 Nov, 6:01 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVDlzby02Vi1ESWpZWTZ5WUZkMlBRSmxILXZXejVkeXhzcURoeXBsQWpFcFFQRllwVVRJUlEzeWZvZDhFMWF5aHpfV2N1VnFZZ1I5ZTdlU2phTk9UazMxblI4YXR5N0kzdWhudjBoRnJsY1JVY1VXN1p4X3FSa3ppMWZ4cVFKQQ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVDlzby02Vi1ESWpZWTZ5WUZkMlBRSmxILXZXejVkeXhzcURoeXBsQWpFcFFQRllwVVRJUlEzeWZvZDhFMWF5aHpfV2N1VnFZZ1I5ZTdlU2phTk9UazMxblI4YXR5N0kzdWhudjBoRnJsY1JVY1VXN1p4X3FSa3ppMWZ4cVFKQQ?oc=5",
+    "source": "INDToday"
   }
 ]
