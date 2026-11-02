@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-02T06:38:37Z",
+  "generatedAt": "2026-11-02T21:53:16Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -18,13 +18,43 @@
     ],
     "govt": [
       {
-        "id": "tp-02595b8761c5",
+        "id": "tp-98eb99ea5062",
         "category": "govt",
-        "title": "Telangana Unveils AI-Powered Digital Twin of IT Minister at DevFest 2026",
-        "source": "Analytics India Magazine",
-        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWmFibi1yZGN5eE4zbkY2RXB3dmFOYW9jQnRzd3RTU1pob0JGa0NheURMOHhCRTg1RWc3ZTdtQzVyUHN1MnE0QlRwWmNXelFmV1BMVEdoMUltR2EtRHpDalRlUTVGSkQwd1pSNGdQNzhFYUxBVU9oWVBsaHhFTzNhMmtJRUV4VG4tbkdIY254X2FxRy1RWlRnRnVUcEltb0hOQWMwYjRuaHdFTnk0elpR?oc=5",
-        "publishedAt": "2026-10-26T08:54:58Z",
-        "time": "26 Oct, 2:24 PM IST",
+        "title": "Telangana to call for tenders for deploying AI in market yards",
+        "source": "BusinessLine",
+        "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQb2YtX2VWOElkQ0lFV3Z4VDlseTRaZm9HT0JLRkFiVUxiTzdZZ2xTd19JRUd5OWRITU1RU1pIUkt3Y0pEUmxGUnZEZkM5SmZ0WE5nUktORWhDYkVYSTIxelExSDNzVGYwdjlmbXRXcmdNNDhzeFZhTWxZYjdlYVlLd2R5Q01BcVpKV3RBSE9JQmgxOGNUTk9JWmhZd0hFQnVYenVqVzhSa1l1UnB0b1BjN0c5dHRiV3NnMDdVQjJrZFkzZmhuTktKMnpsdGFlTnpfRXJPenJIQVHSAd8BQVVfeXFMTjlHU2FuQVpuUUs3YnVqWERMcjVGR1l1T3N6S3R4TWV5U0ZCZGEzdHpCaFhlNzNDQURGdWFJck44SmRLN1V6dUUtdDFjUUhMd3g3RWpCb2YtQUVtQ1ZJOGQyY2VLRlg3bFNIQUlMTkNLT2Riak1yNS00UlNoNFktNjlvRi00VE1aZzlBNTdxbERaeXItT2x5WmdhWEMzTDFNVjdJMkVpOGc5NXhrNHRFZlB4SUpKbHdueGpjNG13Q180amItOTIwV0U1S0dIQXZod1ZMazZHRlBJQnBHeDlDdw?oc=5",
+        "publishedAt": "2026-11-02T16:29:57Z",
+        "time": "2 Nov, 9:59 PM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-8417f74abbd5",
+        "category": "govt",
+        "title": "Telangana: KTR launches CampusHub AI in Hyderabad, says \"AI is messenger of progress, not monster\"",
+        "source": "Devdiscourse",
+        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPOXdyTFN1VWs0bnd2YUlxMF9iUndVc0ZSQW5vbzhXcHhPX19lbVBLMlNZblA2S1FhWlNTeHZ3aERlMmpuT3NVb040M2VYNHI1ZGpRN1Q5Ri05TjNRcmw1M0oxWERiekZfYTYzOXUxbHlEN0ZXZGx3OTItMU9FSl9sSm9nY180ZFFvbVFPdExpOWJpWHVGWkFlR3RKdnNSVVdLaHVLQ0cyM09YemNHdmYzZmJWeDdpLTJEdkV6V0xlT2pQcDNid2tsMkRKVjFHekVKc3dNQ0hNQ1ZXamJkbjRJT2Fjb2lfckXSAecBQVVfeXFMTzl3ckxTdVVrNG53dmFJcTBfYlJ3VXNGUkFub284V3B4T19fZW1QSzJTWW5QNktRYVpTU3h2d2hEZTJqbk9zVW9ONDNlWDRyNWRqUTdUOUYtOU4zUXJsNTNKMVhEYnpGX2E2Mzl1MWx5RDdGV2RsdzkyLTFPRUpfbEpvZ2NfNGRRb21RT3RMaTliaVh1RlpBZUd0SnZzUlVXS2h1S0NHMjNPWHpjR3ZmM2ZiVng3aS0yRHZFeldMZU9qUHAzYndrbDJESlYxR3pFSnN3TUNITUNWV2piZG40SU9hY29pX3JF?oc=5",
+        "publishedAt": "2026-11-02T14:26:54Z",
+        "time": "2 Nov, 7:56 PM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-2ee0aca6fb38",
+        "category": "govt",
+        "title": "KTR calls for AI adoption across sectors, promises integration in all Telangana departments",
+        "source": "Telangana Today",
+        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQd28xNDRwOUFiN0dqYmdiS2w4anJtemF0ZWY4ck9MRDBWOFByNUJoOFBzR243ZjU0a1VtVWRBZjdSbTFPMkhnajNYYzZHZVliUWhDeEl0LXhtNXRBMGpPSW5oMl9CcEhfWWlld3F2QnNDb0ZXS3hCeElSV25hTUxoeW1XT0cyVUVfRHVnUGVEZjBiVVNIWk1Nd0ZucjhJWWtyUEZIb05odDlZaVV6Qy1GTmtHMjkzcTdE?oc=5",
+        "publishedAt": "2026-11-02T08:42:47Z",
+        "time": "2 Nov, 2:12 PM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-448892f30f5d",
+        "category": "govt",
+        "title": "Telangana unveils AI minister avatar at GDG Hyderabad’s DevFest 2026",
+        "source": "ThePrint",
+        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTmtGTlRuRkxJalZxcmdEVzJnUnN3cU56V0FSMXp5bUlYbG5GN3lvR3p2WXhGVWlibDFBcl9SV1RvblpfZzhQYm9LUi1WV2FEVXNJNXJDTjNzUERUWDNxNXp1QjlxSXJuOXpXd0dCRmJqbmxDN3FqQnBrUzZjdmQ2ZnM0N3BmWG5TVElPRlZCZ2pHY2NsSzZXV1NXeENudHVoWm16MNIBqgFBVV95cUxQZzFUWl9GVmM5WmJ6a1hDaHlpSDVNUThOVGUtXzRaQXFuTVVpUVJFdUlINHEwa0otYWg4TzBONTByelBfX2ZDcFZpWU1XMmloVlA2QXI4M2xEQ1VsMXNRZzlGalpObWNGWDlldmVNdkJFZDNWdV9VTkQ5dzAwTHZ4X2haX2dXU0ZHTEVsRFVQTkFjUzJSS2pWa1MyMlZQbEd4YnBVdkxiUElGZw?oc=5",
+        "publishedAt": "2026-10-25T07:00:00Z",
+        "time": "25 Oct, 12:30 PM IST",
         "method": "typesafe"
       },
       {
