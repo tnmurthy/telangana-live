@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-02T21:53:16Z",
+  "generatedAt": "2026-11-03T07:08:19Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -18,6 +18,16 @@
     ],
     "govt": [
       {
+        "id": "tp-3ac88886e212",
+        "category": "govt",
+        "title": "Telangana brings learner’s licence tests to applicants’ homes",
+        "source": "Hyderabad Mail",
+        "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQ2dWSTVSM1FPVzQxQnExc2EwREd6Z1Bnb29Oc2RBV3FuYUZ2NVRFQ2dzdnpGYkpMUzJsRlZFa0ZQMm1CZ0NCNldfQkU3bHVIN2NtVjRFZ1dHeUg2UFEwMXlKelpYSjhENk13MkcwYmxoblpKYVhWRVpWNEFkaGJYUlk2bUo?oc=5",
+        "publishedAt": "2026-11-03T04:45:37Z",
+        "time": "3 Nov, 10:15 AM IST",
+        "method": "typesafe"
+      },
+      {
         "id": "tp-98eb99ea5062",
         "category": "govt",
         "title": "Telangana to call for tenders for deploying AI in market yards",
@@ -25,16 +35,6 @@
         "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQb2YtX2VWOElkQ0lFV3Z4VDlseTRaZm9HT0JLRkFiVUxiTzdZZ2xTd19JRUd5OWRITU1RU1pIUkt3Y0pEUmxGUnZEZkM5SmZ0WE5nUktORWhDYkVYSTIxelExSDNzVGYwdjlmbXRXcmdNNDhzeFZhTWxZYjdlYVlLd2R5Q01BcVpKV3RBSE9JQmgxOGNUTk9JWmhZd0hFQnVYenVqVzhSa1l1UnB0b1BjN0c5dHRiV3NnMDdVQjJrZFkzZmhuTktKMnpsdGFlTnpfRXJPenJIQVHSAd8BQVVfeXFMTjlHU2FuQVpuUUs3YnVqWERMcjVGR1l1T3N6S3R4TWV5U0ZCZGEzdHpCaFhlNzNDQURGdWFJck44SmRLN1V6dUUtdDFjUUhMd3g3RWpCb2YtQUVtQ1ZJOGQyY2VLRlg3bFNIQUlMTkNLT2Riak1yNS00UlNoNFktNjlvRi00VE1aZzlBNTdxbERaeXItT2x5WmdhWEMzTDFNVjdJMkVpOGc5NXhrNHRFZlB4SUpKbHdueGpjNG13Q180amItOTIwV0U1S0dIQXZod1ZMazZHRlBJQnBHeDlDdw?oc=5",
         "publishedAt": "2026-11-02T16:29:57Z",
         "time": "2 Nov, 9:59 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-8417f74abbd5",
-        "category": "govt",
-        "title": "Telangana: KTR launches CampusHub AI in Hyderabad, says \"AI is messenger of progress, not monster\"",
-        "source": "Devdiscourse",
-        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPOXdyTFN1VWs0bnd2YUlxMF9iUndVc0ZSQW5vbzhXcHhPX19lbVBLMlNZblA2S1FhWlNTeHZ3aERlMmpuT3NVb040M2VYNHI1ZGpRN1Q5Ri05TjNRcmw1M0oxWERiekZfYTYzOXUxbHlEN0ZXZGx3OTItMU9FSl9sSm9nY180ZFFvbVFPdExpOWJpWHVGWkFlR3RKdnNSVVdLaHVLQ0cyM09YemNHdmYzZmJWeDdpLTJEdkV6V0xlT2pQcDNid2tsMkRKVjFHekVKc3dNQ0hNQ1ZXamJkbjRJT2Fjb2lfckXSAecBQVVfeXFMTzl3ckxTdVVrNG53dmFJcTBfYlJ3VXNGUkFub284V3B4T19fZW1QSzJTWW5QNktRYVpTU3h2d2hEZTJqbk9zVW9ONDNlWDRyNWRqUTdUOUYtOU4zUXJsNTNKMVhEYnpGX2E2Mzl1MWx5RDdGV2RsdzkyLTFPRUpfbEpvZ2NfNGRRb21RT3RMaTliaVh1RlpBZUd0SnZzUlVXS2h1S0NHMjNPWHpjR3ZmM2ZiVng3aS0yRHZFeldMZU9qUHAzYndrbDJESlYxR3pFSnN3TUNITUNWV2piZG40SU9hY29pX3JF?oc=5",
-        "publishedAt": "2026-11-02T14:26:54Z",
-        "time": "2 Nov, 7:56 PM IST",
         "method": "typesafe"
       },
       {
@@ -46,28 +46,19 @@
         "publishedAt": "2026-11-02T08:42:47Z",
         "time": "2 Nov, 2:12 PM IST",
         "method": "typesafe"
-      },
-      {
-        "id": "tp-448892f30f5d",
-        "category": "govt",
-        "title": "Telangana unveils AI minister avatar at GDG Hyderabad’s DevFest 2026",
-        "source": "ThePrint",
-        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNTmtGTlRuRkxJalZxcmdEVzJnUnN3cU56V0FSMXp5bUlYbG5GN3lvR3p2WXhGVWlibDFBcl9SV1RvblpfZzhQYm9LUi1WV2FEVXNJNXJDTjNzUERUWDNxNXp1QjlxSXJuOXpXd0dCRmJqbmxDN3FqQnBrUzZjdmQ2ZnM0N3BmWG5TVElPRlZCZ2pHY2NsSzZXV1NXeENudHVoWm16MNIBqgFBVV95cUxQZzFUWl9GVmM5WmJ6a1hDaHlpSDVNUThOVGUtXzRaQXFuTVVpUVJFdUlINHEwa0otYWg4TzBONTByelBfX2ZDcFZpWU1XMmloVlA2QXI4M2xEQ1VsMXNRZzlGalpObWNGWDlldmVNdkJFZDNWdV9VTkQ5dzAwTHZ4X2haX2dXU0ZHTEVsRFVQTkFjUzJSS2pWa1MyMlZQbEd4YnBVdkxiUElGZw?oc=5",
-        "publishedAt": "2026-10-25T07:00:00Z",
-        "time": "25 Oct, 12:30 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-71a03e7ca307",
-        "category": "govt",
-        "title": "Telangana’s AI Minister Tests a New Model of Digital Governance",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNVlI0VHUwTVZKbFhTUlRoRTFIdWYzODNaUGZpTkpjdFp3RHpzcUY2SDZKSlFZeUtFYWpnN2kxcUFUcThWN2hSQnJUWW1aakV1cW1TMk9zWWx0dmNtZE9XZDRoc3JaWnM3dGlsYWRIeW1LSV9UUjJ0WWZJZk1mNE9ySzd5Z2QtYTNfMVFkS25n?oc=5",
-        "publishedAt": "2026-10-24T14:59:06Z",
-        "time": "24 Oct, 8:29 PM IST",
-        "method": "typesafe"
       }
     ],
-    "jobs": []
+    "jobs": [
+      {
+        "id": "tp-6db15748bf33",
+        "category": "jobs",
+        "title": "IIIT Hyderabad revamps MSIT programme with AI research, venture-building; admissions open",
+        "source": "Careers360",
+        "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTnMtV3BYRWNSVGlkMFNFXzZRTGpaTjU4OEZQUTJZZmVYektYTmxvcV9LZEhTTWV1OFFCMXR2M29jMk5nNG8wQWdQajBCSU1qMDFlZ1lRRl9QVmNITmF2UzhqNjBYOXlQN3dfS1hkM2FkQzdQR01QUkF2a045dnU1QzNwbzh0WG13SHFJNUd1REZRVmVmSUY5QWNBcHJzYWd4QWR3ZG9ZT01oSm1JdDdMaDgyRUcwZ9IBuwFBVV95cUxOc1A1eGt2VTVkVDg3QTZ1ZzlHZDkxeGpIUDBQQ0M2aHUwbC1RQXVJU2pFSkNmUUc2QnhUYWp1ZDZpdFRNYzc4STZJbFpwb1hiN2ppTXdrR1NRMEtMUGh3NG0zN3FaRlpyZ1BxUUtWamdhaFBGaENoTEsycHNieV9TQlNVc2lWZmRUMWxSeThfWXNfeU9odXN5cVpFVFcyT3p6aGloYy1PMDI5a0VySktjR3RpSUstT3Rsa25B?oc=5",
+        "publishedAt": "2026-10-24T09:35:18Z",
+        "time": "24 Oct, 3:05 PM IST",
+        "method": "typesafe"
+      }
+    ]
   }
 }
