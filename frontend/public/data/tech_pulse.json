@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-04T06:54:23Z",
+  "generatedAt": "2026-11-04T19:58:08Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -13,26 +13,6 @@
         "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcC1fck9pMXJXRkZfeTQ2eU41TzNNQWhvTkZkSnFvdnNmQncwc1RFMDZCY3J6Q05ldmZDS2hTWnpIVGhKQXV1UU1FX19qRDktN2FHX1N5XzE5a1JOejc5TV9mWFhGRGdzS2JVdlR1ZWdBRktYZFlYRW5kZHhWWWNzV3Rfc1p6NXFiR3ZaMGd6Yw?oc=5",
         "publishedAt": "2026-11-04T05:25:48Z",
         "time": "4 Nov, 10:55 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-40c81cc8196b",
-        "category": "safety",
-        "title": "Cyber fraudsters divert ₹7.8cr from account of Hyderabad-based non-banking financial company",
-        "source": "The Times of India",
-        "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxONFdjN1JZTlhXTmhpMFZURU1mMDZscG9XaEtnUmdQTUlfbmdyM2RseUV5WE5nZnBuTzVTSUpxblI4ZGFJRjVhRWdzWGpZcUZZdGczNTBWNldNQXFnbEhVbnhJaXJlZkJMME5ENENnWUowWmx0QW1ycGYwX2I1Q3NhNjJFU3FzMTYzZUhuV1NkUjZDT0ROTGdLYXg2VmhUMUI5OGQ4SjAtam1IUXRYMy01U1M4TzZlekt6SGJLV0plMGRqenZGZzJtQ3k2eEFaVDdLSDV6Nm1zRzNZZUUtYTFuZUlPQzJ6QkRROVI5R1pnVjdadE5CQmtiSzlFSDBpRjZ6aWfSAYICQVVfeXFMTjRXYzdSWU5YV05oaTBWVEVNZjA2bHBvV2hLZ1JnUE1JX25ncjNkbHlFeVhOZ2Zwbk81U0lKcW5SOGRhSUY1YUVnc1hqWXFGWXRnMzUwVjZXTUFxZ2xIVW54SWlyZWZCTDBORDRDZ1lKMFpsdEFtcnBmMF9iNUNzYTYyRVNxczE2M2VIbldTZFI2Q09ETkxnS2F4NlZoVDFCOThkOEowLWptSFF0WDMtNVNTOE82ZXpLekhiS1dKZTBkanp2RmcybUN5NnhBWlQ3S0g1ejZtc0czWWVFLWExbmVJT0MyekJEUTlSOUdaZ1Y3WnROQkJrYks5RUgwaUY2emln?oc=5",
-        "publishedAt": "2026-11-03T18:12:00Z",
-        "time": "3 Nov, 11:42 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-5deaa8a55cb1",
-        "category": "safety",
-        "title": "Cybercrime complaints rise 24% nationally, but Telangana records 3% decline: DGP Anand",
-        "source": "NewsMeter",
-        "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQWxfdkRDc1B6TmhHUVR5ampCMEhtcTJOczA3WHB2MTFDVmk4SUxnV0VzMVBiRERTV1NoaGxhN0pERWhpNlAyY254QXJ5bnI0U3dnVXJZVXprdUFMNzRsc2dueWdEa19WM0ZOXzdKYnBUSkprMzRCdFlXVU9LcE1zdDkxaWdjQlkzRENSbTlQc3Y4Sm8yVHI5c3pYRjY5OFRuNXJrbFdkbnF4TEp6TklqVldRaW1fcXFvVnVycDJHSlFXTXg0MFQtbA?oc=5",
-        "publishedAt": "2026-11-03T11:12:05Z",
-        "time": "3 Nov, 4:42 PM IST",
         "method": "typesafe"
       },
       {
@@ -48,43 +28,23 @@
     ],
     "govt": [
       {
+        "id": "tp-f39ca1e73148",
+        "category": "govt",
+        "title": "Telangana HC slams Janagaon Collector for using AI in a land dispute",
+        "source": "The News Minute",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNS21TT2lnVG9jM2syYVNLQUNxM2tSbU1MWUE2ZVNfMHMzQ19Ral80VUxfRFlfYzFETWdjSUhRU1A4RHQ4QmxsalVwNDVWUmFtczkzbmI3R2ZtQjJjREdzeVNlRFBGQnFUS2JHLWlmd1k3VjZSbkpkVlNZMnJPM2cwWXFqVXM4TVJ5YTlJY05icklUNEZwY3RMNGUxWldUdDJacGtDQ1hTaVYzZFlq0gG6AUFVX3lxTE1yVmJJME9SSDBOb0RiUlgwYU5MbEE2N3VYMS1YcEIyTlVPZ2laS1NOUkVMZDB1d1gxMWdyWUZ1anU0OFhrQzFxczdtWXpUVUV4VnN2QnhvbDhyYnQtQVVxRzZmZE9FZzlTYWdMWGk5UGdkeThsZmVrajRKWTlja3J4LXE5Xy1rbGhqWkFubFlvOHFvWVJqeGNWcW4wQ3hDZENWTVoyWjFaRHNCNUI3TVloREtUZFJxWm9TZw?oc=5",
+        "publishedAt": "2026-11-04T05:10:00Z",
+        "time": "4 Nov, 10:40 AM IST",
+        "method": "typesafe"
+      },
+      {
         "id": "tp-0c1ccf91265c",
         "category": "govt",
         "title": "Telangana to Offer Learner’s Licence Test From Home via AI",
         "source": "Elets eGov",
         "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE04YTFOT01RRGxtc1hSVmxnUWt0LXlHb21CTjVvVUszcnZ1RmFxaVBlNzZ2QnlISHRjcWduY2ZSd1RhWTFHUWV6U21oMGFySVc0NEdONERBZXRqNUJXVUtzcEc5TUg1Sm1iUUo5WUJwOVdoMDdDQVM5SzlrYWdMZTA?oc=5",
-        "publishedAt": "2026-11-04T04:54:47Z",
-        "time": "4 Nov, 10:24 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-bcc60adc8ea5",
-        "category": "govt",
-        "title": "Telangana High Court Pulls Up Jangaon Collector Over Use of AI to Decide Land Disputes",
-        "source": "Deccan Chronicle",
-        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOT0lMdHJsOUt3Yy1RaDJsWlNOZDNZZU55aTBrLUtrcnVhemwycHhHeU5HWk1CS2hmNXJJbzFjV3JWSVNYZ2Q2LVpoMWFQeUZZUENvYllTNFVnYU9OQkVXXzRVcjJadlRROHNrYkxCQ1pKdy1weVhaeklVekpqeDI0UUdrbDVKa1NKUXJiMktkZnM4NXJOcm5aY211blk4RlJLRE9Lbk1fU2FvSHZQcG43QVUtOXVGYjBsSng3bnJDckZZZkZSYk10ODFqYk4yc2FGc2llQi1DUG9oTUE1RnRoZ0phenQ0ajDSAewBQVVfeXFMT09qU3RMNVdBSFloNzBtLWV6OFZiV3Z2bWpwbWpUdHhQX3JWZTRDdkhDT05VNmk0MUFtM0ZlY1dTdzNTTmFVeml0LXNhRFRBWURtQUhjZmtlTDB4X2ZCVFRCTzhnVmlYelR1N25ZcWtzRDEyU0RYaVpRRTVZV2VRSy1fY1haZWJVRVp0NHlHRVA5aXRFRmd3ampGM3JPdTh0Ujd1ZzRwLTVJenFRZFhCazNPUXFZc0VuSzhsNHR5XzVlWXprczhock5KREU1Xy1xWFlnMWctb2d5M2UzS3U1eUdqSERlV3FHZ1k5bzY?oc=5",
-        "publishedAt": "2026-11-03T16:52:36Z",
-        "time": "3 Nov, 10:22 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-d3f6e75fbd51",
-        "category": "govt",
-        "title": "T-Hub, JETRO join hands to boost India–Japan deep-tech startup exchange",
-        "source": "ET Manufacturing",
-        "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxObG5GV1RXaG43QV9WZ3ctM1gtYkdjUXB2a1J6aE1lekVrc1MySjVNYVZsNHI4ZmQ1dTFFZmg5WlBWVG9YNm43dV90cnZON2ZBUGtYQWtkTG80bGlySmVZS3piXzdXUzMzb1lMeTJfeVBiaUM1cTZWdjVsSVFobFdJZGZzVHExMlltdGxMZVprVHNpYkxKTnA1RWktbW1YME1SLUdiOE0ydmp0NnJicWdURkExT1lVZnlqcU1jZ2lWdXdUNEVZNFNIODkxS1dacHZTQ1R6azJlV2t4MzVzaDdweGdXVEvSAd8BQVVfeXFMTXRDbGdORG1IWkx2LWtBSURmVk5VTjNCOHZyMWwzVXVYbGlhQlhPLWZKR1Y4cGx3VmE1bGhWRHhpQXJBakpzNVJEbWR3M1NyTFhHSVFXVVhxbFctZ0MxRFRDR25QWEdSTVkzZkNtTVNRSnFUNDNsUTdiMVlnek4wcmpQSEVacHpMWUItdk16TV9BT1NjVlhuTU5Pd2lyOEFGaWVYM2NZLTd1TGtuMGFGWkFJZlpIWFBDS3dnczNLU2t0RWNLc0YtWWlQNzJKanNRZ3hPaU9KN2xrM0RXVjI0MA?oc=5",
-        "publishedAt": "2026-11-03T00:12:29Z",
-        "time": "3 Nov, 5:42 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-98eb99ea5062",
-        "category": "govt",
-        "title": "Telangana to call for tenders for deploying AI in market yards",
-        "source": "BusinessLine",
-        "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQb2YtX2VWOElkQ0lFV3Z4VDlseTRaZm9HT0JLRkFiVUxiTzdZZ2xTd19JRUd5OWRITU1RU1pIUkt3Y0pEUmxGUnZEZkM5SmZ0WE5nUktORWhDYkVYSTIxelExSDNzVGYwdjlmbXRXcmdNNDhzeFZhTWxZYjdlYVlLd2R5Q01BcVpKV3RBSE9JQmgxOGNUTk9JWmhZd0hFQnVYenVqVzhSa1l1UnB0b1BjN0c5dHRiV3NnMDdVQjJrZFkzZmhuTktKMnpsdGFlTnpfRXJPenJIQVHSAd8BQVVfeXFMTjlHU2FuQVpuUUs3YnVqWERMcjVGR1l1T3N6S3R4TWV5U0ZCZGEzdHpCaFhlNzNDQURGdWFJck44SmRLN1V6dUUtdDFjUUhMd3g3RWpCb2YtQUVtQ1ZJOGQyY2VLRlg3bFNIQUlMTkNLT2Riak1yNS00UlNoNFktNjlvRi00VE1aZzlBNTdxbERaeXItT2x5WmdhWEMzTDFNVjdJMkVpOGc5NXhrNHRFZlB4SUpKbHdueGpjNG13Q180amItOTIwV0U1S0dIQXZod1ZMazZHRlBJQnBHeDlDdw?oc=5",
-        "publishedAt": "2026-11-02T16:29:57Z",
-        "time": "2 Nov, 9:59 PM IST",
+        "publishedAt": "2026-11-04T04:55:33Z",
+        "time": "4 Nov, 10:25 AM IST",
         "method": "typesafe"
       },
       {
