@@ -1,10 +1,30 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-03T19:43:42Z",
+  "generatedAt": "2026-11-04T06:54:23Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
+      {
+        "id": "tp-fba662a68e3f",
+        "category": "safety",
+        "title": "Cybercrime Coordination Gets National Push at Hyderabad Meeting",
+        "source": "Urban Acres",
+        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcC1fck9pMXJXRkZfeTQ2eU41TzNNQWhvTkZkSnFvdnNmQncwc1RFMDZCY3J6Q05ldmZDS2hTWnpIVGhKQXV1UU1FX19qRDktN2FHX1N5XzE5a1JOejc5TV9mWFhGRGdzS2JVdlR1ZWdBRktYZFlYRW5kZHhWWWNzV3Rfc1p6NXFiR3ZaMGd6Yw?oc=5",
+        "publishedAt": "2026-11-04T05:25:48Z",
+        "time": "4 Nov, 10:55 AM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-40c81cc8196b",
+        "category": "safety",
+        "title": "Cyber fraudsters divert ₹7.8cr from account of Hyderabad-based non-banking financial company",
+        "source": "The Times of India",
+        "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxONFdjN1JZTlhXTmhpMFZURU1mMDZscG9XaEtnUmdQTUlfbmdyM2RseUV5WE5nZnBuTzVTSUpxblI4ZGFJRjVhRWdzWGpZcUZZdGczNTBWNldNQXFnbEhVbnhJaXJlZkJMME5ENENnWUowWmx0QW1ycGYwX2I1Q3NhNjJFU3FzMTYzZUhuV1NkUjZDT0ROTGdLYXg2VmhUMUI5OGQ4SjAtam1IUXRYMy01U1M4TzZlekt6SGJLV0plMGRqenZGZzJtQ3k2eEFaVDdLSDV6Nm1zRzNZZUUtYTFuZUlPQzJ6QkRROVI5R1pnVjdadE5CQmtiSzlFSDBpRjZ6aWfSAYICQVVfeXFMTjRXYzdSWU5YV05oaTBWVEVNZjA2bHBvV2hLZ1JnUE1JX25ncjNkbHlFeVhOZ2Zwbk81U0lKcW5SOGRhSUY1YUVnc1hqWXFGWXRnMzUwVjZXTUFxZ2xIVW54SWlyZWZCTDBORDRDZ1lKMFpsdEFtcnBmMF9iNUNzYTYyRVNxczE2M2VIbldTZFI2Q09ETkxnS2F4NlZoVDFCOThkOEowLWptSFF0WDMtNVNTOE82ZXpLekhiS1dKZTBkanp2RmcybUN5NnhBWlQ3S0g1ejZtc0czWWVFLWExbmVJT0MyekJEUTlSOUdaZ1Y3WnROQkJrYks5RUgwaUY2emln?oc=5",
+        "publishedAt": "2026-11-03T18:12:00Z",
+        "time": "3 Nov, 11:42 PM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-5deaa8a55cb1",
         "category": "safety",
@@ -13,16 +33,6 @@
         "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQWxfdkRDc1B6TmhHUVR5ampCMEhtcTJOczA3WHB2MTFDVmk4SUxnV0VzMVBiRERTV1NoaGxhN0pERWhpNlAyY254QXJ5bnI0U3dnVXJZVXprdUFMNzRsc2dueWdEa19WM0ZOXzdKYnBUSkprMzRCdFlXVU9LcE1zdDkxaWdjQlkzRENSbTlQc3Y4Sm8yVHI5c3pYRjY5OFRuNXJrbFdkbnF4TEp6TklqVldRaW1fcXFvVnVycDJHSlFXTXg0MFQtbA?oc=5",
         "publishedAt": "2026-11-03T11:12:05Z",
         "time": "3 Nov, 4:42 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-55b0b2f532d2",
-        "category": "safety",
-        "title": "JCCT-IV Hyderabad Meet Brings Together 13 States, 11 Agencies to Tackle Cybercrime",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQVC1lbGVsQjZ1U2RBeEZ5aEVrNUNxX2JwTmdQUEVTV3JEMkM4N3drT1BLMWU1eV9NN0tsVlpoc2pSTm9zSTdQYnhLQl9sbjBvdGxld1RjVHh3QkdCaDdVdnJMYmxuOWprN0IxamR5TXplUmZJVE5SaC16WjljczBpQVdJNmk?oc=5",
-        "publishedAt": "2026-11-03T10:54:06Z",
-        "time": "3 Nov, 4:24 PM IST",
         "method": "typesafe"
       },
       {
@@ -38,6 +48,16 @@
     ],
     "govt": [
       {
+        "id": "tp-0c1ccf91265c",
+        "category": "govt",
+        "title": "Telangana to Offer Learner’s Licence Test From Home via AI",
+        "source": "Elets eGov",
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE04YTFOT01RRGxtc1hSVmxnUWt0LXlHb21CTjVvVUszcnZ1RmFxaVBlNzZ2QnlISHRjcWduY2ZSd1RhWTFHUWV6U21oMGFySVc0NEdONERBZXRqNUJXVUtzcEc5TUg1Sm1iUUo5WUJwOVdoMDdDQVM5SzlrYWdMZTA?oc=5",
+        "publishedAt": "2026-11-04T04:54:47Z",
+        "time": "4 Nov, 10:24 AM IST",
+        "method": "typesafe"
+      },
+      {
         "id": "tp-bcc60adc8ea5",
         "category": "govt",
         "title": "Telangana High Court Pulls Up Jangaon Collector Over Use of AI to Decide Land Disputes",
@@ -48,13 +68,13 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-3ac88886e212",
+        "id": "tp-d3f6e75fbd51",
         "category": "govt",
-        "title": "Telangana brings learner’s licence tests to applicants’ homes",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQ2dWSTVSM1FPVzQxQnExc2EwREd6Z1Bnb29Oc2RBV3FuYUZ2NVRFQ2dzdnpGYkpMUzJsRlZFa0ZQMm1CZ0NCNldfQkU3bHVIN2NtVjRFZ1dHeUg2UFEwMXlKelpYSjhENk13MkcwYmxoblpKYVhWRVpWNEFkaGJYUlk2bUo?oc=5",
-        "publishedAt": "2026-11-03T04:45:37Z",
-        "time": "3 Nov, 10:15 AM IST",
+        "title": "T-Hub, JETRO join hands to boost India–Japan deep-tech startup exchange",
+        "source": "ET Manufacturing",
+        "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxObG5GV1RXaG43QV9WZ3ctM1gtYkdjUXB2a1J6aE1lekVrc1MySjVNYVZsNHI4ZmQ1dTFFZmg5WlBWVG9YNm43dV90cnZON2ZBUGtYQWtkTG80bGlySmVZS3piXzdXUzMzb1lMeTJfeVBiaUM1cTZWdjVsSVFobFdJZGZzVHExMlltdGxMZVprVHNpYkxKTnA1RWktbW1YME1SLUdiOE0ydmp0NnJicWdURkExT1lVZnlqcU1jZ2lWdXdUNEVZNFNIODkxS1dacHZTQ1R6azJlV2t4MzVzaDdweGdXVEvSAd8BQVVfeXFMTXRDbGdORG1IWkx2LWtBSURmVk5VTjNCOHZyMWwzVXVYbGlhQlhPLWZKR1Y4cGx3VmE1bGhWRHhpQXJBakpzNVJEbWR3M1NyTFhHSVFXVVhxbFctZ0MxRFRDR25QWEdSTVkzZkNtTVNRSnFUNDNsUTdiMVlnek4wcmpQSEVacHpMWUItdk16TV9BT1NjVlhuTU5Pd2lyOEFGaWVYM2NZLTd1TGtuMGFGWkFJZlpIWFBDS3dnczNLU2t0RWNLc0YtWWlQNzJKanNRZ3hPaU9KN2xrM0RXVjI0MA?oc=5",
+        "publishedAt": "2026-11-03T00:12:29Z",
+        "time": "3 Nov, 5:42 AM IST",
         "method": "typesafe"
       },
       {
@@ -65,16 +85,6 @@
         "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQb2YtX2VWOElkQ0lFV3Z4VDlseTRaZm9HT0JLRkFiVUxiTzdZZ2xTd19JRUd5OWRITU1RU1pIUkt3Y0pEUmxGUnZEZkM5SmZ0WE5nUktORWhDYkVYSTIxelExSDNzVGYwdjlmbXRXcmdNNDhzeFZhTWxZYjdlYVlLd2R5Q01BcVpKV3RBSE9JQmgxOGNUTk9JWmhZd0hFQnVYenVqVzhSa1l1UnB0b1BjN0c5dHRiV3NnMDdVQjJrZFkzZmhuTktKMnpsdGFlTnpfRXJPenJIQVHSAd8BQVVfeXFMTjlHU2FuQVpuUUs3YnVqWERMcjVGR1l1T3N6S3R4TWV5U0ZCZGEzdHpCaFhlNzNDQURGdWFJck44SmRLN1V6dUUtdDFjUUhMd3g3RWpCb2YtQUVtQ1ZJOGQyY2VLRlg3bFNIQUlMTkNLT2Riak1yNS00UlNoNFktNjlvRi00VE1aZzlBNTdxbERaeXItT2x5WmdhWEMzTDFNVjdJMkVpOGc5NXhrNHRFZlB4SUpKbHdueGpjNG13Q180amItOTIwV0U1S0dIQXZod1ZMazZHRlBJQnBHeDlDdw?oc=5",
         "publishedAt": "2026-11-02T16:29:57Z",
         "time": "2 Nov, 9:59 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-8417f74abbd5",
-        "category": "govt",
-        "title": "Telangana: KTR launches CampusHub AI in Hyderabad, says \"AI is messenger of progress, not monster\"",
-        "source": "Devdiscourse",
-        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPOXdyTFN1VWs0bnd2YUlxMF9iUndVc0ZSQW5vbzhXcHhPX19lbVBLMlNZblA2S1FhWlNTeHZ3aERlMmpuT3NVb040M2VYNHI1ZGpRN1Q5Ri05TjNRcmw1M0oxWERiekZfYTYzOXUxbHlEN0ZXZGx3OTItMU9FSl9sSm9nY180ZFFvbVFPdExpOWJpWHVGWkFlR3RKdnNSVVdLaHVLQ0cyM09YemNHdmYzZmJWeDdpLTJEdkV6V0xlT2pQcDNid2tsMkRKVjFHekVKc3dNQ0hNQ1ZXamJkbjRJT2Fjb2lfckXSAecBQVVfeXFMTzl3ckxTdVVrNG53dmFJcTBfYlJ3VXNGUkFub284V3B4T19fZW1QSzJTWW5QNktRYVpTU3h2d2hEZTJqbk9zVW9ONDNlWDRyNWRqUTdUOUYtOU4zUXJsNTNKMVhEYnpGX2E2Mzl1MWx5RDdGV2RsdzkyLTFPRUpfbEpvZ2NfNGRRb21RT3RMaTliaVh1RlpBZUd0SnZzUlVXS2h1S0NHMjNPWHpjR3ZmM2ZiVng3aS0yRHZFeldMZU9qUHAzYndrbDJESlYxR3pFSnN3TUNITUNWV2piZG40SU9hY29pX3JF?oc=5",
-        "publishedAt": "2026-11-02T14:26:54Z",
-        "time": "2 Nov, 7:56 PM IST",
         "method": "typesafe"
       },
       {
