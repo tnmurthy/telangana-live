@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-a3d311a0947f",
-    "type": "weather",
-    "severity": "low",
-    "title": "Telangana Weather Forecast Flags Warmer November, Heavy Rain Alerts - urbanacres.in",
-    "message": "Telangana Weather Forecast Flags Warmer November, Heavy Rain Alerts - urbanacres.in",
-    "description": "Telangana Weather Forecast Flags Warmer November, Heavy Rain Alerts  urbanacres.in",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-10-31T23:39:11Z",
-    "publishedAt": "2026-10-31T20:56:20Z",
-    "time": "1 Nov, 2:26 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZUlDbk90US1iRWhwSHNUbV9kRW9LUE5TMGpCTWNFQ2xjU0JoTjdqQUFXeHp3Rkd5WC1rb2NnZmZlN1ExZk1fd3ctTzJaSHUwazM4YTFVb240ZkNHQ0tBTm9ISGxSUFZJTU5TMnhwd2hwN0l1N1VaWC1ZTWc3M2loc290eEN4TktGSVdrVzJiVXNDWlU?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZUlDbk90US1iRWhwSHNUbV9kRW9LUE5TMGpCTWNFQ2xjU0JoTjdqQUFXeHp3Rkd5WC1rb2NnZmZlN1ExZk1fd3ctTzJaSHUwazM4YTFVb240ZkNHQ0tBTm9ISGxSUFZJTU5TMnhwd2hwN0l1N1VaWC1ZTWc3M2loc290eEN4TktGSVdrVzJiVXNDWlU?oc=5",
-    "source": "urbanacres.in"
-  },
-  {
     "id": "alert-be5a35555686",
     "type": "water_supply",
     "severity": "high",
@@ -62,22 +46,6 @@
     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Pc0JsaW1QcmRlenpfTUlaV05oN0ZCSTkwSTdETEhjN2VyanI4MUdZRW1xRE5Jc20ybkNvV0ZOUF9Tb3RUbW42QjIyZWRROGNDUFBpeDBlaHFZc01lVFY2MGpLb1g1V0ZoNWRJLWVDR0VHRlh6MkE?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Pc0JsaW1QcmRlenpfTUlaV05oN0ZCSTkwSTdETEhjN2VyanI4MUdZRW1xRE5Jc20ybkNvV0ZOUF9Tb3RUbW42QjIyZWRROGNDUFBpeDBlaHFZc01lVFY2MGpLb1g1V0ZoNWRJLWVDR0VHRlh6MkE?oc=5",
     "source": "INDToday"
-  },
-  {
-    "id": "alert-a3d311a0947f",
-    "type": "weather",
-    "severity": "low",
-    "title": "Telangana Weather Forecast Flags Warmer November, Heavy Rain Alerts - Urban Acres",
-    "message": "Telangana Weather Forecast Flags Warmer November, Heavy Rain Alerts - Urban Acres",
-    "description": "Telangana Weather Forecast Flags Warmer November, Heavy Rain Alerts  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-11-01T09:46:30Z",
-    "publishedAt": "2026-10-31T20:56:20Z",
-    "time": "1 Nov, 2:26 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZUlDbk90US1iRWhwSHNUbV9kRW9LUE5TMGpCTWNFQ2xjU0JoTjdqQUFXeHp3Rkd5WC1rb2NnZmZlN1ExZk1fd3ctTzJaSHUwazM4YTFVb240ZkNHQ0tBTm9ISGxSUFZJTU5TMnhwd2hwN0l1N1VaWC1ZTWc3M2loc290eEN4TktGSVdrVzJiVXNDWlU?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNZUlDbk90US1iRWhwSHNUbV9kRW9LUE5TMGpCTWNFQ2xjU0JoTjdqQUFXeHp3Rkd5WC1rb2NnZmZlN1ExZk1fd3ctTzJaSHUwazM4YTFVb240ZkNHQ0tBTm9ISGxSUFZJTU5TMnhwd2hwN0l1N1VaWC1ZTWc3M2loc290eEN4TktGSVdrVzJiVXNDWlU?oc=5",
-    "source": "Urban Acres"
   },
   {
     "id": "alert-073644cad2af",
@@ -338,5 +306,37 @@
     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZEp4UVZjdHJvQ3ZHN2ppQ3R5ZV9wNWRCVVFKa0ppdE9DSTZVb0FwZWllUkM1VWZXV2dLMURnRTVXLUtsVXRLcUZ5Q2xwTGFzZzZYcnpQNjd5RVJlZzBMR3Ztck4wQjRoc0NSVzJBSk1tczlPVVAyS01hN2FLeVc1ZlNXdkNIdmYyelBTa0V2MnV5Tm50TDVSSlNUM252cVhncmRKRTFxMEx1X251eDNhbUkwZ0hmQlpHcXNFVG4tSTJIUdIBxwFBVV95cUxPRE5IT3Azd05lYmhkVkp6YkI5TGxwazZBR3lsUXhlc3M1R3Q2VkZLVkpGYWIzYjc4c1lvX2RxTVNGWVIyazZwVF90OS1ISDlBN0pib0k2UnRvb2hubEh3azZNQlcta1dhUUxOY3E0Vnp3X1htVTI3N2tSYkpmVnpsWDRzMjQxazJBZjYxZndUczBHMkN5eXgtM3ZyQnhpQTZNemN5SGZqdHE5UjhDRnV5YXJGUHQ5OU50TkFLWFVpX1I2RFRDZnhB?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZEp4UVZjdHJvQ3ZHN2ppQ3R5ZV9wNWRCVVFKa0ppdE9DSTZVb0FwZWllUkM1VWZXV2dLMURnRTVXLUtsVXRLcUZ5Q2xwTGFzZzZYcnpQNjd5RVJlZzBMR3Ztck4wQjRoc0NSVzJBSk1tczlPVVAyS01hN2FLeVc1ZlNXdkNIdmYyelBTa0V2MnV5Tm50TDVSSlNUM252cVhncmRKRTFxMEx1X251eDNhbUkwZ0hmQlpHcXNFVG4tSTJIUdIBxwFBVV95cUxPRE5IT3Azd05lYmhkVkp6YkI5TGxwazZBR3lsUXhlc3M1R3Q2VkZLVkpGYWIzYjc4c1lvX2RxTVNGWVIyazZwVF90OS1ISDlBN0pib0k2UnRvb2hubEh3azZNQlcta1dhUUxOY3E0Vnp3X1htVTI3N2tSYkpmVnpsWDRzMjQxazJBZjYxZndUczBHMkN5eXgtM3ZyQnhpQTZNemN5SGZqdHE5UjhDRnV5YXJGUHQ5OU50TkFLWFVpX1I2RFRDZnhB?oc=5",
     "source": "CNBC TV18"
+  },
+  {
+    "id": "alert-3d912bc254fc",
+    "type": "weather",
+    "severity": "high",
+    "title": "Weather Today, November 4: Heavy rain alert for Tamil Nadu, Andhra Pradesh, Telangana & Chhattisgarh; IMD - The Economic Times",
+    "message": "Weather Today, November 4: Heavy rain alert for Tamil Nadu, Andhra Pradesh, Telangana & Chhattisgarh; IMD - The Economic Times",
+    "description": "Weather Today, November 4: Heavy rain alert for Tamil Nadu, Andhra Pradesh, Telangana & Chhattisgarh; IMD  The Economic Times",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-11-04T00:09:05Z",
+    "publishedAt": "2026-11-03T12:45:06Z",
+    "time": "3 Nov, 6:15 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMivgJBVV95cUxNcHhzTHViczRuS2pBRDIwSGtRSzBZaVdKaGphR2pXVkw5Y3BsTVlJYTFjYUJJeVJDeGx0Nkp3cW53YWllNEtFTmo1elVHa1J2WnVHVGJtTU9FRUFhUHl4WXAxbXgzTmxLNno1ZHpLMDBXbk9qY2xiQTZrMnFFMUhrOVhaQ1pqQ2ctM1VTY2ZpbmFucHdTcWVUejJ2S25FdHM2TGFZaWx3M1lPcEdJMDNjOXF2V05HemFHN0VWdEJ4SnYwNEd3SWlzUVdrQlJtZkZPcUI5VzhwRGZ1c0FLQXlCeDRqdDUwUUJaUFpJOWJTb2VGNXFKR29sUTJhWUd4TERFZW00WXdBZ3AzbVBJbHl2RWxpQ1B3YzQ2N2oydE8tZnNCSmtYV2NaQzBhcjJYOE44R2ZUcnRuVnM4Y3NnLUHSAcMCQVVfeXFMTnlBMmVfRHBfNUMyUEpvWnVISTNEampVVDgzdHAzNE54dFRnemN4TkxXQnVNRk1HMXRXa3FPYW91VjVSdFlDMUp6b0hiUnBfZVJybmI0QWluZDJWaFhpTEhPOGFNb1ppMWViTUJFQnZKYzBHeXd1Rkh5dVNMMXZNZFFiX3ExYnlHNjJacDVaWDdiVmV6NXRFaXJOZW92Z2ZBUnBTRXdfY3JqN01YeS1sTU0xUXQtNEoybE55WTdCanNOQVpCM0VxakVrZnhtZG5xSUpBeG5oMXpPVUFBSUhJeGJ6TXFBOUl3R29kT0xPMUljYVR2OEFXR2ZmYU8yQVdielgwTk1nWjVJOHJUQ2NNTFRjYm90MEJ5VFhTTzBvQmNfTmZ0cXYyMkxfNW9fOXVNaGswc2p3X1FQcnRFdlRwYUVqUWs?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMivgJBVV95cUxNcHhzTHViczRuS2pBRDIwSGtRSzBZaVdKaGphR2pXVkw5Y3BsTVlJYTFjYUJJeVJDeGx0Nkp3cW53YWllNEtFTmo1elVHa1J2WnVHVGJtTU9FRUFhUHl4WXAxbXgzTmxLNno1ZHpLMDBXbk9qY2xiQTZrMnFFMUhrOVhaQ1pqQ2ctM1VTY2ZpbmFucHdTcWVUejJ2S25FdHM2TGFZaWx3M1lPcEdJMDNjOXF2V05HemFHN0VWdEJ4SnYwNEd3SWlzUVdrQlJtZkZPcUI5VzhwRGZ1c0FLQXlCeDRqdDUwUUJaUFpJOWJTb2VGNXFKR29sUTJhWUd4TERFZW00WXdBZ3AzbVBJbHl2RWxpQ1B3YzQ2N2oydE8tZnNCSmtYV2NaQzBhcjJYOE44R2ZUcnRuVnM4Y3NnLUHSAcMCQVVfeXFMTnlBMmVfRHBfNUMyUEpvWnVISTNEampVVDgzdHAzNE54dFRnemN4TkxXQnVNRk1HMXRXa3FPYW91VjVSdFlDMUp6b0hiUnBfZVJybmI0QWluZDJWaFhpTEhPOGFNb1ppMWViTUJFQnZKYzBHeXd1Rkh5dVNMMXZNZFFiX3ExYnlHNjJacDVaWDdiVmV6NXRFaXJOZW92Z2ZBUnBTRXdfY3JqN01YeS1sTU0xUXQtNEoybE55WTdCanNOQVpCM0VxakVrZnhtZG5xSUpBeG5oMXpPVUFBSUhJeGJ6TXFBOUl3R29kT0xPMUljYVR2OEFXR2ZmYU8yQVdielgwTk1nWjVJOHJUQ2NNTFRjYm90MEJ5VFhTTzBvQmNfTmZ0cXYyMkxfNW9fOXVNaGswc2p3X1FQcnRFdlRwYUVqUWs?oc=5",
+    "source": "The Economic Times"
+  },
+  {
+    "id": "alert-60aa6d995e4c",
+    "type": "water_supply",
+    "severity": "high",
+    "title": "Hyderabad Water Shortage Forces Colleges to Send Students Home - Urban Acres",
+    "message": "Hyderabad Water Shortage Forces Colleges to Send Students Home - Urban Acres",
+    "description": "Hyderabad Water Shortage Forces Colleges to Send Students Home  Urban Acres",
+    "district": "Hyderabad",
+    "region": "Hyderabad",
+    "createdAt": "2026-11-04T00:09:05Z",
+    "publishedAt": "2026-11-03T21:55:37Z",
+    "time": "4 Nov, 3:25 AM IST",
+    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZzRZWTFxdnlMNnVCWWhGSGE0SjNpLTNBQWVPV3BaaVgzX2tmSTllM284V3dNQTM0bF9IRHpNc0ZoUWNZS1V5RXhFRkdDbDhaUWZ1X1NUeWFEMlllamNWM1lWRnpzbnZiaXVDV2dvQ0dTeUQwR0VHbUlfZXM5aW9hT05QLW5oakl0SXExME1R?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZzRZWTFxdnlMNnVCWWhGSGE0SjNpLTNBQWVPV3BaaVgzX2tmSTllM284V3dNQTM0bF9IRHpNc0ZoUWNZS1V5RXhFRkdDbDhaUWZ1X1NUeWFEMlllamNWM1lWRnpzbnZiaXVDV2dvQ0dTeUQwR0VHbUlfZXM5aW9hT05QLW5oakl0SXExME1R?oc=5",
+    "source": "Urban Acres"
   }
 ]
