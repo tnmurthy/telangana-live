@@ -1,70 +1,30 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-05T07:12:49Z",
+  "generatedAt": "2026-11-05T20:12:38Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
       {
-        "id": "tp-fba662a68e3f",
+        "id": "tp-424262f3cbe2",
         "category": "safety",
-        "title": "Cybercrime Coordination Gets National Push at Hyderabad Meeting",
-        "source": "Urban Acres",
-        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQcC1fck9pMXJXRkZfeTQ2eU41TzNNQWhvTkZkSnFvdnNmQncwc1RFMDZCY3J6Q05ldmZDS2hTWnpIVGhKQXV1UU1FX19qRDktN2FHX1N5XzE5a1JOejc5TV9mWFhGRGdzS2JVdlR1ZWdBRktYZFlYRW5kZHhWWWNzV3Rfc1p6NXFiR3ZaMGd6Yw?oc=5",
-        "publishedAt": "2026-11-04T05:25:48Z",
-        "time": "4 Nov, 10:55 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-6e770881cecc",
-        "category": "safety",
-        "title": "Cyber fraudsters divert ₹7 crore from Hyderabad NBFC account",
-        "source": "Hyderabad Mail",
-        "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQQmJub21xNzZNQW9EYXNnc3dzUU0wRWhHYllwb0htTlUxV3VPVHBMTFpvcXgweEVrc0lKTFFKbXFLeG1zVVRubW1Dc3YtMU9SNk5qMUZKbGhRWXQ4cnU1blVrbkRvSXZOYkI2Mnc3TThWSTByRUpZVWpLdHN4OUliOTVKcXk?oc=5",
-        "publishedAt": "2026-11-04T02:32:41Z",
-        "time": "4 Nov, 8:02 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-5deaa8a55cb1",
-        "category": "safety",
-        "title": "Cybercrime complaints rise 24% nationally, but Telangana records 3% decline: DGP Anand",
-        "source": "NewsMeter",
-        "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQWxfdkRDc1B6TmhHUVR5ampCMEhtcTJOczA3WHB2MTFDVmk4SUxnV0VzMVBiRERTV1NoaGxhN0pERWhpNlAyY254QXJ5bnI0U3dnVXJZVXprdUFMNzRsc2dueWdEa19WM0ZOXzdKYnBUSkprMzRCdFlXVU9LcE1zdDkxaWdjQlkzRENSbTlQc3Y4Sm8yVHI5c3pYRjY5OFRuNXJrbFdkbnF4TEp6TklqVldRaW1fcXFvVnVycDJHSlFXTXg0MFQtbA?oc=5",
-        "publishedAt": "2026-11-03T11:12:05Z",
-        "time": "3 Nov, 4:42 PM IST",
+        "title": "Cyber fraudsters divert ₹7.8cr from account of Hyderabad-based non-banking financial company",
+        "source": "The Times of India",
+        "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNQXZVWGNpbXVXS1hPVFpOcm11dTRrUmlQZnlFM3RxTHNpQWMyYkFCbFpkbG4xd251bDhxZUQxSzFaMnhTNExHQkxVOHRON1NxMW4wMDBtRFV0QkxqU1BQSVNaQ21qMHVWZXlheENIWUVRX3Awc2NWNXFYQVdvTEd0cGFhRVBvNGhmaGVvNTVXa2hPdzY1UXFNVmhBQTBoVkJBTmp3UWdBZEg3UVRxdThaRENfUDk0ZEdfbFIyN2JTVXgzdDJVRTE2cU15QVFLWV9rOUlYUDlyS1Eta1Y5UF9ob1NoQTNUT2Fsck1ZLThtVk9GMDNmRWdUWWhFU0zSAYICQVVfeXFMTjRXYzdSWU5YV05oaTBWVEVNZjA2bHBvV2hLZ1JnUE1JX25ncjNkbHlFeVhOZ2Zwbk81U0lKcW5SOGRhSUY1YUVnc1hqWXFGWXRnMzUwVjZXTUFxZ2xIVW54SWlyZWZCTDBORDRDZ1lKMFpsdEFtcnBmMF9iNUNzYTYyRVNxczE2M2VIbldTZFI2Q09ETkxnS2F4NlZoVDFCOThkOEowLWptSFF0WDMtNVNTOE82ZXpLekhiS1dKZTBkanp2RmcybUN5NnhBWlQ3S0g1ejZtc0czWWVFLWExbmVJT0MyekJEUTlSOUdaZ1Y3WnROQkJrYks5RUgwaUY2emln?oc=5",
+        "publishedAt": "2026-11-03T18:12:00Z",
+        "time": "3 Nov, 11:42 PM IST",
         "method": "typesafe"
       }
     ],
     "govt": [
       {
-        "id": "tp-0c1ccf91265c",
+        "id": "tp-f5be48c0cf5a",
         "category": "govt",
-        "title": "Telangana to Offer Learner’s Licence Test From Home via AI",
-        "source": "Elets eGov",
-        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE04YTFOT01RRGxtc1hSVmxnUWt0LXlHb21CTjVvVUszcnZ1RmFxaVBlNzZ2QnlISHRjcWduY2ZSd1RhWTFHUWV6U21oMGFySVc0NEdONERBZXRqNUJXVUtzcEc5TUg1Sm1iUUo5WUJwOVdoMDdDQVM5SzlrYWdMZTA?oc=5",
-        "publishedAt": "2026-11-04T04:55:33Z",
-        "time": "4 Nov, 10:25 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-bcc60adc8ea5",
-        "category": "govt",
-        "title": "Telangana High Court Pulls Up Jangaon Collector Over Use of AI to Decide Land Disputes",
-        "source": "Deccan Chronicle",
-        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOT0lMdHJsOUt3Yy1RaDJsWlNOZDNZZU55aTBrLUtrcnVhemwycHhHeU5HWk1CS2hmNXJJbzFjV3JWSVNYZ2Q2LVpoMWFQeUZZUENvYllTNFVnYU9OQkVXXzRVcjJadlRROHNrYkxCQ1pKdy1weVhaeklVekpqeDI0UUdrbDVKa1NKUXJiMktkZnM4NXJOcm5aY211blk4RlJLRE9Lbk1fU2FvSHZQcG43QVUtOXVGYjBsSng3bnJDckZZZkZSYk10ODFqYk4yc2FGc2llQi1DUG9oTUE1RnRoZ0phenQ0ajDSAewBQVVfeXFMT09qU3RMNVdBSFloNzBtLWV6OFZiV3Z2bWpwbWpUdHhQX3JWZTRDdkhDT05VNmk0MUFtM0ZlY1dTdzNTTmFVeml0LXNhRFRBWURtQUhjZmtlTDB4X2ZCVFRCTzhnVmlYelR1N25ZcWtzRDEyU0RYaVpRRTVZV2VRSy1fY1haZWJVRVp0NHlHRVA5aXRFRmd3ampGM3JPdTh0Ujd1ZzRwLTVJenFRZFhCazNPUXFZc0VuSzhsNHR5XzVlWXprczhock5KREU1Xy1xWFlnMWctb2d5M2UzS3U1eUdqSERlV3FHZ1k5bzY?oc=5",
-        "publishedAt": "2026-11-03T16:52:36Z",
-        "time": "3 Nov, 10:22 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-e359ffa05a7b",
-        "category": "govt",
-        "title": "Telangana: KTR launches CampusHub AI in Hyderabad, says \"AI is messenger of progress, not monster\"",
-        "source": "ANI News",
-        "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPSVA3TGRQUDNFT2Vna1QtVGhYcnd3LTFUWlQ2cHRtVS1FTnlIRzhOS2lNRjdUVENEVncyQm5qS29GZzlpMFY2c0RGV2NraXY2RThhREZWRm1VZGg0M2VJWHhpbGM2d0xvR3VOQ3Z4Y0NNSjc0MER1bG1GbFlWX0JfS3JIdHNQZDh1WXFTeDZuQkg5cm4zWjZJQnRZY3ozemFmdC1tYi1KVFliWW5rNDJBOC1MU0EyNnJxLVBJclVTVG0wQ2hWSVYzNmtjSWZrTFdGX2lFMWdDMlNRaGlqa2JSLXR4MUFtTExfVXVjRmZR?oc=5",
-        "publishedAt": "2026-11-02T14:22:00Z",
-        "time": "2 Nov, 7:52 PM IST",
+        "title": "KTR hails T-Hub’s 11-year journey, credits KCR’s vision",
+        "source": "Telangana Today",
+        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPX0djeVJEcGtxR01iQUg1YnBVSTVRMUZoZUI2ZTVIVHBHZ0FjNTFZNEJ2YlE1cXFLQnE5OEhESzY1UEFWVVlOYW5EZXBYRXNzaGt1Z083Vng1Z0Z4ZU5TN2FQU1VidnNmekJmallLZzdRbkd5M09mbFZ3cjl5VTYtaXJ0SDJIdw?oc=5",
+        "publishedAt": "2026-11-05T10:33:18Z",
+        "time": "5 Nov, 4:03 PM IST",
         "method": "typesafe"
       },
       {
