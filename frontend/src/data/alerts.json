@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-d48b4261c6c3",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Supply Disruption For 36 Hours From Nov. 3 - INDToday",
-    "message": "Hyderabad Water Supply Disruption For 36 Hours From Nov. 3 - INDToday",
-    "description": "Hyderabad Water Supply Disruption For 36 Hours From Nov. 3  INDToday",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-11-02T06:42:59Z",
-    "publishedAt": "2026-11-02T00:31:25Z",
-    "time": "2 Nov, 6:01 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVDlzby02Vi1ESWpZWTZ5WUZkMlBRSmxILXZXejVkeXhzcURoeXBsQWpFcFFQRllwVVRJUlEzeWZvZDhFMWF5aHpfV2N1VnFZZ1I5ZTdlU2phTk9UazMxblI4YXR5N0kzdWhudjBoRnJsY1JVY1VXN1p4X3FSa3ppMWZ4cVFKQQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQVDlzby02Vi1ESWpZWTZ5WUZkMlBRSmxILXZXejVkeXhzcURoeXBsQWpFcFFQRllwVVRJUlEzeWZvZDhFMWF5aHpfV2N1VnFZZ1I5ZTdlU2phTk9UazMxblI4YXR5N0kzdWhudjBoRnJsY1JVY1VXN1p4X3FSa3ppMWZ4cVFKQQ?oc=5",
-    "source": "INDToday"
-  },
-  {
     "id": "alert-03dd930fa955",
     "type": "water_supply",
     "severity": "medium",
@@ -142,22 +126,6 @@
     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOa2lEWEhXalJmVW42REE0UGJzNEQwMWd2TWRHeUZOS1B2V2VWYUJBdG9Cb3dXV2hxZjlqYjFqcUM5ZExHMFBFTFUtTmI4VWxBMS12WnpaaWo4aVNBaE1aSmw5Nm1hbkVRV2xPMDVZSVRvNTl0SUU2WXdyMU4yVGItS1lxV0RpQmp5dTluZ0EzWTVfZjRmM0VLQ3FwN0NnSEEwMEIwRDVlelBuUjFNbHc?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOa2lEWEhXalJmVW42REE0UGJzNEQwMWd2TWRHeUZOS1B2V2VWYUJBdG9Cb3dXV2hxZjlqYjFqcUM5ZExHMFBFTFUtTmI4VWxBMS12WnpaaWo4aVNBaE1aSmw5Nm1hbkVRV2xPMDVZSVRvNTl0SUU2WXdyMU4yVGItS1lxV0RpQmp5dTluZ0EzWTVfZjRmM0VLQ3FwN0NnSEEwMEIwRDVlelBuUjFNbHc?oc=5",
     "source": "Telangana Today"
-  },
-  {
-    "id": "alert-2bc22db7a333",
-    "type": "weather",
-    "severity": "high",
-    "title": "IMD weather update: Heavy rain alert for Andhra Pradesh, Telangana as Cyclone Murasu intensifies - CNBC TV18",
-    "message": "IMD weather update: Heavy rain alert for Andhra Pradesh, Telangana as Cyclone Murasu intensifies - CNBC TV18",
-    "description": "IMD weather update: Heavy rain alert for Andhra Pradesh, Telangana as Cyclone Murasu intensifies  CNBC TV18",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-11-03T19:26:14Z",
-    "publishedAt": "2026-11-01T23:30:30Z",
-    "time": "2 Nov, 5:00 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZEp4UVZjdHJvQ3ZHN2ppQ3R5ZV9wNWRCVVFKa0ppdE9DSTZVb0FwZWllUkM1VWZXV2dLMURnRTVXLUtsVXRLcUZ5Q2xwTGFzZzZYcnpQNjd5RVJlZzBMR3Ztck4wQjRoc0NSVzJBSk1tczlPVVAyS01hN2FLeVc1ZlNXdkNIdmYyelBTa0V2MnV5Tm50TDVSSlNUM252cVhncmRKRTFxMEx1X251eDNhbUkwZ0hmQlpHcXNFVG4tSTJIUdIBxwFBVV95cUxPRE5IT3Azd05lYmhkVkp6YkI5TGxwazZBR3lsUXhlc3M1R3Q2VkZLVkpGYWIzYjc4c1lvX2RxTVNGWVIyazZwVF90OS1ISDlBN0pib0k2UnRvb2hubEh3azZNQlcta1dhUUxOY3E0Vnp3X1htVTI3N2tSYkpmVnpsWDRzMjQxazJBZjYxZndUczBHMkN5eXgtM3ZyQnhpQTZNemN5SGZqdHE5UjhDRnV5YXJGUHQ5OU50TkFLWFVpX1I2RFRDZnhB?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNZEp4UVZjdHJvQ3ZHN2ppQ3R5ZV9wNWRCVVFKa0ppdE9DSTZVb0FwZWllUkM1VWZXV2dLMURnRTVXLUtsVXRLcUZ5Q2xwTGFzZzZYcnpQNjd5RVJlZzBMR3Ztck4wQjRoc0NSVzJBSk1tczlPVVAyS01hN2FLeVc1ZlNXdkNIdmYyelBTa0V2MnV5Tm50TDVSSlNUM252cVhncmRKRTFxMEx1X251eDNhbUkwZ0hmQlpHcXNFVG4tSTJIUdIBxwFBVV95cUxPRE5IT3Azd05lYmhkVkp6YkI5TGxwazZBR3lsUXhlc3M1R3Q2VkZLVkpGYWIzYjc4c1lvX2RxTVNGWVIyazZwVF90OS1ISDlBN0pib0k2UnRvb2hubEh3azZNQlcta1dhUUxOY3E0Vnp3X1htVTI3N2tSYkpmVnpsWDRzMjQxazJBZjYxZndUczBHMkN5eXgtM3ZyQnhpQTZNemN5SGZqdHE5UjhDRnV5YXJGUHQ5OU50TkFLWFVpX1I2RFRDZnhB?oc=5",
-    "source": "CNBC TV18"
   },
   {
     "id": "alert-3d912bc254fc",
