@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-26427ae2ced3",
-    "type": "weather",
-    "severity": "high",
-    "title": "Murasu Impact: IMD issues heavy rain alert for several Telangana districts - Telangana Today",
-    "message": "Murasu Impact: IMD issues heavy rain alert for several Telangana districts - Telangana Today",
-    "description": "Murasu Impact: IMD issues heavy rain alert for several Telangana districts  Telangana Today",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-11-02T23:42:36Z",
-    "publishedAt": "2026-11-02T18:50:05Z",
-    "time": "3 Nov, 12:20 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNR1RnRlg2WjhvQ1FuQjNUSVhRSDV2RzRNRENVWks4dTYtQS0zTXJ1ZUhtbFh3N1diQ2ZmTlJWT0FTODRNbTNjYjNWeGg0NC1mVkVadzZILXVWQmhZR2VsYmNGaWVHYUVpc29XaUNTTDhySnNCSDA0US0yVW1YU3NMOTNpbV9MTldfWGltQTltMXA3VEZQNDEwN1RQMEczNjN0REE?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNR1RnRlg2WjhvQ1FuQjNUSVhRSDV2RzRNRENVWks4dTYtQS0zTXJ1ZUhtbFh3N1diQ2ZmTlJWT0FTODRNbTNjYjNWeGg0NC1mVkVadzZILXVWQmhZR2VsYmNGaWVHYUVpc29XaUNTTDhySnNCSDA0US0yVW1YU3NMOTNpbV9MTldfWGltQTltMXA3VEZQNDEwN1RQMEczNjN0REE?oc=5",
-    "source": "Telangana Today"
-  },
-  {
     "id": "alert-2f6d9bd530c4",
     "type": "weather",
     "severity": "high",
