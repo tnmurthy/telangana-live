@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-2f6d9bd530c4",
-    "type": "weather",
-    "severity": "high",
-    "title": "Telangana Rain Alert: IMD Warns of Extreme Downpours in 2 Districts - Urban Acres",
-    "message": "Telangana Rain Alert: IMD Warns of Extreme Downpours in 2 Districts - Urban Acres",
-    "description": "Telangana Rain Alert: IMD Warns of Extreme Downpours in 2 Districts  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-11-03T04:03:59Z",
-    "publishedAt": "2026-11-03T02:40:48Z",
-    "time": "3 Nov, 8:10 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTnJTZDJFdllQQm1SajZHbGVWUGl2Y0Z2T2lQaDRRZUhjNjJYSTJya0lLdUNJbVJIY29HY3VyTmtWSzNRck1GMDlXQXl5LXpvRDIyN0lOamZGVlBNWnkyOXNpUkFvZHdfLUFNOTEtN3QxQ0tEM3BVUzBtRENXYlljSmNkUExnM1k1dGZxbnd3V2xMcms?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQTnJTZDJFdllQQm1SajZHbGVWUGl2Y0Z2T2lQaDRRZUhjNjJYSTJya0lLdUNJbVJIY29HY3VyTmtWSzNRck1GMDlXQXl5LXpvRDIyN0lOamZGVlBNWnkyOXNpUkFvZHdfLUFNOTEtN3QxQ0tEM3BVUzBtRENXYlljSmNkUExnM1k1dGZxbnd3V2xMcms?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-3d912bc254fc",
     "type": "weather",
     "severity": "medium",
