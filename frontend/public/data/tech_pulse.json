@@ -1,10 +1,20 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-06T07:12:38Z",
+  "generatedAt": "2026-11-06T19:38:08Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
+      {
+        "id": "tp-68d946afeef1",
+        "category": "safety",
+        "title": "Cyberabad FIR leads ED to ₹400 cr cyber fraud laundering network, 2 held",
+        "source": "The Times of India",
+        "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQQ0pjS054N2lPTVVtTll2eEFxZEdTbWJfZlJURVl2c2lxQW91RXJEeHhyaHF0X0RjRmFaalVxQVVCQ2ZtdWZaWGdpc1M1VkJNaFBXZnBHY0N6RGg1cl9KTG45anFfWW82d2J5Mml6LTZaT2lDbXhHN0NteFoyRlFVRTJob0xlcmVnMGM0WUY0ZDV1SVkyS25aNkRCRU8tdUZBQlFBdW9qN0VNRy1CbTRyTC0zTXBpNGZvTThYejl2dGhhRG9FR2hvNTIwNjg4Smlrc1hlNGpwZnUyVmkyVjU1SnBvdDhYd9IB5gFBVV95cUxQQ0pjS054N2lPTVVtTll2eEFxZEdTbWJfZlJURVl2c2lxQW91RXJEeHhyaHF0X0RjRmFaalVxQVVCQ2ZtdWZaWGdpc1M1VkJNaFBXZnBHY0N6RGg1cl9KTG45anFfWW82d2J5Mml6LTZaT2lDbXhHN0NteFoyRlFVRTJob0xlcmVnMGM0WUY0ZDV1SVkyS25aNkRCRU8tdUZBQlFBdW9qN0VNRy1CbTRyTC0zTXBpNGZvTThYejl2dGhhRG9FR2hvNTIwNjg4Smlrc1hlNGpwZnUyVmkyVjU1SnBvdDhYdw?oc=5",
+        "publishedAt": "2026-11-05T18:35:00Z",
+        "time": "6 Nov, 12:05 AM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-424262f3cbe2",
         "category": "safety",
