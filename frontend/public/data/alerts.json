@@ -1,21 +1,5 @@
 [
   {
-    "id": "alert-60aa6d995e4c",
-    "type": "water_supply",
-    "severity": "high",
-    "title": "Hyderabad Water Shortage Forces Colleges to Send Students Home - Urban Acres",
-    "message": "Hyderabad Water Shortage Forces Colleges to Send Students Home - Urban Acres",
-    "description": "Hyderabad Water Shortage Forces Colleges to Send Students Home  Urban Acres",
-    "district": "Hyderabad",
-    "region": "Hyderabad",
-    "createdAt": "2026-11-04T00:09:05Z",
-    "publishedAt": "2026-11-03T21:55:37Z",
-    "time": "4 Nov, 3:25 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZzRZWTFxdnlMNnVCWWhGSGE0SjNpLTNBQWVPV3BaaVgzX2tmSTllM284V3dNQTM0bF9IRHpNc0ZoUWNZS1V5RXhFRkdDbDhaUWZ1X1NUeWFEMlllamNWM1lWRnpzbnZiaXVDV2dvQ0dTeUQwR0VHbUlfZXM5aW9hT05QLW5oakl0SXExME1R?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZzRZWTFxdnlMNnVCWWhGSGE0SjNpLTNBQWVPV3BaaVgzX2tmSTllM284V3dNQTM0bF9IRHpNc0ZoUWNZS1V5RXhFRkdDbDhaUWZ1X1NUeWFEMlllamNWM1lWRnpzbnZiaXVDV2dvQ0dTeUQwR0VHbUlfZXM5aW9hT05QLW5oakl0SXExME1R?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-b8ff62352a90",
     "type": "weather",
     "severity": "high",
