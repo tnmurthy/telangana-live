@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-05T20:12:38Z",
+  "generatedAt": "2026-11-06T07:12:38Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -18,13 +18,33 @@
     ],
     "govt": [
       {
-        "id": "tp-f5be48c0cf5a",
+        "id": "tp-ee05521bec8e",
         "category": "govt",
-        "title": "KTR hails T-Hub’s 11-year journey, credits KCR’s vision",
-        "source": "Telangana Today",
-        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPX0djeVJEcGtxR01iQUg1YnBVSTVRMUZoZUI2ZTVIVHBHZ0FjNTFZNEJ2YlE1cXFLQnE5OEhESzY1UEFWVVlOYW5EZXBYRXNzaGt1Z083Vng1Z0Z4ZU5TN2FQU1VidnNmekJmallLZzdRbkd5M09mbFZ3cjl5VTYtaXJ0SDJIdw?oc=5",
-        "publishedAt": "2026-11-05T10:33:18Z",
-        "time": "5 Nov, 4:03 PM IST",
+        "title": "KTR highlights T-Hub Hyderabad’s support for 3,300 startups over 11 years",
+        "source": "The News Mill",
+        "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYndaeno0Vkp3ZGFoX3ZzVng0OWhJRnM4cDM5QWpWcG5qQWN0aDEwWjBxakNDMjUxZkN3NWkyZEF4RGxnN3BNbjhPUHA1N1YwMjhKeTQyT0ttU2hxdVQxSHdtUUhNQ2RrLXczMTE4TTV5SjBnWGpTU1BlOW1jdXh2MEFSa0xyN1lleEI1RllRWXlnbjQtUHBPdVBFVkdIUWo0UG0yQWdwNDhqWTRGcHlpVg?oc=5",
+        "publishedAt": "2026-11-06T05:07:25Z",
+        "time": "6 Nov, 10:37 AM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-bcc60adc8ea5",
+        "category": "govt",
+        "title": "Telangana High Court Pulls Up Jangaon Collector Over Use of AI to Decide Land Disputes",
+        "source": "Deccan Chronicle",
+        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOT0lMdHJsOUt3Yy1RaDJsWlNOZDNZZU55aTBrLUtrcnVhemwycHhHeU5HWk1CS2hmNXJJbzFjV3JWSVNYZ2Q2LVpoMWFQeUZZUENvYllTNFVnYU9OQkVXXzRVcjJadlRROHNrYkxCQ1pKdy1weVhaeklVekpqeDI0UUdrbDVKa1NKUXJiMktkZnM4NXJOcm5aY211blk4RlJLRE9Lbk1fU2FvSHZQcG43QVUtOXVGYjBsSng3bnJDckZZZkZSYk10ODFqYk4yc2FGc2llQi1DUG9oTUE1RnRoZ0phenQ0ajDSAewBQVVfeXFMT09qU3RMNVdBSFloNzBtLWV6OFZiV3Z2bWpwbWpUdHhQX3JWZTRDdkhDT05VNmk0MUFtM0ZlY1dTdzNTTmFVeml0LXNhRFRBWURtQUhjZmtlTDB4X2ZCVFRCTzhnVmlYelR1N25ZcWtzRDEyU0RYaVpRRTVZV2VRSy1fY1haZWJVRVp0NHlHRVA5aXRFRmd3ampGM3JPdTh0Ujd1ZzRwLTVJenFRZFhCazNPUXFZc0VuSzhsNHR5XzVlWXprczhock5KREU1Xy1xWFlnMWctb2d5M2UzS3U1eUdqSERlV3FHZ1k5bzY?oc=5",
+        "publishedAt": "2026-11-03T16:52:36Z",
+        "time": "3 Nov, 10:22 PM IST",
+        "method": "typesafe"
+      },
+      {
+        "id": "tp-e359ffa05a7b",
+        "category": "govt",
+        "title": "Telangana: KTR launches CampusHub AI in Hyderabad, says \"AI is messenger of progress, not monster\"",
+        "source": "ANI News",
+        "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPSVA3TGRQUDNFT2Vna1QtVGhYcnd3LTFUWlQ2cHRtVS1FTnlIRzhOS2lNRjdUVENEVncyQm5qS29GZzlpMFY2c0RGV2NraXY2RThhREZWRm1VZGg0M2VJWHhpbGM2d0xvR3VOQ3Z4Y0NNSjc0MER1bG1GbFlWX0JfS3JIdHNQZDh1WXFTeDZuQkg5cm4zWjZJQnRZY3ozemFmdC1tYi1KVFliWW5rNDJBOC1MU0EyNnJxLVBJclVTVG0wQ2hWSVYzNmtjSWZrTFdGX2lFMWdDMlNRaGlqa2JSLXR4MUFtTExfVXVjRmZR?oc=5",
+        "publishedAt": "2026-11-02T14:22:00Z",
+        "time": "2 Nov, 7:52 PM IST",
         "method": "typesafe"
       },
       {
