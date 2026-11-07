@@ -48,6 +48,16 @@ def _offline_models(monkeypatch):
             continue
         monkeypatch.setattr(module, "llm", llm_stub, raising=False)
         monkeypatch.setattr(module, "fact_checker", fact_checker_stub, raising=False)
+    # Clustering embeds every article through the local Ollama
+    # (core.clustering.get_embedding, ~2 s each on CPU): 60 articles made one
+    # test take 126 s and made the suite depend on Ollama running. None sends
+    # clustering down its Jaccard fallback.
+    for name in ("core.clustering", "clustering"):
+        try:
+            module = importlib.import_module(name)
+        except ImportError:
+            continue
+        monkeypatch.setattr(module, "get_embedding", lambda text: None, raising=False)
     yield
 
 

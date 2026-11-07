@@ -25,6 +25,7 @@ CATEGORY_KEYWORDS = {
         "results", "education", "student", "students", "teacher", "teachers",
         "syllabus", "university", "universities", "admission", "admissions",
         "curriculum", "scholarship", "tsbie", "inter results", "ssc results",
+        "skill", "skills", "skilling", "training", "apprenticeship",
     ],
     "Transit": [
         "traffic", "metro", "rtc", "tgsrtc", "tsrtc", "train", "trains",
@@ -108,6 +109,7 @@ REGION_KEYWORDS = {
         "hyderabad", "ghmc", "banjara hills", "banjara", "jubilee hills",
         "jubilee", "secunderabad", "charminar", "koti", "begumpet",
         "khairatabad", "nampally", "old city", "హైదరాబాద్", "సికింద్రాబాద్",
+        "osmania", "gandhi hospital", "secretariat",
     ],
 }
 
