@@ -1,10 +1,20 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-07T06:26:36Z",
+  "generatedAt": "2026-11-07T13:27:29Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
+      {
+        "id": "tp-546038651017",
+        "category": "safety",
+        "title": "TGCSB probes 2.73 lakh fake Rythu Bharosa SMS messages sent to Telangana farmers",
+        "source": "Hyderabad Mail",
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1QZ05MYkFmWkxLa29pUnZ2djRneWt2X0FLbDRFUW9MdWZpaUs3djU2cjBKdjlEaXVQLTBET25ibEMxam1UVGR1VFNEYkhROGg4U3dabGJtcU9XZWRIbzc0UVIySDVFQVcyRUdRVDdjVjJiRWdyT2Z4bVUxemlYZms?oc=5",
+        "publishedAt": "2026-11-07T12:45:27Z",
+        "time": "7 Nov, 6:15 PM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-68d946afeef1",
         "category": "safety",
@@ -14,9 +24,29 @@
         "publishedAt": "2026-11-05T18:35:00Z",
         "time": "6 Nov, 12:05 AM IST",
         "method": "typesafe"
+      },
+      {
+        "id": "tp-424262f3cbe2",
+        "category": "safety",
+        "title": "Cyber fraudsters divert ₹7.8cr from account of Hyderabad-based non-banking financial company",
+        "source": "The Times of India",
+        "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNQXZVWGNpbXVXS1hPVFpOcm11dTRrUmlQZnlFM3RxTHNpQWMyYkFCbFpkbG4xd251bDhxZUQxSzFaMnhTNExHQkxVOHRON1NxMW4wMDBtRFV0QkxqU1BQSVNaQ21qMHVWZXlheENIWUVRX3Awc2NWNXFYQVdvTEd0cGFhRVBvNGhmaGVvNTVXa2hPdzY1UXFNVmhBQTBoVkJBTmp3UWdBZEg3UVRxdThaRENfUDk0ZEdfbFIyN2JTVXgzdDJVRTE2cU15QVFLWV9rOUlYUDlyS1Eta1Y5UF9ob1NoQTNUT2Fsck1ZLThtVk9GMDNmRWdUWWhFU0zSAYICQVVfeXFMTjRXYzdSWU5YV05oaTBWVEVNZjA2bHBvV2hLZ1JnUE1JX25ncjNkbHlFeVhOZ2Zwbk81U0lKcW5SOGRhSUY1YUVnc1hqWXFGWXRnMzUwVjZXTUFxZ2xIVW54SWlyZWZCTDBORDRDZ1lKMFpsdEFtcnBmMF9iNUNzYTYyRVNxczE2M2VIbldTZFI2Q09ETkxnS2F4NlZoVDFCOThkOEowLWptSFF0WDMtNVNTOE82ZXpLekhiS1dKZTBkanp2RmcybUN5NnhBWlQ3S0g1ejZtc0czWWVFLWExbmVJT0MyekJEUTlSOUdaZ1Y3WnROQkJrYks5RUgwaUY2emln?oc=5",
+        "publishedAt": "2026-11-03T18:12:00Z",
+        "time": "3 Nov, 11:42 PM IST",
+        "method": "typesafe"
       }
     ],
     "govt": [
+      {
+        "id": "tp-f6b00b327521",
+        "category": "govt",
+        "title": "Meru Pravinya 2026 brings together 247 young innovators at T-Hub",
+        "source": "Telangana Today",
+        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNOGpPYkgzLVhaQk9COFNQbFFZM2txSC1acUt0QS1lbVo4V3c2cExHaDJQSVdVcjlHU24zWUFEY25tOGMzTjBIQWx2VDNYZTZYSzZFOGZNaFN2NEN1M2pKZnd1YWloNjJEYmZ3TEd6dDlVd3BHT2t4eFZtT2RDMDJvYUN4MkxtdE02OEFueHdjdnpUQ1pPeEE?oc=5",
+        "publishedAt": "2026-11-07T10:28:28Z",
+        "time": "7 Nov, 3:58 PM IST",
+        "method": "typesafe"
+      },
       {
         "id": "tp-ee05521bec8e",
         "category": "govt",
@@ -28,6 +58,16 @@
         "method": "typesafe"
       },
       {
+        "id": "tp-bcc60adc8ea5",
+        "category": "govt",
+        "title": "Telangana High Court Pulls Up Jangaon Collector Over Use of AI to Decide Land Disputes",
+        "source": "Deccan Chronicle",
+        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOT0lMdHJsOUt3Yy1RaDJsWlNOZDNZZU55aTBrLUtrcnVhemwycHhHeU5HWk1CS2hmNXJJbzFjV3JWSVNYZ2Q2LVpoMWFQeUZZUENvYllTNFVnYU9OQkVXXzRVcjJadlRROHNrYkxCQ1pKdy1weVhaeklVekpqeDI0UUdrbDVKa1NKUXJiMktkZnM4NXJOcm5aY211blk4RlJLRE9Lbk1fU2FvSHZQcG43QVUtOXVGYjBsSng3bnJDckZZZkZSYk10ODFqYk4yc2FGc2llQi1DUG9oTUE1RnRoZ0phenQ0ajDSAewBQVVfeXFMT09qU3RMNVdBSFloNzBtLWV6OFZiV3Z2bWpwbWpUdHhQX3JWZTRDdkhDT05VNmk0MUFtM0ZlY1dTdzNTTmFVeml0LXNhRFRBWURtQUhjZmtlTDB4X2ZCVFRCTzhnVmlYelR1N25ZcWtzRDEyU0RYaVpRRTVZV2VRSy1fY1haZWJVRVp0NHlHRVA5aXRFRmd3ampGM3JPdTh0Ujd1ZzRwLTVJenFRZFhCazNPUXFZc0VuSzhsNHR5XzVlWXprczhock5KREU1Xy1xWFlnMWctb2d5M2UzS3U1eUdqSERlV3FHZ1k5bzY?oc=5",
+        "publishedAt": "2026-11-03T16:52:36Z",
+        "time": "3 Nov, 10:22 PM IST",
+        "method": "typesafe"
+      },
+      {
         "id": "tp-98eb99ea5062",
         "category": "govt",
         "title": "Telangana to call for tenders for deploying AI in market yards",
@@ -35,16 +75,6 @@
         "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQb2YtX2VWOElkQ0lFV3Z4VDlseTRaZm9HT0JLRkFiVUxiTzdZZ2xTd19JRUd5OWRITU1RU1pIUkt3Y0pEUmxGUnZEZkM5SmZ0WE5nUktORWhDYkVYSTIxelExSDNzVGYwdjlmbXRXcmdNNDhzeFZhTWxZYjdlYVlLd2R5Q01BcVpKV3RBSE9JQmgxOGNUTk9JWmhZd0hFQnVYenVqVzhSa1l1UnB0b1BjN0c5dHRiV3NnMDdVQjJrZFkzZmhuTktKMnpsdGFlTnpfRXJPenJIQVHSAd8BQVVfeXFMTjlHU2FuQVpuUUs3YnVqWERMcjVGR1l1T3N6S3R4TWV5U0ZCZGEzdHpCaFhlNzNDQURGdWFJck44SmRLN1V6dUUtdDFjUUhMd3g3RWpCb2YtQUVtQ1ZJOGQyY2VLRlg3bFNIQUlMTkNLT2Riak1yNS00UlNoNFktNjlvRi00VE1aZzlBNTdxbERaeXItT2x5WmdhWEMzTDFNVjdJMkVpOGc5NXhrNHRFZlB4SUpKbHdueGpjNG13Q180amItOTIwV0U1S0dIQXZod1ZMazZHRlBJQnBHeDlDdw?oc=5",
         "publishedAt": "2026-11-02T16:29:57Z",
         "time": "2 Nov, 9:59 PM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-e359ffa05a7b",
-        "category": "govt",
-        "title": "Telangana: KTR launches CampusHub AI in Hyderabad, says \"AI is messenger of progress, not monster\"",
-        "source": "ANI News",
-        "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPSVA3TGRQUDNFT2Vna1QtVGhYcnd3LTFUWlQ2cHRtVS1FTnlIRzhOS2lNRjdUVENEVncyQm5qS29GZzlpMFY2c0RGV2NraXY2RThhREZWRm1VZGg0M2VJWHhpbGM2d0xvR3VOQ3Z4Y0NNSjc0MER1bG1GbFlWX0JfS3JIdHNQZDh1WXFTeDZuQkg5cm4zWjZJQnRZY3ozemFmdC1tYi1KVFliWW5rNDJBOC1MU0EyNnJxLVBJclVTVG0wQ2hWSVYzNmtjSWZrTFdGX2lFMWdDMlNRaGlqa2JSLXR4MUFtTExfVXVjRmZR?oc=5",
-        "publishedAt": "2026-11-02T14:22:00Z",
-        "time": "2 Nov, 7:52 PM IST",
         "method": "typesafe"
       },
       {
