@@ -1,37 +1,5 @@
 [
   {
-    "id": "alert-b8ff62352a90",
-    "type": "weather",
-    "severity": "high",
-    "title": "Heavy rain lashes Khammam, Bhadradri Kothagudem; red alert issued - Hyderabad Mail",
-    "message": "Heavy rain lashes Khammam, Bhadradri Kothagudem; red alert issued - Hyderabad Mail",
-    "description": "Heavy rain lashes Khammam, Bhadradri Kothagudem; red alert issued  Hyderabad Mail",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-11-04T06:29:27Z",
-    "publishedAt": "2026-11-04T05:28:03Z",
-    "time": "4 Nov, 10:58 AM IST",
-    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQRFlNcTJBSHJXWGVuNG03em9kbUk1MndsRWpKVFpneVpWX1VZVC1IUWZqQTRENHBEaGhQSF9ZXzhQTmRnWXVZS1lWODBtYzd1djM3MjhyQ1pUbGxJNHRsWWdNekFIUkk3bnVlUFdKUWktcnBBTEZIOXlaaWkycnNGUFJkcXNjMjFCLUkxUlJ1TF9MUUc3?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQRFlNcTJBSHJXWGVuNG03em9kbUk1MndsRWpKVFpneVpWX1VZVC1IUWZqQTRENHBEaGhQSF9ZXzhQTmRnWXVZS1lWODBtYzd1djM3MjhyQ1pUbGxJNHRsWWdNekFIUkk3bnVlUFdKUWktcnBBTEZIOXlaaWkycnNGUFJkcXNjMjFCLUkxUlJ1TF9MUUc3?oc=5",
-    "source": "Hyderabad Mail"
-  },
-  {
-    "id": "alert-3b690105b9ef",
-    "type": "flood",
-    "severity": "high",
-    "title": "Telangana Flash Flood Alert After 200 mm Rain - Urban Acres",
-    "message": "Telangana Flash Flood Alert After 200 mm Rain - Urban Acres",
-    "description": "Telangana Flash Flood Alert After 200 mm Rain  Urban Acres",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-11-04T14:50:21Z",
-    "publishedAt": "2026-11-04T08:39:15Z",
-    "time": "4 Nov, 2:09 PM IST",
-    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNS0xCTGxQQzlPZldCRUM1TmdvMi1sRTFvNGFpa0EzU005NGREaUUtMHRPTVU1WWw1RkZDYmN4UGdPUEk5MUZkVGE0ZWdzaWR2TTMtY2FQRy1nYkxwbVd5aGVQTGpTcVlJTXlHSm9fNkNYTUF0NkhJdUd1Rm9kRWMxVkZELXRHd0NRRXRSX2dFR2NmUQ?oc=5",
-    "sourceLink": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNS0xCTGxQQzlPZldCRUM1TmdvMi1sRTFvNGFpa0EzU005NGREaUUtMHRPTVU1WWw1RkZDYmN4UGdPUEk5MUZkVGE0ZWdzaWR2TTMtY2FQRy1nYkxwbVd5aGVQTGpTcVlJTXlHSm9fNkNYTUF0NkhJdUd1Rm9kRWMxVkZELXRHd0NRRXRSX2dFR2NmUQ?oc=5",
-    "source": "Urban Acres"
-  },
-  {
     "id": "alert-c9c7a0191d60",
     "type": "weather",
     "severity": "high",
@@ -112,23 +80,6 @@
     "source": "The South First"
   },
   {
-    "id": "alert-8b5712312727",
-    "type": "weather",
-    "severity": "medium",
-    "title": "Thunderstorm accompanied with Lightning and Gusty Winds (30-40 kmph) very likely to occur at isolated places in Bhadradri Kothagudem, Khammam, Nalgonda, Suryapet, Mahabubabad, Rangareddy, Nagarkurnool districts of Telangana - By TGiCCC .",
-    "message": "Thunderstorm accompanied with Lightning and Gusty Winds (30-40 kmph) very likely to occur at isolated places in Bhadradri Kothagudem, Khammam, Nalgonda, Suryapet, Mahabubabad, Rangareddy, Nagarkurnool districts of Telangana - By TGiCCC .",
-    "description": "Area: 7 districts of Telangana. Please follow SDMA guidelines.",
-    "district": "Telangana",
-    "region": "Telangana",
-    "createdAt": "2026-11-06T10:38:31Z",
-    "publishedAt": "2026-11-06T07:08:51Z",
-    "time": "6 Nov, 12:38 PM IST",
-    "link": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793946936079030",
-    "sourceLink": "https://sachet.ndma.gov.in/cap_public_website/FetchXMLFile?identifier=1793946936079030",
-    "source": "NDMA SACHET (Telangana-SDMA)",
-    "expiresAt": "2026-11-07T03:04:00Z"
-  },
-  {
     "id": "alert-9034437ab268",
     "type": "water_supply",
     "severity": "low",
@@ -207,5 +158,21 @@
     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMTJVSktTVGxmS2psTnpQaVR1YWZpSXlFMjhvR0tSX0p1RkpkSVE3TTVGa1hyWXNwM2p5c1I5U1FFVEJKbERQejFuNTNnQmlqb1NZejVZZzdOeUZ2anhOZDhoZkFkX3BqWlFJamZ2M3haX2p1azczUkZ6a1pnSjhHeXU2bjZBZXV4U1Utbld1SUdmZl9XYktZRF9YaVM?oc=5",
     "sourceLink": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMTJVSktTVGxmS2psTnpQaVR1YWZpSXlFMjhvR0tSX0p1RkpkSVE3TTVGa1hyWXNwM2p5c1I5U1FFVEJKbERQejFuNTNnQmlqb1NZejVZZzdOeUZ2anhOZDhoZkFkX3BqWlFJamZ2M3haX2p1azczUkZ6a1pnSjhHeXU2bjZBZXV4U1Utbld1SUdmZl9XYktZRF9YaVM?oc=5",
     "source": "NewsMeter"
+  },
+  {
+    "id": "alert-43345f941fa9",
+    "type": "water_supply",
+    "severity": "medium",
+    "title": "Hyderabad Water board prepares contingency plan to tackle summer water shortage with Singur,Manjeera reservoirs dip - Daily Pioneer",
+    "message": "Hyderabad Water board prepares contingency plan to tackle summer water shortage with Singur,Manjeera reservoirs dip - Daily Pioneer",
+    "description": "Hyderabad Water board prepares contingency plan to tackle summer water shortage with Singur,Manjeera reservoirs dip  Daily Pioneer",
+    "district": "Telangana",
+    "region": "Telangana",
+    "createdAt": "2026-11-07T09:06:58Z",
+    "publishedAt": "2026-11-06T12:07:20Z",
+    "time": "6 Nov, 5:37 PM IST",
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNm9ubng2R1JPYjRkLXA0VUxHdm9UV1BtZEVrcVB1VHVIeXpOdTBnQ1ZYcE9oVndIbXF3NUZKU0hvYUVFUnhENHMzU0lEQ3hFRmVkV3JUSEp3dTZ4djBzVWtrTTlkYzRDZS1Ua2RvVTV1NXpyRGtMSDc0LVg0TzBxcS1sTENla2RrZEVWQ0FNeTZaZHY4aEFhNXRoZ2ZxWFJhNEV1VTI1Ry1DZUdJRXBENjFUeWFuSVl1X2xZc3B6d19PSkRPZnfSAdMBQVVfeXFMUFZuZ1ZoekpEaFN6S3V2ZUQzcU9ST243T3RQX1B5bllhRTlHZ2QzWkI0Sjg0bDM5U2ljZDl2X2JaSzJuWEhRRHVJSEMzZHFSaDF6cmxsa0t5TmZ6WW85VEo1ZGxlZjZaZHgtUFdrMDlURk5JdXZaYjhZdjVnRVlFWHR1QVY0TmdQbS1rRFB0aG5YWm5yYXBqN0VEdU9yeHFPbE9Vb3NlSDJfdlI3TDFGeC15R05jZWo4SnZKZFdyWnBENEtFRDB4dVNUX1NfdjNrbmJLQQ?oc=5",
+    "sourceLink": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNm9ubng2R1JPYjRkLXA0VUxHdm9UV1BtZEVrcVB1VHVIeXpOdTBnQ1ZYcE9oVndIbXF3NUZKU0hvYUVFUnhENHMzU0lEQ3hFRmVkV3JUSEp3dTZ4djBzVWtrTTlkYzRDZS1Ua2RvVTV1NXpyRGtMSDc0LVg0TzBxcS1sTENla2RrZEVWQ0FNeTZaZHY4aEFhNXRoZ2ZxWFJhNEV1VTI1Ry1DZUdJRXBENjFUeWFuSVl1X2xZc3B6d19PSkRPZnfSAdMBQVVfeXFMUFZuZ1ZoekpEaFN6S3V2ZUQzcU9ST243T3RQX1B5bllhRTlHZ2QzWkI0Sjg0bDM5U2ljZDl2X2JaSzJuWEhRRHVJSEMzZHFSaDF6cmxsa0t5TmZ6WW85VEo1ZGxlZjZaZHgtUFdrMDlURk5JdXZaYjhZdjVnRVlFWHR1QVY0TmdQbS1rRFB0aG5YWm5yYXBqN0VEdU9yeHFPbE9Vb3NlSDJfdlI3TDFGeC15R05jZWo4SnZKZFdyWnBENEtFRDB4dVNUX1NfdjNrbmJLQQ?oc=5",
+    "source": "Daily Pioneer"
   }
 ]
