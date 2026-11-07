@@ -1,7 +1,7 @@
 {
   "region": "telangana",
   "regionName": "Telangana",
-  "generatedAt": "2026-11-06T19:38:08Z",
+  "generatedAt": "2026-11-07T06:26:36Z",
   "maxAgeDays": 14,
   "categories": {
     "safety": [
@@ -13,16 +13,6 @@
         "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQQ0pjS054N2lPTVVtTll2eEFxZEdTbWJfZlJURVl2c2lxQW91RXJEeHhyaHF0X0RjRmFaalVxQVVCQ2ZtdWZaWGdpc1M1VkJNaFBXZnBHY0N6RGg1cl9KTG45anFfWW82d2J5Mml6LTZaT2lDbXhHN0NteFoyRlFVRTJob0xlcmVnMGM0WUY0ZDV1SVkyS25aNkRCRU8tdUZBQlFBdW9qN0VNRy1CbTRyTC0zTXBpNGZvTThYejl2dGhhRG9FR2hvNTIwNjg4Smlrc1hlNGpwZnUyVmkyVjU1SnBvdDhYd9IB5gFBVV95cUxQQ0pjS054N2lPTVVtTll2eEFxZEdTbWJfZlJURVl2c2lxQW91RXJEeHhyaHF0X0RjRmFaalVxQVVCQ2ZtdWZaWGdpc1M1VkJNaFBXZnBHY0N6RGg1cl9KTG45anFfWW82d2J5Mml6LTZaT2lDbXhHN0NteFoyRlFVRTJob0xlcmVnMGM0WUY0ZDV1SVkyS25aNkRCRU8tdUZBQlFBdW9qN0VNRy1CbTRyTC0zTXBpNGZvTThYejl2dGhhRG9FR2hvNTIwNjg4Smlrc1hlNGpwZnUyVmkyVjU1SnBvdDhYdw?oc=5",
         "publishedAt": "2026-11-05T18:35:00Z",
         "time": "6 Nov, 12:05 AM IST",
-        "method": "typesafe"
-      },
-      {
-        "id": "tp-424262f3cbe2",
-        "category": "safety",
-        "title": "Cyber fraudsters divert ₹7.8cr from account of Hyderabad-based non-banking financial company",
-        "source": "The Times of India",
-        "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNQXZVWGNpbXVXS1hPVFpOcm11dTRrUmlQZnlFM3RxTHNpQWMyYkFCbFpkbG4xd251bDhxZUQxSzFaMnhTNExHQkxVOHRON1NxMW4wMDBtRFV0QkxqU1BQSVNaQ21qMHVWZXlheENIWUVRX3Awc2NWNXFYQVdvTEd0cGFhRVBvNGhmaGVvNTVXa2hPdzY1UXFNVmhBQTBoVkJBTmp3UWdBZEg3UVRxdThaRENfUDk0ZEdfbFIyN2JTVXgzdDJVRTE2cU15QVFLWV9rOUlYUDlyS1Eta1Y5UF9ob1NoQTNUT2Fsck1ZLThtVk9GMDNmRWdUWWhFU0zSAYICQVVfeXFMTjRXYzdSWU5YV05oaTBWVEVNZjA2bHBvV2hLZ1JnUE1JX25ncjNkbHlFeVhOZ2Zwbk81U0lKcW5SOGRhSUY1YUVnc1hqWXFGWXRnMzUwVjZXTUFxZ2xIVW54SWlyZWZCTDBORDRDZ1lKMFpsdEFtcnBmMF9iNUNzYTYyRVNxczE2M2VIbldTZFI2Q09ETkxnS2F4NlZoVDFCOThkOEowLWptSFF0WDMtNVNTOE82ZXpLekhiS1dKZTBkanp2RmcybUN5NnhBWlQ3S0g1ejZtc0czWWVFLWExbmVJT0MyekJEUTlSOUdaZ1Y3WnROQkJrYks5RUgwaUY2emln?oc=5",
-        "publishedAt": "2026-11-03T18:12:00Z",
-        "time": "3 Nov, 11:42 PM IST",
         "method": "typesafe"
       }
     ],
@@ -38,13 +28,13 @@
         "method": "typesafe"
       },
       {
-        "id": "tp-bcc60adc8ea5",
+        "id": "tp-98eb99ea5062",
         "category": "govt",
-        "title": "Telangana High Court Pulls Up Jangaon Collector Over Use of AI to Decide Land Disputes",
-        "source": "Deccan Chronicle",
-        "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOT0lMdHJsOUt3Yy1RaDJsWlNOZDNZZU55aTBrLUtrcnVhemwycHhHeU5HWk1CS2hmNXJJbzFjV3JWSVNYZ2Q2LVpoMWFQeUZZUENvYllTNFVnYU9OQkVXXzRVcjJadlRROHNrYkxCQ1pKdy1weVhaeklVekpqeDI0UUdrbDVKa1NKUXJiMktkZnM4NXJOcm5aY211blk4RlJLRE9Lbk1fU2FvSHZQcG43QVUtOXVGYjBsSng3bnJDckZZZkZSYk10ODFqYk4yc2FGc2llQi1DUG9oTUE1RnRoZ0phenQ0ajDSAewBQVVfeXFMT09qU3RMNVdBSFloNzBtLWV6OFZiV3Z2bWpwbWpUdHhQX3JWZTRDdkhDT05VNmk0MUFtM0ZlY1dTdzNTTmFVeml0LXNhRFRBWURtQUhjZmtlTDB4X2ZCVFRCTzhnVmlYelR1N25ZcWtzRDEyU0RYaVpRRTVZV2VRSy1fY1haZWJVRVp0NHlHRVA5aXRFRmd3ampGM3JPdTh0Ujd1ZzRwLTVJenFRZFhCazNPUXFZc0VuSzhsNHR5XzVlWXprczhock5KREU1Xy1xWFlnMWctb2d5M2UzS3U1eUdqSERlV3FHZ1k5bzY?oc=5",
-        "publishedAt": "2026-11-03T16:52:36Z",
-        "time": "3 Nov, 10:22 PM IST",
+        "title": "Telangana to call for tenders for deploying AI in market yards",
+        "source": "BusinessLine",
+        "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQb2YtX2VWOElkQ0lFV3Z4VDlseTRaZm9HT0JLRkFiVUxiTzdZZ2xTd19JRUd5OWRITU1RU1pIUkt3Y0pEUmxGUnZEZkM5SmZ0WE5nUktORWhDYkVYSTIxelExSDNzVGYwdjlmbXRXcmdNNDhzeFZhTWxZYjdlYVlLd2R5Q01BcVpKV3RBSE9JQmgxOGNUTk9JWmhZd0hFQnVYenVqVzhSa1l1UnB0b1BjN0c5dHRiV3NnMDdVQjJrZFkzZmhuTktKMnpsdGFlTnpfRXJPenJIQVHSAd8BQVVfeXFMTjlHU2FuQVpuUUs3YnVqWERMcjVGR1l1T3N6S3R4TWV5U0ZCZGEzdHpCaFhlNzNDQURGdWFJck44SmRLN1V6dUUtdDFjUUhMd3g3RWpCb2YtQUVtQ1ZJOGQyY2VLRlg3bFNIQUlMTkNLT2Riak1yNS00UlNoNFktNjlvRi00VE1aZzlBNTdxbERaeXItT2x5WmdhWEMzTDFNVjdJMkVpOGc5NXhrNHRFZlB4SUpKbHdueGpjNG13Q180amItOTIwV0U1S0dIQXZod1ZMazZHRlBJQnBHeDlDdw?oc=5",
+        "publishedAt": "2026-11-02T16:29:57Z",
+        "time": "2 Nov, 9:59 PM IST",
         "method": "typesafe"
       },
       {
